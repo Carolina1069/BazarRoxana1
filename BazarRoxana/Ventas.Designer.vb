@@ -33,7 +33,7 @@ Partial Class Ventas
         Me.lbBusquedaVenta = New System.Windows.Forms.Label()
         Me.btBuscar = New System.Windows.Forms.Button()
         Me.txCodEmple = New System.Windows.Forms.TextBox()
-        Me.txNumVenta = New System.Windows.Forms.TextBox()
+        Me.txtNumVenta = New System.Windows.Forms.TextBox()
         Me.lbCodEmple = New System.Windows.Forms.Label()
         Me.lbCodigoCli = New System.Windows.Forms.Label()
         Me.txCodCli = New System.Windows.Forms.TextBox()
@@ -144,12 +144,12 @@ Partial Class Ventas
         Me.txCodEmple.Size = New System.Drawing.Size(100, 20)
         Me.txCodEmple.TabIndex = 28
         '
-        'txNumVenta
+        'txtNumVenta
         '
-        Me.txNumVenta.Location = New System.Drawing.Point(123, 104)
-        Me.txNumVenta.Name = "txNumVenta"
-        Me.txNumVenta.Size = New System.Drawing.Size(100, 20)
-        Me.txNumVenta.TabIndex = 27
+        Me.txtNumVenta.Location = New System.Drawing.Point(123, 104)
+        Me.txtNumVenta.Name = "txtNumVenta"
+        Me.txtNumVenta.Size = New System.Drawing.Size(100, 20)
+        Me.txtNumVenta.TabIndex = 27
         '
         'lbCodEmple
         '
@@ -193,7 +193,7 @@ Partial Class Ventas
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txCodEmple)
-        Me.Controls.Add(Me.txNumVenta)
+        Me.Controls.Add(Me.txtNumVenta)
         Me.Controls.Add(Me.lbCodEmple)
         Me.Controls.Add(Me.lbCodigoCli)
         Me.Controls.Add(Me.txCodCli)
@@ -220,7 +220,7 @@ Partial Class Ventas
     Friend WithEvents lbBusquedaVenta As Label
     Friend WithEvents btBuscar As Button
     Friend WithEvents txCodEmple As TextBox
-    Friend WithEvents txNumVenta As TextBox
+    Friend WithEvents txtNumVenta As TextBox
     Friend WithEvents lbCodEmple As Label
     Friend WithEvents lbCodigoCli As Label
     Friend WithEvents txCodCli As TextBox
