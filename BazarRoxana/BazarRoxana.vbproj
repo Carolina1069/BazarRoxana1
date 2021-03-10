@@ -74,6 +74,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BazarRoxanaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BazarRoxanaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Categorias.Designer.vb">
       <DependentUpon>Categorias.vb</DependentUpon>
     </Compile>
@@ -182,6 +187,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="BazarRoxanaDataSet.xsc">
+      <DependentUpon>BazarRoxanaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BazarRoxanaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BazarRoxanaDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BazarRoxanaDataSet.xss">
+      <DependentUpon>BazarRoxanaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

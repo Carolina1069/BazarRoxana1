@@ -22,161 +22,199 @@ Partial Class Categorias
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnActTabla = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGV = New System.Windows.Forms.DataGridView()
+        Me.CodCategDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombCategDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CategoriaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BazarRoxanaDataSet = New BazarRoxana.BazarRoxanaDataSet()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.txtNumVenta = New System.Windows.Forms.TextBox()
+        Me.txCodCat = New System.Windows.Forms.TextBox()
         Me.lbDescripcion = New System.Windows.Forms.Label()
         Me.lbCodigoCategoria = New System.Windows.Forms.Label()
-        Me.rtxDescripcion = New System.Windows.Forms.RichTextBox()
+        Me.txtNombCat = New System.Windows.Forms.TextBox()
+        Me.CategoriaTableAdapter = New BazarRoxana.BazarRoxanaDataSetTableAdapters.CategoriaTableAdapter()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BazarRoxanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(332, 6)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Location = New System.Drawing.Point(249, 5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(133, 63)
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
         Me.PictureBox1.TabIndex = 64
         Me.PictureBox1.TabStop = False
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btnActTabla)
         Me.GroupBox1.Controls.Add(Me.btnSalir)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
         Me.GroupBox1.Controls.Add(Me.btnActualizar)
         Me.GroupBox1.Controls.Add(Me.btnGuardar)
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.DGV)
         Me.GroupBox1.Controls.Add(Me.btnBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(47, 306)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(35, 249)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(709, 338)
+        Me.GroupBox1.Size = New System.Drawing.Size(532, 275)
         Me.GroupBox1.TabIndex = 63
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de la categoria"
         '
+        'btnActTabla
+        '
+        Me.btnActTabla.Location = New System.Drawing.Point(404, 35)
+        Me.btnActTabla.Name = "btnActTabla"
+        Me.btnActTabla.Size = New System.Drawing.Size(108, 23)
+        Me.btnActTabla.TabIndex = 26
+        Me.btnActTabla.Text = "Actualizar Tabla"
+        Me.btnActTabla.UseVisualStyleBackColor = True
+        '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(597, 300)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSalir.Location = New System.Drawing.Point(448, 244)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(100, 28)
+        Me.btnSalir.Size = New System.Drawing.Size(75, 23)
         Me.btnSalir.TabIndex = 25
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(424, 300)
-        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnEliminar.Location = New System.Drawing.Point(310, 244)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(100, 28)
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar.TabIndex = 24
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(232, 300)
-        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnActualizar.Location = New System.Drawing.Point(174, 244)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(100, 28)
+        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar.TabIndex = 23
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(41, 300)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGuardar.Location = New System.Drawing.Point(31, 244)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(100, 28)
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 22
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'DGV
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 91)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(681, 185)
-        Me.DataGridView1.TabIndex = 21
+        Me.DGV.AutoGenerateColumns = False
+        Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodCategDataGridViewTextBoxColumn, Me.NombCategDataGridViewTextBoxColumn})
+        Me.DGV.DataSource = Me.CategoriaBindingSource
+        Me.DGV.Location = New System.Drawing.Point(12, 74)
+        Me.DGV.Name = "DGV"
+        Me.DGV.RowHeadersWidth = 51
+        Me.DGV.Size = New System.Drawing.Size(511, 150)
+        Me.DGV.TabIndex = 21
+        '
+        'CodCategDataGridViewTextBoxColumn
+        '
+        Me.CodCategDataGridViewTextBoxColumn.DataPropertyName = "CodCateg"
+        Me.CodCategDataGridViewTextBoxColumn.HeaderText = "CodCateg"
+        Me.CodCategDataGridViewTextBoxColumn.Name = "CodCategDataGridViewTextBoxColumn"
+        '
+        'NombCategDataGridViewTextBoxColumn
+        '
+        Me.NombCategDataGridViewTextBoxColumn.DataPropertyName = "NombCateg"
+        Me.NombCategDataGridViewTextBoxColumn.HeaderText = "NombCateg"
+        Me.NombCategDataGridViewTextBoxColumn.Name = "NombCategDataGridViewTextBoxColumn"
+        '
+        'CategoriaBindingSource
+        '
+        Me.CategoriaBindingSource.DataMember = "Categoria"
+        Me.CategoriaBindingSource.DataSource = Me.BazarRoxanaDataSet
+        '
+        'BazarRoxanaDataSet
+        '
+        Me.BazarRoxanaDataSet.DataSetName = "BazarRoxanaDataSet"
+        Me.BazarRoxanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(41, 43)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnBuscar.Location = New System.Drawing.Point(31, 35)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(100, 28)
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
         Me.btnBuscar.TabIndex = 18
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
-        'txtNumVenta
+        'txCodCat
         '
-        Me.txtNumVenta.Location = New System.Drawing.Point(200, 112)
-        Me.txtNumVenta.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtNumVenta.Name = "txtNumVenta"
-        Me.txtNumVenta.Size = New System.Drawing.Size(132, 22)
-        Me.txtNumVenta.TabIndex = 60
+        Me.txCodCat.Location = New System.Drawing.Point(150, 91)
+        Me.txCodCat.Name = "txCodCat"
+        Me.txCodCat.Size = New System.Drawing.Size(100, 20)
+        Me.txCodCat.TabIndex = 60
         '
         'lbDescripcion
         '
         Me.lbDescripcion.AutoSize = True
-        Me.lbDescripcion.Location = New System.Drawing.Point(44, 179)
-        Me.lbDescripcion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbDescripcion.Location = New System.Drawing.Point(33, 145)
         Me.lbDescripcion.Name = "lbDescripcion"
-        Me.lbDescripcion.Size = New System.Drawing.Size(180, 17)
+        Me.lbDescripcion.Size = New System.Drawing.Size(117, 13)
         Me.lbDescripcion.TabIndex = 57
-        Me.lbDescripcion.Text = "Descripcion de la categoria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lbDescripcion.Text = "Nombre de la categoria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'lbCodigoCategoria
         '
         Me.lbCodigoCategoria.AutoSize = True
-        Me.lbCodigoCategoria.Location = New System.Drawing.Point(40, 112)
-        Me.lbCodigoCategoria.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCodigoCategoria.Location = New System.Drawing.Point(30, 91)
         Me.lbCodigoCategoria.Name = "lbCodigoCategoria"
-        Me.lbCodigoCategoria.Size = New System.Drawing.Size(152, 17)
+        Me.lbCodigoCategoria.Size = New System.Drawing.Size(114, 13)
         Me.lbCodigoCategoria.TabIndex = 53
         Me.lbCodigoCategoria.Text = "Codigo de la Categoria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
-        'rtxDescripcion
+        'txtNombCat
         '
-        Me.rtxDescripcion.Location = New System.Drawing.Point(231, 179)
-        Me.rtxDescripcion.Name = "rtxDescripcion"
-        Me.rtxDescripcion.Size = New System.Drawing.Size(249, 106)
-        Me.rtxDescripcion.TabIndex = 65
-        Me.rtxDescripcion.Text = ""
+        Me.txtNombCat.Location = New System.Drawing.Point(156, 145)
+        Me.txtNombCat.Name = "txtNombCat"
+        Me.txtNombCat.Size = New System.Drawing.Size(100, 20)
+        Me.txtNombCat.TabIndex = 65
+        '
+        'CategoriaTableAdapter
+        '
+        Me.CategoriaTableAdapter.ClearBeforeFill = True
         '
         'Categorias
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 657)
-        Me.Controls.Add(Me.rtxDescripcion)
+        Me.ClientSize = New System.Drawing.Size(600, 534)
+        Me.Controls.Add(Me.txtNombCat)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.txtNumVenta)
+        Me.Controls.Add(Me.txCodCat)
         Me.Controls.Add(Me.lbDescripcion)
         Me.Controls.Add(Me.lbCodigoCategoria)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Categorias"
         Me.Text = "Categorias"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BazarRoxanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -188,10 +226,16 @@ Partial Class Categorias
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnGuardar As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DGV As DataGridView
     Friend WithEvents btnBuscar As Button
-    Friend WithEvents txtNumVenta As TextBox
+    Friend WithEvents txCodCat As TextBox
     Friend WithEvents lbDescripcion As Label
     Friend WithEvents lbCodigoCategoria As Label
-    Friend WithEvents rtxDescripcion As RichTextBox
+    Friend WithEvents BazarRoxanaDataSet As BazarRoxanaDataSet
+    Friend WithEvents CategoriaBindingSource As BindingSource
+    Friend WithEvents CategoriaTableAdapter As BazarRoxanaDataSetTableAdapters.CategoriaTableAdapter
+    Friend WithEvents CodCategDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents NombCategDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents txtNombCat As TextBox
+    Friend WithEvents btnActTabla As Button
 End Class

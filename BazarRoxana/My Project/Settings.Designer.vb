@@ -53,6 +53,17 @@ Namespace My
                 Return defaultInstance
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=T"& _ 
+            "rue")>  _
+        Public ReadOnly Property BazarRoxanaConnectionString() As String
+            Get
+                Return CType(Me("BazarRoxanaConnectionString"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
