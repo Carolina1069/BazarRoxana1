@@ -22,7 +22,6 @@ Partial Class Categorias
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnActTabla = New System.Windows.Forms.Button()
@@ -31,21 +30,14 @@ Partial Class Categorias
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.DGV = New System.Windows.Forms.DataGridView()
-        Me.CodCategDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombCategDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CategoriaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BazarRoxanaDataSet = New BazarRoxana.BazarRoxanaDataSet()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.txCodCat = New System.Windows.Forms.TextBox()
         Me.lbDescripcion = New System.Windows.Forms.Label()
         Me.lbCodigoCategoria = New System.Windows.Forms.Label()
         Me.txtNombCat = New System.Windows.Forms.TextBox()
-        Me.CategoriaTableAdapter = New BazarRoxana.BazarRoxanaDataSetTableAdapters.CategoriaTableAdapter()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BazarRoxanaDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -119,37 +111,12 @@ Partial Class Categorias
         '
         'DGV
         '
-        Me.DGV.AutoGenerateColumns = False
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodCategDataGridViewTextBoxColumn, Me.NombCategDataGridViewTextBoxColumn})
-        Me.DGV.DataSource = Me.CategoriaBindingSource
         Me.DGV.Location = New System.Drawing.Point(12, 74)
         Me.DGV.Name = "DGV"
         Me.DGV.RowHeadersWidth = 51
         Me.DGV.Size = New System.Drawing.Size(511, 150)
         Me.DGV.TabIndex = 21
-        '
-        'CodCategDataGridViewTextBoxColumn
-        '
-        Me.CodCategDataGridViewTextBoxColumn.DataPropertyName = "CodCateg"
-        Me.CodCategDataGridViewTextBoxColumn.HeaderText = "CodCateg"
-        Me.CodCategDataGridViewTextBoxColumn.Name = "CodCategDataGridViewTextBoxColumn"
-        '
-        'NombCategDataGridViewTextBoxColumn
-        '
-        Me.NombCategDataGridViewTextBoxColumn.DataPropertyName = "NombCateg"
-        Me.NombCategDataGridViewTextBoxColumn.HeaderText = "NombCateg"
-        Me.NombCategDataGridViewTextBoxColumn.Name = "NombCategDataGridViewTextBoxColumn"
-        '
-        'CategoriaBindingSource
-        '
-        Me.CategoriaBindingSource.DataMember = "Categoria"
-        Me.CategoriaBindingSource.DataSource = Me.BazarRoxanaDataSet
-        '
-        'BazarRoxanaDataSet
-        '
-        Me.BazarRoxanaDataSet.DataSetName = "BazarRoxanaDataSet"
-        Me.BazarRoxanaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btnBuscar
         '
@@ -192,10 +159,6 @@ Partial Class Categorias
         Me.txtNombCat.Size = New System.Drawing.Size(100, 20)
         Me.txtNombCat.TabIndex = 65
         '
-        'CategoriaTableAdapter
-        '
-        Me.CategoriaTableAdapter.ClearBeforeFill = True
-        '
         'Categorias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,8 +176,6 @@ Partial Class Categorias
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CategoriaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BazarRoxanaDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -231,11 +192,6 @@ Partial Class Categorias
     Friend WithEvents txCodCat As TextBox
     Friend WithEvents lbDescripcion As Label
     Friend WithEvents lbCodigoCategoria As Label
-    Friend WithEvents BazarRoxanaDataSet As BazarRoxanaDataSet
-    Friend WithEvents CategoriaBindingSource As BindingSource
-    Friend WithEvents CategoriaTableAdapter As BazarRoxanaDataSetTableAdapters.CategoriaTableAdapter
-    Friend WithEvents CodCategDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NombCategDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents txtNombCat As TextBox
     Friend WithEvents btnActTabla As Button
 End Class
