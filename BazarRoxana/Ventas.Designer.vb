@@ -29,8 +29,6 @@ Partial Class Ventas
         Me.btActualizar = New System.Windows.Forms.Button()
         Me.btGuardar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.txbuscarVenta = New System.Windows.Forms.TextBox()
-        Me.lbBusquedaVenta = New System.Windows.Forms.Label()
         Me.btBuscar = New System.Windows.Forms.Button()
         Me.txCodEmple = New System.Windows.Forms.TextBox()
         Me.txtNumVenta = New System.Windows.Forms.TextBox()
@@ -45,9 +43,10 @@ Partial Class Ventas
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(234, 22)
+        Me.PictureBox1.Location = New System.Drawing.Point(312, 27)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
+        Me.PictureBox1.Size = New System.Drawing.Size(133, 63)
         Me.PictureBox1.TabIndex = 32
         Me.PictureBox1.TabStop = False
         '
@@ -58,48 +57,52 @@ Partial Class Ventas
         Me.GroupBox1.Controls.Add(Me.btActualizar)
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
-        Me.GroupBox1.Controls.Add(Me.txbuscarVenta)
-        Me.GroupBox1.Controls.Add(Me.lbBusquedaVenta)
         Me.GroupBox1.Controls.Add(Me.btBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(24, 271)
+        Me.GroupBox1.Location = New System.Drawing.Point(32, 334)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(532, 275)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(709, 338)
         Me.GroupBox1.TabIndex = 31
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de la Venta"
         '
         'btSalir
         '
-        Me.btSalir.Location = New System.Drawing.Point(448, 244)
+        Me.btSalir.Location = New System.Drawing.Point(597, 300)
+        Me.btSalir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btSalir.Name = "btSalir"
-        Me.btSalir.Size = New System.Drawing.Size(75, 23)
+        Me.btSalir.Size = New System.Drawing.Size(100, 28)
         Me.btSalir.TabIndex = 25
         Me.btSalir.Text = "Salir"
         Me.btSalir.UseVisualStyleBackColor = True
         '
         'btEliminar
         '
-        Me.btEliminar.Location = New System.Drawing.Point(318, 244)
+        Me.btEliminar.Location = New System.Drawing.Point(424, 300)
+        Me.btEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btEliminar.Name = "btEliminar"
-        Me.btEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btEliminar.Size = New System.Drawing.Size(100, 28)
         Me.btEliminar.TabIndex = 24
         Me.btEliminar.Text = "Eliminar"
         Me.btEliminar.UseVisualStyleBackColor = True
         '
         'btActualizar
         '
-        Me.btActualizar.Location = New System.Drawing.Point(174, 244)
+        Me.btActualizar.Location = New System.Drawing.Point(232, 300)
+        Me.btActualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btActualizar.Name = "btActualizar"
-        Me.btActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.btActualizar.Size = New System.Drawing.Size(100, 28)
         Me.btActualizar.TabIndex = 23
         Me.btActualizar.Text = "Actualizar"
         Me.btActualizar.UseVisualStyleBackColor = True
         '
         'btGuardar
         '
-        Me.btGuardar.Location = New System.Drawing.Point(31, 244)
+        Me.btGuardar.Location = New System.Drawing.Point(41, 300)
+        Me.btGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btGuardar.Name = "btGuardar"
-        Me.btGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btGuardar.Size = New System.Drawing.Size(100, 28)
         Me.btGuardar.TabIndex = 22
         Me.btGuardar.Text = "Guardar"
         Me.btGuardar.UseVisualStyleBackColor = True
@@ -107,89 +110,82 @@ Partial Class Ventas
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 74)
+        Me.DataGridView1.Location = New System.Drawing.Point(16, 91)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(511, 150)
+        Me.DataGridView1.RowHeadersWidth = 51
+        Me.DataGridView1.Size = New System.Drawing.Size(681, 185)
         Me.DataGridView1.TabIndex = 21
-        '
-        'txbuscarVenta
-        '
-        Me.txbuscarVenta.Location = New System.Drawing.Point(156, 27)
-        Me.txbuscarVenta.Name = "txbuscarVenta"
-        Me.txbuscarVenta.Size = New System.Drawing.Size(206, 20)
-        Me.txbuscarVenta.TabIndex = 20
-        '
-        'lbBusquedaVenta
-        '
-        Me.lbBusquedaVenta.AutoSize = True
-        Me.lbBusquedaVenta.Location = New System.Drawing.Point(6, 29)
-        Me.lbBusquedaVenta.Name = "lbBusquedaVenta"
-        Me.lbBusquedaVenta.Size = New System.Drawing.Size(150, 13)
-        Me.lbBusquedaVenta.TabIndex = 19
-        Me.lbBusquedaVenta.Text = "Escriba el Numero de la Venta"
         '
         'btBuscar
         '
-        Me.btBuscar.Location = New System.Drawing.Point(411, 24)
+        Me.btBuscar.Location = New System.Drawing.Point(41, 55)
+        Me.btBuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(75, 23)
+        Me.btBuscar.Size = New System.Drawing.Size(100, 28)
         Me.btBuscar.TabIndex = 18
         Me.btBuscar.Text = "Buscar"
         Me.btBuscar.UseVisualStyleBackColor = True
         '
         'txCodEmple
         '
-        Me.txCodEmple.Location = New System.Drawing.Point(123, 159)
+        Me.txCodEmple.Location = New System.Drawing.Point(164, 196)
+        Me.txCodEmple.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txCodEmple.Name = "txCodEmple"
-        Me.txCodEmple.Size = New System.Drawing.Size(100, 20)
+        Me.txCodEmple.Size = New System.Drawing.Size(132, 22)
         Me.txCodEmple.TabIndex = 28
         '
         'txtNumVenta
         '
-        Me.txtNumVenta.Location = New System.Drawing.Point(123, 104)
+        Me.txtNumVenta.Location = New System.Drawing.Point(164, 128)
+        Me.txtNumVenta.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNumVenta.Name = "txtNumVenta"
-        Me.txtNumVenta.Size = New System.Drawing.Size(100, 20)
+        Me.txtNumVenta.Size = New System.Drawing.Size(132, 22)
         Me.txtNumVenta.TabIndex = 27
         '
         'lbCodEmple
         '
         Me.lbCodEmple.AutoSize = True
-        Me.lbCodEmple.Location = New System.Drawing.Point(21, 162)
+        Me.lbCodEmple.Location = New System.Drawing.Point(28, 199)
+        Me.lbCodEmple.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbCodEmple.Name = "lbCodEmple"
-        Me.lbCodEmple.Size = New System.Drawing.Size(105, 13)
+        Me.lbCodEmple.Size = New System.Drawing.Size(139, 17)
         Me.lbCodEmple.TabIndex = 25
         Me.lbCodEmple.Text = "Codigo de Empleado"
         '
         'lbCodigoCli
         '
         Me.lbCodigoCli.AutoSize = True
-        Me.lbCodigoCli.Location = New System.Drawing.Point(325, 104)
+        Me.lbCodigoCli.Location = New System.Drawing.Point(433, 128)
+        Me.lbCodigoCli.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbCodigoCli.Name = "lbCodigoCli"
-        Me.lbCodigoCli.Size = New System.Drawing.Size(92, 13)
+        Me.lbCodigoCli.Size = New System.Drawing.Size(122, 17)
         Me.lbCodigoCli.TabIndex = 23
         Me.lbCodigoCli.Text = "Codigo del Cliente"
         '
         'txCodCli
         '
-        Me.txCodCli.Location = New System.Drawing.Point(427, 97)
+        Me.txCodCli.Location = New System.Drawing.Point(569, 119)
+        Me.txCodCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txCodCli.Name = "txCodCli"
-        Me.txCodCli.Size = New System.Drawing.Size(100, 20)
+        Me.txCodCli.Size = New System.Drawing.Size(132, 22)
         Me.txCodCli.TabIndex = 22
         '
         'lbNumeroVenta
         '
         Me.lbNumeroVenta.AutoSize = True
-        Me.lbNumeroVenta.Location = New System.Drawing.Point(15, 108)
+        Me.lbNumeroVenta.Location = New System.Drawing.Point(20, 133)
+        Me.lbNumeroVenta.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbNumeroVenta.Name = "lbNumeroVenta"
-        Me.lbNumeroVenta.Size = New System.Drawing.Size(90, 13)
+        Me.lbNumeroVenta.Size = New System.Drawing.Size(119, 17)
         Me.lbNumeroVenta.TabIndex = 21
         Me.lbNumeroVenta.Text = "Numero de Venta"
         '
         'Ventas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(568, 554)
+        Me.ClientSize = New System.Drawing.Size(757, 682)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txCodEmple)
@@ -198,11 +194,11 @@ Partial Class Ventas
         Me.Controls.Add(Me.lbCodigoCli)
         Me.Controls.Add(Me.txCodCli)
         Me.Controls.Add(Me.lbNumeroVenta)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Ventas"
         Me.Text = "Ventas"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -216,8 +212,6 @@ Partial Class Ventas
     Friend WithEvents btActualizar As Button
     Friend WithEvents btGuardar As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents txbuscarVenta As TextBox
-    Friend WithEvents lbBusquedaVenta As Label
     Friend WithEvents btBuscar As Button
     Friend WithEvents txCodEmple As TextBox
     Friend WithEvents txtNumVenta As TextBox

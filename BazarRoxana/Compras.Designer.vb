@@ -29,8 +29,6 @@ Partial Class Compras
         Me.btActualizar = New System.Windows.Forms.Button()
         Me.btGuardar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.txbuscarVenta = New System.Windows.Forms.TextBox()
-        Me.lbBusquedaVenta = New System.Windows.Forms.Label()
         Me.btBuscar = New System.Windows.Forms.Button()
         Me.txCodEmple = New System.Windows.Forms.TextBox()
         Me.txNumCompra = New System.Windows.Forms.TextBox()
@@ -59,8 +57,6 @@ Partial Class Compras
         Me.GroupBox1.Controls.Add(Me.btActualizar)
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
-        Me.GroupBox1.Controls.Add(Me.txbuscarVenta)
-        Me.GroupBox1.Controls.Add(Me.lbBusquedaVenta)
         Me.GroupBox1.Controls.Add(Me.btBuscar)
         Me.GroupBox1.Location = New System.Drawing.Point(47, 320)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
@@ -121,27 +117,9 @@ Partial Class Compras
         Me.DataGridView1.Size = New System.Drawing.Size(681, 185)
         Me.DataGridView1.TabIndex = 21
         '
-        'txbuscarVenta
-        '
-        Me.txbuscarVenta.Location = New System.Drawing.Point(228, 36)
-        Me.txbuscarVenta.Margin = New System.Windows.Forms.Padding(4)
-        Me.txbuscarVenta.Name = "txbuscarVenta"
-        Me.txbuscarVenta.Size = New System.Drawing.Size(273, 22)
-        Me.txbuscarVenta.TabIndex = 20
-        '
-        'lbBusquedaVenta
-        '
-        Me.lbBusquedaVenta.AutoSize = True
-        Me.lbBusquedaVenta.Location = New System.Drawing.Point(8, 36)
-        Me.lbBusquedaVenta.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbBusquedaVenta.Name = "lbBusquedaVenta"
-        Me.lbBusquedaVenta.Size = New System.Drawing.Size(212, 17)
-        Me.lbBusquedaVenta.TabIndex = 19
-        Me.lbBusquedaVenta.Text = "Escriba el Numero de la Compra" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
         'btBuscar
         '
-        Me.btBuscar.Location = New System.Drawing.Point(548, 30)
+        Me.btBuscar.Location = New System.Drawing.Point(41, 36)
         Me.btBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(100, 28)
@@ -220,7 +198,6 @@ Partial Class Compras
         Me.Text = "Compras"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -234,8 +211,6 @@ Partial Class Compras
     Friend WithEvents btActualizar As Button
     Friend WithEvents btGuardar As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents txbuscarVenta As TextBox
-    Friend WithEvents lbBusquedaVenta As Label
     Friend WithEvents btBuscar As Button
     Friend WithEvents txCodEmple As TextBox
     Friend WithEvents txNumCompra As TextBox

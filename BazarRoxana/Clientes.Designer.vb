@@ -38,8 +38,6 @@ Partial Class Clientes
         Me.btActualizar = New System.Windows.Forms.Button()
         Me.btGuardar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.txbuscarCli = New System.Windows.Forms.TextBox()
-        Me.lbBusquedacli = New System.Windows.Forms.Label()
         Me.btBuscar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
@@ -60,7 +58,7 @@ Partial Class Clientes
         'txCodCli
         '
         Me.txCodCli.Location = New System.Drawing.Point(175, 142)
-        Me.txCodCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txCodCli.Margin = New System.Windows.Forms.Padding(4)
         Me.txCodCli.Name = "txCodCli"
         Me.txCodCli.Size = New System.Drawing.Size(132, 22)
         Me.txCodCli.TabIndex = 1
@@ -108,7 +106,7 @@ Partial Class Clientes
         'txNomCli
         '
         Me.txNomCli.Location = New System.Drawing.Point(591, 145)
-        Me.txNomCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txNomCli.Margin = New System.Windows.Forms.Padding(4)
         Me.txNomCli.Name = "txNomCli"
         Me.txNomCli.Size = New System.Drawing.Size(132, 22)
         Me.txNomCli.TabIndex = 6
@@ -116,7 +114,7 @@ Partial Class Clientes
         'txCorreoCli
         '
         Me.txCorreoCli.Location = New System.Drawing.Point(591, 199)
-        Me.txCorreoCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txCorreoCli.Margin = New System.Windows.Forms.Padding(4)
         Me.txCorreoCli.Name = "txCorreoCli"
         Me.txCorreoCli.Size = New System.Drawing.Size(132, 22)
         Me.txCorreoCli.TabIndex = 8
@@ -124,7 +122,7 @@ Partial Class Clientes
         'txTelCli
         '
         Me.txTelCli.Location = New System.Drawing.Point(175, 196)
-        Me.txTelCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txTelCli.Margin = New System.Windows.Forms.Padding(4)
         Me.txTelCli.Name = "txTelCli"
         Me.txTelCli.Size = New System.Drawing.Size(132, 22)
         Me.txTelCli.TabIndex = 7
@@ -132,7 +130,7 @@ Partial Class Clientes
         'rtxDirCli
         '
         Me.rtxDirCli.Location = New System.Drawing.Point(185, 261)
-        Me.rtxDirCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.rtxDirCli.Margin = New System.Windows.Forms.Padding(4)
         Me.rtxDirCli.Name = "rtxDirCli"
         Me.rtxDirCli.Size = New System.Drawing.Size(225, 47)
         Me.rtxDirCli.TabIndex = 18
@@ -145,13 +143,11 @@ Partial Class Clientes
         Me.GroupBox1.Controls.Add(Me.btActualizar)
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
-        Me.GroupBox1.Controls.Add(Me.txbuscarCli)
-        Me.GroupBox1.Controls.Add(Me.lbBusquedacli)
         Me.GroupBox1.Controls.Add(Me.btBuscar)
         Me.GroupBox1.Location = New System.Drawing.Point(43, 345)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(709, 338)
         Me.GroupBox1.TabIndex = 19
         Me.GroupBox1.TabStop = False
@@ -160,7 +156,7 @@ Partial Class Clientes
         'btSalir
         '
         Me.btSalir.Location = New System.Drawing.Point(597, 300)
-        Me.btSalir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btSalir.Margin = New System.Windows.Forms.Padding(4)
         Me.btSalir.Name = "btSalir"
         Me.btSalir.Size = New System.Drawing.Size(100, 28)
         Me.btSalir.TabIndex = 25
@@ -170,7 +166,7 @@ Partial Class Clientes
         'btEliminar
         '
         Me.btEliminar.Location = New System.Drawing.Point(424, 300)
-        Me.btEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.btEliminar.Name = "btEliminar"
         Me.btEliminar.Size = New System.Drawing.Size(100, 28)
         Me.btEliminar.TabIndex = 24
@@ -180,7 +176,7 @@ Partial Class Clientes
         'btActualizar
         '
         Me.btActualizar.Location = New System.Drawing.Point(232, 300)
-        Me.btActualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btActualizar.Margin = New System.Windows.Forms.Padding(4)
         Me.btActualizar.Name = "btActualizar"
         Me.btActualizar.Size = New System.Drawing.Size(100, 28)
         Me.btActualizar.TabIndex = 23
@@ -190,7 +186,7 @@ Partial Class Clientes
         'btGuardar
         '
         Me.btGuardar.Location = New System.Drawing.Point(41, 300)
-        Me.btGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btGuardar.Name = "btGuardar"
         Me.btGuardar.Size = New System.Drawing.Size(100, 28)
         Me.btGuardar.TabIndex = 22
@@ -201,34 +197,16 @@ Partial Class Clientes
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(16, 91)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
         Me.DataGridView1.Size = New System.Drawing.Size(681, 185)
         Me.DataGridView1.TabIndex = 21
         '
-        'txbuscarCli
-        '
-        Me.txbuscarCli.Location = New System.Drawing.Point(208, 33)
-        Me.txbuscarCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.txbuscarCli.Name = "txbuscarCli"
-        Me.txbuscarCli.Size = New System.Drawing.Size(273, 22)
-        Me.txbuscarCli.TabIndex = 20
-        '
-        'lbBusquedacli
-        '
-        Me.lbBusquedacli.AutoSize = True
-        Me.lbBusquedacli.Location = New System.Drawing.Point(12, 36)
-        Me.lbBusquedacli.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbBusquedacli.Name = "lbBusquedacli"
-        Me.lbBusquedacli.Size = New System.Drawing.Size(188, 17)
-        Me.lbBusquedacli.TabIndex = 19
-        Me.lbBusquedacli.Text = "Escriba el Codigo del Cliente"
-        '
         'btBuscar
         '
-        Me.btBuscar.Location = New System.Drawing.Point(548, 30)
-        Me.btBuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btBuscar.Location = New System.Drawing.Point(41, 43)
+        Me.btBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(100, 28)
         Me.btBuscar.TabIndex = 18
@@ -238,7 +216,7 @@ Partial Class Clientes
         'PictureBox1
         '
         Me.PictureBox1.Location = New System.Drawing.Point(323, 38)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(133, 63)
         Me.PictureBox1.TabIndex = 20
@@ -261,11 +239,10 @@ Partial Class Clientes
         Me.Controls.Add(Me.lbCodigoCli)
         Me.Controls.Add(Me.txCodCli)
         Me.Controls.Add(Me.lbNombreCli)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Clientes"
         Me.Text = "Clientes"
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -289,8 +266,6 @@ Partial Class Clientes
     Friend WithEvents btActualizar As Button
     Friend WithEvents btGuardar As Button
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents txbuscarCli As TextBox
-    Friend WithEvents lbBusquedacli As Label
     Friend WithEvents btBuscar As Button
     Friend WithEvents PictureBox1 As PictureBox
 End Class
