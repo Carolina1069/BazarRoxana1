@@ -1,7 +1,6 @@
 ﻿Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         abrir()
-        txtContrasena.PasswordChar = "*"
     End Sub
 
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
@@ -27,10 +26,6 @@
     End Sub
 
     Private Sub cbxMostrarContra_CheckedChanged(sender As Object, e As EventArgs) Handles cbxMostrarContra.CheckedChanged
-        If cbxMostrarContra.Checked = True Then ' si el checbox es verdadero
-            txtContrasena.PasswordChar = "" ' mostrara la contraseña
-        ElseIf cbxMostrarContra.Checked = False Then ' sino, si el checbox es falso
-            txtContrasena.PasswordChar = "*" ' mostrara asteriscos
-        End If ' fin de desicion
+        txtContrasena.UseSystemPasswordChar = Not cbxMostrarContra.Checked
     End Sub
 End Class

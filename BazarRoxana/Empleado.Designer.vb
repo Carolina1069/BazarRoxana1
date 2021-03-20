@@ -197,6 +197,7 @@ Partial Class Empleado
         Me.TxtContraseña.Name = "TxtContraseña"
         Me.TxtContraseña.Size = New System.Drawing.Size(100, 20)
         Me.TxtContraseña.TabIndex = 42
+        Me.TxtContraseña.UseSystemPasswordChar = True
         '
         'cbxMostrarContra
         '

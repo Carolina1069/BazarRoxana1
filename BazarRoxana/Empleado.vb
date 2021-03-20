@@ -2,7 +2,7 @@
 
 Public Class Empleado
     Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TxtContraseña.PasswordChar = "*"
+
         Dim conec As New SqlClient.SqlConnection
         conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
@@ -167,10 +167,6 @@ Public Class Empleado
     End Sub
 
     Private Sub cbxMostrarContra_CheckedChanged(sender As Object, e As EventArgs) Handles cbxMostrarContra.CheckedChanged
-        If cbxMostrarContra.Checked = True Then ' si el checbox es verdadero
-            TxtContraseña.PasswordChar = "" ' mostrara la contraseña
-        ElseIf cbxMostrarContra.Checked = False Then ' sino, si el checbox es falso
-            TxtContraseña.PasswordChar = "*" ' mostrara asteriscos
-        End If ' fin de desicion
+        TxtContraseña.UseSystemPasswordChar = Not cbxMostrarContra.Checked
     End Sub
 End Class

@@ -72,6 +72,7 @@ Partial Class Login
         Me.txtContrasena.Name = "txtContrasena"
         Me.txtContrasena.Size = New System.Drawing.Size(126, 20)
         Me.txtContrasena.TabIndex = 12
+        Me.txtContrasena.UseSystemPasswordChar = True
         '
         'Label2
         '
