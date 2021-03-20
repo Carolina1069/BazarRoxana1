@@ -130,4 +130,48 @@ Public Class Proveedores
 
 
     End Sub
+
+    'Funcion para que solo permite el ingreso de caracteres tipo letra
+    Sub SoloLetras(ByRef e As System.Windows.Forms.KeyPressEventArgs)
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = True
+            MsgBox("Solo se puede ingresar valores de tipo texto", MsgBoxStyle.Exclamation, "Ingreso de Texto")
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = False
+        End If
+    End Sub
+
+    'Funcion para que solo permite el ingreso de caracteres tipo numerico
+    Sub SoloNumeros(ByRef e As System.Windows.Forms.KeyPressEventArgs)
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Solo se puede ingresar valores de tipo número", MsgBoxStyle.Exclamation, "Ingreso de Número")
+        End If
+    End Sub
+
+    Private Sub txCodProve_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txCodProve.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txNomProv_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txNomProv.KeyPress
+        SoloLetras(e)
+    End Sub
+
+    Private Sub TxtTelfonoEmpresa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTelfonoEmpresa.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txtNombrePreEm_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombrePreEm.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txtTelProv_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelProv.KeyPress
+        SoloNumeros(e)
+    End Sub
 End Class

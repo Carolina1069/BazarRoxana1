@@ -93,22 +93,16 @@
       <DependentUpon>Clientes.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DetalleCompra.Designer.vb">
-      <DependentUpon>DetalleCompra.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DetalleCompra.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DetalleVenta.Designer.vb">
-      <DependentUpon>DetalleVenta.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DetalleVenta.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Empleado.Designer.vb">
       <DependentUpon>Empleado.vb</DependentUpon>
     </Compile>
     <Compile Include="Empleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -156,14 +150,11 @@
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DetalleCompra.resx">
-      <DependentUpon>DetalleCompra.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DetalleVenta.resx">
-      <DependentUpon>DetalleVenta.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Empleado.resx">
       <DependentUpon>Empleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

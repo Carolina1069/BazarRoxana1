@@ -24,6 +24,7 @@ Partial Class Empleado
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnActTabla = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
@@ -36,7 +37,6 @@ Partial Class Empleado
         Me.txtNombreEmpleado = New System.Windows.Forms.TextBox()
         Me.lbCodigoEmpleado = New System.Windows.Forms.Label()
         Me.CbxNivel = New System.Windows.Forms.ComboBox()
-        Me.btnActTabla = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -68,6 +68,16 @@ Partial Class Empleado
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda del empleado"
+        '
+        'btnActTabla
+        '
+        Me.btnActTabla.Location = New System.Drawing.Point(553, 45)
+        Me.btnActTabla.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnActTabla.Name = "btnActTabla"
+        Me.btnActTabla.Size = New System.Drawing.Size(144, 28)
+        Me.btnActTabla.TabIndex = 27
+        Me.btnActTabla.Text = "Actualizar Tabla"
+        Me.btnActTabla.UseVisualStyleBackColor = True
         '
         'btnSalir
         '
@@ -184,16 +194,6 @@ Partial Class Empleado
         Me.CbxNivel.Name = "CbxNivel"
         Me.CbxNivel.Size = New System.Drawing.Size(160, 24)
         Me.CbxNivel.TabIndex = 41
-        '
-        'btnActTabla
-        '
-        Me.btnActTabla.Location = New System.Drawing.Point(553, 45)
-        Me.btnActTabla.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnActTabla.Name = "btnActTabla"
-        Me.btnActTabla.Size = New System.Drawing.Size(144, 28)
-        Me.btnActTabla.TabIndex = 27
-        Me.btnActTabla.Text = "Actualizar Tabla"
-        Me.btnActTabla.UseVisualStyleBackColor = True
         '
         'Empleado
         '
