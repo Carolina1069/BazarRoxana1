@@ -27,26 +27,29 @@ Partial Class Login
         Me.cbxMostrarContra = New System.Windows.Forms.CheckBox()
         Me.txtContrasena = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.txtCodEmpleado = New System.Windows.Forms.TextBox()
+        Me.txtNombreEmpleado = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(700, 559)
+        Me.btnSalir.Location = New System.Drawing.Point(525, 454)
+        Me.btnSalir.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(121, 32)
+        Me.btnSalir.Size = New System.Drawing.Size(91, 26)
         Me.btnSalir.TabIndex = 15
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
         'btnIngresar
         '
-        Me.btnIngresar.Location = New System.Drawing.Point(337, 386)
+        Me.btnIngresar.Location = New System.Drawing.Point(253, 314)
+        Me.btnIngresar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.Size = New System.Drawing.Size(167, 32)
+        Me.btnIngresar.Size = New System.Drawing.Size(125, 26)
         Me.btnIngresar.TabIndex = 14
         Me.btnIngresar.Text = "Ingresar"
         Me.btnIngresar.UseVisualStyleBackColor = True
@@ -54,66 +57,81 @@ Partial Class Login
         'cbxMostrarContra
         '
         Me.cbxMostrarContra.AutoSize = True
-        Me.cbxMostrarContra.Location = New System.Drawing.Point(337, 359)
+        Me.cbxMostrarContra.Location = New System.Drawing.Point(253, 292)
+        Me.cbxMostrarContra.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxMostrarContra.Name = "cbxMostrarContra"
-        Me.cbxMostrarContra.Size = New System.Drawing.Size(148, 21)
+        Me.cbxMostrarContra.Size = New System.Drawing.Size(114, 17)
         Me.cbxMostrarContra.TabIndex = 13
         Me.cbxMostrarContra.Text = "Mostrar contaseña"
         Me.cbxMostrarContra.UseVisualStyleBackColor = True
         '
         'txtContrasena
         '
-        Me.txtContrasena.Location = New System.Drawing.Point(337, 291)
+        Me.txtContrasena.Location = New System.Drawing.Point(253, 236)
+        Me.txtContrasena.Margin = New System.Windows.Forms.Padding(2)
         Me.txtContrasena.Name = "txtContrasena"
-        Me.txtContrasena.Size = New System.Drawing.Size(167, 22)
+        Me.txtContrasena.Size = New System.Drawing.Size(126, 20)
         Me.txtContrasena.TabIndex = 12
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(193, 296)
+        Me.Label2.Location = New System.Drawing.Point(145, 240)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(81, 17)
+        Me.Label2.Size = New System.Drawing.Size(61, 13)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Contraseña"
         '
-        'txtCodEmpleado
+        'txtNombreEmpleado
         '
-        Me.txtCodEmpleado.Location = New System.Drawing.Point(337, 251)
-        Me.txtCodEmpleado.Name = "txtCodEmpleado"
-        Me.txtCodEmpleado.Size = New System.Drawing.Size(167, 22)
-        Me.txtCodEmpleado.TabIndex = 10
+        Me.txtNombreEmpleado.Location = New System.Drawing.Point(253, 204)
+        Me.txtNombreEmpleado.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
+        Me.txtNombreEmpleado.Size = New System.Drawing.Size(126, 20)
+        Me.txtNombreEmpleado.TabIndex = 10
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(193, 254)
+        Me.Label1.Location = New System.Drawing.Point(145, 206)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(138, 17)
+        Me.Label1.Size = New System.Drawing.Size(108, 13)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Codigo de empleado"
+        Me.Label1.Text = "Nombre de empleado"
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(337, 74)
+        Me.PictureBox1.Location = New System.Drawing.Point(253, 60)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(152, 99)
+        Me.PictureBox1.Size = New System.Drawing.Size(114, 80)
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
+        'ProgressBar1
+        '
+        Me.ProgressBar1.Location = New System.Drawing.Point(204, 413)
+        Me.ProgressBar1.Name = "ProgressBar1"
+        Me.ProgressBar1.Size = New System.Drawing.Size(231, 23)
+        Me.ProgressBar1.TabIndex = 16
+        '
         'Login
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(829, 601)
+        Me.ClientSize = New System.Drawing.Size(622, 488)
+        Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnIngresar)
         Me.Controls.Add(Me.cbxMostrarContra)
         Me.Controls.Add(Me.txtContrasena)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtCodEmpleado)
+        Me.Controls.Add(Me.txtNombreEmpleado)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Login"
         Me.Text = "Login"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -127,7 +145,8 @@ Partial Class Login
     Friend WithEvents cbxMostrarContra As CheckBox
     Friend WithEvents txtContrasena As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents txtCodEmpleado As TextBox
+    Friend WithEvents txtNombreEmpleado As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ProgressBar1 As ProgressBar
 End Class

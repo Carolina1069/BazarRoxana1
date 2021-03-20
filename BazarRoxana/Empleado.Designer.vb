@@ -37,6 +37,9 @@ Partial Class Empleado
         Me.txtNombreEmpleado = New System.Windows.Forms.TextBox()
         Me.lbCodigoEmpleado = New System.Windows.Forms.Label()
         Me.CbxNivel = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtContraseña = New System.Windows.Forms.TextBox()
+        Me.cbxMostrarContra = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -44,10 +47,9 @@ Partial Class Empleado
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(311, 18)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Location = New System.Drawing.Point(233, 15)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(133, 63)
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
         Me.PictureBox1.TabIndex = 40
         Me.PictureBox1.TabStop = False
         '
@@ -60,61 +62,54 @@ Partial Class Empleado
         Me.GroupBox1.Controls.Add(Me.btnGuardar)
         Me.GroupBox1.Controls.Add(Me.DGV)
         Me.GroupBox1.Controls.Add(Me.btnBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(31, 252)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(23, 205)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(709, 415)
+        Me.GroupBox1.Size = New System.Drawing.Size(532, 337)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda del empleado"
         '
         'btnActTabla
         '
-        Me.btnActTabla.Location = New System.Drawing.Point(553, 45)
-        Me.btnActTabla.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnActTabla.Location = New System.Drawing.Point(415, 37)
         Me.btnActTabla.Name = "btnActTabla"
-        Me.btnActTabla.Size = New System.Drawing.Size(144, 28)
+        Me.btnActTabla.Size = New System.Drawing.Size(108, 23)
         Me.btnActTabla.TabIndex = 27
         Me.btnActTabla.Text = "Actualizar Tabla"
         Me.btnActTabla.UseVisualStyleBackColor = True
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(593, 336)
-        Me.btnSalir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSalir.Location = New System.Drawing.Point(445, 273)
         Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(100, 28)
+        Me.btnSalir.Size = New System.Drawing.Size(75, 23)
         Me.btnSalir.TabIndex = 25
         Me.btnSalir.Text = "Salir"
         Me.btnSalir.UseVisualStyleBackColor = True
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(420, 336)
-        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnEliminar.Location = New System.Drawing.Point(315, 273)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(100, 28)
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar.TabIndex = 24
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(228, 336)
-        Me.btnActualizar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnActualizar.Location = New System.Drawing.Point(171, 273)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(100, 28)
+        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar.TabIndex = 23
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(37, 336)
-        Me.btnGuardar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGuardar.Location = New System.Drawing.Point(28, 273)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(100, 28)
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 22
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
@@ -122,84 +117,106 @@ Partial Class Empleado
         'DGV
         '
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV.Location = New System.Drawing.Point(16, 91)
-        Me.DGV.Margin = New System.Windows.Forms.Padding(4)
+        Me.DGV.Location = New System.Drawing.Point(12, 74)
         Me.DGV.Name = "DGV"
         Me.DGV.RowHeadersWidth = 51
-        Me.DGV.Size = New System.Drawing.Size(681, 185)
+        Me.DGV.Size = New System.Drawing.Size(511, 150)
         Me.DGV.TabIndex = 21
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(37, 45)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnBuscar.Location = New System.Drawing.Point(28, 37)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(100, 28)
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 23)
         Me.btnBuscar.TabIndex = 18
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
         '
         'TxtCodigoEmpleado
         '
-        Me.TxtCodigoEmpleado.Location = New System.Drawing.Point(163, 119)
-        Me.TxtCodigoEmpleado.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtCodigoEmpleado.Location = New System.Drawing.Point(122, 97)
         Me.TxtCodigoEmpleado.Name = "TxtCodigoEmpleado"
-        Me.TxtCodigoEmpleado.Size = New System.Drawing.Size(132, 22)
+        Me.TxtCodigoEmpleado.Size = New System.Drawing.Size(100, 20)
         Me.TxtCodigoEmpleado.TabIndex = 37
         '
         'lbNivel
         '
         Me.lbNivel.AutoSize = True
-        Me.lbNivel.Location = New System.Drawing.Point(27, 191)
-        Me.lbNivel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbNivel.Location = New System.Drawing.Point(20, 155)
         Me.lbNivel.Name = "lbNivel"
-        Me.lbNivel.Size = New System.Drawing.Size(129, 17)
+        Me.lbNivel.Size = New System.Drawing.Size(98, 13)
         Me.lbNivel.TabIndex = 36
         Me.lbNivel.Text = "Nivel del Empleado"
         '
         'lbNombreEmpleado
         '
         Me.lbNombreEmpleado.AutoSize = True
-        Me.lbNombreEmpleado.Location = New System.Drawing.Point(432, 119)
-        Me.lbNombreEmpleado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbNombreEmpleado.Location = New System.Drawing.Point(324, 97)
         Me.lbNombreEmpleado.Name = "lbNombreEmpleado"
-        Me.lbNombreEmpleado.Size = New System.Drawing.Size(150, 17)
+        Me.lbNombreEmpleado.Size = New System.Drawing.Size(113, 13)
         Me.lbNombreEmpleado.TabIndex = 35
         Me.lbNombreEmpleado.Text = "Nombre Del Empleado"
         '
         'txtNombreEmpleado
         '
-        Me.txtNombreEmpleado.Location = New System.Drawing.Point(591, 111)
-        Me.txtNombreEmpleado.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNombreEmpleado.Location = New System.Drawing.Point(443, 90)
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
-        Me.txtNombreEmpleado.Size = New System.Drawing.Size(132, 22)
+        Me.txtNombreEmpleado.Size = New System.Drawing.Size(100, 20)
         Me.txtNombreEmpleado.TabIndex = 34
         '
         'lbCodigoEmpleado
         '
         Me.lbCodigoEmpleado.AutoSize = True
-        Me.lbCodigoEmpleado.Location = New System.Drawing.Point(19, 124)
-        Me.lbCodigoEmpleado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCodigoEmpleado.Location = New System.Drawing.Point(14, 101)
         Me.lbCodigoEmpleado.Name = "lbCodigoEmpleado"
-        Me.lbCodigoEmpleado.Size = New System.Drawing.Size(119, 17)
+        Me.lbCodigoEmpleado.Size = New System.Drawing.Size(90, 13)
         Me.lbCodigoEmpleado.TabIndex = 33
         Me.lbCodigoEmpleado.Text = "Codigo Empleado"
         '
         'CbxNivel
         '
         Me.CbxNivel.FormattingEnabled = True
-        Me.CbxNivel.Items.AddRange(New Object() {"Gerente", "Administrativo", "General"})
-        Me.CbxNivel.Location = New System.Drawing.Point(165, 191)
-        Me.CbxNivel.Margin = New System.Windows.Forms.Padding(4)
+        Me.CbxNivel.Items.AddRange(New Object() {"Gerente", "General"})
+        Me.CbxNivel.Location = New System.Drawing.Point(124, 155)
         Me.CbxNivel.Name = "CbxNivel"
-        Me.CbxNivel.Size = New System.Drawing.Size(160, 24)
+        Me.CbxNivel.Size = New System.Drawing.Size(121, 21)
         Me.CbxNivel.TabIndex = 41
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(307, 137)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(130, 13)
+        Me.Label1.TabIndex = 43
+        Me.Label1.Text = "Contraseña Del Empleado"
+        '
+        'TxtContraseña
+        '
+        Me.TxtContraseña.Location = New System.Drawing.Point(443, 130)
+        Me.TxtContraseña.Name = "TxtContraseña"
+        Me.TxtContraseña.Size = New System.Drawing.Size(100, 20)
+        Me.TxtContraseña.TabIndex = 42
+        '
+        'cbxMostrarContra
+        '
+        Me.cbxMostrarContra.AutoSize = True
+        Me.cbxMostrarContra.Location = New System.Drawing.Point(438, 159)
+        Me.cbxMostrarContra.Margin = New System.Windows.Forms.Padding(2)
+        Me.cbxMostrarContra.Name = "cbxMostrarContra"
+        Me.cbxMostrarContra.Size = New System.Drawing.Size(114, 17)
+        Me.cbxMostrarContra.TabIndex = 44
+        Me.cbxMostrarContra.Text = "Mostrar contaseña"
+        Me.cbxMostrarContra.UseVisualStyleBackColor = True
         '
         'Empleado
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(757, 682)
+        Me.ClientSize = New System.Drawing.Size(568, 554)
+        Me.Controls.Add(Me.cbxMostrarContra)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TxtContraseña)
         Me.Controls.Add(Me.CbxNivel)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
@@ -208,7 +225,6 @@ Partial Class Empleado
         Me.Controls.Add(Me.lbNombreEmpleado)
         Me.Controls.Add(Me.txtNombreEmpleado)
         Me.Controls.Add(Me.lbCodigoEmpleado)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Empleado"
         Me.Text = "Empleado"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -234,4 +250,7 @@ Partial Class Empleado
     Friend WithEvents lbCodigoEmpleado As Label
     Friend WithEvents CbxNivel As ComboBox
     Friend WithEvents btnActTabla As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TxtContraseña As TextBox
+    Friend WithEvents cbxMostrarContra As CheckBox
 End Class

@@ -2,8 +2,9 @@
 
 Public Class Empleado
     Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TxtContraseña.PasswordChar = "*"
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
@@ -16,14 +17,22 @@ Public Class Empleado
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
+        Dim Cat As Integer
 
-        Dim consultaGuardar As String = "insert into Empleados(CodEmple, NombEmple, NivelEmple,EstadoEmple) values(@CodEmple, @NombEmple,@NivelEmple,1)"
+        If CbxNivel.SelectedItem = "Gerente" Then
+            Cat = 1
+        Else
+            Cat = 2
+        End If
+
+        Dim consultaGuardar As String = "insert into Empleados(CodEmple, NombEmple, Contraseña,NivelEmple,EstadoEmple) values(@CodEmple, @NombEmple,@Contraseña,@NivelEmple,1)"
         Dim ejecutar As New SqlCommand(consultaGuardar, conec)
         ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodigoEmpleado.Text))
         ejecutar.Parameters.AddWithValue("@NombEmple", (txtNombreEmpleado.Text))
-        ejecutar.Parameters.AddWithValue("@NivelEmple", (CbxNivel.SelectedItem))
+        ejecutar.Parameters.AddWithValue("@Contraseña", (TxtContraseña.Text))
+        ejecutar.Parameters.AddWithValue("@NivelEmple", (Cat))
 
 
         ejecutar.ExecuteNonQuery()
@@ -37,14 +46,21 @@ Public Class Empleado
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
+        Dim Cat As Integer
+
+        If CbxNivel.SelectedItem = "Gerente" Then
+            Cat = 1
+        Else
+            Cat = 2
+        End If
 
         Dim consultaAct As String = "update Empleados set NombEmple=@NombEmple, NivelEmple=@NivelEmple where CodEmple= @CodEmple"
         Dim ejecutar As New SqlCommand(consultaAct, conec)
         ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodigoEmpleado.Text))
         ejecutar.Parameters.AddWithValue("@NombEmple", (txtNombreEmpleado.Text))
-        ejecutar.Parameters.AddWithValue("@NivelEmple", (CbxNivel.SelectedItem))
+        ejecutar.Parameters.AddWithValue("@NivelEmple", (Cat))
 
 
         ejecutar.ExecuteNonQuery()
@@ -58,7 +74,7 @@ Public Class Empleado
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim consultaElim As String = "delete from Empleados  where CodEmple= @CodEmple"
@@ -76,7 +92,7 @@ Public Class Empleado
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim busqueda As Integer
@@ -107,7 +123,7 @@ Public Class Empleado
 
     Private Sub btnActTabla_Click(sender As Object, e As EventArgs) Handles btnActTabla.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
@@ -148,5 +164,13 @@ Public Class Empleado
 
     Private Sub txtNombreEmpleado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombreEmpleado.KeyPress
         SoloLetras(e)
+    End Sub
+
+    Private Sub cbxMostrarContra_CheckedChanged(sender As Object, e As EventArgs) Handles cbxMostrarContra.CheckedChanged
+        If cbxMostrarContra.Checked = True Then ' si el checbox es verdadero
+            TxtContraseña.PasswordChar = "" ' mostrara la contraseña
+        ElseIf cbxMostrarContra.Checked = False Then ' sino, si el checbox es falso
+            TxtContraseña.PasswordChar = "*" ' mostrara asteriscos
+        End If ' fin de desicion
     End Sub
 End Class

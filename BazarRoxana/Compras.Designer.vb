@@ -43,10 +43,9 @@ Partial Class Compras
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(327, 13)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Location = New System.Drawing.Point(245, 11)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(133, 63)
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
         Me.PictureBox1.TabIndex = 40
         Me.PictureBox1.TabStop = False
         '
@@ -58,51 +57,45 @@ Partial Class Compras
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.btBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(47, 320)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(35, 260)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(709, 338)
+        Me.GroupBox1.Size = New System.Drawing.Size(532, 275)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de la Compra"
         '
         'btSalir
         '
-        Me.btSalir.Location = New System.Drawing.Point(597, 300)
-        Me.btSalir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btSalir.Location = New System.Drawing.Point(448, 244)
         Me.btSalir.Name = "btSalir"
-        Me.btSalir.Size = New System.Drawing.Size(100, 28)
+        Me.btSalir.Size = New System.Drawing.Size(75, 23)
         Me.btSalir.TabIndex = 25
         Me.btSalir.Text = "Salir"
         Me.btSalir.UseVisualStyleBackColor = True
         '
         'btEliminar
         '
-        Me.btEliminar.Location = New System.Drawing.Point(424, 300)
-        Me.btEliminar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btEliminar.Location = New System.Drawing.Point(318, 244)
         Me.btEliminar.Name = "btEliminar"
-        Me.btEliminar.Size = New System.Drawing.Size(100, 28)
+        Me.btEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btEliminar.TabIndex = 24
         Me.btEliminar.Text = "Eliminar"
         Me.btEliminar.UseVisualStyleBackColor = True
         '
         'btActualizar
         '
-        Me.btActualizar.Location = New System.Drawing.Point(232, 300)
-        Me.btActualizar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btActualizar.Location = New System.Drawing.Point(174, 244)
         Me.btActualizar.Name = "btActualizar"
-        Me.btActualizar.Size = New System.Drawing.Size(100, 28)
+        Me.btActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btActualizar.TabIndex = 23
         Me.btActualizar.Text = "Actualizar"
         Me.btActualizar.UseVisualStyleBackColor = True
         '
         'btGuardar
         '
-        Me.btGuardar.Location = New System.Drawing.Point(41, 300)
-        Me.btGuardar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btGuardar.Location = New System.Drawing.Point(31, 244)
         Me.btGuardar.Name = "btGuardar"
-        Me.btGuardar.Size = New System.Drawing.Size(100, 28)
+        Me.btGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btGuardar.TabIndex = 22
         Me.btGuardar.Text = "Guardar"
         Me.btGuardar.UseVisualStyleBackColor = True
@@ -110,82 +103,74 @@ Partial Class Compras
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 91)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 74)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(681, 185)
+        Me.DataGridView1.Size = New System.Drawing.Size(511, 150)
         Me.DataGridView1.TabIndex = 21
         '
         'btBuscar
         '
-        Me.btBuscar.Location = New System.Drawing.Point(41, 36)
-        Me.btBuscar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btBuscar.Location = New System.Drawing.Point(31, 29)
         Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(100, 28)
+        Me.btBuscar.Size = New System.Drawing.Size(75, 23)
         Me.btBuscar.TabIndex = 18
         Me.btBuscar.Text = "Buscar"
         Me.btBuscar.UseVisualStyleBackColor = True
         '
         'txCodEmple
         '
-        Me.txCodEmple.Location = New System.Drawing.Point(179, 182)
-        Me.txCodEmple.Margin = New System.Windows.Forms.Padding(4)
+        Me.txCodEmple.Location = New System.Drawing.Point(134, 148)
         Me.txCodEmple.Name = "txCodEmple"
-        Me.txCodEmple.Size = New System.Drawing.Size(132, 22)
+        Me.txCodEmple.Size = New System.Drawing.Size(100, 20)
         Me.txCodEmple.TabIndex = 38
         '
         'txNumCompra
         '
-        Me.txNumCompra.Location = New System.Drawing.Point(179, 114)
-        Me.txNumCompra.Margin = New System.Windows.Forms.Padding(4)
+        Me.txNumCompra.Location = New System.Drawing.Point(134, 93)
         Me.txNumCompra.Name = "txNumCompra"
-        Me.txNumCompra.Size = New System.Drawing.Size(132, 22)
+        Me.txNumCompra.Size = New System.Drawing.Size(100, 20)
         Me.txNumCompra.TabIndex = 37
         '
         'lbCodEmple
         '
         Me.lbCodEmple.AutoSize = True
-        Me.lbCodEmple.Location = New System.Drawing.Point(35, 185)
-        Me.lbCodEmple.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCodEmple.Location = New System.Drawing.Point(26, 150)
         Me.lbCodEmple.Name = "lbCodEmple"
-        Me.lbCodEmple.Size = New System.Drawing.Size(139, 17)
+        Me.lbCodEmple.Size = New System.Drawing.Size(105, 13)
         Me.lbCodEmple.TabIndex = 36
         Me.lbCodEmple.Text = "Codigo de Empleado"
         '
         'lbCodigoProv
         '
         Me.lbCodigoProv.AutoSize = True
-        Me.lbCodigoProv.Location = New System.Drawing.Point(448, 114)
-        Me.lbCodigoProv.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCodigoProv.Location = New System.Drawing.Point(336, 93)
         Me.lbCodigoProv.Name = "lbCodigoProv"
-        Me.lbCodigoProv.Size = New System.Drawing.Size(145, 17)
+        Me.lbCodigoProv.Size = New System.Drawing.Size(109, 13)
         Me.lbCodigoProv.TabIndex = 35
         Me.lbCodigoProv.Text = "Codigo del Proveedor"
         '
         'txCodProv
         '
-        Me.txCodProv.Location = New System.Drawing.Point(601, 111)
-        Me.txCodProv.Margin = New System.Windows.Forms.Padding(4)
+        Me.txCodProv.Location = New System.Drawing.Point(451, 90)
         Me.txCodProv.Name = "txCodProv"
-        Me.txCodProv.Size = New System.Drawing.Size(132, 22)
+        Me.txCodProv.Size = New System.Drawing.Size(100, 20)
         Me.txCodProv.TabIndex = 34
         '
         'lbNumeroCompra
         '
         Me.lbNumeroCompra.AutoSize = True
-        Me.lbNumeroCompra.Location = New System.Drawing.Point(35, 119)
-        Me.lbNumeroCompra.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbNumeroCompra.Location = New System.Drawing.Point(26, 97)
         Me.lbNumeroCompra.Name = "lbNumeroCompra"
-        Me.lbNumeroCompra.Size = New System.Drawing.Size(131, 17)
+        Me.lbNumeroCompra.Size = New System.Drawing.Size(98, 13)
         Me.lbNumeroCompra.TabIndex = 33
         Me.lbNumeroCompra.Text = "Numero de Compra"
         '
         'Compras
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 680)
+        Me.ClientSize = New System.Drawing.Size(600, 552)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txCodEmple)
@@ -194,6 +179,7 @@ Partial Class Compras
         Me.Controls.Add(Me.lbCodigoProv)
         Me.Controls.Add(Me.txCodProv)
         Me.Controls.Add(Me.lbNumeroCompra)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Compras"
         Me.Text = "Compras"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

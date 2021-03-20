@@ -93,6 +93,7 @@
       <DependentUpon>Clientes.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ConexionLogin.vb" />
     <Compile Include="Empleado.Designer.vb">
       <DependentUpon>Empleado.vb</DependentUpon>
     </Compile>
