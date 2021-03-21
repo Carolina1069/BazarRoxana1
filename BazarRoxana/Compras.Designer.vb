@@ -179,7 +179,7 @@ Partial Class Compras
         Me.Controls.Add(Me.lbCodigoProv)
         Me.Controls.Add(Me.txCodProv)
         Me.Controls.Add(Me.lbNumeroCompra)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Compras"
         Me.Text = "Compras"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

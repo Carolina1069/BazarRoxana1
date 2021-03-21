@@ -22,6 +22,7 @@ Partial Class Login
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnIngresar = New System.Windows.Forms.Button()
         Me.cbxMostrarContra = New System.Windows.Forms.CheckBox()
@@ -31,6 +32,8 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.LbPorcentaje = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,7 +63,7 @@ Partial Class Login
         Me.cbxMostrarContra.Location = New System.Drawing.Point(253, 292)
         Me.cbxMostrarContra.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxMostrarContra.Name = "cbxMostrarContra"
-        Me.cbxMostrarContra.Size = New System.Drawing.Size(114, 17)
+        Me.cbxMostrarContra.Size = New System.Drawing.Size(113, 17)
         Me.cbxMostrarContra.TabIndex = 13
         Me.cbxMostrarContra.Text = "Mostrar contaseña"
         Me.cbxMostrarContra.UseVisualStyleBackColor = True
@@ -113,16 +116,30 @@ Partial Class Login
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(204, 413)
+        Me.ProgressBar1.Location = New System.Drawing.Point(204, 406)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(231, 23)
+        Me.ProgressBar1.Size = New System.Drawing.Size(231, 30)
         Me.ProgressBar1.TabIndex = 16
+        '
+        'Timer1
+        '
+        '
+        'LbPorcentaje
+        '
+        Me.LbPorcentaje.AutoSize = True
+        Me.LbPorcentaje.BackColor = System.Drawing.Color.Transparent
+        Me.LbPorcentaje.Location = New System.Drawing.Point(311, 414)
+        Me.LbPorcentaje.Name = "LbPorcentaje"
+        Me.LbPorcentaje.Size = New System.Drawing.Size(24, 13)
+        Me.LbPorcentaje.TabIndex = 17
+        Me.LbPorcentaje.Text = "0 %"
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(622, 488)
+        Me.Controls.Add(Me.LbPorcentaje)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnIngresar)
@@ -150,4 +167,6 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ProgressBar1 As ProgressBar
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents LbPorcentaje As Label
 End Class
