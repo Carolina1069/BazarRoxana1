@@ -140,6 +140,18 @@
     <Compile Include="Ventas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ViewBusCateg.Designer.vb">
+      <DependentUpon>ViewBusCateg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBusCateg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewBusProv.Designer.vb">
+      <DependentUpon>ViewBusProv.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBusProv.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Categorias.resx">
@@ -171,6 +183,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBusCateg.resx">
+      <DependentUpon>ViewBusCateg.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewBusProv.resx">
+      <DependentUpon>ViewBusProv.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

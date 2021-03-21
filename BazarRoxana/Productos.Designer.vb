@@ -50,6 +50,10 @@ Partial Class Productos
         Me.lbMaxima = New System.Windows.Forms.Label()
         Me.txtUnidStock = New System.Windows.Forms.TextBox()
         Me.lbUnidStock = New System.Windows.Forms.Label()
+        Me.txCodCateg = New System.Windows.Forms.TextBox()
+        Me.lbCodCateg = New System.Windows.Forms.Label()
+        Me.btBuscarProv = New System.Windows.Forms.Button()
+        Me.btBuscarCateg = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,10 +61,9 @@ Partial Class Productos
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(328, 37)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Location = New System.Drawing.Point(246, 30)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(133, 63)
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
         Me.PictureBox1.TabIndex = 32
         Me.PictureBox1.TabStop = False
         '
@@ -72,51 +75,45 @@ Partial Class Productos
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.btBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(47, 405)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(35, 329)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(709, 338)
+        Me.GroupBox1.Size = New System.Drawing.Size(532, 275)
         Me.GroupBox1.TabIndex = 31
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de Producto"
         '
         'btSalir
         '
-        Me.btSalir.Location = New System.Drawing.Point(597, 300)
-        Me.btSalir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btSalir.Location = New System.Drawing.Point(448, 244)
         Me.btSalir.Name = "btSalir"
-        Me.btSalir.Size = New System.Drawing.Size(100, 28)
+        Me.btSalir.Size = New System.Drawing.Size(75, 23)
         Me.btSalir.TabIndex = 25
         Me.btSalir.Text = "Salir"
         Me.btSalir.UseVisualStyleBackColor = True
         '
         'btEliminar
         '
-        Me.btEliminar.Location = New System.Drawing.Point(424, 300)
-        Me.btEliminar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btEliminar.Location = New System.Drawing.Point(318, 244)
         Me.btEliminar.Name = "btEliminar"
-        Me.btEliminar.Size = New System.Drawing.Size(100, 28)
+        Me.btEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btEliminar.TabIndex = 24
         Me.btEliminar.Text = "Eliminar"
         Me.btEliminar.UseVisualStyleBackColor = True
         '
         'btActualizar
         '
-        Me.btActualizar.Location = New System.Drawing.Point(232, 300)
-        Me.btActualizar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btActualizar.Location = New System.Drawing.Point(174, 244)
         Me.btActualizar.Name = "btActualizar"
-        Me.btActualizar.Size = New System.Drawing.Size(100, 28)
+        Me.btActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btActualizar.TabIndex = 23
         Me.btActualizar.Text = "Actualizar"
         Me.btActualizar.UseVisualStyleBackColor = True
         '
         'btGuardar
         '
-        Me.btGuardar.Location = New System.Drawing.Point(41, 300)
-        Me.btGuardar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btGuardar.Location = New System.Drawing.Point(31, 244)
         Me.btGuardar.Name = "btGuardar"
-        Me.btGuardar.Size = New System.Drawing.Size(100, 28)
+        Me.btGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btGuardar.TabIndex = 22
         Me.btGuardar.Text = "Guardar"
         Me.btGuardar.UseVisualStyleBackColor = True
@@ -124,209 +121,225 @@ Partial Class Productos
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 91)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 74)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(681, 185)
+        Me.DataGridView1.Size = New System.Drawing.Size(511, 150)
         Me.DataGridView1.TabIndex = 21
         '
         'btBuscar
         '
-        Me.btBuscar.Location = New System.Drawing.Point(41, 55)
-        Me.btBuscar.Margin = New System.Windows.Forms.Padding(4)
+        Me.btBuscar.Location = New System.Drawing.Point(31, 45)
         Me.btBuscar.Name = "btBuscar"
-        Me.btBuscar.Size = New System.Drawing.Size(100, 28)
+        Me.btBuscar.Size = New System.Drawing.Size(75, 23)
         Me.btBuscar.TabIndex = 18
         Me.btBuscar.Text = "Buscar"
         Me.btBuscar.UseVisualStyleBackColor = True
         '
         'rtxDescProd
         '
-        Me.rtxDescProd.Location = New System.Drawing.Point(218, 198)
-        Me.rtxDescProd.Margin = New System.Windows.Forms.Padding(4)
+        Me.rtxDescProd.Location = New System.Drawing.Point(164, 161)
         Me.rtxDescProd.Name = "rtxDescProd"
-        Me.rtxDescProd.Size = New System.Drawing.Size(225, 74)
+        Me.rtxDescProd.Size = New System.Drawing.Size(159, 54)
         Me.rtxDescProd.TabIndex = 30
         Me.rtxDescProd.Text = ""
         '
         'txCodProv
         '
-        Me.txCodProv.Location = New System.Drawing.Point(605, 198)
-        Me.txCodProv.Margin = New System.Windows.Forms.Padding(4)
+        Me.txCodProv.Location = New System.Drawing.Point(454, 161)
         Me.txCodProv.Name = "txCodProv"
-        Me.txCodProv.Size = New System.Drawing.Size(132, 22)
+        Me.txCodProv.Size = New System.Drawing.Size(100, 20)
         Me.txCodProv.TabIndex = 29
         '
         'txtPriPre
         '
-        Me.txtPriPre.Location = New System.Drawing.Point(135, 296)
-        Me.txtPriPre.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPriPre.Location = New System.Drawing.Point(101, 240)
         Me.txtPriPre.Name = "txtPriPre"
-        Me.txtPriPre.Size = New System.Drawing.Size(132, 22)
+        Me.txtPriPre.Size = New System.Drawing.Size(100, 20)
         Me.txtPriPre.TabIndex = 28
         '
         'txNomProd
         '
-        Me.txNomProd.Location = New System.Drawing.Point(605, 146)
-        Me.txNomProd.Margin = New System.Windows.Forms.Padding(4)
+        Me.txNomProd.Location = New System.Drawing.Point(454, 119)
         Me.txNomProd.Name = "txNomProd"
-        Me.txNomProd.Size = New System.Drawing.Size(132, 22)
+        Me.txNomProd.Size = New System.Drawing.Size(100, 20)
         Me.txNomProd.TabIndex = 27
         '
         'lbPriPre
         '
         Me.lbPriPre.AutoSize = True
-        Me.lbPriPre.Location = New System.Drawing.Point(43, 296)
-        Me.lbPriPre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbPriPre.Location = New System.Drawing.Point(32, 240)
         Me.lbPriPre.Name = "lbPriPre"
-        Me.lbPriPre.Size = New System.Drawing.Size(93, 17)
+        Me.lbPriPre.Size = New System.Drawing.Size(69, 13)
         Me.lbPriPre.TabIndex = 26
         Me.lbPriPre.Text = "Primer Precio"
         '
         'lbDescProd
         '
         Me.lbDescProd.AutoSize = True
-        Me.lbDescProd.Location = New System.Drawing.Point(44, 198)
-        Me.lbDescProd.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbDescProd.Location = New System.Drawing.Point(33, 161)
         Me.lbDescProd.Name = "lbDescProd"
-        Me.lbDescProd.Size = New System.Drawing.Size(166, 17)
+        Me.lbDescProd.Size = New System.Drawing.Size(126, 13)
         Me.lbDescProd.TabIndex = 25
         Me.lbDescProd.Text = "Descripcion del Producto"
         '
         'lbCodProv
         '
         Me.lbCodProv.AutoSize = True
-        Me.lbCodProv.Location = New System.Drawing.Point(452, 198)
-        Me.lbCodProv.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCodProv.Location = New System.Drawing.Point(339, 161)
         Me.lbCodProv.Name = "lbCodProv"
-        Me.lbCodProv.Size = New System.Drawing.Size(145, 17)
+        Me.lbCodProv.Size = New System.Drawing.Size(109, 13)
         Me.lbCodProv.TabIndex = 24
         Me.lbCodProv.Text = "Codigo del Proveedor"
         '
         'lbCodigoCli
         '
         Me.lbCodigoCli.AutoSize = True
-        Me.lbCodigoCli.Location = New System.Drawing.Point(44, 149)
-        Me.lbCodigoCli.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCodigoCli.Location = New System.Drawing.Point(33, 121)
         Me.lbCodigoCli.Name = "lbCodigoCli"
-        Me.lbCodigoCli.Size = New System.Drawing.Size(136, 17)
+        Me.lbCodigoCli.Size = New System.Drawing.Size(103, 13)
         Me.lbCodigoCli.TabIndex = 23
         Me.lbCodigoCli.Text = "Codigo del Producto"
         '
         'txCodProd
         '
-        Me.txCodProd.Location = New System.Drawing.Point(180, 144)
-        Me.txCodProd.Margin = New System.Windows.Forms.Padding(4)
+        Me.txCodProd.Location = New System.Drawing.Point(137, 117)
         Me.txCodProd.Name = "txCodProd"
-        Me.txCodProd.Size = New System.Drawing.Size(132, 22)
+        Me.txCodProd.Size = New System.Drawing.Size(100, 20)
         Me.txCodProd.TabIndex = 22
         '
         'lbNombreProd
         '
         Me.lbNombreProd.AutoSize = True
-        Me.lbNombreProd.Location = New System.Drawing.Point(452, 149)
-        Me.lbNombreProd.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbNombreProd.Location = New System.Drawing.Point(339, 121)
         Me.lbNombreProd.Name = "lbNombreProd"
-        Me.lbNombreProd.Size = New System.Drawing.Size(142, 17)
+        Me.lbNombreProd.Size = New System.Drawing.Size(107, 13)
         Me.lbNombreProd.TabIndex = 21
         Me.lbNombreProd.Text = "Nombre del Producto"
         '
         'txtSegPre
         '
-        Me.txtSegPre.Location = New System.Drawing.Point(396, 296)
-        Me.txtSegPre.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSegPre.Location = New System.Drawing.Point(297, 240)
         Me.txtSegPre.Name = "txtSegPre"
-        Me.txtSegPre.Size = New System.Drawing.Size(132, 22)
+        Me.txtSegPre.Size = New System.Drawing.Size(100, 20)
         Me.txtSegPre.TabIndex = 34
         '
         'lbSegPre
         '
         Me.lbSegPre.AutoSize = True
-        Me.lbSegPre.Location = New System.Drawing.Point(284, 296)
-        Me.lbSegPre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbSegPre.Location = New System.Drawing.Point(213, 240)
         Me.lbSegPre.Name = "lbSegPre"
-        Me.lbSegPre.Size = New System.Drawing.Size(109, 17)
+        Me.lbSegPre.Size = New System.Drawing.Size(83, 13)
         Me.lbSegPre.TabIndex = 33
         Me.lbSegPre.Text = "Segundo Precio"
         '
         'txtTerPre
         '
-        Me.txtTerPre.Location = New System.Drawing.Point(644, 296)
-        Me.txtTerPre.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTerPre.Location = New System.Drawing.Point(483, 240)
         Me.txtTerPre.Name = "txtTerPre"
-        Me.txtTerPre.Size = New System.Drawing.Size(132, 22)
+        Me.txtTerPre.Size = New System.Drawing.Size(100, 20)
         Me.txtTerPre.TabIndex = 36
         '
         'lbTerPre
         '
         Me.lbTerPre.AutoSize = True
-        Me.lbTerPre.Location = New System.Drawing.Point(543, 299)
-        Me.lbTerPre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbTerPre.Location = New System.Drawing.Point(407, 243)
         Me.lbTerPre.Name = "lbTerPre"
-        Me.lbTerPre.Size = New System.Drawing.Size(94, 17)
+        Me.lbTerPre.Size = New System.Drawing.Size(71, 13)
         Me.lbTerPre.TabIndex = 35
         Me.lbTerPre.Text = "Tercer Precio"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(605, 361)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.Location = New System.Drawing.Point(454, 293)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(132, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 42
         '
         'lbMinima
         '
         Me.lbMinima.AutoSize = True
-        Me.lbMinima.Location = New System.Drawing.Point(545, 361)
-        Me.lbMinima.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbMinima.Location = New System.Drawing.Point(409, 293)
         Me.lbMinima.Name = "lbMinima"
-        Me.lbMinima.Size = New System.Drawing.Size(52, 17)
+        Me.lbMinima.Size = New System.Drawing.Size(40, 13)
         Me.lbMinima.TabIndex = 41
         Me.lbMinima.Text = "Minima"
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(378, 356)
-        Me.TextBox2.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox2.Location = New System.Drawing.Point(284, 289)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(132, 22)
+        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
         Me.TextBox2.TabIndex = 40
         '
         'lbMaxima
         '
         Me.lbMaxima.AutoSize = True
-        Me.lbMaxima.Location = New System.Drawing.Point(315, 357)
-        Me.lbMaxima.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbMaxima.Location = New System.Drawing.Point(236, 290)
         Me.lbMaxima.Name = "lbMaxima"
-        Me.lbMaxima.Size = New System.Drawing.Size(55, 17)
+        Me.lbMaxima.Size = New System.Drawing.Size(43, 13)
         Me.lbMaxima.TabIndex = 39
         Me.lbMaxima.Text = "Maxima"
         '
         'txtUnidStock
         '
-        Me.txtUnidStock.Location = New System.Drawing.Point(169, 354)
-        Me.txtUnidStock.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtUnidStock.Location = New System.Drawing.Point(127, 288)
         Me.txtUnidStock.Name = "txtUnidStock"
-        Me.txtUnidStock.Size = New System.Drawing.Size(107, 22)
+        Me.txtUnidStock.Size = New System.Drawing.Size(81, 20)
         Me.txtUnidStock.TabIndex = 38
         '
         'lbUnidStock
         '
         Me.lbUnidStock.AutoSize = True
-        Me.lbUnidStock.Location = New System.Drawing.Point(43, 356)
-        Me.lbUnidStock.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbUnidStock.Location = New System.Drawing.Point(32, 289)
         Me.lbUnidStock.Name = "lbUnidStock"
-        Me.lbUnidStock.Size = New System.Drawing.Size(127, 17)
+        Me.lbUnidStock.Size = New System.Drawing.Size(98, 13)
         Me.lbUnidStock.TabIndex = 37
         Me.lbUnidStock.Text = "Unidades en Stock"
         '
+        'txCodCateg
+        '
+        Me.txCodCateg.Location = New System.Drawing.Point(454, 202)
+        Me.txCodCateg.Name = "txCodCateg"
+        Me.txCodCateg.Size = New System.Drawing.Size(100, 20)
+        Me.txCodCateg.TabIndex = 44
+        '
+        'lbCodCateg
+        '
+        Me.lbCodCateg.AutoSize = True
+        Me.lbCodCateg.Location = New System.Drawing.Point(339, 202)
+        Me.lbCodCateg.Name = "lbCodCateg"
+        Me.lbCodCateg.Size = New System.Drawing.Size(103, 13)
+        Me.lbCodCateg.TabIndex = 43
+        Me.lbCodCateg.Text = "Codigo de Categoria"
+        '
+        'btBuscarProv
+        '
+        Me.btBuscarProv.Location = New System.Drawing.Point(564, 161)
+        Me.btBuscarProv.Name = "btBuscarProv"
+        Me.btBuscarProv.Size = New System.Drawing.Size(29, 23)
+        Me.btBuscarProv.TabIndex = 26
+        Me.btBuscarProv.Text = "..."
+        Me.btBuscarProv.UseVisualStyleBackColor = True
+        '
+        'btBuscarCateg
+        '
+        Me.btBuscarCateg.Location = New System.Drawing.Point(564, 200)
+        Me.btBuscarCateg.Name = "btBuscarCateg"
+        Me.btBuscarCateg.Size = New System.Drawing.Size(29, 23)
+        Me.btBuscarCateg.TabIndex = 26
+        Me.btBuscarCateg.Text = "..."
+        Me.btBuscarCateg.UseVisualStyleBackColor = True
+        '
         'Productos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 765)
+        Me.ClientSize = New System.Drawing.Size(625, 609)
+        Me.Controls.Add(Me.btBuscarCateg)
+        Me.Controls.Add(Me.btBuscarProv)
+        Me.Controls.Add(Me.txCodCateg)
+        Me.Controls.Add(Me.lbCodCateg)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.lbMinima)
         Me.Controls.Add(Me.TextBox2)
@@ -349,6 +362,7 @@ Partial Class Productos
         Me.Controls.Add(Me.lbCodigoCli)
         Me.Controls.Add(Me.txCodProd)
         Me.Controls.Add(Me.lbNombreProd)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Productos"
         Me.Text = "Productos"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -387,4 +401,8 @@ Partial Class Productos
     Friend WithEvents lbMaxima As Label
     Friend WithEvents txtUnidStock As TextBox
     Friend WithEvents lbUnidStock As Label
+    Friend WithEvents txCodCateg As TextBox
+    Friend WithEvents lbCodCateg As Label
+    Friend WithEvents btBuscarProv As Button
+    Friend WithEvents btBuscarCateg As Button
 End Class

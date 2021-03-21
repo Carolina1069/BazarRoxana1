@@ -46,6 +46,26 @@
     End Sub
 
     Private Sub txtTerPre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTerPre.KeyPress
+
         SoloNumeros(e)
+
+    End Sub
+
+    Private Sub btBuscarProv_Click(sender As Object, e As EventArgs) Handles btBuscarProv.Click
+
+        ViewBusProv.Show()
+
+    End Sub
+
+    Private Sub btBuscarCateg_Click(sender As Object, e As EventArgs) Handles btBuscarCateg.Click
+
+        ViewBusCateg.Show()
+
+    End Sub
+
+    Private Sub btSalir_Click(sender As Object, e As EventArgs) Handles btSalir.Click
+
+        Me.Close()
+
     End Sub
 End Class
