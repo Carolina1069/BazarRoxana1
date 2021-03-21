@@ -4,8 +4,12 @@ Public Class Empleado
     Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
+        'CAROLINA10\CAROLINA
+        'AMAYA
+        'DANIELRUEDA\LOCALHOST
+
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select * from Empleados", conec)
@@ -17,7 +21,7 @@ Public Class Empleado
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
         Dim Cat As Integer
 
@@ -46,7 +50,7 @@ Public Class Empleado
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
         Dim Cat As Integer
 
@@ -74,7 +78,7 @@ Public Class Empleado
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim consultaElim As String = "delete from Empleados  where CodEmple= @CodEmple"
@@ -92,7 +96,7 @@ Public Class Empleado
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim busqueda As Integer
@@ -124,7 +128,7 @@ Public Class Empleado
 
     Private Sub btnActTabla_Click(sender As Object, e As EventArgs) Handles btnActTabla.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
@@ -136,7 +140,7 @@ Public Class Empleado
     End Sub
 
 
-    'Funcion para que solo permite el ingreso de caracteres tipo letra
+    'Funcion  que solo permite el ingreso de caracteres tipo letra
     Sub SoloLetras(ByRef e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = True
@@ -148,7 +152,7 @@ Public Class Empleado
         End If
     End Sub
 
-    'Funcion para que solo permite el ingreso de caracteres tipo numerico
+    'Funcion  que solo permite el ingreso de caracteres tipo numerico
     Sub SoloNumeros(ByRef e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False

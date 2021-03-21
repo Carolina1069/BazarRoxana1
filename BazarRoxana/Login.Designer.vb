@@ -63,7 +63,7 @@ Partial Class Login
         Me.cbxMostrarContra.Location = New System.Drawing.Point(253, 292)
         Me.cbxMostrarContra.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxMostrarContra.Name = "cbxMostrarContra"
-        Me.cbxMostrarContra.Size = New System.Drawing.Size(113, 17)
+        Me.cbxMostrarContra.Size = New System.Drawing.Size(114, 17)
         Me.cbxMostrarContra.TabIndex = 13
         Me.cbxMostrarContra.Text = "Mostrar contaseña"
         Me.cbxMostrarContra.UseVisualStyleBackColor = True

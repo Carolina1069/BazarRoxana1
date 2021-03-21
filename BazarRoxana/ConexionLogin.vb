@@ -5,9 +5,13 @@ Module ConexionLogin
     Public enunciado As SqlCommand
     Public respuesta As SqlDataReader
 
+    'CAROLINA10\CAROLINA
+    'AMAYA
+    'DANIELRUEDA\LOCALHOST
+
     Sub abrir()
         Try
-            conexion = New SqlConnection("Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True")
+            conexion = New SqlConnection("Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True")
             conexion.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception

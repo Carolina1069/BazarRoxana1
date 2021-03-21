@@ -2,12 +2,31 @@
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LbPorcentaje.Visible = False
         abrir()
+        'LbPorcentaje.Parent = ProgressBar1
+        'LbPorcentaje.BackColor = Color.Transparent
+
     End Sub
 
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
         Try
             If usuarioRegistrado(txtNombreEmpleado.Text) = True Then
-                Timer1.Start()
+                'Timer1.Start()
+                Dim contra As String = contrasena(txtNombreEmpleado.Text)
+                If contra.Equals(txtContrasena.Text) = True Then
+                    If ConsultarTipoUsuario(txtNombreEmpleado.Text) = 1 Then
+
+                        Compras.Show()
+
+                    Else
+
+                        Empleado.Show()
+
+                    End If
+                Else
+                    MsgBox("Contraseña Invalida", MsgBoxStyle.Critical)
+                    txtNombreEmpleado.Text = ""
+                    txtContrasena.Text = ""
+                End If
                 txtNombreEmpleado.Text = ""
                 txtContrasena.Text = ""
             Else
@@ -60,4 +79,12 @@
             txtContrasena.Text = ""
         End If
     End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+
+        Me.Close()
+
+    End Sub
+
+
 End Class
