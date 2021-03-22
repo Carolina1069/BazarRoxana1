@@ -28,7 +28,7 @@ Partial Class Productos
         Me.btEliminar = New System.Windows.Forms.Button()
         Me.btActualizar = New System.Windows.Forms.Button()
         Me.btGuardar = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DGV = New System.Windows.Forms.DataGridView()
         Me.btBuscar = New System.Windows.Forms.Button()
         Me.rtxDescProd = New System.Windows.Forms.RichTextBox()
         Me.txCodProv = New System.Windows.Forms.TextBox()
@@ -44,9 +44,9 @@ Partial Class Productos
         Me.lbSegPre = New System.Windows.Forms.Label()
         Me.txtTerPre = New System.Windows.Forms.TextBox()
         Me.lbTerPre = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txMin = New System.Windows.Forms.TextBox()
         Me.lbMinima = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.txMax = New System.Windows.Forms.TextBox()
         Me.lbMaxima = New System.Windows.Forms.Label()
         Me.txtUnidStock = New System.Windows.Forms.TextBox()
         Me.lbUnidStock = New System.Windows.Forms.Label()
@@ -56,7 +56,7 @@ Partial Class Productos
         Me.btBuscarCateg = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -73,7 +73,7 @@ Partial Class Productos
         Me.GroupBox1.Controls.Add(Me.btEliminar)
         Me.GroupBox1.Controls.Add(Me.btActualizar)
         Me.GroupBox1.Controls.Add(Me.btGuardar)
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.DGV)
         Me.GroupBox1.Controls.Add(Me.btBuscar)
         Me.GroupBox1.Location = New System.Drawing.Point(35, 329)
         Me.GroupBox1.Name = "GroupBox1"
@@ -118,14 +118,14 @@ Partial Class Productos
         Me.btGuardar.Text = "Guardar"
         Me.btGuardar.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'DGV
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 74)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(511, 150)
-        Me.DataGridView1.TabIndex = 21
+        Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV.Location = New System.Drawing.Point(12, 74)
+        Me.DGV.Name = "DGV"
+        Me.DGV.RowHeadersWidth = 51
+        Me.DGV.Size = New System.Drawing.Size(511, 150)
+        Me.DGV.TabIndex = 21
         '
         'btBuscar
         '
@@ -249,12 +249,12 @@ Partial Class Productos
         Me.lbTerPre.TabIndex = 35
         Me.lbTerPre.Text = "Tercer Precio"
         '
-        'TextBox1
+        'txMin
         '
-        Me.TextBox1.Location = New System.Drawing.Point(454, 293)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 42
+        Me.txMin.Location = New System.Drawing.Point(454, 293)
+        Me.txMin.Name = "txMin"
+        Me.txMin.Size = New System.Drawing.Size(100, 20)
+        Me.txMin.TabIndex = 42
         '
         'lbMinima
         '
@@ -265,12 +265,12 @@ Partial Class Productos
         Me.lbMinima.TabIndex = 41
         Me.lbMinima.Text = "Minima"
         '
-        'TextBox2
+        'txMax
         '
-        Me.TextBox2.Location = New System.Drawing.Point(284, 289)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 40
+        Me.txMax.Location = New System.Drawing.Point(284, 289)
+        Me.txMax.Name = "txMax"
+        Me.txMax.Size = New System.Drawing.Size(100, 20)
+        Me.txMax.TabIndex = 40
         '
         'lbMaxima
         '
@@ -340,9 +340,9 @@ Partial Class Productos
         Me.Controls.Add(Me.btBuscarProv)
         Me.Controls.Add(Me.txCodCateg)
         Me.Controls.Add(Me.lbCodCateg)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.txMin)
         Me.Controls.Add(Me.lbMinima)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.txMax)
         Me.Controls.Add(Me.lbMaxima)
         Me.Controls.Add(Me.txtUnidStock)
         Me.Controls.Add(Me.lbUnidStock)
@@ -362,12 +362,12 @@ Partial Class Productos
         Me.Controls.Add(Me.lbCodigoCli)
         Me.Controls.Add(Me.txCodProd)
         Me.Controls.Add(Me.lbNombreProd)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Productos"
         Me.Text = "Productos"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -379,7 +379,7 @@ Partial Class Productos
     Friend WithEvents btEliminar As Button
     Friend WithEvents btActualizar As Button
     Friend WithEvents btGuardar As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DGV As DataGridView
     Friend WithEvents btBuscar As Button
     Friend WithEvents rtxDescProd As RichTextBox
     Friend WithEvents txCodProv As TextBox
@@ -395,9 +395,9 @@ Partial Class Productos
     Friend WithEvents lbSegPre As Label
     Friend WithEvents txtTerPre As TextBox
     Friend WithEvents lbTerPre As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txMin As TextBox
     Friend WithEvents lbMinima As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txMax As TextBox
     Friend WithEvents lbMaxima As Label
     Friend WithEvents txtUnidStock As TextBox
     Friend WithEvents lbUnidStock As Label

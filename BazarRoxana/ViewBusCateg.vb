@@ -19,6 +19,7 @@ Public Class ViewBusCateg
     Private Sub DGV_DoubleClick(sender As Object, e As EventArgs) Handles DGV.DoubleClick
 
         Productos.txCodCateg.Text = DGV.CurrentRow.Cells(0).Value
+        Productos.rtxDescProd.Text = DGV.CurrentRow.Cells(1).Value
 
         Me.Close()
 
