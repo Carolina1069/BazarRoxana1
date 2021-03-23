@@ -90,60 +90,47 @@ Public Class Productos
         Dim conec As New SqlClient.SqlConnection
         conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
-
-        Dim consultaGuardar As String = "insert into Producto(CodProduc,NombProduc,DescripProduc,CodProv,CodCateg,PrimerPrecio,SegundoPrecio,TercerPrecio,UnidadesStock,Minimo,Maximo) values(@CodProduc,@NombProduc,@DescripProduc,@CodProv,@CodCateg,@PrimerPrecio,@SegundoPrecio,@TercerPrecio,@UnidadesStock,@Minimo,@Maximo)"
-
-        Dim ejecutar As New SqlCommand(consultaGuardar, conec)
-
-        ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
-        ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
-        ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
-        ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProv.Text))
-        ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCateg.Text))
-        ejecutar.Parameters.AddWithValue("@PrimerPrecio", Val(txtPriPre.Text))
-        ejecutar.Parameters.AddWithValue("@SegundoPrecio", Val(txtSegPre.Text))
-        ejecutar.Parameters.AddWithValue("@TercerPrecio", Val(txtTerPre.Text))
-        ejecutar.Parameters.AddWithValue("@UnidadesStock", Val(txtUnidStock.Text))
-        ejecutar.Parameters.AddWithValue("@Minimo", Val(txMin.Text))
-        ejecutar.Parameters.AddWithValue("@Maximo", Val(txMax.Text))
-
-
-        ejecutar.ExecuteNonQuery()
-
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select * from Producto", conec)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosCat
+        If txCodProd.Text = "" Or txNomProd.Text = "" Or rtxDescProd.Text = "" Or txCodProv.Text = "" Or txCodCateg.Text = "" Or txtPriPre.Text = "" Or txtSegPre.Text = "" Or txtTerPre.Text = "" Or txtUnidStock.Text = "" Or txMin.Text = "" Or txMax.Text = "" Then
+            MsgBox("Hay campos vacios")
+        Else
 
+
+            Dim consultaGuardar As String = "insert into Producto(CodProduc,NombProduc,DescripProduc,CodProv,CodCateg,PrimerPrecio,SegundoPrecio,TercerPrecio,UnidadesStock,Minimo,Maximo) values(@CodProduc,@NombProduc,@DescripProduc,@CodProv,@CodCateg,@PrimerPrecio,@SegundoPrecio,@TercerPrecio,@UnidadesStock,@Minimo,@Maximo)"
+
+            Dim ejecutar As New SqlCommand(consultaGuardar, conec)
+
+            ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
+            ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
+            ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
+            ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProv.Text))
+            ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCateg.Text))
+            ejecutar.Parameters.AddWithValue("@PrimerPrecio", Val(txtPriPre.Text))
+            ejecutar.Parameters.AddWithValue("@SegundoPrecio", Val(txtSegPre.Text))
+            ejecutar.Parameters.AddWithValue("@TercerPrecio", Val(txtTerPre.Text))
+            ejecutar.Parameters.AddWithValue("@UnidadesStock", Val(txtUnidStock.Text))
+            ejecutar.Parameters.AddWithValue("@Minimo", Val(txMin.Text))
+            ejecutar.Parameters.AddWithValue("@Maximo", Val(txMax.Text))
+
+
+            ejecutar.ExecuteNonQuery()
+
+        End If
 
 
     End Sub
 
     Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles btActualizar.Click
 
+
         Dim conec As New SqlClient.SqlConnection
         conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
-
-        Dim consultaGuardar As String = "Update  Producto set  NombProduc=@NombProduc,DescripProduc=@DescripProduc,CodProv=@CodProv,CodCateg=@CodCateg,PrimerPrecio=@PrimerPrecio,SegundoPrecio=@SegundoPrecio,TercerPrecio=@TercerPrecio,UnidadesStock=@UnidadesStock,Minimo=@Minimo,Maximo=@Maximo Where CodProduc=@CodProduc"
-        Dim ejecutar As New SqlCommand(consultaGuardar, conec)
-
-        ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
-        ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
-        ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
-        ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProv.Text))
-        ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCateg.Text))
-        ejecutar.Parameters.AddWithValue("@PrimerPrecio", Val(txtPriPre.Text))
-        ejecutar.Parameters.AddWithValue("@SegundoPrecio", Val(txtSegPre.Text))
-        ejecutar.Parameters.AddWithValue("@TercerPrecio", Val(txtTerPre.Text))
-        ejecutar.Parameters.AddWithValue("@UnidadesStock", Val(txtUnidStock.Text))
-        ejecutar.Parameters.AddWithValue("@Minimo", Val(txMin.Text))
-        ejecutar.Parameters.AddWithValue("@Maximo", Val(txMax.Text))
-
-
-        ejecutar.ExecuteNonQuery()
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select * from Producto", conec)
@@ -151,6 +138,27 @@ Public Class Productos
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosCat
+        If txCodProd.Text = "" Or txNomProd.Text = "" Or rtxDescProd.Text = "" Or txCodProv.Text = "" Or txCodCateg.Text = "" Or txtPriPre.Text = "" Or txtSegPre.Text = "" Or txtTerPre.Text = "" Or txtUnidStock.Text = "" Or txMin.Text = "" Or txMax.Text = "" Then
+            MsgBox("Hay campos vacios")
+        Else
+            Dim consultaGuardar As String = "Update  Producto set  NombProduc=@NombProduc,DescripProduc=@DescripProduc,CodProv=@CodProv,CodCateg=@CodCateg,PrimerPrecio=@PrimerPrecio,SegundoPrecio=@SegundoPrecio,TercerPrecio=@TercerPrecio,UnidadesStock=@UnidadesStock,Minimo=@Minimo,Maximo=@Maximo Where CodProduc=@CodProduc"
+            Dim ejecutar As New SqlCommand(consultaGuardar, conec)
+            ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
+            ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
+            ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
+            ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProv.Text))
+            ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCateg.Text))
+            ejecutar.Parameters.AddWithValue("@PrimerPrecio", Val(txtPriPre.Text))
+            ejecutar.Parameters.AddWithValue("@SegundoPrecio", Val(txtSegPre.Text))
+            ejecutar.Parameters.AddWithValue("@TercerPrecio", Val(txtTerPre.Text))
+            ejecutar.Parameters.AddWithValue("@UnidadesStock", Val(txtUnidStock.Text))
+            ejecutar.Parameters.AddWithValue("@Minimo", Val(txMin.Text))
+            ejecutar.Parameters.AddWithValue("@Maximo", Val(txMax.Text))
+
+
+            ejecutar.ExecuteNonQuery()
+
+        End If
 
     End Sub
 
@@ -159,21 +167,21 @@ Public Class Productos
         Dim conec As New SqlClient.SqlConnection
         conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
-
-        Dim consultaGuardar As String = "delete from  Producto  Where CodProduc=@CodProduc"
-        Dim ejecutar As New SqlCommand(consultaGuardar, conec)
-
-        ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
-
-
-        ejecutar.ExecuteNonQuery()
-
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select * from Producto", conec)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosCat
+        If txCodProd.Text = "" Then
+            MsgBox("Hay campos vacios")
+        Else
+            Dim consultaGuardar As String = "delete from  Producto  Where CodProduc=@CodProduc"
+            Dim ejecutar As New SqlCommand(consultaGuardar, conec)
+            ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
+            ejecutar.ExecuteNonQuery()
+
+        End If
 
     End Sub
 
@@ -198,6 +206,21 @@ Public Class Productos
         DGV.DataSource = DatosCat
 
     End Sub
+    Private Function validar_campos(T As Control) As Boolean
+
+        For Each T In Me.Controls
+            If TypeOf T Is TextBox Then
+                If Trim(T.Text) = "" Then
+                    MsgBox("Campo por validar", vbInformation)
+                    'Else   
+                    '    MessageBox.Show("Dot Net Perls is awesome.")
+                End If
+            Else
+                ' mesagebox aqui hay otro control diferente de textbox
+
+            End If
+        Next
+    End Function
 
 
 End Class

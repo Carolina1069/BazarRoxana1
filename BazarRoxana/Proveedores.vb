@@ -14,6 +14,7 @@ Public Class Proveedores
     End Sub
 
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+
         Dim conec As New SqlClient.SqlConnection
         conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
@@ -46,29 +47,36 @@ Public Class Proveedores
     End Sub
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
+        Call validar_campos(Me)
         Dim conec As New SqlClient.SqlConnection
         conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
-        Dim ConsultaGuardar As String = "insert into Proveedores(CodProv, NombProv,TelProv, NombContProv,CorreoProv, CorreoContProv, TelContProv, DirecProv,EstadoProv) 
-        values(@CodProv, @NombProv, @TelProv, @NombContProv, @CorreoProv, @CorreoContProv, @TelContProv, @DirecProv,1)"
-        Dim ejecutar As New SqlCommand(ConsultaGuardar, conec)
-        ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
-        ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
-        ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
-        ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
-        ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
-        ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
-        ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
-        ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
-
-        ejecutar.ExecuteNonQuery()
         Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select * from Proveedores", conec)
             adaptador.Fill(DatosProveedor)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGVProveedores.DataSource = DatosProveedor
+        If txCodProve.Text = "" Or txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Then
+            MsgBox("Hay campos vacios")
+        Else
+            Dim ConsultaGuardar As String = "insert into Proveedores(CodProv, NombProv,TelProv, NombContProv,CorreoProv, CorreoContProv, TelContProv, DirecProv,EstadoProv) 
+        values(@CodProv, @NombProv, @TelProv, @NombContProv, @CorreoProv, @CorreoContProv, @TelContProv, @DirecProv,1)"
+            Dim ejecutar As New SqlCommand(ConsultaGuardar, conec)
+            ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
+            ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
+            ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
+            ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
+            ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
+            ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
+            ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
+            ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
+
+            ejecutar.ExecuteNonQuery()
+
+        End If
+
     End Sub
 
     Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles btActualizar.Click
@@ -76,42 +84,54 @@ Public Class Proveedores
         conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
-        Dim ConsultaActualizar As String = "update Proveedores set NombProv=@NombProv,TelProv=@TelProv, NombContProv=@NombContProv, CorreoProv=@CorreoProv, CorreoContProv=@CorreoContProv, TelContProv=@TelContProv, DirecProv=@DirecProv where CodProv=@CodProv"
-        Dim ejecutar As New SqlCommand(ConsultaActualizar, conec)
-        ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
-        ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
-        ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
-        ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
-        ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
-        ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
-        ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
-        ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
-
-        ejecutar.ExecuteNonQuery()
         Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select * from Proveedores", conec)
             adaptador.Fill(DatosProveedor)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGVProveedores.DataSource = DatosProveedor
+        If txCodProve.Text = "" Or txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Then
+            MsgBox("Hay campos vacios")
+        Else
+            Dim ConsultaActualizar As String = "update Proveedores set NombProv=@NombProv,TelProv=@TelProv, NombContProv=@NombContProv, CorreoProv=@CorreoProv, CorreoContProv=@CorreoContProv, TelContProv=@TelContProv, DirecProv=@DirecProv where CodProv=@CodProv"
+            Dim ejecutar As New SqlCommand(ConsultaActualizar, conec)
+            ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
+            ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
+            ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
+            ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
+            ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
+            ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
+            ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
+            ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
+
+            ejecutar.ExecuteNonQuery()
+
+        End If
+
     End Sub
 
     Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles btEliminar.Click
         Dim conec As New SqlClient.SqlConnection
         conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
-
-        Dim ConsultaEliminar As String = "delete from Proveedores where CodProv=@CodProv"
-        Dim ejecutar As New SqlCommand(ConsultaEliminar, conec)
-        ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
-
-        ejecutar.ExecuteNonQuery()
         Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select * from Proveedores", conec)
             adaptador.Fill(DatosProveedor)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGVProveedores.DataSource = DatosProveedor
+        If txCodProve.Text = "" Then
+            MsgBox("Hay campos vacios")
+        Else
+
+            Dim ConsultaEliminar As String = "delete from Proveedores where CodProv=@CodProv"
+            Dim ejecutar As New SqlCommand(ConsultaEliminar, conec)
+            ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
+
+            ejecutar.ExecuteNonQuery()
+
+        End If
+
     End Sub
 
     Private Sub btSalir_Click(sender As Object, e As EventArgs) Handles btSalir.Click
@@ -174,4 +194,19 @@ Public Class Proveedores
     Private Sub txtTelProv_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelProv.KeyPress
         SoloNumeros(e)
     End Sub
+    Private Function validar_campos(T As Control) As Boolean
+
+        For Each T In Me.Controls
+            If TypeOf T Is TextBox Then
+                If Trim(T.Text) = "" Then
+                    MsgBox("Campo por validar", vbInformation)
+                    'Else   
+                    '    MessageBox.Show("Dot Net Perls is awesome.")
+                End If
+            Else
+                ' mesagebox aqui hay otro control diferente de textbox
+
+            End If
+        Next
+    End Function
 End Class

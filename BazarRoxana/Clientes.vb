@@ -17,44 +17,51 @@ Public Class Clientes
         Dim conec As New SqlClient.SqlConnection
         conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
-
-        Dim ConsultaGuardar As String = "insert into Clientes(CodCli, NombCli, DirecCli,TelCli, CorreoCli, EstadoCli) values(@CodCli, @NombCli, @DirecCli,@TelCli, @CorreoCli,1)"
-        Dim ejecutar As New SqlCommand(ConsultaGuardar, conec)
-        ejecutar.Parameters.AddWithValue("@CodCli", Val(txCodCli.Text))
-        ejecutar.Parameters.AddWithValue("@NombCli", (txNomCli.Text))
-        ejecutar.Parameters.AddWithValue("@DirecCli", (rtxDirCli.Text))
-        ejecutar.Parameters.AddWithValue("@TelCli", Val(txTelCli.Text))
-        ejecutar.Parameters.AddWithValue("@CorreoCli", (txCorreoCli.Text))
-
-        ejecutar.ExecuteNonQuery()
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select * from Clientes", conec)
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-
         DGVCliente.DataSource = DatosCliente
+        If txCodCli.Text = "" Or txNomCli.Text = "" Or rtxDirCli.Text = "" Or txTelCli.Text = "" Or txCorreoCli.Text = "" Then
+            MsgBox("Hay campos vacios")
+        Else
+
+            Dim ConsultaGuardar As String = "insert into Clientes(CodCli, NombCli, DirecCli,TelCli, CorreoCli, EstadoCli) values(@CodCli, @NombCli, @DirecCli,@TelCli, @CorreoCli,1)"
+            Dim ejecutar As New SqlCommand(ConsultaGuardar, conec)
+            ejecutar.Parameters.AddWithValue("@CodCli", Val(txCodCli.Text))
+            ejecutar.Parameters.AddWithValue("@NombCli", (txNomCli.Text))
+            ejecutar.Parameters.AddWithValue("@DirecCli", (rtxDirCli.Text))
+            ejecutar.Parameters.AddWithValue("@TelCli", Val(txTelCli.Text))
+            ejecutar.Parameters.AddWithValue("@CorreoCli", (txCorreoCli.Text))
+            ejecutar.ExecuteNonQuery()
+
+        End If
     End Sub
 
     Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles btActualizar.Click, btActualizarTabla.Click
         Dim conec As New SqlClient.SqlConnection
         conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
-
-        Dim ConsultaActualizar As String = "update Clientes set NombCli=@NombCli, DirecCli=@DirecCli,TelCli=@TelCli, CorreoCli=@CorreoCli where CodCli=@CodCli"
-        Dim ejecutar As New SqlCommand(ConsultaActualizar, conec)
-        ejecutar.Parameters.AddWithValue("@CodCli", Val(txCodCli.Text))
-        ejecutar.Parameters.AddWithValue("@NombCli", (txNomCli.Text))
-        ejecutar.Parameters.AddWithValue("@DirecCli", (rtxDirCli.Text))
-        ejecutar.Parameters.AddWithValue("@TelCli", Val(txTelCli.Text))
-        ejecutar.Parameters.AddWithValue("@CorreoCli", (txCorreoCli.Text))
-
-        ejecutar.ExecuteNonQuery()
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select * from Clientes", conec)
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-
         DGVCliente.DataSource = DatosCliente
+        If txCodCli.Text = "" Or txNomCli.Text = "" Or rtxDirCli.Text = "" Or txTelCli.Text = "" Or txCorreoCli.Text = "" Then
+            MsgBox("Hay campos vacios")
+        Else
+
+            Dim ConsultaActualizar As String = "update Clientes set NombCli=@NombCli, DirecCli=@DirecCli,TelCli=@TelCli, CorreoCli=@CorreoCli where CodCli=@CodCli"
+            Dim ejecutar As New SqlCommand(ConsultaActualizar, conec)
+            ejecutar.Parameters.AddWithValue("@CodCli", Val(txCodCli.Text))
+            ejecutar.Parameters.AddWithValue("@NombCli", (txNomCli.Text))
+            ejecutar.Parameters.AddWithValue("@DirecCli", (rtxDirCli.Text))
+            ejecutar.Parameters.AddWithValue("@TelCli", Val(txTelCli.Text))
+            ejecutar.Parameters.AddWithValue("@CorreoCli", (txCorreoCli.Text))
+
+            ejecutar.ExecuteNonQuery()
+
+        End If
     End Sub
 
     Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles btEliminar.Click
@@ -62,17 +69,22 @@ Public Class Clientes
         conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
-        Dim ConsultaEliminar As String = "delete from Clientes where CodCli=@CodCli"
-        Dim ejecutar As New SqlCommand(ConsultaEliminar, conec)
-        ejecutar.Parameters.AddWithValue("@CodCli", Val(txCodCli.Text))
-
-        ejecutar.ExecuteNonQuery()
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select * from Clientes", conec)
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGVCliente.DataSource = DatosCliente
+        If txCodCli.Text = "" Then
+            MsgBox("Hay campos vacios")
+        Else
+
+            Dim ConsultaEliminar As String = "delete from Clientes where CodCli=@CodCli"
+            Dim ejecutar As New SqlCommand(ConsultaEliminar, conec)
+            ejecutar.Parameters.AddWithValue("@CodCli", Val(txCodCli.Text))
+            ejecutar.ExecuteNonQuery()
+
+        End If
     End Sub
 
     Private Sub btSalir_Click(sender As Object, e As EventArgs) Handles btSalir.Click
@@ -143,4 +155,5 @@ Public Class Clientes
     Private Sub txTelCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txTelCli.KeyPress
         SoloNumeros(e)
     End Sub
+
 End Class

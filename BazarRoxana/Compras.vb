@@ -8,4 +8,8 @@
         Login.Show()
 
     End Sub
+
+    Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
+
+    End Sub
 End Class
