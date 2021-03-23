@@ -315,15 +315,17 @@ Partial Class Productos
         '
         'btBuscarProv
         '
+        Me.btBuscarProv.BackColor = System.Drawing.SystemColors.Control
         Me.btBuscarProv.Location = New System.Drawing.Point(564, 161)
         Me.btBuscarProv.Name = "btBuscarProv"
         Me.btBuscarProv.Size = New System.Drawing.Size(29, 23)
         Me.btBuscarProv.TabIndex = 26
         Me.btBuscarProv.Text = "..."
-        Me.btBuscarProv.UseVisualStyleBackColor = True
+        Me.btBuscarProv.UseVisualStyleBackColor = False
         '
         'btBuscarCateg
         '
+        Me.btBuscarCateg.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btBuscarCateg.Location = New System.Drawing.Point(564, 200)
         Me.btBuscarCateg.Name = "btBuscarCateg"
         Me.btBuscarCateg.Size = New System.Drawing.Size(29, 23)

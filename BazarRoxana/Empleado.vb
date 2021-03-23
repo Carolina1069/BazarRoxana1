@@ -31,7 +31,7 @@ Public Class Empleado
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosEmp
-        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Then
+        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or CbxNivel.SelectedItem = 0 Then
             MsgBox("Hay campos vacios")
         Else
 
@@ -64,7 +64,7 @@ Public Class Empleado
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGV.DataSource = DatosEmp
-        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Then
+        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or CbxNivel.SelectedItem = 0 Then
             MsgBox("Hay campos vacios")
         Else
             Dim Cat As Integer
