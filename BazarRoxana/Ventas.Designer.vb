@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Ventas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,12 +20,9 @@ Partial Class Ventas
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btSalir = New System.Windows.Forms.Button()
         Me.btEliminar = New System.Windows.Forms.Button()
         Me.btActualizar = New System.Windows.Forms.Button()
         Me.btGuardar = New System.Windows.Forms.Button()
@@ -56,51 +53,31 @@ Partial Class Ventas
         Me.lbCodigoProv = New System.Windows.Forms.Label()
         Me.TxtCodigoEmpleado = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.LblHora = New System.Windows.Forms.Label()
-        Me.LblFecha = New System.Windows.Forms.Label()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(234, 22)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
-        Me.PictureBox1.TabIndex = 32
-        Me.PictureBox1.TabStop = False
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btSalir)
         Me.GroupBox1.Controls.Add(Me.btEliminar)
         Me.GroupBox1.Controls.Add(Me.btActualizar)
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Controls.Add(Me.btBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 271)
+        Me.GroupBox1.Location = New System.Drawing.Point(62, 304)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(558, 275)
         Me.GroupBox1.TabIndex = 31
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de la Venta"
         '
-        'btSalir
-        '
-        Me.btSalir.Location = New System.Drawing.Point(448, 244)
-        Me.btSalir.Name = "btSalir"
-        Me.btSalir.Size = New System.Drawing.Size(75, 23)
-        Me.btSalir.TabIndex = 25
-        Me.btSalir.Text = "Salir"
-        Me.btSalir.UseVisualStyleBackColor = True
-        '
         'btEliminar
         '
-        Me.btEliminar.Location = New System.Drawing.Point(318, 244)
+        Me.btEliminar.Location = New System.Drawing.Point(477, 244)
         Me.btEliminar.Name = "btEliminar"
         Me.btEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btEliminar.TabIndex = 24
@@ -109,7 +86,7 @@ Partial Class Ventas
         '
         'btActualizar
         '
-        Me.btActualizar.Location = New System.Drawing.Point(174, 244)
+        Me.btActualizar.Location = New System.Drawing.Point(256, 246)
         Me.btActualizar.Name = "btActualizar"
         Me.btActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btActualizar.TabIndex = 23
@@ -118,7 +95,7 @@ Partial Class Ventas
         '
         'btGuardar
         '
-        Me.btGuardar.Location = New System.Drawing.Point(31, 244)
+        Me.btGuardar.Location = New System.Drawing.Point(12, 244)
         Me.btGuardar.Name = "btGuardar"
         Me.btGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btGuardar.TabIndex = 22
@@ -131,7 +108,7 @@ Partial Class Ventas
         Me.DataGridView1.Location = New System.Drawing.Point(12, 74)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowHeadersWidth = 51
-        Me.DataGridView1.Size = New System.Drawing.Size(511, 150)
+        Me.DataGridView1.Size = New System.Drawing.Size(537, 150)
         Me.DataGridView1.TabIndex = 21
         '
         'btBuscar
@@ -145,7 +122,7 @@ Partial Class Ventas
         '
         'txtNumVenta
         '
-        Me.txtNumVenta.Location = New System.Drawing.Point(128, 64)
+        Me.txtNumVenta.Location = New System.Drawing.Point(166, 97)
         Me.txtNumVenta.Name = "txtNumVenta"
         Me.txtNumVenta.Size = New System.Drawing.Size(100, 20)
         Me.txtNumVenta.TabIndex = 27
@@ -153,7 +130,7 @@ Partial Class Ventas
         'LblNumeroVenta
         '
         Me.LblNumeroVenta.AutoSize = True
-        Me.LblNumeroVenta.Location = New System.Drawing.Point(20, 68)
+        Me.LblNumeroVenta.Location = New System.Drawing.Point(70, 100)
         Me.LblNumeroVenta.Name = "LblNumeroVenta"
         Me.LblNumeroVenta.Size = New System.Drawing.Size(90, 13)
         Me.LblNumeroVenta.TabIndex = 21
@@ -170,7 +147,7 @@ Partial Class Ventas
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.TxtCodProduc)
         Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Location = New System.Drawing.Point(296, 90)
+        Me.GroupBox3.Location = New System.Drawing.Point(346, 123)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(274, 175)
         Me.GroupBox3.TabIndex = 47
@@ -265,7 +242,7 @@ Partial Class Ventas
         Me.GroupBox2.Controls.Add(Me.lbCodigoProv)
         Me.GroupBox2.Controls.Add(Me.TxtCodigoEmpleado)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 90)
+        Me.GroupBox2.Location = New System.Drawing.Point(62, 123)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(278, 175)
         Me.GroupBox2.TabIndex = 46
@@ -376,47 +353,35 @@ Partial Class Ventas
         Me.Label3.TabIndex = 36
         Me.Label3.Text = "Codigo de Empleado"
         '
-        'LblHora
+        'PictureBox1
         '
-        Me.LblHora.AutoSize = True
-        Me.LblHora.Location = New System.Drawing.Point(20, 35)
-        Me.LblHora.Name = "LblHora"
-        Me.LblHora.Size = New System.Drawing.Size(0, 13)
-        Me.LblHora.TabIndex = 49
-        '
-        'LblFecha
-        '
-        Me.LblFecha.AutoSize = True
-        Me.LblFecha.Location = New System.Drawing.Point(20, 12)
-        Me.LblFecha.Name = "LblFecha"
-        Me.LblFecha.Size = New System.Drawing.Size(0, 13)
-        Me.LblFecha.TabIndex = 48
-        '
-        'Timer1
-        '
+        Me.PictureBox1.Location = New System.Drawing.Point(576, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
+        Me.PictureBox1.TabIndex = 32
+        Me.PictureBox1.TabStop = False
         '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(615, 557)
-        Me.Controls.Add(Me.LblHora)
-        Me.Controls.Add(Me.LblFecha)
+        Me.ClientSize = New System.Drawing.Size(688, 650)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txtNumVenta)
         Me.Controls.Add(Me.LblNumeroVenta)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Ventas"
         Me.Text = "Ventas"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -424,7 +389,6 @@ Partial Class Ventas
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btSalir As Button
     Friend WithEvents btEliminar As Button
     Friend WithEvents btActualizar As Button
     Friend WithEvents btGuardar As Button
@@ -455,7 +419,4 @@ Partial Class Ventas
     Friend WithEvents lbCodigoProv As Label
     Friend WithEvents TxtCodigoEmpleado As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents LblHora As Label
-    Friend WithEvents LblFecha As Label
-    Friend WithEvents Timer1 As Timer
 End Class

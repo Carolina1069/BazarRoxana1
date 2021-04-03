@@ -124,7 +124,7 @@ Public Class Empleado
         DGV.DataSource = DatosEmp
     End Sub
 
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) 
         Me.Close()
         Login.Show()
     End Sub

@@ -24,7 +24,6 @@ Partial Class Productos
     Private Sub InitializeComponent()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btSalir = New System.Windows.Forms.Button()
         Me.btEliminar = New System.Windows.Forms.Button()
         Me.btActualizar = New System.Windows.Forms.Button()
         Me.btGuardar = New System.Windows.Forms.Button()
@@ -61,7 +60,7 @@ Partial Class Productos
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(246, 30)
+        Me.PictureBox1.Location = New System.Drawing.Point(576, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
         Me.PictureBox1.TabIndex = 32
@@ -69,31 +68,21 @@ Partial Class Productos
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.btSalir)
         Me.GroupBox1.Controls.Add(Me.btEliminar)
         Me.GroupBox1.Controls.Add(Me.btActualizar)
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Controls.Add(Me.DGV)
         Me.GroupBox1.Controls.Add(Me.btBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(35, 329)
+        Me.GroupBox1.Location = New System.Drawing.Point(71, 321)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(532, 275)
         Me.GroupBox1.TabIndex = 31
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de Producto"
         '
-        'btSalir
-        '
-        Me.btSalir.Location = New System.Drawing.Point(448, 244)
-        Me.btSalir.Name = "btSalir"
-        Me.btSalir.Size = New System.Drawing.Size(75, 23)
-        Me.btSalir.TabIndex = 25
-        Me.btSalir.Text = "Salir"
-        Me.btSalir.UseVisualStyleBackColor = True
-        '
         'btEliminar
         '
-        Me.btEliminar.Location = New System.Drawing.Point(318, 244)
+        Me.btEliminar.Location = New System.Drawing.Point(451, 246)
         Me.btEliminar.Name = "btEliminar"
         Me.btEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btEliminar.TabIndex = 24
@@ -102,7 +91,7 @@ Partial Class Productos
         '
         'btActualizar
         '
-        Me.btActualizar.Location = New System.Drawing.Point(174, 244)
+        Me.btActualizar.Location = New System.Drawing.Point(249, 246)
         Me.btActualizar.Name = "btActualizar"
         Me.btActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btActualizar.TabIndex = 23
@@ -111,7 +100,7 @@ Partial Class Productos
         '
         'btGuardar
         '
-        Me.btGuardar.Location = New System.Drawing.Point(31, 244)
+        Me.btGuardar.Location = New System.Drawing.Point(6, 246)
         Me.btGuardar.Name = "btGuardar"
         Me.btGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btGuardar.TabIndex = 22
@@ -138,7 +127,7 @@ Partial Class Productos
         '
         'rtxDescProd
         '
-        Me.rtxDescProd.Location = New System.Drawing.Point(164, 161)
+        Me.rtxDescProd.Location = New System.Drawing.Point(200, 153)
         Me.rtxDescProd.Name = "rtxDescProd"
         Me.rtxDescProd.Size = New System.Drawing.Size(159, 54)
         Me.rtxDescProd.TabIndex = 30
@@ -146,21 +135,21 @@ Partial Class Productos
         '
         'txCodProv
         '
-        Me.txCodProv.Location = New System.Drawing.Point(454, 161)
+        Me.txCodProv.Location = New System.Drawing.Point(490, 153)
         Me.txCodProv.Name = "txCodProv"
         Me.txCodProv.Size = New System.Drawing.Size(100, 20)
         Me.txCodProv.TabIndex = 29
         '
         'txtPriPre
         '
-        Me.txtPriPre.Location = New System.Drawing.Point(101, 240)
+        Me.txtPriPre.Location = New System.Drawing.Point(137, 232)
         Me.txtPriPre.Name = "txtPriPre"
         Me.txtPriPre.Size = New System.Drawing.Size(100, 20)
         Me.txtPriPre.TabIndex = 28
         '
         'txNomProd
         '
-        Me.txNomProd.Location = New System.Drawing.Point(454, 119)
+        Me.txNomProd.Location = New System.Drawing.Point(490, 111)
         Me.txNomProd.Name = "txNomProd"
         Me.txNomProd.Size = New System.Drawing.Size(100, 20)
         Me.txNomProd.TabIndex = 27
@@ -168,7 +157,7 @@ Partial Class Productos
         'lbPriPre
         '
         Me.lbPriPre.AutoSize = True
-        Me.lbPriPre.Location = New System.Drawing.Point(32, 240)
+        Me.lbPriPre.Location = New System.Drawing.Point(68, 232)
         Me.lbPriPre.Name = "lbPriPre"
         Me.lbPriPre.Size = New System.Drawing.Size(69, 13)
         Me.lbPriPre.TabIndex = 26
@@ -177,7 +166,7 @@ Partial Class Productos
         'lbDescProd
         '
         Me.lbDescProd.AutoSize = True
-        Me.lbDescProd.Location = New System.Drawing.Point(33, 161)
+        Me.lbDescProd.Location = New System.Drawing.Point(69, 153)
         Me.lbDescProd.Name = "lbDescProd"
         Me.lbDescProd.Size = New System.Drawing.Size(126, 13)
         Me.lbDescProd.TabIndex = 25
@@ -186,7 +175,7 @@ Partial Class Productos
         'lbCodProv
         '
         Me.lbCodProv.AutoSize = True
-        Me.lbCodProv.Location = New System.Drawing.Point(339, 161)
+        Me.lbCodProv.Location = New System.Drawing.Point(375, 153)
         Me.lbCodProv.Name = "lbCodProv"
         Me.lbCodProv.Size = New System.Drawing.Size(109, 13)
         Me.lbCodProv.TabIndex = 24
@@ -195,7 +184,7 @@ Partial Class Productos
         'lbCodigoCli
         '
         Me.lbCodigoCli.AutoSize = True
-        Me.lbCodigoCli.Location = New System.Drawing.Point(33, 121)
+        Me.lbCodigoCli.Location = New System.Drawing.Point(69, 113)
         Me.lbCodigoCli.Name = "lbCodigoCli"
         Me.lbCodigoCli.Size = New System.Drawing.Size(103, 13)
         Me.lbCodigoCli.TabIndex = 23
@@ -203,7 +192,7 @@ Partial Class Productos
         '
         'txCodProd
         '
-        Me.txCodProd.Location = New System.Drawing.Point(137, 117)
+        Me.txCodProd.Location = New System.Drawing.Point(173, 109)
         Me.txCodProd.Name = "txCodProd"
         Me.txCodProd.Size = New System.Drawing.Size(100, 20)
         Me.txCodProd.TabIndex = 22
@@ -211,7 +200,7 @@ Partial Class Productos
         'lbNombreProd
         '
         Me.lbNombreProd.AutoSize = True
-        Me.lbNombreProd.Location = New System.Drawing.Point(339, 121)
+        Me.lbNombreProd.Location = New System.Drawing.Point(375, 113)
         Me.lbNombreProd.Name = "lbNombreProd"
         Me.lbNombreProd.Size = New System.Drawing.Size(107, 13)
         Me.lbNombreProd.TabIndex = 21
@@ -219,7 +208,7 @@ Partial Class Productos
         '
         'txtSegPre
         '
-        Me.txtSegPre.Location = New System.Drawing.Point(297, 240)
+        Me.txtSegPre.Location = New System.Drawing.Point(333, 232)
         Me.txtSegPre.Name = "txtSegPre"
         Me.txtSegPre.Size = New System.Drawing.Size(100, 20)
         Me.txtSegPre.TabIndex = 34
@@ -227,7 +216,7 @@ Partial Class Productos
         'lbSegPre
         '
         Me.lbSegPre.AutoSize = True
-        Me.lbSegPre.Location = New System.Drawing.Point(213, 240)
+        Me.lbSegPre.Location = New System.Drawing.Point(249, 232)
         Me.lbSegPre.Name = "lbSegPre"
         Me.lbSegPre.Size = New System.Drawing.Size(83, 13)
         Me.lbSegPre.TabIndex = 33
@@ -235,7 +224,7 @@ Partial Class Productos
         '
         'txtTerPre
         '
-        Me.txtTerPre.Location = New System.Drawing.Point(483, 240)
+        Me.txtTerPre.Location = New System.Drawing.Point(519, 232)
         Me.txtTerPre.Name = "txtTerPre"
         Me.txtTerPre.Size = New System.Drawing.Size(100, 20)
         Me.txtTerPre.TabIndex = 36
@@ -243,7 +232,7 @@ Partial Class Productos
         'lbTerPre
         '
         Me.lbTerPre.AutoSize = True
-        Me.lbTerPre.Location = New System.Drawing.Point(407, 243)
+        Me.lbTerPre.Location = New System.Drawing.Point(443, 235)
         Me.lbTerPre.Name = "lbTerPre"
         Me.lbTerPre.Size = New System.Drawing.Size(71, 13)
         Me.lbTerPre.TabIndex = 35
@@ -251,7 +240,7 @@ Partial Class Productos
         '
         'txMin
         '
-        Me.txMin.Location = New System.Drawing.Point(454, 293)
+        Me.txMin.Location = New System.Drawing.Point(490, 285)
         Me.txMin.Name = "txMin"
         Me.txMin.Size = New System.Drawing.Size(100, 20)
         Me.txMin.TabIndex = 42
@@ -259,7 +248,7 @@ Partial Class Productos
         'lbMinima
         '
         Me.lbMinima.AutoSize = True
-        Me.lbMinima.Location = New System.Drawing.Point(409, 293)
+        Me.lbMinima.Location = New System.Drawing.Point(445, 285)
         Me.lbMinima.Name = "lbMinima"
         Me.lbMinima.Size = New System.Drawing.Size(40, 13)
         Me.lbMinima.TabIndex = 41
@@ -267,7 +256,7 @@ Partial Class Productos
         '
         'txMax
         '
-        Me.txMax.Location = New System.Drawing.Point(284, 289)
+        Me.txMax.Location = New System.Drawing.Point(320, 281)
         Me.txMax.Name = "txMax"
         Me.txMax.Size = New System.Drawing.Size(100, 20)
         Me.txMax.TabIndex = 40
@@ -275,7 +264,7 @@ Partial Class Productos
         'lbMaxima
         '
         Me.lbMaxima.AutoSize = True
-        Me.lbMaxima.Location = New System.Drawing.Point(236, 290)
+        Me.lbMaxima.Location = New System.Drawing.Point(272, 282)
         Me.lbMaxima.Name = "lbMaxima"
         Me.lbMaxima.Size = New System.Drawing.Size(43, 13)
         Me.lbMaxima.TabIndex = 39
@@ -283,7 +272,7 @@ Partial Class Productos
         '
         'txtUnidStock
         '
-        Me.txtUnidStock.Location = New System.Drawing.Point(127, 288)
+        Me.txtUnidStock.Location = New System.Drawing.Point(163, 280)
         Me.txtUnidStock.Name = "txtUnidStock"
         Me.txtUnidStock.Size = New System.Drawing.Size(81, 20)
         Me.txtUnidStock.TabIndex = 38
@@ -291,7 +280,7 @@ Partial Class Productos
         'lbUnidStock
         '
         Me.lbUnidStock.AutoSize = True
-        Me.lbUnidStock.Location = New System.Drawing.Point(32, 289)
+        Me.lbUnidStock.Location = New System.Drawing.Point(68, 281)
         Me.lbUnidStock.Name = "lbUnidStock"
         Me.lbUnidStock.Size = New System.Drawing.Size(98, 13)
         Me.lbUnidStock.TabIndex = 37
@@ -299,7 +288,7 @@ Partial Class Productos
         '
         'txCodCateg
         '
-        Me.txCodCateg.Location = New System.Drawing.Point(454, 202)
+        Me.txCodCateg.Location = New System.Drawing.Point(490, 194)
         Me.txCodCateg.Name = "txCodCateg"
         Me.txCodCateg.Size = New System.Drawing.Size(100, 20)
         Me.txCodCateg.TabIndex = 44
@@ -307,7 +296,7 @@ Partial Class Productos
         'lbCodCateg
         '
         Me.lbCodCateg.AutoSize = True
-        Me.lbCodCateg.Location = New System.Drawing.Point(339, 202)
+        Me.lbCodCateg.Location = New System.Drawing.Point(375, 194)
         Me.lbCodCateg.Name = "lbCodCateg"
         Me.lbCodCateg.Size = New System.Drawing.Size(103, 13)
         Me.lbCodCateg.TabIndex = 43
@@ -316,7 +305,7 @@ Partial Class Productos
         'btBuscarProv
         '
         Me.btBuscarProv.BackColor = System.Drawing.SystemColors.Control
-        Me.btBuscarProv.Location = New System.Drawing.Point(564, 161)
+        Me.btBuscarProv.Location = New System.Drawing.Point(600, 153)
         Me.btBuscarProv.Name = "btBuscarProv"
         Me.btBuscarProv.Size = New System.Drawing.Size(29, 23)
         Me.btBuscarProv.TabIndex = 26
@@ -326,7 +315,7 @@ Partial Class Productos
         'btBuscarCateg
         '
         Me.btBuscarCateg.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btBuscarCateg.Location = New System.Drawing.Point(564, 200)
+        Me.btBuscarCateg.Location = New System.Drawing.Point(600, 192)
         Me.btBuscarCateg.Name = "btBuscarCateg"
         Me.btBuscarCateg.Size = New System.Drawing.Size(29, 23)
         Me.btBuscarCateg.TabIndex = 26
@@ -337,7 +326,7 @@ Partial Class Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(625, 609)
+        Me.ClientSize = New System.Drawing.Size(688, 650)
         Me.Controls.Add(Me.btBuscarCateg)
         Me.Controls.Add(Me.btBuscarProv)
         Me.Controls.Add(Me.txCodCateg)
@@ -364,6 +353,7 @@ Partial Class Productos
         Me.Controls.Add(Me.lbCodigoCli)
         Me.Controls.Add(Me.txCodProd)
         Me.Controls.Add(Me.lbNombreProd)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Productos"
         Me.Text = "Productos"
@@ -377,7 +367,6 @@ Partial Class Productos
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btSalir As Button
     Friend WithEvents btEliminar As Button
     Friend WithEvents btActualizar As Button
     Friend WithEvents btGuardar As Button

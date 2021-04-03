@@ -47,7 +47,7 @@ Public Class Proveedores
     End Sub
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
-        Call validar_campos(Me)
+
         Dim conec As New SqlClient.SqlConnection
         conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
@@ -134,7 +134,7 @@ Public Class Proveedores
 
     End Sub
 
-    Private Sub btSalir_Click(sender As Object, e As EventArgs) Handles btSalir.Click
+    Private Sub btSalir_Click(sender As Object, e As EventArgs) 
         Me.Close()
     End Sub
 
@@ -194,19 +194,4 @@ Public Class Proveedores
     Private Sub txtTelProv_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelProv.KeyPress
         SoloNumeros(e)
     End Sub
-    Private Function validar_campos(T As Control) As Boolean
-
-        For Each T In Me.Controls
-            If TypeOf T Is TextBox Then
-                If Trim(T.Text) = "" Then
-                    MsgBox("Campo por validar", vbInformation)
-                    'Else   
-                    '    MessageBox.Show("Dot Net Perls is awesome.")
-                End If
-            Else
-                ' mesagebox aqui hay otro control diferente de textbox
-
-            End If
-        Next
-    End Function
 End Class

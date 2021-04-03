@@ -87,10 +87,6 @@ Public Class Clientes
         End If
     End Sub
 
-    Private Sub btSalir_Click(sender As Object, e As EventArgs) Handles btSalir.Click
-        Me.Close()
-    End Sub
-
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         Dim conec As New SqlClient.SqlConnection
         conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"

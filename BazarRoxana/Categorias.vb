@@ -134,12 +134,6 @@ Public Class Categorias
 
     End Sub
 
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-
-        Me.Close()
-
-    End Sub
-
     'Funcion para que solo permite el ingreso de caracteres tipo letra
     Sub SoloLetras(ByRef e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) Then

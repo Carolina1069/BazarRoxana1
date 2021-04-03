@@ -29,7 +29,6 @@ Partial Class Proveedores
         Me.lbDireccProvee = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btActualizarTabla = New System.Windows.Forms.Button()
-        Me.btSalir = New System.Windows.Forms.Button()
         Me.btEliminar = New System.Windows.Forms.Button()
         Me.btActualizar = New System.Windows.Forms.Button()
         Me.btGuardar = New System.Windows.Forms.Button()
@@ -54,7 +53,7 @@ Partial Class Proveedores
         '
         'TxtCorreoProv
         '
-        Me.TxtCorreoProv.Location = New System.Drawing.Point(140, 243)
+        Me.TxtCorreoProv.Location = New System.Drawing.Point(174, 236)
         Me.TxtCorreoProv.Name = "TxtCorreoProv"
         Me.TxtCorreoProv.Size = New System.Drawing.Size(81, 20)
         Me.TxtCorreoProv.TabIndex = 59
@@ -62,7 +61,7 @@ Partial Class Proveedores
         'lbCorreoProve
         '
         Me.lbCorreoProve.AutoSize = True
-        Me.lbCorreoProve.Location = New System.Drawing.Point(26, 243)
+        Me.lbCorreoProve.Location = New System.Drawing.Point(60, 236)
         Me.lbCorreoProve.Name = "lbCorreoProve"
         Me.lbCorreoProve.Size = New System.Drawing.Size(106, 13)
         Me.lbCorreoProve.TabIndex = 58
@@ -70,7 +69,7 @@ Partial Class Proveedores
         '
         'txtTelProv
         '
-        Me.txtTelProv.Location = New System.Drawing.Point(448, 194)
+        Me.txtTelProv.Location = New System.Drawing.Point(482, 187)
         Me.txtTelProv.Name = "txtTelProv"
         Me.txtTelProv.Size = New System.Drawing.Size(100, 20)
         Me.txtTelProv.TabIndex = 57
@@ -78,7 +77,7 @@ Partial Class Proveedores
         'lbTelProvee
         '
         Me.lbTelProvee.AutoSize = True
-        Me.lbTelProvee.Location = New System.Drawing.Point(325, 194)
+        Me.lbTelProvee.Location = New System.Drawing.Point(359, 187)
         Me.lbTelProvee.Name = "lbTelProvee"
         Me.lbTelProvee.Size = New System.Drawing.Size(117, 13)
         Me.lbTelProvee.TabIndex = 56
@@ -87,7 +86,7 @@ Partial Class Proveedores
         'lbDireccProvee
         '
         Me.lbDireccProvee.AutoSize = True
-        Me.lbDireccProvee.Location = New System.Drawing.Point(27, 274)
+        Me.lbDireccProvee.Location = New System.Drawing.Point(61, 267)
         Me.lbDireccProvee.Name = "lbDireccProvee"
         Me.lbDireccProvee.Size = New System.Drawing.Size(179, 13)
         Me.lbDireccProvee.TabIndex = 54
@@ -96,13 +95,12 @@ Partial Class Proveedores
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.btActualizarTabla)
-        Me.GroupBox1.Controls.Add(Me.btSalir)
         Me.GroupBox1.Controls.Add(Me.btEliminar)
         Me.GroupBox1.Controls.Add(Me.btActualizar)
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Controls.Add(Me.DGVProveedores)
         Me.GroupBox1.Controls.Add(Me.btBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(29, 370)
+        Me.GroupBox1.Location = New System.Drawing.Point(63, 363)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(532, 275)
         Me.GroupBox1.TabIndex = 53
@@ -118,18 +116,9 @@ Partial Class Proveedores
         Me.btActualizarTabla.Text = "Actualizar Tabla"
         Me.btActualizarTabla.UseVisualStyleBackColor = True
         '
-        'btSalir
-        '
-        Me.btSalir.Location = New System.Drawing.Point(448, 244)
-        Me.btSalir.Name = "btSalir"
-        Me.btSalir.Size = New System.Drawing.Size(75, 23)
-        Me.btSalir.TabIndex = 25
-        Me.btSalir.Text = "Salir"
-        Me.btSalir.UseVisualStyleBackColor = True
-        '
         'btEliminar
         '
-        Me.btEliminar.Location = New System.Drawing.Point(318, 244)
+        Me.btEliminar.Location = New System.Drawing.Point(451, 246)
         Me.btEliminar.Name = "btEliminar"
         Me.btEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btEliminar.TabIndex = 24
@@ -138,7 +127,7 @@ Partial Class Proveedores
         '
         'btActualizar
         '
-        Me.btActualizar.Location = New System.Drawing.Point(174, 244)
+        Me.btActualizar.Location = New System.Drawing.Point(249, 246)
         Me.btActualizar.Name = "btActualizar"
         Me.btActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btActualizar.TabIndex = 23
@@ -147,7 +136,7 @@ Partial Class Proveedores
         '
         'btGuardar
         '
-        Me.btGuardar.Location = New System.Drawing.Point(31, 244)
+        Me.btGuardar.Location = New System.Drawing.Point(6, 246)
         Me.btGuardar.Name = "btGuardar"
         Me.btGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btGuardar.TabIndex = 22
@@ -174,21 +163,21 @@ Partial Class Proveedores
         '
         'txCorreoEmpresa
         '
-        Me.txCorreoEmpresa.Location = New System.Drawing.Point(462, 139)
+        Me.txCorreoEmpresa.Location = New System.Drawing.Point(496, 132)
         Me.txCorreoEmpresa.Name = "txCorreoEmpresa"
         Me.txCorreoEmpresa.Size = New System.Drawing.Size(100, 20)
         Me.txCorreoEmpresa.TabIndex = 51
         '
         'txtNombrePreEm
         '
-        Me.txtNombrePreEm.Location = New System.Drawing.Point(203, 193)
+        Me.txtNombrePreEm.Location = New System.Drawing.Point(237, 186)
         Me.txtNombrePreEm.Name = "txtNombrePreEm"
         Me.txtNombrePreEm.Size = New System.Drawing.Size(100, 20)
         Me.txtNombrePreEm.TabIndex = 50
         '
         'txNomProv
         '
-        Me.txNomProv.Location = New System.Drawing.Point(448, 91)
+        Me.txNomProv.Location = New System.Drawing.Point(482, 84)
         Me.txNomProv.Name = "txNomProv"
         Me.txNomProv.Size = New System.Drawing.Size(100, 20)
         Me.txNomProv.TabIndex = 49
@@ -196,7 +185,7 @@ Partial Class Proveedores
         'lbNomDistri
         '
         Me.lbNomDistri.AutoSize = True
-        Me.lbNomDistri.Location = New System.Drawing.Point(26, 194)
+        Me.lbNomDistri.Location = New System.Drawing.Point(60, 187)
         Me.lbNomDistri.Name = "lbNomDistri"
         Me.lbNomDistri.Size = New System.Drawing.Size(176, 13)
         Me.lbNomDistri.TabIndex = 48
@@ -205,7 +194,7 @@ Partial Class Proveedores
         'lbTel
         '
         Me.lbTel.AutoSize = True
-        Me.lbTel.Location = New System.Drawing.Point(20, 141)
+        Me.lbTel.Location = New System.Drawing.Point(54, 134)
         Me.lbTel.Name = "lbTel"
         Me.lbTel.Size = New System.Drawing.Size(175, 13)
         Me.lbTel.TabIndex = 47
@@ -214,7 +203,7 @@ Partial Class Proveedores
         'lbCorreoProv
         '
         Me.lbCorreoProv.AutoSize = True
-        Me.lbCorreoProv.Location = New System.Drawing.Point(298, 140)
+        Me.lbCorreoProv.Location = New System.Drawing.Point(332, 133)
         Me.lbCorreoProv.Name = "lbCorreoProv"
         Me.lbCorreoProv.Size = New System.Drawing.Size(164, 13)
         Me.lbCorreoProv.TabIndex = 46
@@ -223,7 +212,7 @@ Partial Class Proveedores
         'lbCodigoProv
         '
         Me.lbCodigoProv.AutoSize = True
-        Me.lbCodigoProv.Location = New System.Drawing.Point(27, 93)
+        Me.lbCodigoProv.Location = New System.Drawing.Point(61, 86)
         Me.lbCodigoProv.Name = "lbCodigoProv"
         Me.lbCodigoProv.Size = New System.Drawing.Size(109, 13)
         Me.lbCodigoProv.TabIndex = 45
@@ -231,7 +220,7 @@ Partial Class Proveedores
         '
         'txCodProve
         '
-        Me.txCodProve.Location = New System.Drawing.Point(142, 91)
+        Me.txCodProve.Location = New System.Drawing.Point(176, 84)
         Me.txCodProve.Name = "txCodProve"
         Me.txCodProve.Size = New System.Drawing.Size(100, 20)
         Me.txCodProve.TabIndex = 44
@@ -239,7 +228,7 @@ Partial Class Proveedores
         'lbNombreProv
         '
         Me.lbNombreProv.AutoSize = True
-        Me.lbNombreProv.Location = New System.Drawing.Point(275, 93)
+        Me.lbNombreProv.Location = New System.Drawing.Point(309, 86)
         Me.lbNombreProv.Name = "lbNombreProv"
         Me.lbNombreProv.Size = New System.Drawing.Size(170, 13)
         Me.lbNombreProv.TabIndex = 43
@@ -247,15 +236,15 @@ Partial Class Proveedores
         '
         'TxtTelfonoEmpresa
         '
-        Me.TxtTelfonoEmpresa.Location = New System.Drawing.Point(202, 137)
+        Me.TxtTelfonoEmpresa.Location = New System.Drawing.Point(236, 130)
         Me.TxtTelfonoEmpresa.Name = "TxtTelfonoEmpresa"
         Me.TxtTelfonoEmpresa.Size = New System.Drawing.Size(94, 20)
         Me.TxtTelfonoEmpresa.TabIndex = 64
         '
         'RTBDirec
         '
-        Me.RTBDirec.Location = New System.Drawing.Point(220, 274)
-        Me.RTBDirec.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RTBDirec.Location = New System.Drawing.Point(254, 267)
+        Me.RTBDirec.Margin = New System.Windows.Forms.Padding(2)
         Me.RTBDirec.Name = "RTBDirec"
         Me.RTBDirec.Size = New System.Drawing.Size(246, 91)
         Me.RTBDirec.TabIndex = 65
@@ -263,8 +252,8 @@ Partial Class Proveedores
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(262, 10)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PictureBox1.Location = New System.Drawing.Point(589, 11)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(88, 57)
         Me.PictureBox1.TabIndex = 66
@@ -274,7 +263,7 @@ Partial Class Proveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(600, 650)
+        Me.ClientSize = New System.Drawing.Size(688, 650)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.RTBDirec)
         Me.Controls.Add(Me.TxtTelfonoEmpresa)
@@ -293,7 +282,8 @@ Partial Class Proveedores
         Me.Controls.Add(Me.lbCodigoProv)
         Me.Controls.Add(Me.txCodProve)
         Me.Controls.Add(Me.lbNombreProv)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Proveedores"
         Me.Text = "Proveedores"
         Me.GroupBox1.ResumeLayout(False)
@@ -310,7 +300,6 @@ Partial Class Proveedores
     Friend WithEvents lbTelProvee As Label
     Friend WithEvents lbDireccProvee As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btSalir As Button
     Friend WithEvents btEliminar As Button
     Friend WithEvents btActualizar As Button
     Friend WithEvents btGuardar As Button

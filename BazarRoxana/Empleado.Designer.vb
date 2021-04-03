@@ -25,7 +25,6 @@ Partial Class Empleado
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnActTabla = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -47,7 +46,7 @@ Partial Class Empleado
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(233, 15)
+        Me.PictureBox1.Location = New System.Drawing.Point(576, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
         Me.PictureBox1.TabIndex = 40
@@ -56,15 +55,14 @@ Partial Class Empleado
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.btnActTabla)
-        Me.GroupBox1.Controls.Add(Me.btnSalir)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
         Me.GroupBox1.Controls.Add(Me.btnActualizar)
         Me.GroupBox1.Controls.Add(Me.btnGuardar)
         Me.GroupBox1.Controls.Add(Me.DGV)
         Me.GroupBox1.Controls.Add(Me.btnBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(23, 205)
+        Me.GroupBox1.Location = New System.Drawing.Point(67, 250)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(532, 337)
+        Me.GroupBox1.Size = New System.Drawing.Size(532, 304)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda del empleado"
@@ -78,18 +76,9 @@ Partial Class Empleado
         Me.btnActTabla.Text = "Actualizar Tabla"
         Me.btnActTabla.UseVisualStyleBackColor = True
         '
-        'btnSalir
-        '
-        Me.btnSalir.Location = New System.Drawing.Point(445, 273)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(75, 23)
-        Me.btnSalir.TabIndex = 25
-        Me.btnSalir.Text = "Salir"
-        Me.btnSalir.UseVisualStyleBackColor = True
-        '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(315, 273)
+        Me.btnEliminar.Location = New System.Drawing.Point(451, 273)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar.TabIndex = 24
@@ -98,7 +87,7 @@ Partial Class Empleado
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(171, 273)
+        Me.btnActualizar.Location = New System.Drawing.Point(236, 273)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar.TabIndex = 23
@@ -107,7 +96,7 @@ Partial Class Empleado
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(28, 273)
+        Me.btnGuardar.Location = New System.Drawing.Point(6, 273)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 22
@@ -134,7 +123,7 @@ Partial Class Empleado
         '
         'TxtCodigoEmpleado
         '
-        Me.TxtCodigoEmpleado.Location = New System.Drawing.Point(122, 97)
+        Me.TxtCodigoEmpleado.Location = New System.Drawing.Point(166, 142)
         Me.TxtCodigoEmpleado.Name = "TxtCodigoEmpleado"
         Me.TxtCodigoEmpleado.Size = New System.Drawing.Size(100, 20)
         Me.TxtCodigoEmpleado.TabIndex = 37
@@ -142,7 +131,7 @@ Partial Class Empleado
         'lbNivel
         '
         Me.lbNivel.AutoSize = True
-        Me.lbNivel.Location = New System.Drawing.Point(20, 155)
+        Me.lbNivel.Location = New System.Drawing.Point(64, 200)
         Me.lbNivel.Name = "lbNivel"
         Me.lbNivel.Size = New System.Drawing.Size(98, 13)
         Me.lbNivel.TabIndex = 36
@@ -151,7 +140,7 @@ Partial Class Empleado
         'lbNombreEmpleado
         '
         Me.lbNombreEmpleado.AutoSize = True
-        Me.lbNombreEmpleado.Location = New System.Drawing.Point(324, 97)
+        Me.lbNombreEmpleado.Location = New System.Drawing.Point(368, 142)
         Me.lbNombreEmpleado.Name = "lbNombreEmpleado"
         Me.lbNombreEmpleado.Size = New System.Drawing.Size(113, 13)
         Me.lbNombreEmpleado.TabIndex = 35
@@ -159,7 +148,7 @@ Partial Class Empleado
         '
         'txtNombreEmpleado
         '
-        Me.txtNombreEmpleado.Location = New System.Drawing.Point(443, 90)
+        Me.txtNombreEmpleado.Location = New System.Drawing.Point(487, 135)
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
         Me.txtNombreEmpleado.Size = New System.Drawing.Size(100, 20)
         Me.txtNombreEmpleado.TabIndex = 34
@@ -167,7 +156,7 @@ Partial Class Empleado
         'lbCodigoEmpleado
         '
         Me.lbCodigoEmpleado.AutoSize = True
-        Me.lbCodigoEmpleado.Location = New System.Drawing.Point(14, 101)
+        Me.lbCodigoEmpleado.Location = New System.Drawing.Point(64, 145)
         Me.lbCodigoEmpleado.Name = "lbCodigoEmpleado"
         Me.lbCodigoEmpleado.Size = New System.Drawing.Size(90, 13)
         Me.lbCodigoEmpleado.TabIndex = 33
@@ -177,7 +166,7 @@ Partial Class Empleado
         '
         Me.CbxNivel.FormattingEnabled = True
         Me.CbxNivel.Items.AddRange(New Object() {"Gerente", "General"})
-        Me.CbxNivel.Location = New System.Drawing.Point(124, 155)
+        Me.CbxNivel.Location = New System.Drawing.Point(168, 200)
         Me.CbxNivel.Name = "CbxNivel"
         Me.CbxNivel.Size = New System.Drawing.Size(121, 21)
         Me.CbxNivel.TabIndex = 41
@@ -185,7 +174,7 @@ Partial Class Empleado
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(307, 137)
+        Me.Label1.Location = New System.Drawing.Point(351, 182)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(130, 13)
         Me.Label1.TabIndex = 43
@@ -193,7 +182,7 @@ Partial Class Empleado
         '
         'TxtContraseña
         '
-        Me.TxtContraseña.Location = New System.Drawing.Point(443, 130)
+        Me.TxtContraseña.Location = New System.Drawing.Point(487, 175)
         Me.TxtContraseña.Name = "TxtContraseña"
         Me.TxtContraseña.Size = New System.Drawing.Size(100, 20)
         Me.TxtContraseña.TabIndex = 42
@@ -202,7 +191,7 @@ Partial Class Empleado
         'cbxMostrarContra
         '
         Me.cbxMostrarContra.AutoSize = True
-        Me.cbxMostrarContra.Location = New System.Drawing.Point(438, 159)
+        Me.cbxMostrarContra.Location = New System.Drawing.Point(482, 204)
         Me.cbxMostrarContra.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxMostrarContra.Name = "cbxMostrarContra"
         Me.cbxMostrarContra.Size = New System.Drawing.Size(114, 17)
@@ -214,7 +203,7 @@ Partial Class Empleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(568, 554)
+        Me.ClientSize = New System.Drawing.Size(688, 650)
         Me.Controls.Add(Me.cbxMostrarContra)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxtContraseña)
@@ -226,6 +215,7 @@ Partial Class Empleado
         Me.Controls.Add(Me.lbNombreEmpleado)
         Me.Controls.Add(Me.txtNombreEmpleado)
         Me.Controls.Add(Me.lbCodigoEmpleado)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Empleado"
         Me.Text = "Empleado"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -238,7 +228,6 @@ Partial Class Empleado
 
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btnSalir As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnGuardar As Button

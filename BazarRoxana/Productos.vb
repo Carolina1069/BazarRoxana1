@@ -60,12 +60,6 @@ Public Class Productos
 
     End Sub
 
-    Private Sub btSalir_Click(sender As Object, e As EventArgs) Handles btSalir.Click
-
-        Me.Close()
-
-    End Sub
-
     Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -206,21 +200,4 @@ Public Class Productos
         DGV.DataSource = DatosCat
 
     End Sub
-    Private Function validar_campos(T As Control) As Boolean
-
-        For Each T In Me.Controls
-            If TypeOf T Is TextBox Then
-                If Trim(T.Text) = "" Then
-                    MsgBox("Campo por validar", vbInformation)
-                    'Else   
-                    '    MessageBox.Show("Dot Net Perls is awesome.")
-                End If
-            Else
-                ' mesagebox aqui hay otro control diferente de textbox
-
-            End If
-        Next
-    End Function
-
-
 End Class

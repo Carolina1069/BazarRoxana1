@@ -106,6 +106,12 @@
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MenuPrincipal.Designer.vb">
+      <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -169,6 +175,9 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -202,6 +211,39 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_account_child_128_28130.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_archive_128_28227.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_assignment_128_28219.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_assignment_ind_128_28218.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_attach_money_128_28210.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_description_128_28266.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_face_unlock_128_28406.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_local_shipping_128_28443.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_shopping_cart_128_28698.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login_37128.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_home_128_28521.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
