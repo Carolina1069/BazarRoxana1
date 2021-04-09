@@ -40,6 +40,8 @@ Partial Class Clientes
         Me.btEliminar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.chkEstado = New System.Windows.Forms.CheckBox()
+        Me.chkInhabil = New System.Windows.Forms.CheckBox()
         CType(Me.DGVCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,6 +184,7 @@ Partial Class Clientes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.chkInhabil)
         Me.GroupBox1.Controls.Add(Me.btEliminar)
         Me.GroupBox1.Controls.Add(Me.btActualizarTabla)
         Me.GroupBox1.Controls.Add(Me.btActualizar)
@@ -203,11 +206,32 @@ Partial Class Clientes
         Me.PictureBox1.TabIndex = 20
         Me.PictureBox1.TabStop = False
         '
+        'chkEstado
+        '
+        Me.chkEstado.AutoSize = True
+        Me.chkEstado.Location = New System.Drawing.Point(408, 238)
+        Me.chkEstado.Name = "chkEstado"
+        Me.chkEstado.Size = New System.Drawing.Size(59, 17)
+        Me.chkEstado.TabIndex = 67
+        Me.chkEstado.Text = "Estado"
+        Me.chkEstado.UseVisualStyleBackColor = True
+        '
+        'chkInhabil
+        '
+        Me.chkInhabil.AutoSize = True
+        Me.chkInhabil.Location = New System.Drawing.Point(306, 39)
+        Me.chkInhabil.Name = "chkInhabil"
+        Me.chkInhabil.Size = New System.Drawing.Size(88, 17)
+        Me.chkInhabil.TabIndex = 68
+        Me.chkInhabil.Text = "Inhabilitados "
+        Me.chkInhabil.UseVisualStyleBackColor = True
+        '
         'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(688, 650)
+        Me.Controls.Add(Me.chkEstado)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.rtxDirCli)
@@ -225,6 +249,7 @@ Partial Class Clientes
         Me.Text = "Clientes"
         CType(Me.DGVCliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -249,4 +274,6 @@ Partial Class Clientes
     Friend WithEvents btActualizarTabla As Button
     Friend WithEvents btEliminar As Button
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents chkEstado As CheckBox
+    Friend WithEvents chkInhabil As CheckBox
 End Class

@@ -2,7 +2,7 @@
 Public Class Ventas
     Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles TxtCodCli.TextChanged
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim Recuperar As String = "select * from Clientes where CodCli= '" & TxtCodCli.Text & "'"
@@ -23,7 +23,7 @@ Public Class Ventas
 
     Private Sub TxtCodEmple_TextChanged(sender As Object, e As EventArgs) Handles TxtCodEmple.TextChanged
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim Recuperar As String = "select * from Empleados where CodEmple= '" & TxtCodEmple.Text & "'"
@@ -44,7 +44,7 @@ Public Class Ventas
 
     Private Sub TxtCodPago_TextChanged(sender As Object, e As EventArgs) Handles TxtCodPago.TextChanged
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim Recuperar As String = "select * from FormasPago where CodPago= '" & TxtCodPago.Text & "'"
@@ -65,7 +65,7 @@ Public Class Ventas
 
     Private Sub TxtCodTransa_TextChanged(sender As Object, e As EventArgs) Handles TxtCodTransa.TextChanged
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & TxtCodTransa.Text & "'"
@@ -86,7 +86,7 @@ Public Class Ventas
 
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProducto.TextChanged
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim Recuperar As String = "select * from Producto where CodProduc= '" & TxtCodProducto.Text & "'"
@@ -151,7 +151,7 @@ Public Class Ventas
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
         Dim total As Integer
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=DANIELRUEDA\LOCALHOST;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         If txNumVenta.Text = "" Or TxtCodCli.Text = "" Or TxtCodPago.Text = "" Or TxtCodTransa.Text = "" Or TxtCodEmple.Text = "" Then
@@ -208,6 +208,10 @@ Public Class Ventas
             TxtCodPago.Clear()
             total = 0
         End If
+
+    End Sub
+
+    Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
 End Class

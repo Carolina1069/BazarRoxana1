@@ -25,6 +25,8 @@ Partial Class Compras
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TxtTotal = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.CbxPrecio = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btEliminar = New System.Windows.Forms.Button()
@@ -35,6 +37,13 @@ Partial Class Compras
         Me.btGuardar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DGV = New System.Windows.Forms.DataGridView()
+        Me.NumCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Impuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtCodProducto = New System.Windows.Forms.TextBox()
         Me.BtnAgregar = New System.Windows.Forms.Button()
@@ -61,15 +70,6 @@ Partial Class Compras
         Me.TxtCodPago = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TxtTotal = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.NumCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Impuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -102,6 +102,22 @@ Partial Class Compras
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de la Compra"
+        '
+        'TxtTotal
+        '
+        Me.TxtTotal.Location = New System.Drawing.Point(463, 246)
+        Me.TxtTotal.Name = "TxtTotal"
+        Me.TxtTotal.Size = New System.Drawing.Size(100, 20)
+        Me.TxtTotal.TabIndex = 59
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(426, 249)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(31, 13)
+        Me.Label8.TabIndex = 58
+        Me.Label8.Text = "Total"
         '
         'CbxPrecio
         '
@@ -209,6 +225,41 @@ Partial Class Compras
         Me.DGV.RowHeadersWidth = 51
         Me.DGV.Size = New System.Drawing.Size(537, 150)
         Me.DGV.TabIndex = 21
+        '
+        'NumCompra
+        '
+        Me.NumCompra.HeaderText = "Numero de Compra"
+        Me.NumCompra.Name = "NumCompra"
+        '
+        'CodProduc
+        '
+        Me.CodProduc.HeaderText = "Codigo de Producto"
+        Me.CodProduc.Name = "CodProduc"
+        '
+        'NombProduc
+        '
+        Me.NombProduc.HeaderText = "Nombre del Producto"
+        Me.NombProduc.Name = "NombProduc"
+        '
+        'Impuesto
+        '
+        Me.Impuesto.HeaderText = "Impuesto"
+        Me.Impuesto.Name = "Impuesto"
+        '
+        'CantProduc
+        '
+        Me.CantProduc.HeaderText = "Cantidad del Producto"
+        Me.CantProduc.Name = "CantProduc"
+        '
+        'PrecioProduc
+        '
+        Me.PrecioProduc.HeaderText = "Precio del Producto"
+        Me.PrecioProduc.Name = "PrecioProduc"
+        '
+        'SubTotal
+        '
+        Me.SubTotal.HeaderText = "SubTotal"
+        Me.SubTotal.Name = "SubTotal"
         '
         'Label9
         '
@@ -432,57 +483,6 @@ Partial Class Compras
         Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
         Me.PictureBox1.TabIndex = 40
         Me.PictureBox1.TabStop = False
-        '
-        'TxtTotal
-        '
-        Me.TxtTotal.Location = New System.Drawing.Point(463, 246)
-        Me.TxtTotal.Name = "TxtTotal"
-        Me.TxtTotal.Size = New System.Drawing.Size(100, 20)
-        Me.TxtTotal.TabIndex = 59
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(426, 249)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(31, 13)
-        Me.Label8.TabIndex = 58
-        Me.Label8.Text = "Total"
-        '
-        'NumCompra
-        '
-        Me.NumCompra.HeaderText = "Numero de Compra"
-        Me.NumCompra.Name = "NumCompra"
-        '
-        'CodProduc
-        '
-        Me.CodProduc.HeaderText = "Codigo de Producto"
-        Me.CodProduc.Name = "CodProduc"
-        '
-        'NombProduc
-        '
-        Me.NombProduc.HeaderText = "Nombre del Producto"
-        Me.NombProduc.Name = "NombProduc"
-        '
-        'Impuesto
-        '
-        Me.Impuesto.HeaderText = "Impuesto"
-        Me.Impuesto.Name = "Impuesto"
-        '
-        'CantProduc
-        '
-        Me.CantProduc.HeaderText = "Cantidad del Producto"
-        Me.CantProduc.Name = "CantProduc"
-        '
-        'PrecioProduc
-        '
-        Me.PrecioProduc.HeaderText = "Precio del Producto"
-        Me.PrecioProduc.Name = "PrecioProduc"
-        '
-        'SubTotal
-        '
-        Me.SubTotal.HeaderText = "SubTotal"
-        Me.SubTotal.Name = "SubTotal"
         '
         'Compras
         '

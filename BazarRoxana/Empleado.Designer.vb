@@ -39,6 +39,8 @@ Partial Class Empleado
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtContraseña = New System.Windows.Forms.TextBox()
         Me.cbxMostrarContra = New System.Windows.Forms.CheckBox()
+        Me.chkEstado = New System.Windows.Forms.CheckBox()
+        Me.chkInhabil = New System.Windows.Forms.CheckBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,15 +56,16 @@ Partial Class Empleado
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.chkInhabil)
         Me.GroupBox1.Controls.Add(Me.btnActTabla)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
         Me.GroupBox1.Controls.Add(Me.btnActualizar)
         Me.GroupBox1.Controls.Add(Me.btnGuardar)
         Me.GroupBox1.Controls.Add(Me.DGV)
         Me.GroupBox1.Controls.Add(Me.btnBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(67, 250)
+        Me.GroupBox1.Location = New System.Drawing.Point(67, 273)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(532, 304)
+        Me.GroupBox1.Size = New System.Drawing.Size(532, 281)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda del empleado"
@@ -78,7 +81,7 @@ Partial Class Empleado
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(451, 273)
+        Me.btnEliminar.Location = New System.Drawing.Point(451, 252)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar.TabIndex = 24
@@ -87,7 +90,7 @@ Partial Class Empleado
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(236, 273)
+        Me.btnActualizar.Location = New System.Drawing.Point(236, 252)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar.TabIndex = 23
@@ -96,7 +99,7 @@ Partial Class Empleado
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(6, 273)
+        Me.btnGuardar.Location = New System.Drawing.Point(6, 252)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 22
@@ -123,7 +126,7 @@ Partial Class Empleado
         '
         'TxtCodigoEmpleado
         '
-        Me.TxtCodigoEmpleado.Location = New System.Drawing.Point(166, 142)
+        Me.TxtCodigoEmpleado.Location = New System.Drawing.Point(166, 133)
         Me.TxtCodigoEmpleado.Name = "TxtCodigoEmpleado"
         Me.TxtCodigoEmpleado.Size = New System.Drawing.Size(100, 20)
         Me.TxtCodigoEmpleado.TabIndex = 37
@@ -131,7 +134,7 @@ Partial Class Empleado
         'lbNivel
         '
         Me.lbNivel.AutoSize = True
-        Me.lbNivel.Location = New System.Drawing.Point(64, 200)
+        Me.lbNivel.Location = New System.Drawing.Point(64, 191)
         Me.lbNivel.Name = "lbNivel"
         Me.lbNivel.Size = New System.Drawing.Size(98, 13)
         Me.lbNivel.TabIndex = 36
@@ -140,7 +143,7 @@ Partial Class Empleado
         'lbNombreEmpleado
         '
         Me.lbNombreEmpleado.AutoSize = True
-        Me.lbNombreEmpleado.Location = New System.Drawing.Point(368, 142)
+        Me.lbNombreEmpleado.Location = New System.Drawing.Point(368, 133)
         Me.lbNombreEmpleado.Name = "lbNombreEmpleado"
         Me.lbNombreEmpleado.Size = New System.Drawing.Size(113, 13)
         Me.lbNombreEmpleado.TabIndex = 35
@@ -148,7 +151,7 @@ Partial Class Empleado
         '
         'txtNombreEmpleado
         '
-        Me.txtNombreEmpleado.Location = New System.Drawing.Point(487, 135)
+        Me.txtNombreEmpleado.Location = New System.Drawing.Point(487, 126)
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
         Me.txtNombreEmpleado.Size = New System.Drawing.Size(100, 20)
         Me.txtNombreEmpleado.TabIndex = 34
@@ -156,7 +159,7 @@ Partial Class Empleado
         'lbCodigoEmpleado
         '
         Me.lbCodigoEmpleado.AutoSize = True
-        Me.lbCodigoEmpleado.Location = New System.Drawing.Point(64, 145)
+        Me.lbCodigoEmpleado.Location = New System.Drawing.Point(64, 136)
         Me.lbCodigoEmpleado.Name = "lbCodigoEmpleado"
         Me.lbCodigoEmpleado.Size = New System.Drawing.Size(90, 13)
         Me.lbCodigoEmpleado.TabIndex = 33
@@ -166,7 +169,7 @@ Partial Class Empleado
         '
         Me.CbxNivel.FormattingEnabled = True
         Me.CbxNivel.Items.AddRange(New Object() {"Gerente", "General"})
-        Me.CbxNivel.Location = New System.Drawing.Point(168, 200)
+        Me.CbxNivel.Location = New System.Drawing.Point(168, 191)
         Me.CbxNivel.Name = "CbxNivel"
         Me.CbxNivel.Size = New System.Drawing.Size(121, 21)
         Me.CbxNivel.TabIndex = 41
@@ -174,7 +177,7 @@ Partial Class Empleado
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(351, 182)
+        Me.Label1.Location = New System.Drawing.Point(351, 173)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(130, 13)
         Me.Label1.TabIndex = 43
@@ -182,7 +185,7 @@ Partial Class Empleado
         '
         'TxtContraseña
         '
-        Me.TxtContraseña.Location = New System.Drawing.Point(487, 175)
+        Me.TxtContraseña.Location = New System.Drawing.Point(487, 166)
         Me.TxtContraseña.Name = "TxtContraseña"
         Me.TxtContraseña.Size = New System.Drawing.Size(100, 20)
         Me.TxtContraseña.TabIndex = 42
@@ -191,7 +194,7 @@ Partial Class Empleado
         'cbxMostrarContra
         '
         Me.cbxMostrarContra.AutoSize = True
-        Me.cbxMostrarContra.Location = New System.Drawing.Point(482, 204)
+        Me.cbxMostrarContra.Location = New System.Drawing.Point(482, 198)
         Me.cbxMostrarContra.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxMostrarContra.Name = "cbxMostrarContra"
         Me.cbxMostrarContra.Size = New System.Drawing.Size(114, 17)
@@ -199,11 +202,32 @@ Partial Class Empleado
         Me.cbxMostrarContra.Text = "Mostrar contaseña"
         Me.cbxMostrarContra.UseVisualStyleBackColor = True
         '
+        'chkEstado
+        '
+        Me.chkEstado.AutoSize = True
+        Me.chkEstado.Location = New System.Drawing.Point(79, 234)
+        Me.chkEstado.Name = "chkEstado"
+        Me.chkEstado.Size = New System.Drawing.Size(59, 17)
+        Me.chkEstado.TabIndex = 67
+        Me.chkEstado.Text = "Estado"
+        Me.chkEstado.UseVisualStyleBackColor = True
+        '
+        'chkInhabil
+        '
+        Me.chkInhabil.AutoSize = True
+        Me.chkInhabil.Location = New System.Drawing.Point(287, 37)
+        Me.chkInhabil.Name = "chkInhabil"
+        Me.chkInhabil.Size = New System.Drawing.Size(88, 17)
+        Me.chkInhabil.TabIndex = 70
+        Me.chkInhabil.Text = "Inhabilitados "
+        Me.chkInhabil.UseVisualStyleBackColor = True
+        '
         'Empleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(688, 650)
+        Me.Controls.Add(Me.chkEstado)
         Me.Controls.Add(Me.cbxMostrarContra)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxtContraseña)
@@ -220,6 +244,7 @@ Partial Class Empleado
         Me.Text = "Empleado"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -243,4 +268,6 @@ Partial Class Empleado
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtContraseña As TextBox
     Friend WithEvents cbxMostrarContra As CheckBox
+    Friend WithEvents chkEstado As CheckBox
+    Friend WithEvents chkInhabil As CheckBox
 End Class

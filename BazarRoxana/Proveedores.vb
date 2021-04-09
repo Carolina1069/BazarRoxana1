@@ -2,11 +2,11 @@
 Public Class Proveedores
     Private Sub Proveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select * from Proveedores", conec)
+        Using adaptador As New SqlDataAdapter("select * from Proveedores where EstadoProv=1", conec)
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -16,7 +16,7 @@ Public Class Proveedores
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
 
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim busqueda As Integer
@@ -35,11 +35,11 @@ Public Class Proveedores
 
     Private Sub btActualizarTabla_Click(sender As Object, e As EventArgs) Handles btActualizarTabla.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select * from Proveedores", conec)
+        Using adaptador As New SqlDataAdapter("select * from Proveedores where EstadoProv=1", conec)
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -49,20 +49,14 @@ Public Class Proveedores
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
 
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
-        Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select * from Proveedores", conec)
-            adaptador.Fill(DatosProveedor)
-        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-        DGVProveedores.DataSource = DatosProveedor
-        If txCodProve.Text = "" Or txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Then
+        If txCodProve.Text = "" Or txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Or chkEstado.Checked = False Then
             MsgBox("Hay campos vacios")
         Else
-            Dim ConsultaGuardar As String = "insert into Proveedores(CodProv, NombProv,TelProv, NombContProv,CorreoProv, CorreoContProv, TelContProv, DirecProv,EstadoProv) 
-        values(@CodProv, @NombProv, @TelProv, @NombContProv, @CorreoProv, @CorreoContProv, @TelContProv, @DirecProv,1)"
+            Dim ConsultaGuardar As String = "insert into Proveedores(CodProv, NombProv,TelProv, NombContProv,CorreoProv, CorreoContProv, TelContProv, DirecProv,EstadoProv) values(@CodProv, @NombProv, @TelProv, @NombContProv, @CorreoProv, @CorreoContProv, @TelContProv, @DirecProv,1)"
             Dim ejecutar As New SqlCommand(ConsultaGuardar, conec)
             ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
             ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
@@ -73,27 +67,40 @@ Public Class Proveedores
             ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
             ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
 
+
             ejecutar.ExecuteNonQuery()
 
         End If
+
+        Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using adaptador As New SqlDataAdapter("select * from Proveedores where EstadoProv=1", conec)
+            adaptador.Fill(DatosProveedor)
+        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+        DGVProveedores.DataSource = DatosProveedor
+
 
     End Sub
 
     Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles btActualizar.Click
         Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
-        Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select * from Proveedores", conec)
-            adaptador.Fill(DatosProveedor)
-        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+        Dim estado As Integer
 
-        DGVProveedores.DataSource = DatosProveedor
+        If chkEstado.Checked = True Then
+
+            estado = 1
+        Else
+
+            estado = 0
+        End If
+
         If txCodProve.Text = "" Or txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Then
             MsgBox("Hay campos vacios")
         Else
-            Dim ConsultaActualizar As String = "update Proveedores set NombProv=@NombProv,TelProv=@TelProv, NombContProv=@NombContProv, CorreoProv=@CorreoProv, CorreoContProv=@CorreoContProv, TelContProv=@TelContProv, DirecProv=@DirecProv where CodProv=@CodProv"
+            Dim ConsultaActualizar As String = "update Proveedores set NombProv=@NombProv,TelProv=@TelProv, NombContProv=@NombContProv, CorreoProv=@CorreoProv, CorreoContProv=@CorreoContProv, TelContProv=@TelContProv, DirecProv=@DirecProv, EstadoProv=@EstadoProv where CodProv=@CodProv"
             Dim ejecutar As New SqlCommand(ConsultaActualizar, conec)
             ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
             ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
@@ -103,28 +110,29 @@ Public Class Proveedores
             ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
             ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
             ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
-
+            ejecutar.Parameters.AddWithValue("@EstadoProv", (estado))
             ejecutar.ExecuteNonQuery()
 
         End If
 
-    End Sub
-
-    Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles btEliminar.Click
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
         Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select * from Proveedores", conec)
+        Using adaptador As New SqlDataAdapter("select * from Proveedores where EstadoProv=1", conec)
             adaptador.Fill(DatosProveedor)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGVProveedores.DataSource = DatosProveedor
+    End Sub
+
+    Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles btEliminar.Click
+        Dim conec As New SqlClient.SqlConnection
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.Open()
+
         If txCodProve.Text = "" Then
             MsgBox("Hay campos vacios")
         Else
 
-            Dim ConsultaEliminar As String = "delete from Proveedores where CodProv=@CodProv"
+            Dim ConsultaEliminar As String = "Update Proveedores set EstadoProv=0  where CodProv=@CodProv"
             Dim ejecutar As New SqlCommand(ConsultaEliminar, conec)
             ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
 
@@ -132,6 +140,12 @@ Public Class Proveedores
 
         End If
 
+        Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using adaptador As New SqlDataAdapter("select * from Proveedores where EstadoProv=1", conec)
+            adaptador.Fill(DatosProveedor)
+        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+        DGVProveedores.DataSource = DatosProveedor
     End Sub
 
     Private Sub btSalir_Click(sender As Object, e As EventArgs) 
@@ -193,5 +207,34 @@ Public Class Proveedores
 
     Private Sub txtTelProv_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelProv.KeyPress
         SoloNumeros(e)
+    End Sub
+
+    Private Sub chkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles chkInhabil.CheckedChanged
+
+        Dim conec As New SqlClient.SqlConnection
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.Open()
+
+        If chkInhabil.Checked = True Then
+
+            Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
+            Using adaptador As New SqlDataAdapter("select * from Proveedores where EstadoProv=0", conec)
+                adaptador.Fill(DatosProveedor)
+            End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+            DGVProveedores.DataSource = DatosProveedor
+
+        Else
+
+            Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
+            Using adaptador As New SqlDataAdapter("select * from Proveedores where EstadoProv=1", conec)
+                adaptador.Fill(DatosProveedor)
+            End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+            DGVProveedores.DataSource = DatosProveedor
+
+        End If
+
+
     End Sub
 End Class

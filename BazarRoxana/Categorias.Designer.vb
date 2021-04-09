@@ -34,6 +34,8 @@ Partial Class Categorias
         Me.lbCodigoCategoria = New System.Windows.Forms.Label()
         Me.txtNombCat = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.chkEstado = New System.Windows.Forms.CheckBox()
+        Me.chkInhabil = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -41,6 +43,7 @@ Partial Class Categorias
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.chkInhabil)
         Me.GroupBox1.Controls.Add(Me.btnActTabla)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
         Me.GroupBox1.Controls.Add(Me.btnActualizar)
@@ -148,11 +151,32 @@ Partial Class Categorias
         Me.PictureBox1.TabIndex = 64
         Me.PictureBox1.TabStop = False
         '
+        'chkEstado
+        '
+        Me.chkEstado.AutoSize = True
+        Me.chkEstado.Location = New System.Drawing.Point(89, 246)
+        Me.chkEstado.Name = "chkEstado"
+        Me.chkEstado.Size = New System.Drawing.Size(59, 17)
+        Me.chkEstado.TabIndex = 66
+        Me.chkEstado.Text = "Estado"
+        Me.chkEstado.UseVisualStyleBackColor = True
+        '
+        'chkInhabil
+        '
+        Me.chkInhabil.AutoSize = True
+        Me.chkInhabil.Location = New System.Drawing.Point(278, 35)
+        Me.chkInhabil.Name = "chkInhabil"
+        Me.chkInhabil.Size = New System.Drawing.Size(88, 17)
+        Me.chkInhabil.TabIndex = 71
+        Me.chkInhabil.Text = "Inhabilitados "
+        Me.chkInhabil.UseVisualStyleBackColor = True
+        '
         'Categorias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(688, 650)
+        Me.Controls.Add(Me.chkEstado)
         Me.Controls.Add(Me.txtNombCat)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
@@ -164,6 +188,7 @@ Partial Class Categorias
         Me.Name = "Categorias"
         Me.Text = "Categorias"
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -183,4 +208,6 @@ Partial Class Categorias
     Friend WithEvents lbCodigoCategoria As Label
     Friend WithEvents txtNombCat As TextBox
     Friend WithEvents btnActTabla As Button
+    Friend WithEvents chkEstado As CheckBox
+    Friend WithEvents chkInhabil As CheckBox
 End Class
