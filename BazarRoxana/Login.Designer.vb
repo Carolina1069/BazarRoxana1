@@ -23,6 +23,7 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.btnIngresar = New System.Windows.Forms.Button()
         Me.cbxMostrarContra = New System.Windows.Forms.CheckBox()
@@ -49,7 +50,7 @@ Partial Class Login
         '
         'btnIngresar
         '
-        Me.btnIngresar.Location = New System.Drawing.Point(197, 206)
+        Me.btnIngresar.Location = New System.Drawing.Point(196, 203)
         Me.btnIngresar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(125, 26)
@@ -60,13 +61,16 @@ Partial Class Login
         'cbxMostrarContra
         '
         Me.cbxMostrarContra.AutoSize = True
-        Me.cbxMostrarContra.Location = New System.Drawing.Point(197, 184)
+        Me.cbxMostrarContra.BackColor = System.Drawing.Color.Transparent
+        Me.cbxMostrarContra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxMostrarContra.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.cbxMostrarContra.Location = New System.Drawing.Point(197, 182)
         Me.cbxMostrarContra.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxMostrarContra.Name = "cbxMostrarContra"
-        Me.cbxMostrarContra.Size = New System.Drawing.Size(114, 17)
+        Me.cbxMostrarContra.Size = New System.Drawing.Size(131, 17)
         Me.cbxMostrarContra.TabIndex = 13
         Me.cbxMostrarContra.Text = "Mostrar contaseña"
-        Me.cbxMostrarContra.UseVisualStyleBackColor = True
+        Me.cbxMostrarContra.UseVisualStyleBackColor = False
         '
         'txtContrasena
         '
@@ -80,10 +84,13 @@ Partial Class Login
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(88, 162)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label2.Location = New System.Drawing.Point(70, 160)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.Size = New System.Drawing.Size(71, 13)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Contraseña"
         '
@@ -100,10 +107,13 @@ Partial Class Login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(88, 128)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.Location = New System.Drawing.Point(70, 126)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(108, 13)
+        Me.Label1.Size = New System.Drawing.Size(126, 13)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Nombre de empleado"
         '
@@ -121,18 +131,24 @@ Partial Class Login
         '
         Me.LbPorcentaje.AutoSize = True
         Me.LbPorcentaje.BackColor = System.Drawing.Color.Transparent
-        Me.LbPorcentaje.Location = New System.Drawing.Point(184, 266)
+        Me.LbPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbPorcentaje.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.LbPorcentaje.Location = New System.Drawing.Point(12, 241)
         Me.LbPorcentaje.Name = "LbPorcentaje"
-        Me.LbPorcentaje.Size = New System.Drawing.Size(24, 13)
+        Me.LbPorcentaje.Size = New System.Drawing.Size(27, 13)
         Me.LbPorcentaje.TabIndex = 17
         Me.LbPorcentaje.Text = "0 %"
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(196, 14)
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Usuarios1
+        Me.PictureBox1.Location = New System.Drawing.Point(196, 11)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(114, 80)
+        Me.PictureBox1.Size = New System.Drawing.Size(116, 95)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 8
         Me.PictureBox1.TabStop = False
         '
@@ -140,6 +156,8 @@ Partial Class Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.LoginFondo1
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(490, 299)
         Me.Controls.Add(Me.LbPorcentaje)
         Me.Controls.Add(Me.btnSalir)
@@ -151,6 +169,7 @@ Partial Class Login
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ProgressBar1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Login"
         Me.Text = "Login"

@@ -189,23 +189,23 @@ Public Class Proveedores
         End If
     End Sub
 
-    Private Sub txCodProve_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txCodProve.KeyPress
+    Private Sub txCodProve_KeyPress(sender As Object, e As KeyPressEventArgs) 
         SoloNumeros(e)
     End Sub
 
-    Private Sub txNomProv_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txNomProv.KeyPress
+    Private Sub txNomProv_KeyPress(sender As Object, e As KeyPressEventArgs) 
         SoloLetras(e)
     End Sub
 
-    Private Sub TxtTelfonoEmpresa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTelfonoEmpresa.KeyPress
+    Private Sub TxtTelfonoEmpresa_KeyPress(sender As Object, e As KeyPressEventArgs) 
         SoloNumeros(e)
     End Sub
 
-    Private Sub txtNombrePreEm_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombrePreEm.KeyPress
+    Private Sub txtNombrePreEm_KeyPress(sender As Object, e As KeyPressEventArgs) 
         SoloNumeros(e)
     End Sub
 
-    Private Sub txtTelProv_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTelProv.KeyPress
+    Private Sub txtTelProv_KeyPress(sender As Object, e As KeyPressEventArgs) 
         SoloNumeros(e)
     End Sub
 

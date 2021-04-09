@@ -23,11 +23,12 @@ Partial Class MenuPrincipal
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MenuPrincipal))
         Me.LblHora = New System.Windows.Forms.Label()
         Me.LblFecha = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpleadoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,40 +38,28 @@ Partial Class MenuPrincipal
         Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.BackColor = System.Drawing.Color.Gainsboro
-        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.EmpleadoToolStripMenuItem1, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.CategoriaToolStripMenuItem, Me.ProductoToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.VentasToolStripMenuItem, Me.SalirToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(193, 650)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
         '
         'LblHora
         '
         Me.LblHora.AutoSize = True
         Me.LblHora.BackColor = System.Drawing.Color.Gainsboro
-        Me.LblHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblHora.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblHora.Location = New System.Drawing.Point(12, 628)
         Me.LblHora.Name = "LblHora"
-        Me.LblHora.Size = New System.Drawing.Size(0, 15)
+        Me.LblHora.Size = New System.Drawing.Size(0, 14)
         Me.LblHora.TabIndex = 46
         '
         'LblFecha
         '
         Me.LblFecha.AutoSize = True
         Me.LblFecha.BackColor = System.Drawing.Color.Gainsboro
-        Me.LblFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblFecha.Font = New System.Drawing.Font("Constantia", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblFecha.Location = New System.Drawing.Point(12, 605)
         Me.LblFecha.Name = "LblFecha"
-        Me.LblFecha.Size = New System.Drawing.Size(0, 15)
+        Me.LblFecha.Size = New System.Drawing.Size(0, 14)
         Me.LblFecha.TabIndex = 45
         '
         'Timer1
@@ -82,94 +71,136 @@ Partial Class MenuPrincipal
         '
         'ToolStripContainer1.ContentPanel
         '
-        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(664, 650)
+        Me.ToolStripContainer1.ContentPanel.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.pexels_artem_beliaikin_10368561
+        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(666, 650)
         Me.ToolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ToolStripContainer1.LeftToolStripPanelVisible = False
-        Me.ToolStripContainer1.Location = New System.Drawing.Point(193, 0)
+        Me.ToolStripContainer1.Location = New System.Drawing.Point(191, 0)
         Me.ToolStripContainer1.Name = "ToolStripContainer1"
         Me.ToolStripContainer1.RightToolStripPanelVisible = False
-        Me.ToolStripContainer1.Size = New System.Drawing.Size(664, 650)
+        Me.ToolStripContainer1.Size = New System.Drawing.Size(666, 650)
         Me.ToolStripContainer1.TabIndex = 48
         Me.ToolStripContainer1.Text = "ToolStripContainer1"
         Me.ToolStripContainer1.TopToolStripPanelVisible = False
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.Gainsboro
+        Me.MenuStrip1.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.pexels_archie_binamira_2463346
+        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.MenuStrip1.Font = New System.Drawing.Font("Constantia", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.EmpleadoToolStripMenuItem1, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.CategoriaToolStripMenuItem, Me.ProductoToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.VentasToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.MenuStrip1.Size = New System.Drawing.Size(191, 650)
+        Me.MenuStrip1.TabIndex = 0
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
         'InicioToolStripMenuItem
         '
+        Me.InicioToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.InicioToolStripMenuItem.BackgroundImage = CType(resources.GetObject("InicioToolStripMenuItem.BackgroundImage"), System.Drawing.Image)
+        Me.InicioToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.InicioToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.ic_home_128_28521
         Me.InicioToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
-        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(180, 34)
+        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
         Me.InicioToolStripMenuItem.Text = "Inicio"
         '
         'EmpleadoToolStripMenuItem1
         '
+        Me.EmpleadoToolStripMenuItem1.BackColor = System.Drawing.Color.Transparent
+        Me.EmpleadoToolStripMenuItem1.BackgroundImage = CType(resources.GetObject("EmpleadoToolStripMenuItem1.BackgroundImage"), System.Drawing.Image)
+        Me.EmpleadoToolStripMenuItem1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.EmpleadoToolStripMenuItem1.Image = Global.BazarRoxana.My.Resources.Resources.ic_account_child_128_28130
         Me.EmpleadoToolStripMenuItem1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.EmpleadoToolStripMenuItem1.Name = "EmpleadoToolStripMenuItem1"
-        Me.EmpleadoToolStripMenuItem1.Size = New System.Drawing.Size(180, 34)
+        Me.EmpleadoToolStripMenuItem1.Size = New System.Drawing.Size(178, 30)
         Me.EmpleadoToolStripMenuItem1.Text = "Empleado         "
         Me.EmpleadoToolStripMenuItem1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ProveedoresToolStripMenuItem
         '
+        Me.ProveedoresToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.ProveedoresToolStripMenuItem.BackgroundImage = CType(resources.GetObject("ProveedoresToolStripMenuItem.BackgroundImage"), System.Drawing.Image)
+        Me.ProveedoresToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ProveedoresToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.ic_local_shipping_128_28443
         Me.ProveedoresToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 34)
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         Me.ProveedoresToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ClientesToolStripMenuItem
         '
+        Me.ClientesToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.ClientesToolStripMenuItem.BackgroundImage = CType(resources.GetObject("ClientesToolStripMenuItem.BackgroundImage"), System.Drawing.Image)
+        Me.ClientesToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientesToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.ic_face_unlock_128_28406
         Me.ClientesToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(180, 34)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         Me.ClientesToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'CategoriaToolStripMenuItem
         '
+        Me.CategoriaToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.CategoriaToolStripMenuItem.BackgroundImage = CType(resources.GetObject("CategoriaToolStripMenuItem.BackgroundImage"), System.Drawing.Image)
+        Me.CategoriaToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.CategoriaToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.ic_assignment_128_28219
         Me.CategoriaToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.CategoriaToolStripMenuItem.Name = "CategoriaToolStripMenuItem"
-        Me.CategoriaToolStripMenuItem.Size = New System.Drawing.Size(180, 34)
+        Me.CategoriaToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
         Me.CategoriaToolStripMenuItem.Text = "Categoria"
         Me.CategoriaToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ProductoToolStripMenuItem
         '
+        Me.ProductoToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.ProductoToolStripMenuItem.BackgroundImage = CType(resources.GetObject("ProductoToolStripMenuItem.BackgroundImage"), System.Drawing.Image)
+        Me.ProductoToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ProductoToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.ic_archive_128_28227
         Me.ProductoToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ProductoToolStripMenuItem.Name = "ProductoToolStripMenuItem"
-        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(180, 34)
+        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
         Me.ProductoToolStripMenuItem.Text = "Producto"
         Me.ProductoToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ComprasToolStripMenuItem
         '
+        Me.ComprasToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.ComprasToolStripMenuItem.BackgroundImage = CType(resources.GetObject("ComprasToolStripMenuItem.BackgroundImage"), System.Drawing.Image)
+        Me.ComprasToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ComprasToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.ic_shopping_cart_128_28698
         Me.ComprasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ComprasToolStripMenuItem.Name = "ComprasToolStripMenuItem"
-        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(180, 34)
+        Me.ComprasToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
         Me.ComprasToolStripMenuItem.Text = "Compras"
         Me.ComprasToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'VentasToolStripMenuItem
         '
+        Me.VentasToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.VentasToolStripMenuItem.BackgroundImage = CType(resources.GetObject("VentasToolStripMenuItem.BackgroundImage"), System.Drawing.Image)
+        Me.VentasToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.VentasToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.ic_attach_money_128_28210
         Me.VentasToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(180, 34)
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         Me.VentasToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'SalirToolStripMenuItem
         '
+        Me.SalirToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.SalirToolStripMenuItem.BackgroundImage = CType(resources.GetObject("SalirToolStripMenuItem.BackgroundImage"), System.Drawing.Image)
+        Me.SalirToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.SalirToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.Login_37128
         Me.SalirToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 34)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
         Me.SalirToolStripMenuItem.Text = "Salir"
         Me.SalirToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -182,14 +213,15 @@ Partial Class MenuPrincipal
         Me.Controls.Add(Me.LblHora)
         Me.Controls.Add(Me.LblFecha)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MenuPrincipal"
         Me.Text = "Inventario"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

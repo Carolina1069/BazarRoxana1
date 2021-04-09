@@ -26,35 +26,35 @@ Public Class Productos
         End If
     End Sub
 
-    Private Sub txCodProd_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txCodProd.KeyPress
+    Private Sub txCodProd_KeyPress(sender As Object, e As KeyPressEventArgs)
         SoloNumeros(e)
     End Sub
 
-    Private Sub txCodProv_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txCodProv.KeyPress
+    Private Sub txCodProv_KeyPress(sender As Object, e As KeyPressEventArgs)
         SoloNumeros(e)
     End Sub
 
-    Private Sub txtPriPre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPriPre.KeyPress
+    Private Sub txtPriPre_KeyPress(sender As Object, e As KeyPressEventArgs)
         SoloNumeros(e)
     End Sub
 
-    Private Sub txtSegPre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtSegPre.KeyPress
+    Private Sub txtSegPre_KeyPress(sender As Object, e As KeyPressEventArgs)
         SoloNumeros(e)
     End Sub
 
-    Private Sub txtTerPre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtTerPre.KeyPress
+    Private Sub txtTerPre_KeyPress(sender As Object, e As KeyPressEventArgs)
 
         SoloNumeros(e)
 
     End Sub
 
-    Private Sub btBuscarProv_Click(sender As Object, e As EventArgs) Handles btBuscarProv.Click
+    Private Sub btBuscarProv_Click(sender As Object, e As EventArgs)
 
         ViewBusProv.Show()
 
     End Sub
 
-    Private Sub btBuscarCateg_Click(sender As Object, e As EventArgs) Handles btBuscarCateg.Click
+    Private Sub btBuscarCateg_Click(sender As Object, e As EventArgs)
 
         ViewBusCateg.Show()
 

@@ -22,8 +22,8 @@ Partial Class Empleado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chkInhabil = New System.Windows.Forms.CheckBox()
         Me.btnActTabla = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
@@ -40,22 +40,15 @@ Partial Class Empleado
         Me.TxtContraseña = New System.Windows.Forms.TextBox()
         Me.cbxMostrarContra = New System.Windows.Forms.CheckBox()
         Me.chkEstado = New System.Windows.Forms.CheckBox()
-        Me.chkInhabil = New System.Windows.Forms.CheckBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(576, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
-        Me.PictureBox1.TabIndex = 40
-        Me.PictureBox1.TabStop = False
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.chkInhabil)
         Me.GroupBox1.Controls.Add(Me.btnActTabla)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
@@ -63,12 +56,23 @@ Partial Class Empleado
         Me.GroupBox1.Controls.Add(Me.btnGuardar)
         Me.GroupBox1.Controls.Add(Me.DGV)
         Me.GroupBox1.Controls.Add(Me.btnBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(67, 273)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(64, 273)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(532, 281)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda del empleado"
+        '
+        'chkInhabil
+        '
+        Me.chkInhabil.AutoSize = True
+        Me.chkInhabil.Location = New System.Drawing.Point(287, 37)
+        Me.chkInhabil.Name = "chkInhabil"
+        Me.chkInhabil.Size = New System.Drawing.Size(102, 17)
+        Me.chkInhabil.TabIndex = 70
+        Me.chkInhabil.Text = "Inhabilitados "
+        Me.chkInhabil.UseVisualStyleBackColor = True
         '
         'btnActTabla
         '
@@ -126,7 +130,7 @@ Partial Class Empleado
         '
         'TxtCodigoEmpleado
         '
-        Me.TxtCodigoEmpleado.Location = New System.Drawing.Point(166, 133)
+        Me.TxtCodigoEmpleado.Location = New System.Drawing.Point(163, 133)
         Me.TxtCodigoEmpleado.Name = "TxtCodigoEmpleado"
         Me.TxtCodigoEmpleado.Size = New System.Drawing.Size(100, 20)
         Me.TxtCodigoEmpleado.TabIndex = 37
@@ -134,24 +138,28 @@ Partial Class Empleado
         'lbNivel
         '
         Me.lbNivel.AutoSize = True
-        Me.lbNivel.Location = New System.Drawing.Point(64, 191)
+        Me.lbNivel.BackColor = System.Drawing.Color.Transparent
+        Me.lbNivel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbNivel.Location = New System.Drawing.Point(43, 194)
         Me.lbNivel.Name = "lbNivel"
-        Me.lbNivel.Size = New System.Drawing.Size(98, 13)
+        Me.lbNivel.Size = New System.Drawing.Size(116, 13)
         Me.lbNivel.TabIndex = 36
         Me.lbNivel.Text = "Nivel del Empleado"
         '
         'lbNombreEmpleado
         '
         Me.lbNombreEmpleado.AutoSize = True
-        Me.lbNombreEmpleado.Location = New System.Drawing.Point(368, 133)
+        Me.lbNombreEmpleado.BackColor = System.Drawing.Color.Transparent
+        Me.lbNombreEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbNombreEmpleado.Location = New System.Drawing.Point(329, 127)
         Me.lbNombreEmpleado.Name = "lbNombreEmpleado"
-        Me.lbNombreEmpleado.Size = New System.Drawing.Size(113, 13)
+        Me.lbNombreEmpleado.Size = New System.Drawing.Size(77, 26)
         Me.lbNombreEmpleado.TabIndex = 35
-        Me.lbNombreEmpleado.Text = "Nombre Del Empleado"
+        Me.lbNombreEmpleado.Text = "Nombre Del " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Empleado"
         '
         'txtNombreEmpleado
         '
-        Me.txtNombreEmpleado.Location = New System.Drawing.Point(487, 126)
+        Me.txtNombreEmpleado.Location = New System.Drawing.Point(433, 123)
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
         Me.txtNombreEmpleado.Size = New System.Drawing.Size(100, 20)
         Me.txtNombreEmpleado.TabIndex = 34
@@ -159,9 +167,11 @@ Partial Class Empleado
         'lbCodigoEmpleado
         '
         Me.lbCodigoEmpleado.AutoSize = True
-        Me.lbCodigoEmpleado.Location = New System.Drawing.Point(64, 136)
+        Me.lbCodigoEmpleado.BackColor = System.Drawing.Color.Transparent
+        Me.lbCodigoEmpleado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCodigoEmpleado.Location = New System.Drawing.Point(52, 136)
         Me.lbCodigoEmpleado.Name = "lbCodigoEmpleado"
-        Me.lbCodigoEmpleado.Size = New System.Drawing.Size(90, 13)
+        Me.lbCodigoEmpleado.Size = New System.Drawing.Size(105, 13)
         Me.lbCodigoEmpleado.TabIndex = 33
         Me.lbCodigoEmpleado.Text = "Codigo Empleado"
         '
@@ -169,7 +179,7 @@ Partial Class Empleado
         '
         Me.CbxNivel.FormattingEnabled = True
         Me.CbxNivel.Items.AddRange(New Object() {"Gerente", "General"})
-        Me.CbxNivel.Location = New System.Drawing.Point(168, 191)
+        Me.CbxNivel.Location = New System.Drawing.Point(165, 191)
         Me.CbxNivel.Name = "CbxNivel"
         Me.CbxNivel.Size = New System.Drawing.Size(121, 21)
         Me.CbxNivel.TabIndex = 41
@@ -177,15 +187,17 @@ Partial Class Empleado
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(351, 173)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(329, 163)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(130, 13)
+        Me.Label1.Size = New System.Drawing.Size(98, 26)
         Me.Label1.TabIndex = 43
-        Me.Label1.Text = "Contraseña Del Empleado"
+        Me.Label1.Text = "Contraseña Del " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Empleado"
         '
         'TxtContraseña
         '
-        Me.TxtContraseña.Location = New System.Drawing.Point(487, 166)
+        Me.TxtContraseña.Location = New System.Drawing.Point(433, 163)
         Me.TxtContraseña.Name = "TxtContraseña"
         Me.TxtContraseña.Size = New System.Drawing.Size(100, 20)
         Me.TxtContraseña.TabIndex = 42
@@ -194,45 +206,51 @@ Partial Class Empleado
         'cbxMostrarContra
         '
         Me.cbxMostrarContra.AutoSize = True
-        Me.cbxMostrarContra.Location = New System.Drawing.Point(482, 198)
+        Me.cbxMostrarContra.BackColor = System.Drawing.Color.Transparent
+        Me.cbxMostrarContra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxMostrarContra.Location = New System.Drawing.Point(433, 188)
         Me.cbxMostrarContra.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxMostrarContra.Name = "cbxMostrarContra"
-        Me.cbxMostrarContra.Size = New System.Drawing.Size(114, 17)
+        Me.cbxMostrarContra.Size = New System.Drawing.Size(85, 30)
         Me.cbxMostrarContra.TabIndex = 44
-        Me.cbxMostrarContra.Text = "Mostrar contaseña"
-        Me.cbxMostrarContra.UseVisualStyleBackColor = True
+        Me.cbxMostrarContra.Text = "Mostrar " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "contaseña"
+        Me.cbxMostrarContra.UseVisualStyleBackColor = False
         '
         'chkEstado
         '
         Me.chkEstado.AutoSize = True
-        Me.chkEstado.Location = New System.Drawing.Point(79, 234)
+        Me.chkEstado.BackColor = System.Drawing.Color.Transparent
+        Me.chkEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkEstado.Location = New System.Drawing.Point(76, 234)
         Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(59, 17)
+        Me.chkEstado.Size = New System.Drawing.Size(65, 17)
         Me.chkEstado.TabIndex = 67
         Me.chkEstado.Text = "Estado"
-        Me.chkEstado.UseVisualStyleBackColor = True
+        Me.chkEstado.UseVisualStyleBackColor = False
         '
-        'chkInhabil
+        'PictureBox1
         '
-        Me.chkInhabil.AutoSize = True
-        Me.chkInhabil.Location = New System.Drawing.Point(287, 37)
-        Me.chkInhabil.Name = "chkInhabil"
-        Me.chkInhabil.Size = New System.Drawing.Size(88, 17)
-        Me.chkInhabil.TabIndex = 70
-        Me.chkInhabil.Text = "Inhabilitados "
-        Me.chkInhabil.UseVisualStyleBackColor = True
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
+        Me.PictureBox1.Location = New System.Drawing.Point(409, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(245, 97)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 68
+        Me.PictureBox1.TabStop = False
         '
         'Empleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(688, 650)
+        Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.WhatsApp_Image_2021_04_08_at_10_15_57_PM
+        Me.ClientSize = New System.Drawing.Size(666, 650)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.chkEstado)
         Me.Controls.Add(Me.cbxMostrarContra)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxtContraseña)
         Me.Controls.Add(Me.CbxNivel)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.TxtCodigoEmpleado)
         Me.Controls.Add(Me.lbNivel)
@@ -242,16 +260,14 @@ Partial Class Empleado
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Empleado"
         Me.Text = "Empleado"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnActualizar As Button
@@ -270,4 +286,5 @@ Partial Class Empleado
     Friend WithEvents cbxMostrarContra As CheckBox
     Friend WithEvents chkEstado As CheckBox
     Friend WithEvents chkInhabil As CheckBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

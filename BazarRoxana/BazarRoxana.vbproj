@@ -245,5 +245,53 @@
   <ItemGroup>
     <None Include="Resources\ic_home_128_28521.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\360_F_119115529_mEnw3lGpLdlDkfLgRcVSbFRuVl6sMDty.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginFondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BazarRoxana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4TbaKqxqc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginFondo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuarios1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-04-08 at 10.15.57 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-04-08 at 10.15.57 PM1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-artem-beliaikin-1036856.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-04-09 at 1.07.45 AM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-artem-beliaikin-10368561.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pexels-archie-binamira-2463346.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

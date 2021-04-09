@@ -22,18 +22,24 @@ Partial Class Proveedores
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TxtCorreoProv = New System.Windows.Forms.TextBox()
-        Me.lbCorreoProve = New System.Windows.Forms.Label()
-        Me.txtTelProv = New System.Windows.Forms.TextBox()
-        Me.lbTelProvee = New System.Windows.Forms.Label()
-        Me.lbDireccProvee = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chkInhabil = New System.Windows.Forms.CheckBox()
         Me.btActualizarTabla = New System.Windows.Forms.Button()
         Me.btEliminar = New System.Windows.Forms.Button()
         Me.btActualizar = New System.Windows.Forms.Button()
         Me.btGuardar = New System.Windows.Forms.Button()
         Me.DGVProveedores = New System.Windows.Forms.DataGridView()
         Me.btBuscar = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.chkEstado = New System.Windows.Forms.CheckBox()
+        Me.RTBDirec = New System.Windows.Forms.RichTextBox()
+        Me.TxtTelfonoEmpresa = New System.Windows.Forms.TextBox()
+        Me.TxtCorreoProv = New System.Windows.Forms.TextBox()
+        Me.lbCorreoProve = New System.Windows.Forms.Label()
+        Me.txtTelProv = New System.Windows.Forms.TextBox()
+        Me.lbTelProvee = New System.Windows.Forms.Label()
+        Me.lbDireccProvee = New System.Windows.Forms.Label()
         Me.txCorreoEmpresa = New System.Windows.Forms.TextBox()
         Me.txtNombrePreEm = New System.Windows.Forms.TextBox()
         Me.txNomProv = New System.Windows.Forms.TextBox()
@@ -43,59 +49,15 @@ Partial Class Proveedores
         Me.lbCodigoProv = New System.Windows.Forms.Label()
         Me.txCodProve = New System.Windows.Forms.TextBox()
         Me.lbNombreProv = New System.Windows.Forms.Label()
-        Me.TxtTelfonoEmpresa = New System.Windows.Forms.TextBox()
-        Me.RTBDirec = New System.Windows.Forms.RichTextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.chkEstado = New System.Windows.Forms.CheckBox()
-        Me.chkInhabil = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGVProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'TxtCorreoProv
-        '
-        Me.TxtCorreoProv.Location = New System.Drawing.Point(159, 233)
-        Me.TxtCorreoProv.Name = "TxtCorreoProv"
-        Me.TxtCorreoProv.Size = New System.Drawing.Size(81, 20)
-        Me.TxtCorreoProv.TabIndex = 59
-        '
-        'lbCorreoProve
-        '
-        Me.lbCorreoProve.AutoSize = True
-        Me.lbCorreoProve.Location = New System.Drawing.Point(45, 233)
-        Me.lbCorreoProve.Name = "lbCorreoProve"
-        Me.lbCorreoProve.Size = New System.Drawing.Size(106, 13)
-        Me.lbCorreoProve.TabIndex = 58
-        Me.lbCorreoProve.Text = "Correo del proveedor"
-        '
-        'txtTelProv
-        '
-        Me.txtTelProv.Location = New System.Drawing.Point(482, 187)
-        Me.txtTelProv.Name = "txtTelProv"
-        Me.txtTelProv.Size = New System.Drawing.Size(100, 20)
-        Me.txtTelProv.TabIndex = 57
-        '
-        'lbTelProvee
-        '
-        Me.lbTelProvee.AutoSize = True
-        Me.lbTelProvee.Location = New System.Drawing.Point(359, 187)
-        Me.lbTelProvee.Name = "lbTelProvee"
-        Me.lbTelProvee.Size = New System.Drawing.Size(117, 13)
-        Me.lbTelProvee.TabIndex = 56
-        Me.lbTelProvee.Text = "Telefono del proveedor"
-        '
-        'lbDireccProvee
-        '
-        Me.lbDireccProvee.AutoSize = True
-        Me.lbDireccProvee.Location = New System.Drawing.Point(61, 267)
-        Me.lbDireccProvee.Name = "lbDireccProvee"
-        Me.lbDireccProvee.Size = New System.Drawing.Size(179, 13)
-        Me.lbDireccProvee.TabIndex = 54
-        Me.lbDireccProvee.Text = "Direccion de la empresa Proveedora"
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.chkInhabil)
         Me.GroupBox1.Controls.Add(Me.btActualizarTabla)
         Me.GroupBox1.Controls.Add(Me.btEliminar)
@@ -103,16 +65,27 @@ Partial Class Proveedores
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Controls.Add(Me.DGVProveedores)
         Me.GroupBox1.Controls.Add(Me.btBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(63, 363)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 329)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(532, 275)
+        Me.GroupBox1.Size = New System.Drawing.Size(651, 258)
         Me.GroupBox1.TabIndex = 53
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de Proveedor"
         '
+        'chkInhabil
+        '
+        Me.chkInhabil.AutoSize = True
+        Me.chkInhabil.Location = New System.Drawing.Point(344, 23)
+        Me.chkInhabil.Name = "chkInhabil"
+        Me.chkInhabil.Size = New System.Drawing.Size(102, 17)
+        Me.chkInhabil.TabIndex = 69
+        Me.chkInhabil.Text = "Inhabilitados "
+        Me.chkInhabil.UseVisualStyleBackColor = True
+        '
         'btActualizarTabla
         '
-        Me.btActualizarTabla.Location = New System.Drawing.Point(419, 36)
+        Me.btActualizarTabla.Location = New System.Drawing.Point(464, 19)
         Me.btActualizarTabla.Name = "btActualizarTabla"
         Me.btActualizarTabla.Size = New System.Drawing.Size(94, 23)
         Me.btActualizarTabla.TabIndex = 26
@@ -121,7 +94,7 @@ Partial Class Proveedores
         '
         'btEliminar
         '
-        Me.btEliminar.Location = New System.Drawing.Point(451, 246)
+        Me.btEliminar.Location = New System.Drawing.Point(496, 221)
         Me.btEliminar.Name = "btEliminar"
         Me.btEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btEliminar.TabIndex = 24
@@ -130,7 +103,7 @@ Partial Class Proveedores
         '
         'btActualizar
         '
-        Me.btActualizar.Location = New System.Drawing.Point(249, 246)
+        Me.btActualizar.Location = New System.Drawing.Point(294, 221)
         Me.btActualizar.Name = "btActualizar"
         Me.btActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btActualizar.TabIndex = 23
@@ -139,7 +112,7 @@ Partial Class Proveedores
         '
         'btGuardar
         '
-        Me.btGuardar.Location = New System.Drawing.Point(6, 246)
+        Me.btGuardar.Location = New System.Drawing.Point(51, 221)
         Me.btGuardar.Name = "btGuardar"
         Me.btGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btGuardar.TabIndex = 22
@@ -149,7 +122,7 @@ Partial Class Proveedores
         'DGVProveedores
         '
         Me.DGVProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVProveedores.Location = New System.Drawing.Point(12, 74)
+        Me.DGVProveedores.Location = New System.Drawing.Point(66, 52)
         Me.DGVProveedores.Name = "DGVProveedores"
         Me.DGVProveedores.RowHeadersWidth = 51
         Me.DGVProveedores.Size = New System.Drawing.Size(511, 150)
@@ -157,155 +130,221 @@ Partial Class Proveedores
         '
         'btBuscar
         '
-        Me.btBuscar.Location = New System.Drawing.Point(32, 36)
+        Me.btBuscar.Location = New System.Drawing.Point(70, 23)
         Me.btBuscar.Name = "btBuscar"
         Me.btBuscar.Size = New System.Drawing.Size(75, 23)
         Me.btBuscar.TabIndex = 18
         Me.btBuscar.Text = "Buscar"
         Me.btBuscar.UseVisualStyleBackColor = True
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
+        Me.PictureBox1.Location = New System.Drawing.Point(409, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(245, 97)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 68
+        Me.PictureBox1.TabStop = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.Blur
+        Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox2.Controls.Add(Me.chkEstado)
+        Me.GroupBox2.Controls.Add(Me.RTBDirec)
+        Me.GroupBox2.Controls.Add(Me.TxtTelfonoEmpresa)
+        Me.GroupBox2.Controls.Add(Me.TxtCorreoProv)
+        Me.GroupBox2.Controls.Add(Me.lbCorreoProve)
+        Me.GroupBox2.Controls.Add(Me.txtTelProv)
+        Me.GroupBox2.Controls.Add(Me.lbTelProvee)
+        Me.GroupBox2.Controls.Add(Me.lbDireccProvee)
+        Me.GroupBox2.Controls.Add(Me.txCorreoEmpresa)
+        Me.GroupBox2.Controls.Add(Me.txtNombrePreEm)
+        Me.GroupBox2.Controls.Add(Me.txNomProv)
+        Me.GroupBox2.Controls.Add(Me.lbNomDistri)
+        Me.GroupBox2.Controls.Add(Me.lbTel)
+        Me.GroupBox2.Controls.Add(Me.lbCorreoProv)
+        Me.GroupBox2.Controls.Add(Me.lbCodigoProv)
+        Me.GroupBox2.Controls.Add(Me.txCodProve)
+        Me.GroupBox2.Controls.Add(Me.lbNombreProv)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(8, 115)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(651, 208)
+        Me.GroupBox2.TabIndex = 69
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Proveedor"
+        '
+        'chkEstado
+        '
+        Me.chkEstado.AutoSize = True
+        Me.chkEstado.BackColor = System.Drawing.Color.Transparent
+        Me.chkEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkEstado.Location = New System.Drawing.Point(541, 87)
+        Me.chkEstado.Name = "chkEstado"
+        Me.chkEstado.Size = New System.Drawing.Size(65, 17)
+        Me.chkEstado.TabIndex = 84
+        Me.chkEstado.Text = "Estado"
+        Me.chkEstado.UseVisualStyleBackColor = False
+        '
+        'RTBDirec
+        '
+        Me.RTBDirec.Location = New System.Drawing.Point(209, 110)
+        Me.RTBDirec.Margin = New System.Windows.Forms.Padding(2)
+        Me.RTBDirec.Name = "RTBDirec"
+        Me.RTBDirec.Size = New System.Drawing.Size(246, 91)
+        Me.RTBDirec.TabIndex = 83
+        Me.RTBDirec.Text = ""
+        '
+        'TxtTelfonoEmpresa
+        '
+        Me.TxtTelfonoEmpresa.Location = New System.Drawing.Point(230, 33)
+        Me.TxtTelfonoEmpresa.Name = "TxtTelfonoEmpresa"
+        Me.TxtTelfonoEmpresa.Size = New System.Drawing.Size(94, 20)
+        Me.TxtTelfonoEmpresa.TabIndex = 82
+        '
+        'TxtCorreoProv
+        '
+        Me.TxtCorreoProv.Location = New System.Drawing.Point(230, 85)
+        Me.TxtCorreoProv.Name = "TxtCorreoProv"
+        Me.TxtCorreoProv.Size = New System.Drawing.Size(81, 20)
+        Me.TxtCorreoProv.TabIndex = 81
+        '
+        'lbCorreoProve
+        '
+        Me.lbCorreoProve.AutoSize = True
+        Me.lbCorreoProve.BackColor = System.Drawing.Color.Transparent
+        Me.lbCorreoProve.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCorreoProve.Location = New System.Drawing.Point(98, 88)
+        Me.lbCorreoProve.Name = "lbCorreoProve"
+        Me.lbCorreoProve.Size = New System.Drawing.Size(126, 13)
+        Me.lbCorreoProve.TabIndex = 80
+        Me.lbCorreoProve.Text = "Correo del proveedor"
+        '
+        'txtTelProv
+        '
+        Me.txtTelProv.Location = New System.Drawing.Point(541, 62)
+        Me.txtTelProv.Name = "txtTelProv"
+        Me.txtTelProv.Size = New System.Drawing.Size(100, 20)
+        Me.txtTelProv.TabIndex = 79
+        '
+        'lbTelProvee
+        '
+        Me.lbTelProvee.AutoSize = True
+        Me.lbTelProvee.BackColor = System.Drawing.Color.Transparent
+        Me.lbTelProvee.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTelProvee.Location = New System.Drawing.Point(385, 62)
+        Me.lbTelProvee.Name = "lbTelProvee"
+        Me.lbTelProvee.Size = New System.Drawing.Size(139, 13)
+        Me.lbTelProvee.TabIndex = 78
+        Me.lbTelProvee.Text = "Telefono del proveedor"
+        '
+        'lbDireccProvee
+        '
+        Me.lbDireccProvee.AutoSize = True
+        Me.lbDireccProvee.BackColor = System.Drawing.Color.Transparent
+        Me.lbDireccProvee.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbDireccProvee.Location = New System.Drawing.Point(81, 113)
+        Me.lbDireccProvee.Name = "lbDireccProvee"
+        Me.lbDireccProvee.Size = New System.Drawing.Size(123, 26)
+        Me.lbDireccProvee.TabIndex = 77
+        Me.lbDireccProvee.Text = "Direccion de la " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "empresa Proveedora"
+        '
         'txCorreoEmpresa
         '
-        Me.txCorreoEmpresa.Location = New System.Drawing.Point(496, 132)
+        Me.txCorreoEmpresa.Location = New System.Drawing.Point(541, 36)
         Me.txCorreoEmpresa.Name = "txCorreoEmpresa"
         Me.txCorreoEmpresa.Size = New System.Drawing.Size(100, 20)
-        Me.txCorreoEmpresa.TabIndex = 51
+        Me.txCorreoEmpresa.TabIndex = 76
         '
         'txtNombrePreEm
         '
-        Me.txtNombrePreEm.Location = New System.Drawing.Point(222, 183)
+        Me.txtNombrePreEm.Location = New System.Drawing.Point(230, 59)
         Me.txtNombrePreEm.Name = "txtNombrePreEm"
         Me.txtNombrePreEm.Size = New System.Drawing.Size(100, 20)
-        Me.txtNombrePreEm.TabIndex = 50
+        Me.txtNombrePreEm.TabIndex = 75
         '
         'txNomProv
         '
-        Me.txNomProv.Location = New System.Drawing.Point(496, 83)
+        Me.txNomProv.Location = New System.Drawing.Point(541, 10)
         Me.txNomProv.Name = "txNomProv"
         Me.txNomProv.Size = New System.Drawing.Size(100, 20)
-        Me.txNomProv.TabIndex = 49
+        Me.txNomProv.TabIndex = 74
         '
         'lbNomDistri
         '
         Me.lbNomDistri.AutoSize = True
-        Me.lbNomDistri.Location = New System.Drawing.Point(45, 184)
+        Me.lbNomDistri.BackColor = System.Drawing.Color.Transparent
+        Me.lbNomDistri.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbNomDistri.Location = New System.Drawing.Point(15, 59)
         Me.lbNomDistri.Name = "lbNomDistri"
-        Me.lbNomDistri.Size = New System.Drawing.Size(176, 13)
-        Me.lbNomDistri.TabIndex = 48
+        Me.lbNomDistri.Size = New System.Drawing.Size(209, 13)
+        Me.lbNomDistri.TabIndex = 73
         Me.lbNomDistri.Text = "Nombre del proveedor(empleado(a))"
         '
         'lbTel
         '
         Me.lbTel.AutoSize = True
-        Me.lbTel.Location = New System.Drawing.Point(39, 131)
+        Me.lbTel.BackColor = System.Drawing.Color.Transparent
+        Me.lbTel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTel.Location = New System.Drawing.Point(16, 39)
         Me.lbTel.Name = "lbTel"
-        Me.lbTel.Size = New System.Drawing.Size(175, 13)
-        Me.lbTel.TabIndex = 47
+        Me.lbTel.Size = New System.Drawing.Size(208, 13)
+        Me.lbTel.TabIndex = 72
         Me.lbTel.Text = "Telefono de la empresa proveedora" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'lbCorreoProv
         '
         Me.lbCorreoProv.AutoSize = True
-        Me.lbCorreoProv.Location = New System.Drawing.Point(332, 133)
+        Me.lbCorreoProv.BackColor = System.Drawing.Color.Transparent
+        Me.lbCorreoProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCorreoProv.Location = New System.Drawing.Point(338, 39)
         Me.lbCorreoProv.Name = "lbCorreoProv"
-        Me.lbCorreoProv.Size = New System.Drawing.Size(164, 13)
-        Me.lbCorreoProv.TabIndex = 46
+        Me.lbCorreoProv.Size = New System.Drawing.Size(195, 13)
+        Me.lbCorreoProv.TabIndex = 71
         Me.lbCorreoProv.Text = "Correo de la empresa proveedora" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'lbCodigoProv
         '
         Me.lbCodigoProv.AutoSize = True
-        Me.lbCodigoProv.Location = New System.Drawing.Point(46, 83)
+        Me.lbCodigoProv.BackColor = System.Drawing.Color.Transparent
+        Me.lbCodigoProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCodigoProv.Location = New System.Drawing.Point(75, 12)
         Me.lbCodigoProv.Name = "lbCodigoProv"
-        Me.lbCodigoProv.Size = New System.Drawing.Size(109, 13)
-        Me.lbCodigoProv.TabIndex = 45
+        Me.lbCodigoProv.Size = New System.Drawing.Size(129, 13)
+        Me.lbCodigoProv.TabIndex = 70
         Me.lbCodigoProv.Text = "Codigo del Proveedor"
         '
         'txCodProve
         '
-        Me.txCodProve.Location = New System.Drawing.Point(161, 81)
+        Me.txCodProve.Location = New System.Drawing.Point(230, 7)
         Me.txCodProve.Name = "txCodProve"
         Me.txCodProve.Size = New System.Drawing.Size(100, 20)
-        Me.txCodProve.TabIndex = 44
+        Me.txCodProve.TabIndex = 69
         '
         'lbNombreProv
         '
         Me.lbNombreProv.AutoSize = True
-        Me.lbNombreProv.Location = New System.Drawing.Point(323, 85)
+        Me.lbNombreProv.BackColor = System.Drawing.Color.Transparent
+        Me.lbNombreProv.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbNombreProv.Location = New System.Drawing.Point(335, 13)
         Me.lbNombreProv.Name = "lbNombreProv"
-        Me.lbNombreProv.Size = New System.Drawing.Size(170, 13)
-        Me.lbNombreProv.TabIndex = 43
+        Me.lbNombreProv.Size = New System.Drawing.Size(201, 13)
+        Me.lbNombreProv.TabIndex = 68
         Me.lbNombreProv.Text = "Nombre de la empresa proveedora"
-        '
-        'TxtTelfonoEmpresa
-        '
-        Me.TxtTelfonoEmpresa.Location = New System.Drawing.Point(221, 127)
-        Me.TxtTelfonoEmpresa.Name = "TxtTelfonoEmpresa"
-        Me.TxtTelfonoEmpresa.Size = New System.Drawing.Size(94, 20)
-        Me.TxtTelfonoEmpresa.TabIndex = 64
-        '
-        'RTBDirec
-        '
-        Me.RTBDirec.Location = New System.Drawing.Point(254, 267)
-        Me.RTBDirec.Margin = New System.Windows.Forms.Padding(2)
-        Me.RTBDirec.Name = "RTBDirec"
-        Me.RTBDirec.Size = New System.Drawing.Size(246, 91)
-        Me.RTBDirec.TabIndex = 65
-        Me.RTBDirec.Text = ""
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(589, 11)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(88, 57)
-        Me.PictureBox1.TabIndex = 66
-        Me.PictureBox1.TabStop = False
-        '
-        'chkEstado
-        '
-        Me.chkEstado.AutoSize = True
-        Me.chkEstado.Location = New System.Drawing.Point(417, 235)
-        Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(59, 17)
-        Me.chkEstado.TabIndex = 67
-        Me.chkEstado.Text = "Estado"
-        Me.chkEstado.UseVisualStyleBackColor = True
-        '
-        'chkInhabil
-        '
-        Me.chkInhabil.AutoSize = True
-        Me.chkInhabil.Location = New System.Drawing.Point(299, 40)
-        Me.chkInhabil.Name = "chkInhabil"
-        Me.chkInhabil.Size = New System.Drawing.Size(88, 17)
-        Me.chkInhabil.TabIndex = 69
-        Me.chkInhabil.Text = "Inhabilitados "
-        Me.chkInhabil.UseVisualStyleBackColor = True
         '
         'Proveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(688, 650)
-        Me.Controls.Add(Me.chkEstado)
+        Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.WhatsApp_Image_2021_04_08_at_10_15_57_PM
+        Me.ClientSize = New System.Drawing.Size(666, 650)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.RTBDirec)
-        Me.Controls.Add(Me.TxtTelfonoEmpresa)
-        Me.Controls.Add(Me.TxtCorreoProv)
-        Me.Controls.Add(Me.lbCorreoProve)
-        Me.Controls.Add(Me.txtTelProv)
-        Me.Controls.Add(Me.lbTelProvee)
-        Me.Controls.Add(Me.lbDireccProvee)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.txCorreoEmpresa)
-        Me.Controls.Add(Me.txtNombrePreEm)
-        Me.Controls.Add(Me.txNomProv)
-        Me.Controls.Add(Me.lbNomDistri)
-        Me.Controls.Add(Me.lbTel)
-        Me.Controls.Add(Me.lbCorreoProv)
-        Me.Controls.Add(Me.lbCodigoProv)
-        Me.Controls.Add(Me.txCodProve)
-        Me.Controls.Add(Me.lbNombreProv)
+        Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Proveedores"
@@ -314,22 +353,29 @@ Partial Class Proveedores
         Me.GroupBox1.PerformLayout()
         CType(Me.DGVProveedores, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents TxtCorreoProv As TextBox
-    Friend WithEvents lbCorreoProve As Label
-    Friend WithEvents txtTelProv As TextBox
-    Friend WithEvents lbTelProvee As Label
-    Friend WithEvents lbDireccProvee As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btEliminar As Button
     Friend WithEvents btActualizar As Button
     Friend WithEvents btGuardar As Button
     Friend WithEvents DGVProveedores As DataGridView
     Friend WithEvents btBuscar As Button
+    Friend WithEvents btActualizarTabla As Button
+    Friend WithEvents chkInhabil As CheckBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents chkEstado As CheckBox
+    Friend WithEvents RTBDirec As RichTextBox
+    Friend WithEvents TxtTelfonoEmpresa As TextBox
+    Friend WithEvents TxtCorreoProv As TextBox
+    Friend WithEvents lbCorreoProve As Label
+    Friend WithEvents txtTelProv As TextBox
+    Friend WithEvents lbTelProvee As Label
+    Friend WithEvents lbDireccProvee As Label
     Friend WithEvents txCorreoEmpresa As TextBox
     Friend WithEvents txtNombrePreEm As TextBox
     Friend WithEvents txNomProv As TextBox
@@ -339,10 +385,4 @@ Partial Class Proveedores
     Friend WithEvents lbCodigoProv As Label
     Friend WithEvents txCodProve As TextBox
     Friend WithEvents lbNombreProv As Label
-    Friend WithEvents TxtTelfonoEmpresa As TextBox
-    Friend WithEvents RTBDirec As RichTextBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents btActualizarTabla As Button
-    Friend WithEvents chkEstado As CheckBox
-    Friend WithEvents chkInhabil As CheckBox
 End Class

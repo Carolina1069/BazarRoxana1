@@ -23,6 +23,7 @@ Partial Class Categorias
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chkInhabil = New System.Windows.Forms.CheckBox()
         Me.btnActTabla = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
@@ -33,9 +34,8 @@ Partial Class Categorias
         Me.lbDescripcion = New System.Windows.Forms.Label()
         Me.lbCodigoCategoria = New System.Windows.Forms.Label()
         Me.txtNombCat = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.chkEstado = New System.Windows.Forms.CheckBox()
-        Me.chkInhabil = New System.Windows.Forms.CheckBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -43,6 +43,7 @@ Partial Class Categorias
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.Controls.Add(Me.chkInhabil)
         Me.GroupBox1.Controls.Add(Me.btnActTabla)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
@@ -50,12 +51,23 @@ Partial Class Categorias
         Me.GroupBox1.Controls.Add(Me.btnGuardar)
         Me.GroupBox1.Controls.Add(Me.DGV)
         Me.GroupBox1.Controls.Add(Me.btnBuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(77, 290)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(61, 290)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(532, 275)
         Me.GroupBox1.TabIndex = 63
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de la categoria"
+        '
+        'chkInhabil
+        '
+        Me.chkInhabil.AutoSize = True
+        Me.chkInhabil.Location = New System.Drawing.Point(278, 35)
+        Me.chkInhabil.Name = "chkInhabil"
+        Me.chkInhabil.Size = New System.Drawing.Size(102, 17)
+        Me.chkInhabil.TabIndex = 71
+        Me.chkInhabil.Text = "Inhabilitados "
+        Me.chkInhabil.UseVisualStyleBackColor = True
         '
         'btnActTabla
         '
@@ -113,7 +125,7 @@ Partial Class Categorias
         '
         'txCodCat
         '
-        Me.txCodCat.Location = New System.Drawing.Point(192, 132)
+        Me.txCodCat.Location = New System.Drawing.Point(164, 132)
         Me.txCodCat.Name = "txCodCat"
         Me.txCodCat.Size = New System.Drawing.Size(100, 20)
         Me.txCodCat.TabIndex = 60
@@ -121,64 +133,64 @@ Partial Class Categorias
         'lbDescripcion
         '
         Me.lbDescripcion.AutoSize = True
-        Me.lbDescripcion.Location = New System.Drawing.Point(75, 186)
+        Me.lbDescripcion.BackColor = System.Drawing.Color.Transparent
+        Me.lbDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbDescripcion.Location = New System.Drawing.Point(72, 186)
         Me.lbDescripcion.Name = "lbDescripcion"
-        Me.lbDescripcion.Size = New System.Drawing.Size(117, 13)
+        Me.lbDescripcion.Size = New System.Drawing.Size(86, 26)
         Me.lbDescripcion.TabIndex = 57
-        Me.lbDescripcion.Text = "Nombre de la categoria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lbDescripcion.Text = "Nombre de la " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "categoria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'lbCodigoCategoria
         '
         Me.lbCodigoCategoria.AutoSize = True
-        Me.lbCodigoCategoria.Location = New System.Drawing.Point(72, 132)
+        Me.lbCodigoCategoria.BackColor = System.Drawing.Color.Transparent
+        Me.lbCodigoCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCodigoCategoria.Location = New System.Drawing.Point(69, 132)
         Me.lbCodigoCategoria.Name = "lbCodigoCategoria"
-        Me.lbCodigoCategoria.Size = New System.Drawing.Size(114, 13)
+        Me.lbCodigoCategoria.Size = New System.Drawing.Size(78, 26)
         Me.lbCodigoCategoria.TabIndex = 53
-        Me.lbCodigoCategoria.Text = "Codigo de la Categoria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lbCodigoCategoria.Text = "Codigo de la" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Categoria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'txtNombCat
         '
-        Me.txtNombCat.Location = New System.Drawing.Point(198, 186)
+        Me.txtNombCat.Location = New System.Drawing.Point(164, 186)
         Me.txtNombCat.Name = "txtNombCat"
         Me.txtNombCat.Size = New System.Drawing.Size(100, 20)
         Me.txtNombCat.TabIndex = 65
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(576, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 51)
-        Me.PictureBox1.TabIndex = 64
-        Me.PictureBox1.TabStop = False
-        '
         'chkEstado
         '
         Me.chkEstado.AutoSize = True
-        Me.chkEstado.Location = New System.Drawing.Point(89, 246)
+        Me.chkEstado.BackColor = System.Drawing.Color.Transparent
+        Me.chkEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkEstado.Location = New System.Drawing.Point(73, 246)
         Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(59, 17)
+        Me.chkEstado.Size = New System.Drawing.Size(65, 17)
         Me.chkEstado.TabIndex = 66
         Me.chkEstado.Text = "Estado"
-        Me.chkEstado.UseVisualStyleBackColor = True
+        Me.chkEstado.UseVisualStyleBackColor = False
         '
-        'chkInhabil
+        'PictureBox1
         '
-        Me.chkInhabil.AutoSize = True
-        Me.chkInhabil.Location = New System.Drawing.Point(278, 35)
-        Me.chkInhabil.Name = "chkInhabil"
-        Me.chkInhabil.Size = New System.Drawing.Size(88, 17)
-        Me.chkInhabil.TabIndex = 71
-        Me.chkInhabil.Text = "Inhabilitados "
-        Me.chkInhabil.UseVisualStyleBackColor = True
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
+        Me.PictureBox1.Location = New System.Drawing.Point(409, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(245, 97)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 67
+        Me.PictureBox1.TabStop = False
         '
         'Categorias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(688, 650)
+        Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.WhatsApp_Image_2021_04_08_at_10_15_57_PM
+        Me.ClientSize = New System.Drawing.Size(666, 650)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.chkEstado)
         Me.Controls.Add(Me.txtNombCat)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txCodCat)
         Me.Controls.Add(Me.lbDescripcion)
@@ -195,8 +207,6 @@ Partial Class Categorias
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnActualizar As Button
@@ -210,4 +220,5 @@ Partial Class Categorias
     Friend WithEvents btnActTabla As Button
     Friend WithEvents chkEstado As CheckBox
     Friend WithEvents chkInhabil As CheckBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
