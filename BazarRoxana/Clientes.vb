@@ -22,7 +22,7 @@ Public Class Clientes
         conec.Open()
 
 
-        If txCodCli.Text = "" Or txNomCli.Text = "" Or rtxDirCli.Text = "" Or txTelCli.Text = "" Or txCorreoCli.Text = "" Or chkEstado.Checked = False Then
+        If txCodCli.Text = "" Or txNomCli.Text = "" Or rtxDirCli.Text = "" Or txTelCli.Text = "" Or txCorreoCli.Text = "" Or chkEstado.Checked = False Or DGVCliente.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
 
@@ -61,7 +61,7 @@ Public Class Clientes
             estado = 0
         End If
 
-        If txCodCli.Text = "" Or txNomCli.Text = "" Or rtxDirCli.Text = "" Or txTelCli.Text = "" Or txCorreoCli.Text = "" Then
+        If txCodCli.Text = "" Or txNomCli.Text = "" Or rtxDirCli.Text = "" Or txTelCli.Text = "" Or txCorreoCli.Text = "" Or DGVCliente.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
 

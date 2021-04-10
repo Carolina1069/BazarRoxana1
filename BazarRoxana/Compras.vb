@@ -173,7 +173,7 @@ Public Class Compras
         conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
-        If txNumCompra.Text = "" Or TxtCodProv.Text = "" Or TxtCodPago.Text = "" Or TxtCodTransa.Text = "" Or TxtCodEmple.Text = "" Then
+        If txNumCompra.Text = "" Or TxtCodProv.Text = "" Or TxtCodPago.Text = "" Or TxtCodTransa.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
 

@@ -25,7 +25,7 @@ Public Class Empleado
         conec.Open()
 
 
-        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or CbxNivel.SelectedItem = 0 Or chkEstado.Checked = False Then
+        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or CbxNivel.SelectedItem = 0 Or chkEstado.Checked = False Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
 
@@ -65,7 +65,7 @@ Public Class Empleado
         conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
 
-        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or CbxNivel.SelectedItem = 0 Then
+        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or CbxNivel.SelectedItem = 0 Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
             Dim Cat As Integer

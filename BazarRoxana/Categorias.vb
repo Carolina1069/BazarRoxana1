@@ -24,7 +24,7 @@ Public Class Categorias
         conec.Open()
 
 
-        If txCodCat.Text = "" Or txtNombCat.Text = "" Then
+        If txCodCat.Text = "" Or txtNombCat.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
             Dim consultaGuardar As String = "insert into Categoria(CodCateg, NombCateg, EstadoCateg) values(@CodCateg, @NombCateg, 1)"
@@ -59,7 +59,7 @@ Public Class Categorias
             estado = 0
         End If
 
-        If txCodCat.Text = "" Or txtNombCat.Text = "" Then
+        If txCodCat.Text = "" Or txtNombCat.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
 
