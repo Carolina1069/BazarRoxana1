@@ -35,6 +35,8 @@ Partial Class MenuPrincipal
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CategoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MinimoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -161,12 +163,25 @@ Partial Class MenuPrincipal
         Me.ProductoToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
         Me.ProductoToolStripMenuItem.BackgroundImage = CType(resources.GetObject("ProductoToolStripMenuItem.BackgroundImage"), System.Drawing.Image)
         Me.ProductoToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ProductoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductoToolStripMenuItem1, Me.MinimoToolStripMenuItem})
         Me.ProductoToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.ic_archive_128_28227
         Me.ProductoToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ProductoToolStripMenuItem.Name = "ProductoToolStripMenuItem"
         Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
-        Me.ProductoToolStripMenuItem.Text = "Producto"
+        Me.ProductoToolStripMenuItem.Text = "Inventario"
         Me.ProductoToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'ProductoToolStripMenuItem1
+        '
+        Me.ProductoToolStripMenuItem1.Name = "ProductoToolStripMenuItem1"
+        Me.ProductoToolStripMenuItem1.Size = New System.Drawing.Size(260, 30)
+        Me.ProductoToolStripMenuItem1.Text = "Producto"
+        '
+        'MinimoToolStripMenuItem
+        '
+        Me.MinimoToolStripMenuItem.Name = "MinimoToolStripMenuItem"
+        Me.MinimoToolStripMenuItem.Size = New System.Drawing.Size(260, 30)
+        Me.MinimoToolStripMenuItem.Text = "Producto Minimo"
         '
         'ComprasToolStripMenuItem
         '
@@ -241,4 +256,6 @@ Partial Class MenuPrincipal
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents InicioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripContainer1 As ToolStripContainer
+    Friend WithEvents ProductoToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents MinimoToolStripMenuItem As ToolStripMenuItem
 End Class

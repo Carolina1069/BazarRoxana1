@@ -112,6 +112,12 @@
     <Compile Include="MenuPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Minimo.Designer.vb">
+      <DependentUpon>Minimo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Minimo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Minimo.resx">
+      <DependentUpon>Minimo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

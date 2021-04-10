@@ -68,6 +68,8 @@ Partial Class Ventas
         Me.TxtUnidades = New System.Windows.Forms.TextBox()
         Me.txNumVenta = New System.Windows.Forms.TextBox()
         Me.lbNumeroVenta = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txMinimo = New System.Windows.Forms.TextBox()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -243,6 +245,8 @@ Partial Class Ventas
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.Label13)
+        Me.GroupBox1.Controls.Add(Me.txMinimo)
         Me.GroupBox1.Controls.Add(Me.TxtTotal)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.CbxPrecio)
@@ -264,14 +268,14 @@ Partial Class Ventas
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(50, 324)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(570, 275)
+        Me.GroupBox1.Size = New System.Drawing.Size(570, 314)
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de la Venta"
         '
         'TxtTotal
         '
-        Me.TxtTotal.Location = New System.Drawing.Point(463, 246)
+        Me.TxtTotal.Location = New System.Drawing.Point(463, 278)
         Me.TxtTotal.Name = "TxtTotal"
         Me.TxtTotal.Size = New System.Drawing.Size(100, 20)
         Me.TxtTotal.TabIndex = 59
@@ -280,7 +284,7 @@ Partial Class Ventas
         '
         Me.Label8.AutoSize = True
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(426, 249)
+        Me.Label8.Location = New System.Drawing.Point(426, 281)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(36, 13)
         Me.Label8.TabIndex = 58
@@ -296,7 +300,7 @@ Partial Class Ventas
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(537, 47)
+        Me.Button1.Location = New System.Drawing.Point(535, 86)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(26, 20)
         Me.Button1.TabIndex = 57
@@ -305,7 +309,7 @@ Partial Class Ventas
         '
         'btEliminar
         '
-        Me.btEliminar.Location = New System.Drawing.Point(244, 246)
+        Me.btEliminar.Location = New System.Drawing.Point(244, 278)
         Me.btEliminar.Name = "btEliminar"
         Me.btEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btEliminar.TabIndex = 24
@@ -315,7 +319,7 @@ Partial Class Ventas
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(438, 25)
+        Me.Label12.Location = New System.Drawing.Point(436, 64)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(57, 13)
         Me.Label12.TabIndex = 56
@@ -332,7 +336,7 @@ Partial Class Ventas
         '
         'btActualizar
         '
-        Me.btActualizar.Location = New System.Drawing.Point(125, 246)
+        Me.btActualizar.Location = New System.Drawing.Point(125, 278)
         Me.btActualizar.Name = "btActualizar"
         Me.btActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btActualizar.TabIndex = 23
@@ -350,7 +354,7 @@ Partial Class Ventas
         '
         'btGuardar
         '
-        Me.btGuardar.Location = New System.Drawing.Point(6, 246)
+        Me.btGuardar.Location = New System.Drawing.Point(6, 278)
         Me.btGuardar.Name = "btGuardar"
         Me.btGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btGuardar.TabIndex = 22
@@ -371,7 +375,7 @@ Partial Class Ventas
         Me.DGV.AllowUserToAddRows = False
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumVent, Me.CodProduc, Me.NombProduc, Me.Impuesto, Me.CantVenta, Me.PrecioVenta, Me.SubTotal})
-        Me.DGV.Location = New System.Drawing.Point(12, 74)
+        Me.DGV.Location = New System.Drawing.Point(12, 106)
         Me.DGV.Name = "DGV"
         Me.DGV.RowHeadersWidth = 51
         Me.DGV.Size = New System.Drawing.Size(537, 150)
@@ -444,7 +448,7 @@ Partial Class Ventas
         '
         'BtnAgregar
         '
-        Me.BtnAgregar.Location = New System.Drawing.Point(537, 25)
+        Me.BtnAgregar.Location = New System.Drawing.Point(535, 64)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(26, 20)
         Me.BtnAgregar.TabIndex = 53
@@ -460,7 +464,7 @@ Partial Class Ventas
         '
         'TxtCantidad
         '
-        Me.TxtCantidad.Location = New System.Drawing.Point(431, 41)
+        Me.TxtCantidad.Location = New System.Drawing.Point(429, 80)
         Me.TxtCantidad.Name = "TxtCantidad"
         Me.TxtCantidad.Size = New System.Drawing.Size(100, 20)
         Me.TxtCantidad.TabIndex = 52
@@ -489,6 +493,22 @@ Partial Class Ventas
         Me.lbNumeroVenta.Size = New System.Drawing.Size(105, 13)
         Me.lbNumeroVenta.TabIndex = 42
         Me.lbNumeroVenta.Text = "Numero de Venta"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(436, 25)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(109, 13)
+        Me.Label13.TabIndex = 61
+        Me.Label13.Text = "Unidades Minimas"
+        '
+        'txMinimo
+        '
+        Me.txMinimo.Location = New System.Drawing.Point(429, 41)
+        Me.txMinimo.Name = "txMinimo"
+        Me.txMinimo.Size = New System.Drawing.Size(100, 20)
+        Me.txMinimo.TabIndex = 60
         '
         'Ventas
         '
@@ -561,4 +581,6 @@ Partial Class Ventas
     Friend WithEvents CantVenta As DataGridViewTextBoxColumn
     Friend WithEvents PrecioVenta As DataGridViewTextBoxColumn
     Friend WithEvents SubTotal As DataGridViewTextBoxColumn
+    Friend WithEvents Label13 As Label
+    Friend WithEvents txMinimo As TextBox
 End Class

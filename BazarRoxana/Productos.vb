@@ -200,4 +200,16 @@ Public Class Productos
         DGV.DataSource = DatosCat
 
     End Sub
+
+    Private Sub btBuscarProv_Click_1(sender As Object, e As EventArgs) Handles btBuscarProv.Click
+
+        ViewBusProv.Show()
+
+    End Sub
+
+    Private Sub btBuscarCateg_Click_1(sender As Object, e As EventArgs) Handles btBuscarCateg.Click
+
+        ViewBusCateg.Show()
+
+    End Sub
 End Class

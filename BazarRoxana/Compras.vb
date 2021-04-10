@@ -96,13 +96,16 @@ Public Class Compras
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
+
         If (Estado = True) Then
             TxtNombreProducto.Text = Mostrar(1)
             TxtUnidades.Text = Mostrar(8)
+            txMaximo.Text = Mostrar(10)
         Else
             TxtNombreProducto.Text = ""
             TxtUnidades.Text = ""
             CbxPrecio.Text = ""
+            txMaximo.Text = ""
         End If
         Mostrar.Close()
 
@@ -124,19 +127,35 @@ Public Class Compras
         Dim Subtotal2 As Double
         Dim SubTotal1 As Integer
         Dim Impuesto As Double
-        Impuesto = 0.25
-        SubTotal1 = (Val(CbxPrecio.Text) * Val(TxtCantidad.Text))
-        Subtotal2 = SubTotal1 * Impuesto
-        Subtotal = SubTotal1 + Subtotal2
-        DGV.Rows.Add(txNumCompra.Text, TxtCodProducto.Text, TxtNombreProducto.Text, Impuesto, TxtCantidad.Text, CbxPrecio.Text, Subtotal)
-        For Each row As DataGridViewRow In DGV.Rows
-            Total += Val(row.Cells(6).Value)
-        Next
-        TxtTotal.Text = Total.ToString
-        TxtCodProducto.Clear()
-        TxtNombreProducto.Clear()
-        CbxPrecio.Text = ""
-        TxtCantidad.Clear()
+
+        Dim Max As Integer
+        Dim suma As Integer
+
+        Max = Val(txMaximo.Text)
+        suma = (Val(TxtUnidades.Text) + Val(TxtCantidad.Text))
+
+        If Max > suma Then
+
+            Impuesto = 0.25
+            SubTotal1 = (Val(CbxPrecio.Text) * Val(TxtCantidad.Text))
+            Subtotal2 = SubTotal1 * Impuesto
+            Subtotal = SubTotal1 + Subtotal2
+            DGV.Rows.Add(txNumCompra.Text, TxtCodProducto.Text, TxtNombreProducto.Text, Impuesto, TxtCantidad.Text, CbxPrecio.Text, Subtotal)
+            For Each row As DataGridViewRow In DGV.Rows
+                Total += Val(row.Cells(6).Value)
+            Next
+            TxtTotal.Text = Total.ToString
+            TxtCodProducto.Clear()
+            TxtNombreProducto.Clear()
+            CbxPrecio.Text = ""
+            TxtCantidad.Clear()
+
+        Else
+            MsgBox("Cantidad solicitada supera el Maximo del Inventario")
+
+        End If
+
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

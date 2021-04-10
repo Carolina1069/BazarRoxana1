@@ -41,11 +41,9 @@
     End Sub
 
     Private Sub ProductoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductoToolStripMenuItem.Click
+
         Me.ToolStripContainer1.ContentPanel.Controls.Clear()
-        Dim FormProductos As New Productos
-        FormProductos.MdiParent = Me
-        Me.ToolStripContainer1.ContentPanel.Controls.Add(FormProductos)
-        FormProductos.Show()
+
     End Sub
 
     Private Sub ComprasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ComprasToolStripMenuItem.Click
@@ -71,5 +69,25 @@
 
     Private Sub InicioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InicioToolStripMenuItem.Click
         Me.ToolStripContainer1.ContentPanel.Controls.Clear()
+    End Sub
+
+    Private Sub MinimoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MinimoToolStripMenuItem.Click
+
+        Me.ToolStripContainer1.ContentPanel.Controls.Clear()
+        Dim FormProductoMinimo As New Minimo
+        FormProductoMinimo.MdiParent = Me
+        Me.ToolStripContainer1.ContentPanel.Controls.Add(FormProductoMinimo)
+        FormProductoMinimo.Show()
+
+    End Sub
+
+    Private Sub ProductoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProductoToolStripMenuItem1.Click
+
+        Me.ToolStripContainer1.ContentPanel.Controls.Clear()
+        Dim FormProductos As New Productos
+        FormProductos.MdiParent = Me
+        Me.ToolStripContainer1.ContentPanel.Controls.Add(FormProductos)
+        FormProductos.Show()
+
     End Sub
 End Class

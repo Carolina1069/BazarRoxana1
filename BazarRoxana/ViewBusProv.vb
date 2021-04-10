@@ -6,7 +6,7 @@ Public Class ViewBusProv
         conec.Open()
 
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select * from Proveedores", conec)
+        Using adaptador As New SqlDataAdapter("select * from Proveedores where EstadoProv=1", conec)
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
