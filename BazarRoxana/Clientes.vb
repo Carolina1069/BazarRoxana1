@@ -163,15 +163,15 @@ Public Class Clientes
         End If
     End Sub
 
-    Private Sub txCodCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txCodCli.KeyPress
+    Private Sub txCodCli_KeyPress(sender As Object, e As KeyPressEventArgs)
         SoloNumeros(e)
     End Sub
 
-    Private Sub txNomCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txNomCli.KeyPress
+    Private Sub txNomCli_KeyPress(sender As Object, e As KeyPressEventArgs)
         SoloLetras(e)
     End Sub
 
-    Private Sub txTelCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txTelCli.KeyPress
+    Private Sub txTelCli_KeyPress(sender As Object, e As KeyPressEventArgs)
         SoloNumeros(e)
     End Sub
 

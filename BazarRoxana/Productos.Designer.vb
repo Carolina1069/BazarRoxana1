@@ -69,16 +69,16 @@ Partial Class Productos
         Me.GroupBox1.Controls.Add(Me.DGV)
         Me.GroupBox1.Controls.Add(Me.btBuscar)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(30, 348)
+        Me.GroupBox1.Location = New System.Drawing.Point(23, 353)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(605, 290)
+        Me.GroupBox1.Size = New System.Drawing.Size(891, 290)
         Me.GroupBox1.TabIndex = 31
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de Producto"
         '
         'btEliminar
         '
-        Me.btEliminar.Location = New System.Drawing.Point(490, 232)
+        Me.btEliminar.Location = New System.Drawing.Point(680, 232)
         Me.btEliminar.Name = "btEliminar"
         Me.btEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btEliminar.TabIndex = 24
@@ -87,7 +87,7 @@ Partial Class Productos
         '
         'btActualizar
         '
-        Me.btActualizar.Location = New System.Drawing.Point(288, 232)
+        Me.btActualizar.Location = New System.Drawing.Point(383, 232)
         Me.btActualizar.Name = "btActualizar"
         Me.btActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btActualizar.TabIndex = 23
@@ -106,10 +106,10 @@ Partial Class Productos
         'DGV
         '
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV.Location = New System.Drawing.Point(51, 60)
+        Me.DGV.Location = New System.Drawing.Point(25, 63)
         Me.DGV.Name = "DGV"
         Me.DGV.RowHeadersWidth = 51
-        Me.DGV.Size = New System.Drawing.Size(511, 150)
+        Me.DGV.Size = New System.Drawing.Size(846, 150)
         Me.DGV.TabIndex = 21
         '
         'btBuscar
@@ -125,7 +125,7 @@ Partial Class Productos
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
-        Me.PictureBox1.Location = New System.Drawing.Point(409, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(677, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(245, 97)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -162,9 +162,9 @@ Partial Class Productos
         Me.GroupBox2.Controls.Add(Me.txCodProd)
         Me.GroupBox2.Controls.Add(Me.lbNombreProd)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(30, 115)
+        Me.GroupBox2.Location = New System.Drawing.Point(23, 104)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(605, 227)
+        Me.GroupBox2.Size = New System.Drawing.Size(891, 238)
         Me.GroupBox2.TabIndex = 47
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Producto"
@@ -172,7 +172,7 @@ Partial Class Productos
         'btBuscarCateg
         '
         Me.btBuscarCateg.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btBuscarCateg.Location = New System.Drawing.Point(554, 106)
+        Me.btBuscarCateg.Location = New System.Drawing.Point(722, 105)
         Me.btBuscarCateg.Name = "btBuscarCateg"
         Me.btBuscarCateg.Size = New System.Drawing.Size(29, 23)
         Me.btBuscarCateg.TabIndex = 51
@@ -182,7 +182,7 @@ Partial Class Productos
         'btBuscarProv
         '
         Me.btBuscarProv.BackColor = System.Drawing.SystemColors.Control
-        Me.btBuscarProv.Location = New System.Drawing.Point(554, 67)
+        Me.btBuscarProv.Location = New System.Drawing.Point(722, 66)
         Me.btBuscarProv.Name = "btBuscarProv"
         Me.btBuscarProv.Size = New System.Drawing.Size(29, 23)
         Me.btBuscarProv.TabIndex = 52
@@ -191,7 +191,7 @@ Partial Class Productos
         '
         'txCodCateg
         '
-        Me.txCodCateg.Location = New System.Drawing.Point(444, 108)
+        Me.txCodCateg.Location = New System.Drawing.Point(612, 107)
         Me.txCodCateg.Name = "txCodCateg"
         Me.txCodCateg.Size = New System.Drawing.Size(100, 20)
         Me.txCodCateg.TabIndex = 68
@@ -199,15 +199,15 @@ Partial Class Productos
         'lbCodCateg
         '
         Me.lbCodCateg.AutoSize = True
-        Me.lbCodCateg.Location = New System.Drawing.Point(367, 105)
+        Me.lbCodCateg.Location = New System.Drawing.Point(463, 110)
         Me.lbCodCateg.Name = "lbCodCateg"
-        Me.lbCodCateg.Size = New System.Drawing.Size(68, 26)
+        Me.lbCodCateg.Size = New System.Drawing.Size(122, 13)
         Me.lbCodCateg.TabIndex = 67
-        Me.lbCodCateg.Text = "Codigo de " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Categoria"
+        Me.lbCodCateg.Text = "Codigo de Categoria"
         '
         'txMin
         '
-        Me.txMin.Location = New System.Drawing.Point(444, 199)
+        Me.txMin.Location = New System.Drawing.Point(680, 189)
         Me.txMin.Name = "txMin"
         Me.txMin.Size = New System.Drawing.Size(100, 20)
         Me.txMin.TabIndex = 66
@@ -215,15 +215,15 @@ Partial Class Productos
         'lbMinima
         '
         Me.lbMinima.AutoSize = True
-        Me.lbMinima.Location = New System.Drawing.Point(399, 199)
+        Me.lbMinima.Location = New System.Drawing.Point(552, 192)
         Me.lbMinima.Name = "lbMinima"
-        Me.lbMinima.Size = New System.Drawing.Size(46, 13)
+        Me.lbMinima.Size = New System.Drawing.Size(113, 13)
         Me.lbMinima.TabIndex = 65
-        Me.lbMinima.Text = "Minima"
+        Me.lbMinima.Text = "Productos Minimos"
         '
         'txMax
         '
-        Me.txMax.Location = New System.Drawing.Point(263, 196)
+        Me.txMax.Location = New System.Drawing.Point(416, 189)
         Me.txMax.Name = "txMax"
         Me.txMax.Size = New System.Drawing.Size(100, 20)
         Me.txMax.TabIndex = 64
@@ -231,15 +231,15 @@ Partial Class Productos
         'lbMaxima
         '
         Me.lbMaxima.AutoSize = True
-        Me.lbMaxima.Location = New System.Drawing.Point(203, 197)
+        Me.lbMaxima.Location = New System.Drawing.Point(278, 192)
         Me.lbMaxima.Name = "lbMaxima"
-        Me.lbMaxima.Size = New System.Drawing.Size(49, 13)
+        Me.lbMaxima.Size = New System.Drawing.Size(116, 13)
         Me.lbMaxima.TabIndex = 63
-        Me.lbMaxima.Text = "Maxima"
+        Me.lbMaxima.Text = "Productos Maximos"
         '
         'txtUnidStock
         '
-        Me.txtUnidStock.Location = New System.Drawing.Point(70, 194)
+        Me.txtUnidStock.Location = New System.Drawing.Point(145, 189)
         Me.txtUnidStock.Name = "txtUnidStock"
         Me.txtUnidStock.Size = New System.Drawing.Size(81, 20)
         Me.txtUnidStock.TabIndex = 62
@@ -249,13 +249,13 @@ Partial Class Productos
         Me.lbUnidStock.AutoSize = True
         Me.lbUnidStock.Location = New System.Drawing.Point(6, 188)
         Me.lbUnidStock.Name = "lbUnidStock"
-        Me.lbUnidStock.Size = New System.Drawing.Size(64, 26)
+        Me.lbUnidStock.Size = New System.Drawing.Size(115, 13)
         Me.lbUnidStock.TabIndex = 61
-        Me.lbUnidStock.Text = "Unidades " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "en Stock"
+        Me.lbUnidStock.Text = "Unidades en Stock"
         '
         'txtTerPre
         '
-        Me.txtTerPre.Location = New System.Drawing.Point(444, 152)
+        Me.txtTerPre.Location = New System.Drawing.Point(680, 149)
         Me.txtTerPre.Name = "txtTerPre"
         Me.txtTerPre.Size = New System.Drawing.Size(100, 20)
         Me.txtTerPre.TabIndex = 60
@@ -263,15 +263,15 @@ Partial Class Productos
         'lbTerPre
         '
         Me.lbTerPre.AutoSize = True
-        Me.lbTerPre.Location = New System.Drawing.Point(397, 149)
+        Me.lbTerPre.Location = New System.Drawing.Point(581, 152)
         Me.lbTerPre.Name = "lbTerPre"
-        Me.lbTerPre.Size = New System.Drawing.Size(48, 26)
+        Me.lbTerPre.Size = New System.Drawing.Size(84, 13)
         Me.lbTerPre.TabIndex = 59
-        Me.lbTerPre.Text = "Tercer " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Precio"
+        Me.lbTerPre.Text = "Tercer Precio"
         '
         'txtSegPre
         '
-        Me.txtSegPre.Location = New System.Drawing.Point(263, 152)
+        Me.txtSegPre.Location = New System.Drawing.Point(416, 149)
         Me.txtSegPre.Name = "txtSegPre"
         Me.txtSegPre.Size = New System.Drawing.Size(100, 20)
         Me.txtSegPre.TabIndex = 58
@@ -279,15 +279,15 @@ Partial Class Productos
         'lbSegPre
         '
         Me.lbSegPre.AutoSize = True
-        Me.lbSegPre.Location = New System.Drawing.Point(203, 146)
+        Me.lbSegPre.Location = New System.Drawing.Point(304, 154)
         Me.lbSegPre.Name = "lbSegPre"
-        Me.lbSegPre.Size = New System.Drawing.Size(61, 26)
+        Me.lbSegPre.Size = New System.Drawing.Size(97, 13)
         Me.lbSegPre.TabIndex = 57
-        Me.lbSegPre.Text = "Segundo " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Precio"
+        Me.lbSegPre.Text = "Segundo Precio"
         '
         'rtxDescProd
         '
-        Me.rtxDescProd.Location = New System.Drawing.Point(151, 64)
+        Me.rtxDescProd.Location = New System.Drawing.Point(220, 69)
         Me.rtxDescProd.Name = "rtxDescProd"
         Me.rtxDescProd.Size = New System.Drawing.Size(159, 54)
         Me.rtxDescProd.TabIndex = 56
@@ -295,21 +295,21 @@ Partial Class Productos
         '
         'txCodProv
         '
-        Me.txCodProv.Location = New System.Drawing.Point(444, 67)
+        Me.txCodProv.Location = New System.Drawing.Point(612, 66)
         Me.txCodProv.Name = "txCodProv"
         Me.txCodProv.Size = New System.Drawing.Size(100, 20)
         Me.txCodProv.TabIndex = 55
         '
         'txtPriPre
         '
-        Me.txtPriPre.Location = New System.Drawing.Point(70, 152)
+        Me.txtPriPre.Location = New System.Drawing.Point(145, 149)
         Me.txtPriPre.Name = "txtPriPre"
         Me.txtPriPre.Size = New System.Drawing.Size(100, 20)
         Me.txtPriPre.TabIndex = 54
         '
         'txNomProd
         '
-        Me.txNomProd.Location = New System.Drawing.Point(444, 25)
+        Me.txNomProd.Location = New System.Drawing.Point(612, 24)
         Me.txNomProd.Name = "txNomProd"
         Me.txNomProd.Size = New System.Drawing.Size(100, 20)
         Me.txNomProd.TabIndex = 53
@@ -317,34 +317,34 @@ Partial Class Productos
         'lbPriPre
         '
         Me.lbPriPre.AutoSize = True
-        Me.lbPriPre.Location = New System.Drawing.Point(22, 146)
+        Me.lbPriPre.Location = New System.Drawing.Point(38, 152)
         Me.lbPriPre.Name = "lbPriPre"
-        Me.lbPriPre.Size = New System.Drawing.Size(46, 26)
+        Me.lbPriPre.Size = New System.Drawing.Size(82, 13)
         Me.lbPriPre.TabIndex = 50
-        Me.lbPriPre.Text = "Primer " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Precio"
+        Me.lbPriPre.Text = "Primer Precio"
         '
         'lbDescProd
         '
         Me.lbDescProd.AutoSize = True
-        Me.lbDescProd.Location = New System.Drawing.Point(25, 67)
+        Me.lbDescProd.Location = New System.Drawing.Point(67, 72)
         Me.lbDescProd.Name = "lbDescProd"
-        Me.lbDescProd.Size = New System.Drawing.Size(79, 26)
+        Me.lbDescProd.Size = New System.Drawing.Size(150, 13)
         Me.lbDescProd.TabIndex = 49
-        Me.lbDescProd.Text = "Descripcion " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "del Producto"
+        Me.lbDescProd.Text = "Descripcion del Producto"
         '
         'lbCodProv
         '
         Me.lbCodProv.AutoSize = True
-        Me.lbCodProv.Location = New System.Drawing.Point(367, 64)
+        Me.lbCodProv.Location = New System.Drawing.Point(463, 69)
         Me.lbCodProv.Name = "lbCodProv"
-        Me.lbCodProv.Size = New System.Drawing.Size(71, 26)
+        Me.lbCodProv.Size = New System.Drawing.Size(129, 13)
         Me.lbCodProv.TabIndex = 48
-        Me.lbCodProv.Text = "Codigo del " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Proveedor"
+        Me.lbCodProv.Text = "Codigo del Proveedor"
         '
         'lbCodigoCli
         '
         Me.lbCodigoCli.AutoSize = True
-        Me.lbCodigoCli.Location = New System.Drawing.Point(23, 27)
+        Me.lbCodigoCli.Location = New System.Drawing.Point(92, 32)
         Me.lbCodigoCli.Name = "lbCodigoCli"
         Me.lbCodigoCli.Size = New System.Drawing.Size(122, 13)
         Me.lbCodigoCli.TabIndex = 47
@@ -352,7 +352,7 @@ Partial Class Productos
         '
         'txCodProd
         '
-        Me.txCodProd.Location = New System.Drawing.Point(151, 24)
+        Me.txCodProd.Location = New System.Drawing.Point(220, 29)
         Me.txCodProd.Name = "txCodProd"
         Me.txCodProd.Size = New System.Drawing.Size(100, 20)
         Me.txCodProd.TabIndex = 46
@@ -360,18 +360,18 @@ Partial Class Productos
         'lbNombreProd
         '
         Me.lbNombreProd.AutoSize = True
-        Me.lbNombreProd.Location = New System.Drawing.Point(367, 24)
+        Me.lbNombreProd.Location = New System.Drawing.Point(463, 29)
         Me.lbNombreProd.Name = "lbNombreProd"
-        Me.lbNombreProd.Size = New System.Drawing.Size(75, 26)
+        Me.lbNombreProd.Size = New System.Drawing.Size(126, 13)
         Me.lbNombreProd.TabIndex = 45
-        Me.lbNombreProd.Text = "Nombre del " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Producto"
+        Me.lbNombreProd.Text = "Nombre del Producto"
         '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.WhatsApp_Image_2021_04_08_at_10_15_57_PM
-        Me.ClientSize = New System.Drawing.Size(666, 650)
+        Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.A
+        Me.ClientSize = New System.Drawing.Size(934, 650)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)

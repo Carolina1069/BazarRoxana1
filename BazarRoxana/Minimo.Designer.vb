@@ -32,14 +32,14 @@ Partial Class Minimo
         Me.DGV.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGV.Location = New System.Drawing.Point(0, 0)
         Me.DGV.Name = "DGV"
-        Me.DGV.Size = New System.Drawing.Size(666, 650)
+        Me.DGV.Size = New System.Drawing.Size(934, 650)
         Me.DGV.TabIndex = 0
         '
         'Minimo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(666, 650)
+        Me.ClientSize = New System.Drawing.Size(934, 650)
         Me.Controls.Add(Me.DGV)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Minimo"

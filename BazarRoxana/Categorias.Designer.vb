@@ -52,9 +52,9 @@ Partial Class Categorias
         Me.GroupBox1.Controls.Add(Me.DGV)
         Me.GroupBox1.Controls.Add(Me.btnBuscar)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(61, 290)
+        Me.GroupBox1.Location = New System.Drawing.Point(35, 290)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(532, 275)
+        Me.GroupBox1.Size = New System.Drawing.Size(851, 336)
         Me.GroupBox1.TabIndex = 63
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de la categoria"
@@ -62,7 +62,7 @@ Partial Class Categorias
         'chkInhabil
         '
         Me.chkInhabil.AutoSize = True
-        Me.chkInhabil.Location = New System.Drawing.Point(278, 35)
+        Me.chkInhabil.Location = New System.Drawing.Point(557, 38)
         Me.chkInhabil.Name = "chkInhabil"
         Me.chkInhabil.Size = New System.Drawing.Size(102, 17)
         Me.chkInhabil.TabIndex = 71
@@ -71,7 +71,7 @@ Partial Class Categorias
         '
         'btnActTabla
         '
-        Me.btnActTabla.Location = New System.Drawing.Point(404, 35)
+        Me.btnActTabla.Location = New System.Drawing.Point(683, 35)
         Me.btnActTabla.Name = "btnActTabla"
         Me.btnActTabla.Size = New System.Drawing.Size(108, 23)
         Me.btnActTabla.TabIndex = 26
@@ -80,7 +80,7 @@ Partial Class Categorias
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(437, 246)
+        Me.btnEliminar.Location = New System.Drawing.Point(716, 287)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar.TabIndex = 24
@@ -89,7 +89,7 @@ Partial Class Categorias
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(245, 246)
+        Me.btnActualizar.Location = New System.Drawing.Point(389, 287)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar.TabIndex = 23
@@ -98,7 +98,7 @@ Partial Class Categorias
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(31, 244)
+        Me.btnGuardar.Location = New System.Drawing.Point(30, 287)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 22
@@ -108,10 +108,10 @@ Partial Class Categorias
         'DGV
         '
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV.Location = New System.Drawing.Point(12, 74)
+        Me.DGV.Location = New System.Drawing.Point(19, 74)
         Me.DGV.Name = "DGV"
         Me.DGV.RowHeadersWidth = 51
-        Me.DGV.Size = New System.Drawing.Size(511, 150)
+        Me.DGV.Size = New System.Drawing.Size(802, 180)
         Me.DGV.TabIndex = 21
         '
         'btnBuscar
@@ -125,7 +125,7 @@ Partial Class Categorias
         '
         'txCodCat
         '
-        Me.txCodCat.Location = New System.Drawing.Point(164, 132)
+        Me.txCodCat.Location = New System.Drawing.Point(357, 132)
         Me.txCodCat.Name = "txCodCat"
         Me.txCodCat.Size = New System.Drawing.Size(100, 20)
         Me.txCodCat.TabIndex = 60
@@ -135,26 +135,26 @@ Partial Class Categorias
         Me.lbDescripcion.AutoSize = True
         Me.lbDescripcion.BackColor = System.Drawing.Color.Transparent
         Me.lbDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbDescripcion.Location = New System.Drawing.Point(72, 186)
+        Me.lbDescripcion.Location = New System.Drawing.Point(189, 189)
         Me.lbDescripcion.Name = "lbDescripcion"
-        Me.lbDescripcion.Size = New System.Drawing.Size(86, 26)
+        Me.lbDescripcion.Size = New System.Drawing.Size(140, 13)
         Me.lbDescripcion.TabIndex = 57
-        Me.lbDescripcion.Text = "Nombre de la " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "categoria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lbDescripcion.Text = "Nombre de la Categoria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'lbCodigoCategoria
         '
         Me.lbCodigoCategoria.AutoSize = True
         Me.lbCodigoCategoria.BackColor = System.Drawing.Color.Transparent
         Me.lbCodigoCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbCodigoCategoria.Location = New System.Drawing.Point(69, 132)
+        Me.lbCodigoCategoria.Location = New System.Drawing.Point(193, 132)
         Me.lbCodigoCategoria.Name = "lbCodigoCategoria"
-        Me.lbCodigoCategoria.Size = New System.Drawing.Size(78, 26)
+        Me.lbCodigoCategoria.Size = New System.Drawing.Size(136, 13)
         Me.lbCodigoCategoria.TabIndex = 53
-        Me.lbCodigoCategoria.Text = "Codigo de la" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Categoria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lbCodigoCategoria.Text = "Codigo de la Categoria" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'txtNombCat
         '
-        Me.txtNombCat.Location = New System.Drawing.Point(164, 186)
+        Me.txtNombCat.Location = New System.Drawing.Point(357, 186)
         Me.txtNombCat.Name = "txtNombCat"
         Me.txtNombCat.Size = New System.Drawing.Size(100, 20)
         Me.txtNombCat.TabIndex = 65
@@ -164,7 +164,7 @@ Partial Class Categorias
         Me.chkEstado.AutoSize = True
         Me.chkEstado.BackColor = System.Drawing.Color.Transparent
         Me.chkEstado.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkEstado.Location = New System.Drawing.Point(73, 246)
+        Me.chkEstado.Location = New System.Drawing.Point(192, 245)
         Me.chkEstado.Name = "chkEstado"
         Me.chkEstado.Size = New System.Drawing.Size(65, 17)
         Me.chkEstado.TabIndex = 66
@@ -175,7 +175,7 @@ Partial Class Categorias
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
-        Me.PictureBox1.Location = New System.Drawing.Point(409, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(677, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(245, 97)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -186,8 +186,8 @@ Partial Class Categorias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.WhatsApp_Image_2021_04_08_at_10_15_57_PM
-        Me.ClientSize = New System.Drawing.Size(666, 650)
+        Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.A
+        Me.ClientSize = New System.Drawing.Size(934, 650)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.chkEstado)
         Me.Controls.Add(Me.txtNombCat)

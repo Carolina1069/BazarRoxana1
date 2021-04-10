@@ -302,5 +302,11 @@
   <ItemGroup>
     <None Include="Resources\pexels-archie-binamira-2463346.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\A.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\B.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

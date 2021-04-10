@@ -73,14 +73,14 @@ Partial Class MenuPrincipal
         '
         'ToolStripContainer1.ContentPanel
         '
-        Me.ToolStripContainer1.ContentPanel.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.pexels_artem_beliaikin_10368561
-        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(666, 650)
+        Me.ToolStripContainer1.ContentPanel.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.B
+        Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(934, 650)
         Me.ToolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ToolStripContainer1.LeftToolStripPanelVisible = False
         Me.ToolStripContainer1.Location = New System.Drawing.Point(191, 0)
         Me.ToolStripContainer1.Name = "ToolStripContainer1"
         Me.ToolStripContainer1.RightToolStripPanelVisible = False
-        Me.ToolStripContainer1.Size = New System.Drawing.Size(666, 650)
+        Me.ToolStripContainer1.Size = New System.Drawing.Size(934, 650)
         Me.ToolStripContainer1.TabIndex = 48
         Me.ToolStripContainer1.Text = "ToolStripContainer1"
         Me.ToolStripContainer1.TopToolStripPanelVisible = False
@@ -223,7 +223,7 @@ Partial Class MenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(857, 650)
+        Me.ClientSize = New System.Drawing.Size(1125, 650)
         Me.Controls.Add(Me.ToolStripContainer1)
         Me.Controls.Add(Me.LblHora)
         Me.Controls.Add(Me.LblFecha)
