@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ViewBusCateg
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FacturaVentas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,33 +20,18 @@ Partial Class ViewBusCateg
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.DGV = New System.Windows.Forms.DataGridView()
-        CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DGV
-        '
-        Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DGV.Location = New System.Drawing.Point(0, 0)
-        Me.DGV.Name = "DGV"
-        Me.DGV.Size = New System.Drawing.Size(800, 450)
-        Me.DGV.TabIndex = 0
-        '
-        'ViewBusCateg
+        'FacturaVentas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.DGV)
-        Me.Name = "ViewBusCateg"
-        Me.Text = "Buscar Categoria"
-        CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "FacturaVentas"
+        Me.Text = "FacturaVentas"
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents DGV As DataGridView
 End Class

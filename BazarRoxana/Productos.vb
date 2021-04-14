@@ -48,18 +48,6 @@ Public Class Productos
 
     End Sub
 
-    Private Sub btBuscarProv_Click(sender As Object, e As EventArgs)
-
-        ViewBusProv.Show()
-
-    End Sub
-
-    Private Sub btBuscarCateg_Click(sender As Object, e As EventArgs)
-
-        ViewBusCateg.Show()
-
-    End Sub
-
     Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -68,7 +56,7 @@ Public Class Productos
         conec.Open()
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select * from Producto", conec)
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conec)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -85,7 +73,7 @@ Public Class Productos
         conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select * from Producto", conec)
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conec)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -127,7 +115,7 @@ Public Class Productos
         conec.Open()
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select * from Producto", conec)
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conec)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -162,7 +150,7 @@ Public Class Productos
         conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
         conec.Open()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select * from Producto", conec)
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conec)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -201,17 +189,62 @@ Public Class Productos
 
     End Sub
 
-    Private Sub btBuscarProv_Click_1(sender As Object, e As EventArgs) Handles btBuscarProv.Click
+    Private Sub btBuscarProv_Click_1(sender As Object, e As EventArgs)
 
         ViewBusProv.Show()
 
     End Sub
 
-    Private Sub btBuscarCateg_Click_1(sender As Object, e As EventArgs) Handles btBuscarCateg.Click
+    Private Sub btBuscarCateg_Click_1(sender As Object, e As EventArgs)
 
         ViewBusCateg.Show()
 
     End Sub
 
+    Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles txCodProv.TextChanged
 
+        Dim conec As New SqlClient.SqlConnection
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.Open()
+
+        Dim Recuperar As String = "select * from Proveedores where CodProv= '" & txCodProv.Text & "'"
+        Dim Mostrar As SqlDataReader
+        Dim Ejecutar As SqlCommand
+        Ejecutar = New SqlCommand(Recuperar, conec)
+        Mostrar = Ejecutar.ExecuteReader
+        Dim Estado As String
+        Estado = Mostrar.Read
+        If (Estado = True) Then
+            txNombProv.Text = Mostrar(1)
+        Else
+            txNombProv.Text = ""
+        End If
+        Mostrar.Close()
+        conec.Close()
+
+    End Sub
+
+    Private Sub txCodCateg_TextChanged(sender As Object, e As EventArgs) Handles txCodCateg.TextChanged
+
+        Dim conec As New SqlClient.SqlConnection
+        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
+        conec.Open()
+
+        Dim Recuperar As String = "select * from Categoria where CodCateg= '" & txCodCateg.Text & "'"
+        Dim Mostrar As SqlDataReader
+        Dim Ejecutar As SqlCommand
+        Ejecutar = New SqlCommand(Recuperar, conec)
+        Mostrar = Ejecutar.ExecuteReader
+        Dim Estado As String
+        Estado = Mostrar.Read
+        If (Estado = True) Then
+            txNombCateg.Text = Mostrar(1)
+        Else
+            txNombCateg.Text = ""
+        End If
+        Mostrar.Close()
+        conec.Close()
+
+
+    End Sub
 End Class
