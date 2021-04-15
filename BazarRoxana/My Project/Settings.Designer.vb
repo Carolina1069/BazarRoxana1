@@ -64,6 +64,16 @@ Namespace My
                 Return CType(Me("BazarRoxanaConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=Amaya;Initial Catalog=BazarRoxana;Integrated Security=True")>  _
+        Public ReadOnly Property BazarRoxanaConnectionString1() As String
+            Get
+                Return CType(Me("BazarRoxanaConnectionString1"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

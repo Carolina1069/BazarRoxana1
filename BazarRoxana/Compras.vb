@@ -1,14 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Public Class Compras
     Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProv.TextChanged
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim Recuperar As String = "select * from Proveedores where CodProv= '" & TxtCodProv.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conec)
+        Ejecutar = New SqlCommand(Recuperar, conexion)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -18,18 +15,15 @@ Public Class Compras
             TxtNombreProveedor.Text = ""
         End If
         Mostrar.Close()
-        conec.Close()
+        conexion.Close()
     End Sub
 
     Private Sub TxtCodEmple_TextChanged(sender As Object, e As EventArgs) Handles TxtCodEmple.TextChanged
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim Recuperar As String = "select * from Empleados where CodEmple= '" & TxtCodEmple.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conec)
+        Ejecutar = New SqlCommand(Recuperar, conexion)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -39,18 +33,15 @@ Public Class Compras
             TxtNombreEmpleado.Text = ""
         End If
         Mostrar.Close()
-        conec.Close()
+        conexion.Close()
     End Sub
 
     Private Sub TxtCodPago_TextChanged(sender As Object, e As EventArgs) Handles TxtCodPago.TextChanged
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim Recuperar As String = "select * from FormasPago where CodPago= '" & TxtCodPago.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conec)
+        Ejecutar = New SqlCommand(Recuperar, conexion)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -60,18 +51,15 @@ Public Class Compras
             TxtTipoPago.Text = ""
         End If
         Mostrar.Close()
-        conec.Close()
+        conexion.Close()
     End Sub
 
     Private Sub TxtCodTransa_TextChanged(sender As Object, e As EventArgs) Handles TxtCodTransa.TextChanged
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & TxtCodTransa.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conec)
+        Ejecutar = New SqlCommand(Recuperar, conexion)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -81,18 +69,15 @@ Public Class Compras
             TxtTipoTransaccion.Text = ""
         End If
         Mostrar.Close()
-        conec.Close()
+        conexion.Close()
     End Sub
 
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProducto.TextChanged
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim Recuperar As String = "select * from Producto where CodProduc= '" & TxtCodProducto.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conec)
+        Ejecutar = New SqlCommand(Recuperar, conexion)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -110,7 +95,7 @@ Public Class Compras
         Mostrar.Close()
 
         Dim DATOSusuarios As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & TxtCodProducto.Text & "'", conec)
+        Using adaptador As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & TxtCodProducto.Text & "'", conexion)
             adaptador.Fill(DATOSusuarios)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -118,7 +103,7 @@ Public Class Compras
         CbxPrecio.DataSource = DATOSusuarios
         CbxPrecio.DisplayMember = "Precios"
 
-        conec.Close()
+        conexion.Close()
     End Sub
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
@@ -169,25 +154,24 @@ Public Class Compras
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
         Dim total As Integer
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
+        abrir()
 
         If txNumCompra.Text = "" Or TxtCodProv.Text = "" Or TxtCodPago.Text = "" Or TxtCodTransa.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
 
-            Dim ConsultaGuardar As String = "insert into Compras(NumCompra, CodProv, CodPago, CodTransa, CodEmple, FechayHora) values(@NumCompra, @CodProv, @CodPago, @CodTransa, @CodEmple, GETDATE())"
-            Dim ejecutar As New SqlCommand(ConsultaGuardar, conec)
+            Dim ConsultaGuardar As String = "insert into Compras(NumCompra, CodProv, CodPago, CodTransa, CodEmple, FechayHora, Total) values(@NumCompra, @CodProv, @CodPago, @CodTransa, @CodEmple, GETDATE(), @Total)"
+            Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
             ejecutar.Parameters.AddWithValue("@NumCompra", Val(txNumCompra.Text))
             ejecutar.Parameters.AddWithValue("@CodProv", Val(TxtCodProv.Text))
             ejecutar.Parameters.AddWithValue("@CodPago", Val(TxtCodPago.Text))
             ejecutar.Parameters.AddWithValue("@CodTransa", Val(TxtCodTransa.Text))
             ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodEmple.Text))
+            ejecutar.Parameters.AddWithValue("@Total", Val(TxtTotal.Text))
             ejecutar.ExecuteNonQuery()
 
             Dim DatosFacturaD As String = "insert into DetalleCompra(NumCompra, CodProduc , NombProduc, Impuesto , CantProduc, PrecioProduc, SubTotal) values(@NumCompra, @CodProduc , @NombProduc, @Impuesto , @CantProduc, @PrecioProduc,  @SubTotal)"
-            Dim RegistrarD As New SqlCommand(DatosFacturaD, conec)
+            Dim RegistrarD As New SqlCommand(DatosFacturaD, conexion)
 
             Dim fila As DataGridViewRow = New DataGridViewRow()
             For Each fila In DGV.Rows
@@ -202,13 +186,13 @@ Public Class Compras
                 RegistrarD.ExecuteNonQuery()
 
                 Dim DatosFacturaA As String = "update Producto set UnidadesStock += @UnidadesStock where CodProduc = @CodProduc"
-                Dim RegistrarA As New SqlCommand(DatosFacturaA, conec)
+                Dim RegistrarA As New SqlCommand(DatosFacturaA, conexion)
 
                 RegistrarA.Parameters.AddWithValue("@UnidadesStock", fila.Cells("CantProduc").Value)
                 RegistrarA.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
                 RegistrarA.ExecuteNonQuery()
             Next
-            conec.Close()
+            conexion.Close()
             DGV.Rows.Clear()
             TxtCantidad.Clear()
             TxtNombreProveedor.Clear()
@@ -222,13 +206,10 @@ Public Class Compras
             TxtNombreProducto.Clear()
             TxtTipoPago.Clear()
             TxtTipoTransaccion.Clear()
-            txNumCompra.Clear()
             TxtCodTransa.Clear()
             TxtCodPago.Clear()
             total = 0
         End If
 
     End Sub
-
-
 End Class

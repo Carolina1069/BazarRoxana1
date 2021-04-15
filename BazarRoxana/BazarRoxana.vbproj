@@ -94,6 +94,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BazarRoxana.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BazarRoxana.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Categorias.Designer.vb">
       <DependentUpon>Categorias.vb</DependentUpon>
     </Compile>
@@ -172,6 +177,42 @@
     <Compile Include="Proveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReporteCliente.Designer.vb">
+      <DependentUpon>ReporteCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteCompra.Designer.vb">
+      <DependentUpon>ReporteCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteEmpleados.Designer.vb">
+      <DependentUpon>ReporteEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteMasVendido.Designer.vb">
+      <DependentUpon>ReporteMasVendido.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteMasVendido.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteProveedores.Designer.vb">
+      <DependentUpon>ReporteProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteVenta.Designer.vb">
+      <DependentUpon>ReporteVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ventas.Designer.vb">
       <DependentUpon>Ventas.vb</DependentUpon>
     </Compile>
@@ -217,11 +258,46 @@
     <EmbeddedResource Include="Proveedores.resx">
       <DependentUpon>Proveedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteCliente.resx">
+      <DependentUpon>ReporteCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteCompra.resx">
+      <DependentUpon>ReporteCompra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteEmpleados.resx">
+      <DependentUpon>ReporteEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteMasVendido.resx">
+      <DependentUpon>ReporteMasVendido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteProveedores.resx">
+      <DependentUpon>ReporteProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteVenta.resx">
+      <DependentUpon>ReporteVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RpCliente.rdlc" />
+    <EmbeddedResource Include="RpCompra.rdlc" />
+    <EmbeddedResource Include="RpEmpleados.rdlc" />
+    <EmbeddedResource Include="RpMasVendido.rdlc" />
+    <EmbeddedResource Include="RpProveedores.rdlc" />
+    <EmbeddedResource Include="RpVenta.rdlc" />
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="BazarRoxana.xsc">
+      <DependentUpon>BazarRoxana.xsd</DependentUpon>
+    </None>
+    <None Include="BazarRoxana.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BazarRoxana.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="BazarRoxana.xss">
+      <DependentUpon>BazarRoxana.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

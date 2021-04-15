@@ -50,30 +50,23 @@ Public Class Productos
 
     Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conec)
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosCat
 
-
+        conexion.Close()
     End Sub
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
 
         txtUnidStock.Text = 0
-
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
+        abrir()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conec)
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -85,7 +78,7 @@ Public Class Productos
 
             Dim consultaGuardar As String = "insert into Producto(CodProduc,NombProduc,DescripProduc,CodProv,CodCateg,PrimerPrecio,SegundoPrecio,TercerPrecio,UnidadesStock,Minimo,Maximo) values(@CodProduc,@NombProduc,@DescripProduc,@CodProv,@CodCateg,@PrimerPrecio,@SegundoPrecio,@TercerPrecio,@UnidadesStock,@Minimo,@Maximo)"
 
-            Dim ejecutar As New SqlCommand(consultaGuardar, conec)
+            Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
 
             ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
             ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
@@ -104,18 +97,15 @@ Public Class Productos
 
         End If
 
-
+        conexion.Close()
     End Sub
 
     Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles btActualizar.Click
 
 
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conec)
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -124,7 +114,7 @@ Public Class Productos
             MsgBox("Hay campos vacios")
         Else
             Dim consultaGuardar As String = "Update  Producto set  NombProduc=@NombProduc,DescripProduc=@DescripProduc,CodProv=@CodProv,CodCateg=@CodCateg,PrimerPrecio=@PrimerPrecio,SegundoPrecio=@SegundoPrecio,TercerPrecio=@TercerPrecio,UnidadesStock=@UnidadesStock,Minimo=@Minimo,Maximo=@Maximo Where CodProduc=@CodProduc"
-            Dim ejecutar As New SqlCommand(consultaGuardar, conec)
+            Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
             ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
             ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
             ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
@@ -141,16 +131,14 @@ Public Class Productos
             ejecutar.ExecuteNonQuery()
 
         End If
-
+        conexion.Close()
     End Sub
 
     Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles btEliminar.Click
 
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
+        abrir()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conec)
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -159,20 +147,16 @@ Public Class Productos
             MsgBox("Hay campos vacios")
         Else
             Dim consultaGuardar As String = "delete from  Producto  Where CodProduc=@CodProduc"
-            Dim ejecutar As New SqlCommand(consultaGuardar, conec)
+            Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
             ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
             ejecutar.ExecuteNonQuery()
 
         End If
-
+        conexion.Close()
     End Sub
 
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
-
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
 
         Dim busqueda As Integer
 
@@ -181,7 +165,7 @@ Public Class Productos
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Dim query As String = "select * from Producto where CodProduc=" & busqueda
-        Using adaptador As New SqlDataAdapter(query, conec)
+        Using adaptador As New SqlDataAdapter(query, conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -189,28 +173,13 @@ Public Class Productos
 
     End Sub
 
-    Private Sub btBuscarProv_Click_1(sender As Object, e As EventArgs)
-
-        ViewBusProv.Show()
-
-    End Sub
-
-    Private Sub btBuscarCateg_Click_1(sender As Object, e As EventArgs)
-
-        ViewBusCateg.Show()
-
-    End Sub
-
     Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles txCodProv.TextChanged
 
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim Recuperar As String = "select * from Proveedores where CodProv= '" & txCodProv.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conec)
+        Ejecutar = New SqlCommand(Recuperar, conexion)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -220,20 +189,16 @@ Public Class Productos
             txNombProv.Text = ""
         End If
         Mostrar.Close()
-        conec.Close()
+        conexion.Close()
 
     End Sub
 
     Private Sub txCodCateg_TextChanged(sender As Object, e As EventArgs) Handles txCodCateg.TextChanged
-
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim Recuperar As String = "select * from Categoria where CodCateg= '" & txCodCateg.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conec)
+        Ejecutar = New SqlCommand(Recuperar, conexion)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -243,8 +208,6 @@ Public Class Productos
             txNombCateg.Text = ""
         End If
         Mostrar.Close()
-        conec.Close()
-
-
+        conexion.Close()
     End Sub
 End Class

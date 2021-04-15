@@ -3,32 +3,25 @@ Public Class Categorias
 
     Private Sub Categorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conec)
+        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosCat
-
+        conexion.Close()
 
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
 
         If txCodCat.Text = "" Or txtNombCat.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
             Dim consultaGuardar As String = "insert into Categoria(CodCateg, NombCateg, EstadoCateg) values(@CodCateg, @NombCateg, 1)"
-            Dim ejecutar As New SqlCommand(consultaGuardar, conec)
+            Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
             ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCat.Text))
             ejecutar.Parameters.AddWithValue("@NombCateg", (txtNombCat.Text))
 
@@ -37,18 +30,16 @@ Public Class Categorias
         End If
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conec)
+        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGV.DataSource = DatosCat
+        conexion.Close()
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
 
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim estado As Integer
 
         If chkEstado.Checked = True Then
@@ -64,7 +55,7 @@ Public Class Categorias
         Else
 
             Dim consultaAct As String = "update Categoria set NombCateg=@NombCateg EstadoCateg=@EstadoCateg where CodCateg= @CodCateg"
-            Dim ejecutar As New SqlCommand(consultaAct, conec)
+            Dim ejecutar As New SqlCommand(consultaAct, conexion)
             ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCat.Text))
             ejecutar.Parameters.AddWithValue("@NombCateg", (txtNombCat.Text))
             ejecutar.Parameters.AddWithValue("@EstadoCateg", (estado))
@@ -73,44 +64,39 @@ Public Class Categorias
         End If
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conec)
+        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosCat
-
+        conexion.Close()
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
 
         If txCodCat.Text = "" Then
             MsgBox("Hay campos vacios")
         Else
 
             Dim consultaElim As String = "Update Categoria set EstadoCateg=0   where CodCateg= @CodCateg"
-            Dim ejecutar As New SqlCommand(consultaElim, conec)
+            Dim ejecutar As New SqlCommand(consultaElim, conexion)
             ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCat.Text))
             ejecutar.ExecuteNonQuery()
 
         End If
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conec)
+        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGV.DataSource = DatosCat
+        conexion.Close()
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
 
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
+        abrir()
 
         Dim busqueda As Integer
 
@@ -120,27 +106,23 @@ Public Class Categorias
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Dim query As String = "select * from Categoria where CodCateg=" & busqueda
 
-        Using adaptador As New SqlDataAdapter(query, conec)
+        Using adaptador As New SqlDataAdapter(query, conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosCat
-
+        conexion.Close()
     End Sub
 
     Private Sub btnActTabla_Click(sender As Object, e As EventArgs) Handles btnActTabla.Click
-
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
-
+        abrir()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conec)
+        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosCat
-
+        conexion.Close()
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellContentClick
@@ -188,14 +170,12 @@ Public Class Categorias
 
     Private Sub chkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles chkInhabil.CheckedChanged
 
-        Dim conec As New SqlClient.SqlConnection
-        conec.ConnectionString = "Data Source=CAROLINA10\CAROLINA;Initial Catalog=BazarRoxana;Integrated Security=True"
-        conec.Open()
+        abrir()
 
         If chkInhabil.Checked = True Then
 
             Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=0", conec)
+            Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=0", conexion)
                 adaptador.Fill(DatosCat)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -204,14 +184,14 @@ Public Class Categorias
         Else
 
             Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conec)
+            Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
                 adaptador.Fill(DatosCat)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
             DGV.DataSource = DatosCat
 
         End If
-
+        conexion.Close()
     End Sub
 
 
