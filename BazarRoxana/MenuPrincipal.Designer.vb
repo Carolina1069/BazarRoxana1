@@ -41,7 +41,6 @@ Partial Class MenuPrincipal
         Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TodasLasComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CompraPorFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -54,6 +53,7 @@ Partial Class MenuPrincipal
         Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProveedoresToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,7 +127,7 @@ Partial Class MenuPrincipal
         Me.MenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.MenuStrip1.Size = New System.Drawing.Size(191, 650)
         Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.MenuStrip1.Text = "a"
         '
         'InicioToolStripMenuItem
         '
@@ -251,18 +251,6 @@ Partial Class MenuPrincipal
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
-        'SalirToolStripMenuItem
-        '
-        Me.SalirToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
-        Me.SalirToolStripMenuItem.BackgroundImage = CType(resources.GetObject("SalirToolStripMenuItem.BackgroundImage"), System.Drawing.Image)
-        Me.SalirToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.SalirToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.Login_37128
-        Me.SalirToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
-        Me.SalirToolStripMenuItem.Text = "Salir"
-        Me.SalirToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'ComprasToolStripMenuItem1
         '
         Me.ComprasToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TodasLasComprasToolStripMenuItem, Me.CompraPorFechaToolStripMenuItem})
@@ -337,6 +325,18 @@ Partial Class MenuPrincipal
         Me.ClientesToolStripMenuItem1.Name = "ClientesToolStripMenuItem1"
         Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(207, 30)
         Me.ClientesToolStripMenuItem1.Text = "Clientes"
+        '
+        'SalirToolStripMenuItem
+        '
+        Me.SalirToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.SalirToolStripMenuItem.BackgroundImage = CType(resources.GetObject("SalirToolStripMenuItem.BackgroundImage"), System.Drawing.Image)
+        Me.SalirToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.SalirToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.Login_37128
+        Me.SalirToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
+        Me.SalirToolStripMenuItem.Text = "Salir"
+        Me.SalirToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'MenuPrincipal
         '

@@ -14,36 +14,36 @@ Public Class Empleado
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Dim Cat As Integer
         abrir()
 
         If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or chkEstado.Checked = False Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
+            If RegistradoEmpleados(TxtCodigoEmpleado.Text) = False Then
 
-            Dim Cat As Integer
+                If CbxNivel.SelectedItem = "Gerente" Then
+                    Cat = 1
 
+                Else
+                    Cat = 2
 
-            If CbxNivel.SelectedItem = "Gerente" Then
-                Cat = 1
+                End If
 
+                Dim consultaGuardar As String = "insert into Empleados(CodEmple, NombEmple, Contraseña,NivelEmple,EstadoEmple) values(@CodEmple, @NombEmple,@Contraseña,@NivelEmple,1)"
+                Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
+                ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodigoEmpleado.Text))
+                ejecutar.Parameters.AddWithValue("@NombEmple", (txtNombreEmpleado.Text))
+                ejecutar.Parameters.AddWithValue("@Contraseña", (TxtContraseña.Text))
+                ejecutar.Parameters.AddWithValue("@NivelEmple", (Cat))
+
+                ejecutar.ExecuteNonQuery()
             Else
-                Cat = 2
-
+                MsgBox("El Empleado ya esta registrado")
             End If
-
-            Dim consultaGuardar As String = "insert into Empleados(CodEmple, NombEmple, Contraseña,NivelEmple,EstadoEmple) values(@CodEmple, @NombEmple,@Contraseña,@NivelEmple,1)"
-            Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
-            ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodigoEmpleado.Text))
-            ejecutar.Parameters.AddWithValue("@NombEmple", (txtNombreEmpleado.Text))
-            ejecutar.Parameters.AddWithValue("@Contraseña", (TxtContraseña.Text))
-            ejecutar.Parameters.AddWithValue("@NivelEmple", (Cat))
-
-
-            ejecutar.ExecuteNonQuery()
-
         End If
 
-        Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
+            Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable

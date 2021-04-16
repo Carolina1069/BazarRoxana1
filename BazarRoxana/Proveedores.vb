@@ -57,23 +57,25 @@ Public Class Proveedores
         If txCodProve.Text = "" Or txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Or chkEstado.Checked = False Or DGVProveedores.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
-            Dim ConsultaGuardar As String = "insert into Proveedores(CodProv, NombProv,TelProv, NombContProv,CorreoProv, CorreoContProv, TelContProv, DirecProv,EstadoProv) values(@CodProv, @NombProv, @TelProv, @NombContProv, @CorreoProv, @CorreoContProv, @TelContProv, @DirecProv,1)"
-            Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
-            ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
-            ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
-            ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
-            ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
-            ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
-            ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
-            ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
-            ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
+            If RegistradoProveedores(txCodProve.Text) = False Then
+                Dim ConsultaGuardar As String = "insert into Proveedores(CodProv, NombProv,TelProv, NombContProv,CorreoProv, CorreoContProv, TelContProv, DirecProv,EstadoProv) values(@CodProv, @NombProv, @TelProv, @NombContProv, @CorreoProv, @CorreoContProv, @TelContProv, @DirecProv,1)"
+                Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
+                ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
+                ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
+                ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
+                ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
+                ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
+                ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
+                ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
+                ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
 
-
-            ejecutar.ExecuteNonQuery()
-
+                ejecutar.ExecuteNonQuery()
+            Else
+                MsgBox("El Proveedor ya esta registrado")
+            End If
         End If
 
-        Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
+            Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=1", conexion)
             adaptador.Fill(DatosProveedor)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
@@ -262,5 +264,17 @@ Public Class Proveedores
         End If
 
         conexion.Close()
+    End Sub
+
+    Private Sub txCodProve_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txCodProve.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub TxtTelfonoEmpresa_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles TxtTelfonoEmpresa.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txtTelProv_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txtTelProv.KeyPress
+        SoloNumeros(e)
     End Sub
 End Class

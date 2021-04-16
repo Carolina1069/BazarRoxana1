@@ -66,7 +66,7 @@ Partial Class ReporteVenta
         Me.ClientSize = New System.Drawing.Size(800, 749)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "ReporteVenta"
-        Me.Text = "ReporteVenta"
+        Me.Text = "Reporte de las Ventas"
         CType(Me.SelectVentasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

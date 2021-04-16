@@ -24,6 +24,7 @@ Partial Class ReporteCompraParametro
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReporteCompraParametro))
         Me.SelectCompraFechaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BazarRoxana = New BazarRoxana()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -128,8 +129,9 @@ Partial Class ReporteCompraParametro
         Me.Controls.Add(Me.TxtFecha1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ReporteCompraParametro"
-        Me.Text = "ReporteCompraParametro"
+        Me.Text = "Reporte de las Compras con Intervalo de Fecha"
         CType(Me.SelectCompraFechaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

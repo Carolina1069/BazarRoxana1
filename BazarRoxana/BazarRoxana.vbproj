@@ -128,10 +128,10 @@
     <Compile Include="Empleado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FacturaVentas.Designer.vb">
-      <DependentUpon>FacturaVentas.vb</DependentUpon>
+    <Compile Include="FacturaVenta.Designer.vb">
+      <DependentUpon>FacturaVenta.vb</DependentUpon>
     </Compile>
-    <Compile Include="FacturaVentas.vb">
+    <Compile Include="FacturaVenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.vb">
@@ -255,8 +255,8 @@
       <DependentUpon>Empleado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacturaVenta.rdlc" />
-    <EmbeddedResource Include="FacturaVentas.resx">
-      <DependentUpon>FacturaVentas.vb</DependentUpon>
+    <EmbeddedResource Include="FacturaVenta.resx">
+      <DependentUpon>FacturaVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

@@ -140,7 +140,7 @@ Public Class Compras
         Max = Val(txMaximo.Text)
         suma = (Val(TxtUnidades.Text) + Val(TxtCantidad.Text))
 
-        If Max > suma Then
+        If Max >= suma Then
 
             Impuesto = 0.25
             SubTotal1 = (Val(CbxPrecio.Text) * Val(TxtCantidad.Text))
@@ -180,56 +180,59 @@ Public Class Compras
         If txNumCompra.Text = "" Or TxtCodProv.Text = "" Or TxtCodPago.Text = "" Or TxtCodTransa.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
+            If RegistradoCompras(txNumCompra.Text) = False Then
+                Dim ConsultaGuardar As String = "insert into Compras(NumCompra, CodProv, CodPago, CodTransa, CodEmple, FechayHora, Total) values(@NumCompra, @CodProv, @CodPago, @CodTransa, @CodEmple, GETDATE(), @Total)"
+                Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
+                ejecutar.Parameters.AddWithValue("@NumCompra", Val(txNumCompra.Text))
+                ejecutar.Parameters.AddWithValue("@CodProv", Val(TxtCodProv.Text))
+                ejecutar.Parameters.AddWithValue("@CodPago", Val(TxtCodPago.Text))
+                ejecutar.Parameters.AddWithValue("@CodTransa", Val(TxtCodTransa.Text))
+                ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodEmple.Text))
+                ejecutar.Parameters.AddWithValue("@Total", Val(TxtTotal.Text))
+                ejecutar.ExecuteNonQuery()
 
-            Dim ConsultaGuardar As String = "insert into Compras(NumCompra, CodProv, CodPago, CodTransa, CodEmple, FechayHora, Total) values(@NumCompra, @CodProv, @CodPago, @CodTransa, @CodEmple, GETDATE(), @Total)"
-            Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
-            ejecutar.Parameters.AddWithValue("@NumCompra", Val(txNumCompra.Text))
-            ejecutar.Parameters.AddWithValue("@CodProv", Val(TxtCodProv.Text))
-            ejecutar.Parameters.AddWithValue("@CodPago", Val(TxtCodPago.Text))
-            ejecutar.Parameters.AddWithValue("@CodTransa", Val(TxtCodTransa.Text))
-            ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodEmple.Text))
-            ejecutar.Parameters.AddWithValue("@Total", Val(TxtTotal.Text))
-            ejecutar.ExecuteNonQuery()
+                Dim DatosFacturaD As String = "insert into DetalleCompra(NumCompra, CodProduc , NombProduc, Impuesto , CantProduc, PrecioProduc, SubTotal) values(@NumCompra, @CodProduc , @NombProduc, @Impuesto , @CantProduc, @PrecioProduc,  @SubTotal)"
+                Dim RegistrarD As New SqlCommand(DatosFacturaD, conexion)
 
-            Dim DatosFacturaD As String = "insert into DetalleCompra(NumCompra, CodProduc , NombProduc, Impuesto , CantProduc, PrecioProduc, SubTotal) values(@NumCompra, @CodProduc , @NombProduc, @Impuesto , @CantProduc, @PrecioProduc,  @SubTotal)"
-            Dim RegistrarD As New SqlCommand(DatosFacturaD, conexion)
+                Dim fila As DataGridViewRow = New DataGridViewRow()
+                For Each fila In DGV.Rows
+                    RegistrarD.Parameters.Clear()
+                    RegistrarD.Parameters.AddWithValue("@NumCompra", fila.Cells("NumCompra").Value)
+                    RegistrarD.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
+                    RegistrarD.Parameters.AddWithValue("@NombProduc", fila.Cells("NombProduc").Value)
+                    RegistrarD.Parameters.AddWithValue("@Impuesto", fila.Cells("Impuesto").Value)
+                    RegistrarD.Parameters.AddWithValue("@CantProduc", fila.Cells("CantProduc").Value)
+                    RegistrarD.Parameters.AddWithValue("@PrecioProduc", fila.Cells("PrecioProduc").Value)
+                    RegistrarD.Parameters.AddWithValue("@SubTotal", fila.Cells("SubTotal").Value)
+                    RegistrarD.ExecuteNonQuery()
 
-            Dim fila As DataGridViewRow = New DataGridViewRow()
-            For Each fila In DGV.Rows
-                RegistrarD.Parameters.Clear()
-                RegistrarD.Parameters.AddWithValue("@NumCompra", fila.Cells("NumCompra").Value)
-                RegistrarD.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
-                RegistrarD.Parameters.AddWithValue("@NombProduc", fila.Cells("NombProduc").Value)
-                RegistrarD.Parameters.AddWithValue("@Impuesto", fila.Cells("Impuesto").Value)
-                RegistrarD.Parameters.AddWithValue("@CantProduc", fila.Cells("CantProduc").Value)
-                RegistrarD.Parameters.AddWithValue("@PrecioProduc", fila.Cells("PrecioProduc").Value)
-                RegistrarD.Parameters.AddWithValue("@SubTotal", fila.Cells("SubTotal").Value)
-                RegistrarD.ExecuteNonQuery()
+                    Dim DatosFacturaA As String = "update Producto set UnidadesStock += @UnidadesStock where CodProduc = @CodProduc"
+                    Dim RegistrarA As New SqlCommand(DatosFacturaA, conexion)
 
-                Dim DatosFacturaA As String = "update Producto set UnidadesStock += @UnidadesStock where CodProduc = @CodProduc"
-                Dim RegistrarA As New SqlCommand(DatosFacturaA, conexion)
-
-                RegistrarA.Parameters.AddWithValue("@UnidadesStock", fila.Cells("CantProduc").Value)
-                RegistrarA.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
-                RegistrarA.ExecuteNonQuery()
-            Next
-            conexion.Close()
-            DGV.Rows.Clear()
-            TxtCantidad.Clear()
-            TxtNombreProveedor.Clear()
-            TxtCodProv.Clear()
-            TxtCodEmple.Clear()
-            TxtCodProducto.Clear()
-            TxtTotal.Clear()
-            CbxPrecio.Text = ""
-            TxtNombreEmpleado.Clear()
-            TxtNombreProveedor.Clear()
-            TxtNombreProducto.Clear()
-            TxtTipoPago.Clear()
-            TxtTipoTransaccion.Clear()
-            TxtCodTransa.Clear()
-            TxtCodPago.Clear()
-            total = 0
+                    RegistrarA.Parameters.AddWithValue("@UnidadesStock", fila.Cells("CantProduc").Value)
+                    RegistrarA.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
+                    RegistrarA.ExecuteNonQuery()
+                Next
+                conexion.Close()
+                DGV.Rows.Clear()
+                TxtCantidad.Clear()
+                TxtNombreProveedor.Clear()
+                TxtCodProv.Clear()
+                TxtCodEmple.Clear()
+                TxtCodProducto.Clear()
+                TxtTotal.Clear()
+                CbxPrecio.Text = ""
+                TxtNombreEmpleado.Clear()
+                TxtNombreProveedor.Clear()
+                TxtNombreProducto.Clear()
+                TxtTipoPago.Clear()
+                TxtTipoTransaccion.Clear()
+                TxtCodTransa.Clear()
+                TxtCodPago.Clear()
+                total = 0
+            Else
+                MsgBox("La compra ya esta registrada")
+            End If
         End If
 
     End Sub
@@ -269,4 +272,5 @@ Public Class Compras
     Private Sub TxtCodEmple_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodEmple.KeyPress
         SoloNumeros(e)
     End Sub
+
 End Class

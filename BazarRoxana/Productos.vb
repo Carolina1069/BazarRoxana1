@@ -75,29 +75,31 @@ Public Class Productos
             MsgBox("Hay campos vacios")
         Else
 
+            If RegistradoProducto(txCodProd.Text) = False Then
+                Dim consultaGuardar As String = "insert into Producto(CodProduc,NombProduc,DescripProduc,CodProv,CodCateg,PrimerPrecio,SegundoPrecio,TercerPrecio,UnidadesStock,Minimo,Maximo) values(@CodProduc,@NombProduc,@DescripProduc,@CodProv,@CodCateg,@PrimerPrecio,@SegundoPrecio,@TercerPrecio,@UnidadesStock,@Minimo,@Maximo)"
 
-            Dim consultaGuardar As String = "insert into Producto(CodProduc,NombProduc,DescripProduc,CodProv,CodCateg,PrimerPrecio,SegundoPrecio,TercerPrecio,UnidadesStock,Minimo,Maximo) values(@CodProduc,@NombProduc,@DescripProduc,@CodProv,@CodCateg,@PrimerPrecio,@SegundoPrecio,@TercerPrecio,@UnidadesStock,@Minimo,@Maximo)"
+                Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
 
-            Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
-
-            ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
-            ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
-            ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
-            ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProv.Text))
-            ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCateg.Text))
-            ejecutar.Parameters.AddWithValue("@PrimerPrecio", Val(txtPriPre.Text))
-            ejecutar.Parameters.AddWithValue("@SegundoPrecio", Val(txtSegPre.Text))
-            ejecutar.Parameters.AddWithValue("@TercerPrecio", Val(txtTerPre.Text))
-            ejecutar.Parameters.AddWithValue("@UnidadesStock", Val(txtUnidStock.Text))
-            ejecutar.Parameters.AddWithValue("@Minimo", Val(txMin.Text))
-            ejecutar.Parameters.AddWithValue("@Maximo", Val(txMax.Text))
+                ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
+                ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
+                ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
+                ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProv.Text))
+                ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCateg.Text))
+                ejecutar.Parameters.AddWithValue("@PrimerPrecio", Val(txtPriPre.Text))
+                ejecutar.Parameters.AddWithValue("@SegundoPrecio", Val(txtSegPre.Text))
+                ejecutar.Parameters.AddWithValue("@TercerPrecio", Val(txtTerPre.Text))
+                ejecutar.Parameters.AddWithValue("@UnidadesStock", Val(txtUnidStock.Text))
+                ejecutar.Parameters.AddWithValue("@Minimo", Val(txMin.Text))
+                ejecutar.Parameters.AddWithValue("@Maximo", Val(txMax.Text))
 
 
-            ejecutar.ExecuteNonQuery()
-
+                ejecutar.ExecuteNonQuery()
+            Else
+                MsgBox("El producto ya esta registrado")
+            End If
         End If
 
-        conexion.Close()
+            conexion.Close()
 
         txCodProd.Clear()
         txNomProd.Clear()
@@ -261,6 +263,34 @@ Public Class Productos
     End Sub
 
     Private Sub txCodCateg_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txCodCateg.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txCodProd_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txCodProd.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txtPriPre_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txtPriPre.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txtUnidStock_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtUnidStock.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txtSegPre_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txtSegPre.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txMax_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txMax.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txtTerPre_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txtTerPre.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txMin_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txMin.KeyPress
         SoloNumeros(e)
     End Sub
 End Class

@@ -10,6 +10,7 @@ Module ConexionLogin
     'DANIELRUEDA\LOCALHOST
 
     Sub abrir()
+
         Try
             conexion = New SqlConnection("Data Source=AMAYA;Initial Catalog=BazarRoxana;Integrated Security=True")
             conexion.Open()
@@ -67,4 +68,115 @@ Module ConexionLogin
         Return resultado
     End Function
 
+    Function PersonaRegistradaClientes(ByVal id As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            enunciado = New SqlCommand("select*from Clientes where CodCli='" & id & "'", conexion)
+            respuesta = enunciado.ExecuteReader
+            If respuesta.Read Then
+                resultado = True
+            End If
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox("Error en el procedimiento: " + ex.ToString)
+        End Try
+        Return resultado
+    End Function
+
+    Function PersonaRegistradaCategoria(ByVal id As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            enunciado = New SqlCommand("select*from Categoria where CodCateg='" & id & "'", conexion)
+            respuesta = enunciado.ExecuteReader
+            If respuesta.Read Then
+                resultado = True
+            End If
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox("Error en el procedimiento: " + ex.ToString)
+        End Try
+        Return resultado
+    End Function
+
+    Function RegistradoCompras(ByVal id As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            enunciado = New SqlCommand("select*from Compras where NumCompra='" & id & "'", conexion)
+            respuesta = enunciado.ExecuteReader
+            If respuesta.Read Then
+                resultado = True
+            End If
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox("Error en el procedimiento: " + ex.ToString)
+        End Try
+        Return resultado
+    End Function
+
+    Function RegistradoVentas(ByVal id As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            enunciado = New SqlCommand("select*from Ventas where NumVent='" & id & "'", conexion)
+            respuesta = enunciado.ExecuteReader
+            If respuesta.Read Then
+                resultado = True
+            End If
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox("Error en el procedimiento: " + ex.ToString)
+        End Try
+        Return resultado
+    End Function
+
+    Function RegistradoEmpleados(ByVal id As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            enunciado = New SqlCommand("select*from Empleados where CodEmple='" & id & "'", conexion)
+            respuesta = enunciado.ExecuteReader
+            If respuesta.Read Then
+                resultado = True
+            End If
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox("Error en el procedimiento: " + ex.ToString)
+        End Try
+        Return resultado
+    End Function
+
+    Function RegistradoProducto(ByVal id As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            enunciado = New SqlCommand("select*from Producto where CodProduc='" & id & "'", conexion)
+            respuesta = enunciado.ExecuteReader
+            If respuesta.Read Then
+                resultado = True
+            End If
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox("Error en el procedimiento: " + ex.ToString)
+        End Try
+        Return resultado
+    End Function
+
+    Function RegistradoProveedores(ByVal id As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            enunciado = New SqlCommand("select*from Proveedores where CodProv='" & id & "'", conexion)
+            respuesta = enunciado.ExecuteReader
+            If respuesta.Read Then
+                resultado = True
+            End If
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox("Error en el procedimiento: " + ex.ToString)
+        End Try
+        Return resultado
+    End Function
 End Module

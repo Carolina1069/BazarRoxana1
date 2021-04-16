@@ -129,7 +129,7 @@ Partial Class ReporteVentaParametro
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "ReporteVentaParametro"
-        Me.Text = "ReporteVentaParametro"
+        Me.Text = "Reporte de las Ventas con Intervalo de Fecha"
         CType(Me.SelectVentaFechaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

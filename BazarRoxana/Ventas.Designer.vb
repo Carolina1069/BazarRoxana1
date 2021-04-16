@@ -69,6 +69,7 @@ Partial Class Ventas
         Me.txNumVenta = New System.Windows.Forms.TextBox()
         Me.lbNumeroVenta = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.BtnImprimir = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -250,6 +251,7 @@ Partial Class Ventas
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.Controls.Add(Me.BtnImprimir)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.txMinimo)
         Me.GroupBox1.Controls.Add(Me.TxtTotal)
@@ -510,6 +512,15 @@ Partial Class Ventas
         Me.Label14.TabIndex = 69
         Me.Label14.Text = "Ventas"
         '
+        'BtnImprimir
+        '
+        Me.BtnImprimir.Location = New System.Drawing.Point(121, 278)
+        Me.BtnImprimir.Name = "BtnImprimir"
+        Me.BtnImprimir.Size = New System.Drawing.Size(75, 23)
+        Me.BtnImprimir.TabIndex = 62
+        Me.BtnImprimir.Text = "Imprimir"
+        Me.BtnImprimir.UseVisualStyleBackColor = True
+        '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -583,4 +594,5 @@ Partial Class Ventas
     Friend WithEvents Label13 As Label
     Friend WithEvents txMinimo As TextBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents BtnImprimir As Button
 End Class
