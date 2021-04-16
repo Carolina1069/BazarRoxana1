@@ -2,14 +2,13 @@
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ProgressBar1.Visible = False
         LbPorcentaje.Visible = False
-        abrir()
-        'LbPorcentaje.Parent = ProgressBar1
-        'LbPorcentaje.BackColor = Color.Transparent
+
+
 
     End Sub
 
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
-
+        abrir()
         Try
             If usuarioRegistrado(txtNombreEmpleado.Text) = True Then
                 'Timer1.Start()
@@ -25,7 +24,7 @@
                         MenuPrincipal.CategoriaToolStripMenuItem.Enabled = False
                         MenuPrincipal.ProveedoresToolStripMenuItem.Enabled = False
                         MenuPrincipal.ProductoToolStripMenuItem.Enabled = False
-
+                        MenuPrincipal.ReportesToolStripMenuItem.Enabled = False
                     End If
                 Else
                     MsgBox("Contraseña Invalida", MsgBoxStyle.Critical)

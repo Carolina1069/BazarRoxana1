@@ -68,6 +68,7 @@ Partial Class Ventas
         Me.TxtUnidades = New System.Windows.Forms.TextBox()
         Me.txNumVenta = New System.Windows.Forms.TextBox()
         Me.lbNumeroVenta = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -172,6 +173,7 @@ Partial Class Ventas
         'TxtCodTransa
         '
         Me.TxtCodTransa.Location = New System.Drawing.Point(219, 110)
+        Me.TxtCodTransa.MaxLength = 1
         Me.TxtCodTransa.Name = "TxtCodTransa"
         Me.TxtCodTransa.Size = New System.Drawing.Size(125, 20)
         Me.TxtCodTransa.TabIndex = 42
@@ -188,6 +190,7 @@ Partial Class Ventas
         'TxtCodPago
         '
         Me.TxtCodPago.Location = New System.Drawing.Point(219, 84)
+        Me.TxtCodPago.MaxLength = 1
         Me.TxtCodPago.Name = "TxtCodPago"
         Me.TxtCodPago.Size = New System.Drawing.Size(125, 20)
         Me.TxtCodPago.TabIndex = 40
@@ -496,12 +499,24 @@ Partial Class Ventas
         Me.lbNumeroVenta.TabIndex = 42
         Me.lbNumeroVenta.Text = "Numero de Venta"
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Font = New System.Drawing.Font("Clarendon BT", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(12, 9)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(98, 29)
+        Me.Label14.TabIndex = 69
+        Me.Label14.Text = "Ventas"
+        '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.A
         Me.ClientSize = New System.Drawing.Size(934, 650)
+        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
@@ -567,4 +582,5 @@ Partial Class Ventas
     Friend WithEvents SubTotal As DataGridViewTextBoxColumn
     Friend WithEvents Label13 As Label
     Friend WithEvents txMinimo As TextBox
+    Friend WithEvents Label14 As Label
 End Class

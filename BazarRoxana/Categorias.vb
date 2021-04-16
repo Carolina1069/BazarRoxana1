@@ -35,6 +35,10 @@ Public Class Categorias
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGV.DataSource = DatosCat
         conexion.Close()
+
+        txCodCat.Clear()
+        txtNombCat.Clear()
+        chkEstado.Checked = False
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
@@ -70,6 +74,10 @@ Public Class Categorias
 
         DGV.DataSource = DatosCat
         conexion.Close()
+        txCodCat.Clear()
+        txtNombCat.Clear()
+        chkEstado.Checked = False
+
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
@@ -92,6 +100,10 @@ Public Class Categorias
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGV.DataSource = DatosCat
         conexion.Close()
+
+        txCodCat.Clear()
+        txtNombCat.Clear()
+        chkEstado.Checked = False
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
@@ -104,7 +116,7 @@ Public Class Categorias
 
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Dim query As String = "select * from Categoria where CodCateg=" & busqueda
+        Dim query As String = "Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria where CodCateg=" & busqueda
 
         Using adaptador As New SqlDataAdapter(query, conexion)
             adaptador.Fill(DatosCat)
@@ -123,6 +135,11 @@ Public Class Categorias
 
         DGV.DataSource = DatosCat
         conexion.Close()
+
+        txCodCat.Clear()
+        txtNombCat.Clear()
+        chkEstado.Checked = False
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellContentClick
@@ -193,6 +210,7 @@ Public Class Categorias
         End If
         conexion.Close()
     End Sub
+
 
 
 End Class

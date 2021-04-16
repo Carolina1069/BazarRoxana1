@@ -29,7 +29,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.02333cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -40,7 +40,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Num Vent</Value>
+                              <Value>Numero de la  Venta</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -70,7 +70,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cod Cli</Value>
+                              <Value>Codigo del  Cliente</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -130,7 +130,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cod Pago</Value>
+                              <Value>Codigo de Pago</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -160,7 +160,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cod Transa</Value>
+                              <Value>Codigo de la Transaccion</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -190,7 +190,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cod Emple</Value>
+                              <Value>Codigo del Empleado</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -244,7 +244,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.02333cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -484,7 +484,7 @@
         <DataSetName>Ventas</DataSetName>
         <Top>1.55787cm</Top>
         <Left>0.9925cm</Left>
-        <Height>1.2cm</Height>
+        <Height>2.04667cm</Height>
         <Width>17.5cm</Width>
         <Style>
           <Border>
@@ -493,10 +493,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>11in</Height>
     <Style />
   </Body>
-  <Width>7.6733in</Width>
+  <Width>8.5in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -508,7 +508,7 @@
           <Value>Logo</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.33479cm</Top>
-          <Left>14.98417cm</Left>
+          <Left>16.86271cm</Left>
           <Height>1.87042cm</Height>
           <Width>4.14583cm</Width>
           <Style>
@@ -578,7 +578,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
           <Top>0.5818cm</Top>
-          <Left>5.61565cm</Left>
+          <Left>7.73362cm</Left>
           <Height>0.6cm</Height>
           <Width>1.36292cm</Width>
           <Style>
@@ -607,7 +607,7 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.5818cm</Top>
-          <Left>6.97857cm</Left>
+          <Left>9.09654cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>1</ZIndex>
@@ -637,7 +637,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox24</rd:DefaultName>
           <Top>0.5818cm</Top>
-          <Left>9.47857cm</Left>
+          <Left>11.59654cm</Left>
           <Height>0.6cm</Height>
           <Width>0.75375cm</Width>
           <ZIndex>2</ZIndex>
@@ -667,7 +667,7 @@
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
           <Top>0.5818cm</Top>
-          <Left>10.23362cm</Left>
+          <Left>12.35159cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>3</ZIndex>
@@ -697,7 +697,7 @@
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
           <Top>1.3582cm</Top>
-          <Left>15.9925cm</Left>
+          <Left>17.87104cm</Left>
           <Height>0.6cm</Height>
           <Width>3.1375cm</Width>
           <ZIndex>4</ZIndex>
@@ -727,7 +727,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox27</rd:DefaultName>
           <Top>1.3582cm</Top>
-          <Left>7.73362cm</Left>
+          <Left>9.85159cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>5</ZIndex>

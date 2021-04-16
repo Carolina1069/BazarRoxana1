@@ -25,9 +25,9 @@ Partial Class ReporteMasVendido
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.SelectMasVendidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BazarRoxana = New BazarRoxana.BazarRoxana()
+        Me.BazarRoxana = New BazarRoxana()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.SelectMasVendidoTableAdapter = New BazarRoxana.BazarRoxanaTableAdapters.SelectMasVendidoTableAdapter()
+        Me.SelectMasVendidoTableAdapter = New BazarRoxanaTableAdapters.SelectMasVendidoTableAdapter()
         CType(Me.SelectMasVendidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -52,7 +52,7 @@ Partial Class ReporteMasVendido
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(934, 650)
+        Me.ReportViewer1.Size = New System.Drawing.Size(800, 749)
         Me.ReportViewer1.TabIndex = 0
         '
         'SelectMasVendidoTableAdapter
@@ -63,9 +63,8 @@ Partial Class ReporteMasVendido
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(934, 650)
+        Me.ClientSize = New System.Drawing.Size(800, 749)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ReporteMasVendido"
         Me.Text = "ReporteMasVendido"
         CType(Me.SelectMasVendidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

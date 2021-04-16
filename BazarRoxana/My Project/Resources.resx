@@ -148,6 +148,9 @@
   <data name="ic_description_128_28266" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_description_128_28266.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="B" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\B.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pexels-artem-beliaikin-1036856" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-artem-beliaikin-1036856.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,7 +205,7 @@
   <data name="ic_face_unlock_128_28406" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_face_unlock_128_28406.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="B" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\B.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="document_icon-icons.com_66534" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\document_icon-icons.com_66534.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

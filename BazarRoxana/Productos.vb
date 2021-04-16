@@ -98,6 +98,19 @@ Public Class Productos
         End If
 
         conexion.Close()
+
+        txCodProd.Clear()
+        txNomProd.Clear()
+        rtxDescProd.Clear()
+        txCodProv.Clear()
+        txCodCateg.Clear()
+        txtPriPre.Clear()
+        txtSegPre.Clear()
+        txtTerPre.Clear()
+        txtUnidStock.Clear()
+        txMax.Clear()
+        txMin.Clear()
+
     End Sub
 
     Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles btActualizar.Click
@@ -132,28 +145,21 @@ Public Class Productos
 
         End If
         conexion.Close()
+
+        txCodProd.Clear()
+        txNomProd.Clear()
+        rtxDescProd.Clear()
+        txCodProv.Clear()
+        txCodCateg.Clear()
+        txtPriPre.Clear()
+        txtSegPre.Clear()
+        txtTerPre.Clear()
+        txtUnidStock.Clear()
+        txMax.Clear()
+        txMin.Clear()
+
     End Sub
 
-    Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles btEliminar.Click
-
-        abrir()
-        Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conexion)
-            adaptador.Fill(DatosCat)
-        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-
-        DGV.DataSource = DatosCat
-        If txCodProd.Text = "" Then
-            MsgBox("Hay campos vacios")
-        Else
-            Dim consultaGuardar As String = "delete from  Producto  Where CodProduc=@CodProduc"
-            Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
-            ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
-            ejecutar.ExecuteNonQuery()
-
-        End If
-        conexion.Close()
-    End Sub
 
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
         abrir()
@@ -164,7 +170,7 @@ Public Class Productos
 
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Dim query As String = "select * from Producto where CodProduc=" & busqueda
+        Dim query As String = "select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto where CodProduc=" & busqueda
         Using adaptador As New SqlDataAdapter(query, conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
@@ -209,5 +215,52 @@ Public Class Productos
         End If
         Mostrar.Close()
         conexion.Close()
+    End Sub
+
+    Private Sub btActualizarTabla_Click(sender As Object, e As EventArgs) Handles btActualizarTabla.Click
+
+        abrir()
+        Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conexion)
+            adaptador.Fill(DatosCat)
+        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+        DGV.DataSource = DatosCat
+
+        conexion.Close()
+        txCodProd.Clear()
+        txNomProd.Clear()
+        rtxDescProd.Clear()
+        txCodProv.Clear()
+        txCodCateg.Clear()
+        txtPriPre.Clear()
+        txtSegPre.Clear()
+        txtTerPre.Clear()
+        txtUnidStock.Clear()
+        txMax.Clear()
+        txMin.Clear()
+
+    End Sub
+
+    Private Sub DGV_DoubleClick(sender As Object, e As EventArgs) Handles DGV.DoubleClick
+        txCodProd.Text = DGV.CurrentRow.Cells(0).Value
+        txNomProd.Text = DGV.CurrentRow.Cells(1).Value
+        rtxDescProd.Text = DGV.CurrentRow.Cells(2).Value
+        txCodProv.Text = DGV.CurrentRow.Cells(3).Value
+        txCodCateg.Text = DGV.CurrentRow.Cells(4).Value
+        txtPriPre.Text = DGV.CurrentRow.Cells(5).Value
+        txtSegPre.Text = DGV.CurrentRow.Cells(6).Value
+        txtTerPre.Text = DGV.CurrentRow.Cells(7).Value
+        txtUnidStock.Text = DGV.CurrentRow.Cells(8).Value
+        txMax.Text = DGV.CurrentRow.Cells(9).Value
+        txMin.Text = DGV.CurrentRow.Cells(10).Value
+    End Sub
+
+    Private Sub txCodProv_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txCodProv.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub txCodCateg_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txCodCateg.KeyPress
+        SoloNumeros(e)
     End Sub
 End Class

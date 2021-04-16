@@ -419,7 +419,7 @@
         </TablixRowHierarchy>
         <DataSetName>Cliente</DataSetName>
         <Top>2.06058cm</Top>
-        <Left>1.26289cm</Left>
+        <Left>2.55292cm</Left>
         <Height>1.2cm</Height>
         <Width>15cm</Width>
         <Style>
@@ -429,10 +429,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>11in</Height>
     <Style />
   </Body>
-  <Width>6.93067in</Width>
+  <Width>8.5in</Width>
   <Page>
     <PageHeader>
       <Height>2.54cm</Height>
@@ -444,7 +444,7 @@
           <Value>Logo</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.33479cm</Top>
-          <Left>11.65042cm</Left>
+          <Left>17.05503cm</Left>
           <Height>1.87042cm</Height>
           <Width>4.14583cm</Width>
           <Style>
@@ -472,7 +472,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>1.38995cm</Top>
-          <Left>5.05292cm</Left>
+          <Left>8.33375cm</Left>
           <Height>0.81526cm</Height>
           <Width>5.4898cm</Width>
           <ZIndex>1</ZIndex>
@@ -514,7 +514,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
           <Top>0.5818cm</Top>
-          <Left>4.49018cm</Left>
+          <Left>7.39997cm</Left>
           <Height>0.6cm</Height>
           <Width>1.36292cm</Width>
           <Style>
@@ -543,7 +543,7 @@
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
           <Top>0.5818cm</Top>
-          <Left>5.8531cm</Left>
+          <Left>8.76289cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>1</ZIndex>
@@ -573,7 +573,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox24</rd:DefaultName>
           <Top>0.5818cm</Top>
-          <Left>8.3531cm</Left>
+          <Left>11.26289cm</Left>
           <Height>0.6cm</Height>
           <Width>0.75375cm</Width>
           <ZIndex>2</ZIndex>
@@ -603,7 +603,7 @@
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
           <Top>0.5818cm</Top>
-          <Left>9.10815cm</Left>
+          <Left>12.01794cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>3</ZIndex>
@@ -633,7 +633,7 @@
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
           <Top>1.3582cm</Top>
-          <Left>12.74524cm</Left>
+          <Left>18.06336cm</Left>
           <Height>0.6cm</Height>
           <Width>3.1375cm</Width>
           <ZIndex>4</ZIndex>
@@ -663,7 +663,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox27</rd:DefaultName>
           <Top>1.3582cm</Top>
-          <Left>6.60815cm</Left>
+          <Left>9.51794cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>5</ZIndex>

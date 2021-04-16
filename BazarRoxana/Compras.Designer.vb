@@ -68,6 +68,7 @@ Partial Class Compras
         Me.TxtCodPago = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -442,6 +443,7 @@ Partial Class Compras
         'TxtCodTransa
         '
         Me.TxtCodTransa.Location = New System.Drawing.Point(246, 117)
+        Me.TxtCodTransa.MaxLength = 1
         Me.TxtCodTransa.Name = "TxtCodTransa"
         Me.TxtCodTransa.Size = New System.Drawing.Size(100, 20)
         Me.TxtCodTransa.TabIndex = 42
@@ -458,6 +460,7 @@ Partial Class Compras
         'TxtCodPago
         '
         Me.TxtCodPago.Location = New System.Drawing.Point(246, 91)
+        Me.TxtCodPago.MaxLength = 1
         Me.TxtCodPago.Name = "TxtCodPago"
         Me.TxtCodPago.Size = New System.Drawing.Size(100, 20)
         Me.TxtCodPago.TabIndex = 40
@@ -482,12 +485,24 @@ Partial Class Compras
         Me.PictureBox1.TabIndex = 55
         Me.PictureBox1.TabStop = False
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Font = New System.Drawing.Font("Clarendon BT", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(12, 9)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(123, 29)
+        Me.Label14.TabIndex = 69
+        Me.Label14.Text = "Compras"
+        '
         'Compras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.A
         Me.ClientSize = New System.Drawing.Size(934, 650)
+        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -553,4 +568,5 @@ Partial Class Compras
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label13 As Label
     Friend WithEvents txMaximo As TextBox
+    Friend WithEvents Label14 As Label
 End Class

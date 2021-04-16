@@ -24,13 +24,23 @@ Partial Class ReporteCliente
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.BazarRoxana = New BazarRoxana()
         Me.SelectClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BazarRoxana = New BazarRoxana()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SelectClienteTableAdapter = New BazarRoxanaTableAdapters.SelectClienteTableAdapter()
-        CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SelectClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'SelectClienteBindingSource
+        '
+        Me.SelectClienteBindingSource.DataMember = "SelectCliente"
+        Me.SelectClienteBindingSource.DataSource = Me.BazarRoxana
+        '
+        'BazarRoxana
+        '
+        Me.BazarRoxana.DataSetName = "BazarRoxana"
+        Me.BazarRoxana.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -42,18 +52,8 @@ Partial Class ReporteCliente
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(934, 650)
+        Me.ReportViewer1.Size = New System.Drawing.Size(800, 749)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'BazarRoxana
-        '
-        Me.BazarRoxana.DataSetName = "BazarRoxana"
-        Me.BazarRoxana.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'SelectClienteBindingSource
-        '
-        Me.SelectClienteBindingSource.DataMember = "SelectCliente"
-        Me.SelectClienteBindingSource.DataSource = Me.BazarRoxana
         '
         'SelectClienteTableAdapter
         '
@@ -63,13 +63,12 @@ Partial Class ReporteCliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(934, 650)
+        Me.ClientSize = New System.Drawing.Size(800, 749)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ReporteCliente"
         Me.Text = "ReporteCliente"
-        CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SelectClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

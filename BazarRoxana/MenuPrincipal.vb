@@ -90,4 +90,44 @@
         FormProductos.Show()
 
     End Sub
+
+    Private Sub TodasLasComprasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TodasLasComprasToolStripMenuItem.Click
+        ReporteCompra.Show()
+    End Sub
+
+    Private Sub CompraPorFechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CompraPorFechaToolStripMenuItem.Click
+        ReporteCompraParametro.Show()
+    End Sub
+
+    Private Sub TodasLasVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TodasLasVentasToolStripMenuItem.Click
+        ReporteVenta.Show()
+    End Sub
+
+    Private Sub VentasPorFechaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasPorFechaToolStripMenuItem.Click
+        ReporteVentaParametro.Show()
+    End Sub
+
+    Private Sub ProductosPorCategoriaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosPorCategoriaToolStripMenuItem.Click
+        ReporteProductoParametro.Show()
+    End Sub
+
+    Private Sub ProductosMásVendidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosMásVendidosToolStripMenuItem.Click
+        ReporteMasVendido.Show()
+    End Sub
+
+    Private Sub EmpleadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EmpleadosToolStripMenuItem.Click
+        ReporteEmpleados.Show()
+    End Sub
+
+    Private Sub ProveedoresToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem1.Click
+        ReporteProveedores.Show()
+    End Sub
+
+    Private Sub ClientesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem1.Click
+        ReporteCliente.Show()
+    End Sub
+
+    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
+        Me.ToolStripContainer1.ContentPanel.Controls.Clear()
+    End Sub
 End Class

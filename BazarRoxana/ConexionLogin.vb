@@ -22,7 +22,7 @@ Module ConexionLogin
     Function usuarioRegistrado(ByVal nombreUsuario As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("Select * from Empleados where NombEmple='" & nombreUsuario & "'", conexion)
+            enunciado = New SqlCommand("Select * from Empleados where NombEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then
@@ -38,7 +38,7 @@ Module ConexionLogin
     Function contrasena(ByVal nombreUsuario As String) As String
         Dim resultado As String = ""
         Try
-            enunciado = New SqlCommand("Select Contraseña from Empleados where NombEmple='" & nombreUsuario & "'", conexion)
+            enunciado = New SqlCommand("Select Contraseña from Empleados where NombEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then
@@ -54,7 +54,7 @@ Module ConexionLogin
     Function ConsultarTipoUsuario(ByVal nombreUsuario As String) As Integer
         Dim resultado As Integer
         Try
-            enunciado = New SqlCommand("Select NivelEmple from Empleados where NombEmple='" & nombreUsuario & "'", conexion)
+            enunciado = New SqlCommand("Select NivelEmple from Empleados where NombEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then

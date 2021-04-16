@@ -16,7 +16,7 @@ Public Class Empleado
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         abrir()
 
-        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or CbxNivel.SelectedItem = 0 Or chkEstado.Checked = False Or DGV.Rows.Count = 0 Then
+        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or chkEstado.Checked = False Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
 
@@ -50,12 +50,18 @@ Public Class Empleado
 
         DGV.DataSource = DatosEmp
         conexion.Close()
+        TxtCodigoEmpleado.Clear()
+        txtNombreEmpleado.Clear()
+        TxtContraseña.Clear()
+        CbxNivel.Text = ""
+        chkEstado.Checked = False
+
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
         abrir()
 
-        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or CbxNivel.SelectedItem = 0 Or DGV.Rows.Count = 0 Then
+        If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
             Dim Cat As Integer
@@ -69,10 +75,11 @@ Public Class Empleado
                 estado = 0
             End If
 
-            Dim consultaAct As String = "update Empleados set NombEmple=@NombEmple, NivelEmple=@NivelEmple EstadoEmple=@EstadoEmple where CodEmple= @CodEmple"
+            Dim consultaAct As String = "update Empleados set NombEmple=@NombEmple, Contraseña=@Contraseña ,NivelEmple=@NivelEmple, EstadoEmple=@EstadoEmple where CodEmple= @CodEmple"
             Dim ejecutar As New SqlCommand(consultaAct, conexion)
             ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodigoEmpleado.Text))
             ejecutar.Parameters.AddWithValue("@NombEmple", (txtNombreEmpleado.Text))
+            ejecutar.Parameters.AddWithValue("@Contraseña", (TxtContraseña.Text))
             ejecutar.Parameters.AddWithValue("@NivelEmple", (Cat))
             ejecutar.Parameters.AddWithValue("@EstadoEmple", (estado))
             ejecutar.ExecuteNonQuery()
@@ -85,6 +92,12 @@ Public Class Empleado
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGV.DataSource = DatosEmp
         conexion.Close()
+
+        TxtCodigoEmpleado.Clear()
+        txtNombreEmpleado.Clear()
+        TxtContraseña.Clear()
+        CbxNivel.Text = ""
+        chkEstado.Checked = False
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
@@ -108,6 +121,12 @@ Public Class Empleado
 
         DGV.DataSource = DatosEmp
         conexion.Close()
+
+        TxtCodigoEmpleado.Clear()
+        txtNombreEmpleado.Clear()
+        TxtContraseña.Clear()
+        CbxNivel.Text = ""
+        chkEstado.Checked = False
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
@@ -116,7 +135,7 @@ Public Class Empleado
         busqueda = InputBox("Ingrese Codigo", "Busqueda")
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Dim query As String = "select * from Empleados where CodEmple=" & busqueda
+        Dim query As String = "select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where CodEmple=" & busqueda
         Using adaptador As New SqlDataAdapter(query, conexion)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
@@ -134,7 +153,8 @@ Public Class Empleado
     Private Sub DGV_DoubleClick(sender As Object, e As EventArgs) Handles DGV.DoubleClick
         TxtCodigoEmpleado.Text = DGV.CurrentRow.Cells(0).Value
         txtNombreEmpleado.Text = DGV.CurrentRow.Cells(1).Value
-        CbxNivel.SelectedItem = DGV.CurrentRow.Cells(2).Value
+        TxtContraseña.Text = DGV.CurrentRow.Cells(2).Value
+        CbxNivel.Text = DGV.CurrentRow.Cells(3).Value
     End Sub
 
     Private Sub btnActTabla_Click(sender As Object, e As EventArgs) Handles btnActTabla.Click

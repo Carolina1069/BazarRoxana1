@@ -36,6 +36,7 @@ Partial Class Categorias
         Me.txtNombCat = New System.Windows.Forms.TextBox()
         Me.chkEstado = New System.Windows.Forms.CheckBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -182,12 +183,24 @@ Partial Class Categorias
         Me.PictureBox1.TabIndex = 67
         Me.PictureBox1.TabStop = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Clarendon BT", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(148, 29)
+        Me.Label1.TabIndex = 68
+        Me.Label1.Text = "Categorias" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
         'Categorias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.A
         Me.ClientSize = New System.Drawing.Size(934, 650)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.chkEstado)
         Me.Controls.Add(Me.txtNombCat)
@@ -198,7 +211,6 @@ Partial Class Categorias
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Categorias"
-        Me.Text = "Categorias"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
@@ -221,4 +233,5 @@ Partial Class Categorias
     Friend WithEvents chkEstado As CheckBox
     Friend WithEvents chkInhabil As CheckBox
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label1 As Label
 End Class

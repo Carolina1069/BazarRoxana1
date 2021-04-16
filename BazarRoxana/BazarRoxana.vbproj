@@ -99,6 +99,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BazarRoxana.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BazarRoxana.vb">
+      <DependentUpon>BazarRoxana.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Categorias.Designer.vb">
       <DependentUpon>Categorias.vb</DependentUpon>
     </Compile>
@@ -189,6 +192,12 @@
     <Compile Include="ReporteCompra.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReporteCompraParametro.Designer.vb">
+      <DependentUpon>ReporteCompraParametro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteCompraParametro.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ReporteEmpleados.Designer.vb">
       <DependentUpon>ReporteEmpleados.vb</DependentUpon>
     </Compile>
@@ -201,6 +210,12 @@
     <Compile Include="ReporteMasVendido.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReporteProductoParametro.Designer.vb">
+      <DependentUpon>ReporteProductoParametro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteProductoParametro.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ReporteProveedores.Designer.vb">
       <DependentUpon>ReporteProveedores.vb</DependentUpon>
     </Compile>
@@ -211,6 +226,12 @@
       <DependentUpon>ReporteVenta.vb</DependentUpon>
     </Compile>
     <Compile Include="ReporteVenta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteVentaParametro.Designer.vb">
+      <DependentUpon>ReporteVentaParametro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVentaParametro.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventas.Designer.vb">
@@ -264,11 +285,17 @@
     <EmbeddedResource Include="ReporteCompra.resx">
       <DependentUpon>ReporteCompra.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteCompraParametro.resx">
+      <DependentUpon>ReporteCompraParametro.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteEmpleados.resx">
       <DependentUpon>ReporteEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteMasVendido.resx">
       <DependentUpon>ReporteMasVendido.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteProductoParametro.resx">
+      <DependentUpon>ReporteProductoParametro.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteProveedores.resx">
       <DependentUpon>ReporteProveedores.vb</DependentUpon>
@@ -276,12 +303,18 @@
     <EmbeddedResource Include="ReporteVenta.resx">
       <DependentUpon>ReporteVenta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteVentaParametro.resx">
+      <DependentUpon>ReporteVentaParametro.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RpCliente.rdlc" />
     <EmbeddedResource Include="RpCompra.rdlc" />
+    <EmbeddedResource Include="RpCompraParametro.rdlc" />
     <EmbeddedResource Include="RpEmpleados.rdlc" />
     <EmbeddedResource Include="RpMasVendido.rdlc" />
+    <EmbeddedResource Include="RpProductoParametro.rdlc" />
     <EmbeddedResource Include="RpProveedores.rdlc" />
     <EmbeddedResource Include="RpVenta.rdlc" />
+    <EmbeddedResource Include="RpVentaParametro.rdlc" />
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>
     </EmbeddedResource>
@@ -398,6 +431,7 @@
     <None Include="Resources\B.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\document_icon-icons.com_66534.ico" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

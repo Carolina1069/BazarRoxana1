@@ -6,36 +6,30 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.21778cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.21778cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.21778cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.21778cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.21778cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.21778cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.21778cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.21778cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>2.21778cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.26146cm</Height>
+              <Height>1.0101cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -46,7 +40,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Codigo del Proveedor</Value>
+                              <Value>Numero de Venta</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -76,7 +70,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre del  Proveedor</Value>
+                              <Value>Codigo del Cliente</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -106,10 +100,8 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Telelefono del Proveedore</Value>
-                              <Style>
-                                <FontSize>9pt</FontSize>
-                              </Style>
+                              <Value>Fechay Hora</Value>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -138,10 +130,8 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre del Empleado del Proveedor</Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
+                              <Value>Codigo de  Pago</Value>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -170,7 +160,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Correo del Proveedor</Value>
+                              <Value>Codigo de Transacicion</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -200,10 +190,8 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Correo del Empleado del Proveedor</Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
+                              <Value>Codigo de Empleado</Value>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -225,85 +213,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox16">
+                    <Textbox Name="Textbox14">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Telefono del Empleado Proveedor</Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox16</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox18">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Direccion de la empresa  Proveedor</Value>
-                              <Style>
-                                <FontSize>8pt</FontSize>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox18</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox20">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Estado Proveedor</Value>
+                              <Value>Total</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox20</rd:DefaultName>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -320,25 +244,25 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.26146cm</Height>
+              <Height>1.0101cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CodProv">
+                    <Textbox Name="NumVent">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CodProv.Value</Value>
+                              <Value>=Fields!NumVent.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CodProv</rd:DefaultName>
+                      <rd:DefaultName>NumVent</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -354,21 +278,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NombProv">
+                    <Textbox Name="CodCli">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NombProv.Value</Value>
+                              <Value>=Fields!CodCli.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>NombProv</rd:DefaultName>
+                      <rd:DefaultName>CodCli</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -384,21 +308,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TelProv">
+                    <Textbox Name="FechayHoraVenta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TelProv.Value</Value>
+                              <Value>=Fields!FechayHoraVenta.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TelProv</rd:DefaultName>
+                      <rd:DefaultName>FechayHoraVenta</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -414,21 +338,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NombContProv">
+                    <Textbox Name="CodPago">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NombContProv.Value</Value>
+                              <Value>=Fields!CodPago.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>NombContProv</rd:DefaultName>
+                      <rd:DefaultName>CodPago</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -444,21 +368,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CorreoProv">
+                    <Textbox Name="CodTransa">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CorreoProv.Value</Value>
+                              <Value>=Fields!CodTransa.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CorreoProv</rd:DefaultName>
+                      <rd:DefaultName>CodTransa</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -474,21 +398,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CorreoContProv">
+                    <Textbox Name="CodEmple">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CorreoContProv.Value</Value>
+                              <Value>=Fields!CodEmple.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CorreoContProv</rd:DefaultName>
+                      <rd:DefaultName>CodEmple</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -504,81 +428,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TelContProv">
+                    <Textbox Name="Total">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!TelContProv.Value</Value>
+                              <Value>=Fields!Total.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TelContProv</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="DirecProv">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!DirecProv.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>DirecProv</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="EstadoProveedor">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!EstadoProveedor.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>EstadoProveedor</rd:DefaultName>
+                      <rd:DefaultName>Total</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -605,8 +469,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -619,16 +481,15 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Proveedores</DataSetName>
-        <Top>1.71662cm</Top>
-        <Left>0.64946cm</Left>
-        <Height>2.52292cm</Height>
-        <Width>19.96cm</Width>
+        <DataSetName>VentaFecha</DataSetName>
+        <Top>1.58433cm</Top>
+        <Left>2.08733cm</Left>
+        <Height>2.0202cm</Height>
+        <Width>17.5cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <FontSize>2pt</FontSize>
         </Style>
       </Tablix>
     </ReportItems>
@@ -647,7 +508,7 @@
           <Value>Logo</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.33479cm</Top>
-          <Left>17.10113cm</Left>
+          <Left>17.08733cm</Left>
           <Height>1.87042cm</Height>
           <Width>4.14583cm</Width>
           <Style>
@@ -663,7 +524,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de Proveedores</Value>
+                  <Value>Reporte de Ventas por Intervalo de Fecha</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -674,10 +535,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.12537cm</Top>
-          <Left>8.31298cm</Left>
+          <Top>1.38995cm</Top>
+          <Left>4.17919cm</Left>
           <Height>0.81526cm</Height>
-          <Width>6.68042cm</Width>
+          <Width>11.29897cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -697,7 +558,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.68703cm</Height>
+      <Height>2.54cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -716,8 +577,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>0.97578cm</Top>
-          <Left>7.87543cm</Left>
+          <Top>0.5818cm</Top>
+          <Left>7.25024cm</Left>
           <Height>0.6cm</Height>
           <Width>1.36292cm</Width>
           <Style>
@@ -745,8 +606,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.97578cm</Top>
-          <Left>9.23835cm</Left>
+          <Top>0.5818cm</Top>
+          <Left>8.61316cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>1</ZIndex>
@@ -775,8 +636,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox24</rd:DefaultName>
-          <Top>0.97578cm</Top>
-          <Left>11.73835cm</Left>
+          <Top>0.5818cm</Top>
+          <Left>11.11316cm</Left>
           <Height>0.6cm</Height>
           <Width>0.75375cm</Width>
           <ZIndex>2</ZIndex>
@@ -805,8 +666,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>0.97578cm</Top>
-          <Left>12.4934cm</Left>
+          <Top>0.5818cm</Top>
+          <Left>11.86821cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>3</ZIndex>
@@ -835,8 +696,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>1.75217cm</Top>
-          <Left>18.10946cm</Left>
+          <Top>1.3582cm</Top>
+          <Left>17.59483cm</Left>
           <Height>0.6cm</Height>
           <Width>3.1375cm</Width>
           <ZIndex>4</ZIndex>
@@ -865,8 +726,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Top>1.75217cm</Top>
-          <Left>9.9934cm</Left>
+          <Top>1.3582cm</Top>
+          <Left>9.36821cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>5</ZIndex>
@@ -903,60 +764,52 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>e4f82361-7b84-405d-8520-85e0425867d1</rd:DataSourceID>
+      <rd:DataSourceID>9f8c92ec-7e75-45a5-a757-13b0b744de58</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Proveedores">
+    <DataSet Name="VentaFecha">
       <Query>
         <DataSourceName>BazarRoxana</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="CodProv">
-          <DataField>CodProv</DataField>
+        <Field Name="NumVent">
+          <DataField>NumVent</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="NombProv">
-          <DataField>NombProv</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TelProv">
-          <DataField>TelProv</DataField>
+        <Field Name="CodCli">
+          <DataField>CodCli</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="NombContProv">
-          <DataField>NombContProv</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="FechayHoraVenta">
+          <DataField>FechayHoraVenta</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="CorreoProv">
-          <DataField>CorreoProv</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="CorreoContProv">
-          <DataField>CorreoContProv</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TelContProv">
-          <DataField>TelContProv</DataField>
+        <Field Name="CodPago">
+          <DataField>CodPago</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="DirecProv">
-          <DataField>DirecProv</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="CodTransa">
+          <DataField>CodTransa</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="EstadoProveedor">
-          <DataField>EstadoProveedor</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="CodEmple">
+          <DataField>CodEmple</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>BazarRoxana</rd:DataSetName>
         <rd:SchemaPath>C:\Users\carlo\OneDrive\Documentos\GitHub\BazarRoxana1\BazarRoxana\BazarRoxana.xsd</rd:SchemaPath>
-        <rd:TableName>SelectProveedor</rd:TableName>
+        <rd:TableName>SelectVentaFecha</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>SelectProveedorTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>SelectVentaFechaTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -2101,5 +1954,5 @@ AQAAAAAAAAAAAAAAAEwi0AUAAAAAAAAAAAAAAAAwiUAXAAAAAAAAAAAAAAAAwCQCXQAAAAAAAAAAAAAA
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>c3dc1b5d-ff87-4961-9691-17592229841f</rd:ReportID>
+  <rd:ReportID>ee52caff-79dd-4557-82db-2148c04d3922</rd:ReportID>
 </Report>

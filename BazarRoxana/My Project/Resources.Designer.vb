@@ -123,6 +123,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property document_icon_icons_com_66534() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("document_icon-icons.com_66534", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property ic_account_child_128_28130() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("ic_account_child_128_28130", resourceCulture)

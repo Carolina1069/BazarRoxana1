@@ -18,7 +18,7 @@ Public Class Proveedores
         busqueda = InputBox("Ingrese Codigo", "Busqueda")
 
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Dim query As String = "select * from Proveedores where CodProv=" & busqueda
+        Dim query As String = "select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores  where CodProv=" & busqueda
         Using adaptador As New SqlDataAdapter(query, conexion)
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
@@ -36,6 +36,18 @@ Public Class Proveedores
 
         DGVProveedores.DataSource = DatosCliente
         conexion.Close()
+
+        txCodProve.Clear()
+        txNomProv.Clear()
+        TxtTelfonoEmpresa.Clear()
+        txtNombrePreEm.Clear()
+        txCorreoEmpresa.Clear()
+        TxtCorreoProv.Clear()
+        txtTelProv.Clear()
+        RTBDirec.Clear()
+        chkEstado.Checked = False
+
+
     End Sub
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
@@ -69,6 +81,18 @@ Public Class Proveedores
         DGVProveedores.DataSource = DatosProveedor
 
         conexion.Close()
+
+        txCodProve.Clear()
+        txNomProv.Clear()
+        TxtTelfonoEmpresa.Clear()
+        txtNombrePreEm.Clear()
+        txCorreoEmpresa.Clear()
+        TxtCorreoProv.Clear()
+        txtTelProv.Clear()
+        RTBDirec.Clear()
+        chkEstado.Checked = False
+
+
     End Sub
 
     Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles btActualizar.Click
@@ -108,6 +132,16 @@ Public Class Proveedores
 
         DGVProveedores.DataSource = DatosProveedor
         conexion.Close()
+        txCodProve.Clear()
+        txNomProv.Clear()
+        TxtTelfonoEmpresa.Clear()
+        txtNombrePreEm.Clear()
+        txCorreoEmpresa.Clear()
+        TxtCorreoProv.Clear()
+        txtTelProv.Clear()
+        RTBDirec.Clear()
+        chkEstado.Checked = False
+
     End Sub
 
     Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles btEliminar.Click
@@ -132,11 +166,19 @@ Public Class Proveedores
 
         DGVProveedores.DataSource = DatosProveedor
         conexion.Close()
+
+        txCodProve.Clear()
+        txNomProv.Clear()
+        TxtTelfonoEmpresa.Clear()
+        txtNombrePreEm.Clear()
+        txCorreoEmpresa.Clear()
+        TxtCorreoProv.Clear()
+        txtTelProv.Clear()
+        RTBDirec.Clear()
+        chkEstado.Checked = False
+
     End Sub
 
-    Private Sub btSalir_Click(sender As Object, e As EventArgs) 
-        Me.Close()
-    End Sub
 
     Private Sub DGVProveedores_DoubleClick(sender As Object, e As EventArgs) Handles DGVProveedores.DoubleClick
         txCodProve.Text = DGVProveedores.CurrentRow.Cells(0).Value

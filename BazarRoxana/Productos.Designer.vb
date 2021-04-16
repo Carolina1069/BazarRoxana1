@@ -23,13 +23,17 @@ Partial Class Productos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btEliminar = New System.Windows.Forms.Button()
+        Me.btActualizarTabla = New System.Windows.Forms.Button()
         Me.btActualizar = New System.Windows.Forms.Button()
         Me.btGuardar = New System.Windows.Forms.Button()
         Me.DGV = New System.Windows.Forms.DataGridView()
         Me.btBuscar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.txNombCateg = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txNombProv = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.txCodCateg = New System.Windows.Forms.TextBox()
         Me.lbCodCateg = New System.Windows.Forms.Label()
         Me.txMin = New System.Windows.Forms.TextBox()
@@ -52,10 +56,7 @@ Partial Class Productos
         Me.lbCodigoCli = New System.Windows.Forms.Label()
         Me.txCodProd = New System.Windows.Forms.TextBox()
         Me.lbNombreProd = New System.Windows.Forms.Label()
-        Me.txNombCateg = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txNombProv = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +66,7 @@ Partial Class Productos
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.btEliminar)
+        Me.GroupBox1.Controls.Add(Me.btActualizarTabla)
         Me.GroupBox1.Controls.Add(Me.btActualizar)
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Controls.Add(Me.DGV)
@@ -78,14 +79,14 @@ Partial Class Productos
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de Producto"
         '
-        'btEliminar
+        'btActualizarTabla
         '
-        Me.btEliminar.Location = New System.Drawing.Point(680, 232)
-        Me.btEliminar.Name = "btEliminar"
-        Me.btEliminar.Size = New System.Drawing.Size(75, 23)
-        Me.btEliminar.TabIndex = 24
-        Me.btEliminar.Text = "Eliminar"
-        Me.btEliminar.UseVisualStyleBackColor = True
+        Me.btActualizarTabla.Location = New System.Drawing.Point(680, 31)
+        Me.btActualizarTabla.Name = "btActualizarTabla"
+        Me.btActualizarTabla.Size = New System.Drawing.Size(130, 23)
+        Me.btActualizarTabla.TabIndex = 48
+        Me.btActualizarTabla.Text = "Actualizar Tabla"
+        Me.btActualizarTabla.UseVisualStyleBackColor = True
         '
         'btActualizar
         '
@@ -172,6 +173,40 @@ Partial Class Productos
         Me.GroupBox2.TabIndex = 47
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Producto"
+        '
+        'txNombCateg
+        '
+        Me.txNombCateg.Enabled = False
+        Me.txNombCateg.Location = New System.Drawing.Point(771, 112)
+        Me.txNombCateg.Name = "txNombCateg"
+        Me.txNombCateg.Size = New System.Drawing.Size(100, 20)
+        Me.txNombCateg.TabIndex = 72
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(632, 113)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(140, 13)
+        Me.Label1.TabIndex = 71
+        Me.Label1.Text = "Nombre de la Categoria"
+        '
+        'txNombProv
+        '
+        Me.txNombProv.Enabled = False
+        Me.txNombProv.Location = New System.Drawing.Point(771, 71)
+        Me.txNombProv.Name = "txNombProv"
+        Me.txNombProv.Size = New System.Drawing.Size(100, 20)
+        Me.txNombProv.TabIndex = 70
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(636, 72)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(133, 13)
+        Me.Label2.TabIndex = 69
+        Me.Label2.Text = "Nombre del Proveedor"
         '
         'txCodCateg
         '
@@ -350,39 +385,16 @@ Partial Class Productos
         Me.lbNombreProd.TabIndex = 45
         Me.lbNombreProd.Text = "Nombre del Producto"
         '
-        'txNombCateg
+        'Label3
         '
-        Me.txNombCateg.Enabled = False
-        Me.txNombCateg.Location = New System.Drawing.Point(771, 112)
-        Me.txNombCateg.Name = "txNombCateg"
-        Me.txNombCateg.Size = New System.Drawing.Size(100, 20)
-        Me.txNombCateg.TabIndex = 72
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(632, 113)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(140, 13)
-        Me.Label1.TabIndex = 71
-        Me.Label1.Text = "Nombre de la Categoria"
-        '
-        'txNombProv
-        '
-        Me.txNombProv.Enabled = False
-        Me.txNombProv.Location = New System.Drawing.Point(771, 71)
-        Me.txNombProv.Name = "txNombProv"
-        Me.txNombProv.Size = New System.Drawing.Size(100, 20)
-        Me.txNombProv.TabIndex = 70
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(636, 72)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(133, 13)
-        Me.Label2.TabIndex = 69
-        Me.Label2.Text = "Nombre del Proveedor"
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Clarendon BT", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(12, 9)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(138, 29)
+        Me.Label3.TabIndex = 69
+        Me.Label3.Text = "Productos"
         '
         'Productos
         '
@@ -390,6 +402,7 @@ Partial Class Productos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.A
         Me.ClientSize = New System.Drawing.Size(934, 650)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
@@ -403,10 +416,10 @@ Partial Class Productos
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents btEliminar As Button
     Friend WithEvents btActualizar As Button
     Friend WithEvents btGuardar As Button
     Friend WithEvents DGV As DataGridView
@@ -439,4 +452,6 @@ Partial Class Productos
     Friend WithEvents Label1 As Label
     Friend WithEvents txNombProv As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents btActualizarTabla As Button
+    Friend WithEvents Label3 As Label
 End Class

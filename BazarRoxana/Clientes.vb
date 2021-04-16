@@ -38,9 +38,17 @@ Public Class Clientes
 
         DGVCliente.DataSource = DatosCliente
         conexion.Close()
+
+        txCodCli.Clear()
+        txNomCli.Clear()
+        rtxDirCli.Clear()
+        txTelCli.Clear()
+        txCorreoCli.Clear()
+        chkEstado.Checked = False
+
     End Sub
 
-    Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles btActualizar.Click, btActualizarTabla.Click
+    Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles btActualizar.Click
         abrir()
         Dim estado As Integer
 
@@ -75,6 +83,34 @@ Public Class Clientes
 
         DGVCliente.DataSource = DatosCliente
         conexion.Close()
+
+        txCodCli.Clear()
+        txNomCli.Clear()
+        rtxDirCli.Clear()
+        txTelCli.Clear()
+        txCorreoCli.Clear()
+        chkEstado.Checked = False
+
+    End Sub
+
+    Private Sub btActualizarTabla_Click(sender As Object, e As EventArgs) Handles btActualizarTabla.Click
+        abrir()
+
+        Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using adaptador As New SqlDataAdapter("select CodCli as 'Codigo del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Direccion del Cliente', TelCli 'Telefono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
+            adaptador.Fill(DatosCliente)
+        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+        DGVCliente.DataSource = DatosCliente
+        conexion.Close()
+
+        txCodCli.Clear()
+        txNomCli.Clear()
+        rtxDirCli.Clear()
+        txTelCli.Clear()
+        txCorreoCli.Clear()
+        chkEstado.Checked = False
+
     End Sub
 
     Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles btEliminar.Click
@@ -97,6 +133,14 @@ Public Class Clientes
 
         DGVCliente.DataSource = DatosCliente
         conexion.Close()
+
+        txCodCli.Clear()
+        txNomCli.Clear()
+        rtxDirCli.Clear()
+        txTelCli.Clear()
+        txCorreoCli.Clear()
+        chkEstado.Checked = False
+
     End Sub
 
     Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
@@ -104,10 +148,8 @@ Public Class Clientes
         Dim busqueda As Integer
         busqueda = InputBox("Ingrese Codigo", "Busqueda")
 
-      
-
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Dim query As String = "select * from Clientes where CodCli=" & busqueda
+        Dim query As String = "select CodCli as 'Codigo del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Direccion del Cliente', TelCli 'Telefono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where CodCli=" & busqueda
         Using adaptador As New SqlDataAdapter(query, conexion)
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
@@ -123,7 +165,7 @@ Public Class Clientes
         rtxDirCli.Text = DGVCliente.CurrentRow.Cells(2).Value
         txTelCli.Text = DGVCliente.CurrentRow.Cells(3).Value
         txCorreoCli.Text = DGVCliente.CurrentRow.Cells(4).Value
-        chkEstado.Checked = DGVCliente.CurrentRow.Cells(5).Value
+        'chkEstado.Checked = DGVCliente.CurrentRow.Cells(5).Value
 
     End Sub
 

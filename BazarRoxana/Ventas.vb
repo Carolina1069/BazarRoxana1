@@ -37,40 +37,55 @@ Public Class Ventas
     End Sub
 
     Private Sub TxtCodPago_TextChanged(sender As Object, e As EventArgs) Handles TxtCodPago.TextChanged
-        abrir()
-        Dim Recuperar As String = "select * from FormasPago where CodPago= '" & TxtCodPago.Text & "'"
-        Dim Mostrar As SqlDataReader
-        Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conexion)
-        Mostrar = Ejecutar.ExecuteReader
-        Dim Estado As String
-        Estado = Mostrar.Read
-        If (Estado = True) Then
-            TxtTipoPago.Text = Mostrar(1)
+        Dim pago As Integer
+        pago = Val(TxtCodPago.Text)
+        If pago >= 1 And pago <= 2 Or TxtCodPago.Text = "" Then
+            abrir()
+            Dim Recuperar As String = "select * from FormasPago where CodPago= '" & TxtCodPago.Text & "'"
+            Dim Mostrar As SqlDataReader
+            Dim Ejecutar As SqlCommand
+            Ejecutar = New SqlCommand(Recuperar, conexion)
+            Mostrar = Ejecutar.ExecuteReader
+            Dim Estado As String
+            Estado = Mostrar.Read
+            If (Estado = True) Then
+                TxtTipoPago.Text = Mostrar(1)
+            Else
+                TxtTipoPago.Text = ""
+            End If
+            Mostrar.Close()
+            conexion.Close()
         Else
-            TxtTipoPago.Text = ""
+            TxtCodPago.Clear()
+            MsgBox("Solo hay dos tipos de pago")
         End If
-        Mostrar.Close()
-        conexion.Close()
     End Sub
 
     Private Sub TxtCodTransa_TextChanged(sender As Object, e As EventArgs) Handles TxtCodTransa.TextChanged
-        abrir()
+        Dim tran As Integer
+        tran = Val(TxtCodTransa.Text)
+        If tran >= 1 And tran <= 3 Or TxtCodTransa.Text = "" Then
 
-        Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & TxtCodTransa.Text & "'"
-        Dim Mostrar As SqlDataReader
-        Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conexion)
-        Mostrar = Ejecutar.ExecuteReader
-        Dim Estado As String
-        Estado = Mostrar.Read
-        If (Estado = True) Then
-            TxtTipoTransaccion.Text = Mostrar(1)
+            abrir()
+
+            Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & TxtCodTransa.Text & "'"
+            Dim Mostrar As SqlDataReader
+            Dim Ejecutar As SqlCommand
+            Ejecutar = New SqlCommand(Recuperar, conexion)
+            Mostrar = Ejecutar.ExecuteReader
+            Dim Estado As String
+            Estado = Mostrar.Read
+            If (Estado = True) Then
+                TxtTipoTransaccion.Text = Mostrar(1)
+            Else
+                TxtTipoTransaccion.Text = ""
+            End If
+            Mostrar.Close()
+            conexion.Close()
         Else
-            TxtTipoTransaccion.Text = ""
+            TxtCodTransa.Clear()
+            MsgBox("Solo hay tres tipos de transaccion")
         End If
-        Mostrar.Close()
-        conexion.Close()
     End Sub
 
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProducto.TextChanged
@@ -159,7 +174,7 @@ Public Class Ventas
         Dim total As Integer
         abrir()
 
-        If txNumVenta.Text = "" Or TxtCodCli.Text = "" Or TxtCodPago.Text = "" Or TxtCodTransa.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
+        If TxtCodCli.Text = "" Or TxtCodPago.Text = "" Or TxtCodTransa.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
 
@@ -218,5 +233,43 @@ Public Class Ventas
 
     End Sub
 
+    'Funcion para que solo permite el ingreso de caracteres tipo numerico
+    Sub SoloNumeros(ByRef e As System.Windows.Forms.KeyPressEventArgs)
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MsgBox("Solo se puede ingresar valores de tipo número", MsgBoxStyle.Exclamation, "Ingreso de Número")
+        End If
+    End Sub
 
+    Private Sub txNumVenta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txNumVenta.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub TxtCodCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodCli.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub TxtCodEmple_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodEmple.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub TxtCodPago_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodPago.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub TxtCodTransa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodTransa.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub TxtCodProducto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodProducto.KeyPress
+        SoloNumeros(e)
+    End Sub
+
+    Private Sub TxtCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCantidad.KeyPress
+        SoloNumeros(e)
+    End Sub
 End Class

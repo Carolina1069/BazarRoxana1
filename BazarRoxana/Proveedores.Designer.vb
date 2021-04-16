@@ -49,6 +49,7 @@ Partial Class Proveedores
         Me.lbCodigoProv = New System.Windows.Forms.Label()
         Me.txCodProve = New System.Windows.Forms.TextBox()
         Me.lbNombreProv = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGVProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -343,12 +344,24 @@ Partial Class Proveedores
         Me.lbNombreProv.TabIndex = 68
         Me.lbNombreProv.Text = "Nombre de la empresa proveedora"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Clarendon BT", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(164, 29)
+        Me.Label1.TabIndex = 70
+        Me.Label1.Text = "Proveedores"
+        '
         'Proveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.A
         Me.ClientSize = New System.Drawing.Size(934, 650)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
@@ -363,6 +376,7 @@ Partial Class Proveedores
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As GroupBox
@@ -392,4 +406,5 @@ Partial Class Proveedores
     Friend WithEvents lbCodigoProv As Label
     Friend WithEvents txCodProve As TextBox
     Friend WithEvents lbNombreProv As Label
+    Friend WithEvents Label1 As Label
 End Class

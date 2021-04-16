@@ -28,6 +28,7 @@ Partial Class MenuPrincipal
         Me.LblFecha = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpleadoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,8 +40,23 @@ Partial Class MenuPrincipal
         Me.MinimoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComprasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TodasLasComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CompraPorFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TodasLasVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentasPorFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductosPorCategoriaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductosMásVendidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProveedoresToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -74,6 +90,7 @@ Partial Class MenuPrincipal
         'ToolStripContainer1.ContentPanel
         '
         Me.ToolStripContainer1.ContentPanel.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.B
+        Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.PictureBox1)
         Me.ToolStripContainer1.ContentPanel.Size = New System.Drawing.Size(934, 650)
         Me.ToolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ToolStripContainer1.LeftToolStripPanelVisible = False
@@ -85,13 +102,26 @@ Partial Class MenuPrincipal
         Me.ToolStripContainer1.Text = "ToolStripContainer1"
         Me.ToolStripContainer1.TopToolStripPanelVisible = False
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.Blur
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
+        Me.PictureBox1.Location = New System.Drawing.Point(199, 186)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(586, 222)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 69
+        Me.PictureBox1.TabStop = False
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.Color.Gainsboro
         Me.MenuStrip1.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.pexels_archie_binamira_2463346
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuStrip1.Font = New System.Drawing.Font("Constantia", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.EmpleadoToolStripMenuItem1, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.CategoriaToolStripMenuItem, Me.ProductoToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.VentasToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.EmpleadoToolStripMenuItem1, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.CategoriaToolStripMenuItem, Me.ProductoToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.VentasToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -207,6 +237,20 @@ Partial Class MenuPrincipal
         Me.VentasToolStripMenuItem.Text = "Ventas"
         Me.VentasToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.ReportesToolStripMenuItem.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.Blur
+        Me.ReportesToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ReportesToolStripMenuItem.Checked = True
+        Me.ReportesToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ComprasToolStripMenuItem1, Me.VentasToolStripMenuItem1, Me.ProductosToolStripMenuItem, Me.EmpleadosToolStripMenuItem, Me.ProveedoresToolStripMenuItem1, Me.ClientesToolStripMenuItem1})
+        Me.ReportesToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.document_icon_icons_com_66534
+        Me.ReportesToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
@@ -218,6 +262,81 @@ Partial Class MenuPrincipal
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(178, 30)
         Me.SalirToolStripMenuItem.Text = "Salir"
         Me.SalirToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'ComprasToolStripMenuItem1
+        '
+        Me.ComprasToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TodasLasComprasToolStripMenuItem, Me.CompraPorFechaToolStripMenuItem})
+        Me.ComprasToolStripMenuItem1.Name = "ComprasToolStripMenuItem1"
+        Me.ComprasToolStripMenuItem1.Size = New System.Drawing.Size(207, 30)
+        Me.ComprasToolStripMenuItem1.Text = "Compras"
+        '
+        'TodasLasComprasToolStripMenuItem
+        '
+        Me.TodasLasComprasToolStripMenuItem.Name = "TodasLasComprasToolStripMenuItem"
+        Me.TodasLasComprasToolStripMenuItem.Size = New System.Drawing.Size(270, 30)
+        Me.TodasLasComprasToolStripMenuItem.Text = "Todas las Compras"
+        '
+        'CompraPorFechaToolStripMenuItem
+        '
+        Me.CompraPorFechaToolStripMenuItem.Name = "CompraPorFechaToolStripMenuItem"
+        Me.CompraPorFechaToolStripMenuItem.Size = New System.Drawing.Size(270, 30)
+        Me.CompraPorFechaToolStripMenuItem.Text = "Compra por Fecha"
+        '
+        'VentasToolStripMenuItem1
+        '
+        Me.VentasToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TodasLasVentasToolStripMenuItem, Me.VentasPorFechaToolStripMenuItem})
+        Me.VentasToolStripMenuItem1.Name = "VentasToolStripMenuItem1"
+        Me.VentasToolStripMenuItem1.Size = New System.Drawing.Size(207, 30)
+        Me.VentasToolStripMenuItem1.Text = "Ventas"
+        '
+        'TodasLasVentasToolStripMenuItem
+        '
+        Me.TodasLasVentasToolStripMenuItem.Name = "TodasLasVentasToolStripMenuItem"
+        Me.TodasLasVentasToolStripMenuItem.Size = New System.Drawing.Size(249, 30)
+        Me.TodasLasVentasToolStripMenuItem.Text = "Todas las Ventas"
+        '
+        'VentasPorFechaToolStripMenuItem
+        '
+        Me.VentasPorFechaToolStripMenuItem.Name = "VentasPorFechaToolStripMenuItem"
+        Me.VentasPorFechaToolStripMenuItem.Size = New System.Drawing.Size(249, 30)
+        Me.VentasPorFechaToolStripMenuItem.Text = "Ventas por Fecha"
+        '
+        'ProductosToolStripMenuItem
+        '
+        Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosPorCategoriaToolStripMenuItem, Me.ProductosMásVendidosToolStripMenuItem})
+        Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(207, 30)
+        Me.ProductosToolStripMenuItem.Text = "Productos"
+        '
+        'ProductosPorCategoriaToolStripMenuItem
+        '
+        Me.ProductosPorCategoriaToolStripMenuItem.Name = "ProductosPorCategoriaToolStripMenuItem"
+        Me.ProductosPorCategoriaToolStripMenuItem.Size = New System.Drawing.Size(328, 30)
+        Me.ProductosPorCategoriaToolStripMenuItem.Text = "Productos por Categoria"
+        '
+        'ProductosMásVendidosToolStripMenuItem
+        '
+        Me.ProductosMásVendidosToolStripMenuItem.Name = "ProductosMásVendidosToolStripMenuItem"
+        Me.ProductosMásVendidosToolStripMenuItem.Size = New System.Drawing.Size(328, 30)
+        Me.ProductosMásVendidosToolStripMenuItem.Text = "Productos más Vendidos"
+        '
+        'EmpleadosToolStripMenuItem
+        '
+        Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
+        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(207, 30)
+        Me.EmpleadosToolStripMenuItem.Text = "Empleados"
+        '
+        'ProveedoresToolStripMenuItem1
+        '
+        Me.ProveedoresToolStripMenuItem1.Name = "ProveedoresToolStripMenuItem1"
+        Me.ProveedoresToolStripMenuItem1.Size = New System.Drawing.Size(207, 30)
+        Me.ProveedoresToolStripMenuItem1.Text = "Proveedores"
+        '
+        'ClientesToolStripMenuItem1
+        '
+        Me.ClientesToolStripMenuItem1.Name = "ClientesToolStripMenuItem1"
+        Me.ClientesToolStripMenuItem1.Size = New System.Drawing.Size(207, 30)
+        Me.ClientesToolStripMenuItem1.Text = "Clientes"
         '
         'MenuPrincipal
         '
@@ -233,8 +352,10 @@ Partial Class MenuPrincipal
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "MenuPrincipal"
         Me.Text = "Inventario"
+        Me.ToolStripContainer1.ContentPanel.ResumeLayout(False)
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -258,4 +379,18 @@ Partial Class MenuPrincipal
     Friend WithEvents ToolStripContainer1 As ToolStripContainer
     Friend WithEvents ProductoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents MinimoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ComprasToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents TodasLasComprasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CompraPorFechaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VentasToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents TodasLasVentasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VentasPorFechaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProductosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProductosPorCategoriaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProductosMásVendidosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EmpleadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProveedoresToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ClientesToolStripMenuItem1 As ToolStripMenuItem
 End Class
