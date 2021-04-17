@@ -237,4 +237,8 @@ Public Class Clientes
     Private Sub txTelCli_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txTelCli.KeyPress
         SoloNumeros(e)
     End Sub
+
+    Private Sub txCodCli_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txCodCli.KeyPress
+        SoloNumeros(e)
+    End Sub
 End Class
