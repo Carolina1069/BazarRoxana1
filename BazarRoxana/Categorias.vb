@@ -60,7 +60,7 @@ Public Class Categorias
         If txCodCat.Text = "" Or txtNombCat.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
-            Dim consultaAct As String = "update Categoria set NombCateg=@NombCateg EstadoCateg=@EstadoCateg where CodCateg= @CodCateg"
+            Dim consultaAct As String = "update Categoria set NombCateg=@NombCateg, EstadoCateg=@EstadoCateg where CodCateg= @CodCateg"
             Dim ejecutar As New SqlCommand(consultaAct, conexion)
                 ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCat.Text))
                 ejecutar.Parameters.AddWithValue("@NombCateg", (txtNombCat.Text))
