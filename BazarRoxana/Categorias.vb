@@ -5,7 +5,7 @@ Public Class Categorias
 
         abrir()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
+        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Código de la categoría', NombCateg as 'Nombre de la categoría', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la categoría' from Categoria  where EstadoCateg=1", conexion)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -130,6 +130,7 @@ Public Class Categorias
 
     Private Sub btnActTabla_Click(sender As Object, e As EventArgs) Handles btnActTabla.Click
         abrir()
+        chkInhabil.Checked = False
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
             adaptador.Fill(DatosCat)

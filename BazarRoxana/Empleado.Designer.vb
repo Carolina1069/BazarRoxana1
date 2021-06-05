@@ -212,7 +212,7 @@ Partial Class Empleado
         Me.cbxMostrarContra.AutoSize = True
         Me.cbxMostrarContra.BackColor = System.Drawing.Color.Transparent
         Me.cbxMostrarContra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxMostrarContra.Location = New System.Drawing.Point(647, 231)
+        Me.cbxMostrarContra.Location = New System.Drawing.Point(663, 215)
         Me.cbxMostrarContra.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxMostrarContra.Name = "cbxMostrarContra"
         Me.cbxMostrarContra.Size = New System.Drawing.Size(132, 17)

@@ -43,6 +43,8 @@
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
+
+
     End Sub
 
     Private Sub cbxMostrarContra_CheckedChanged(sender As Object, e As EventArgs) Handles cbxMostrarContra.CheckedChanged

@@ -6,7 +6,7 @@
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
         'TODO: esta línea de código carga datos en la tabla 'BazarRoxana.SelectCompraFecha' Puede moverla o quitarla según sea necesario.
-        Me.SelectCompraFechaTableAdapter.Fill(Me.BazarRoxana.SelectCompraFecha, TxtFecha1.Text, TxtFecha2.Text)
+        Me.SelectCompraFechaTableAdapter.Fill(Me.BazarRoxana.SelectCompraFecha, DtpPrimerFecha.Value.ToString("yyyy/MM/dd"), DtpSegundaFecha.Value.ToString("yyyy/MM/dd"))
 
         Me.ReportViewer1.RefreshReport()
     End Sub

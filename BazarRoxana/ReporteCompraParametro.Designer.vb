@@ -29,12 +29,11 @@ Partial Class ReporteCompraParametro
         Me.BazarRoxana = New BazarRoxana()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TxtFecha1 = New System.Windows.Forms.TextBox()
-        Me.TxtFecha2 = New System.Windows.Forms.TextBox()
         Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SelectCompraFechaTableAdapter = New BazarRoxanaTableAdapters.SelectCompraFechaTableAdapter()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.DtpSegundaFecha = New System.Windows.Forms.DateTimePicker()
+        Me.DtpPrimerFecha = New System.Windows.Forms.DateTimePicker()
         CType(Me.SelectCompraFechaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -67,39 +66,18 @@ Partial Class ReporteCompraParametro
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Segunda Fecha:"
         '
-        'TxtFecha1
-        '
-        Me.TxtFecha1.Location = New System.Drawing.Point(108, 14)
-        Me.TxtFecha1.MaxLength = 10
-        Me.TxtFecha1.Name = "TxtFecha1"
-        Me.TxtFecha1.Size = New System.Drawing.Size(100, 20)
-        Me.TxtFecha1.TabIndex = 3
-        '
-        'TxtFecha2
-        '
-        Me.TxtFecha2.Location = New System.Drawing.Point(108, 41)
-        Me.TxtFecha2.MaxLength = 10
-        Me.TxtFecha2.Name = "TxtFecha2"
-        Me.TxtFecha2.Size = New System.Drawing.Size(100, 20)
-        Me.TxtFecha2.TabIndex = 4
-        '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(223, 29)
+        Me.BtnBuscar.Location = New System.Drawing.Point(318, 27)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(75, 21)
         Me.BtnBuscar.TabIndex = 5
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
         '
-        'Label3
+        'SelectCompraFechaTableAdapter
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(105, 64)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Año/(mm)/(dd)"
+        Me.SelectCompraFechaTableAdapter.ClearBeforeFill = True
         '
         'ReportViewer1
         '
@@ -113,20 +91,29 @@ Partial Class ReporteCompraParametro
         Me.ReportViewer1.Size = New System.Drawing.Size(776, 657)
         Me.ReportViewer1.TabIndex = 7
         '
-        'SelectCompraFechaTableAdapter
+        'DtpSegundaFecha
         '
-        Me.SelectCompraFechaTableAdapter.ClearBeforeFill = True
+        Me.DtpSegundaFecha.Location = New System.Drawing.Point(104, 40)
+        Me.DtpSegundaFecha.Name = "DtpSegundaFecha"
+        Me.DtpSegundaFecha.Size = New System.Drawing.Size(200, 20)
+        Me.DtpSegundaFecha.TabIndex = 16
+        '
+        'DtpPrimerFecha
+        '
+        Me.DtpPrimerFecha.Location = New System.Drawing.Point(104, 14)
+        Me.DtpPrimerFecha.Name = "DtpPrimerFecha"
+        Me.DtpPrimerFecha.Size = New System.Drawing.Size(200, 20)
+        Me.DtpPrimerFecha.TabIndex = 15
         '
         'ReporteCompraParametro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 749)
+        Me.Controls.Add(Me.DtpSegundaFecha)
+        Me.Controls.Add(Me.DtpPrimerFecha)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnBuscar)
-        Me.Controls.Add(Me.TxtFecha2)
-        Me.Controls.Add(Me.TxtFecha1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -140,12 +127,11 @@ Partial Class ReporteCompraParametro
     End Sub
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TxtFecha1 As TextBox
-    Friend WithEvents TxtFecha2 As TextBox
     Friend WithEvents BtnBuscar As Button
-    Friend WithEvents Label3 As Label
-    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents SelectCompraFechaBindingSource As BindingSource
     Friend WithEvents BazarRoxana As BazarRoxana
     Friend WithEvents SelectCompraFechaTableAdapter As BazarRoxanaTableAdapters.SelectCompraFechaTableAdapter
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents DtpSegundaFecha As DateTimePicker
+    Friend WithEvents DtpPrimerFecha As DateTimePicker
 End Class

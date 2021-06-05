@@ -30,11 +30,11 @@ Partial Class ReporteVentaParametro
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BtnBuscar = New System.Windows.Forms.Button()
-        Me.TxtFecha2 = New System.Windows.Forms.TextBox()
-        Me.TxtFecha1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SelectVentaFechaTableAdapter = New BazarRoxanaTableAdapters.SelectVentaFechaTableAdapter()
+        Me.DtpPrimerFecha = New System.Windows.Forms.DateTimePicker()
+        Me.DtpSegundaFecha = New System.Windows.Forms.DateTimePicker()
         CType(Me.SelectVentaFechaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -72,28 +72,12 @@ Partial Class ReporteVentaParametro
         '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(214, 25)
+        Me.BtnBuscar.Location = New System.Drawing.Point(318, 23)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(75, 21)
         Me.BtnBuscar.TabIndex = 11
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
-        '
-        'TxtFecha2
-        '
-        Me.TxtFecha2.Location = New System.Drawing.Point(99, 37)
-        Me.TxtFecha2.MaxLength = 10
-        Me.TxtFecha2.Name = "TxtFecha2"
-        Me.TxtFecha2.Size = New System.Drawing.Size(100, 20)
-        Me.TxtFecha2.TabIndex = 10
-        '
-        'TxtFecha1
-        '
-        Me.TxtFecha1.Location = New System.Drawing.Point(99, 10)
-        Me.TxtFecha1.MaxLength = 10
-        Me.TxtFecha1.Name = "TxtFecha1"
-        Me.TxtFecha1.Size = New System.Drawing.Size(100, 20)
-        Me.TxtFecha1.TabIndex = 9
         '
         'Label2
         '
@@ -117,15 +101,29 @@ Partial Class ReporteVentaParametro
         '
         Me.SelectVentaFechaTableAdapter.ClearBeforeFill = True
         '
+        'DtpPrimerFecha
+        '
+        Me.DtpPrimerFecha.Location = New System.Drawing.Point(99, 10)
+        Me.DtpPrimerFecha.Name = "DtpPrimerFecha"
+        Me.DtpPrimerFecha.Size = New System.Drawing.Size(200, 20)
+        Me.DtpPrimerFecha.TabIndex = 13
+        '
+        'DtpSegundaFecha
+        '
+        Me.DtpSegundaFecha.Location = New System.Drawing.Point(99, 36)
+        Me.DtpSegundaFecha.Name = "DtpSegundaFecha"
+        Me.DtpSegundaFecha.Size = New System.Drawing.Size(200, 20)
+        Me.DtpSegundaFecha.TabIndex = 14
+        '
         'ReporteVentaParametro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 749)
+        Me.Controls.Add(Me.DtpSegundaFecha)
+        Me.Controls.Add(Me.DtpPrimerFecha)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnBuscar)
-        Me.Controls.Add(Me.TxtFecha2)
-        Me.Controls.Add(Me.TxtFecha1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ReportViewer1)
@@ -144,9 +142,9 @@ Partial Class ReporteVentaParametro
     Friend WithEvents BazarRoxana As BazarRoxana
     Friend WithEvents Label3 As Label
     Friend WithEvents BtnBuscar As Button
-    Friend WithEvents TxtFecha2 As TextBox
-    Friend WithEvents TxtFecha1 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents SelectVentaFechaTableAdapter As BazarRoxanaTableAdapters.SelectVentaFechaTableAdapter
+    Friend WithEvents DtpPrimerFecha As DateTimePicker
+    Friend WithEvents DtpSegundaFecha As DateTimePicker
 End Class

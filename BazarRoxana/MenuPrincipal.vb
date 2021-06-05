@@ -1,11 +1,12 @@
 ﻿Public Class MenuPrincipal
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        LblHora.Text = DateTime.Now.ToString("hh:mm:ss:tt")
+        LblHora.Text = DateTime.Now.ToString("hh:mm:tt")
         LblFecha.Text = DateTime.Now.ToLongDateString()
     End Sub
 
     Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
+
     End Sub
 
     Private Sub EmpleadoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem1.Click
@@ -69,6 +70,10 @@
 
     Private Sub InicioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InicioToolStripMenuItem.Click
         Me.ToolStripContainer1.ContentPanel.Controls.Clear()
+        Dim FormInicio As New Inicio
+        FormInicio.MdiParent = Me
+        Me.ToolStripContainer1.ContentPanel.Controls.Add(FormInicio)
+        FormInicio.Show()
     End Sub
 
     Private Sub MinimoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MinimoToolStripMenuItem.Click
