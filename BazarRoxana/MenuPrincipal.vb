@@ -1,4 +1,5 @@
-﻿Public Class MenuPrincipal
+﻿Imports System.Data.SqlClient
+Public Class MenuPrincipal
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         LblHora.Text = DateTime.Now.ToString("hh:mm:tt")
         LblFecha.Text = DateTime.Now.ToLongDateString()
@@ -6,7 +7,7 @@
 
     Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
-
+        Label1.Text = Login.txtNombreEmpleado.Text
     End Sub
 
     Private Sub EmpleadoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem1.Click
@@ -134,5 +135,31 @@
 
     Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
         Me.ToolStripContainer1.ContentPanel.Controls.Clear()
+    End Sub
+
+    Private Sub Label1_TextChanged(sender As Object, e As EventArgs) Handles Label1.TextChanged
+
+        abrir()
+        Dim Recuperar As String = "select * from Empleados where UsuarioEmple= '" & Label1.Text & "'"
+        Dim Mostrar As SqlDataReader
+        Dim Ejecutar As SqlCommand
+        Ejecutar = New SqlCommand(Recuperar, conexion)
+        Mostrar = Ejecutar.ExecuteReader
+        Dim Estado As String
+        Estado = Mostrar.Read
+        If (Estado = True) Then
+            Label2.Text = Mostrar(1)
+
+            If Mostrar(4) = 1 Then
+                Label3.Text = "Gerencia"
+            Else
+                Label3.Text = "General"
+            End If
+        Else
+            Label2.Text = ""
+        End If
+        Mostrar.Close()
+        conexion.Close()
+
     End Sub
 End Class

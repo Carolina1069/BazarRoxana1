@@ -28,15 +28,15 @@
                     End If
                 Else
                     MsgBox("Contraseña Invalida", MsgBoxStyle.Critical)
-                    txtNombreEmpleado.Text = ""
+
                     txtContrasena.Text = ""
                 End If
-                txtNombreEmpleado.Text = ""
+
                 txtContrasena.Text = ""
                 cbxMostrarContra.Checked = False
             Else
                 MsgBox("El Empleado: " + txtNombreEmpleado.Text + " no se encuentra registrado")
-                txtNombreEmpleado.Text = ""
+
                 txtContrasena.Text = ""
                 cbxMostrarContra.Checked = False
             End If
@@ -54,6 +54,7 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         ProgressBar1.Visible = True
         LbPorcentaje.Visible = True
+        btnIngresar.Enabled = False
         ProgressBar1.Increment(5)
                 LbPorcentaje.Text = ProgressBar1.Value & ("%")
                 If ProgressBar1.Value = 100 Then
@@ -66,6 +67,7 @@
             LbPorcentaje.Text = "0%"
             LbPorcentaje.Visible = False
             ProgressBar1.Visible = False
+            btnIngresar.Enabled = True
         End If
 
     End Sub

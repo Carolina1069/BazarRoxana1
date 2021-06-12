@@ -41,6 +41,7 @@ Partial Class Ventas
         Me.lbCodEmple = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnImprimir = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txMinimo = New System.Windows.Forms.TextBox()
         Me.TxtTotal = New System.Windows.Forms.TextBox()
@@ -69,7 +70,6 @@ Partial Class Ventas
         Me.txNumVenta = New System.Windows.Forms.TextBox()
         Me.lbNumeroVenta = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.BtnImprimir = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -277,6 +277,15 @@ Partial Class Ventas
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de la Venta"
+        '
+        'BtnImprimir
+        '
+        Me.BtnImprimir.Location = New System.Drawing.Point(121, 278)
+        Me.BtnImprimir.Name = "BtnImprimir"
+        Me.BtnImprimir.Size = New System.Drawing.Size(75, 23)
+        Me.BtnImprimir.TabIndex = 62
+        Me.BtnImprimir.Text = "Imprimir"
+        Me.BtnImprimir.UseVisualStyleBackColor = True
         '
         'Label13
         '
@@ -511,15 +520,6 @@ Partial Class Ventas
         Me.Label14.Size = New System.Drawing.Size(98, 29)
         Me.Label14.TabIndex = 69
         Me.Label14.Text = "Ventas"
-        '
-        'BtnImprimir
-        '
-        Me.BtnImprimir.Location = New System.Drawing.Point(121, 278)
-        Me.BtnImprimir.Name = "BtnImprimir"
-        Me.BtnImprimir.Size = New System.Drawing.Size(75, 23)
-        Me.BtnImprimir.TabIndex = 62
-        Me.BtnImprimir.Text = "Imprimir"
-        Me.BtnImprimir.UseVisualStyleBackColor = True
         '
         'Ventas
         '

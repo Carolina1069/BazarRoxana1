@@ -125,7 +125,7 @@ Partial Class Clientes
         'chkInhabil
         '
         Me.chkInhabil.AutoSize = True
-        Me.chkInhabil.Location = New System.Drawing.Point(604, 39)
+        Me.chkInhabil.Location = New System.Drawing.Point(604, 38)
         Me.chkInhabil.Name = "chkInhabil"
         Me.chkInhabil.Size = New System.Drawing.Size(102, 17)
         Me.chkInhabil.TabIndex = 68
