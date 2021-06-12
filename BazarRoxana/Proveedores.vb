@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class Proveedores
     Private Sub Proveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        chkEstado.Checked = True
         abrir()
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=1", conexion)
@@ -11,7 +12,7 @@ Public Class Proveedores
         conexion.Close()
     End Sub
 
-    Private Sub btBuscar_Click(sender As Object, e As EventArgs) Handles btBuscar.Click
+    Private Sub btBuscar_Click(sender As Object, e As EventArgs)
 
         abrir()
         Dim busqueda As Integer
@@ -36,7 +37,7 @@ Public Class Proveedores
 
         DGVProveedores.DataSource = DatosCliente
         conexion.Close()
-
+        chkInhabil.Checked = False
         txCodProve.Clear()
         txNomProv.Clear()
         TxtTelfonoEmpresa.Clear()
@@ -182,7 +183,7 @@ Public Class Proveedores
     End Sub
 
 
-    Private Sub DGVProveedores_DoubleClick(sender As Object, e As EventArgs) Handles DGVProveedores.DoubleClick
+    Private Sub DGVProveedores_DoubleClick(sender As Object, e As EventArgs)
         txCodProve.Text = DGVProveedores.CurrentRow.Cells(0).Value
         txNomProv.Text = DGVProveedores.CurrentRow.Cells(1).Value
         TxtTelfonoEmpresa.Text = DGVProveedores.CurrentRow.Cells(2).Value
@@ -276,5 +277,50 @@ Public Class Proveedores
 
     Private Sub txtTelProv_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txtTelProv.KeyPress
         SoloNumeros(e)
+    End Sub
+
+    Public Sub filtrarDatos(ByVal buscar As String)
+        If chkInhabil.Checked = False Then
+            Try
+                Using con As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+                    Dim query = "select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=1 and NombProv LIKE @filtro"
+
+                    Dim adapter As New SqlDataAdapter(query, con)
+                    adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", buscar))
+
+                    Dim table As New DataTable
+                    adapter.Fill(table)
+
+                    DGVProveedores.DataSource = table
+                End Using
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+        Else
+            Try
+                Using con As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+                    Dim query = "select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=0 and NombProv LIKE @filtro"
+
+                    Dim adapter As New SqlDataAdapter(query, con)
+                    adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", buscar))
+
+                    Dim table As New DataTable
+                    adapter.Fill(table)
+
+                    DGVProveedores.DataSource = table
+                End Using
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+        End If
+
+    End Sub
+
+    Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
+        Dim filtro As String = CType(sender, TextBox).Text
+        If filtro.Trim() <> String.Empty Then  'Si no es vacío filtra
+            filtrarDatos(filtro)
+        End If
     End Sub
 End Class
