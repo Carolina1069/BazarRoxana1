@@ -48,6 +48,16 @@
     End Sub
 
     Private Sub cbxMostrarContra_CheckedChanged(sender As Object, e As EventArgs) Handles cbxMostrarContra.CheckedChanged
+        Dim Text As String
+        Text = txtContrasena.Text
+        If cbxMostrarContra.Checked = True Then
+
+            txtContrasena.UseSystemPasswordChar = False
+            txtContrasena.Text = Text
+        Else
+            txtContrasena.UseSystemPasswordChar = True
+            txtContrasena.Text = Text
+        End If
         txtContrasena.UseSystemPasswordChar = Not cbxMostrarContra.Checked
     End Sub
 
@@ -73,8 +83,14 @@
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Me.Close()
+        Dim opcion As DialogResult
+        opcion = MessageBox.Show("¿Esta Seguro que quiere salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If opcion = DialogResult.Yes Then
+            End
+        End If
     End Sub
+
+
     'Private Function validar_campos(T As Control) As Boolean
 
     '    For Each T In Me.Controls
