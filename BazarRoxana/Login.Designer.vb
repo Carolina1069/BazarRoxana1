@@ -31,7 +31,6 @@ Partial Class Login
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.LbPorcentaje = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.btnSalir = New System.Windows.Forms.Button()
@@ -41,7 +40,7 @@ Partial Class Login
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -53,6 +52,8 @@ Partial Class Login
         '
         'btnIngresar
         '
+        Me.btnIngresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnIngresar.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar.Location = New System.Drawing.Point(317, 203)
         Me.btnIngresar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnIngresar.Name = "btnIngresar"
@@ -121,26 +122,13 @@ Partial Class Login
         '
         Me.LbPorcentaje.AutoSize = True
         Me.LbPorcentaje.BackColor = System.Drawing.Color.Transparent
-        Me.LbPorcentaje.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbPorcentaje.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LbPorcentaje.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.LbPorcentaje.Location = New System.Drawing.Point(210, 330)
+        Me.LbPorcentaje.Location = New System.Drawing.Point(209, 326)
         Me.LbPorcentaje.Name = "LbPorcentaje"
-        Me.LbPorcentaje.Size = New System.Drawing.Size(27, 13)
+        Me.LbPorcentaje.Size = New System.Drawing.Size(29, 19)
         Me.LbPorcentaje.TabIndex = 17
         Me.LbPorcentaje.Text = "0 %"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Usuarios1
-        Me.PictureBox1.Location = New System.Drawing.Point(357, 30)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(65, 53)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 8
-        Me.PictureBox1.TabStop = False
         '
         'Panel1
         '
@@ -148,7 +136,7 @@ Partial Class Login
         Me.Panel1.Controls.Add(Me.PictureBox4)
         Me.Panel1.Location = New System.Drawing.Point(-1, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(202, 385)
+        Me.Panel1.Size = New System.Drawing.Size(202, 388)
         Me.Panel1.TabIndex = 18
         '
         'PictureBox4
@@ -169,6 +157,9 @@ Partial Class Login
         Me.btnSalir.BackgroundImage = CType(resources.GetObject("btnSalir.BackgroundImage"), System.Drawing.Image)
         Me.btnSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSalir.FlatAppearance.BorderSize = 5
+        Me.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red
+        Me.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
         Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSalir.ForeColor = System.Drawing.Color.DimGray
         Me.btnSalir.Location = New System.Drawing.Point(536, 12)
@@ -217,10 +208,10 @@ Partial Class Login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(241, 296)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(73, 13)
+        Me.Label1.Size = New System.Drawing.Size(88, 19)
         Me.Label1.TabIndex = 24
         Me.Label1.Text = "Cargando..."
         '
@@ -228,12 +219,23 @@ Partial Class Login
         '
         Me.ErrorValidacion.ContainerControl = Me
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Candara", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(340, 55)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(128, 26)
+        Me.Label2.TabIndex = 25
+        Me.Label2.Text = "BIENVENIDO"
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(579, 387)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
@@ -244,7 +246,6 @@ Partial Class Login
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnIngresar)
         Me.Controls.Add(Me.cbxMostrarContra)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.ProgressBar1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -255,7 +256,6 @@ Partial Class Login
         Me.Opacity = 0.9R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -276,7 +276,6 @@ Partial Class Login
     Friend WithEvents ProgressBar1 As ProgressBar
     Friend WithEvents Timer1 As Timer
     Friend WithEvents LbPorcentaje As Label
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents btnSalir As Button
     Friend WithEvents PictureBox2 As PictureBox
@@ -286,4 +285,5 @@ Partial Class Login
     Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents ErrorValidacion As ErrorProvider
+    Friend WithEvents Label2 As Label
 End Class
