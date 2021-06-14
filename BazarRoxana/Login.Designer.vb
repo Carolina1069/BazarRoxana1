@@ -41,6 +41,7 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -132,7 +133,8 @@ Partial Class Login
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.Panel1.BackColor = System.Drawing.Color.Black
+        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.PictureBox4)
         Me.Panel1.Location = New System.Drawing.Point(-1, 0)
         Me.Panel1.Name = "Panel1"
@@ -143,10 +145,10 @@ Partial Class Login
         '
         Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Image = Global.BazarRoxana.My.Resources.Resources.Logo
-        Me.PictureBox4.Location = New System.Drawing.Point(2, 105)
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(35, 74)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(197, 114)
+        Me.PictureBox4.Size = New System.Drawing.Size(151, 135)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 71
         Me.PictureBox4.TabStop = False
@@ -229,6 +231,17 @@ Partial Class Login
         Me.Label2.TabIndex = 25
         Me.Label2.Text = "BIENVENIDO"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Candara", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(39, 223)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(135, 26)
+        Me.Label3.TabIndex = 72
+        Me.Label3.Text = "Bazar Roxana"
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -257,6 +270,7 @@ Partial Class Login
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -286,4 +300,5 @@ Partial Class Login
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents ErrorValidacion As ErrorProvider
     Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
 End Class
