@@ -1,4 +1,6 @@
-﻿Public Class Login
+﻿Imports System.ComponentModel
+
+Public Class Login
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ProgressBar1.Visible = False
         LbPorcentaje.Visible = False
@@ -66,8 +68,8 @@
         LbPorcentaje.Visible = True
         btnIngresar.Enabled = False
         ProgressBar1.Increment(5)
-                LbPorcentaje.Text = ProgressBar1.Value & ("%")
-                If ProgressBar1.Value = 100 Then
+        LbPorcentaje.Text = ProgressBar1.Value & ("%")
+        If ProgressBar1.Value = 100 Then
 
             MenuPrincipal.Show()
             Me.Hide()
@@ -87,6 +89,46 @@
         opcion = MessageBox.Show("¿Esta Seguro que quiere salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If opcion = DialogResult.Yes Then
             End
+        End If
+    End Sub
+
+    Private Sub txtNombreEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtNombreEmpleado.TextChanged
+
+    End Sub
+
+    Private Sub txtNombreEmpleado_Validating(sender As Object, e As CancelEventArgs) Handles txtNombreEmpleado.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 And DirectCast(sender, TextBox).Text.Length <= 50 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txtContrasena_TextChanged(sender As Object, e As EventArgs) Handles txtContrasena.TextChanged
+
+    End Sub
+
+    Private Sub txtContrasena_Validating(sender As Object, e As CancelEventArgs) Handles txtContrasena.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txtNombreEmpleado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombreEmpleado.KeyPress
+        If Not Char.IsLetter(e.KeyChar) _
+                    AndAlso Not Char.IsControl(e.KeyChar) _
+                    AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
         End If
     End Sub
 
