@@ -32,6 +32,7 @@ Partial Class Login
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.LbPorcentaje = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
@@ -41,7 +42,6 @@ Partial Class Login
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,6 +141,17 @@ Partial Class Login
         Me.Panel1.Size = New System.Drawing.Size(202, 388)
         Me.Panel1.TabIndex = 18
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Candara", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(39, 223)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(135, 26)
+        Me.Label3.TabIndex = 72
+        Me.Label3.Text = "Bazar Roxana"
+        '
         'PictureBox4
         '
         Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
@@ -231,17 +242,6 @@ Partial Class Login
         Me.Label2.TabIndex = 25
         Me.Label2.Text = "BIENVENIDO"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Candara", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(39, 223)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(135, 26)
-        Me.Label3.TabIndex = 72
-        Me.Label3.Text = "Bazar Roxana"
-        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -268,7 +268,7 @@ Partial Class Login
         Me.Name = "Login"
         Me.Opacity = 0.9R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Text = "3"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()

@@ -22,6 +22,7 @@ Partial Class Productos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btActualizarTabla = New System.Windows.Forms.Button()
         Me.btActualizar = New System.Windows.Forms.Button()
@@ -57,10 +58,12 @@ Partial Class Productos
         Me.txCodProd = New System.Windows.Forms.TextBox()
         Me.lbNombreProd = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -109,8 +112,10 @@ Partial Class Productos
         'DGV
         '
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.DGV.Location = New System.Drawing.Point(25, 63)
         Me.DGV.Name = "DGV"
+        Me.DGV.ReadOnly = True
         Me.DGV.RowHeadersWidth = 51
         Me.DGV.Size = New System.Drawing.Size(846, 150)
         Me.DGV.TabIndex = 21
@@ -177,7 +182,7 @@ Partial Class Productos
         'txNombCateg
         '
         Me.txNombCateg.Enabled = False
-        Me.txNombCateg.Location = New System.Drawing.Point(771, 112)
+        Me.txNombCateg.Location = New System.Drawing.Point(785, 58)
         Me.txNombCateg.Name = "txNombCateg"
         Me.txNombCateg.Size = New System.Drawing.Size(100, 20)
         Me.txNombCateg.TabIndex = 72
@@ -185,16 +190,17 @@ Partial Class Productos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(632, 113)
+        Me.Label1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(615, 58)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(140, 13)
+        Me.Label1.Size = New System.Drawing.Size(170, 19)
         Me.Label1.TabIndex = 71
         Me.Label1.Text = "Nombre de la Categoria"
         '
         'txNombProv
         '
         Me.txNombProv.Enabled = False
-        Me.txNombProv.Location = New System.Drawing.Point(771, 71)
+        Me.txNombProv.Location = New System.Drawing.Point(785, 19)
         Me.txNombProv.Name = "txNombProv"
         Me.txNombProv.Size = New System.Drawing.Size(100, 20)
         Me.txNombProv.TabIndex = 70
@@ -202,15 +208,16 @@ Partial Class Productos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(636, 72)
+        Me.Label2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(615, 20)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(133, 13)
+        Me.Label2.Size = New System.Drawing.Size(164, 19)
         Me.Label2.TabIndex = 69
         Me.Label2.Text = "Nombre del Proveedor"
         '
         'txCodCateg
         '
-        Me.txCodCateg.Location = New System.Drawing.Point(528, 110)
+        Me.txCodCateg.Location = New System.Drawing.Point(509, 59)
         Me.txCodCateg.Name = "txCodCateg"
         Me.txCodCateg.Size = New System.Drawing.Size(100, 20)
         Me.txCodCateg.TabIndex = 68
@@ -218,15 +225,16 @@ Partial Class Productos
         'lbCodCateg
         '
         Me.lbCodCateg.AutoSize = True
-        Me.lbCodCateg.Location = New System.Drawing.Point(379, 113)
+        Me.lbCodCateg.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCodCateg.Location = New System.Drawing.Point(349, 58)
         Me.lbCodCateg.Name = "lbCodCateg"
-        Me.lbCodCateg.Size = New System.Drawing.Size(122, 13)
+        Me.lbCodCateg.Size = New System.Drawing.Size(148, 19)
         Me.lbCodCateg.TabIndex = 67
         Me.lbCodCateg.Text = "Codigo de Categoria"
         '
         'txMin
         '
-        Me.txMin.Location = New System.Drawing.Point(680, 189)
+        Me.txMin.Location = New System.Drawing.Point(186, 192)
         Me.txMin.Name = "txMin"
         Me.txMin.Size = New System.Drawing.Size(100, 20)
         Me.txMin.TabIndex = 66
@@ -234,15 +242,16 @@ Partial Class Productos
         'lbMinima
         '
         Me.lbMinima.AutoSize = True
-        Me.lbMinima.Location = New System.Drawing.Point(552, 192)
+        Me.lbMinima.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbMinima.Location = New System.Drawing.Point(7, 195)
         Me.lbMinima.Name = "lbMinima"
-        Me.lbMinima.Size = New System.Drawing.Size(113, 13)
+        Me.lbMinima.Size = New System.Drawing.Size(143, 19)
         Me.lbMinima.TabIndex = 65
         Me.lbMinima.Text = "Productos Minimos"
         '
         'txMax
         '
-        Me.txMax.Location = New System.Drawing.Point(416, 189)
+        Me.txMax.Location = New System.Drawing.Point(186, 166)
         Me.txMax.Name = "txMax"
         Me.txMax.Size = New System.Drawing.Size(100, 20)
         Me.txMax.TabIndex = 64
@@ -250,15 +259,16 @@ Partial Class Productos
         'lbMaxima
         '
         Me.lbMaxima.AutoSize = True
-        Me.lbMaxima.Location = New System.Drawing.Point(278, 192)
+        Me.lbMaxima.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbMaxima.Location = New System.Drawing.Point(7, 169)
         Me.lbMaxima.Name = "lbMaxima"
-        Me.lbMaxima.Size = New System.Drawing.Size(116, 13)
+        Me.lbMaxima.Size = New System.Drawing.Size(146, 19)
         Me.lbMaxima.TabIndex = 63
         Me.lbMaxima.Text = "Productos Maximos"
         '
         'txtUnidStock
         '
-        Me.txtUnidStock.Location = New System.Drawing.Point(145, 189)
+        Me.txtUnidStock.Location = New System.Drawing.Point(186, 143)
         Me.txtUnidStock.Name = "txtUnidStock"
         Me.txtUnidStock.Size = New System.Drawing.Size(100, 20)
         Me.txtUnidStock.TabIndex = 62
@@ -266,15 +276,16 @@ Partial Class Productos
         'lbUnidStock
         '
         Me.lbUnidStock.AutoSize = True
-        Me.lbUnidStock.Location = New System.Drawing.Point(6, 188)
+        Me.lbUnidStock.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbUnidStock.Location = New System.Drawing.Point(6, 139)
         Me.lbUnidStock.Name = "lbUnidStock"
-        Me.lbUnidStock.Size = New System.Drawing.Size(115, 13)
+        Me.lbUnidStock.Size = New System.Drawing.Size(135, 19)
         Me.lbUnidStock.TabIndex = 61
         Me.lbUnidStock.Text = "Unidades en Stock"
         '
         'txtTerPre
         '
-        Me.txtTerPre.Location = New System.Drawing.Point(680, 149)
+        Me.txtTerPre.Location = New System.Drawing.Point(766, 192)
         Me.txtTerPre.Name = "txtTerPre"
         Me.txtTerPre.Size = New System.Drawing.Size(100, 20)
         Me.txtTerPre.TabIndex = 60
@@ -282,15 +293,16 @@ Partial Class Productos
         'lbTerPre
         '
         Me.lbTerPre.AutoSize = True
-        Me.lbTerPre.Location = New System.Drawing.Point(581, 152)
+        Me.lbTerPre.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbTerPre.Location = New System.Drawing.Point(643, 195)
         Me.lbTerPre.Name = "lbTerPre"
-        Me.lbTerPre.Size = New System.Drawing.Size(84, 13)
+        Me.lbTerPre.Size = New System.Drawing.Size(97, 19)
         Me.lbTerPre.TabIndex = 59
         Me.lbTerPre.Text = "Tercer Precio"
         '
         'txtSegPre
         '
-        Me.txtSegPre.Location = New System.Drawing.Point(416, 149)
+        Me.txtSegPre.Location = New System.Drawing.Point(766, 166)
         Me.txtSegPre.Name = "txtSegPre"
         Me.txtSegPre.Size = New System.Drawing.Size(100, 20)
         Me.txtSegPre.TabIndex = 58
@@ -298,15 +310,16 @@ Partial Class Productos
         'lbSegPre
         '
         Me.lbSegPre.AutoSize = True
-        Me.lbSegPre.Location = New System.Drawing.Point(304, 154)
+        Me.lbSegPre.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbSegPre.Location = New System.Drawing.Point(643, 169)
         Me.lbSegPre.Name = "lbSegPre"
-        Me.lbSegPre.Size = New System.Drawing.Size(97, 13)
+        Me.lbSegPre.Size = New System.Drawing.Size(116, 19)
         Me.lbSegPre.TabIndex = 57
         Me.lbSegPre.Text = "Segundo Precio"
         '
         'rtxDescProd
         '
-        Me.rtxDescProd.Location = New System.Drawing.Point(186, 69)
+        Me.rtxDescProd.Location = New System.Drawing.Point(186, 81)
         Me.rtxDescProd.Name = "rtxDescProd"
         Me.rtxDescProd.Size = New System.Drawing.Size(159, 54)
         Me.rtxDescProd.TabIndex = 56
@@ -314,21 +327,21 @@ Partial Class Productos
         '
         'txCodProv
         '
-        Me.txCodProv.Location = New System.Drawing.Point(528, 69)
+        Me.txCodProv.Location = New System.Drawing.Point(509, 20)
         Me.txCodProv.Name = "txCodProv"
         Me.txCodProv.Size = New System.Drawing.Size(100, 20)
         Me.txCodProv.TabIndex = 55
         '
         'txtPriPre
         '
-        Me.txtPriPre.Location = New System.Drawing.Point(145, 149)
+        Me.txtPriPre.Location = New System.Drawing.Point(766, 140)
         Me.txtPriPre.Name = "txtPriPre"
         Me.txtPriPre.Size = New System.Drawing.Size(100, 20)
         Me.txtPriPre.TabIndex = 54
         '
         'txNomProd
         '
-        Me.txNomProd.Location = New System.Drawing.Point(528, 27)
+        Me.txNomProd.Location = New System.Drawing.Point(186, 46)
         Me.txNomProd.Name = "txNomProd"
         Me.txNomProd.Size = New System.Drawing.Size(100, 20)
         Me.txNomProd.TabIndex = 53
@@ -336,42 +349,46 @@ Partial Class Productos
         'lbPriPre
         '
         Me.lbPriPre.AutoSize = True
-        Me.lbPriPre.Location = New System.Drawing.Point(38, 152)
+        Me.lbPriPre.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbPriPre.Location = New System.Drawing.Point(643, 142)
         Me.lbPriPre.Name = "lbPriPre"
-        Me.lbPriPre.Size = New System.Drawing.Size(82, 13)
+        Me.lbPriPre.Size = New System.Drawing.Size(101, 19)
         Me.lbPriPre.TabIndex = 50
         Me.lbPriPre.Text = "Primer Precio"
         '
         'lbDescProd
         '
         Me.lbDescProd.AutoSize = True
-        Me.lbDescProd.Location = New System.Drawing.Point(33, 72)
+        Me.lbDescProd.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbDescProd.Location = New System.Drawing.Point(6, 81)
         Me.lbDescProd.Name = "lbDescProd"
-        Me.lbDescProd.Size = New System.Drawing.Size(150, 13)
+        Me.lbDescProd.Size = New System.Drawing.Size(180, 19)
         Me.lbDescProd.TabIndex = 49
         Me.lbDescProd.Text = "Descripcion del Producto"
         '
         'lbCodProv
         '
         Me.lbCodProv.AutoSize = True
-        Me.lbCodProv.Location = New System.Drawing.Point(379, 72)
+        Me.lbCodProv.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCodProv.Location = New System.Drawing.Point(349, 20)
         Me.lbCodProv.Name = "lbCodProv"
-        Me.lbCodProv.Size = New System.Drawing.Size(129, 13)
+        Me.lbCodProv.Size = New System.Drawing.Size(157, 19)
         Me.lbCodProv.TabIndex = 48
         Me.lbCodProv.Text = "Codigo del Proveedor"
         '
         'lbCodigoCli
         '
         Me.lbCodigoCli.AutoSize = True
-        Me.lbCodigoCli.Location = New System.Drawing.Point(58, 32)
+        Me.lbCodigoCli.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbCodigoCli.Location = New System.Drawing.Point(6, 23)
         Me.lbCodigoCli.Name = "lbCodigoCli"
-        Me.lbCodigoCli.Size = New System.Drawing.Size(122, 13)
+        Me.lbCodigoCli.Size = New System.Drawing.Size(149, 19)
         Me.lbCodigoCli.TabIndex = 47
         Me.lbCodigoCli.Text = "Codigo del Producto"
         '
         'txCodProd
         '
-        Me.txCodProd.Location = New System.Drawing.Point(186, 29)
+        Me.txCodProd.Location = New System.Drawing.Point(186, 20)
         Me.txCodProd.Name = "txCodProd"
         Me.txCodProd.Size = New System.Drawing.Size(100, 20)
         Me.txCodProd.TabIndex = 46
@@ -379,9 +396,10 @@ Partial Class Productos
         'lbNombreProd
         '
         Me.lbNombreProd.AutoSize = True
-        Me.lbNombreProd.Location = New System.Drawing.Point(379, 32)
+        Me.lbNombreProd.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbNombreProd.Location = New System.Drawing.Point(6, 49)
         Me.lbNombreProd.Name = "lbNombreProd"
-        Me.lbNombreProd.Size = New System.Drawing.Size(126, 13)
+        Me.lbNombreProd.Size = New System.Drawing.Size(156, 19)
         Me.lbNombreProd.TabIndex = 45
         Me.lbNombreProd.Text = "Nombre del Producto"
         '
@@ -389,18 +407,21 @@ Partial Class Productos
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Clarendon BT", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(12, 9)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(138, 29)
+        Me.Label3.Size = New System.Drawing.Size(131, 29)
         Me.Label3.TabIndex = 69
         Me.Label3.Text = "Productos"
+        '
+        'ErrorValidacion
+        '
+        Me.ErrorValidacion.ContainerControl = Me
         '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.A
         Me.ClientSize = New System.Drawing.Size(934, 650)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox2)
@@ -415,6 +436,7 @@ Partial Class Productos
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -454,4 +476,5 @@ Partial Class Productos
     Friend WithEvents Label2 As Label
     Friend WithEvents btActualizarTabla As Button
     Friend WithEvents Label3 As Label
+    Friend WithEvents ErrorValidacion As ErrorProvider
 End Class

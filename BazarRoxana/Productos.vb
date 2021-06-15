@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.ComponentModel
+Imports System.Data.SqlClient
 Public Class Productos
 
 
@@ -99,7 +100,7 @@ Public Class Productos
             End If
         End If
 
-            conexion.Close()
+        conexion.Close()
 
         txCodProd.Clear()
         txNomProd.Clear()
@@ -148,17 +149,17 @@ Public Class Productos
         End If
         conexion.Close()
 
-        txCodProd.Clear()
-        txNomProd.Clear()
-        rtxDescProd.Clear()
-        txCodProv.Clear()
-        txCodCateg.Clear()
-        txtPriPre.Clear()
-        txtSegPre.Clear()
-        txtTerPre.Clear()
-        txtUnidStock.Clear()
-        txMax.Clear()
-        txMin.Clear()
+        ' txCodProd.Clear()
+        'txNomProd.Clear()
+        'rtxDescProd.Clear()
+        'txCodProv.Clear()
+        'txCodCateg.Clear()
+        'txtPriPre.Clear()
+        'txtSegPre.Clear()
+        'txtTerPre.Clear()
+        'txtUnidStock.Clear()
+        'txMax.Clear()
+        'txMin.Clear()
 
     End Sub
 
@@ -292,5 +293,221 @@ Public Class Productos
 
     Private Sub txMin_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txMin.KeyPress
         SoloNumeros(e)
+    End Sub
+
+    Private Sub txtTerPre_TextChanged(sender As Object, e As EventArgs) Handles txtTerPre.TextChanged
+
+    End Sub
+
+    Private Sub lbSegPre_Click(sender As Object, e As EventArgs) Handles lbSegPre.Click
+
+    End Sub
+
+    Private Sub lbCodCateg_Click(sender As Object, e As EventArgs) Handles lbCodCateg.Click
+
+    End Sub
+
+    Private Sub lbCodProv_Click(sender As Object, e As EventArgs) Handles lbCodProv.Click
+
+    End Sub
+
+    Private Sub txCodProd_TextChanged(sender As Object, e As EventArgs) Handles txCodProd.TextChanged
+
+    End Sub
+
+    Private Sub txCodProd_Validating(sender As Object, e As CancelEventArgs) Handles txCodProd.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txNomProd_TextChanged(sender As Object, e As EventArgs) Handles txNomProd.TextChanged
+
+    End Sub
+
+    Private Sub txNomProd_Validating(sender As Object, e As CancelEventArgs) Handles txNomProd.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 And DirectCast(sender, TextBox).Text.Length <= 10 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub rtxDescProd_TextChanged(sender As Object, e As EventArgs) Handles rtxDescProd.TextChanged
+
+    End Sub
+
+    Private Sub txtUnidStock_TextChanged(sender As Object, e As EventArgs) Handles txtUnidStock.TextChanged
+
+    End Sub
+
+    Private Sub txMax_TextChanged(sender As Object, e As EventArgs) Handles txMax.TextChanged
+
+    End Sub
+
+    Private Sub rtxDescProd_Validating(sender As Object, e As CancelEventArgs) Handles rtxDescProd.Validating
+        Try
+            If DirectCast(sender, RichTextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txtUnidStock_Validating(sender As Object, e As CancelEventArgs) Handles txtUnidStock.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txMax_Validating(sender As Object, e As CancelEventArgs) Handles txMax.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txMin_TextChanged(sender As Object, e As EventArgs) Handles txMin.TextChanged
+
+    End Sub
+
+    Private Sub txMin_Validating(sender As Object, e As CancelEventArgs) Handles txMin.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txCodProv_Validating(sender As Object, e As CancelEventArgs) Handles txCodProv.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txCodCateg_Validating(sender As Object, e As CancelEventArgs) Handles txCodCateg.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txNombProv_TextChanged(sender As Object, e As EventArgs) Handles txNombProv.TextChanged
+
+    End Sub
+
+    Private Sub txNombProv_Validating(sender As Object, e As CancelEventArgs) Handles txNombProv.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txNombCateg_TextChanged(sender As Object, e As EventArgs) Handles txNombCateg.TextChanged
+
+    End Sub
+
+    Private Sub txNombCateg_Validating(sender As Object, e As CancelEventArgs) Handles txNombCateg.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txtPriPre_TextChanged(sender As Object, e As EventArgs) Handles txtPriPre.TextChanged
+
+    End Sub
+
+    Private Sub txtPriPre_Validating(sender As Object, e As CancelEventArgs) Handles txtPriPre.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txtSegPre_TextChanged(sender As Object, e As EventArgs) Handles txtSegPre.TextChanged
+
+    End Sub
+
+    Private Sub txtTerPre_Validating(sender As Object, e As CancelEventArgs) Handles txtTerPre.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txtSegPre_Validating(sender As Object, e As CancelEventArgs) Handles txtSegPre.Validating
+        Try
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+                Me.ErrorValidacion.SetError(sender, "")
+            Else
+                Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub DGV_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellContentClick
+
     End Sub
 End Class
