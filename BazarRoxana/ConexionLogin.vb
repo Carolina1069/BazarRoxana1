@@ -36,10 +36,102 @@ Module ConexionLogin
         Return resultado
     End Function
 
+    Public Function mostrarProveedor() As DataTable
+        Try
+            conexion.Open()
+            enunciado = New SqlCommand("mostrar_proveedor", conexion)
+            enunciado.CommandType = CommandType.StoredProcedure
+
+            enunciado.Connection = conexion
+
+            If enunciado.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(enunciado)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function mostrarCategoria() As DataTable
+        Try
+            conexion.Open()
+            enunciado = New SqlCommand("mostrar_categoría", conexion)
+            enunciado.CommandType = CommandType.StoredProcedure
+
+            enunciado.Connection = conexion
+
+            If enunciado.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(enunciado)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
     Public Function buscarProduct(Nombre As String) As DataTable
         Try
             conexion.Open()
             Dim cmb As New SqlCommand("buscarProduct", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", Nombre)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function buscarCategoria(Nombre As String) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscarCategoria", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", Nombre)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function buscarProveedor(Nombre As String) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscarProveedor", conexion)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@nombre", Nombre)
             If cmb.ExecuteNonQuery <> 0 Then

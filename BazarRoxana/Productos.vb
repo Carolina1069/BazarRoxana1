@@ -58,6 +58,10 @@ Public Class Productos
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosCat
+        txCodCateg.ReadOnly = True
+        txCodProv.ReadOnly = True
+        txNombCateg.ReadOnly = True
+        txNombProv.ReadOnly = True
 
         conexion.Close()
     End Sub
@@ -727,6 +731,11 @@ as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
     End Sub
 
     Private Sub DGV_CellContentClick_1(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellContentClick
+
+    End Sub
+
+    Private Sub btnAgg_P_Click(sender As Object, e As EventArgs) Handles btnAgg_P.Click
+        FrmBusquedaProveedor.ShowDialog()
 
     End Sub
 End Class
