@@ -27,6 +27,11 @@ Partial Class Empleado
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.LbContador7 = New System.Windows.Forms.Label()
+        Me.LbContador6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
+        Me.DGV = New System.Windows.Forms.DataGridView()
         Me.chkInhabil = New System.Windows.Forms.CheckBox()
         Me.btnActTabla = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -46,7 +51,6 @@ Partial Class Empleado
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
-        Me.DGV = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.LbContador = New System.Windows.Forms.Label()
@@ -55,13 +59,9 @@ Partial Class Empleado
         Me.LbContador2 = New System.Windows.Forms.Label()
         Me.LbContador5 = New System.Windows.Forms.Label()
         Me.LbContador4 = New System.Windows.Forms.Label()
-        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.LbContador7 = New System.Windows.Forms.Label()
-        Me.LbContador6 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -84,6 +84,99 @@ Partial Class Empleado
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Búsqueda del empleado"
+        '
+        'LbContador7
+        '
+        Me.LbContador7.AutoSize = True
+        Me.LbContador7.BackColor = System.Drawing.Color.Transparent
+        Me.LbContador7.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LbContador7.ForeColor = System.Drawing.Color.Black
+        Me.LbContador7.Location = New System.Drawing.Point(459, 42)
+        Me.LbContador7.Name = "LbContador7"
+        Me.LbContador7.Size = New System.Drawing.Size(30, 19)
+        Me.LbContador7.TabIndex = 81
+        Me.LbContador7.Text = "/20"
+        '
+        'LbContador6
+        '
+        Me.LbContador6.AutoSize = True
+        Me.LbContador6.BackColor = System.Drawing.Color.Transparent
+        Me.LbContador6.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LbContador6.ForeColor = System.Drawing.Color.Black
+        Me.LbContador6.Location = New System.Drawing.Point(437, 41)
+        Me.LbContador6.Name = "LbContador6"
+        Me.LbContador6.Size = New System.Drawing.Size(18, 19)
+        Me.LbContador6.TabIndex = 80
+        Me.LbContador6.Text = "0"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(7, 38)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(229, 19)
+        Me.Label5.TabIndex = 79
+        Me.Label5.Text = "Escriba el nombre del empleado:"
+        '
+        'TxtBusqueda
+        '
+        Me.TxtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Candara", 12.0!)
+        Me.TxtBusqueda.Location = New System.Drawing.Point(241, 40)
+        Me.TxtBusqueda.MaxLength = 20
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.Size = New System.Drawing.Size(189, 20)
+        Me.TxtBusqueda.TabIndex = 72
+        '
+        'DGV
+        '
+        Me.DGV.AllowUserToAddRows = False
+        Me.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGV.BackgroundColor = System.Drawing.SystemColors.ScrollBar
+        Me.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DGV.EnableHeadersVisualStyles = False
+        Me.DGV.GridColor = System.Drawing.SystemColors.ControlLight
+        Me.DGV.Location = New System.Drawing.Point(12, 76)
+        Me.DGV.Name = "DGV"
+        Me.DGV.ReadOnly = True
+        Me.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.DGV.RowHeadersWidth = 51
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        Me.DGV.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGV.Size = New System.Drawing.Size(802, 180)
+        Me.DGV.TabIndex = 71
         '
         'chkInhabil
         '
@@ -285,54 +378,6 @@ Partial Class Empleado
         Me.TxtUsuario.Size = New System.Drawing.Size(189, 20)
         Me.TxtUsuario.TabIndex = 70
         '
-        'DGV
-        '
-        Me.DGV.AllowUserToAddRows = False
-        Me.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGV.BackgroundColor = System.Drawing.SystemColors.ScrollBar
-        Me.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGV.EnableHeadersVisualStyles = False
-        Me.DGV.GridColor = System.Drawing.SystemColors.ControlLight
-        Me.DGV.Location = New System.Drawing.Point(12, 76)
-        Me.DGV.Name = "DGV"
-        Me.DGV.ReadOnly = True
-        Me.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.DGV.RowHeadersWidth = 51
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.DGV.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV.Size = New System.Drawing.Size(802, 180)
-        Me.DGV.TabIndex = 71
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -426,51 +471,6 @@ Partial Class Empleado
         Me.LbContador4.TabIndex = 77
         Me.LbContador4.Text = "0"
         '
-        'TxtBusqueda
-        '
-        Me.TxtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtBusqueda.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.TxtBusqueda.Location = New System.Drawing.Point(241, 40)
-        Me.TxtBusqueda.MaxLength = 20
-        Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(189, 20)
-        Me.TxtBusqueda.TabIndex = 72
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(7, 38)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(229, 19)
-        Me.Label5.TabIndex = 79
-        Me.Label5.Text = "Escriba el nombre del empleado:"
-        '
-        'LbContador7
-        '
-        Me.LbContador7.AutoSize = True
-        Me.LbContador7.BackColor = System.Drawing.Color.Transparent
-        Me.LbContador7.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.LbContador7.ForeColor = System.Drawing.Color.Black
-        Me.LbContador7.Location = New System.Drawing.Point(459, 42)
-        Me.LbContador7.Name = "LbContador7"
-        Me.LbContador7.Size = New System.Drawing.Size(30, 19)
-        Me.LbContador7.TabIndex = 81
-        Me.LbContador7.Text = "/20"
-        '
-        'LbContador6
-        '
-        Me.LbContador6.AutoSize = True
-        Me.LbContador6.BackColor = System.Drawing.Color.Transparent
-        Me.LbContador6.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.LbContador6.ForeColor = System.Drawing.Color.Black
-        Me.LbContador6.Location = New System.Drawing.Point(437, 41)
-        Me.LbContador6.Name = "LbContador6"
-        Me.LbContador6.Size = New System.Drawing.Size(18, 19)
-        Me.LbContador6.TabIndex = 80
-        Me.LbContador6.Text = "0"
-        '
         'Empleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -505,8 +505,8 @@ Partial Class Empleado
         Me.Text = "Empleado"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

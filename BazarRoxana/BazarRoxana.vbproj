@@ -137,6 +137,12 @@
     <Compile Include="FacturaVenta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmBusquedaProveedor.Designer.vb">
+      <DependentUpon>FrmBusquedaProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBusquedaProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inicio.Designer.vb">
       <DependentUpon>Inicio.vb</DependentUpon>
     </Compile>
@@ -266,6 +272,9 @@
     <EmbeddedResource Include="FacturaVenta.rdlc" />
     <EmbeddedResource Include="FacturaVenta.resx">
       <DependentUpon>FacturaVenta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBusquedaProveedor.resx">
+      <DependentUpon>FrmBusquedaProveedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>

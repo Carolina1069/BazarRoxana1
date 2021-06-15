@@ -12,7 +12,7 @@ Module ConexionLogin
     Sub abrir()
 
         Try
-            conexion = New SqlConnection("Data Source=DESKTOP-DE4EAJJ;Initial Catalog=BazarRoxana;Integrated Security=True")
+            conexion = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
             conexion.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception
@@ -35,6 +35,29 @@ Module ConexionLogin
         End Try
         Return resultado
     End Function
+
+    Public Function buscarProduct(Nombre As String) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscarProduct", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", Nombre)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
 
     Function contrasena(ByVal nombreUsuario As String) As String
         Dim resultado As String = ""

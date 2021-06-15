@@ -39,7 +39,6 @@ Partial Class Login
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -93,9 +92,8 @@ Partial Class Login
         Me.txtContrasena.Multiline = True
         Me.txtContrasena.Name = "txtContrasena"
         Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtContrasena.Size = New System.Drawing.Size(199, 29)
+        Me.txtContrasena.Size = New System.Drawing.Size(197, 27)
         Me.txtContrasena.TabIndex = 12
-        Me.txtContrasena.UseSystemPasswordChar = True
         '
         'txtNombreEmpleado
         '
@@ -204,6 +202,7 @@ Partial Class Login
         '
         'Panel3
         '
+        Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel3.Controls.Add(Me.txtContrasena)
         Me.Panel3.Location = New System.Drawing.Point(297, 143)
         Me.Panel3.Name = "Panel3"
@@ -212,21 +211,12 @@ Partial Class Login
         '
         'Panel2
         '
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.txtNombreEmpleado)
         Me.Panel2.Location = New System.Drawing.Point(297, 103)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(205, 40)
         Me.Panel2.TabIndex = 23
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(241, 296)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(88, 19)
-        Me.Label1.TabIndex = 24
-        Me.Label1.Text = "Cargando..."
         '
         'ErrorValidacion
         '
@@ -249,7 +239,6 @@ Partial Class Login
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(579, 387)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.PictureBox3)
@@ -296,7 +285,6 @@ Partial Class Login
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label1 As Label
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents ErrorValidacion As ErrorProvider
     Friend WithEvents Label2 As Label

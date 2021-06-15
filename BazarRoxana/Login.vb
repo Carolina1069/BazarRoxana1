@@ -54,13 +54,13 @@ Public Class Login
         Text = txtContrasena.Text
         If cbxMostrarContra.Checked = True Then
 
-            txtContrasena.UseSystemPasswordChar = False
-            txtContrasena.Text = Text
-        Else
             txtContrasena.UseSystemPasswordChar = True
             txtContrasena.Text = Text
+        Else
+            txtContrasena.UseSystemPasswordChar = False
+            txtContrasena.Text = Text
         End If
-        txtContrasena.UseSystemPasswordChar = Not cbxMostrarContra.Checked
+        'txtContrasena.UseSystemPasswordChar = Not cbxMostrarContra.Checked
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -125,11 +125,11 @@ Public Class Login
     End Sub
 
     Private Sub txtNombreEmpleado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombreEmpleado.KeyPress
-        If Not Char.IsLetter(e.KeyChar) _
-                    AndAlso Not Char.IsControl(e.KeyChar) _
-                    AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
-            e.Handled = True
-        End If
+        'If Not Char.IsLetter(e.KeyChar) _
+        '            AndAlso Not Char.IsControl(e.KeyChar) _
+        '            AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+        '    e.Handled = True
+        'End If
     End Sub
 
 
