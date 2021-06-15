@@ -34,7 +34,7 @@ Partial Class Inicio
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
-        Me.PictureBox1.Location = New System.Drawing.Point(174, 214)
+        Me.PictureBox1.Location = New System.Drawing.Point(251, 245)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(586, 222)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -45,7 +45,7 @@ Partial Class Inicio
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(822, 23)
+        Me.Label1.Location = New System.Drawing.Point(970, 27)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(51, 19)
         Me.Label1.TabIndex = 71
@@ -55,7 +55,7 @@ Partial Class Inicio
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(822, 53)
+        Me.Label2.Location = New System.Drawing.Point(970, 57)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(54, 19)
         Me.Label2.TabIndex = 72
@@ -65,7 +65,7 @@ Partial Class Inicio
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(822, 86)
+        Me.Label3.Location = New System.Drawing.Point(970, 90)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(54, 19)
         Me.Label3.TabIndex = 73
@@ -76,7 +76,7 @@ Partial Class Inicio
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.ClientSize = New System.Drawing.Size(934, 650)
+        Me.ClientSize = New System.Drawing.Size(1053, 681)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)

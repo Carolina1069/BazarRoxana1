@@ -22,10 +22,10 @@ Partial Class Clientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btActualizar = New System.Windows.Forms.Button()
         Me.btActualizarTabla = New System.Windows.Forms.Button()
         Me.btEliminar = New System.Windows.Forms.Button()
@@ -107,7 +107,7 @@ Partial Class Clientes
         Me.GroupBox1.Controls.Add(Me.btActualizar)
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(40, 304)
+        Me.GroupBox1.Location = New System.Drawing.Point(109, 315)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(835, 323)
         Me.GroupBox1.TabIndex = 19
@@ -166,43 +166,43 @@ Partial Class Clientes
         Me.DGVCliente.BackgroundColor = System.Drawing.SystemColors.ScrollBar
         Me.DGVCliente.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGVCliente.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVCliente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVCliente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle21
         Me.DGVCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVCliente.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVCliente.DefaultCellStyle = DataGridViewCellStyle22
         Me.DGVCliente.EnableHeadersVisualStyles = False
         Me.DGVCliente.GridColor = System.Drawing.SystemColors.ControlLight
         Me.DGVCliente.Location = New System.Drawing.Point(16, 71)
         Me.DGVCliente.Name = "DGVCliente"
         Me.DGVCliente.ReadOnly = True
         Me.DGVCliente.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVCliente.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVCliente.RowHeadersDefaultCellStyle = DataGridViewCellStyle23
         Me.DGVCliente.RowHeadersWidth = 51
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ScrollBar
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        Me.DGVCliente.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.ScrollBar
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White
+        Me.DGVCliente.RowsDefaultCellStyle = DataGridViewCellStyle24
         Me.DGVCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVCliente.Size = New System.Drawing.Size(802, 180)
         Me.DGVCliente.TabIndex = 72
@@ -254,7 +254,7 @@ Partial Class Clientes
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
-        Me.PictureBox1.Location = New System.Drawing.Point(677, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(699, 21)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(245, 97)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -285,7 +285,7 @@ Partial Class Clientes
         Me.GroupBox2.Controls.Add(Me.txCodCli)
         Me.GroupBox2.Controls.Add(Me.lbNombreCli)
         Me.GroupBox2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox2.Location = New System.Drawing.Point(40, 113)
+        Me.GroupBox2.Location = New System.Drawing.Point(109, 124)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(835, 183)
         Me.GroupBox2.TabIndex = 69
@@ -498,7 +498,7 @@ Partial Class Clientes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.ClientSize = New System.Drawing.Size(934, 650)
+        Me.ClientSize = New System.Drawing.Size(1053, 681)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
