@@ -227,6 +227,7 @@ Partial Class Empleado
         'TxtCodigoEmpleado
         '
         Me.TxtCodigoEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtCodigoEmpleado.Enabled = False
         Me.TxtCodigoEmpleado.Font = New System.Drawing.Font("Candara", 12.0!)
         Me.TxtCodigoEmpleado.Location = New System.Drawing.Point(246, 133)
         Me.TxtCodigoEmpleado.Name = "TxtCodigoEmpleado"

@@ -6,7 +6,7 @@ Public Class Empleado
         abrir()
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -25,8 +25,8 @@ Public Class Empleado
             MessageBox.Show("Debe ingresar como minimo 8 caracteres en la contraseña del empleado")
         Else
 
-            If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or chkEstado.Checked = False Or DGV.Rows.Count = 0 Then
-                MsgBox("Hay campos vacios")
+            If txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or chkEstado.Checked = False Or DGV.Rows.Count = 0 Then
+                MsgBox("Hay campos vacios", MsgBoxStyle.Exclamation, "Advertencia")
             Else
                 If RegistradoEmpleados(TxtCodigoEmpleado.Text) = False Then
 
@@ -38,9 +38,8 @@ Public Class Empleado
 
                     End If
 
-                    Dim consultaGuardar As String = "insert into Empleados(CodEmple, NombEmple, Contraseña,NivelEmple,EstadoEmple) values(@CodEmple, @NombEmple,@Contraseña,@NivelEmple,1)"
+                    Dim consultaGuardar As String = "insert into Empleados(NombEmple, Contraseña,NivelEmple,EstadoEmple) values(@NombEmple,@Contraseña,@NivelEmple,1)"
                     Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
-                    ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodigoEmpleado.Text))
                     ejecutar.Parameters.AddWithValue("@NombEmple", (txtNombreEmpleado.Text))
                     ejecutar.Parameters.AddWithValue("@Contraseña", (TxtContraseña.Text))
                     ejecutar.Parameters.AddWithValue("@NivelEmple", (Cat))
@@ -53,11 +52,12 @@ Public Class Empleado
         End If
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosEmp
+        MsgBox("El empleado sea guardado")
         conexion.Close()
 
     End Sub
@@ -73,8 +73,8 @@ Public Class Empleado
 
         Else
 
-            If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or DGV.Rows.Count = 0 Then
-                MsgBox("Hay campos vacios")
+            If txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or DGV.Rows.Count = 0 Then
+                MsgBox("Hay campos vacios", MsgBoxStyle.Exclamation, "Advertencia")
             Else
                 Dim Cat As Integer
                 Dim estado As Integer
@@ -99,30 +99,34 @@ Public Class Empleado
             End If
         End If
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGV.DataSource = DatosEmp
+        MsgBox("El empleado sea actualizo")
         conexion.Close()
 
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         abrir()
+        Dim opcion As DialogResult
+        opcion = MessageBox.Show("¿Esta seguro que quiere eliminar este cliente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If opcion = DialogResult.Yes Then
 
-        If TxtCodigoEmpleado.Text = "" Then
-            MsgBox("Hay campos vacios")
-        Else
-            Dim consultaElim As String = "Update Empleados set EstadoEmple=0   where CodEmple= @CodEmple"
-            Dim ejecutar As New SqlCommand(consultaElim, conexion)
-            ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodigoEmpleado.Text))
+            If TxtCodigoEmpleado.Text = "" Then
+                MsgBox("Hay campos vacios")
+            Else
+                Dim consultaElim As String = "Update Empleados set EstadoEmple=0   where CodEmple= @CodEmple"
+                Dim ejecutar As New SqlCommand(consultaElim, conexion)
+                ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodigoEmpleado.Text))
 
-            ejecutar.ExecuteNonQuery()
+                ejecutar.ExecuteNonQuery()
+            End If
         End If
 
-
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -142,7 +146,7 @@ Public Class Empleado
         'busqueda = InputBox("Ingrese Codigo", "Busqueda")
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Dim query As String = "select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where 'Nombre del empleado'=" & TxtBusqueda.Text
+        Dim query As String = "select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where 'Nombre del empleado'=" & TxtBusqueda.Text
         Using adaptador As New SqlDataAdapter(query, conexion)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
@@ -159,10 +163,11 @@ Public Class Empleado
 
 
     Private Sub btnActTabla_Click(sender As Object, e As EventArgs) Handles btnActTabla.Click
+        TxtBusqueda.Clear()
         abrir()
         chkInhabil.Checked = False
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -225,7 +230,7 @@ Public Class Empleado
         If chkInhabil.Checked = True Then
 
             Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 0", conexion)
+            Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 0", conexion)
                 adaptador.Fill(DatosEmp)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -234,7 +239,7 @@ Public Class Empleado
         Else
 
             Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+            Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
                 adaptador.Fill(DatosEmp)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -282,7 +287,7 @@ Public Class Empleado
         If chkInhabil.Checked = False Then
             Try
                 Using con As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
-                    Dim query = "select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple=1 and NombEmple LIKE @filtro"
+                    Dim query = "select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple=1 and NombEmple LIKE @filtro"
 
                     Dim adapter As New SqlDataAdapter(query, con)
                     adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", buscar))
@@ -298,7 +303,7 @@ Public Class Empleado
         Else
             Try
                 Using con As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
-                    Dim query = "select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple=0 and NombEmple LIKE @filtro"
+                    Dim query = "select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple=0 and NombEmple LIKE @filtro"
 
                     Dim adapter As New SqlDataAdapter(query, con)
                     adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", buscar))
@@ -322,25 +327,5 @@ Public Class Empleado
         If filtro.Trim() <> String.Empty Then  'Si no es vacío filtra
             filtrarDatos(filtro)
         End If
-    End Sub
-
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
-
-    End Sub
-
-    Private Sub DGV_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellContentClick
-
-    End Sub
-
-    Private Sub LbContador7_Click(sender As Object, e As EventArgs) Handles LbContador7.Click
-
-    End Sub
-
-    Private Sub LbContador6_Click(sender As Object, e As EventArgs) Handles LbContador6.Click
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
     End Sub
 End Class
