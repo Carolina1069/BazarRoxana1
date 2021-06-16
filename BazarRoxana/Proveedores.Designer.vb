@@ -22,11 +22,13 @@ Partial Class Proveedores
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Labelcontador7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         Me.DGVProveedores = New System.Windows.Forms.DataGridView()
@@ -37,7 +39,21 @@ Partial Class Proveedores
         Me.btGuardar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Labelcontador6 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Labelcontador5 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Labelcontador4 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Labelcontador3 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Labelcontador2 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Labelcontador1 = New System.Windows.Forms.Label()
+        Me.LlContador1 = New System.Windows.Forms.Label()
+        Me.LbContador = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.chkEstado = New System.Windows.Forms.CheckBox()
         Me.RTBDirec = New System.Windows.Forms.RichTextBox()
@@ -45,17 +61,17 @@ Partial Class Proveedores
         Me.TxtCorreoProv = New System.Windows.Forms.TextBox()
         Me.lbCorreoProve = New System.Windows.Forms.Label()
         Me.txtTelProv = New System.Windows.Forms.TextBox()
-        Me.lbTelProvee = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.lbDireccProvee = New System.Windows.Forms.Label()
         Me.txCorreoEmpresa = New System.Windows.Forms.TextBox()
         Me.txtNombrePreEm = New System.Windows.Forms.TextBox()
         Me.txNomProv = New System.Windows.Forms.TextBox()
         Me.lbNomDistri = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.lbTel = New System.Windows.Forms.Label()
-        Me.lbCorreoProv = New System.Windows.Forms.Label()
         Me.lbCodigoProv = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.txCodProve = New System.Windows.Forms.TextBox()
-        Me.lbNombreProv = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGVProveedores, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,6 +82,8 @@ Partial Class Proveedores
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.DarkGray
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Labelcontador7)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.TxtBusqueda)
         Me.GroupBox1.Controls.Add(Me.DGVProveedores)
@@ -79,10 +97,36 @@ Partial Class Proveedores
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(1185, 370)
+        Me.GroupBox1.Size = New System.Drawing.Size(1359, 370)
         Me.GroupBox1.TabIndex = 53
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Busqueda de Proveedor"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(851, 44)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(35, 24)
+        Me.Label6.TabIndex = 92
+        Me.Label6.Text = "/50"
+        '
+        'Labelcontador7
+        '
+        Me.Labelcontador7.AutoSize = True
+        Me.Labelcontador7.BackColor = System.Drawing.Color.Transparent
+        Me.Labelcontador7.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Labelcontador7.ForeColor = System.Drawing.Color.Black
+        Me.Labelcontador7.Location = New System.Drawing.Point(822, 44)
+        Me.Labelcontador7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Labelcontador7.Name = "Labelcontador7"
+        Me.Labelcontador7.Size = New System.Drawing.Size(21, 24)
+        Me.Labelcontador7.TabIndex = 91
+        Me.Labelcontador7.Text = "0"
         '
         'Label5
         '
@@ -100,11 +144,11 @@ Partial Class Proveedores
         '
         Me.TxtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtBusqueda.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.TxtBusqueda.Location = New System.Drawing.Point(427, 45)
+        Me.TxtBusqueda.Location = New System.Drawing.Point(465, 44)
         Me.TxtBusqueda.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtBusqueda.MaxLength = 20
+        Me.TxtBusqueda.MaxLength = 50
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(252, 25)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(349, 25)
         Me.TxtBusqueda.TabIndex = 80
         '
         'DGVProveedores
@@ -114,23 +158,23 @@ Partial Class Proveedores
         Me.DGVProveedores.BackgroundColor = System.Drawing.SystemColors.ScrollBar
         Me.DGVProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGVProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVProveedores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle29.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle29.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVProveedores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
         Me.DGVProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVProveedores.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle30.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVProveedores.DefaultCellStyle = DataGridViewCellStyle30
         Me.DGVProveedores.EnableHeadersVisualStyles = False
         Me.DGVProveedores.GridColor = System.Drawing.SystemColors.ControlLight
         Me.DGVProveedores.Location = New System.Drawing.Point(58, 83)
@@ -138,28 +182,28 @@ Partial Class Proveedores
         Me.DGVProveedores.Name = "DGVProveedores"
         Me.DGVProveedores.ReadOnly = True
         Me.DGVProveedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVProveedores.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle31.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle31.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVProveedores.RowHeadersDefaultCellStyle = DataGridViewCellStyle31
         Me.DGVProveedores.RowHeadersWidth = 51
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.DGVProveedores.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.ScrollBar
+        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White
+        Me.DGVProveedores.RowsDefaultCellStyle = DataGridViewCellStyle32
         Me.DGVProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVProveedores.Size = New System.Drawing.Size(1069, 222)
+        Me.DGVProveedores.Size = New System.Drawing.Size(1248, 222)
         Me.DGVProveedores.TabIndex = 72
         '
         'chkInhabil
         '
         Me.chkInhabil.AutoSize = True
-        Me.chkInhabil.Location = New System.Drawing.Point(785, 33)
+        Me.chkInhabil.Location = New System.Drawing.Point(969, 33)
         Me.chkInhabil.Margin = New System.Windows.Forms.Padding(4)
         Me.chkInhabil.Name = "chkInhabil"
         Me.chkInhabil.Size = New System.Drawing.Size(147, 28)
@@ -169,7 +213,7 @@ Partial Class Proveedores
         '
         'btActualizarTabla
         '
-        Me.btActualizarTabla.Location = New System.Drawing.Point(940, 20)
+        Me.btActualizarTabla.Location = New System.Drawing.Point(1132, 21)
         Me.btActualizarTabla.Margin = New System.Windows.Forms.Padding(4)
         Me.btActualizarTabla.Name = "btActualizarTabla"
         Me.btActualizarTabla.Size = New System.Drawing.Size(165, 48)
@@ -179,7 +223,7 @@ Partial Class Proveedores
         '
         'btEliminar
         '
-        Me.btEliminar.Location = New System.Drawing.Point(1011, 314)
+        Me.btEliminar.Location = New System.Drawing.Point(1181, 313)
         Me.btEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.btEliminar.Name = "btEliminar"
         Me.btEliminar.Size = New System.Drawing.Size(116, 48)
@@ -189,7 +233,7 @@ Partial Class Proveedores
         '
         'btActualizar
         '
-        Me.btActualizar.Location = New System.Drawing.Point(538, 314)
+        Me.btActualizar.Location = New System.Drawing.Point(658, 314)
         Me.btActualizar.Margin = New System.Windows.Forms.Padding(4)
         Me.btActualizar.Name = "btActualizar"
         Me.btActualizar.Size = New System.Drawing.Size(116, 48)
@@ -211,7 +255,7 @@ Partial Class Proveedores
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
-        Me.PictureBox1.Location = New System.Drawing.Point(903, 15)
+        Me.PictureBox1.Location = New System.Drawing.Point(1079, 13)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(327, 119)
@@ -223,7 +267,21 @@ Partial Class Proveedores
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Controls.Add(Me.Labelcontador6)
+        Me.GroupBox2.Controls.Add(Me.Label11)
+        Me.GroupBox2.Controls.Add(Me.Labelcontador5)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.Labelcontador4)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.Labelcontador3)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.Labelcontador2)
+        Me.GroupBox2.Controls.Add(Me.Label2)
+        Me.GroupBox2.Controls.Add(Me.Labelcontador1)
+        Me.GroupBox2.Controls.Add(Me.LlContador1)
+        Me.GroupBox2.Controls.Add(Me.LbContador)
+        Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.BtnLimpiar)
         Me.GroupBox2.Controls.Add(Me.chkEstado)
         Me.GroupBox2.Controls.Add(Me.RTBDirec)
@@ -231,43 +289,225 @@ Partial Class Proveedores
         Me.GroupBox2.Controls.Add(Me.TxtCorreoProv)
         Me.GroupBox2.Controls.Add(Me.lbCorreoProve)
         Me.GroupBox2.Controls.Add(Me.txtTelProv)
-        Me.GroupBox2.Controls.Add(Me.lbTelProvee)
+        Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.lbDireccProvee)
         Me.GroupBox2.Controls.Add(Me.txCorreoEmpresa)
         Me.GroupBox2.Controls.Add(Me.txtNombrePreEm)
         Me.GroupBox2.Controls.Add(Me.txNomProv)
         Me.GroupBox2.Controls.Add(Me.lbNomDistri)
+        Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.lbTel)
-        Me.GroupBox2.Controls.Add(Me.lbCorreoProv)
         Me.GroupBox2.Controls.Add(Me.lbCodigoProv)
+        Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.txCodProve)
-        Me.GroupBox2.Controls.Add(Me.lbNombreProv)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(31, 132)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox2.Size = New System.Drawing.Size(1184, 277)
+        Me.GroupBox2.Size = New System.Drawing.Size(1357, 277)
         Me.GroupBox2.TabIndex = 69
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Proveedor"
         '
-        'Label4
+        'Label13
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(705, 112)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(192, 24)
-        Me.Label4.TabIndex = 86
-        Me.Label4.Text = "Estado del proveedor"
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Transparent
+        Me.Label13.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(734, 164)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(46, 24)
+        Me.Label13.TabIndex = 100
+        Me.Label13.Text = "/500"
+        '
+        'Labelcontador6
+        '
+        Me.Labelcontador6.AutoSize = True
+        Me.Labelcontador6.BackColor = System.Drawing.Color.Transparent
+        Me.Labelcontador6.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Labelcontador6.ForeColor = System.Drawing.Color.Black
+        Me.Labelcontador6.Location = New System.Drawing.Point(705, 164)
+        Me.Labelcontador6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Labelcontador6.Name = "Labelcontador6"
+        Me.Labelcontador6.Size = New System.Drawing.Size(21, 24)
+        Me.Labelcontador6.TabIndex = 99
+        Me.Labelcontador6.Text = "0"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label11.ForeColor = System.Drawing.Color.Black
+        Me.Label11.Location = New System.Drawing.Point(607, 115)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(44, 24)
+        Me.Label11.TabIndex = 98
+        Me.Label11.Text = "/100"
+        '
+        'Labelcontador5
+        '
+        Me.Labelcontador5.AutoSize = True
+        Me.Labelcontador5.BackColor = System.Drawing.Color.Transparent
+        Me.Labelcontador5.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Labelcontador5.ForeColor = System.Drawing.Color.Black
+        Me.Labelcontador5.Location = New System.Drawing.Point(578, 115)
+        Me.Labelcontador5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Labelcontador5.Name = "Labelcontador5"
+        Me.Labelcontador5.Size = New System.Drawing.Size(21, 24)
+        Me.Labelcontador5.TabIndex = 97
+        Me.Labelcontador5.Text = "0"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Transparent
+        Me.Label9.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label9.ForeColor = System.Drawing.Color.Black
+        Me.Label9.Location = New System.Drawing.Point(603, 82)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(35, 24)
+        Me.Label9.TabIndex = 96
+        Me.Label9.Text = "/50"
+        '
+        'Labelcontador4
+        '
+        Me.Labelcontador4.AutoSize = True
+        Me.Labelcontador4.BackColor = System.Drawing.Color.Transparent
+        Me.Labelcontador4.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Labelcontador4.ForeColor = System.Drawing.Color.Black
+        Me.Labelcontador4.Location = New System.Drawing.Point(578, 82)
+        Me.Labelcontador4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Labelcontador4.Name = "Labelcontador4"
+        Me.Labelcontador4.Size = New System.Drawing.Size(21, 24)
+        Me.Labelcontador4.TabIndex = 95
+        Me.Labelcontador4.Text = "0"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Transparent
+        Me.Label7.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(1273, 89)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(26, 24)
+        Me.Label7.TabIndex = 94
+        Me.Label7.Text = "/8"
+        '
+        'Labelcontador3
+        '
+        Me.Labelcontador3.AutoSize = True
+        Me.Labelcontador3.BackColor = System.Drawing.Color.Transparent
+        Me.Labelcontador3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Labelcontador3.ForeColor = System.Drawing.Color.Black
+        Me.Labelcontador3.Location = New System.Drawing.Point(1244, 87)
+        Me.Labelcontador3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Labelcontador3.Name = "Labelcontador3"
+        Me.Labelcontador3.Size = New System.Drawing.Size(21, 24)
+        Me.Labelcontador3.TabIndex = 93
+        Me.Labelcontador3.Text = "0"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(1269, 54)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(44, 24)
+        Me.Label3.TabIndex = 92
+        Me.Label3.Text = "/100"
+        '
+        'Labelcontador2
+        '
+        Me.Labelcontador2.AutoSize = True
+        Me.Labelcontador2.BackColor = System.Drawing.Color.Transparent
+        Me.Labelcontador2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Labelcontador2.ForeColor = System.Drawing.Color.Black
+        Me.Labelcontador2.Location = New System.Drawing.Point(1244, 55)
+        Me.Labelcontador2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Labelcontador2.Name = "Labelcontador2"
+        Me.Labelcontador2.Size = New System.Drawing.Size(21, 24)
+        Me.Labelcontador2.TabIndex = 91
+        Me.Labelcontador2.Text = "0"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(1269, 23)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(35, 24)
+        Me.Label2.TabIndex = 90
+        Me.Label2.Text = "/50"
+        '
+        'Labelcontador1
+        '
+        Me.Labelcontador1.AutoSize = True
+        Me.Labelcontador1.BackColor = System.Drawing.Color.Transparent
+        Me.Labelcontador1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Labelcontador1.ForeColor = System.Drawing.Color.Black
+        Me.Labelcontador1.Location = New System.Drawing.Point(1244, 23)
+        Me.Labelcontador1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Labelcontador1.Name = "Labelcontador1"
+        Me.Labelcontador1.Size = New System.Drawing.Size(21, 24)
+        Me.Labelcontador1.TabIndex = 89
+        Me.Labelcontador1.Text = "0"
+        '
+        'LlContador1
+        '
+        Me.LlContador1.AutoSize = True
+        Me.LlContador1.BackColor = System.Drawing.Color.Transparent
+        Me.LlContador1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LlContador1.ForeColor = System.Drawing.Color.Black
+        Me.LlContador1.Location = New System.Drawing.Point(603, 54)
+        Me.LlContador1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LlContador1.Name = "LlContador1"
+        Me.LlContador1.Size = New System.Drawing.Size(26, 24)
+        Me.LlContador1.TabIndex = 88
+        Me.LlContador1.Text = "/8"
+        '
+        'LbContador
+        '
+        Me.LbContador.AutoSize = True
+        Me.LbContador.BackColor = System.Drawing.Color.Transparent
+        Me.LbContador.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LbContador.ForeColor = System.Drawing.Color.Black
+        Me.LbContador.Location = New System.Drawing.Point(578, 54)
+        Me.LbContador.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LbContador.Name = "LbContador"
+        Me.LbContador.Size = New System.Drawing.Size(21, 24)
+        Me.LbContador.TabIndex = 87
+        Me.LbContador.Text = "0"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.Transparent
+        Me.Label14.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(749, 112)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(192, 24)
+        Me.Label14.TabIndex = 86
+        Me.Label14.Text = "Estado del proveedor"
         '
         'BtnLimpiar
         '
         Me.BtnLimpiar.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnLimpiar.Location = New System.Drawing.Point(938, 201)
+        Me.BtnLimpiar.Location = New System.Drawing.Point(1130, 203)
         Me.BtnLimpiar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnLimpiar.Name = "BtnLimpiar"
         Me.BtnLimpiar.Size = New System.Drawing.Size(165, 48)
@@ -280,7 +520,7 @@ Partial Class Proveedores
         Me.chkEstado.AutoSize = True
         Me.chkEstado.BackColor = System.Drawing.Color.Transparent
         Me.chkEstado.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.chkEstado.Location = New System.Drawing.Point(900, 111)
+        Me.chkEstado.Location = New System.Drawing.Point(967, 116)
         Me.chkEstado.Margin = New System.Windows.Forms.Padding(4)
         Me.chkEstado.Name = "chkEstado"
         Me.chkEstado.Size = New System.Drawing.Size(228, 28)
@@ -291,9 +531,9 @@ Partial Class Proveedores
         'RTBDirec
         '
         Me.RTBDirec.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.RTBDirec.Location = New System.Drawing.Point(331, 151)
+        Me.RTBDirec.Location = New System.Drawing.Point(367, 151)
         Me.RTBDirec.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.RTBDirec.MaxLength = 150
+        Me.RTBDirec.MaxLength = 500
         Me.RTBDirec.Name = "RTBDirec"
         Me.RTBDirec.Size = New System.Drawing.Size(327, 111)
         Me.RTBDirec.TabIndex = 83
@@ -302,9 +542,9 @@ Partial Class Proveedores
         'TxtTelfonoEmpresa
         '
         Me.TxtTelfonoEmpresa.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.TxtTelfonoEmpresa.Location = New System.Drawing.Point(331, 52)
+        Me.TxtTelfonoEmpresa.Location = New System.Drawing.Point(367, 52)
         Me.TxtTelfonoEmpresa.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtTelfonoEmpresa.MaxLength = 11
+        Me.TxtTelfonoEmpresa.MaxLength = 8
         Me.TxtTelfonoEmpresa.Name = "TxtTelfonoEmpresa"
         Me.TxtTelfonoEmpresa.Size = New System.Drawing.Size(203, 32)
         Me.TxtTelfonoEmpresa.TabIndex = 82
@@ -312,9 +552,9 @@ Partial Class Proveedores
         'TxtCorreoProv
         '
         Me.TxtCorreoProv.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.TxtCorreoProv.Location = New System.Drawing.Point(331, 116)
+        Me.TxtCorreoProv.Location = New System.Drawing.Point(367, 116)
         Me.TxtCorreoProv.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtCorreoProv.MaxLength = 50
+        Me.TxtCorreoProv.MaxLength = 100
         Me.TxtCorreoProv.Name = "TxtCorreoProv"
         Me.TxtCorreoProv.Size = New System.Drawing.Size(203, 32)
         Me.TxtCorreoProv.TabIndex = 81
@@ -334,24 +574,24 @@ Partial Class Proveedores
         'txtTelProv
         '
         Me.txtTelProv.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtTelProv.Location = New System.Drawing.Point(900, 80)
+        Me.txtTelProv.Location = New System.Drawing.Point(967, 81)
         Me.txtTelProv.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtTelProv.MaxLength = 11
+        Me.txtTelProv.MaxLength = 8
         Me.txtTelProv.Name = "txtTelProv"
-        Me.txtTelProv.Size = New System.Drawing.Size(185, 32)
+        Me.txtTelProv.Size = New System.Drawing.Size(269, 32)
         Me.txtTelProv.TabIndex = 79
         '
-        'lbTelProvee
+        'Label12
         '
-        Me.lbTelProvee.AutoSize = True
-        Me.lbTelProvee.BackColor = System.Drawing.Color.Transparent
-        Me.lbTelProvee.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lbTelProvee.Location = New System.Drawing.Point(692, 80)
-        Me.lbTelProvee.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbTelProvee.Name = "lbTelProvee"
-        Me.lbTelProvee.Size = New System.Drawing.Size(209, 24)
-        Me.lbTelProvee.TabIndex = 78
-        Me.lbTelProvee.Text = "Teléfono del proveedor"
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label12.Location = New System.Drawing.Point(732, 84)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(209, 24)
+        Me.Label12.TabIndex = 78
+        Me.Label12.Text = "Teléfono del proveedor"
         '
         'lbDireccProvee
         '
@@ -368,31 +608,31 @@ Partial Class Proveedores
         'txCorreoEmpresa
         '
         Me.txCorreoEmpresa.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txCorreoEmpresa.Location = New System.Drawing.Point(900, 48)
+        Me.txCorreoEmpresa.Location = New System.Drawing.Point(967, 49)
         Me.txCorreoEmpresa.Margin = New System.Windows.Forms.Padding(4)
-        Me.txCorreoEmpresa.MaxLength = 50
+        Me.txCorreoEmpresa.MaxLength = 100
         Me.txCorreoEmpresa.Name = "txCorreoEmpresa"
-        Me.txCorreoEmpresa.Size = New System.Drawing.Size(185, 32)
+        Me.txCorreoEmpresa.Size = New System.Drawing.Size(269, 32)
         Me.txCorreoEmpresa.TabIndex = 76
         '
         'txtNombrePreEm
         '
         Me.txtNombrePreEm.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtNombrePreEm.Location = New System.Drawing.Point(331, 84)
+        Me.txtNombrePreEm.Location = New System.Drawing.Point(367, 84)
         Me.txtNombrePreEm.Margin = New System.Windows.Forms.Padding(4)
         Me.txtNombrePreEm.MaxLength = 50
         Me.txtNombrePreEm.Name = "txtNombrePreEm"
         Me.txtNombrePreEm.Size = New System.Drawing.Size(203, 32)
-        Me.txtNombrePreEm.TabIndex = 75
+        Me.txtNombrePreEm.TabIndex = 50
         '
         'txNomProv
         '
         Me.txNomProv.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txNomProv.Location = New System.Drawing.Point(900, 16)
+        Me.txNomProv.Location = New System.Drawing.Point(967, 17)
         Me.txNomProv.Margin = New System.Windows.Forms.Padding(4)
-        Me.txNomProv.MaxLength = 35
+        Me.txNomProv.MaxLength = 50
         Me.txNomProv.Name = "txNomProv"
-        Me.txNomProv.Size = New System.Drawing.Size(185, 32)
+        Me.txNomProv.Size = New System.Drawing.Size(269, 32)
         Me.txNomProv.TabIndex = 74
         '
         'lbNomDistri
@@ -407,6 +647,18 @@ Partial Class Proveedores
         Me.lbNomDistri.TabIndex = 73
         Me.lbNomDistri.Text = "Nombre del proveedor(empleado(a))"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label10.Location = New System.Drawing.Point(652, 51)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(295, 24)
+        Me.Label10.TabIndex = 71
+        Me.Label10.Text = "Correo de la empresa proveedora" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
         'lbTel
         '
         Me.lbTel.AutoSize = True
@@ -418,18 +670,6 @@ Partial Class Proveedores
         Me.lbTel.Size = New System.Drawing.Size(311, 24)
         Me.lbTel.TabIndex = 72
         Me.lbTel.Text = "Teléfono de la empresa proveedora" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'lbCorreoProv
-        '
-        Me.lbCorreoProv.AutoSize = True
-        Me.lbCorreoProv.BackColor = System.Drawing.Color.Transparent
-        Me.lbCorreoProv.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lbCorreoProv.Location = New System.Drawing.Point(606, 51)
-        Me.lbCorreoProv.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbCorreoProv.Name = "lbCorreoProv"
-        Me.lbCorreoProv.Size = New System.Drawing.Size(295, 24)
-        Me.lbCorreoProv.TabIndex = 71
-        Me.lbCorreoProv.Text = "Correo de la empresa proveedora" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'lbCodigoProv
         '
@@ -443,26 +683,27 @@ Partial Class Proveedores
         Me.lbCodigoProv.TabIndex = 70
         Me.lbCodigoProv.Text = "Código del proveedor"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label8.Location = New System.Drawing.Point(635, 20)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(306, 24)
+        Me.Label8.TabIndex = 68
+        Me.Label8.Text = "Nombre de la empresa proveedora"
+        '
         'txCodProve
         '
+        Me.txCodProve.Enabled = False
         Me.txCodProve.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txCodProve.Location = New System.Drawing.Point(331, 20)
+        Me.txCodProve.Location = New System.Drawing.Point(367, 20)
         Me.txCodProve.Margin = New System.Windows.Forms.Padding(4)
         Me.txCodProve.Name = "txCodProve"
         Me.txCodProve.Size = New System.Drawing.Size(116, 32)
         Me.txCodProve.TabIndex = 69
-        '
-        'lbNombreProv
-        '
-        Me.lbNombreProv.AutoSize = True
-        Me.lbNombreProv.BackColor = System.Drawing.Color.Transparent
-        Me.lbNombreProv.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lbNombreProv.Location = New System.Drawing.Point(595, 20)
-        Me.lbNombreProv.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lbNombreProv.Name = "lbNombreProv"
-        Me.lbNombreProv.Size = New System.Drawing.Size(306, 24)
-        Me.lbNombreProv.TabIndex = 68
-        Me.lbNombreProv.Text = "Nombre de la empresa proveedora"
         '
         'Label1
         '
@@ -481,7 +722,7 @@ Partial Class Proveedores
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.ClientSize = New System.Drawing.Size(1245, 800)
+        Me.ClientSize = New System.Drawing.Size(1419, 838)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
@@ -514,21 +755,37 @@ Partial Class Proveedores
     Friend WithEvents TxtCorreoProv As TextBox
     Friend WithEvents lbCorreoProve As Label
     Friend WithEvents txtTelProv As TextBox
-    Friend WithEvents lbTelProvee As Label
     Friend WithEvents lbDireccProvee As Label
     Friend WithEvents txCorreoEmpresa As TextBox
     Friend WithEvents txtNombrePreEm As TextBox
     Friend WithEvents txNomProv As TextBox
     Friend WithEvents lbNomDistri As Label
     Friend WithEvents lbTel As Label
-    Friend WithEvents lbCorreoProv As Label
     Friend WithEvents lbCodigoProv As Label
     Friend WithEvents txCodProve As TextBox
-    Friend WithEvents lbNombreProv As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents DGVProveedores As DataGridView
     Friend WithEvents BtnLimpiar As Button
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents TxtBusqueda As TextBox
+    Friend WithEvents LlContador1 As Label
+    Friend WithEvents LbContador As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Labelcontador1 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Labelcontador6 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Labelcontador5 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Labelcontador4 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Labelcontador3 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Labelcontador2 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Labelcontador7 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label8 As Label
 End Class
