@@ -105,6 +105,12 @@
     <Compile Include="BazarRoxana.vb">
       <DependentUpon>BazarRoxana.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BuscarCliente.Designer.vb">
+      <DependentUpon>BuscarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Categorias.Designer.vb">
       <DependentUpon>Categorias.vb</DependentUpon>
     </Compile>
@@ -263,6 +269,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BuscarCliente.resx">
+      <DependentUpon>BuscarCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Categorias.resx">
       <DependentUpon>Categorias.vb</DependentUpon>
     </EmbeddedResource>

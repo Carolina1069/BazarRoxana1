@@ -1,91 +1,21 @@
 ﻿Imports System.Data.SqlClient
 Public Class Ventas
     Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles TxtCodCli.TextChanged
-        abrir()
-        Dim Recuperar As String = "select * from Clientes where CodCli= '" & TxtCodCli.Text & "'"
-        Dim Mostrar As SqlDataReader
-        Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conexion)
-        Mostrar = Ejecutar.ExecuteReader
-        Dim Estado As String
-        Estado = Mostrar.Read
-        If (Estado = True) Then
-            TxtNombreCliente.Text = Mostrar(1)
-        Else
-            TxtNombreCliente.Text = ""
-        End If
-        Mostrar.Close()
-        conexion.Close()
-    End Sub
-
-    Private Sub TxtCodEmple_TextChanged(sender As Object, e As EventArgs) Handles TxtCodEmple.TextChanged
-        abrir()
-        Dim Recuperar As String = "select * from Empleados where CodEmple= '" & TxtCodEmple.Text & "'"
-        Dim Mostrar As SqlDataReader
-        Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conexion)
-        Mostrar = Ejecutar.ExecuteReader
-        Dim Estado As String
-        Estado = Mostrar.Read
-        If (Estado = True) Then
-            TxtNombreEmpleado.Text = Mostrar(1)
-        Else
-            TxtNombreEmpleado.Text = ""
-        End If
-        Mostrar.Close()
-        conexion.Close()
-    End Sub
-
-    Private Sub TxtCodPago_TextChanged(sender As Object, e As EventArgs) Handles TxtCodPago.TextChanged
-        Dim pago As Integer
-        pago = Val(TxtCodPago.Text)
-        If pago >= 1 And pago <= 2 Or TxtCodPago.Text = "" Then
-            abrir()
-            Dim Recuperar As String = "select * from FormasPago where CodPago= '" & TxtCodPago.Text & "'"
-            Dim Mostrar As SqlDataReader
-            Dim Ejecutar As SqlCommand
-            Ejecutar = New SqlCommand(Recuperar, conexion)
-            Mostrar = Ejecutar.ExecuteReader
-            Dim Estado As String
-            Estado = Mostrar.Read
-            If (Estado = True) Then
-                TxtTipoPago.Text = Mostrar(1)
-            Else
-                TxtTipoPago.Text = ""
-            End If
-            Mostrar.Close()
-            conexion.Close()
-        Else
-            TxtCodPago.Clear()
-            MsgBox("Solo hay dos tipos de pago")
-        End If
-    End Sub
-
-    Private Sub TxtCodTransa_TextChanged(sender As Object, e As EventArgs) Handles TxtCodTransa.TextChanged
-        Dim tran As Integer
-        tran = Val(TxtCodTransa.Text)
-        If tran >= 1 And tran <= 3 Or TxtCodTransa.Text = "" Then
-
-            abrir()
-
-            Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & TxtCodTransa.Text & "'"
-            Dim Mostrar As SqlDataReader
-            Dim Ejecutar As SqlCommand
-            Ejecutar = New SqlCommand(Recuperar, conexion)
-            Mostrar = Ejecutar.ExecuteReader
-            Dim Estado As String
-            Estado = Mostrar.Read
-            If (Estado = True) Then
-                TxtTipoTransaccion.Text = Mostrar(1)
-            Else
-                TxtTipoTransaccion.Text = ""
-            End If
-            Mostrar.Close()
-            conexion.Close()
-        Else
-            TxtCodTransa.Clear()
-            MsgBox("Solo hay tres tipos de transaccion")
-        End If
+        'abrir()
+        'Dim Recuperar As String = "select * from Clientes where CodCli= '" & TxtCodCli.Text & "'"
+        'Dim Mostrar As SqlDataReader
+        'Dim Ejecutar As SqlCommand
+        'Ejecutar = New SqlCommand(Recuperar, conexion)
+        'Mostrar = Ejecutar.ExecuteReader
+        'Dim Estado As String
+        'Estado = Mostrar.Read
+        'If (Estado = True) Then
+        '    TxtNombreCliente.Text = Mostrar(1)
+        'Else
+        '    TxtNombreCliente.Text = ""
+        'End If
+        'Mostrar.Close()
+        'conexion.Close()
     End Sub
 
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProducto.TextChanged
@@ -174,17 +104,37 @@ Public Class Ventas
         Dim total As Integer
 
         abrir()
+        Dim TP As Integer
+        Dim TT As Integer
 
-        If TxtCodCli.Text = "" Or TxtCodPago.Text = "" Or TxtCodTransa.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
+        If TxtCodCli.Text = "" Or cbxTipoPago.Text = "" Or cbxTipoTransac.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
+            If cbxTipoPago.SelectedItem = "Crédito" Then
+                TP = 1
+
+            Else
+                TP = 2
+
+            End If
+            If cbxTipoTransac.SelectedItem = "Efectivo" Then
+                TT = 1
+
+            ElseIf cbxTipoTransac.SelectedItem = "Tarjeta de crédito" Then
+
+                TT = 2
+
+            Else
+                TT = 3
+            End If
+
             If RegistradoVentas(txNumVenta.Text) = False Then
                 Dim ConsultaGuardar As String = "insert into Ventas(NumVent, CodCli, CodPago, CodTransa, CodEmple, FechayHoraVenta,Total) values(@NumVent, @CodCli, @CodPago, @CodTransa, @CodEmple, GETDATE(), @Total)"
                 Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
                 ejecutar.Parameters.AddWithValue("@NumVent", Val(txNumVenta.Text))
                 ejecutar.Parameters.AddWithValue("@CodCli", Val(TxtCodCli.Text))
-                ejecutar.Parameters.AddWithValue("@CodPago", Val(TxtCodPago.Text))
-                ejecutar.Parameters.AddWithValue("@CodTransa", Val(TxtCodTransa.Text))
+                ejecutar.Parameters.AddWithValue("@CodPago", TP)
+                ejecutar.Parameters.AddWithValue("@CodTransa", TT)
                 ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodEmple.Text))
                 ejecutar.Parameters.AddWithValue("@Total", Val(TxtTotal.Text))
                 ejecutar.ExecuteNonQuery()
@@ -226,10 +176,7 @@ Public Class Ventas
                 TxtNombreEmpleado.Clear()
                 TxtNombreCliente.Clear()
                 TxtNombreProducto.Clear()
-                TxtTipoPago.Clear()
-                TxtTipoTransaccion.Clear()
-                TxtCodTransa.Clear()
-                TxtCodPago.Clear()
+
                 total = 0
                 'FacturaVenta.Show()
             Else
@@ -263,11 +210,11 @@ Public Class Ventas
         SoloNumeros(e)
     End Sub
 
-    Private Sub TxtCodPago_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodPago.KeyPress
+    Private Sub TxtCodPago_KeyPress(sender As Object, e As KeyPressEventArgs)
         SoloNumeros(e)
     End Sub
 
-    Private Sub TxtCodTransa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodTransa.KeyPress
+    Private Sub TxtCodTransa_KeyPress(sender As Object, e As KeyPressEventArgs)
         SoloNumeros(e)
     End Sub
 
@@ -284,6 +231,43 @@ Public Class Ventas
     End Sub
 
     Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TxtCodEmple.Text = Login.txtNombreEmpleado.Text
+        lbUsuario.Text = Login.txtNombreEmpleado.Text
+
+        'TxtCodCli.Text = BuscarCliente.codcli.Text
+        'TxtNombreCliente.Text = BuscarCliente.nombcli.Text
+    End Sub
+
+    Private Sub lbUsuario_TextChanged(sender As Object, e As EventArgs) Handles lbUsuario.TextChanged
+        abrir()
+        Dim Recuperar As String = "select * from Empleados where UsuarioEmple= '" & lbUsuario.Text & "'"
+        Dim Mostrar As SqlDataReader
+        Dim Ejecutar As SqlCommand
+        Ejecutar = New SqlCommand(Recuperar, conexion)
+        Mostrar = Ejecutar.ExecuteReader
+        Dim Estado As String
+        Estado = Mostrar.Read
+
+        If (Estado = True) Then
+
+            TxtCodEmple.Text = Mostrar(0)
+            TxtNombreEmpleado.Text = Mostrar(1)
+
+        Else
+            TxtCodEmple.Text = ""
+            TxtNombreEmpleado.Text = ""
+        End If
+        Mostrar.Close()
+        conexion.Close()
+    End Sub
+
+    Private Sub TxtCantidad_TextChanged(sender As Object, e As EventArgs) Handles TxtCantidad.TextChanged
+        LbContador.Text = TxtCantidad.Text.Length
+    End Sub
+
+    Private Sub btnBusqCliente_Click(sender As Object, e As EventArgs) Handles btnBusqCliente.Click
+
+        BuscarCliente.Show()
 
     End Sub
 End Class

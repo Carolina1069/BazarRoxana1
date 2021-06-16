@@ -87,7 +87,7 @@ Partial Class Login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtContrasena.BackColor = System.Drawing.SystemColors.Control
         Me.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtContrasena.Location = New System.Drawing.Point(2, 2)
+        Me.txtContrasena.Location = New System.Drawing.Point(2, 5)
         Me.txtContrasena.Margin = New System.Windows.Forms.Padding(2)
         Me.txtContrasena.Multiline = True
         Me.txtContrasena.Name = "txtContrasena"
@@ -100,7 +100,7 @@ Partial Class Login
         Me.txtNombreEmpleado.BackColor = System.Drawing.SystemColors.Control
         Me.txtNombreEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtNombreEmpleado.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.txtNombreEmpleado.Location = New System.Drawing.Point(2, 2)
+        Me.txtNombreEmpleado.Location = New System.Drawing.Point(2, 7)
         Me.txtNombreEmpleado.Margin = New System.Windows.Forms.Padding(2)
         Me.txtNombreEmpleado.Multiline = True
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"

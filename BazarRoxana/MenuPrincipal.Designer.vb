@@ -112,7 +112,7 @@ Partial Class MenuPrincipal
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(968, 89)
+        Me.Label3.Location = New System.Drawing.Point(925, 89)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(54, 19)
         Me.Label3.TabIndex = 76
@@ -134,7 +134,7 @@ Partial Class MenuPrincipal
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(968, 56)
+        Me.Label2.Location = New System.Drawing.Point(925, 56)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(54, 19)
         Me.Label2.TabIndex = 75
@@ -144,7 +144,7 @@ Partial Class MenuPrincipal
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(968, 26)
+        Me.Label1.Location = New System.Drawing.Point(925, 26)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(51, 19)
         Me.Label1.TabIndex = 74
