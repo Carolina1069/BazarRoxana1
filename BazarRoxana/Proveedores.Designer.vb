@@ -22,10 +22,10 @@ Partial Class Proveedores
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Labelcontador7 = New System.Windows.Forms.Label()
@@ -158,23 +158,23 @@ Partial Class Proveedores
         Me.DGVProveedores.BackgroundColor = System.Drawing.SystemColors.ScrollBar
         Me.DGVProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGVProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle29.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle29.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVProveedores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVProveedores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DGVProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle30.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVProveedores.DefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVProveedores.DefaultCellStyle = DataGridViewCellStyle6
         Me.DGVProveedores.EnableHeadersVisualStyles = False
         Me.DGVProveedores.GridColor = System.Drawing.SystemColors.ControlLight
         Me.DGVProveedores.Location = New System.Drawing.Point(58, 83)
@@ -182,20 +182,20 @@ Partial Class Proveedores
         Me.DGVProveedores.Name = "DGVProveedores"
         Me.DGVProveedores.ReadOnly = True
         Me.DGVProveedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle31.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle31.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVProveedores.RowHeadersDefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVProveedores.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DGVProveedores.RowHeadersWidth = 51
-        DataGridViewCellStyle32.BackColor = System.Drawing.SystemColors.ScrollBar
-        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White
-        Me.DGVProveedores.RowsDefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ScrollBar
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        Me.DGVProveedores.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.DGVProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVProveedores.Size = New System.Drawing.Size(1248, 222)
         Me.DGVProveedores.TabIndex = 72
@@ -524,7 +524,7 @@ Partial Class Proveedores
         Me.chkEstado.Margin = New System.Windows.Forms.Padding(4)
         Me.chkEstado.Name = "chkEstado"
         Me.chkEstado.Size = New System.Drawing.Size(228, 28)
-        Me.chkEstado.TabIndex = 84
+        Me.chkEstado.TabIndex = 8
         Me.chkEstado.Text = "Habilitado/Inhabilitado"
         Me.chkEstado.UseVisualStyleBackColor = False
         '
@@ -536,7 +536,7 @@ Partial Class Proveedores
         Me.RTBDirec.MaxLength = 500
         Me.RTBDirec.Name = "RTBDirec"
         Me.RTBDirec.Size = New System.Drawing.Size(327, 111)
-        Me.RTBDirec.TabIndex = 83
+        Me.RTBDirec.TabIndex = 7
         Me.RTBDirec.Text = ""
         '
         'TxtTelfonoEmpresa
@@ -547,7 +547,7 @@ Partial Class Proveedores
         Me.TxtTelfonoEmpresa.MaxLength = 8
         Me.TxtTelfonoEmpresa.Name = "TxtTelfonoEmpresa"
         Me.TxtTelfonoEmpresa.Size = New System.Drawing.Size(203, 32)
-        Me.TxtTelfonoEmpresa.TabIndex = 82
+        Me.TxtTelfonoEmpresa.TabIndex = 2
         '
         'TxtCorreoProv
         '
@@ -557,7 +557,7 @@ Partial Class Proveedores
         Me.TxtCorreoProv.MaxLength = 100
         Me.TxtCorreoProv.Name = "TxtCorreoProv"
         Me.TxtCorreoProv.Size = New System.Drawing.Size(203, 32)
-        Me.TxtCorreoProv.TabIndex = 81
+        Me.TxtCorreoProv.TabIndex = 6
         '
         'lbCorreoProve
         '
@@ -579,7 +579,7 @@ Partial Class Proveedores
         Me.txtTelProv.MaxLength = 8
         Me.txtTelProv.Name = "txtTelProv"
         Me.txtTelProv.Size = New System.Drawing.Size(269, 32)
-        Me.txtTelProv.TabIndex = 79
+        Me.txtTelProv.TabIndex = 5
         '
         'Label12
         '
@@ -613,7 +613,7 @@ Partial Class Proveedores
         Me.txCorreoEmpresa.MaxLength = 100
         Me.txCorreoEmpresa.Name = "txCorreoEmpresa"
         Me.txCorreoEmpresa.Size = New System.Drawing.Size(269, 32)
-        Me.txCorreoEmpresa.TabIndex = 76
+        Me.txCorreoEmpresa.TabIndex = 3
         '
         'txtNombrePreEm
         '
@@ -623,7 +623,7 @@ Partial Class Proveedores
         Me.txtNombrePreEm.MaxLength = 50
         Me.txtNombrePreEm.Name = "txtNombrePreEm"
         Me.txtNombrePreEm.Size = New System.Drawing.Size(203, 32)
-        Me.txtNombrePreEm.TabIndex = 50
+        Me.txtNombrePreEm.TabIndex = 4
         '
         'txNomProv
         '
@@ -633,7 +633,7 @@ Partial Class Proveedores
         Me.txNomProv.MaxLength = 50
         Me.txNomProv.Name = "txNomProv"
         Me.txNomProv.Size = New System.Drawing.Size(269, 32)
-        Me.txNomProv.TabIndex = 74
+        Me.txNomProv.TabIndex = 1
         '
         'lbNomDistri
         '

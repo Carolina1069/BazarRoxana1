@@ -47,39 +47,52 @@ Public Class Proveedores
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
         Try
-            Dim mail As New System.Net.Mail.MailAddress(txCorreoEmpresa.Text Or TxtCorreoProv.Text)
+            Dim mail As New System.Net.Mail.MailAddress(txCorreoEmpresa.Text)
+            Dim mail2 As New System.Net.Mail.MailAddress(TxtCorreoProv.Text)
+            abrir()
+            If (txNomProv.TextLength < 3) Then
+                MessageBox.Show("Debe ingresar como mínimo 3 letras en nombre de la empreaa proveedora.")
+            ElseIf (TxtTelfonoEmpresa.TextLength < 8) Then
+                MessageBox.Show("Debe ingresar como mínimo 8 números en el teléfono de la empresa proveedora.")
+            ElseIf (txCorreoEmpresa.TextLength < 10) Then
+                MessageBox.Show("Debe ingresar como mínimo 10 caracteres en el correo de la empresa.")
+            ElseIf (txtNombrePreEm.TextLength < 3) Then
+                MessageBox.Show("Debe ingresar como mínimo 3 letras en el nombre del proveedor(empleado(a)).")
+            ElseIf (txtTelProv.TextLength < 8) Then
+                MessageBox.Show("Debe ingresar como mínimo 8 números en el teléfono del proveedor.")
+            ElseIf (RTBDirec.TextLength < 8) Then
+                MessageBox.Show("Debe ingresar como mínimo 10 caracteres en la dirección de la empresa proveedora.")
+            Else
+                If txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Or chkEstado.Checked = False Then
+                    MsgBox("Hay campos vacios")
+                Else
+                    If RegistradoProveedores(txCodProve.Text) = False Then
+                        Dim ConsultaGuardar As String = "insert into Proveedores( NombProv,TelProv, NombContProv,CorreoProv, CorreoContProv, TelContProv, DirecProv,EstadoProv) values(@NombProv, @TelProv, @NombContProv, @CorreoProv, @CorreoContProv, @TelContProv, @DirecProv,1)"
+                        Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
+                        'ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
+                        ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
+                        ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
+                        ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
+                        ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
+                        ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
+                        ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
+                        ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
+
+                        ejecutar.ExecuteNonQuery()
+                        MsgBox("El proveedor se a guardado")
+                    Else
+                        MsgBox("El Proveedor ya esta registrado")
+                    End If
+                End If
+            End If
         Catch ex As Exception
-            'En caso de que el formato de la cadena sea incorrecto nos produce una exepcion
-            'del tipo FormatException, ni necesidad tenemos que escribir el mensaje de error
-            'simplemente lo obtenemos de la exepcion
+
             MessageBox.Show(ex.Message)
         End Try
-        abrir()
-        If (txNomProv.TextLength < 3) Then
-            MessageBox.Show("Debe ingresar como minimo 3 letras en nombre de la empreaa proveedora.")
-        End If
-        If txCodProve.Text = "" Or txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Or chkEstado.Checked = False Or DGVProveedores.Rows.Count = 0 Then
-            MsgBox("Hay campos vacios")
-        Else
-            If RegistradoProveedores(txCodProve.Text) = False Then
-                Dim ConsultaGuardar As String = "insert into Proveedores(CodProv, NombProv,TelProv, NombContProv,CorreoProv, CorreoContProv, TelContProv, DirecProv,EstadoProv) values(@CodProv, @NombProv, @TelProv, @NombContProv, @CorreoProv, @CorreoContProv, @TelContProv, @DirecProv,1)"
-                Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
-                ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
-                ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
-                ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
-                ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
-                ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
-                ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
-                ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
-                ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
 
-                ejecutar.ExecuteNonQuery()
-            Else
-                MsgBox("El Proveedor ya esta registrado")
-            End If
-        End If
 
-            Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
+
+        Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=1", conexion)
             adaptador.Fill(DatosProveedor)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
@@ -95,33 +108,57 @@ Public Class Proveedores
 
     Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles btActualizar.Click
         abrir()
-        Dim estado As Integer
+        Try
+            Dim mail As New System.Net.Mail.MailAddress(txCorreoEmpresa.Text)
+            Dim mail2 As New System.Net.Mail.MailAddress(TxtCorreoProv.Text)
+            abrir()
+            If (txNomProv.TextLength < 3) Then
+                MessageBox.Show("Debe ingresar como mínimo 3 letras en nombre de la empreaa proveedora.")
+            ElseIf (TxtTelfonoEmpresa.TextLength < 8) Then
+                MessageBox.Show("Debe ingresar como mínimo 8 números en el teléfono de la empresa proveedora.")
+            ElseIf (txCorreoEmpresa.TextLength < 10) Then
+                MessageBox.Show("Debe ingresar como mínimo 10 caracteres en el correo de la empresa.")
+            ElseIf (txtNombrePreEm.TextLength < 3) Then
+                MessageBox.Show("Debe ingresar como mínimo 3 letras en el nombre del proveedor(empleado(a)).")
+            ElseIf (txtTelProv.TextLength < 8) Then
+                MessageBox.Show("Debe ingresar como mínimo 8 números en el teléfono del proveedor.")
+            ElseIf (RTBDirec.TextLength < 8) Then
+                MessageBox.Show("Debe ingresar como mínimo 10 caracteres en la dirección de la empresa proveedora.")
+            Else
+                If txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Then
+                    MsgBox("Hay campos vacios")
+                Else
+                    Dim estado As Integer
 
-        If chkEstado.Checked = True Then
+                    If chkEstado.Checked = True Then
 
-            estado = 1
-        Else
+                        estado = 1
+                    Else
 
-            estado = 0
-        End If
+                        estado = 0
+                    End If
+                    Dim ConsultaActualizar As String = "update Proveedores set NombProv=@NombProv,TelProv=@TelProv, NombContProv=@NombContProv, CorreoProv=@CorreoProv, CorreoContProv=@CorreoContProv, TelContProv=@TelContProv, DirecProv=@DirecProv, EstadoProv=@EstadoProv where CodProv=@CodProv"
+                    Dim ejecutar As New SqlCommand(ConsultaActualizar, conexion)
+                    ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
+                    ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
+                    ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
+                    ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
+                    ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
+                    ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
+                    ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
+                    ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
+                    ejecutar.Parameters.AddWithValue("@EstadoProv", (estado))
+                    ejecutar.ExecuteNonQuery()
+                    MsgBox("El proveedor se a actualizado")
+                    chkInhabil.Checked = False
+                End If
+            End If
+        Catch ex As Exception
 
-        If txCodProve.Text = "" Or txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Or DGVProveedores.Rows.Count = 0 Then
-            MsgBox("Hay campos vacios")
-        Else
-            Dim ConsultaActualizar As String = "update Proveedores set NombProv=@NombProv,TelProv=@TelProv, NombContProv=@NombContProv, CorreoProv=@CorreoProv, CorreoContProv=@CorreoContProv, TelContProv=@TelContProv, DirecProv=@DirecProv, EstadoProv=@EstadoProv where CodProv=@CodProv"
-            Dim ejecutar As New SqlCommand(ConsultaActualizar, conexion)
-            ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
-            ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
-            ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
-            ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
-            ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
-            ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
-            ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
-            ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
-            ejecutar.Parameters.AddWithValue("@EstadoProv", (estado))
-            ejecutar.ExecuteNonQuery()
+            MessageBox.Show(ex.Message)
+        End Try
 
-        End If
+
 
         Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=1", conexion)
@@ -343,7 +380,7 @@ Public Class Proveedores
     End Sub
 
     Private Sub txNomProv_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txNomProv.KeyPress
-        Dim caracteresPermitidos As String = "qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM123456789 " & Convert.ToChar(8)
+        Dim caracteresPermitidos As String = "áéíóúÁÉÍÓÚqwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM123456789 " & Convert.ToChar(8)
         Dim c As Char = e.KeyChar
         If (Not (caracteresPermitidos.Contains(c))) Then
 
@@ -380,7 +417,7 @@ Public Class Proveedores
     End Sub
 
     Private Sub txtNombrePreEm_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txtNombrePreEm.KeyPress
-        Dim caracteresPermitidos As String = "qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM123456789 " & Convert.ToChar(8)
+        Dim caracteresPermitidos As String = "áéíóúÁÉÍÓÚqwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM123456789 " & Convert.ToChar(8)
         Dim c As Char = e.KeyChar
         If (Not (caracteresPermitidos.Contains(c))) Then
 
@@ -394,11 +431,11 @@ Public Class Proveedores
     End Sub
 
     Private Sub RTBDirec_KeyPress(sender As Object, e As KeyPressEventArgs) Handles RTBDirec.KeyPress
-        Dim caracteresPermitidos As String = "qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM123456789 " & Convert.ToChar(8)
+        Dim caracteresPermitidos As String = "áéíóúÁÉÍÓÚqwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM123456789-,. " & Convert.ToChar(8)
         Dim c As Char = e.KeyChar
         If (Not (caracteresPermitidos.Contains(c))) Then
 
-            MessageBox.Show("Solo se puede ingresar valores de tipo texto y numericos.", "ERROR de escritura",
+            MessageBox.Show("Solo se puede ingresar valores de tipo texto, numericos y caracteres especiales como -,.", "ERROR de escritura",
                             MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             ' Deshechamos el carácter
@@ -417,6 +454,17 @@ Public Class Proveedores
         txtTelProv.Clear()
         TxtBusqueda.Clear()
         RTBDirec.Clear()
-        chkEstado.Checked = False
+        chkEstado.Checked = True
+    End Sub
+
+    Private Sub DGVProveedores_DoubleClick_1(sender As Object, e As EventArgs) Handles DGVProveedores.DoubleClick
+        txCodProve.Text = DGVProveedores.CurrentRow.Cells(0).Value
+        txNomProv.Text = DGVProveedores.CurrentRow.Cells(1).Value
+        TxtTelfonoEmpresa.Text = DGVProveedores.CurrentRow.Cells(2).Value
+        txtNombrePreEm.Text = DGVProveedores.CurrentRow.Cells(3).Value
+        txCorreoEmpresa.Text = DGVProveedores.CurrentRow.Cells(4).Value
+        TxtCorreoProv.Text = DGVProveedores.CurrentRow.Cells(5).Value
+        txtTelProv.Text = DGVProveedores.CurrentRow.Cells(6).Value
+        RTBDirec.Text = DGVProveedores.CurrentRow.Cells(7).Value
     End Sub
 End Class
