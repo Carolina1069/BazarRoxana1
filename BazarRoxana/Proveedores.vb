@@ -184,7 +184,15 @@ Public Class Proveedores
                 ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
 
                 ejecutar.ExecuteNonQuery()
-
+                txCodProve.Clear()
+                txNomProv.Clear()
+                TxtTelfonoEmpresa.Clear()
+                txtNombrePreEm.Clear()
+                txCorreoEmpresa.Clear()
+                TxtCorreoProv.Clear()
+                txtTelProv.Clear()
+                RTBDirec.Clear()
+                chkEstado.Checked = True
             End If
         End If
         Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
@@ -195,15 +203,7 @@ Public Class Proveedores
         DGVProveedores.DataSource = DatosProveedor
         conexion.Close()
 
-        txCodProve.Clear()
-        txNomProv.Clear()
-        TxtTelfonoEmpresa.Clear()
-        txtNombrePreEm.Clear()
-        txCorreoEmpresa.Clear()
-        TxtCorreoProv.Clear()
-        txtTelProv.Clear()
-        RTBDirec.Clear()
-        chkEstado.Checked = False
+
 
     End Sub
 
