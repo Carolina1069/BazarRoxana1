@@ -27,6 +27,8 @@ Public Class Clientes
                 MessageBox.Show("Debe ingresar como minimo 6 caracteres en el correro del cliente")
             ElseIf (txTelCli.TextLength < 8) Then
                 MessageBox.Show("Debe ingresar 8 caracteres en el teléfono del empleado")
+            ElseIf Cuantas(".", txCorreoCli.Text) > 1 Then
+                MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             ElseIf txNomCli.Text = "" Or rtxDirCli.Text = "" Or txTelCli.Text = "" Or txCorreoCli.Text = "" Or chkEstado.Checked = False Then
                 MsgBox("Hay campos vacios", MsgBoxStyle.Exclamation, "Advertencia")
@@ -44,16 +46,16 @@ Public Class Clientes
                     MsgBox("El cliente ya esta registrado")
                 End If
 
+                Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
+                Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
+                    adaptador.Fill(DatosCliente)
+                End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+                DGVCliente.DataSource = DatosCliente
+                MsgBox("El cliente sea guardado")
+                conexion.Close()
             End If
 
-            Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
-                adaptador.Fill(DatosCliente)
-            End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-
-            DGVCliente.DataSource = DatosCliente
-            MsgBox("El cliente sea guardado")
-            conexion.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -76,39 +78,43 @@ Public Class Clientes
             estado = 0
         End If
 
-        If (txNomCli.TextLength < 2) Then
-            MessageBox.Show("Debe ingresar como minimo 2 caracteres en nombre del cliente")
-        ElseIf (txCorreoCli.TextLength < 6) Then
-            MessageBox.Show("Debe ingresar como minimo 6 caracteres en usuario del empleado")
-        ElseIf (txTelCli.TextLength < 8) Then
-            MessageBox.Show("Debe ingresar 8 caracteres en el teléfono del empleado")
-        Else
+            If (txNomCli.TextLength < 2) Then
+                MessageBox.Show("Debe ingresar como minimo 2 caracteres en nombre del cliente")
+            ElseIf (txCorreoCli.TextLength < 6) Then
+                MessageBox.Show("Debe ingresar como minimo 6 caracteres en usuario del empleado")
+            ElseIf (txTelCli.TextLength < 8) Then
+                MessageBox.Show("Debe ingresar 8 caracteres en el teléfono del empleado")
+            ElseIf Cuantas(".", txCorreoCli.Text) > 1 Then
+                MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-
-            If txNomCli.Text = "" Or rtxDirCli.Text = "" Or txTelCli.Text = "" Or txCorreoCli.Text = "" Then
-                MsgBox("Hay campos vacios", MsgBoxStyle.Exclamation, "Advertencia")
             Else
 
-                Dim ConsultaActualizar As String = "update Clientes set NombCli=@NombCli, DirecCli=@DirecCli,TelCli=@TelCli, CorreoCli=@CorreoCli, EstadoCli=@EstadoCli where CodCli=@CodCli"
-                Dim ejecutar As New SqlCommand(ConsultaActualizar, conexion)
-                ejecutar.Parameters.AddWithValue("@CodCli", (txCodCli.Text))
-                ejecutar.Parameters.AddWithValue("@NombCli", (txNomCli.Text))
-                ejecutar.Parameters.AddWithValue("@DirecCli", (rtxDirCli.Text))
-                ejecutar.Parameters.AddWithValue("@TelCli", Val(txTelCli.Text))
-                ejecutar.Parameters.AddWithValue("@CorreoCli", (txCorreoCli.Text))
-                ejecutar.Parameters.AddWithValue("@EstadoCli", (estado))
-                ejecutar.ExecuteNonQuery()
+
+                If txNomCli.Text = "" Or rtxDirCli.Text = "" Or txTelCli.Text = "" Or txCorreoCli.Text = "" Then
+                    MsgBox("Hay campos vacios", MsgBoxStyle.Exclamation, "Advertencia")
+                Else
+
+                    Dim ConsultaActualizar As String = "update Clientes set NombCli=@NombCli, DirecCli=@DirecCli,TelCli=@TelCli, CorreoCli=@CorreoCli, EstadoCli=@EstadoCli where CodCli=@CodCli"
+                    Dim ejecutar As New SqlCommand(ConsultaActualizar, conexion)
+                    ejecutar.Parameters.AddWithValue("@CodCli", (txCodCli.Text))
+                    ejecutar.Parameters.AddWithValue("@NombCli", (txNomCli.Text))
+                    ejecutar.Parameters.AddWithValue("@DirecCli", (rtxDirCli.Text))
+                    ejecutar.Parameters.AddWithValue("@TelCli", Val(txTelCli.Text))
+                    ejecutar.Parameters.AddWithValue("@CorreoCli", (txCorreoCli.Text))
+                    ejecutar.Parameters.AddWithValue("@EstadoCli", (estado))
+                    ejecutar.ExecuteNonQuery()
+
+                End If
+                Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
+                Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
+                    adaptador.Fill(DatosCliente)
+                End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+                DGVCliente.DataSource = DatosCliente
+                MsgBox("El cliente sea actualizo")
+                conexion.Close()
 
             End If
-        End If
-        Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
-            adaptador.Fill(DatosCliente)
-        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-
-        DGVCliente.DataSource = DatosCliente
-        MsgBox("El cliente sea actualizo")
-        conexion.Close()
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -356,5 +362,9 @@ Public Class Clientes
         txTelCli.Text = DGVCliente.CurrentRow.Cells(3).Value
         txCorreoCli.Text = DGVCliente.CurrentRow.Cells(4).Value
     End Sub
+
+    Public Function Cuantas(ByVal Letra As String, ByVal Cad As String) As Long
+        Cuantas = Len(Cad) - Len(Replace(Cad, Letra, vbNullString))
+    End Function
 
 End Class
