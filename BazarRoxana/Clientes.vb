@@ -21,12 +21,12 @@ Public Class Clientes
 
             Dim mail As New System.Net.Mail.MailAddress(txCorreoCli.Text)
             abrir()
-            If (txNomCli.TextLength < 2) Then
-                MessageBox.Show("Debe ingresar como minimo 2 caracteres en nombre del cliente")
-            ElseIf (txCorreoCli.TextLength < 6) Then
-                MessageBox.Show("Debe ingresar como minimo 6 caracteres en el correro del cliente")
+            If txNomCli.TextLength < 2 Then
+                MsgBox("Debe ingresar como minimo 2 caracteres en nombre del cliente", MsgBoxStyle.Exclamation, "Advertencia")
+            ElseIf txCorreoCli.TextLength < 6 Then
+                MsgBox("Debe ingresar como minimo 6 caracteres en el correro del cliente", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (txTelCli.TextLength < 8) Then
-                MessageBox.Show("Debe ingresar 8 caracteres en el teléfono del empleado")
+                MsgBox("Debe ingresar 8 caracteres en el teléfono del empleado", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf Cuantas(".", txCorreoCli.Text) > 1 Then
                 MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
@@ -78,20 +78,17 @@ Public Class Clientes
             estado = 0
         End If
 
-            If (txNomCli.TextLength < 2) Then
-                MessageBox.Show("Debe ingresar como minimo 2 caracteres en nombre del cliente")
-            ElseIf (txCorreoCli.TextLength < 6) Then
-                MessageBox.Show("Debe ingresar como minimo 6 caracteres en usuario del empleado")
+            If txNomCli.TextLength < 2 Then
+                MsgBox("Debe ingresar como minimo 2 caracteres en nombre del cliente", MsgBoxStyle.Exclamation, "Advertencia")
+            ElseIf txCorreoCli.TextLength < 6 Then
+                MsgBox("Debe ingresar como minimo 6 caracteres en el correro del cliente", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (txTelCli.TextLength < 8) Then
-                MessageBox.Show("Debe ingresar 8 caracteres en el teléfono del empleado")
+                MsgBox("Debe ingresar 8 caracteres en el teléfono del empleado", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf Cuantas(".", txCorreoCli.Text) > 1 Then
                 MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-            Else
-
-
-                If txNomCli.Text = "" Or rtxDirCli.Text = "" Or txTelCli.Text = "" Or txCorreoCli.Text = "" Then
-                    MsgBox("Hay campos vacios", MsgBoxStyle.Exclamation, "Advertencia")
+            ElseIf txNomCli.Text = "" Or rtxDirCli.Text = "" Or txTelCli.Text = "" Or txCorreoCli.Text = "" Then
+                MsgBox("Hay campos vacios", MsgBoxStyle.Exclamation, "Advertencia")
                 Else
 
                     Dim ConsultaActualizar As String = "update Clientes set NombCli=@NombCli, DirecCli=@DirecCli,TelCli=@TelCli, CorreoCli=@CorreoCli, EstadoCli=@EstadoCli where CodCli=@CodCli"
@@ -102,9 +99,8 @@ Public Class Clientes
                     ejecutar.Parameters.AddWithValue("@TelCli", Val(txTelCli.Text))
                     ejecutar.Parameters.AddWithValue("@CorreoCli", (txCorreoCli.Text))
                     ejecutar.Parameters.AddWithValue("@EstadoCli", (estado))
-                    ejecutar.ExecuteNonQuery()
+                ejecutar.ExecuteNonQuery()
 
-                End If
                 Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
                 Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
                     adaptador.Fill(DatosCliente)
@@ -115,6 +111,8 @@ Public Class Clientes
                 conexion.Close()
 
             End If
+
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -248,6 +246,22 @@ Public Class Clientes
 
     Private Sub txTelCli_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txTelCli.KeyPress
         SoloNumeros(e)
+        If Len(Me.txTelCli.Text) = "0" Then
+            If InStr(1, "2,3,8,9" & Chr(8), e.KeyChar) = 0 Then
+                e.KeyChar = ""
+                MsgBox("Solo numero inical en 2,3,8 o 9", MsgBoxStyle.Exclamation, "Advertencia")
+            End If
+        End If
+
+
+        'código para ingresar solo números
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
 
     Private Sub txCodCli_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txCodCli.KeyPress
