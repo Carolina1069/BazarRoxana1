@@ -9,10 +9,11 @@ Module ConexionLogin
     'AMAYA
     'DANIELRUEDA\LOCALHOST
     'localhost
+    'DORIS\SQLEXPRESS
     Sub abrir()
 
         Try
-            conexion = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+            conexion = New SqlConnection("Data Source=DORIS\SQLEXPRESS;Initial Catalog=BazarRoxana;Integrated Security=True")
             conexion.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception
@@ -82,6 +83,29 @@ Module ConexionLogin
         Finally
             conexion.Close()
         End Try
+    End Function
+
+    Public Function insertarCategoria(nombre As String, estado As Integer, descripcion As String)
+        Try
+            conexion.Open()
+            enunciado = New SqlCommand("insertar_categoria", conexion)
+            enunciado.CommandType = CommandType.StoredProcedure
+            enunciado.Parameters.AddWithValue("@nombre", nombre)
+            enunciado.Parameters.AddWithValue("@Estado", estado)
+            enunciado.Parameters.AddWithValue("@Descrip", descripcion)
+
+            If enunciado.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+
     End Function
 
     Public Function buscarProduct(Nombre As String) As DataTable
