@@ -52,15 +52,18 @@ Partial Class Login
         '
         'btnIngresar
         '
+        Me.btnIngresar.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.btnIngresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnIngresar.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnIngresar.Location = New System.Drawing.Point(317, 203)
+        Me.btnIngresar.Location = New System.Drawing.Point(316, 214)
         Me.btnIngresar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.Size = New System.Drawing.Size(164, 34)
+        Me.btnIngresar.Size = New System.Drawing.Size(164, 46)
         Me.btnIngresar.TabIndex = 14
         Me.btnIngresar.Text = "Ingresar"
-        Me.btnIngresar.UseVisualStyleBackColor = True
+        Me.btnIngresar.UseVisualStyleBackColor = False
         '
         'cbxMostrarContra
         '
@@ -87,8 +90,10 @@ Partial Class Login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtContrasena.BackColor = System.Drawing.SystemColors.Control
         Me.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtContrasena.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContrasena.Location = New System.Drawing.Point(2, 5)
         Me.txtContrasena.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtContrasena.MaxLength = 10
         Me.txtContrasena.Multiline = True
         Me.txtContrasena.Name = "txtContrasena"
         Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -99,9 +104,11 @@ Partial Class Login
         '
         Me.txtNombreEmpleado.BackColor = System.Drawing.SystemColors.Control
         Me.txtNombreEmpleado.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtNombreEmpleado.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombreEmpleado.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.txtNombreEmpleado.Location = New System.Drawing.Point(2, 7)
         Me.txtNombreEmpleado.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtNombreEmpleado.MaxLength = 50
         Me.txtNombreEmpleado.Multiline = True
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
         Me.txtNombreEmpleado.Size = New System.Drawing.Size(201, 25)
@@ -255,7 +262,7 @@ Partial Class Login
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Login"
-        Me.Opacity = 0.9R
+        Me.Opacity = 0.8R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "3"
         Me.Panel1.ResumeLayout(False)
