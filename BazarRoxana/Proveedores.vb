@@ -193,6 +193,7 @@ Public Class Proveedores
                 txtTelProv.Clear()
                 RTBDirec.Clear()
                 chkEstado.Checked = True
+                chkInhabil.Checked = True
             End If
         End If
         Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
@@ -298,10 +299,22 @@ Public Class Proveedores
 
     Private Sub TxtTelfonoEmpresa_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles TxtTelfonoEmpresa.KeyPress
         SoloNumeros(e)
+        If Len(Me.TxtTelfonoEmpresa.Text) = "0" Then
+            If InStr(1, "2,3,8,9" & Chr(8), e.KeyChar) = 0 Then
+                e.KeyChar = ""
+                MsgBox("Solo numero inical en 2,3,8 o 9")
+            End If
+        End If
     End Sub
 
     Private Sub txtTelProv_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txtTelProv.KeyPress
         SoloNumeros(e)
+        If Len(Me.txtTelProv.Text) = "0" Then
+            If InStr(1, "2,3,8,9" & Chr(8), e.KeyChar) = 0 Then
+                e.KeyChar = ""
+                MsgBox("Solo numero inical en 2,3,8 o 9")
+            End If
+        End If
     End Sub
 
     Public Sub filtrarDatos(ByVal buscar As String)
