@@ -21,25 +21,25 @@ Public Class Ventas
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProducto.TextChanged
         abrir()
 
-        Dim Recuperar As String = "select * from Producto where CodProduc= '" & TxtCodProducto.Text & "'"
-        Dim Mostrar As SqlDataReader
-        Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conexion)
-        Mostrar = Ejecutar.ExecuteReader
-        Dim Estado As String
-        Estado = Mostrar.Read
+        'Dim Recuperar As String = "select * from Producto where CodProduc= '" & TxtCodProducto.Text & "'"
+        'Dim Mostrar As SqlDataReader
+        'Dim Ejecutar As SqlCommand
+        'Ejecutar = New SqlCommand(Recuperar, conexion)
+        'Mostrar = Ejecutar.ExecuteReader
+        'Dim Estado As String
+        'Estado = Mostrar.Read
 
-        If (Estado = True) Then
-            TxtNombreProducto.Text = Mostrar(1)
-            TxtUnidades.Text = Mostrar(8)
-            txMinimo.Text = Mostrar(9)
-        Else
-            TxtNombreProducto.Text = ""
-            TxtUnidades.Text = ""
-            CbxPrecio.Text = ""
-            txMinimo.Text = ""
-        End If
-        Mostrar.Close()
+        'If (Estado = True) Then
+        '    TxtNombreProducto.Text = Mostrar(1)
+        '    TxtUnidades.Text = Mostrar(8)
+        '    txMinimo.Text = Mostrar(9)
+        'Else
+        '    TxtNombreProducto.Text = ""
+        '    TxtUnidades.Text = ""
+        '    CbxPrecio.Text = ""
+        '    txMinimo.Text = ""
+        'End If
+        'Mostrar.Close()
 
         Dim DATOSusuarios As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & TxtCodProducto.Text & "'", conexion)
@@ -72,15 +72,17 @@ Public Class Ventas
             SubTotal1 = (Val(CbxPrecio.Text) * Val(TxtCantidad.Text))
             Subtotal2 = SubTotal1 * Impuesto
             Subtotal = SubTotal1 + Subtotal2
-            DGV.Rows.Add(txNumVenta.Text, TxtCodProducto.Text, TxtNombreProducto.Text, Impuesto, TxtCantidad.Text, CbxPrecio.Text, Subtotal)
+            DGV.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, Impuesto, TxtCantidad.Text, CbxPrecio.Text, Subtotal)
             For Each row As DataGridViewRow In DGV.Rows
-                Total += Val(row.Cells(6).Value)
+                Total += Val(row.Cells(5).Value)
             Next
             TxtTotal.Text = Total.ToString
             TxtCodProducto.Clear()
             TxtNombreProducto.Clear()
             CbxPrecio.Text = ""
             TxtCantidad.Clear()
+            TxtUnidades.Clear()
+            txMinimo.Clear()
 
         Else
 
@@ -271,6 +273,20 @@ Public Class Ventas
         Buscar.MdiParent = MenuPrincipal
         MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Add(Buscar)
         Buscar.Show()
+
+    End Sub
+
+    Private Sub btnBuscProd_Click(sender As Object, e As EventArgs) Handles btnBuscProd.Click
+        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Clear()
+        Dim BuscarP As New BuscarProducto
+        BuscarP.MdiParent = MenuPrincipal
+        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Add(BuscarP)
+        BuscarP.Show()
+    End Sub
+
+    Private Sub CbxPrecio_TextChanged(sender As Object, e As EventArgs) Handles CbxPrecio.TextChanged
+
+
 
     End Sub
 End Class

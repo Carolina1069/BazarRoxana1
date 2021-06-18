@@ -61,7 +61,7 @@ Partial Class Login
         Me.btnIngresar.Margin = New System.Windows.Forms.Padding(2)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(164, 46)
-        Me.btnIngresar.TabIndex = 14
+        Me.btnIngresar.TabIndex = 4
         Me.btnIngresar.Text = "Ingresar"
         Me.btnIngresar.UseVisualStyleBackColor = False
         '
@@ -79,7 +79,7 @@ Partial Class Login
         Me.cbxMostrarContra.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxMostrarContra.Name = "cbxMostrarContra"
         Me.cbxMostrarContra.Size = New System.Drawing.Size(47, 17)
-        Me.cbxMostrarContra.TabIndex = 13
+        Me.cbxMostrarContra.TabIndex = 3
         Me.cbxMostrarContra.Text = "      "
         Me.cbxMostrarContra.UseVisualStyleBackColor = False
         '
@@ -98,7 +98,7 @@ Partial Class Login
         Me.txtContrasena.Name = "txtContrasena"
         Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtContrasena.Size = New System.Drawing.Size(197, 27)
-        Me.txtContrasena.TabIndex = 12
+        Me.txtContrasena.TabIndex = 2
         '
         'txtNombreEmpleado
         '
@@ -112,14 +112,18 @@ Partial Class Login
         Me.txtNombreEmpleado.Multiline = True
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
         Me.txtNombreEmpleado.Size = New System.Drawing.Size(201, 25)
-        Me.txtNombreEmpleado.TabIndex = 10
+        Me.txtNombreEmpleado.TabIndex = 1
         '
         'ProgressBar1
         '
+        Me.ProgressBar1.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.ProgressBar1.ForeColor = System.Drawing.SystemColors.ControlDark
         Me.ProgressBar1.Location = New System.Drawing.Point(244, 321)
         Me.ProgressBar1.Name = "ProgressBar1"
         Me.ProgressBar1.Size = New System.Drawing.Size(326, 30)
+        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.ProgressBar1.TabIndex = 16
+        Me.ProgressBar1.Value = 5
         '
         'Timer1
         '

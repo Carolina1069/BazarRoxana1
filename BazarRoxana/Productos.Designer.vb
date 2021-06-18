@@ -28,6 +28,8 @@ Partial Class Productos
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnAgg_C = New System.Windows.Forms.Button()
+        Me.btnAgg_P = New System.Windows.Forms.Button()
         Me.txNombCateg = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txNombProv = New System.Windows.Forms.TextBox()
@@ -56,8 +58,6 @@ Partial Class Productos
         Me.lbNombreProd = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
-        Me.btnAgg_P = New System.Windows.Forms.Button()
-        Me.btnAgg_C = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
@@ -114,6 +114,28 @@ Partial Class Productos
         Me.GroupBox2.TabIndex = 47
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Producto"
+        '
+        'btnAgg_C
+        '
+        Me.btnAgg_C.BackColor = System.Drawing.Color.Silver
+        Me.btnAgg_C.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgg_C.Location = New System.Drawing.Point(846, 140)
+        Me.btnAgg_C.Name = "btnAgg_C"
+        Me.btnAgg_C.Size = New System.Drawing.Size(126, 54)
+        Me.btnAgg_C.TabIndex = 74
+        Me.btnAgg_C.Text = "Agregar Categoria"
+        Me.btnAgg_C.UseVisualStyleBackColor = False
+        '
+        'btnAgg_P
+        '
+        Me.btnAgg_P.BackColor = System.Drawing.Color.Silver
+        Me.btnAgg_P.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgg_P.Location = New System.Drawing.Point(686, 140)
+        Me.btnAgg_P.Name = "btnAgg_P"
+        Me.btnAgg_P.Size = New System.Drawing.Size(126, 54)
+        Me.btnAgg_P.TabIndex = 73
+        Me.btnAgg_P.Text = "Agregar Proveedor"
+        Me.btnAgg_P.UseVisualStyleBackColor = False
         '
         'txNombCateg
         '
@@ -355,28 +377,6 @@ Partial Class Productos
         'ErrorValidacion
         '
         Me.ErrorValidacion.ContainerControl = Me
-        '
-        'btnAgg_P
-        '
-        Me.btnAgg_P.BackColor = System.Drawing.Color.Silver
-        Me.btnAgg_P.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgg_P.Location = New System.Drawing.Point(686, 140)
-        Me.btnAgg_P.Name = "btnAgg_P"
-        Me.btnAgg_P.Size = New System.Drawing.Size(126, 54)
-        Me.btnAgg_P.TabIndex = 73
-        Me.btnAgg_P.Text = "Agregar Proveedor"
-        Me.btnAgg_P.UseVisualStyleBackColor = False
-        '
-        'btnAgg_C
-        '
-        Me.btnAgg_C.BackColor = System.Drawing.Color.Silver
-        Me.btnAgg_C.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgg_C.Location = New System.Drawing.Point(846, 140)
-        Me.btnAgg_C.Name = "btnAgg_C"
-        Me.btnAgg_C.Size = New System.Drawing.Size(126, 54)
-        Me.btnAgg_C.TabIndex = 74
-        Me.btnAgg_C.Text = "Agregar Categoria"
-        Me.btnAgg_C.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '

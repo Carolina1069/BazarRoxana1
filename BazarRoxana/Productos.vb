@@ -738,4 +738,6 @@ as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
         FrmBusquedaProveedor.ShowDialog()
 
     End Sub
+
+
 End Class
