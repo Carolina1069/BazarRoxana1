@@ -51,17 +51,22 @@ Public Class Proveedores
             Dim mail2 As New System.Net.Mail.MailAddress(TxtCorreoProv.Text)
             abrir()
             If (txNomProv.TextLength < 3) Then
-                MessageBox.Show("Debe ingresar como mínimo 3 letras en nombre de la empreaa proveedora.")
+                MsgBox("Debe ingresar como mínimo 3 letras en nombre de la empreaa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (TxtTelfonoEmpresa.TextLength < 8) Then
-                MessageBox.Show("Debe ingresar como mínimo 8 números en el teléfono de la empresa proveedora.")
+                MsgBox("Debe ingresar como mínimo 8 números en el teléfono de la empresa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (txCorreoEmpresa.TextLength < 10) Then
-                MessageBox.Show("Debe ingresar como mínimo 10 caracteres en el correo de la empresa.")
+                MsgBox("Debe ingresar como mínimo 10 caracteres en el correo de la empresa.", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (txtNombrePreEm.TextLength < 3) Then
-                MessageBox.Show("Debe ingresar como mínimo 3 letras en el nombre del proveedor(empleado(a)).")
+                MsgBox("Debe ingresar como mínimo 3 letras en el nombre del proveedor(empleado(a)).", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (txtTelProv.TextLength < 8) Then
-                MessageBox.Show("Debe ingresar como mínimo 8 números en el teléfono del proveedor.")
+                MsgBox("Debe ingresar como mínimo 8 números en el teléfono del proveedor.", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (RTBDirec.TextLength < 8) Then
-                MessageBox.Show("Debe ingresar como mínimo 10 caracteres en la dirección de la empresa proveedora.")
+                MsgBox("Debe ingresar como mínimo 10 caracteres en la dirección de la empresa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
+            ElseIf Cuantas(".", TxtCorreoProv.Text) > 1 Then
+                MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            ElseIf Cuantas(".", txCorreoEmpresa.Text) > 1 Then
+                MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
             Else
                 If txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Or chkEstado.Checked = False Then
                     MsgBox("Hay campos vacios")
@@ -113,17 +118,22 @@ Public Class Proveedores
             Dim mail2 As New System.Net.Mail.MailAddress(TxtCorreoProv.Text)
             abrir()
             If (txNomProv.TextLength < 3) Then
-                MessageBox.Show("Debe ingresar como mínimo 3 letras en nombre de la empreaa proveedora.")
+                MsgBox("Debe ingresar como mínimo 3 letras en nombre de la empreaa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (TxtTelfonoEmpresa.TextLength < 8) Then
-                MessageBox.Show("Debe ingresar como mínimo 8 números en el teléfono de la empresa proveedora.")
+                MsgBox("Debe ingresar como mínimo 8 números en el teléfono de la empresa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (txCorreoEmpresa.TextLength < 10) Then
-                MessageBox.Show("Debe ingresar como mínimo 10 caracteres en el correo de la empresa.")
+                MsgBox("Debe ingresar como mínimo 10 caracteres en el correo de la empresa.", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (txtNombrePreEm.TextLength < 3) Then
-                MessageBox.Show("Debe ingresar como mínimo 3 letras en el nombre del proveedor(empleado(a)).")
+                MsgBox("Debe ingresar como mínimo 3 letras en el nombre del proveedor(empleado(a)).", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (txtTelProv.TextLength < 8) Then
-                MessageBox.Show("Debe ingresar como mínimo 8 números en el teléfono del proveedor.")
+                MsgBox("Debe ingresar como mínimo 8 números en el teléfono del proveedor.", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (RTBDirec.TextLength < 8) Then
-                MessageBox.Show("Debe ingresar como mínimo 10 caracteres en la dirección de la empresa proveedora.")
+                MsgBox("Debe ingresar como mínimo 10 caracteres en la dirección de la empresa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
+            ElseIf Cuantas(".", TxtCorreoProv.Text) > 1 Then
+                MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            ElseIf Cuantas(".", txCorreoEmpresa.Text) > 1 Then
+                MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
             Else
                 If txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Then
                     MsgBox("Hay campos vacios")
@@ -480,4 +490,7 @@ Public Class Proveedores
         txtTelProv.Text = DGVProveedores.CurrentRow.Cells(6).Value
         RTBDirec.Text = DGVProveedores.CurrentRow.Cells(7).Value
     End Sub
+    Public Function Cuantas(ByVal Letra As String, ByVal Cad As String) As Long
+        Cuantas = Len(Cad) - Len(Replace(Cad, Letra, vbNullString))
+    End Function
 End Class

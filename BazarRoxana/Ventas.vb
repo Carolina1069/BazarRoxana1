@@ -266,8 +266,11 @@ Public Class Ventas
     End Sub
 
     Private Sub btnBusqCliente_Click(sender As Object, e As EventArgs) Handles btnBusqCliente.Click
-
-        BuscarCliente.Show()
+        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Clear()
+        Dim Buscar As New BuscarCliente
+        Buscar.MdiParent = MenuPrincipal
+        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Add(Buscar)
+        Buscar.Show()
 
     End Sub
 End Class

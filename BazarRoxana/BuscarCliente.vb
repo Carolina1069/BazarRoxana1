@@ -15,14 +15,16 @@ Public Class BuscarCliente
 
     Private Sub DGVCliente_DoubleClick(sender As Object, e As EventArgs) Handles DGV.DoubleClick
 
+        Dim Buscar As New Ventas
 
-        'codcli.Text = DGV.CurrentRow.Cells(0).Value
-        'nombcli.Text = DGV.CurrentRow.Cells(1).Value
+        Buscar.TxtCodCli.Text = DGV.CurrentRow.Cells(0).Value
+        Buscar.TxtNombreCliente.Text = DGV.CurrentRow.Cells(1).Value
 
-        DGV.CurrentRow.Cells(0).Value = Ventas.TxtCodCli.Text
-        DGV.CurrentRow.Cells(1).Value = Ventas.TxtNombreCliente.Text
+        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Clear()
+        Buscar.MdiParent = MenuPrincipal
+        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Add(Buscar)
+        Buscar.Show()
 
-        Me.Close()
     End Sub
 
 
