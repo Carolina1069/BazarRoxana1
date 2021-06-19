@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ReporteVenta
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,34 +20,24 @@ Partial Class ReporteVenta
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReporteVenta))
-        Me.SelectVentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BazarRoxana = New BazarRoxana()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.SelectVentasTableAdapter = New BazarRoxanaTableAdapters.SelectVentaEncabezadoTableAdapter()
-        CType(Me.SelectVentasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BazarRoxana = New BazarRoxana()
+        Me.SelectTodaslasVentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SelectTodaslasVentasTableAdapter = New BazarRoxanaTableAdapters.SelectTodaslasVentasTableAdapter()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SelectTodaslasVentasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'SelectVentasBindingSource
-        '
-        Me.SelectVentasBindingSource.DataMember = "SelectVentas"
-        Me.SelectVentasBindingSource.DataSource = Me.BazarRoxana
-        '
-        'BazarRoxana
-        '
-        Me.BazarRoxana.DataSetName = "BazarRoxana"
-        Me.BazarRoxana.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource1.Name = "Ventas"
-        ReportDataSource1.Value = Me.SelectVentasBindingSource
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.SelectTodaslasVentasBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "BazarRoxana.RpVenta.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
@@ -56,9 +46,19 @@ Partial Class ReporteVenta
         Me.ReportViewer1.Size = New System.Drawing.Size(800, 749)
         Me.ReportViewer1.TabIndex = 0
         '
-        'SelectVentasTableAdapter
+        'BazarRoxana
         '
-        Me.SelectVentasTableAdapter.ClearBeforeFill = True
+        Me.BazarRoxana.DataSetName = "BazarRoxana"
+        Me.BazarRoxana.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SelectTodaslasVentasBindingSource
+        '
+        Me.SelectTodaslasVentasBindingSource.DataMember = "SelectTodaslasVentas"
+        Me.SelectTodaslasVentasBindingSource.DataSource = Me.BazarRoxana
+        '
+        'SelectTodaslasVentasTableAdapter
+        '
+        Me.SelectTodaslasVentasTableAdapter.ClearBeforeFill = True
         '
         'ReporteVenta
         '
@@ -69,14 +69,14 @@ Partial Class ReporteVenta
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ReporteVenta"
         Me.Text = "Reporte de las Ventas"
-        CType(Me.SelectVentasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SelectTodaslasVentasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents SelectVentasBindingSource As BindingSource
+    Friend WithEvents SelectTodaslasVentasBindingSource As BindingSource
     Friend WithEvents BazarRoxana As BazarRoxana
-    Friend WithEvents SelectVentasTableAdapter As BazarRoxanaTableAdapters.SelectVentaEncabezadoTableAdapter
+    Friend WithEvents SelectTodaslasVentasTableAdapter As BazarRoxanaTableAdapters.SelectTodaslasVentasTableAdapter
 End Class
