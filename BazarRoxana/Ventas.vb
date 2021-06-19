@@ -41,8 +41,12 @@ Public Class Ventas
         'End If
         'Mostrar.Close()
 
+        Dim produ As Integer
+        produ = Val(TxtCodProducto.Text)
+        abrir()
+
         Dim DATOSusuarios As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & TxtCodProducto.Text & "'", conexion)
+        Using adaptador As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & produ & "'", conexion)
             adaptador.Fill(DATOSusuarios)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -67,7 +71,15 @@ Public Class Ventas
         Cantidad = Val(TxtCantidad.Text)
         UnidadStock = Val(TxtUnidades.Text)
 
-        If Cantidad <= UnidadStock Then
+        If TxtCodProducto.Text = "" Or TxtNombreProducto.Text = "" Or CbxPrecio.Text = "" Or TxtUnidades.Text = "" Or txMinimo.Text = "" Then
+
+            MsgBox("Porfavor realice la búsqueda del producto", MessageBoxIcon.Exclamation, "Venta")
+
+        ElseIf TxtCantidad.Text = "" Then
+
+            MsgBox("Porfavor ingrese la cantidad que desea del producto ya buscado", MessageBoxIcon.Exclamation, "Venta")
+
+        ElseIf Cantidad <= UnidadStock Then
 
             SubTotal1 = (Val(CbxPrecio.Text) * Val(TxtCantidad.Text))
             Subtotal2 = SubTotal1 * Impuesto
@@ -86,7 +98,7 @@ Public Class Ventas
 
         Else
 
-            MsgBox("La cantidad solicitada supera las unidades en Inventario")
+            MsgBox("La cantidad solicitada supera las unidades en Inventario", MessageBoxIcon.Warning, "Advertencia")
 
         End If
 
@@ -94,12 +106,17 @@ Public Class Ventas
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        DGV.Rows.Remove(DGV.CurrentRow)
-        Dim Total As Single
-        For Each row As DataGridViewRow In DGV.Rows
-            Total -= Val(row.Cells(6).Value)
-        Next
-        TxtTotal.Text = -Total
+        If Me.DGV.Rows.Count = 0 Then
+            MessageBox.Show("Por favor ingrese datos en la tabla.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            DGV.Rows.Remove(DGV.CurrentRow)
+            Dim Total As Single
+            For Each row As DataGridViewRow In DGV.Rows
+                Total -= Val(row.Cells(5).Value)
+            Next
+            TxtTotal.Text = -Total
+        End If
+
     End Sub
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
@@ -110,7 +127,7 @@ Public Class Ventas
         Dim TT As Integer
 
         If TxtCodCli.Text = "" Or cbxTipoPago.Text = "" Or cbxTipoTransac.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
-            MsgBox("Hay campos vacios")
+            MsgBox("Hay campos vacios", MessageBoxIcon.Warning, "Advertencia")
         Else
             If cbxTipoPago.SelectedItem = "Crédito" Then
                 TP = 1
@@ -131,9 +148,9 @@ Public Class Ventas
             End If
 
             If RegistradoVentas(txNumVenta.Text) = False Then
-                Dim ConsultaGuardar As String = "insert into Ventas(NumVent, CodCli, CodPago, CodTransa, CodEmple, FechayHoraVenta,Total) values(@NumVent, @CodCli, @CodPago, @CodTransa, @CodEmple, GETDATE(), @Total)"
+                Dim ConsultaGuardar As String = "insert into Ventas(CodCli, CodPago, CodTransa, CodEmple, FechayHoraVenta,Total) values(@CodCli, @CodPago, @CodTransa, @CodEmple, GETDATE(), @Total)"
                 Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
-                ejecutar.Parameters.AddWithValue("@NumVent", Val(txNumVenta.Text))
+
                 ejecutar.Parameters.AddWithValue("@CodCli", Val(TxtCodCli.Text))
                 ejecutar.Parameters.AddWithValue("@CodPago", TP)
                 ejecutar.Parameters.AddWithValue("@CodTransa", TT)
@@ -147,7 +164,7 @@ Public Class Ventas
                 Dim fila As DataGridViewRow = New DataGridViewRow()
                 For Each fila In DGV.Rows
                     RegistrarD.Parameters.Clear()
-                    RegistrarD.Parameters.AddWithValue("@NumVent", fila.Cells("NumVent").Value)
+                    RegistrarD.Parameters.AddWithValue("@NumVent", Val(txNumVenta.Text))
                     RegistrarD.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
                     RegistrarD.Parameters.AddWithValue("@NombProduc", fila.Cells("NombProduc").Value)
                     RegistrarD.Parameters.AddWithValue("@Impuesto", fila.Cells("Impuesto").Value)
@@ -169,20 +186,16 @@ Public Class Ventas
 
                 DGV.Rows.Clear()
                 TxtCantidad.Clear()
-                TxtNombreCliente.Clear()
-                TxtCodCli.Clear()
-                TxtCodEmple.Clear()
                 TxtCodProducto.Clear()
                 TxtTotal.Clear()
 
-                TxtNombreEmpleado.Clear()
-                TxtNombreCliente.Clear()
                 TxtNombreProducto.Clear()
 
                 total = 0
-                'FacturaVenta.Show()
+                MsgBox("Venta registrada con éxito", MessageBoxIcon.Information, "Compra")
+                FacturaVenta.Show()
             Else
-                MsgBox("La venta ya esta registrada")
+                MsgBox("La venta ya esta registrada", MessageBoxIcon.Exclamation, "Compra")
             End If
         End If
 
@@ -228,13 +241,27 @@ Public Class Ventas
         SoloNumeros(e)
     End Sub
 
-    Private Sub BtnImprimir_Click(sender As Object, e As EventArgs) Handles BtnImprimir.Click
-        FacturaVenta.Show()
-    End Sub
 
     Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        abrir()
+
+        'If DGV.Rows.Count = 0 Then
+        '    Button1.Enabled = False
+
+        'ElseIf DGV.Rows.Count > 0 Then
+        '    Button1.Enabled = True
+
+        'End If
+
+
+        Dim CodUVenta As String = CodUltimaVenta()
+
+        txNumVenta.Text = CodUVenta
         TxtCodEmple.Text = Login.txtNombreEmpleado.Text
         lbUsuario.Text = Login.txtNombreEmpleado.Text
+
+        conexion.Close()
 
         'TxtCodCli.Text = BuscarCliente.codcli.Text
         'TxtNombreCliente.Text = BuscarCliente.nombcli.Text
@@ -268,25 +295,19 @@ Public Class Ventas
     End Sub
 
     Private Sub btnBusqCliente_Click(sender As Object, e As EventArgs) Handles btnBusqCliente.Click
-        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Clear()
-        Dim Buscar As New BuscarCliente
-        Buscar.MdiParent = MenuPrincipal
-        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Add(Buscar)
-        Buscar.Show()
+
+        Dim frm As New BuscarCliente
+        AddOwnedForm(frm)
+        frm.ShowDialog()
 
     End Sub
 
     Private Sub btnBuscProd_Click(sender As Object, e As EventArgs) Handles btnBuscProd.Click
-        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Clear()
-        Dim BuscarP As New BuscarProducto
-        BuscarP.MdiParent = MenuPrincipal
-        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Add(BuscarP)
-        BuscarP.Show()
-    End Sub
 
-    Private Sub CbxPrecio_TextChanged(sender As Object, e As EventArgs) Handles CbxPrecio.TextChanged
-
-
+        Dim frm As New BuscarProducto
+        AddOwnedForm(frm)
+        frm.ShowDialog()
 
     End Sub
+
 End Class

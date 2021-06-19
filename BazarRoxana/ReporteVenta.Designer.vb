@@ -28,7 +28,7 @@ Partial Class ReporteVenta
         Me.SelectVentasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BazarRoxana = New BazarRoxana()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.SelectVentasTableAdapter = New BazarRoxanaTableAdapters.SelectVentasTableAdapter()
+        Me.SelectVentasTableAdapter = New BazarRoxanaTableAdapters.SelectVentaEncabezadoTableAdapter()
         CType(Me.SelectVentasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -78,5 +78,5 @@ Partial Class ReporteVenta
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents SelectVentasBindingSource As BindingSource
     Friend WithEvents BazarRoxana As BazarRoxana
-    Friend WithEvents SelectVentasTableAdapter As BazarRoxanaTableAdapters.SelectVentasTableAdapter
+    Friend WithEvents SelectVentasTableAdapter As BazarRoxanaTableAdapters.SelectVentaEncabezadoTableAdapter
 End Class

@@ -21,6 +21,28 @@ Module ConexionLogin
         End Try
     End Sub
 
+    Function CodUltimaVenta() As String
+
+        Dim resultado As Boolean = False
+        Dim cod As String = 0
+        Try
+
+            enunciado = New SqlCommand("Select top(1) NumVent from Ventas order by NumVent DESC ", conexion)
+            respuesta = enunciado.ExecuteReader()
+
+            If respuesta.Read() Then
+                cod = Integer.Parse(respuesta.Item("NumVent").ToString()) + 1
+            End If
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox("Error venta" + ex.ToString)
+        End Try
+
+        Return cod
+
+    End Function
+
     Function usuarioRegistrado(ByVal nombreUsuario As String) As Boolean
         Dim resultado As Boolean = False
         Try

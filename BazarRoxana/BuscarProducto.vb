@@ -15,17 +15,13 @@ Public Class BuscarProducto
 
     Private Sub DGV_DoubleClick(sender As Object, e As EventArgs) Handles DGV.DoubleClick
 
-        Dim BuscarP As New Ventas
+        Dim frm As Ventas = CType(Owner, Ventas)
 
-        BuscarP.TxtCodProducto.Text = DGV.CurrentRow.Cells(0).Value
-        BuscarP.TxtNombreProducto.Text = DGV.CurrentRow.Cells(1).Value
-        BuscarP.TxtUnidades.Text = DGV.CurrentRow.Cells(8).Value
-        BuscarP.txMinimo.Text = DGV.CurrentRow.Cells(9).Value
+        frm.TxtCodProducto.Text = DGV.CurrentRow.Cells(0).Value
+        frm.TxtNombreProducto.Text = DGV.CurrentRow.Cells(1).Value
+        frm.TxtUnidades.Text = DGV.CurrentRow.Cells(8).Value
+        frm.txMinimo.Text = DGV.CurrentRow.Cells(9).Value
 
-        'MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Clear()
-        BuscarP.MdiParent = MenuPrincipal
-        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Add(BuscarP)
-        BuscarP.Show()
         Me.Close()
 
     End Sub

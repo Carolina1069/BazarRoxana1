@@ -44,7 +44,6 @@ Partial Class Ventas
         Me.LlContador1 = New System.Windows.Forms.Label()
         Me.LbContador = New System.Windows.Forms.Label()
         Me.btnBuscProd = New System.Windows.Forms.Button()
-        Me.BtnImprimir = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txMinimo = New System.Windows.Forms.TextBox()
         Me.TxtTotal = New System.Windows.Forms.TextBox()
@@ -138,9 +137,9 @@ Partial Class Ventas
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(447, 97)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(143, 19)
+        Me.Label4.Size = New System.Drawing.Size(142, 19)
         Me.Label4.TabIndex = 53
-        Me.Label4.Text = "Tipo de Transacción"
+        Me.Label4.Text = "Tipo de transacción"
         '
         'Label5
         '
@@ -149,7 +148,7 @@ Partial Class Ventas
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(97, 19)
         Me.Label5.TabIndex = 51
-        Me.Label5.Text = "Tipo de Pago"
+        Me.Label5.Text = "Tipo de pago"
         '
         'TxtNombreCliente
         '
@@ -164,9 +163,9 @@ Partial Class Ventas
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(447, 38)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(140, 19)
+        Me.Label6.Size = New System.Drawing.Size(138, 19)
         Me.Label6.TabIndex = 48
-        Me.Label6.Text = "Nombre del Cliente" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label6.Text = "Nombre del cliente" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'TxtNombreEmpleado
         '
@@ -183,7 +182,7 @@ Partial Class Ventas
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(156, 19)
         Me.Label7.TabIndex = 49
-        Me.Label7.Text = "Nombre de Empleado"
+        Me.Label7.Text = "Nombre de empleado"
         '
         'TxtCodCli
         '
@@ -198,9 +197,9 @@ Partial Class Ventas
         Me.lbCodigoCli.AutoSize = True
         Me.lbCodigoCli.Location = New System.Drawing.Point(44, 35)
         Me.lbCodigoCli.Name = "lbCodigoCli"
-        Me.lbCodigoCli.Size = New System.Drawing.Size(133, 19)
+        Me.lbCodigoCli.Size = New System.Drawing.Size(131, 19)
         Me.lbCodigoCli.TabIndex = 35
-        Me.lbCodigoCli.Text = "Código del Cliente" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.lbCodigoCli.Text = "Código del cliente" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'TxtCodEmple
         '
@@ -217,7 +216,7 @@ Partial Class Ventas
         Me.lbCodEmple.Name = "lbCodEmple"
         Me.lbCodEmple.Size = New System.Drawing.Size(149, 19)
         Me.lbCodEmple.TabIndex = 36
-        Me.lbCodEmple.Text = "Código de Empleado"
+        Me.lbCodEmple.Text = "Código de empleado"
         '
         'GroupBox1
         '
@@ -225,7 +224,6 @@ Partial Class Ventas
         Me.GroupBox1.Controls.Add(Me.LlContador1)
         Me.GroupBox1.Controls.Add(Me.LbContador)
         Me.GroupBox1.Controls.Add(Me.btnBuscProd)
-        Me.GroupBox1.Controls.Add(Me.BtnImprimir)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.txMinimo)
         Me.GroupBox1.Controls.Add(Me.TxtTotal)
@@ -286,23 +284,14 @@ Partial Class Ventas
         Me.btnBuscProd.Text = "Buscar producto"
         Me.btnBuscProd.UseVisualStyleBackColor = True
         '
-        'BtnImprimir
-        '
-        Me.BtnImprimir.Location = New System.Drawing.Point(189, 324)
-        Me.BtnImprimir.Name = "BtnImprimir"
-        Me.BtnImprimir.Size = New System.Drawing.Size(87, 39)
-        Me.BtnImprimir.TabIndex = 62
-        Me.BtnImprimir.Text = "Imprimir"
-        Me.BtnImprimir.UseVisualStyleBackColor = True
-        '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(600, 59)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(136, 19)
+        Me.Label13.Size = New System.Drawing.Size(135, 19)
         Me.Label13.TabIndex = 61
-        Me.Label13.Text = "Unidades Mínimas"
+        Me.Label13.Text = "Unidades mínimas"
         '
         'txMinimo
         '
@@ -362,9 +351,9 @@ Partial Class Ventas
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(453, 59)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(135, 19)
+        Me.Label11.Size = New System.Drawing.Size(134, 19)
         Me.Label11.TabIndex = 55
-        Me.Label11.Text = "Unidades en Stock"
+        Me.Label11.Text = "Unidades en stock"
         '
         'Label10
         '
@@ -391,7 +380,7 @@ Partial Class Ventas
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(125, 19)
         Me.Label3.TabIndex = 46
-        Me.Label3.Text = "Código Producto"
+        Me.Label3.Text = "Código producto"
         '
         'DGV
         '
@@ -444,14 +433,14 @@ Partial Class Ventas
         '
         'CodProduc
         '
-        Me.CodProduc.HeaderText = "Codigo de Producto"
+        Me.CodProduc.HeaderText = "Código del producto"
         Me.CodProduc.MinimumWidth = 6
         Me.CodProduc.Name = "CodProduc"
         Me.CodProduc.ReadOnly = True
         '
         'NombProduc
         '
-        Me.NombProduc.HeaderText = "Nombre del Producto"
+        Me.NombProduc.HeaderText = "Nombre del producto"
         Me.NombProduc.MinimumWidth = 6
         Me.NombProduc.Name = "NombProduc"
         Me.NombProduc.ReadOnly = True
@@ -465,21 +454,21 @@ Partial Class Ventas
         '
         'CantVenta
         '
-        Me.CantVenta.HeaderText = "Cantidad del Producto"
+        Me.CantVenta.HeaderText = "Cantidad del producto"
         Me.CantVenta.MinimumWidth = 6
         Me.CantVenta.Name = "CantVenta"
         Me.CantVenta.ReadOnly = True
         '
         'PrecioVenta
         '
-        Me.PrecioVenta.HeaderText = "Precio del Producto"
+        Me.PrecioVenta.HeaderText = "Precio del producto"
         Me.PrecioVenta.MinimumWidth = 6
         Me.PrecioVenta.Name = "PrecioVenta"
         Me.PrecioVenta.ReadOnly = True
         '
         'SubTotal
         '
-        Me.SubTotal.HeaderText = "SubTotal"
+        Me.SubTotal.HeaderText = "Sub total"
         Me.SubTotal.MinimumWidth = 6
         Me.SubTotal.Name = "SubTotal"
         Me.SubTotal.ReadOnly = True
@@ -491,7 +480,7 @@ Partial Class Ventas
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(132, 19)
         Me.Label9.TabIndex = 47
-        Me.Label9.Text = "Nombre Producto"
+        Me.Label9.Text = "Nombre producto"
         '
         'TxtCodProducto
         '
@@ -646,13 +635,6 @@ Partial Class Ventas
     Friend WithEvents Label13 As Label
     Friend WithEvents txMinimo As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents BtnImprimir As Button
-    Friend WithEvents CodProduc As DataGridViewTextBoxColumn
-    Friend WithEvents NombProduc As DataGridViewTextBoxColumn
-    Friend WithEvents Impuesto As DataGridViewTextBoxColumn
-    Friend WithEvents CantVenta As DataGridViewTextBoxColumn
-    Friend WithEvents PrecioVenta As DataGridViewTextBoxColumn
-    Friend WithEvents SubTotal As DataGridViewTextBoxColumn
     Friend WithEvents cbxTipoTransac As ComboBox
     Friend WithEvents cbxTipoPago As ComboBox
     Friend WithEvents lbUsuario As Label
@@ -660,4 +642,10 @@ Partial Class Ventas
     Friend WithEvents btnBuscProd As Button
     Friend WithEvents LlContador1 As Label
     Friend WithEvents LbContador As Label
+    Friend WithEvents CodProduc As DataGridViewTextBoxColumn
+    Friend WithEvents NombProduc As DataGridViewTextBoxColumn
+    Friend WithEvents Impuesto As DataGridViewTextBoxColumn
+    Friend WithEvents CantVenta As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioVenta As DataGridViewTextBoxColumn
+    Friend WithEvents SubTotal As DataGridViewTextBoxColumn
 End Class

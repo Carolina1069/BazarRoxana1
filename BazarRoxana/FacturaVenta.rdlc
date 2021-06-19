@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Codigo de la Venta:</Value>
+                <Value>Código de la venta:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -18,7 +18,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
         <Top>0.28787cm</Top>
-        <Left>1.21391cm</Left>
+        <Left>1.84891cm</Left>
         <Height>0.6cm</Height>
         <Width>3.16146cm</Width>
         <Style>
@@ -38,7 +38,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Codigo del Cliente:</Value>
+                <Value>Nombre del cliente:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -47,7 +47,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
         <Top>1.3462cm</Top>
-        <Left>1.21391cm</Left>
+        <Left>1.84891cm</Left>
         <Height>0.6cm</Height>
         <Width>3.16146cm</Width>
         <ZIndex>1</ZIndex>
@@ -68,7 +68,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Codigo del Empleado:</Value>
+                <Value>Nombre del empleado:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -77,7 +77,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
         <Top>2.32516cm</Top>
-        <Left>0.65828cm</Left>
+        <Left>1.29328cm</Left>
         <Height>0.6cm</Height>
         <Width>3.71708cm</Width>
         <ZIndex>2</ZIndex>
@@ -98,7 +98,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Formas de Pago:</Value>
+                <Value>Forma de pago:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -107,7 +107,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
         <Top>0.28787cm</Top>
-        <Left>9.39619cm</Left>
+        <Left>10.03119cm</Left>
         <Height>0.6cm</Height>
         <Width>3.16146cm</Width>
         <ZIndex>3</ZIndex>
@@ -128,7 +128,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Formas de Transaccion:</Value>
+                <Value>Forma de transacción:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -137,7 +137,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
         <Top>1.3462cm</Top>
-        <Left>8.46287cm</Left>
+        <Left>9.09787cm</Left>
         <Height>0.6cm</Height>
         <Width>4.09479cm</Width>
         <ZIndex>4</ZIndex>
@@ -158,7 +158,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Hora y Fecha:</Value>
+                <Value>Hora y fecha:</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -167,7 +167,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
         <Top>2.32516cm</Top>
-        <Left>8.84056cm</Left>
+        <Left>9.47556cm</Left>
         <Height>0.6cm</Height>
         <Width>3.71708cm</Width>
         <ZIndex>5</ZIndex>
@@ -183,12 +183,13 @@
       </Textbox>
       <Textbox Name="Textbox46">
         <CanGrow>true</CanGrow>
+        <CanShrink>true</CanShrink>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!NumVent.Value, "Factura")</Value>
+                <Value>=First(Fields!NumVent.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -197,7 +198,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
         <Top>0.28787cm</Top>
-        <Left>4.37537cm</Left>
+        <Left>5.04565cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>6</ZIndex>
@@ -218,7 +219,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!CodCli.Value, "Factura")</Value>
+                <Value>=First(Fields!NombCli.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -227,7 +228,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
         <Top>1.3462cm</Top>
-        <Left>4.37537cm</Left>
+        <Left>5.01037cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>7</ZIndex>
@@ -248,7 +249,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!CodEmple.Value, "Factura")</Value>
+                <Value>=First(Fields!NombEmple.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -257,7 +258,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
         <Top>2.32516cm</Top>
-        <Left>4.37537cm</Left>
+        <Left>5.01037cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>8</ZIndex>
@@ -278,7 +279,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!FechayHoraVenta.Value, "Factura")</Value>
+                <Value>=First(Fields!FechayHoraVenta.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -287,9 +288,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
         <Top>2.32516cm</Top>
-        <Left>12.55765cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Left>13.19265cm</Left>
+        <Height>0.94396cm</Height>
+        <Width>2.80549cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -308,7 +309,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!CodPago.Value, "Factura")</Value>
+                <Value>=First(Fields!DescPago.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -317,7 +318,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
         <Top>0.28787cm</Top>
-        <Left>12.55765cm</Left>
+        <Left>13.19265cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>10</ZIndex>
@@ -338,7 +339,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=First(Fields!CodTransa.Value, "Factura")</Value>
+                <Value>=First(Fields!DescTransa.Value, "DataSet1")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -347,7 +348,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox46</rd:DefaultName>
         <Top>1.3462cm</Top>
-        <Left>12.55765cm</Left>
+        <Left>13.19265cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>11</ZIndex>
@@ -361,7 +362,7 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Tablix Name="Tablix2">
+      <Tablix Name="Tablix5">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
@@ -385,25 +386,27 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.20854cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox8">
+                    <Textbox Name="Textbox64">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cod Produc</Value>
+                              <Value>Código del producto</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <rd:DefaultName>Textbox64</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -419,21 +422,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox10">
+                    <Textbox Name="Textbox66">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nomb Produc</Value>
+                              <Value>Nombre del producto</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox10</rd:DefaultName>
+                      <rd:DefaultName>Textbox66</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -449,7 +454,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox12">
+                    <Textbox Name="Textbox68">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -460,10 +465,12 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox12</rd:DefaultName>
+                      <rd:DefaultName>Textbox68</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -479,21 +486,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox15">
+                    <Textbox Name="Textbox70">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cant Venta</Value>
+                              <Value>Cantidad del Producto</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <rd:DefaultName>Textbox70</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -509,21 +518,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox19">
+                    <Textbox Name="Textbox72">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Precio Venta</Value>
+                              <Value>Precio del producto</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <rd:DefaultName>Textbox72</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -539,21 +550,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox23">
+                    <Textbox Name="Textbox74">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Sub Total</Value>
+                              <Value>Sub total</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox23</rd:DefaultName>
+                      <rd:DefaultName>Textbox74</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -574,7 +587,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CodProduc1">
+                    <Textbox Name="CodProduc">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -585,10 +598,12 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CodProduc1</rd:DefaultName>
+                      <rd:DefaultName>CodProduc</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -604,7 +619,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NombProduc1">
+                    <Textbox Name="NombProduc">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -615,10 +630,12 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>NombProduc1</rd:DefaultName>
+                      <rd:DefaultName>NombProduc</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -634,7 +651,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Impuesto1">
+                    <Textbox Name="Impuesto">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -645,10 +662,12 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Impuesto1</rd:DefaultName>
+                      <rd:DefaultName>Impuesto</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -664,7 +683,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CantVenta1">
+                    <Textbox Name="CantVenta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -675,10 +694,12 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CantVenta1</rd:DefaultName>
+                      <rd:DefaultName>CantVenta</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -694,7 +715,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="PrecioVenta1">
+                    <Textbox Name="PrecioVenta">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -705,10 +726,12 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>PrecioVenta1</rd:DefaultName>
+                      <rd:DefaultName>PrecioVenta</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -724,7 +747,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="SubTotal1">
+                    <Textbox Name="SubTotal">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -735,10 +758,12 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>SubTotal1</rd:DefaultName>
+                      <rd:DefaultName>SubTotal</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -772,14 +797,14 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="Detalles1" />
+              <Group Name="Detalles" />
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Factura</DataSetName>
-        <Top>3.69245cm</Top>
-        <Left>0.51433cm</Left>
-        <Height>1.2cm</Height>
+        <DataSetName>DataSet2</DataSetName>
+        <Top>4.15078cm</Top>
+        <Left>0.60599cm</Left>
+        <Height>1.80854cm</Height>
         <Width>15cm</Width>
         <ZIndex>12</ZIndex>
         <Style>
@@ -789,7 +814,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.27083in</Height>
+    <Height>2.44791in</Height>
     <Style />
   </Body>
   <Width>6.81051in</Width>
@@ -893,7 +918,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=First(Fields!Total.Value, "Factura")</Value>
+                  <Value>=First(Fields!Total.Value, "DataSet1")</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -902,7 +927,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox52</rd:DefaultName>
           <Top>0.92287cm</Top>
-          <Left>13.46287cm</Left>
+          <Left>13.49814cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>1</ZIndex>
@@ -943,7 +968,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Factura">
+    <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>BazarRoxana</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -953,32 +978,48 @@
           <DataField>NumVent</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="CodCli">
-          <DataField>CodCli</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="NombCli">
+          <DataField>NombCli</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="FechayHoraVenta">
           <DataField>FechayHoraVenta</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="CodPago">
-          <DataField>CodPago</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="DescPago">
+          <DataField>DescPago</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CodTransa">
-          <DataField>CodTransa</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="DescTransa">
+          <DataField>DescTransa</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CodEmple">
-          <DataField>CodEmple</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="NombEmple">
+          <DataField>NombEmple</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Total">
           <DataField>Total</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="Expr1">
-          <DataField>Expr1</DataField>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BazarRoxana</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\user\Documents\GitHub\git\BazarRoxana\BazarRoxana.xsd</rd:SchemaPath>
+        <rd:TableName>SelectVentaEncabezado</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>SelectVentaEncabezadoTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Query>
+        <DataSourceName>BazarRoxana</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="NumVent">
+          <DataField>NumVent</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="CodProduc">
@@ -1008,11 +1049,11 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>BazarRoxana</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\carlo\OneDrive\Documentos\GitHub\BazarRoxana1\BazarRoxana\BazarRoxana.xsd</rd:SchemaPath>
-        <rd:TableName>SelectFactura</rd:TableName>
+        <rd:SchemaPath>C:\Users\user\Documents\GitHub\git\BazarRoxana\BazarRoxana.xsd</rd:SchemaPath>
+        <rd:TableName>SelectDetalleVenta</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>SelectFacturaTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>SelectDetalleVentaTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
