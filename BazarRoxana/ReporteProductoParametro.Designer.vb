@@ -97,6 +97,7 @@ Partial Class ReporteProductoParametro
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "ReporteProductoParametro"
         Me.Text = "Reporte de Productos por Categoria"
         CType(Me.SelectProductoParametroBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

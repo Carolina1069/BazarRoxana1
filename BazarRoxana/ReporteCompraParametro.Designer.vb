@@ -117,6 +117,7 @@ Partial Class ReporteCompraParametro
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "ReporteCompraParametro"
         Me.Text = "Reporte de las Compras con Intervalo de Fecha"
         CType(Me.SelectCompraFechaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

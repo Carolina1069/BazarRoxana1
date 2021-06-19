@@ -67,6 +67,7 @@ Partial Class ReporteEmpleados
         Me.ClientSize = New System.Drawing.Size(800, 749)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "ReporteEmpleados"
         Me.Text = "Reporte de los Empleados"
         CType(Me.SelectEmpleadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

@@ -67,6 +67,7 @@ Partial Class ReporteMasVendido
         Me.ClientSize = New System.Drawing.Size(800, 749)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "ReporteMasVendido"
         Me.Text = "Reporte de los Productos Mas Vendido"
         CType(Me.SelectMasVendidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
