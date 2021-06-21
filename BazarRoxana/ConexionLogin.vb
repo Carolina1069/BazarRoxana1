@@ -13,7 +13,7 @@ Module ConexionLogin
     Sub abrir()
 
         Try
-            conexion = New SqlConnection("Data Source=DESKTOP-KJA03BV\SQLEXPRESS;Initial Catalog=BazarRoxana;Integrated Security=True")
+            conexion = New SqlConnection("Data Source=(local)\SQLEXPRESS;Initial Catalog=BazarRoxana;Integrated Security=True")
             conexion.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception
