@@ -271,6 +271,7 @@ Partial Class Compras
         '
         'TxtCodProducto
         '
+        Me.TxtCodProducto.Enabled = False
         Me.TxtCodProducto.Location = New System.Drawing.Point(49, 78)
         Me.TxtCodProducto.Name = "TxtCodProducto"
         Me.TxtCodProducto.Size = New System.Drawing.Size(100, 20)

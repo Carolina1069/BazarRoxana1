@@ -144,6 +144,7 @@ Public Class Compras
 
         suma = (Val(TxtUnidades.Text) + Val(TxtCantidad.Text))
 
+
         If Max >= suma Then
 
             Impuesto = 0.25
@@ -222,10 +223,12 @@ Public Class Compras
                     RegistrarA.Parameters.AddWithValue("@UnidadesStock", fila.Cells("CantProduc").Value)
                     RegistrarA.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
                     RegistrarA.ExecuteNonQuery()
-                    codUltmaVenta = CodUVenta()
-                    txNumCompra.Text = codUltmaVenta
-                    MsgBox("Registro de venta Exitoso!")
+
+
                 Next
+                codUltmaVenta = CodUVenta()
+                txNumCompra.Text = codUltmaVenta
+                MsgBox("Registro de venta Exitoso!")
                 conexion.Close()
                 DGV.Rows.Clear()
                 TxtCantidad.Clear()
@@ -299,8 +302,12 @@ Public Class Compras
         TxtTipoTransaccion.Visible = False
 
         codUltmaVenta = CodUVenta()
-        txNumCompra.Text = codUltmaVenta
 
+        If codUltmaVenta = "0" Then
+            txNumCompra.Text = "1"
+        Else
+            txNumCompra.Text = codUltmaVenta
+        End If
 
 
     End Sub
