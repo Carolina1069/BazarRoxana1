@@ -32,11 +32,11 @@
 
     Private Sub buscar()
         Dim dt As New DataTable()
-        Dim producto As String
+        Dim Proveedores As String
 
         Try
-            producto = txtBuscarProv.Text
-            dt = ConexionLogin.buscarProduct(producto)
+            Proveedores = txtBuscarProv.Text
+            dt = ConexionLogin.buscarProveedor(Proveedores)
 
             If dt.Rows.Count <> 0 Then
                 dgvprov.DataSource = dt
@@ -62,10 +62,15 @@
     End Sub
 
     Private Sub dgvprov_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvprov.CellDoubleClick
+        Productos.txCodProv.Text = dgvprov.CurrentRow.Cells(0).Value
+        Productos.txNombProv.Text = dgvprov.CurrentRow.Cells(1).Value
 
-        Productos.txCodCateg.Text = dgvprov.SelectedCells.Item(0).Value
-            Productos.txNombCateg.Text = dgvprov.SelectedCells.Item(1).Value
-            Me.Close()
 
+        Me.Close()
+
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Me.Close()
     End Sub
 End Class

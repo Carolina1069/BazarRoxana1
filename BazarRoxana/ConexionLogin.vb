@@ -398,7 +398,7 @@ Module ConexionLogin
     Function RegistradoProducto(ByVal id As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Producto where CodProduc='" & id & "'", conexion)
+            enunciado = New SqlCommand("select*from Producto where NombProduc='" & id & "'", conexion)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True

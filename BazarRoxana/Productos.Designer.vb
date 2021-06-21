@@ -23,11 +23,12 @@ Partial Class Productos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnlimpiaf = New System.Windows.Forms.Button()
         Me.btnAgg_C = New System.Windows.Forms.Button()
         Me.btnAgg_P = New System.Windows.Forms.Button()
         Me.txNombCateg = New System.Windows.Forms.TextBox()
@@ -59,11 +60,11 @@ Partial Class Productos
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ErrorValidacion = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnHabilitar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
-        Me.DGV = New System.Windows.Forms.DataGridView()
+        Me.DGVProducto = New System.Windows.Forms.DataGridView()
         Me.chkInhabil = New System.Windows.Forms.CheckBox()
-        Me.btnActTabla = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -71,7 +72,7 @@ Partial Class Productos
         Me.GroupBox2.SuspendLayout()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGVProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -79,6 +80,7 @@ Partial Class Productos
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox2.Controls.Add(Me.btnlimpiaf)
         Me.GroupBox2.Controls.Add(Me.btnAgg_C)
         Me.GroupBox2.Controls.Add(Me.btnAgg_P)
         Me.GroupBox2.Controls.Add(Me.txNombCateg)
@@ -115,13 +117,22 @@ Partial Class Productos
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Producto"
         '
+        'btnlimpiaf
+        '
+        Me.btnlimpiaf.Location = New System.Drawing.Point(680, 147)
+        Me.btnlimpiaf.Name = "btnlimpiaf"
+        Me.btnlimpiaf.Size = New System.Drawing.Size(66, 56)
+        Me.btnlimpiaf.TabIndex = 77
+        Me.btnlimpiaf.Text = "Limpiar"
+        Me.btnlimpiaf.UseVisualStyleBackColor = True
+        '
         'btnAgg_C
         '
         Me.btnAgg_C.BackColor = System.Drawing.Color.Silver
         Me.btnAgg_C.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgg_C.Location = New System.Drawing.Point(846, 140)
+        Me.btnAgg_C.Location = New System.Drawing.Point(872, 86)
         Me.btnAgg_C.Name = "btnAgg_C"
-        Me.btnAgg_C.Size = New System.Drawing.Size(126, 54)
+        Me.btnAgg_C.Size = New System.Drawing.Size(77, 28)
         Me.btnAgg_C.TabIndex = 74
         Me.btnAgg_C.Text = "Agregar Categoria"
         Me.btnAgg_C.UseVisualStyleBackColor = False
@@ -130,9 +141,9 @@ Partial Class Productos
         '
         Me.btnAgg_P.BackColor = System.Drawing.Color.Silver
         Me.btnAgg_P.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgg_P.Location = New System.Drawing.Point(686, 140)
+        Me.btnAgg_P.Location = New System.Drawing.Point(540, 83)
         Me.btnAgg_P.Name = "btnAgg_P"
-        Me.btnAgg_P.Size = New System.Drawing.Size(126, 54)
+        Me.btnAgg_P.Size = New System.Drawing.Size(79, 29)
         Me.btnAgg_P.TabIndex = 73
         Me.btnAgg_P.Text = "Agregar Proveedor"
         Me.btnAgg_P.UseVisualStyleBackColor = False
@@ -381,11 +392,11 @@ Partial Class Productos
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.DarkGray
+        Me.GroupBox1.Controls.Add(Me.btnHabilitar)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.TxtBusqueda)
-        Me.GroupBox1.Controls.Add(Me.DGV)
+        Me.GroupBox1.Controls.Add(Me.DGVProducto)
         Me.GroupBox1.Controls.Add(Me.chkInhabil)
-        Me.GroupBox1.Controls.Add(Me.btnActTabla)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
         Me.GroupBox1.Controls.Add(Me.btnActualizar)
         Me.GroupBox1.Controls.Add(Me.btnGuardar)
@@ -396,6 +407,15 @@ Partial Class Productos
         Me.GroupBox1.TabIndex = 70
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Búsqueda de productos"
+        '
+        'btnHabilitar
+        '
+        Me.btnHabilitar.Location = New System.Drawing.Point(700, 30)
+        Me.btnHabilitar.Name = "btnHabilitar"
+        Me.btnHabilitar.Size = New System.Drawing.Size(146, 39)
+        Me.btnHabilitar.TabIndex = 81
+        Me.btnHabilitar.Text = "Habilitar Producto"
+        Me.btnHabilitar.UseVisualStyleBackColor = True
         '
         'Label5
         '
@@ -418,53 +438,53 @@ Partial Class Productos
         Me.TxtBusqueda.Size = New System.Drawing.Size(189, 20)
         Me.TxtBusqueda.TabIndex = 72
         '
-        'DGV
+        'DGVProducto
         '
-        Me.DGV.AllowUserToAddRows = False
-        Me.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGV.BackgroundColor = System.Drawing.SystemColors.ScrollBar
-        Me.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGV.EnableHeadersVisualStyles = False
-        Me.DGV.GridColor = System.Drawing.SystemColors.ControlLight
-        Me.DGV.Location = New System.Drawing.Point(12, 76)
-        Me.DGV.Name = "DGV"
-        Me.DGV.ReadOnly = True
-        Me.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.DGV.RowHeadersWidth = 51
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.DGV.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV.Size = New System.Drawing.Size(969, 180)
-        Me.DGV.TabIndex = 71
+        Me.DGVProducto.AllowUserToAddRows = False
+        Me.DGVProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DGVProducto.BackgroundColor = System.Drawing.SystemColors.ScrollBar
+        Me.DGVProducto.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DGVProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVProducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.DGVProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVProducto.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DGVProducto.EnableHeadersVisualStyles = False
+        Me.DGVProducto.GridColor = System.Drawing.SystemColors.ControlLight
+        Me.DGVProducto.Location = New System.Drawing.Point(12, 76)
+        Me.DGVProducto.Name = "DGVProducto"
+        Me.DGVProducto.ReadOnly = True
+        Me.DGVProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVProducto.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.DGVProducto.RowHeadersWidth = 51
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ScrollBar
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        Me.DGVProducto.RowsDefaultCellStyle = DataGridViewCellStyle8
+        Me.DGVProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DGVProducto.Size = New System.Drawing.Size(969, 180)
+        Me.DGVProducto.TabIndex = 71
         '
         'chkInhabil
         '
@@ -475,15 +495,6 @@ Partial Class Productos
         Me.chkInhabil.TabIndex = 70
         Me.chkInhabil.Text = "Inhabilitados "
         Me.chkInhabil.UseVisualStyleBackColor = True
-        '
-        'btnActTabla
-        '
-        Me.btnActTabla.Location = New System.Drawing.Point(658, 29)
-        Me.btnActTabla.Name = "btnActTabla"
-        Me.btnActTabla.Size = New System.Drawing.Size(124, 39)
-        Me.btnActTabla.TabIndex = 27
-        Me.btnActTabla.Text = "Refrescar tabla"
-        Me.btnActTabla.UseVisualStyleBackColor = True
         '
         'btnEliminar
         '
@@ -541,7 +552,7 @@ Partial Class Productos
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGVProducto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -549,7 +560,6 @@ Partial Class Productos
     End Sub
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents txCodCateg As TextBox
     Friend WithEvents lbCodCateg As Label
     Friend WithEvents txMin As TextBox
     Friend WithEvents lbMinima As Label
@@ -562,7 +572,6 @@ Partial Class Productos
     Friend WithEvents txtSegPre As TextBox
     Friend WithEvents lbSegPre As Label
     Friend WithEvents rtxDescProd As RichTextBox
-    Friend WithEvents txCodProv As TextBox
     Friend WithEvents txtPriPre As TextBox
     Friend WithEvents txNomProd As TextBox
     Friend WithEvents lbPriPre As Label
@@ -571,9 +580,7 @@ Partial Class Productos
     Friend WithEvents lbCodigoCli As Label
     Friend WithEvents txCodProd As TextBox
     Friend WithEvents lbNombreProd As Label
-    Friend WithEvents txNombCateg As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents txNombProv As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents ErrorValidacion As ErrorProvider
@@ -582,10 +589,15 @@ Partial Class Productos
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label5 As Label
     Friend WithEvents TxtBusqueda As TextBox
-    Friend WithEvents DGV As DataGridView
+    Friend WithEvents DGVProducto As DataGridView
     Friend WithEvents chkInhabil As CheckBox
-    Friend WithEvents btnActTabla As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnActualizar As Button
     Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnHabilitar As Button
+    Friend WithEvents btnlimpiaf As Button
+    Public WithEvents txCodCateg As TextBox
+    Public WithEvents txCodProv As TextBox
+    Public WithEvents txNombCateg As TextBox
+    Public WithEvents txNombProv As TextBox
 End Class
