@@ -17,9 +17,11 @@ Public Class Login
                 Dim contra As String = contrasena(txtNombreEmpleado.Text)
                 If contra.Equals(txtContrasena.Text) = True Then
                     If ConsultarTipoUsuario(txtNombreEmpleado.Text) = 1 Then
+                        cod = CodUsuario(txtNombreEmpleado.Text)
                         Timer1.Start()
 
                     Else
+                        cod = CodUsuario(txtNombreEmpleado.Text)
                         Timer1.Start()
                         MenuPrincipal.EmpleadoToolStripMenuItem1.Enabled = False
                         MenuPrincipal.ClientesToolStripMenuItem.Enabled = False

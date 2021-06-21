@@ -140,7 +140,7 @@ Public Class MenuPrincipal
     Private Sub Label1_TextChanged(sender As Object, e As EventArgs) Handles Label1.TextChanged
 
         abrir()
-        Dim Recuperar As String = "select * from Empleados where UsuarioEmple= '" & Label1.Text & "'"
+        Dim Recuperar As String = "select * from Empleados where NombEmple= '" & Label1.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
         Ejecutar = New SqlCommand(Recuperar, conexion)

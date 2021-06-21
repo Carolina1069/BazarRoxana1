@@ -269,7 +269,7 @@ Public Class Ventas
 
     Private Sub lbUsuario_TextChanged(sender As Object, e As EventArgs) Handles lbUsuario.TextChanged
         abrir()
-        Dim Recuperar As String = "select * from Empleados where UsuarioEmple= '" & lbUsuario.Text & "'"
+        Dim Recuperar As String = "select * from Empleados where NombEmple= '" & lbUsuario.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
         Ejecutar = New SqlCommand(Recuperar, conexion)
@@ -303,7 +303,7 @@ Public Class Ventas
     End Sub
 
     Private Sub btnBuscProd_Click(sender As Object, e As EventArgs) Handles btnBuscProd.Click
-
+        ProductosValidar = 1
         Dim frm As New BuscarProducto
         AddOwnedForm(frm)
         frm.ShowDialog()

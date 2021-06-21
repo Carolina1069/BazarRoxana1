@@ -23,6 +23,7 @@ Partial Class Compras
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnBuscProd = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TxtTotal = New System.Windows.Forms.TextBox()
         Me.txMaximo = New System.Windows.Forms.TextBox()
@@ -48,6 +49,7 @@ Partial Class Compras
         Me.TxtNombreProducto = New System.Windows.Forms.TextBox()
         Me.TxtCantidad = New System.Windows.Forms.TextBox()
         Me.TxtUnidades = New System.Windows.Forms.TextBox()
+        Me.TxtTipoTransaccion = New System.Windows.Forms.TextBox()
         Me.TxtCodEmple = New System.Windows.Forms.TextBox()
         Me.txNumCompra = New System.Windows.Forms.TextBox()
         Me.lbCodEmple = New System.Windows.Forms.Label()
@@ -55,7 +57,9 @@ Partial Class Compras
         Me.TxtCodProv = New System.Windows.Forms.TextBox()
         Me.lbNumeroCompra = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TxtTipoTransaccion = New System.Windows.Forms.TextBox()
+        Me.btnsearchProv = New System.Windows.Forms.Button()
+        Me.cmbTipoTransac = New System.Windows.Forms.ComboBox()
+        Me.cmbTipoPago = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtTipoPago = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -63,9 +67,7 @@ Partial Class Compras
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtNombreEmpleado = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtCodTransa = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TxtCodPago = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -77,7 +79,8 @@ Partial Class Compras
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox1.BackColor = System.Drawing.Color.DarkGray
+        Me.GroupBox1.Controls.Add(Me.btnBuscProd)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.TxtTotal)
         Me.GroupBox1.Controls.Add(Me.txMaximo)
@@ -97,26 +100,36 @@ Partial Class Compras
         Me.GroupBox1.Controls.Add(Me.TxtCantidad)
         Me.GroupBox1.Controls.Add(Me.TxtUnidades)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(47, 314)
+        Me.GroupBox1.Location = New System.Drawing.Point(47, 282)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(842, 324)
+        Me.GroupBox1.Size = New System.Drawing.Size(842, 356)
         Me.GroupBox1.TabIndex = 39
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de la Compra"
         '
+        'btnBuscProd
+        '
+        Me.btnBuscProd.Font = New System.Drawing.Font("Candara", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.btnBuscProd.Location = New System.Drawing.Point(46, 24)
+        Me.btnBuscProd.Name = "btnBuscProd"
+        Me.btnBuscProd.Size = New System.Drawing.Size(103, 27)
+        Me.btnBuscProd.TabIndex = 67
+        Me.btnBuscProd.Text = "Buscar producto"
+        Me.btnBuscProd.UseVisualStyleBackColor = True
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(556, 25)
+        Me.Label13.Location = New System.Drawing.Point(559, 60)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(49, 13)
         Me.Label13.TabIndex = 61
-        Me.Label13.Text = "Maximo"
+        Me.Label13.Text = "Máximo"
         '
         'TxtTotal
         '
         Me.TxtTotal.Enabled = False
-        Me.TxtTotal.Location = New System.Drawing.Point(700, 276)
+        Me.TxtTotal.Location = New System.Drawing.Point(711, 318)
         Me.TxtTotal.Name = "TxtTotal"
         Me.TxtTotal.Size = New System.Drawing.Size(100, 20)
         Me.TxtTotal.TabIndex = 59
@@ -124,7 +137,7 @@ Partial Class Compras
         'txMaximo
         '
         Me.txMaximo.Enabled = False
-        Me.txMaximo.Location = New System.Drawing.Point(540, 41)
+        Me.txMaximo.Location = New System.Drawing.Point(543, 76)
         Me.txMaximo.Name = "txMaximo"
         Me.txMaximo.Size = New System.Drawing.Size(100, 20)
         Me.txMaximo.TabIndex = 60
@@ -133,7 +146,7 @@ Partial Class Compras
         '
         Me.Label8.AutoSize = True
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(663, 279)
+        Me.Label8.Location = New System.Drawing.Point(659, 325)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(36, 13)
         Me.Label8.TabIndex = 58
@@ -142,14 +155,14 @@ Partial Class Compras
         'CbxPrecio
         '
         Me.CbxPrecio.FormattingEnabled = True
-        Me.CbxPrecio.Location = New System.Drawing.Point(290, 42)
+        Me.CbxPrecio.Location = New System.Drawing.Point(293, 77)
         Me.CbxPrecio.Name = "CbxPrecio"
         Me.CbxPrecio.Size = New System.Drawing.Size(100, 21)
         Me.CbxPrecio.TabIndex = 42
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(768, 42)
+        Me.Button1.Location = New System.Drawing.Point(771, 77)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(26, 20)
         Me.Button1.TabIndex = 57
@@ -159,7 +172,7 @@ Partial Class Compras
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(668, 26)
+        Me.Label12.Location = New System.Drawing.Point(671, 61)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(57, 13)
         Me.Label12.TabIndex = 56
@@ -168,7 +181,7 @@ Partial Class Compras
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(405, 27)
+        Me.Label11.Location = New System.Drawing.Point(408, 62)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(115, 13)
         Me.Label11.TabIndex = 55
@@ -177,7 +190,7 @@ Partial Class Compras
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(290, 26)
+        Me.Label10.Location = New System.Drawing.Point(293, 61)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(43, 13)
         Me.Label10.TabIndex = 54
@@ -185,9 +198,9 @@ Partial Class Compras
         '
         'btGuardar
         '
-        Me.btGuardar.Location = New System.Drawing.Point(38, 277)
+        Me.btGuardar.Location = New System.Drawing.Point(49, 306)
         Me.btGuardar.Name = "btGuardar"
-        Me.btGuardar.Size = New System.Drawing.Size(82, 29)
+        Me.btGuardar.Size = New System.Drawing.Size(82, 42)
         Me.btGuardar.TabIndex = 22
         Me.btGuardar.Text = "Guardar"
         Me.btGuardar.UseVisualStyleBackColor = True
@@ -195,7 +208,7 @@ Partial Class Compras
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(43, 27)
+        Me.Label3.Location = New System.Drawing.Point(46, 62)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(101, 13)
         Me.Label3.TabIndex = 46
@@ -206,7 +219,7 @@ Partial Class Compras
         Me.DGV.AllowUserToAddRows = False
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NumCompra, Me.CodProduc, Me.NombProduc, Me.Impuesto, Me.CantProduc, Me.PrecioProduc, Me.SubTotal})
-        Me.DGV.Location = New System.Drawing.Point(35, 92)
+        Me.DGV.Location = New System.Drawing.Point(46, 134)
         Me.DGV.Name = "DGV"
         Me.DGV.RowHeadersWidth = 51
         Me.DGV.Size = New System.Drawing.Size(765, 166)
@@ -250,7 +263,7 @@ Partial Class Compras
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(166, 27)
+        Me.Label9.Location = New System.Drawing.Point(169, 62)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(105, 13)
         Me.Label9.TabIndex = 47
@@ -258,14 +271,14 @@ Partial Class Compras
         '
         'TxtCodProducto
         '
-        Me.TxtCodProducto.Location = New System.Drawing.Point(46, 43)
+        Me.TxtCodProducto.Location = New System.Drawing.Point(49, 78)
         Me.TxtCodProducto.Name = "TxtCodProducto"
         Me.TxtCodProducto.Size = New System.Drawing.Size(100, 20)
         Me.TxtCodProducto.TabIndex = 48
         '
         'BtnAgregar
         '
-        Me.BtnAgregar.Location = New System.Drawing.Point(768, 20)
+        Me.BtnAgregar.Location = New System.Drawing.Point(771, 55)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(26, 20)
         Me.BtnAgregar.TabIndex = 53
@@ -275,14 +288,14 @@ Partial Class Compras
         'TxtNombreProducto
         '
         Me.TxtNombreProducto.Enabled = False
-        Me.TxtNombreProducto.Location = New System.Drawing.Point(169, 43)
+        Me.TxtNombreProducto.Location = New System.Drawing.Point(172, 78)
         Me.TxtNombreProducto.Name = "TxtNombreProducto"
         Me.TxtNombreProducto.Size = New System.Drawing.Size(100, 20)
         Me.TxtNombreProducto.TabIndex = 49
         '
         'TxtCantidad
         '
-        Me.TxtCantidad.Location = New System.Drawing.Point(660, 42)
+        Me.TxtCantidad.Location = New System.Drawing.Point(663, 77)
         Me.TxtCantidad.Name = "TxtCantidad"
         Me.TxtCantidad.Size = New System.Drawing.Size(100, 20)
         Me.TxtCantidad.TabIndex = 52
@@ -290,13 +303,22 @@ Partial Class Compras
         'TxtUnidades
         '
         Me.TxtUnidades.Enabled = False
-        Me.TxtUnidades.Location = New System.Drawing.Point(407, 43)
+        Me.TxtUnidades.Location = New System.Drawing.Point(410, 78)
         Me.TxtUnidades.Name = "TxtUnidades"
         Me.TxtUnidades.Size = New System.Drawing.Size(113, 20)
         Me.TxtUnidades.TabIndex = 51
         '
+        'TxtTipoTransaccion
+        '
+        Me.TxtTipoTransaccion.Enabled = False
+        Me.TxtTipoTransaccion.Location = New System.Drawing.Point(605, 122)
+        Me.TxtTipoTransaccion.Name = "TxtTipoTransaccion"
+        Me.TxtTipoTransaccion.Size = New System.Drawing.Size(168, 20)
+        Me.TxtTipoTransaccion.TabIndex = 54
+        '
         'TxtCodEmple
         '
+        Me.TxtCodEmple.Enabled = False
         Me.TxtCodEmple.Location = New System.Drawing.Point(246, 65)
         Me.TxtCodEmple.Name = "TxtCodEmple"
         Me.TxtCodEmple.Size = New System.Drawing.Size(100, 20)
@@ -304,7 +326,8 @@ Partial Class Compras
         '
         'txNumCompra
         '
-        Me.txNumCompra.Location = New System.Drawing.Point(173, 102)
+        Me.txNumCompra.Enabled = False
+        Me.txNumCompra.Location = New System.Drawing.Point(190, 60)
         Me.txNumCompra.Name = "txNumCompra"
         Me.txNumCompra.Size = New System.Drawing.Size(100, 20)
         Me.txNumCompra.TabIndex = 37
@@ -316,7 +339,7 @@ Partial Class Compras
         Me.lbCodEmple.Name = "lbCodEmple"
         Me.lbCodEmple.Size = New System.Drawing.Size(123, 13)
         Me.lbCodEmple.TabIndex = 36
-        Me.lbCodEmple.Text = "Codigo de Empleado"
+        Me.lbCodEmple.Text = "Código de Empleado"
         '
         'lbCodigoProv
         '
@@ -325,10 +348,11 @@ Partial Class Compras
         Me.lbCodigoProv.Name = "lbCodigoProv"
         Me.lbCodigoProv.Size = New System.Drawing.Size(129, 13)
         Me.lbCodigoProv.TabIndex = 35
-        Me.lbCodigoProv.Text = "Codigo del Proveedor"
+        Me.lbCodigoProv.Text = "Código del Proveedor"
         '
         'TxtCodProv
         '
+        Me.TxtCodProv.Enabled = False
         Me.TxtCodProv.Location = New System.Drawing.Point(246, 40)
         Me.TxtCodProv.Name = "TxtCodProv"
         Me.TxtCodProv.Size = New System.Drawing.Size(100, 20)
@@ -339,16 +363,19 @@ Partial Class Compras
         Me.lbNumeroCompra.AutoSize = True
         Me.lbNumeroCompra.BackColor = System.Drawing.Color.Transparent
         Me.lbNumeroCompra.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbNumeroCompra.Location = New System.Drawing.Point(53, 102)
+        Me.lbNumeroCompra.Location = New System.Drawing.Point(53, 67)
         Me.lbNumeroCompra.Name = "lbNumeroCompra"
         Me.lbNumeroCompra.Size = New System.Drawing.Size(114, 13)
         Me.lbNumeroCompra.TabIndex = 33
-        Me.lbNumeroCompra.Text = "Numero de Compra"
+        Me.lbNumeroCompra.Text = "Número de Compra"
         '
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox2.Controls.Add(Me.btnsearchProv)
+        Me.GroupBox2.Controls.Add(Me.cmbTipoTransac)
         Me.GroupBox2.Controls.Add(Me.TxtTipoTransaccion)
+        Me.GroupBox2.Controls.Add(Me.cmbTipoPago)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.TxtTipoPago)
         Me.GroupBox2.Controls.Add(Me.Label5)
@@ -356,43 +383,64 @@ Partial Class Compras
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.TxtNombreEmpleado)
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.TxtCodTransa)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.TxtCodPago)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.TxtCodProv)
         Me.GroupBox2.Controls.Add(Me.lbCodigoProv)
         Me.GroupBox2.Controls.Add(Me.TxtCodEmple)
         Me.GroupBox2.Controls.Add(Me.lbCodEmple)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(45, 125)
+        Me.GroupBox2.Location = New System.Drawing.Point(47, 101)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(844, 175)
         Me.GroupBox2.TabIndex = 41
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Compra"
         '
-        'TxtTipoTransaccion
+        'btnsearchProv
         '
-        Me.TxtTipoTransaccion.Enabled = False
-        Me.TxtTipoTransaccion.Location = New System.Drawing.Point(605, 114)
-        Me.TxtTipoTransaccion.Name = "TxtTipoTransaccion"
-        Me.TxtTipoTransaccion.Size = New System.Drawing.Size(168, 20)
-        Me.TxtTipoTransaccion.TabIndex = 54
+        Me.btnsearchProv.Location = New System.Drawing.Point(352, 38)
+        Me.btnsearchProv.Name = "btnsearchProv"
+        Me.btnsearchProv.Size = New System.Drawing.Size(75, 23)
+        Me.btnsearchProv.TabIndex = 57
+        Me.btnsearchProv.Text = "Buscar"
+        Me.btnsearchProv.UseVisualStyleBackColor = True
+        '
+        'cmbTipoTransac
+        '
+        Me.cmbTipoTransac.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmbTipoTransac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTipoTransac.FormattingEnabled = True
+        Me.cmbTipoTransac.Items.AddRange(New Object() {"1-Efectivo", "2-Tarjeta de crédito", "3-Tarjeta de débito"})
+        Me.cmbTipoTransac.Location = New System.Drawing.Point(628, 85)
+        Me.cmbTipoTransac.Name = "cmbTipoTransac"
+        Me.cmbTipoTransac.Size = New System.Drawing.Size(168, 21)
+        Me.cmbTipoTransac.TabIndex = 56
+        '
+        'cmbTipoPago
+        '
+        Me.cmbTipoPago.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.cmbTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTipoPago.FormattingEnabled = True
+        Me.cmbTipoPago.Items.AddRange(New Object() {"1-Crédito", "2-Contado"})
+        Me.cmbTipoPago.Location = New System.Drawing.Point(246, 91)
+        Me.cmbTipoPago.Name = "cmbTipoPago"
+        Me.cmbTipoPago.Size = New System.Drawing.Size(100, 21)
+        Me.cmbTipoPago.TabIndex = 55
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(470, 114)
+        Me.Label4.Location = New System.Drawing.Point(470, 125)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(124, 13)
         Me.Label4.TabIndex = 53
-        Me.Label4.Text = "Tipo de Transaccion"
+        Me.Label4.Text = "Tipo de Transacción"
         '
         'TxtTipoPago
         '
         Me.TxtTipoPago.Enabled = False
-        Me.TxtTipoPago.Location = New System.Drawing.Point(605, 88)
+        Me.TxtTipoPago.Location = New System.Drawing.Point(226, 125)
         Me.TxtTipoPago.Name = "TxtTipoPago"
         Me.TxtTipoPago.Size = New System.Drawing.Size(168, 20)
         Me.TxtTipoPago.TabIndex = 52
@@ -400,7 +448,7 @@ Partial Class Compras
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(470, 88)
+        Me.Label5.Location = New System.Drawing.Point(91, 125)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(83, 13)
         Me.Label5.TabIndex = 51
@@ -409,7 +457,7 @@ Partial Class Compras
         'TxtNombreProveedor
         '
         Me.TxtNombreProveedor.Enabled = False
-        Me.TxtNombreProveedor.Location = New System.Drawing.Point(605, 37)
+        Me.TxtNombreProveedor.Location = New System.Drawing.Point(628, 37)
         Me.TxtNombreProveedor.Name = "TxtNombreProveedor"
         Me.TxtNombreProveedor.Size = New System.Drawing.Size(168, 20)
         Me.TxtNombreProveedor.TabIndex = 47
@@ -426,7 +474,7 @@ Partial Class Compras
         'TxtNombreEmpleado
         '
         Me.TxtNombreEmpleado.Enabled = False
-        Me.TxtNombreEmpleado.Location = New System.Drawing.Point(605, 62)
+        Me.TxtNombreEmpleado.Location = New System.Drawing.Point(628, 59)
         Me.TxtNombreEmpleado.Name = "TxtNombreEmpleado"
         Me.TxtNombreEmpleado.Size = New System.Drawing.Size(168, 20)
         Me.TxtNombreEmpleado.TabIndex = 50
@@ -440,39 +488,23 @@ Partial Class Compras
         Me.Label7.TabIndex = 49
         Me.Label7.Text = "Nombre de Empleado"
         '
-        'TxtCodTransa
-        '
-        Me.TxtCodTransa.Location = New System.Drawing.Point(246, 117)
-        Me.TxtCodTransa.MaxLength = 1
-        Me.TxtCodTransa.Name = "TxtCodTransa"
-        Me.TxtCodTransa.Size = New System.Drawing.Size(100, 20)
-        Me.TxtCodTransa.TabIndex = 42
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(91, 117)
+        Me.Label2.Location = New System.Drawing.Point(473, 91)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(138, 13)
         Me.Label2.TabIndex = 41
-        Me.Label2.Text = "Codigo de Transaccion"
-        '
-        'TxtCodPago
-        '
-        Me.TxtCodPago.Location = New System.Drawing.Point(246, 91)
-        Me.TxtCodPago.MaxLength = 1
-        Me.TxtCodPago.Name = "TxtCodPago"
-        Me.TxtCodPago.Size = New System.Drawing.Size(100, 20)
-        Me.TxtCodPago.TabIndex = 40
+        Me.Label2.Text = "Código de Transacción"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(91, 91)
+        Me.Label1.Location = New System.Drawing.Point(92, 93)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 13)
         Me.Label1.TabIndex = 39
-        Me.Label1.Text = "Codigo de Pago"
+        Me.Label1.Text = "Código de Pago"
         '
         'PictureBox1
         '
@@ -489,10 +521,10 @@ Partial Class Compras
         '
         Me.Label14.AutoSize = True
         Me.Label14.BackColor = System.Drawing.Color.Transparent
-        Me.Label14.Font = New System.Drawing.Font("Clarendon BT", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(12, 9)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(123, 29)
+        Me.Label14.Size = New System.Drawing.Size(118, 29)
         Me.Label14.TabIndex = 69
         Me.Label14.Text = "Compras"
         '
@@ -500,7 +532,7 @@ Partial Class Compras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.A
+        Me.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.ClientSize = New System.Drawing.Size(934, 650)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.PictureBox1)
@@ -532,9 +564,7 @@ Partial Class Compras
     Friend WithEvents TxtCodProv As TextBox
     Friend WithEvents lbNumeroCompra As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TxtCodPago As TextBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TxtCodTransa As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Button1 As Button
     Friend WithEvents Label12 As Label
@@ -569,4 +599,8 @@ Partial Class Compras
     Friend WithEvents Label13 As Label
     Friend WithEvents txMaximo As TextBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents cmbTipoTransac As ComboBox
+    Friend WithEvents cmbTipoPago As ComboBox
+    Friend WithEvents btnsearchProv As Button
+    Friend WithEvents btnBuscProd As Button
 End Class

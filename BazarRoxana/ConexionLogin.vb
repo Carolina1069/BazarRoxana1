@@ -13,13 +13,54 @@ Module ConexionLogin
     Sub abrir()
 
         Try
-            conexion = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+            conexion = New SqlConnection("Data Source=DESKTOP-KJA03BV\SQLEXPRESS;Initial Catalog=BazarRoxana;Integrated Security=True")
             conexion.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception
             MsgBox("No se pudo conectar" + ex.ToString)
         End Try
     End Sub
+    'khaleb metodos
+    Public cod As String = 0
+    Public codProv As String = "1"
+    Public ProductosValidar As Integer = 0
+    Public codUltmaVenta As String = 0
+    Function CodUsuario(ByVal nombreUsuario As String) As String
+        Dim resultado As Boolean = False
+        Dim cod As String = 0
+        Try
+            enunciado = New SqlCommand("Select CodEmple from Empleados where NombEmple='" & nombreUsuario & "' ", conexion)
+            respuesta = enunciado.ExecuteReader()
+
+            If respuesta.Read() Then
+                cod = respuesta.Item("CodEmple").ToString()
+            End If
+            respuesta.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return cod
+    End Function
+    Function CodUVenta() As String
+        abrir()
+        Dim resultado As Boolean = False
+        Dim cod As String = 0
+        Try
+
+            enunciado = New SqlCommand("Select top(1) NumCompra from Compras order by NumCompra DESC ", conexion)
+            respuesta = enunciado.ExecuteReader()
+
+            If respuesta.Read() Then
+                cod = Integer.Parse(respuesta.Item("NumCompra").ToString()) + 1
+            End If
+            respuesta.Close()
+        Catch ex As Exception
+            MsgBox("Error venta" + ex.ToString)
+        End Try
+
+        Return cod
+    End Function
+    ' fin
 
     Function CodUltimaVenta() As String
 
@@ -46,7 +87,7 @@ Module ConexionLogin
     Function usuarioRegistrado(ByVal nombreUsuario As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("Select * from Empleados where UsuarioEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
+            enunciado = New SqlCommand("Select * from Empleados where NombEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then
@@ -200,7 +241,7 @@ Module ConexionLogin
     Function contrasena(ByVal nombreUsuario As String) As String
         Dim resultado As String = ""
         Try
-            enunciado = New SqlCommand("Select Contraseña from Empleados where UsuarioEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
+            enunciado = New SqlCommand("Select Contraseña from Empleados where NombEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then
@@ -216,7 +257,7 @@ Module ConexionLogin
     Function ConsultarTipoUsuario(ByVal nombreUsuario As String) As Integer
         Dim resultado As Integer
         Try
-            enunciado = New SqlCommand("Select NivelEmple from Empleados where UsuarioEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
+            enunciado = New SqlCommand("Select NivelEmple from Empleados where NombEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then

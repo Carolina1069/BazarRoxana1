@@ -273,6 +273,12 @@
     <Compile Include="Ventas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="viewProveedor.Designer.vb">
+      <DependentUpon>viewProveedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="viewProveedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BuscarCliente.resx">
@@ -365,6 +371,9 @@
     <EmbeddedResource Include="RpVentaParametro.rdlc" />
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewProveedor.resx">
+      <DependentUpon>viewProveedor.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
