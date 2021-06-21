@@ -10,11 +10,10 @@ Module ConexionLogin
     'DANIELRUEDA\LOCALHOST
     'localhost
     'DORIS\SQLEXPRESS
-    'khaleb DESKTOP-KJA03BV\SQLEXPRESS
     Sub abrir()
 
         Try
-            conexion = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+            conexion = New SqlConnection("Data Source=DESKTOP-KJA03BV\SQLEXPRESS;Initial Catalog=BazarRoxana;Integrated Security=True")
             conexion.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception

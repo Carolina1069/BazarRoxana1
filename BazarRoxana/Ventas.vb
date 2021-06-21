@@ -243,7 +243,7 @@ Public Class Ventas
 
 
     Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        TxtCodEmple.Text = cod
         abrir()
 
         'If DGV.Rows.Count = 0 Then
