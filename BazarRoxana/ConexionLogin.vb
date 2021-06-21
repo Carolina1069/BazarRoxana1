@@ -10,10 +10,11 @@ Module ConexionLogin
     'DANIELRUEDA\LOCALHOST
     'localhost
     'DORIS\SQLEXPRESS
+    'DESKTOP-DE4EAJJ
     Sub abrir()
 
         Try
-            conexion = New SqlConnection("Data Source=(local)\SQLEXPRESS;Initial Catalog=BazarRoxana;Integrated Security=True")
+            conexion = New SqlConnection("Data Source=DESKTOP-DE4EAJJ;Initial Catalog=BazarRoxana;Integrated Security=True")
             conexion.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception
@@ -169,6 +170,50 @@ Module ConexionLogin
             conexion.Close()
         End Try
 
+    End Function
+
+    Public Function buscarCategoriaI(Nombre As String) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscarCategoriaI", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", Nombre)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function buscarCategoriaH(Nombre As String) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscarCategoriaH", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", Nombre)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
     End Function
 
     Public Function buscarProduct(Nombre As String) As DataTable
