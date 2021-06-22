@@ -602,7 +602,7 @@ Public Class Productos
         If txNomProd.Text = "" Or rtxDescProd.Text = "" Or txtUnidStock.Text = "" Or txMax.Text = "" Or txMin.Text = "" Or txCodProv.Text = "" Or txNombProv.Text = "" Or txCodCateg.Text = "" Or txNombCateg.Text = "" Or txtPriPre.Text = "" Or txtSegPre.Text = "" Or txtTerPre.Text = "" Then
             MsgBox("Hay campos vacios")
 
-
+        Else
             Try
                 codprod = Val(txCodProd.Text)
                 NomProd = txNomProd.Text
@@ -979,4 +979,14 @@ Public Class Productos
 
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLimpiarProv.Click
+        txCodProv.Clear()
+        txNombProv.Clear()
+
+    End Sub
+
+    Private Sub btnLimpiarCateg_Click(sender As Object, e As EventArgs) Handles btnLimpiarCateg.Click
+        txCodCateg.Clear()
+        txNombCateg.Clear()
+    End Sub
 End Class

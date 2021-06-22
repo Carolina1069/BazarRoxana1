@@ -23,10 +23,11 @@ Partial Class Productos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnlimpiaf = New System.Windows.Forms.Button()
         Me.btnAgg_C = New System.Windows.Forms.Button()
@@ -69,6 +70,8 @@ Partial Class Productos
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnLimpiarProv = New System.Windows.Forms.Button()
+        Me.btnLimpiarCateg = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -80,6 +83,8 @@ Partial Class Productos
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox2.Controls.Add(Me.btnLimpiarCateg)
+        Me.GroupBox2.Controls.Add(Me.btnLimpiarProv)
         Me.GroupBox2.Controls.Add(Me.btnlimpiaf)
         Me.GroupBox2.Controls.Add(Me.btnAgg_C)
         Me.GroupBox2.Controls.Add(Me.btnAgg_P)
@@ -130,28 +135,28 @@ Partial Class Productos
         '
         Me.btnAgg_C.BackColor = System.Drawing.Color.Silver
         Me.btnAgg_C.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgg_C.Location = New System.Drawing.Point(885, 93)
+        Me.btnAgg_C.Image = CType(resources.GetObject("btnAgg_C.Image"), System.Drawing.Image)
+        Me.btnAgg_C.Location = New System.Drawing.Point(969, 60)
         Me.btnAgg_C.Name = "btnAgg_C"
-        Me.btnAgg_C.Size = New System.Drawing.Size(77, 28)
+        Me.btnAgg_C.Size = New System.Drawing.Size(37, 28)
         Me.btnAgg_C.TabIndex = 74
-        Me.btnAgg_C.Text = "Agregar"
         Me.btnAgg_C.UseVisualStyleBackColor = False
         '
         'btnAgg_P
         '
         Me.btnAgg_P.BackColor = System.Drawing.Color.Silver
         Me.btnAgg_P.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgg_P.Location = New System.Drawing.Point(550, 90)
+        Me.btnAgg_P.Image = CType(resources.GetObject("btnAgg_P.Image"), System.Drawing.Image)
+        Me.btnAgg_P.Location = New System.Drawing.Point(637, 57)
         Me.btnAgg_P.Name = "btnAgg_P"
-        Me.btnAgg_P.Size = New System.Drawing.Size(77, 28)
+        Me.btnAgg_P.Size = New System.Drawing.Size(32, 28)
         Me.btnAgg_P.TabIndex = 73
-        Me.btnAgg_P.Text = "Agregar"
         Me.btnAgg_P.UseVisualStyleBackColor = False
         '
         'txNombCateg
         '
         Me.txNombCateg.Enabled = False
-        Me.txNombCateg.Location = New System.Drawing.Point(872, 60)
+        Me.txNombCateg.Location = New System.Drawing.Point(867, 60)
         Me.txNombCateg.Name = "txNombCateg"
         Me.txNombCateg.Size = New System.Drawing.Size(100, 27)
         Me.txNombCateg.TabIndex = 72
@@ -160,7 +165,7 @@ Partial Class Productos
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(696, 60)
+        Me.Label1.Location = New System.Drawing.Point(691, 60)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(170, 19)
         Me.Label1.TabIndex = 71
@@ -169,7 +174,7 @@ Partial Class Productos
         'txNombProv
         '
         Me.txNombProv.Enabled = False
-        Me.txNombProv.Location = New System.Drawing.Point(538, 57)
+        Me.txNombProv.Location = New System.Drawing.Point(531, 57)
         Me.txNombProv.Name = "txNombProv"
         Me.txNombProv.Size = New System.Drawing.Size(100, 27)
         Me.txNombProv.TabIndex = 70
@@ -178,7 +183,7 @@ Partial Class Productos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(370, 60)
+        Me.Label2.Location = New System.Drawing.Point(363, 60)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(164, 19)
         Me.Label2.TabIndex = 69
@@ -187,7 +192,7 @@ Partial Class Productos
         'txCodCateg
         '
         Me.txCodCateg.Enabled = False
-        Me.txCodCateg.Location = New System.Drawing.Point(872, 20)
+        Me.txCodCateg.Location = New System.Drawing.Point(867, 20)
         Me.txCodCateg.Name = "txCodCateg"
         Me.txCodCateg.Size = New System.Drawing.Size(100, 27)
         Me.txCodCateg.TabIndex = 68
@@ -196,7 +201,7 @@ Partial Class Productos
         '
         Me.lbCodCateg.AutoSize = True
         Me.lbCodCateg.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbCodCateg.Location = New System.Drawing.Point(696, 23)
+        Me.lbCodCateg.Location = New System.Drawing.Point(691, 23)
         Me.lbCodCateg.Name = "lbCodCateg"
         Me.lbCodCateg.Size = New System.Drawing.Size(148, 19)
         Me.lbCodCateg.TabIndex = 67
@@ -298,7 +303,7 @@ Partial Class Productos
         'txCodProv
         '
         Me.txCodProv.Enabled = False
-        Me.txCodProv.Location = New System.Drawing.Point(538, 20)
+        Me.txCodProv.Location = New System.Drawing.Point(531, 20)
         Me.txCodProv.Name = "txCodProv"
         Me.txCodProv.Size = New System.Drawing.Size(100, 27)
         Me.txCodProv.TabIndex = 55
@@ -341,7 +346,7 @@ Partial Class Productos
         '
         Me.lbCodProv.AutoSize = True
         Me.lbCodProv.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbCodProv.Location = New System.Drawing.Point(370, 23)
+        Me.lbCodProv.Location = New System.Drawing.Point(363, 23)
         Me.lbCodProv.Name = "lbCodProv"
         Me.lbCodProv.Size = New System.Drawing.Size(157, 19)
         Me.lbCodProv.TabIndex = 48
@@ -446,43 +451,43 @@ Partial Class Productos
         Me.DGVProducto.BackgroundColor = System.Drawing.SystemColors.ScrollBar
         Me.DGVProducto.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGVProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVProducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVProducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVProducto.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVProducto.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGVProducto.EnableHeadersVisualStyles = False
         Me.DGVProducto.GridColor = System.Drawing.SystemColors.ControlLight
         Me.DGVProducto.Location = New System.Drawing.Point(12, 76)
         Me.DGVProducto.Name = "DGVProducto"
         Me.DGVProducto.ReadOnly = True
         Me.DGVProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVProducto.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVProducto.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGVProducto.RowHeadersWidth = 51
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.ScrollBar
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White
-        Me.DGVProducto.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        Me.DGVProducto.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DGVProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGVProducto.Size = New System.Drawing.Size(969, 180)
         Me.DGVProducto.TabIndex = 71
@@ -534,6 +539,28 @@ Partial Class Productos
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 46
         Me.PictureBox1.TabStop = False
+        '
+        'btnLimpiarProv
+        '
+        Me.btnLimpiarProv.BackgroundImage = CType(resources.GetObject("btnLimpiarProv.BackgroundImage"), System.Drawing.Image)
+        Me.btnLimpiarProv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLimpiarProv.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiarProv.Location = New System.Drawing.Point(637, 20)
+        Me.btnLimpiarProv.Name = "btnLimpiarProv"
+        Me.btnLimpiarProv.Size = New System.Drawing.Size(32, 31)
+        Me.btnLimpiarProv.TabIndex = 78
+        Me.btnLimpiarProv.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarCateg
+        '
+        Me.btnLimpiarCateg.BackgroundImage = CType(resources.GetObject("btnLimpiarCateg.BackgroundImage"), System.Drawing.Image)
+        Me.btnLimpiarCateg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLimpiarCateg.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiarCateg.Location = New System.Drawing.Point(972, 20)
+        Me.btnLimpiarCateg.Name = "btnLimpiarCateg"
+        Me.btnLimpiarCateg.Size = New System.Drawing.Size(32, 31)
+        Me.btnLimpiarCateg.TabIndex = 79
+        Me.btnLimpiarCateg.UseVisualStyleBackColor = True
         '
         'Productos
         '
@@ -602,4 +629,6 @@ Partial Class Productos
     Public WithEvents txCodProv As TextBox
     Public WithEvents txNombCateg As TextBox
     Public WithEvents txNombProv As TextBox
+    Friend WithEvents btnLimpiarCateg As Button
+    Friend WithEvents btnLimpiarProv As Button
 End Class

@@ -14,7 +14,7 @@ Module ConexionLogin
     Sub abrir()
 
         Try
-            conexion = New SqlConnection("Data Source=DESKTOP-DE4EAJJ;Initial Catalog=BazarRoxana;Integrated Security=True")
+            conexion = New SqlConnection("Data Source=DORIS\SQLEXPRESS;Initial Catalog=BazarRoxana;Integrated Security=True")
             conexion.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception
@@ -434,6 +434,7 @@ Module ConexionLogin
             conexion.Open()
             enunciado = New SqlCommand("Actualizar", conexion)
             enunciado.CommandType = CommandType.StoredProcedure
+
             enunciado.Parameters.AddWithValue("@CodProd", codprod)
             enunciado.Parameters.AddWithValue("@NombProduc", NomProd)
             enunciado.Parameters.AddWithValue("@DescripProduc", descripcion)
