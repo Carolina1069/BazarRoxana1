@@ -334,7 +334,7 @@ Module ConexionLogin
     Function PersonaRegistradaCategoria(ByVal id As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Categoria where CodCateg='" & id & "'", conexion)
+            enunciado = New SqlCommand("select*from Categoria where NombCateg='" & id & "'", conexion)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True
@@ -426,4 +426,39 @@ Module ConexionLogin
         End Try
         Return resultado
     End Function
+
+    Public Function ActualizarProducto(codprod As Integer, NomProd As String, descripcion As String, Codprov As Integer, NombProv As String,
+                             CodCateg As Integer, NombCateg As String, PrimerPrecio As Integer, SegundoPrecio As Integer,
+                             TercerPrecio As Integer, UnidadesStock As Integer, Minimo As Integer, maximo As Integer)
+        Try
+            conexion.Open()
+            enunciado = New SqlCommand("Actualizar", conexion)
+            enunciado.CommandType = CommandType.StoredProcedure
+            enunciado.Parameters.AddWithValue("@CodProd", codprod)
+            enunciado.Parameters.AddWithValue("@NombProduc", NomProd)
+            enunciado.Parameters.AddWithValue("@DescripProduc", descripcion)
+            enunciado.Parameters.AddWithValue("@CodProv", Codprov)
+            enunciado.Parameters.AddWithValue("@NombProv", NombProv)
+            enunciado.Parameters.AddWithValue("@CodCateg", CodCateg)
+            enunciado.Parameters.AddWithValue("@NombCateg", NombCateg)
+            enunciado.Parameters.AddWithValue("@PrimerPrecio", PrimerPrecio)
+            enunciado.Parameters.AddWithValue("@SegundoPrecio", SegundoPrecio)
+            enunciado.Parameters.AddWithValue("@TercerPrecio", TercerPrecio)
+            enunciado.Parameters.AddWithValue("@UnidadesStock", UnidadesStock)
+            enunciado.Parameters.AddWithValue("@Minimo", Minimo)
+            enunciado.Parameters.AddWithValue("@Maximo", maximo)
+
+            If enunciado.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
 End Module

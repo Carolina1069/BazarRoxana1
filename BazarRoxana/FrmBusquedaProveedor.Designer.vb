@@ -23,10 +23,10 @@ Partial Class FrmBusquedaProveedor
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnSalir = New System.Windows.Forms.Button()
-        Me.txtBuscarProv = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvprov = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txtBuscarProv = New System.Windows.Forms.TextBox()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvprov, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -47,22 +47,14 @@ Partial Class FrmBusquedaProveedor
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "LISTA DE PROVEEDORES"
         '
-        'btnSalir
+        'dgvprov
         '
-        Me.btnSalir.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSalir.Location = New System.Drawing.Point(294, 270)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(90, 40)
-        Me.btnSalir.TabIndex = 41
-        Me.btnSalir.Text = "Salir"
-        Me.btnSalir.UseVisualStyleBackColor = True
-        '
-        'txtBuscarProv
-        '
-        Me.txtBuscarProv.Location = New System.Drawing.Point(226, 25)
-        Me.txtBuscarProv.Name = "txtBuscarProv"
-        Me.txtBuscarProv.Size = New System.Drawing.Size(411, 27)
-        Me.txtBuscarProv.TabIndex = 0
+        Me.dgvprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvprov.Location = New System.Drawing.Point(9, 80)
+        Me.dgvprov.Name = "dgvprov"
+        Me.dgvprov.ReadOnly = True
+        Me.dgvprov.Size = New System.Drawing.Size(640, 150)
+        Me.dgvprov.TabIndex = 2
         '
         'Label1
         '
@@ -73,13 +65,22 @@ Partial Class FrmBusquedaProveedor
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Buscar proveedor por nombre"
         '
-        'dgvprov
+        'txtBuscarProv
         '
-        Me.dgvprov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvprov.Location = New System.Drawing.Point(9, 80)
-        Me.dgvprov.Name = "dgvprov"
-        Me.dgvprov.Size = New System.Drawing.Size(640, 150)
-        Me.dgvprov.TabIndex = 2
+        Me.txtBuscarProv.Location = New System.Drawing.Point(226, 25)
+        Me.txtBuscarProv.Name = "txtBuscarProv"
+        Me.txtBuscarProv.Size = New System.Drawing.Size(411, 27)
+        Me.txtBuscarProv.TabIndex = 0
+        '
+        'btnSalir
+        '
+        Me.btnSalir.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSalir.Location = New System.Drawing.Point(294, 270)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(90, 40)
+        Me.btnSalir.TabIndex = 41
+        Me.btnSalir.Text = "Salir"
+        Me.btnSalir.UseVisualStyleBackColor = True
         '
         'FrmBusquedaProveedor
         '

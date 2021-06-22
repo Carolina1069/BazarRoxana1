@@ -62,6 +62,7 @@ Partial Class FrmBusquedaCategoria
         Me.dgvcategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvcategoria.Location = New System.Drawing.Point(9, 80)
         Me.dgvcategoria.Name = "dgvcategoria"
+        Me.dgvcategoria.ReadOnly = True
         Me.dgvcategoria.Size = New System.Drawing.Size(640, 150)
         Me.dgvcategoria.TabIndex = 2
         '

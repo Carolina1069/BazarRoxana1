@@ -594,73 +594,66 @@ Public Class Productos
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+        Dim codprod As Integer, NomProd As String, descripcion As String, Codprov As Integer, NombProv As String
+        Dim CodCateg As Integer, NombCateg As String, PrimerPrecio As Integer, SegundoPrecio As Integer
+        Dim TercerPrecio As Integer, UnidadesStock As Integer, Minimo As Integer, maximo As Integer
 
-        'Dim idUsuario As Integer
-        'Dim nombre, apellido, userName, psw, correo, rol As String
-        'idUsuario = Val(txtCodigo.Text)
-        'nombre = txtNombre.Text
-        'apellido = txtApellido.Text
-        'userName = txtUsuario.Text
-        'psw = txtContraseña.Text
-        'correo = txtCorreo.Text
-        'rol = cmbRol.Text
 
-        'Try
-        '    If (conexion.modificarUsuario(idUsuario, nombre, apellido, userName, psw, rol, correo)) Then
-        '        MessageBox.Show("Actualizado")
-        '        Limpia()
-        '        'conexion.conexion.Close()
-        '    Else
-        '        MessageBox.Show("Error al actualizar")
-        '        'conexion.conexion.Close()
-        '    End If
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
+        If txNomProd.Text = "" Or rtxDescProd.Text = "" Or txtUnidStock.Text = "" Or txMax.Text = "" Or txMin.Text = "" Or txCodProv.Text = "" Or txNombProv.Text = "" Or txCodCateg.Text = "" Or txNombCateg.Text = "" Or txtPriPre.Text = "" Or txtSegPre.Text = "" Or txtTerPre.Text = "" Then
+            MsgBox("Hay campos vacios")
 
-        '    ConexionLogin.conexion.Close()
-        'End Try
 
-        'abrir()
-        'If (txtNombreEmpleado.TextLength < 2) Then
-        '    MessageBox.Show("Debe ingresar como minimo 2 caracteres en nombre del empleado")
-        'ElseIf (TxtUsuario.TextLength < 2) Then
-        '    MessageBox.Show("Debe ingresar como minimo 2 caracteres en usuario del empleado")
-        'ElseIf (TxtContraseña.TextLength < 8) Then
-        '    MessageBox.Show("Debe ingresar como minimo 8 caracteres en la contraseña del empleado")
+            Try
+                codprod = Val(txCodProd.Text)
+                NomProd = txNomProd.Text
+                descripcion = rtxDescProd.Text
+                Codprov = txCodProv.Text
+                NombProv = txNombProv.Text
+                CodCateg = Val(txCodCateg.Text)
+                NombCateg = txNombCateg.Text
+                PrimerPrecio = Val(txtPriPre.Text)
+                SegundoPrecio = Val(txtSegPre.Text)
+                TercerPrecio = Val(txtTerPre.Text)
+                UnidadesStock = Val(txtUnidStock.Text)
+                maximo = txMax.Text
+                Minimo = txMin.Text
 
-        'Else
+                If (ConexionLogin.ActualizarProducto(codprod, NomProd, descripcion, Codprov, NombProv, CodCateg, NombCateg, PrimerPrecio, SegundoPrecio, TercerPrecio, UnidadesStock, Minimo, maximo)) Then
+                    MessageBox.Show("Actualizado")
 
-        '    If TxtCodigoEmpleado.Text = "" Or txtNombreEmpleado.Text = "" Or TxtContraseña.Text = "" Or DGV.Rows.Count = 0 Then
-        '        MsgBox("Hay campos vacios")
-        '    Else
-        '        Dim Cat As Integer
-        '        Dim estado As Integer
+                    'conexion.conexion.Close()
+                Else
+                    MessageBox.Show("Error al actualizar")
+                    'conexion.conexion.Close()
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                ConexionLogin.conexion.Close()
+            End Try
 
-        '        If CbxNivel.SelectedItem = "Gerente" And chkEstado.Checked = True Then
-        '            Cat = 1
-        '            estado = 1
-        '        Else
-        '            Cat = 2
-        '            estado = 0
-        '        End If
+        End If
+        Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using adaptador As New SqlDataAdapter("SELECT [CodProduc] as 'Código producto'
+               ,[NombProduc] as 'Nombre producto'
+              ,[DescripProduc] as 'Descripción'
+              ,[CodProv] as 'Código proveedoor'
+              ,[NombProv] as 'Nombre proveedor'
+              ,[CodCateg] as 'Código categoría'
+              ,[NombCateg] as 'Nombre categoría'
+              ,[PrimerPrecio] as 'Primero precio'
+              ,[SegundoPrecio] as ' Segundo precio'
+              ,[TercerPrecio] as 'Tercer precio'
+              ,[UnidadesStock] as 'Unidades en stock'
+              ,[Minimo] as Mínimo
+              ,[Maximo] as Máximo,       
+	          case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto' 
+              FROM [dbo].[Producto] 
+              where Estado = 1", conexion)
+            adaptador.Fill(DatosCat)
+        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+        DGVProducto.DataSource = DatosCat
+        conexion.Close()
 
-        '        Dim consultaAct As String = "update Empleados set NombEmple=@NombEmple, Contraseña=@Contraseña ,NivelEmple=@NivelEmple, EstadoEmple=@EstadoEmple where CodEmple= @CodEmple"
-        '        Dim ejecutar As New SqlCommand(consultaAct, conexion)
-        '        ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodigoEmpleado.Text))
-        '        ejecutar.Parameters.AddWithValue("@NombEmple", (txtNombreEmpleado.Text))
-        '        ejecutar.Parameters.AddWithValue("@Contraseña", (TxtContraseña.Text))
-        '        ejecutar.Parameters.AddWithValue("@NivelEmple", (Cat))
-        '        ejecutar.Parameters.AddWithValue("@EstadoEmple", (estado))
-        '        ejecutar.ExecuteNonQuery()
-
-        '    End If
-        'End If
-        'Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        'Using adaptador As New SqlDataAdapter("select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
-        '    adaptador.Fill(DatosEmp)
-        'End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-        'DGV.DataSource = DatosEmp
-        'conexion.Close()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -940,11 +933,11 @@ Public Class Productos
     Private Sub DGVProducto_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVProducto.CellDoubleClick
         txCodProd.Text = DGVProducto.CurrentRow.Cells(0).Value
         txNomProd.Text = DGVProducto.CurrentRow.Cells(1).Value
-        'rtxDescProd = DGVProducto.CurrentRow.Cells(2).Value
-        txCodCateg.Text = DGVProducto.CurrentRow.Cells(3).Value
-        txNombCateg.Text = DGVProducto.CurrentRow.Cells(4).Value
-        txCodProv.Text = DGVProducto.CurrentRow.Cells(5).Value
-        txNombProv.Text = DGVProducto.CurrentRow.Cells(6).Value
+        rtxDescProd.Text = DGVProducto.CurrentRow.Cells(2).Value
+        txCodProv.Text = DGVProducto.CurrentRow.Cells(3).Value
+        txNombProv.Text = DGVProducto.CurrentRow.Cells(4).Value
+        txCodCateg.Text = DGVProducto.CurrentRow.Cells(5).Value
+        txNombCateg.Text = DGVProducto.CurrentRow.Cells(6).Value
         txMax.Text = DGVProducto.CurrentRow.Cells(12).Value
         txMin.Text = DGVProducto.CurrentRow.Cells(11).Value
         txtUnidStock.Text = DGVProducto.CurrentRow.Cells(10).Value
@@ -956,6 +949,22 @@ Public Class Productos
         Else
             btnEliminar.Visible = True
         End If
+
+
+        '      (@NombProduc,
+        '      @DescripProduc
+        '      ,@CodProv
+        ',@NombProv
+        '      ,@CodCateg
+        ',@NombCateg
+        '      ,@PrimerPrecio
+        '      ,@SegundoPrecio
+        '      ,@TercerPrecio
+        '      ,@UnidadesStock
+        '      ,@Minimo
+        '      ,@Maximo
+        '      ,1)"
+
     End Sub
 
     Private Sub lbCodigoCli_Click(sender As Object, e As EventArgs) Handles lbCodigoCli.Click
@@ -969,4 +978,5 @@ Public Class Productos
     Private Sub DGVProducto_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGVProducto.CellEndEdit
 
     End Sub
+
 End Class
