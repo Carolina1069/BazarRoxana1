@@ -195,6 +195,11 @@ Public Class Clientes
             ' Deshechamos el carácter
             e.Handled = True
 
+        ElseIf Len(Me.txNomCli.Text) = "0" Then
+            If InStr(1, "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,Ñ,Z,X,C,V,B,N,M,q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,ñ,z,x,c,v,b,n,m" & Chr(8), e.KeyChar) = 0 Then
+                e.KeyChar = ""
+                MsgBox("No ingreses espacios al principio", MsgBoxStyle.Exclamation, "Advertencia")
+            End If
         End If
 
     End Sub
@@ -316,6 +321,8 @@ Public Class Clientes
 
     Private Sub txNomCli_TextChanged(sender As Object, e As EventArgs) Handles txNomCli.TextChanged
         LbContador4.Text = txNomCli.Text.Length
+        txNomCli.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txNomCli.Text)
+        txNomCli.SelectionStart = txNomCli.Text.Length
     End Sub
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
@@ -381,4 +388,12 @@ Public Class Clientes
         Cuantas = Len(Cad) - Len(Replace(Cad, Letra, vbNullString))
     End Function
 
+    Private Sub rtxDirCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles rtxDirCli.KeyPress
+        If Len(Me.txNomCli.Text) = "0" Then
+            If InStr(1, "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,Ñ,Z,X,C,V,B,N,M,q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,ñ,z,x,c,v,b,n,m,1,2,3,4,5,6,7,8,9,0" & Chr(8), e.KeyChar) = 0 Then
+                e.KeyChar = ""
+                MsgBox("No ingreses espacios o caracteres especiales al principio", MsgBoxStyle.Exclamation, "Advertencia")
+            End If
+        End If
+    End Sub
 End Class

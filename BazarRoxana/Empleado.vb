@@ -200,8 +200,13 @@ Public Class Empleado
 
             ' Deshechamos el carácter
             e.Handled = True
+        ElseIf Len(Me.txtNombreEmpleado.Text) = "0" Then
+            If InStr(1, "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,Ñ,Z,X,C,V,B,N,M,q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,ñ,z,x,c,v,b,n,m" & Chr(8), e.KeyChar) = 0 Then
+                    e.KeyChar = ""
+                    MsgBox("No ingreses espacios al principio", MsgBoxStyle.Exclamation, "Advertencia")
+                End If
+            End If
 
-        End If
     End Sub
 
     'Funcion  que solo permite el ingreso de caracteres tipo numerico
@@ -221,6 +226,7 @@ Public Class Empleado
 
     Private Sub txtNombreEmpleado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombreEmpleado.KeyPress
         SoloLetras(e)
+
     End Sub
 
     Private Sub cbxMostrarContra_CheckedChanged(sender As Object, e As EventArgs) Handles chkMostrarContra.CheckedChanged
@@ -275,6 +281,8 @@ Public Class Empleado
 
     Private Sub txtNombreEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtNombreEmpleado.TextChanged
         LbContador.Text = txtNombreEmpleado.Text.Length
+        txtNombreEmpleado.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombreEmpleado.Text)
+        txtNombreEmpleado.SelectionStart = txtNombreEmpleado.Text.Length
     End Sub
 
     Private Sub TxtUsuario_TextChanged(sender As Object, e As EventArgs) Handles TxtUsuario.TextChanged
@@ -335,5 +343,21 @@ Public Class Empleado
         End If
     End Sub
 
+    Private Sub TxtUsuario_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtUsuario.KeyPress
+        If Len(Me.TxtUsuario.Text) = "0" Then
+            If InStr(1, "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,Ñ,Z,X,C,V,B,N,M,q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,ñ,z,x,c,v,b,n,m,°,!,#,$,%,&,/,(,),=,?,¡,*,¨,[,],_,:,;,.,-,{,},+,´,',¿" & Chr(8), e.KeyChar) = 0 Then
+                e.KeyChar = ""
+                MsgBox("No ingreses espacios al principio", MsgBoxStyle.Exclamation, "Advertencia")
+            End If
+        End If
+    End Sub
 
+    Private Sub TxtContraseña_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtContraseña.KeyPress
+        If Len(Me.TxtContraseña.Text) = "0" Then
+            If InStr(1, "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,Ñ,Z,X,C,V,B,N,M,q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,ñ,z,x,c,v,b,n,m,°,!,#,$,%,&,/,(,),=,?,¡,*,¨,[,],_,:,;,.,-,{,},+,´,',¿" & Chr(8), e.KeyChar) = 0 Then
+                e.KeyChar = ""
+                MsgBox("No ingreses espacios al principio", MsgBoxStyle.Exclamation, "Advertencia")
+            End If
+        End If
+    End Sub
 End Class
