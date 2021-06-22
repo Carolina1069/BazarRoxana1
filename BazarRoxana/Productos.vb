@@ -480,12 +480,18 @@ Public Class Productos
             Dim consultaElim As String = "Update Producto set Estado=0   where CodProduc= @CodProduc"
             Dim ejecutar As New SqlCommand(consultaElim, conexion)
             ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
-            If ejecutar.ExecuteNonQuery() Then
-                MessageBox.Show("Producto eliminado con Exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Dim opcion As DialogResult
+            opcion = MessageBox.Show("¿Esta Seguro que desea eliminar el producto?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If opcion = DialogResult.Yes Then
+                If ejecutar.ExecuteNonQuery() Then
 
-            Else
-                MessageBox.Show("Error al eliminar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Producto eliminado con Exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Else
+                    MessageBox.Show("Error al eliminar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
             End If
+
         End If
         btnEliminar.Visible = False
         btnActualizar.Visible = False
