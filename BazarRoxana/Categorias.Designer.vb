@@ -22,11 +22,12 @@ Partial Class Categorias
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnHabilitar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         Me.chkInhabil = New System.Windows.Forms.CheckBox()
@@ -38,14 +39,11 @@ Partial Class Categorias
         Me.lbDescripcion = New System.Windows.Forms.Label()
         Me.lbCodigoCategoria = New System.Windows.Forms.Label()
         Me.txtNombCat = New System.Windows.Forms.TextBox()
-        Me.chkEstado = New System.Windows.Forms.CheckBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.txtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnLimpia = New System.Windows.Forms.Button()
-        Me.btnHabilitar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +69,15 @@ Partial Class Categorias
         Me.GroupBox1.TabIndex = 63
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Búsqueda de la categoría"
+        '
+        'btnHabilitar
+        '
+        Me.btnHabilitar.Location = New System.Drawing.Point(675, 22)
+        Me.btnHabilitar.Name = "btnHabilitar"
+        Me.btnHabilitar.Size = New System.Drawing.Size(146, 39)
+        Me.btnHabilitar.TabIndex = 74
+        Me.btnHabilitar.Text = "Habilitar Categoría"
+        Me.btnHabilitar.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -141,43 +148,43 @@ Partial Class Categorias
         Me.DGV.BackgroundColor = System.Drawing.SystemColors.ScrollBar
         Me.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV.DefaultCellStyle = DataGridViewCellStyle6
         Me.DGV.EnableHeadersVisualStyles = False
         Me.DGV.GridColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.DGV.Location = New System.Drawing.Point(19, 74)
         Me.DGV.Name = "DGV"
         Me.DGV.ReadOnly = True
         Me.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DGV.RowHeadersWidth = 51
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.DGV.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ScrollBar
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        Me.DGV.RowsDefaultCellStyle = DataGridViewCellStyle8
         Me.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV.Size = New System.Drawing.Size(802, 180)
         Me.DGV.TabIndex = 21
@@ -198,7 +205,7 @@ Partial Class Categorias
         Me.lbDescripcion.AutoSize = True
         Me.lbDescripcion.BackColor = System.Drawing.Color.Transparent
         Me.lbDescripcion.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbDescripcion.Location = New System.Drawing.Point(155, 107)
+        Me.lbDescripcion.Location = New System.Drawing.Point(153, 124)
         Me.lbDescripcion.Name = "lbDescripcion"
         Me.lbDescripcion.Size = New System.Drawing.Size(168, 19)
         Me.lbDescripcion.TabIndex = 57
@@ -219,23 +226,11 @@ Partial Class Categorias
         '
         Me.txtNombCat.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtNombCat.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtNombCat.Location = New System.Drawing.Point(343, 106)
+        Me.txtNombCat.Location = New System.Drawing.Point(327, 124)
         Me.txtNombCat.MaxLength = 20
         Me.txtNombCat.Name = "txtNombCat"
         Me.txtNombCat.Size = New System.Drawing.Size(183, 20)
         Me.txtNombCat.TabIndex = 65
-        '
-        'chkEstado
-        '
-        Me.chkEstado.AutoSize = True
-        Me.chkEstado.BackColor = System.Drawing.Color.Transparent
-        Me.chkEstado.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.chkEstado.Location = New System.Drawing.Point(340, 229)
-        Me.chkEstado.Name = "chkEstado"
-        Me.chkEstado.Size = New System.Drawing.Size(186, 23)
-        Me.chkEstado.TabIndex = 66
-        Me.chkEstado.Text = "Habilitado/Inhabilitado"
-        Me.chkEstado.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
@@ -252,29 +247,18 @@ Partial Class Categorias
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Candara", 19.0!, System.Drawing.FontStyle.Bold)
+        Me.Label1.Font = New System.Drawing.Font("Candara", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(133, 32)
+        Me.Label1.Size = New System.Drawing.Size(128, 31)
         Me.Label1.TabIndex = 68
         Me.Label1.Text = "Categorías" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(155, 229)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(159, 19)
-        Me.Label2.TabIndex = 69
-        Me.Label2.Text = "Estado de la categoría"
         '
         'txtDescripcion
         '
         Me.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtDescripcion.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtDescripcion.Location = New System.Drawing.Point(281, 155)
+        Me.txtDescripcion.Location = New System.Drawing.Point(278, 179)
         Me.txtDescripcion.MaxLength = 75
         Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
@@ -286,7 +270,7 @@ Partial Class Categorias
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(153, 155)
+        Me.Label3.Location = New System.Drawing.Point(153, 179)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(89, 19)
         Me.Label3.TabIndex = 70
@@ -302,15 +286,6 @@ Partial Class Categorias
         Me.btnLimpia.Text = "Limpiar"
         Me.btnLimpia.UseVisualStyleBackColor = True
         '
-        'btnHabilitar
-        '
-        Me.btnHabilitar.Location = New System.Drawing.Point(675, 22)
-        Me.btnHabilitar.Name = "btnHabilitar"
-        Me.btnHabilitar.Size = New System.Drawing.Size(146, 39)
-        Me.btnHabilitar.TabIndex = 74
-        Me.btnHabilitar.Text = "Habilitar Categoría"
-        Me.btnHabilitar.UseVisualStyleBackColor = True
-        '
         'Categorias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -320,10 +295,8 @@ Partial Class Categorias
         Me.Controls.Add(Me.btnLimpia)
         Me.Controls.Add(Me.txtDescripcion)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.chkEstado)
         Me.Controls.Add(Me.txtNombCat)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txCodCat)
@@ -349,11 +322,9 @@ Partial Class Categorias
     Friend WithEvents lbDescripcion As Label
     Friend WithEvents lbCodigoCategoria As Label
     Friend WithEvents txtNombCat As TextBox
-    Friend WithEvents chkEstado As CheckBox
     Friend WithEvents chkInhabil As CheckBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents TxtBusqueda As TextBox
     Friend WithEvents txtDescripcion As TextBox
     Friend WithEvents Label3 As Label

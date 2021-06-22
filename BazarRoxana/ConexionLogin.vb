@@ -149,13 +149,13 @@ Module ConexionLogin
         End Try
     End Function
 
-    Public Function insertarCategoria(nombre As String, estado As Integer, descripcion As String)
+    Public Function ActualizarCategoria(codigo As Integer, nombre As String, estado As Integer, descripcion As String)
         Try
             conexion.Open()
-            enunciado = New SqlCommand("insertar_categoria", conexion)
+            enunciado = New SqlCommand("ActualizarCategoria", conexion)
             enunciado.CommandType = CommandType.StoredProcedure
+            enunciado.Parameters.AddWithValue("@codigo", codigo)
             enunciado.Parameters.AddWithValue("@nombre", nombre)
-            enunciado.Parameters.AddWithValue("@Estado", estado)
             enunciado.Parameters.AddWithValue("@Descrip", descripcion)
 
             If enunciado.ExecuteNonQuery Then

@@ -117,41 +117,47 @@ Public Class Categorias
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
 
-        abrir()
-        'Dim estado As Integer
-
-        ''If chkEstado.Checked = True Then
-
-        ''    estado = 1
-        ''Else
-
-        ''    estado = 0
-        ''End If
-
-        If txCodCat.Text = "" Or txtNombCat.Text = "" Or txtDescripcion.Text = "" Then
-            MsgBox("Hay campos vacios")
-        Else
-            Dim consultaAct As String = "update Categoria set NombCateg=@NombCateg, DescripCateg=@DescripCateg where CodCateg= @CodCateg, CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1"
-            Dim ejecutar As New SqlCommand(consultaAct, conexion)
-            ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCat.Text))
-            ejecutar.Parameters.AddWithValue("@NombCateg", Val(txtNombCat.Text))
-            ejecutar.Parameters.AddWithValue("@DescripCateg", Val(txtDescripcion.Text))
-            If ejecutar.ExecuteNonQuery() Then
-                MessageBox.Show("Categoria eliminada con Exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-            Else
-                MessageBox.Show("Error al eliminar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-
-        End If
 
 
-        Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
-            adaptador.Fill(DatosCat)
-        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-        DGV.DataSource = DatosCat
-        conexion.Close()
+
+
+
+
+        'abrir()
+        ''Dim estado As Integer
+
+        '''If chkEstado.Checked = True Then
+
+        '''    estado = 1
+        '''Else
+
+        '''    estado = 0
+        '''End If
+
+        'If txCodCat.Text = "" Or txtNombCat.Text = "" Or txtDescripcion.Text = "" Then
+        '    MsgBox("Hay campos vacios")
+        'Else
+        '    Dim consultaAct As String = "update Categoria set NombCateg=@NombCateg, DescripCateg=@DescripCateg where CodCateg= @CodCateg, CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1"
+        '    Dim ejecutar As New SqlCommand(consultaAct, conexion)
+        '    ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCat.Text))
+        '    ejecutar.Parameters.AddWithValue("@NombCateg", Val(txtNombCat.Text))
+        '    ejecutar.Parameters.AddWithValue("@DescripCateg", Val(txtDescripcion.Text))
+        '    If ejecutar.ExecuteNonQuery() Then
+        '        MessageBox.Show("Categoria eliminada con Exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        '    Else
+        '        MessageBox.Show("Error al eliminar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    End If
+
+        'End If
+
+
+        'Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
+        'Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
+        '    adaptador.Fill(DatosCat)
+        'End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+        'DGV.DataSource = DatosCat
+        'conexion.Close()
 
     End Sub
 
