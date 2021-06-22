@@ -450,6 +450,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -806,13 +807,17 @@
           <DataField>NumVent</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="NombCli">
-          <DataField>NombCli</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="FechayHoraVenta">
           <DataField>FechayHoraVenta</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="Total">
+          <DataField>Total</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="NombCli">
+          <DataField>NombCli</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="DescPago">
           <DataField>DescPago</DataField>
@@ -826,14 +831,10 @@
           <DataField>NombEmple</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Total">
-          <DataField>Total</DataField>
-          <rd:TypeName>System.Double</rd:TypeName>
-        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>BazarRoxana</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\user\Documents\GitHub\git\BazarRoxana\BazarRoxana.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\carlo\OneDrive\Escritorio\BazarRoxana1\BazarRoxana\BazarRoxana.xsd</rd:SchemaPath>
         <rd:TableName>SelectTodaslasVentas</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

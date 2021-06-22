@@ -4554,17 +4554,17 @@ Partial Public Class BazarRoxana
         
         Private columnNumVent As Global.System.Data.DataColumn
         
-        Private columnNombCli As Global.System.Data.DataColumn
-        
         Private columnFechayHoraVenta As Global.System.Data.DataColumn
+        
+        Private columnTotal As Global.System.Data.DataColumn
+        
+        Private columnNombCli As Global.System.Data.DataColumn
         
         Private columnDescPago As Global.System.Data.DataColumn
         
         Private columnDescTransa As Global.System.Data.DataColumn
         
         Private columnNombEmple As Global.System.Data.DataColumn
-        
-        Private columnTotal As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -4611,17 +4611,25 @@ Partial Public Class BazarRoxana
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property NombCliColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property FechayHoraVentaColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnNombCli
+                Return Me.columnFechayHoraVenta
             End Get
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property FechayHoraVentaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property TotalColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnFechayHoraVenta
+                Return Me.columnTotal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property NombCliColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNombCli
             End Get
         End Property
         
@@ -4646,14 +4654,6 @@ Partial Public Class BazarRoxana
         Public ReadOnly Property NombEmpleColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnNombEmple
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property TotalColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnTotal
             End Get
         End Property
         
@@ -4694,9 +4694,9 @@ Partial Public Class BazarRoxana
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddSelectTodaslasVentasRow(ByVal NombCli As String, ByVal FechayHoraVenta As Date, ByVal DescPago As String, ByVal DescTransa As String, ByVal NombEmple As String, ByVal Total As Double) As SelectTodaslasVentasRow
+        Public Overloads Function AddSelectTodaslasVentasRow(ByVal FechayHoraVenta As Date, ByVal Total As Double, ByVal NombCli As String, ByVal DescPago As String, ByVal DescTransa As String, ByVal NombEmple As String) As SelectTodaslasVentasRow
             Dim rowSelectTodaslasVentasRow As SelectTodaslasVentasRow = CType(Me.NewRow,SelectTodaslasVentasRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, NombCli, FechayHoraVenta, DescPago, DescTransa, NombEmple, Total}
+            Dim columnValuesArray() As Object = New Object() {Nothing, FechayHoraVenta, Total, NombCli, DescPago, DescTransa, NombEmple}
             rowSelectTodaslasVentasRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSelectTodaslasVentasRow)
             Return rowSelectTodaslasVentasRow
@@ -4726,12 +4726,12 @@ Partial Public Class BazarRoxana
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnNumVent = MyBase.Columns("NumVent")
-            Me.columnNombCli = MyBase.Columns("NombCli")
             Me.columnFechayHoraVenta = MyBase.Columns("FechayHoraVenta")
+            Me.columnTotal = MyBase.Columns("Total")
+            Me.columnNombCli = MyBase.Columns("NombCli")
             Me.columnDescPago = MyBase.Columns("DescPago")
             Me.columnDescTransa = MyBase.Columns("DescTransa")
             Me.columnNombEmple = MyBase.Columns("NombEmple")
-            Me.columnTotal = MyBase.Columns("Total")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4739,18 +4739,18 @@ Partial Public Class BazarRoxana
         Private Sub InitClass()
             Me.columnNumVent = New Global.System.Data.DataColumn("NumVent", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNumVent)
-            Me.columnNombCli = New Global.System.Data.DataColumn("NombCli", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnNombCli)
             Me.columnFechayHoraVenta = New Global.System.Data.DataColumn("FechayHoraVenta", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFechayHoraVenta)
+            Me.columnTotal = New Global.System.Data.DataColumn("Total", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnTotal)
+            Me.columnNombCli = New Global.System.Data.DataColumn("NombCli", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombCli)
             Me.columnDescPago = New Global.System.Data.DataColumn("DescPago", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDescPago)
             Me.columnDescTransa = New Global.System.Data.DataColumn("DescTransa", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDescTransa)
             Me.columnNombEmple = New Global.System.Data.DataColumn("NombEmple", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNombEmple)
-            Me.columnTotal = New Global.System.Data.DataColumn("Total", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnTotal)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnNumVent}, true))
             Me.columnNumVent.AutoIncrement = true
             Me.columnNumVent.AutoIncrementSeed = -1
@@ -4758,16 +4758,16 @@ Partial Public Class BazarRoxana
             Me.columnNumVent.AllowDBNull = false
             Me.columnNumVent.ReadOnly = true
             Me.columnNumVent.Unique = true
+            Me.columnFechayHoraVenta.AllowDBNull = false
+            Me.columnTotal.AllowDBNull = false
             Me.columnNombCli.AllowDBNull = false
             Me.columnNombCli.MaxLength = 50
-            Me.columnFechayHoraVenta.AllowDBNull = false
             Me.columnDescPago.AllowDBNull = false
             Me.columnDescPago.MaxLength = 50
             Me.columnDescTransa.AllowDBNull = false
             Me.columnDescTransa.MaxLength = 50
             Me.columnNombEmple.AllowDBNull = false
             Me.columnNombEmple.MaxLength = 50
-            Me.columnTotal.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6086,23 +6086,34 @@ Partial Public Class BazarRoxana
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property NombCli() As String
-            Get
-                Return CType(Me(Me.tableSelectTodaslasVentas.NombCliColumn),String)
-            End Get
-            Set
-                Me(Me.tableSelectTodaslasVentas.NombCliColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property FechayHoraVenta() As Date
             Get
                 Return CType(Me(Me.tableSelectTodaslasVentas.FechayHoraVentaColumn),Date)
             End Get
             Set
                 Me(Me.tableSelectTodaslasVentas.FechayHoraVentaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property Total() As Double
+            Get
+                Return CType(Me(Me.tableSelectTodaslasVentas.TotalColumn),Double)
+            End Get
+            Set
+                Me(Me.tableSelectTodaslasVentas.TotalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property NombCli() As String
+            Get
+                Return CType(Me(Me.tableSelectTodaslasVentas.NombCliColumn),String)
+            End Get
+            Set
+                Me(Me.tableSelectTodaslasVentas.NombCliColumn) = value
             End Set
         End Property
         
@@ -6136,17 +6147,6 @@ Partial Public Class BazarRoxana
             End Get
             Set
                 Me(Me.tableSelectTodaslasVentas.NombEmpleColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property Total() As Double
-            Get
-                Return CType(Me(Me.tableSelectTodaslasVentas.TotalColumn),Double)
-            End Get
-            Set
-                Me(Me.tableSelectTodaslasVentas.TotalColumn) = value
             End Set
         End Property
     End Class
@@ -7808,7 +7808,7 @@ Namespace BazarRoxanaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BazarRoxana.My.MySettings.Default.BazarRoxanaConnectionString1
+            Me._connection.ConnectionString = Global.BazarRoxana.My.MySettings.Default.BazarRoxanaConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7819,19 +7819,27 @@ Namespace BazarRoxanaTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "dbo.SelectCompraFecha"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechayHora", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "FechayHora", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodPago", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "FechayHora", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechayHora", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 16, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodPago", Global.System.Data.SqlDbType.SmallDateTime, 4, Global.System.Data.ParameterDirection.Input, 16, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BazarRoxana.SelectCompraFechaDataTable, ByVal FechayHora As Date, ByVal CodPago As Date) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BazarRoxana.SelectCompraFechaDataTable, ByVal FechayHora As Global.System.Nullable(Of Date), ByVal CodPago As Global.System.Nullable(Of Date)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(1).Value = CType(FechayHora,Date)
-            Me.Adapter.SelectCommand.Parameters(2).Value = CType(CodPago,Date)
+            If (FechayHora.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(FechayHora.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (CodPago.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(CodPago.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -7843,10 +7851,18 @@ Namespace BazarRoxanaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal FechayHora As Date, ByVal CodPago As Date) As BazarRoxana.SelectCompraFechaDataTable
+        Public Overloads Overridable Function GetData(ByVal FechayHora As Global.System.Nullable(Of Date), ByVal CodPago As Global.System.Nullable(Of Date)) As BazarRoxana.SelectCompraFechaDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(1).Value = CType(FechayHora,Date)
-            Me.Adapter.SelectCommand.Parameters(2).Value = CType(CodPago,Date)
+            If (FechayHora.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(FechayHora.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (CodPago.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(CodPago.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
             Dim dataTable As BazarRoxana.SelectCompraFechaDataTable = New BazarRoxana.SelectCompraFechaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -7994,7 +8010,7 @@ Namespace BazarRoxanaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BazarRoxana.My.MySettings.Default.BazarRoxanaConnectionString1
+            Me._connection.ConnectionString = Global.BazarRoxana.My.MySettings.Default.BazarRoxanaConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8005,19 +8021,27 @@ Namespace BazarRoxanaTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "dbo.SelectVentaFecha"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechayHoraVenta", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "FechayHoraVenta", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodPago", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "FechayHoraVenta", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FechayHoraVenta", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CodPago", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 23, 3, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BazarRoxana.SelectVentaFechaDataTable, ByVal FechayHoraVenta As Date, ByVal CodPago As Date) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BazarRoxana.SelectVentaFechaDataTable, ByVal FechayHoraVenta As Global.System.Nullable(Of Date), ByVal CodPago As Global.System.Nullable(Of Date)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(1).Value = CType(FechayHoraVenta,Date)
-            Me.Adapter.SelectCommand.Parameters(2).Value = CType(CodPago,Date)
+            If (FechayHoraVenta.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(FechayHoraVenta.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (CodPago.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(CodPago.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -8029,10 +8053,18 @@ Namespace BazarRoxanaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal FechayHoraVenta As Date, ByVal CodPago As Date) As BazarRoxana.SelectVentaFechaDataTable
+        Public Overloads Overridable Function GetData(ByVal FechayHoraVenta As Global.System.Nullable(Of Date), ByVal CodPago As Global.System.Nullable(Of Date)) As BazarRoxana.SelectVentaFechaDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(1).Value = CType(FechayHoraVenta,Date)
-            Me.Adapter.SelectCommand.Parameters(2).Value = CType(CodPago,Date)
+            If (FechayHoraVenta.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(FechayHoraVenta.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (CodPago.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(2).Value = CType(CodPago.Value,Date)
+            Else
+                Me.Adapter.SelectCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
             Dim dataTable As BazarRoxana.SelectVentaFechaDataTable = New BazarRoxana.SelectVentaFechaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -8191,17 +8223,21 @@ Namespace BazarRoxanaTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "dbo.SelectDetalleVenta"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NumVent", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "NumVent", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NumVent", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BazarRoxana.SelectDetalleVentaDataTable, ByVal NumVent As Integer) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BazarRoxana.SelectDetalleVentaDataTable, ByVal NumVent As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(1).Value = CType(NumVent,Integer)
+            If (NumVent.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(NumVent.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -8213,9 +8249,13 @@ Namespace BazarRoxanaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal NumVent As Integer) As BazarRoxana.SelectDetalleVentaDataTable
+        Public Overloads Overridable Function GetData(ByVal NumVent As Global.System.Nullable(Of Integer)) As BazarRoxana.SelectDetalleVentaDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(1).Value = CType(NumVent,Integer)
+            If (NumVent.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(NumVent.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             Dim dataTable As BazarRoxana.SelectDetalleVentaDataTable = New BazarRoxana.SelectDetalleVentaDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -8381,17 +8421,21 @@ Namespace BazarRoxanaTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "dbo.SelectFacturaV"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NumVent", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "NumVent", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NumVent", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As BazarRoxana.SelectFacturaVDataTable, ByVal NumVent As Integer) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As BazarRoxana.SelectFacturaVDataTable, ByVal NumVent As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(1).Value = CType(NumVent,Integer)
+            If (NumVent.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(NumVent.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -8403,9 +8447,13 @@ Namespace BazarRoxanaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal NumVent As Integer) As BazarRoxana.SelectFacturaVDataTable
+        Public Overloads Overridable Function GetData(ByVal NumVent As Global.System.Nullable(Of Integer)) As BazarRoxana.SelectFacturaVDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Me.Adapter.SelectCommand.Parameters(1).Value = CType(NumVent,Integer)
+            If (NumVent.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(NumVent.Value,Integer)
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
             Dim dataTable As BazarRoxana.SelectFacturaVDataTable = New BazarRoxana.SelectFacturaVDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -8564,7 +8612,7 @@ Namespace BazarRoxanaTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "dbo.SelectVentaEncabezado"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8720,12 +8768,12 @@ Namespace BazarRoxanaTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "SelectTodaslasVentas"
             tableMapping.ColumnMappings.Add("NumVent", "NumVent")
-            tableMapping.ColumnMappings.Add("NombCli", "NombCli")
             tableMapping.ColumnMappings.Add("FechayHoraVenta", "FechayHoraVenta")
+            tableMapping.ColumnMappings.Add("Total", "Total")
+            tableMapping.ColumnMappings.Add("NombCli", "NombCli")
             tableMapping.ColumnMappings.Add("DescPago", "DescPago")
             tableMapping.ColumnMappings.Add("DescTransa", "DescTransa")
             tableMapping.ColumnMappings.Add("NombEmple", "NombEmple")
-            tableMapping.ColumnMappings.Add("Total", "Total")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -8742,9 +8790,9 @@ Namespace BazarRoxanaTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "dbo.SelectTodaslasVentas"
+            Me._commandCollection(0).CommandText = "dbo.SelectVentas"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _

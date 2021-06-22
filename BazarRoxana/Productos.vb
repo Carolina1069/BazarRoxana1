@@ -820,12 +820,16 @@ Public Class Productos
     End Sub
 
     Private Sub btnAgg_P_Click(sender As Object, e As EventArgs) Handles btnAgg_P.Click
-        FrmBusquedaProveedor.ShowDialog()
+        Dim frm As New FrmBusquedaProveedor
+        AddOwnedForm(frm)
+        frm.ShowDialog()
 
     End Sub
 
     Private Sub btnAgg_C_Click(sender As Object, e As EventArgs) Handles btnAgg_C.Click
-        FrmBusquedaCategoria.ShowDialog()
+        Dim frm As New FrmBusquedaCategoria
+        AddOwnedForm(frm)
+        frm.ShowDialog()
     End Sub
 
     Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter

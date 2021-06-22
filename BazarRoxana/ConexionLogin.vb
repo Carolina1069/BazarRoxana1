@@ -14,7 +14,7 @@ Module ConexionLogin
     Sub abrir()
 
         Try
-            conexion = New SqlConnection("Data Source=DESKTOP-DE4EAJJ;Initial Catalog=BazarRoxana;Integrated Security=True")
+            conexion = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
             conexion.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception

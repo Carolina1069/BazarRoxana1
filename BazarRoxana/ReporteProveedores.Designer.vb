@@ -67,7 +67,7 @@ Partial Class ReporteProveedores
         Me.ClientSize = New System.Drawing.Size(800, 749)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MinimizeBox = False
+        Me.MaximizeBox = False
         Me.Name = "ReporteProveedores"
         Me.Text = "Reporte de los Proveedores"
         CType(Me.SelectProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

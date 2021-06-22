@@ -34,12 +34,6 @@ Public Class BuscarProducto
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
-        Dim BuscarP As New Ventas
-
-
-        BuscarP.MdiParent = MenuPrincipal
-        MenuPrincipal.ToolStripContainer1.ContentPanel.Controls.Add(BuscarP)
-        BuscarP.Show()
         Me.Close()
 
     End Sub

@@ -76,18 +76,18 @@ Public Class Compras
         abrir()
         ' Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & TxtCodTransa.Text & "'"
         Dim Mostrar As SqlDataReader
-            Dim Ejecutar As SqlCommand
+        Dim Ejecutar As SqlCommand
         '  Ejecutar = New SqlCommand(Recuperar, conexion)
         Mostrar = Ejecutar.ExecuteReader
-            Dim Estado As String
-            Estado = Mostrar.Read
-            If (Estado = True) Then
-                TxtTipoTransaccion.Text = Mostrar(1)
-            Else
-                TxtTipoTransaccion.Text = ""
-            End If
-            Mostrar.Close()
-            conexion.Close()
+        Dim Estado As String
+        Estado = Mostrar.Read
+        If (Estado = True) Then
+            TxtTipoTransaccion.Text = Mostrar(1)
+        Else
+            TxtTipoTransaccion.Text = ""
+        End If
+        Mostrar.Close()
+        conexion.Close()
         ' Else
         'TxtCodTransa.Clear()
         MsgBox("Solo hay tres tipos de transaccion")
@@ -145,15 +145,23 @@ Public Class Compras
         suma = (Val(TxtUnidades.Text) + Val(TxtCantidad.Text))
 
 
-        If Max >= suma Then
+        If TxtCodProducto.Text = "" Or TxtNombreProducto.Text = "" Or CbxPrecio.Text = "" Or TxtUnidades.Text = "" Or txMaximo.Text = "" Then
+
+            MsgBox("Porfavor realice la búsqueda del producto", MessageBoxIcon.Exclamation, "Venta")
+
+        ElseIf TxtCantidad.Text = "" Then
+
+            MsgBox("Porfavor ingrese la cantidad que desea del producto ya buscado", MessageBoxIcon.Exclamation, "Venta")
+
+        ElseIf Max >= suma Then
 
             Impuesto = 0.25
             SubTotal1 = (Val(CbxPrecio.Text) * Val(TxtCantidad.Text))
             Subtotal2 = SubTotal1 * Impuesto
             Subtotal = SubTotal1 + Subtotal2
-            DGV.Rows.Add(txNumCompra.Text, TxtCodProducto.Text, TxtNombreProducto.Text, Impuesto, TxtCantidad.Text, CbxPrecio.Text, Subtotal)
+            DGV.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, Impuesto, TxtCantidad.Text, CbxPrecio.Text, Subtotal)
             For Each row As DataGridViewRow In DGV.Rows
-                Total += Val(row.Cells(6).Value)
+                Total += Val(row.Cells(4).Value)
             Next
             TxtTotal.Text = Total.ToString
             TxtCodProducto.Clear()
@@ -170,12 +178,16 @@ Public Class Compras
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        DGV.Rows.Remove(DGV.CurrentRow)
-        Dim Total As Single
-        For Each row As DataGridViewRow In DGV.Rows
-            Total -= Val(row.Cells(6).Value)
-        Next
-        TxtTotal.Text = -Total
+        If Me.DGV.Rows.Count = 0 Then
+            MessageBox.Show("Por favor ingrese datos en la tabla.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            DGV.Rows.Remove(DGV.CurrentRow)
+            Dim Total As Single
+            For Each row As DataGridViewRow In DGV.Rows
+                Total -= Val(row.Cells(6).Value)
+            Next
+            TxtTotal.Text = -Total
+        End If
     End Sub
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click

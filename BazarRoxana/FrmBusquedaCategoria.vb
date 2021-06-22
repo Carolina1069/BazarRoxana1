@@ -7,11 +7,6 @@
     Private Sub txtBuscarCateg_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarCateg.TextChanged
         buscar()
     End Sub
-
-    Private Sub dgvcategoria_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvcategoria.CellContentClick
-
-    End Sub
-
     Private Sub FrmBusquedaCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         mostrar()
     End Sub
@@ -67,8 +62,9 @@
     End Sub
 
     Private Sub dgvcategoria_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvcategoria.CellDoubleClick
-        Productos.txNombCateg.Text = dgvcategoria.CurrentRow.Cells(1).Value
-        Productos.txCodCateg.Text = dgvcategoria.CurrentRow.Cells(0).Value
+        Dim frm As Productos = CType(Owner, Productos)
+        frm.txNombCateg.Text = dgvcategoria.CurrentRow.Cells(1).Value
+        frm.txCodCateg.Text = dgvcategoria.CurrentRow.Cells(0).Value
         Me.Close()
     End Sub
 End Class

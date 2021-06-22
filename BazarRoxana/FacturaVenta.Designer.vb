@@ -83,6 +83,7 @@ Partial Class FacturaVenta
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "FacturaVenta"
         Me.Text = "Factura de la venta"
         CType(Me.SelectVentaEncabezadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
