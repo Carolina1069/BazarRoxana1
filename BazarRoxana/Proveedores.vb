@@ -113,60 +113,66 @@ Public Class Proveedores
 
     Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles btActualizar.Click
         abrir()
-        Try
-            Dim mail As New System.Net.Mail.MailAddress(txCorreoEmpresa.Text)
-            Dim mail2 As New System.Net.Mail.MailAddress(TxtCorreoProv.Text)
-            abrir()
-            If (txNomProv.TextLength < 3) Then
-                MsgBox("Debe ingresar como mínimo 3 letras en nombre de la empreaa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
-            ElseIf (TxtTelfonoEmpresa.TextLength < 8) Then
-                MsgBox("Debe ingresar como mínimo 8 números en el teléfono de la empresa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
-            ElseIf (txCorreoEmpresa.TextLength < 10) Then
-                MsgBox("Debe ingresar como mínimo 10 caracteres en el correo de la empresa.", MsgBoxStyle.Exclamation, "Advertencia")
-            ElseIf (txtNombrePreEm.TextLength < 3) Then
-                MsgBox("Debe ingresar como mínimo 3 letras en el nombre del proveedor(empleado(a)).", MsgBoxStyle.Exclamation, "Advertencia")
-            ElseIf (txtTelProv.TextLength < 8) Then
-                MsgBox("Debe ingresar como mínimo 8 números en el teléfono del proveedor.", MsgBoxStyle.Exclamation, "Advertencia")
-            ElseIf (RTBDirec.TextLength < 8) Then
-                MsgBox("Debe ingresar como mínimo 10 caracteres en la dirección de la empresa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
-            ElseIf Cuantas(".", TxtCorreoProv.Text) > 1 Then
-                MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            ElseIf Cuantas(".", txCorreoEmpresa.Text) > 1 Then
-                MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        If txCodProve.Text = String.Empty Then
+            MsgBox("Por favor haga doble click a una fila de la tabla antes de modificar algún dato deseado.", MsgBoxStyle.Exclamation, "Advertencia")
+        Else
+            Try
+                Dim mail As New System.Net.Mail.MailAddress(txCorreoEmpresa.Text)
+                Dim mail2 As New System.Net.Mail.MailAddress(TxtCorreoProv.Text)
+                abrir()
+                If (txNomProv.TextLength < 3) Then
+                    MsgBox("Debe ingresar como mínimo 3 letras en nombre de la empreaa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
+                ElseIf (TxtTelfonoEmpresa.TextLength < 8) Then
+                    MsgBox("Debe ingresar como mínimo 8 números en el teléfono de la empresa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
+                ElseIf (txCorreoEmpresa.TextLength < 10) Then
+                    MsgBox("Debe ingresar como mínimo 10 caracteres en el correo de la empresa.", MsgBoxStyle.Exclamation, "Advertencia")
+                ElseIf (txtNombrePreEm.TextLength < 3) Then
+                    MsgBox("Debe ingresar como mínimo 3 letras en el nombre del proveedor(empleado(a)).", MsgBoxStyle.Exclamation, "Advertencia")
+                ElseIf (txtTelProv.TextLength < 8) Then
+                    MsgBox("Debe ingresar como mínimo 8 números en el teléfono del proveedor.", MsgBoxStyle.Exclamation, "Advertencia")
+                ElseIf (RTBDirec.TextLength < 8) Then
+                    MsgBox("Debe ingresar como mínimo 10 caracteres en la dirección de la empresa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
+                ElseIf Cuantas(".", TxtCorreoProv.Text) > 1 Then
+                    MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                ElseIf Cuantas(".", txCorreoEmpresa.Text) > 1 Then
+                    MessageBox.Show("No podes ingresar mas de 1 punto", "Error de escritura", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-            Else
-                If txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Then
-                    MsgBox("Hay campos vacios")
                 Else
-                    Dim estado As Integer
-
-                    If chkEstado.Checked = True Then
-
-                        estado = 1
+                    If txNomProv.Text = "" Or TxtTelfonoEmpresa.Text = "" Or txtNombrePreEm.Text = "" Or txCorreoEmpresa.Text = "" Or TxtCorreoProv.Text = "" Or txtTelProv.Text = "" Or RTBDirec.Text = "" Then
+                        MsgBox("Hay campos vacios")
                     Else
+                        Dim estado As Integer
 
-                        estado = 0
+                        If chkEstado.Checked = True Then
+
+                            estado = 1
+                        Else
+
+                            estado = 0
+                        End If
+                        Dim ConsultaActualizar As String = "update Proveedores set NombProv=@NombProv,TelProv=@TelProv, NombContProv=@NombContProv, CorreoProv=@CorreoProv, CorreoContProv=@CorreoContProv, TelContProv=@TelContProv, DirecProv=@DirecProv, EstadoProv=@EstadoProv where CodProv=@CodProv"
+                        Dim ejecutar As New SqlCommand(ConsultaActualizar, conexion)
+                        ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
+                        ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
+                        ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
+                        ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
+                        ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
+                        ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
+                        ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
+                        ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
+                        ejecutar.Parameters.AddWithValue("@EstadoProv", (estado))
+                        ejecutar.ExecuteNonQuery()
+                        MsgBox("El proveedor se a actualizado")
+                        chkInhabil.Checked = False
                     End If
-                    Dim ConsultaActualizar As String = "update Proveedores set NombProv=@NombProv,TelProv=@TelProv, NombContProv=@NombContProv, CorreoProv=@CorreoProv, CorreoContProv=@CorreoContProv, TelContProv=@TelContProv, DirecProv=@DirecProv, EstadoProv=@EstadoProv where CodProv=@CodProv"
-                    Dim ejecutar As New SqlCommand(ConsultaActualizar, conexion)
-                    ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
-                    ejecutar.Parameters.AddWithValue("@NombProv", (txNomProv.Text))
-                    ejecutar.Parameters.AddWithValue("@TelProv", Val(TxtTelfonoEmpresa.Text))
-                    ejecutar.Parameters.AddWithValue("@NombContProv", (txtNombrePreEm.Text))
-                    ejecutar.Parameters.AddWithValue("@CorreoProv", (txCorreoEmpresa.Text))
-                    ejecutar.Parameters.AddWithValue("@CorreoContProv", (TxtCorreoProv.Text))
-                    ejecutar.Parameters.AddWithValue("@TelContProv", Val(txtTelProv.Text))
-                    ejecutar.Parameters.AddWithValue("@DirecProv", (RTBDirec.Text))
-                    ejecutar.Parameters.AddWithValue("@EstadoProv", (estado))
-                    ejecutar.ExecuteNonQuery()
-                    MsgBox("El proveedor se a actualizado")
-                    chkInhabil.Checked = False
                 End If
-            End If
-        Catch ex As Exception
+            Catch ex As Exception
 
-            MessageBox.Show(ex.Message)
-        End Try
+                MessageBox.Show(ex.Message)
+            End Try
+        End If
+
+
 
 
 
@@ -182,30 +188,35 @@ Public Class Proveedores
 
     Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles btEliminar.Click
         abrir()
-        Dim opcion As DialogResult
-        opcion = MessageBox.Show("¿Esta Seguro que quiere eliminar este proveedor?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If opcion = DialogResult.Yes Then
-            If txCodProve.Text = "" Then
-                MsgBox("Hay campos vacios")
-            Else
+        If txCodProve.Text = String.Empty Then
+            MsgBox("Por favor haga doble click a una fila de la tabla antes de eliminar algún dato deseado.", MsgBoxStyle.Exclamation, "Advertencia")
+        Else
+            Dim opcion As DialogResult
+            opcion = MessageBox.Show("¿Esta Seguro que quiere eliminar este proveedor?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If opcion = DialogResult.Yes Then
+                If txCodProve.Text = "" Then
+                    MsgBox("Hay campos vacios")
+                Else
 
-                Dim ConsultaEliminar As String = "Update Proveedores set EstadoProv=0  where CodProv=@CodProv"
-                Dim ejecutar As New SqlCommand(ConsultaEliminar, conexion)
-                ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
+                    Dim ConsultaEliminar As String = "Update Proveedores set EstadoProv=0  where CodProv=@CodProv"
+                    Dim ejecutar As New SqlCommand(ConsultaEliminar, conexion)
+                    ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProve.Text))
 
-                ejecutar.ExecuteNonQuery()
-                txCodProve.Clear()
-                txNomProv.Clear()
-                TxtTelfonoEmpresa.Clear()
-                txtNombrePreEm.Clear()
-                txCorreoEmpresa.Clear()
-                TxtCorreoProv.Clear()
-                txtTelProv.Clear()
-                RTBDirec.Clear()
-                chkEstado.Checked = True
-                chkInhabil.Checked = True
+                    ejecutar.ExecuteNonQuery()
+                    txCodProve.Clear()
+                    txNomProv.Clear()
+                    TxtTelfonoEmpresa.Clear()
+                    txtNombrePreEm.Clear()
+                    txCorreoEmpresa.Clear()
+                    TxtCorreoProv.Clear()
+                    txtTelProv.Clear()
+                    RTBDirec.Clear()
+                    chkEstado.Checked = True
+                    chkInhabil.Checked = False
+                End If
             End If
         End If
+
         Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=1", conexion)
             adaptador.Fill(DatosProveedor)
@@ -391,6 +402,8 @@ Public Class Proveedores
 
     Private Sub txtNombrePreEm_TextChanged(sender As Object, e As EventArgs) Handles txtNombrePreEm.TextChanged
         Labelcontador4.Text = txtNombrePreEm.Text.Length
+        txtNombrePreEm.Text = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(txtNombrePreEm.Text)
+        txtNombrePreEm.SelectionStart = txtNombrePreEm.Text.Length
     End Sub
 
     Private Sub TxtCorreoProv_TextChanged(sender As Object, e As EventArgs) Handles TxtCorreoProv.TextChanged
@@ -403,7 +416,7 @@ Public Class Proveedores
     End Sub
 
     Private Sub txNomProv_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txNomProv.KeyPress
-        Dim caracteresPermitidos As String = "áéíóúÁÉÍÓÚqwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM123456789 " & Convert.ToChar(8)
+        Dim caracteresPermitidos As String = "áéíóúÁÉÍÓÚqwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM1234567890 " & Convert.ToChar(8)
         Dim c As Char = e.KeyChar
         If (Not (caracteresPermitidos.Contains(c))) Then
 
@@ -412,7 +425,11 @@ Public Class Proveedores
 
             ' Deshechamos el carácter
             e.Handled = True
-
+        ElseIf Len(Me.txNomProv.Text) = "0" Then
+            If InStr(1, "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,Ñ,Z,X,C,V,B,N,M,q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,ñ,z,x,c,v,b,n,m,0,1,2,3,4,5,6,7,8,9" & Chr(8), e.KeyChar) = 0 Then
+                e.KeyChar = ""
+                MsgBox("No ingreses espacios al principio", MsgBoxStyle.Exclamation, "Advertencia")
+            End If
         End If
     End Sub
 
@@ -440,21 +457,25 @@ Public Class Proveedores
     End Sub
 
     Private Sub txtNombrePreEm_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txtNombrePreEm.KeyPress
-        Dim caracteresPermitidos As String = "áéíóúÁÉÍÓÚqwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM123456789 " & Convert.ToChar(8)
+        Dim caracteresPermitidos As String = "áéíóúÁÉÍÓÚqwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM " & Convert.ToChar(8)
         Dim c As Char = e.KeyChar
         If (Not (caracteresPermitidos.Contains(c))) Then
 
-            MessageBox.Show("Solo se puede ingresar valores de tipo texto y numericos.", "ERROR de escritura",
+            MessageBox.Show("Solo se puede ingresar valores de tipo texto (solo letras).", "ERROR de escritura",
                             MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
             ' Deshechamos el carácter
             e.Handled = True
-
+        ElseIf Len(Me.txtNombrePreEm.Text) = "0" Then
+            If InStr(1, "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,Ñ,Z,X,C,V,B,N,M,q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,ñ,z,x,c,v,b,n,m" & Chr(8), e.KeyChar) = 0 Then
+                e.KeyChar = ""
+                MsgBox("No ingreses espacios al principio", MsgBoxStyle.Exclamation, "Advertencia")
+            End If
         End If
     End Sub
 
     Private Sub RTBDirec_KeyPress(sender As Object, e As KeyPressEventArgs) Handles RTBDirec.KeyPress
-        Dim caracteresPermitidos As String = "áéíóúÁÉÍÓÚqwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM123456789-,. " & Convert.ToChar(8)
+        Dim caracteresPermitidos As String = "áéíóúÁÉÍÓÚqwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM1234567890-,. " & Convert.ToChar(8)
         Dim c As Char = e.KeyChar
         If (Not (caracteresPermitidos.Contains(c))) Then
 
@@ -463,7 +484,11 @@ Public Class Proveedores
 
             ' Deshechamos el carácter
             e.Handled = True
-
+        ElseIf Len(Me.RTBDirec.Text) = "0" Then
+            If InStr(1, "Q,W,E,R,T,Y,U,I,O,P,A,S,D,F,G,H,J,K,L,Ñ,Z,X,C,V,B,N,M,q,w,e,r,t,y,u,i,o,p,a,s,d,f,g,h,j,k,l,ñ,z,x,c,v,b,n,m,0,1,2,4,3,5,6,7,8,9" & Chr(8), e.KeyChar) = 0 Then
+                e.KeyChar = ""
+                MsgBox("No ingreses espacios al principio", MsgBoxStyle.Exclamation, "Advertencia")
+            End If
         End If
     End Sub
 
