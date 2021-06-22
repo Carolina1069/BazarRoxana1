@@ -50,9 +50,6 @@ Public Class Productos
     End Sub
 
     Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'BazarRoxana.SelectEmpleado' Puede moverla o quitarla según sea necesario.
-
-
         abrir()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("SELECT [CodProduc] as 'Código producto'
@@ -83,61 +80,10 @@ Public Class Productos
         conexion.Close()
         btnHabilitar.Visible = False
         btnEliminar.Visible = False
+        btnActualizar.Visible = False
     End Sub
 
-    Private Sub btGuardar_Click(sender As Object, e As EventArgs)
 
-        txtUnidStock.Text = 0
-        abrir()
-        Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conexion)
-            adaptador.Fill(DatosCat)
-        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-
-        DGVProducto.DataSource = DatosCat
-        If txCodProd.Text = "" Or txNomProd.Text = "" Or rtxDescProd.Text = "" Or txCodProv.Text = "" Or txCodCateg.Text = "" Or txtPriPre.Text = "" Or txtSegPre.Text = "" Or txtTerPre.Text = "" Or txtUnidStock.Text = "" Or txMin.Text = "" Or txMax.Text = "" Or DGVProducto.Rows.Count = 0 Then
-            MsgBox("Hay campos vacios")
-        Else
-
-            If RegistradoProducto(txCodProd.Text) = False Then
-                Dim consultaGuardar As String = "insert into Producto(CodProduc,NombProduc,DescripProduc,CodProv,CodCateg,PrimerPrecio,SegundoPrecio,TercerPrecio,UnidadesStock,Minimo,Maximo) values(@CodProduc,@NombProduc,@DescripProduc,@CodProv,@CodCateg,@PrimerPrecio,@SegundoPrecio,@TercerPrecio,@UnidadesStock,@Minimo,@Maximo)"
-
-                Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
-
-                ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
-                ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
-                ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
-                ejecutar.Parameters.AddWithValue("@CodProv", Val(txCodProv.Text))
-                ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCateg.Text))
-                ejecutar.Parameters.AddWithValue("@PrimerPrecio", Val(txtPriPre.Text))
-                ejecutar.Parameters.AddWithValue("@SegundoPrecio", Val(txtSegPre.Text))
-                ejecutar.Parameters.AddWithValue("@TercerPrecio", Val(txtTerPre.Text))
-                ejecutar.Parameters.AddWithValue("@UnidadesStock", Val(txtUnidStock.Text))
-                ejecutar.Parameters.AddWithValue("@Minimo", Val(txMin.Text))
-                ejecutar.Parameters.AddWithValue("@Maximo", Val(txMax.Text))
-
-
-                ejecutar.ExecuteNonQuery()
-            Else
-                MsgBox("El producto ya esta registrado")
-            End If
-        End If
-
-        conexion.Close()
-
-        txCodProd.Clear()
-        txNomProd.Clear()
-        rtxDescProd.Clear()
-        txCodProv.Clear()
-        txCodCateg.Clear()
-        txtPriPre.Clear()
-        txtSegPre.Clear()
-        txtTerPre.Clear()
-        txtUnidStock.Clear()
-        txMax.Clear()
-        txMin.Clear()
-
-    End Sub
 
     Private Sub btActualizar_Click(sender As Object, e As EventArgs)
 
@@ -172,17 +118,7 @@ Public Class Productos
         End If
         conexion.Close()
 
-        ' txCodProd.Clear()
-        'txNomProd.Clear()
-        'rtxDescProd.Clear()
-        'txCodProv.Clear()
-        'txCodCateg.Clear()
-        'txtPriPre.Clear()
-        'txtSegPre.Clear()
-        'txtTerPre.Clear()
-        'txtUnidStock.Clear()
-        'txMax.Clear()
-        'txMin.Clear()
+
 
     End Sub
 
@@ -207,21 +143,7 @@ Public Class Productos
 
     Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles txCodProv.TextChanged
 
-        'abrir()
-        'Dim Recuperar As String = "select * from Proveedores where CodProv= '" & txCodProv.Text & "'"
-        'Dim Mostrar As SqlDataReader
-        'Dim Ejecutar As SqlCommand
-        'Ejecutar = New SqlCommand(Recuperar, conexion)
-        'Mostrar = Ejecutar.ExecuteReader
-        'Dim Estado As String
-        'Estado = Mostrar.Read
-        'If (Estado = True) Then
-        '    txNombProv.Text = Mostrar(1)
-        'Else
-        '    txNombProv.Text = ""
-        'End If
-        'Mostrar.Close()
-        'conexion.Close()
+
 
     End Sub
 
@@ -343,6 +265,9 @@ Public Class Productos
     End Sub
 
     Private Sub txNomProd_TextChanged(sender As Object, e As EventArgs) Handles txNomProd.TextChanged
+        If (txNomProd.TextLength < 2) Then
+            MessageBox.Show("Debe ingresar como minimo 2 caracteres")
+        End If
 
     End Sub
 
@@ -359,7 +284,9 @@ Public Class Productos
     End Sub
 
     Private Sub rtxDescProd_TextChanged(sender As Object, e As EventArgs) Handles rtxDescProd.TextChanged
-
+        If (rtxDescProd.TextLength < 2) Then
+            MessageBox.Show("Debe ingresar como minimo 2 caracteres")
+        End If
     End Sub
 
     Private Sub txtUnidStock_TextChanged(sender As Object, e As EventArgs) Handles txtUnidStock.TextChanged
@@ -564,7 +491,7 @@ Public Class Productos
                 MessageBox.Show("Error al eliminar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         End If
-
+        btnEliminar.Visible = False
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("SELECT [CodProduc] as 'Código producto'
@@ -632,6 +559,7 @@ Public Class Productos
             End Try
 
         End If
+        btnActualizar.Visible = False
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("SELECT [CodProduc] as 'Código producto'
                ,[NombProduc] as 'Nombre producto'
@@ -652,6 +580,7 @@ Public Class Productos
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGVProducto.DataSource = DatosCat
+
         conexion.Close()
 
     End Sub
@@ -695,7 +624,7 @@ Public Class Productos
            ,@Maximo
            ,1)"
                 Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
-                ejecutar.Parameters.AddWithValue("@NombProduc", (txNombProv.Text))
+                ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
                 ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
                 ejecutar.Parameters.AddWithValue("@CodProv", (txCodProv.Text))
                 ejecutar.Parameters.AddWithValue("@NombProv", (txNombProv.Text))
@@ -797,14 +726,15 @@ Public Class Productos
                ,[NombProduc] as 'Nombre producto'
               ,[DescripProduc] as 'Descripción'
               ,[CodProv] as 'Código proveedoor'
+              ,[NombProv] as 'Nombre proveedor'
               ,[CodCateg] as 'Código categoría'
+              ,[NombCateg] as 'Nombre categoría'
               ,[PrimerPrecio] as 'Primero precio'
               ,[SegundoPrecio] as ' Segundo precio'
               ,[TercerPrecio] as 'Tercer precio'
               ,[UnidadesStock] as 'Unidades en stock'
               ,[Minimo] as Mínimo
-              ,[Maximo] as Máximo
-              ,[Estado] as Estado,  
+              ,[Maximo] as Máximo,       
 	          case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto' 
               FROM [dbo].[Producto] 
               where Estado = 1", conexion)
@@ -813,13 +743,13 @@ Public Class Productos
 
             DGVProducto.DataSource = DatosCat
             btnGuardar.Visible = True
-            btnActualizar.Visible = True
+            btnActualizar.Visible = False
             btnEliminar.Visible = False
             btnHabilitar.Visible = False
 
         End If
         conexion.Close()
-        'Limpia()
+
     End Sub
 
     Private Sub LbContador7_Click(sender As Object, e As EventArgs)
@@ -854,11 +784,7 @@ Public Class Productos
     End Sub
 
     Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
-        'LbContador6.Text = TxtBusqueda.Text.Length
-        'Dim filtro As String = CType(sender, TextBox).Text
-        'If filtro.Trim() <> String.Empty Then  'Si no es vacío filtra
-        '    filtrarDatos(filtro)
-        'End If
+
         buscar()
     End Sub
 
@@ -946,24 +872,14 @@ Public Class Productos
         txtTerPre.Text = DGVProducto.CurrentRow.Cells(9).Value
         If chkInhabil.Checked = True Then
             btnEliminar.Visible = False
+            btnActualizar.Visible = False
         Else
             btnEliminar.Visible = True
+            btnActualizar.Visible = True
         End If
+        txtUnidStock.Enabled = False
 
 
-        '      (@NombProduc,
-        '      @DescripProduc
-        '      ,@CodProv
-        ',@NombProv
-        '      ,@CodCateg
-        ',@NombCateg
-        '      ,@PrimerPrecio
-        '      ,@SegundoPrecio
-        '      ,@TercerPrecio
-        '      ,@UnidadesStock
-        '      ,@Minimo
-        '      ,@Maximo
-        '      ,1)"
 
     End Sub
 
@@ -973,6 +889,7 @@ Public Class Productos
 
     Private Sub btnlimpiaf_Click(sender As Object, e As EventArgs) Handles btnlimpiaf.Click
         Limpia()
+        txtUnidStock.Enabled = True
     End Sub
 
     Private Sub DGVProducto_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGVProducto.CellEndEdit

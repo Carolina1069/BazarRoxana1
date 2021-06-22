@@ -23,12 +23,14 @@ Partial Class Productos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnLimpiarCateg = New System.Windows.Forms.Button()
+        Me.btnLimpiarProv = New System.Windows.Forms.Button()
         Me.btnlimpiaf = New System.Windows.Forms.Button()
         Me.btnAgg_C = New System.Windows.Forms.Button()
         Me.btnAgg_P = New System.Windows.Forms.Button()
@@ -70,8 +72,6 @@ Partial Class Productos
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnLimpiarProv = New System.Windows.Forms.Button()
-        Me.btnLimpiarCateg = New System.Windows.Forms.Button()
         Me.GroupBox2.SuspendLayout()
         CType(Me.ErrorValidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -121,6 +121,28 @@ Partial Class Productos
         Me.GroupBox2.TabIndex = 47
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Producto"
+        '
+        'btnLimpiarCateg
+        '
+        Me.btnLimpiarCateg.BackgroundImage = CType(resources.GetObject("btnLimpiarCateg.BackgroundImage"), System.Drawing.Image)
+        Me.btnLimpiarCateg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLimpiarCateg.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiarCateg.Location = New System.Drawing.Point(972, 20)
+        Me.btnLimpiarCateg.Name = "btnLimpiarCateg"
+        Me.btnLimpiarCateg.Size = New System.Drawing.Size(32, 31)
+        Me.btnLimpiarCateg.TabIndex = 79
+        Me.btnLimpiarCateg.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarProv
+        '
+        Me.btnLimpiarProv.BackgroundImage = CType(resources.GetObject("btnLimpiarProv.BackgroundImage"), System.Drawing.Image)
+        Me.btnLimpiarProv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLimpiarProv.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnLimpiarProv.Location = New System.Drawing.Point(637, 20)
+        Me.btnLimpiarProv.Name = "btnLimpiarProv"
+        Me.btnLimpiarProv.Size = New System.Drawing.Size(32, 31)
+        Me.btnLimpiarProv.TabIndex = 78
+        Me.btnLimpiarProv.UseVisualStyleBackColor = True
         '
         'btnlimpiaf
         '
@@ -210,6 +232,7 @@ Partial Class Productos
         'txMin
         '
         Me.txMin.Location = New System.Drawing.Point(186, 192)
+        Me.txMin.MaxLength = 1
         Me.txMin.Name = "txMin"
         Me.txMin.Size = New System.Drawing.Size(100, 27)
         Me.txMin.TabIndex = 66
@@ -227,6 +250,7 @@ Partial Class Productos
         'txMax
         '
         Me.txMax.Location = New System.Drawing.Point(186, 166)
+        Me.txMax.MaxLength = 3
         Me.txMax.Name = "txMax"
         Me.txMax.Size = New System.Drawing.Size(100, 27)
         Me.txMax.TabIndex = 64
@@ -244,6 +268,7 @@ Partial Class Productos
         'txtUnidStock
         '
         Me.txtUnidStock.Location = New System.Drawing.Point(186, 143)
+        Me.txtUnidStock.MaxLength = 6
         Me.txtUnidStock.Name = "txtUnidStock"
         Me.txtUnidStock.Size = New System.Drawing.Size(100, 27)
         Me.txtUnidStock.TabIndex = 62
@@ -261,6 +286,7 @@ Partial Class Productos
         'txtTerPre
         '
         Me.txtTerPre.Location = New System.Drawing.Point(493, 192)
+        Me.txtTerPre.MaxLength = 6
         Me.txtTerPre.Name = "txtTerPre"
         Me.txtTerPre.Size = New System.Drawing.Size(100, 27)
         Me.txtTerPre.TabIndex = 60
@@ -278,6 +304,7 @@ Partial Class Productos
         'txtSegPre
         '
         Me.txtSegPre.Location = New System.Drawing.Point(493, 166)
+        Me.txtSegPre.MaxLength = 6
         Me.txtSegPre.Name = "txtSegPre"
         Me.txtSegPre.Size = New System.Drawing.Size(100, 27)
         Me.txtSegPre.TabIndex = 58
@@ -295,6 +322,7 @@ Partial Class Productos
         'rtxDescProd
         '
         Me.rtxDescProd.Location = New System.Drawing.Point(186, 81)
+        Me.rtxDescProd.MaxLength = 100
         Me.rtxDescProd.Name = "rtxDescProd"
         Me.rtxDescProd.Size = New System.Drawing.Size(159, 54)
         Me.rtxDescProd.TabIndex = 56
@@ -311,6 +339,7 @@ Partial Class Productos
         'txtPriPre
         '
         Me.txtPriPre.Location = New System.Drawing.Point(493, 140)
+        Me.txtPriPre.MaxLength = 6
         Me.txtPriPre.Name = "txtPriPre"
         Me.txtPriPre.Size = New System.Drawing.Size(100, 27)
         Me.txtPriPre.TabIndex = 54
@@ -318,6 +347,7 @@ Partial Class Productos
         'txNomProd
         '
         Me.txNomProd.Location = New System.Drawing.Point(186, 46)
+        Me.txNomProd.MaxLength = 50
         Me.txNomProd.Name = "txNomProd"
         Me.txNomProd.Size = New System.Drawing.Size(100, 27)
         Me.txNomProd.TabIndex = 53
@@ -358,9 +388,9 @@ Partial Class Productos
         Me.lbCodigoCli.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbCodigoCli.Location = New System.Drawing.Point(6, 23)
         Me.lbCodigoCli.Name = "lbCodigoCli"
-        Me.lbCodigoCli.Size = New System.Drawing.Size(153, 19)
+        Me.lbCodigoCli.Size = New System.Drawing.Size(149, 19)
         Me.lbCodigoCli.TabIndex = 47
-        Me.lbCodigoCli.Text = "Cóldigo del Producto"
+        Me.lbCodigoCli.Text = "Código del Producto"
         '
         'txCodProd
         '
@@ -539,28 +569,6 @@ Partial Class Productos
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 46
         Me.PictureBox1.TabStop = False
-        '
-        'btnLimpiarProv
-        '
-        Me.btnLimpiarProv.BackgroundImage = CType(resources.GetObject("btnLimpiarProv.BackgroundImage"), System.Drawing.Image)
-        Me.btnLimpiarProv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnLimpiarProv.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnLimpiarProv.Location = New System.Drawing.Point(637, 20)
-        Me.btnLimpiarProv.Name = "btnLimpiarProv"
-        Me.btnLimpiarProv.Size = New System.Drawing.Size(32, 31)
-        Me.btnLimpiarProv.TabIndex = 78
-        Me.btnLimpiarProv.UseVisualStyleBackColor = True
-        '
-        'btnLimpiarCateg
-        '
-        Me.btnLimpiarCateg.BackgroundImage = CType(resources.GetObject("btnLimpiarCateg.BackgroundImage"), System.Drawing.Image)
-        Me.btnLimpiarCateg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnLimpiarCateg.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnLimpiarCateg.Location = New System.Drawing.Point(972, 20)
-        Me.btnLimpiarCateg.Name = "btnLimpiarCateg"
-        Me.btnLimpiarCateg.Size = New System.Drawing.Size(32, 31)
-        Me.btnLimpiarCateg.TabIndex = 79
-        Me.btnLimpiarCateg.UseVisualStyleBackColor = True
         '
         'Productos
         '

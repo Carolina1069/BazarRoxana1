@@ -14,7 +14,7 @@ Module ConexionLogin
     Sub abrir()
 
         Try
-            conexion = New SqlConnection("Data Source=DORIS\SQLEXPRESS;Initial Catalog=BazarRoxana;Integrated Security=True")
+            conexion = New SqlConnection("Data Source=DESKTOP-DE4EAJJ;Initial Catalog=BazarRoxana;Integrated Security=True")
             conexion.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception
@@ -461,5 +461,30 @@ Module ConexionLogin
             conexion.Close()
         End Try
     End Function
+
+
+    Public Function ActualizarCategoria(codigo As Integer, nombre As String, descripcion As String)
+        Try
+            conexion.Open()
+            enunciado = New SqlCommand("ActualizarCategoria", conexion)
+            enunciado.CommandType = CommandType.StoredProcedure
+            enunciado.Parameters.AddWithValue("@codigo", codigo)
+            enunciado.Parameters.AddWithValue("@nombre", nombre)
+            enunciado.Parameters.AddWithValue("@Descrip", descripcion)
+
+            If enunciado.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+
+    End Function
+
 
 End Module
