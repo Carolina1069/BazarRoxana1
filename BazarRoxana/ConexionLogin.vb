@@ -216,10 +216,10 @@ Module ConexionLogin
         End Try
     End Function
 
-    Public Function buscarProduct(Nombre As String) As DataTable
+    Public Function buscarProductH(Nombre As String) As DataTable
         Try
             conexion.Open()
-            Dim cmb As New SqlCommand("buscarProduct", conexion)
+            Dim cmb As New SqlCommand("buscarProductH", conexion)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@nombre", Nombre)
             If cmb.ExecuteNonQuery <> 0 Then
@@ -237,6 +237,29 @@ Module ConexionLogin
             conexion.Close()
         End Try
     End Function
+
+    Public Function buscarProductI(Nombre As String) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscarProductI", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@nombre", Nombre)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
 
     Public Function buscarCategoria(Nombre As String) As DataTable
         Try
@@ -260,10 +283,10 @@ Module ConexionLogin
         End Try
     End Function
 
-    Public Function buscarProveedor(Nombre As String) As DataTable
+    Public Function buscarProveedorH(Nombre As String) As DataTable
         Try
             conexion.Open()
-            Dim cmb As New SqlCommand("buscarProveedor", conexion)
+            Dim cmb As New SqlCommand("buscarProveedorH", conexion)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@nombre", Nombre)
             If cmb.ExecuteNonQuery <> 0 Then
@@ -281,6 +304,8 @@ Module ConexionLogin
             conexion.Close()
         End Try
     End Function
+
+
 
 
     Function contrasena(ByVal nombreUsuario As String) As String

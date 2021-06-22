@@ -265,9 +265,7 @@ Public Class Productos
     End Sub
 
     Private Sub txNomProd_TextChanged(sender As Object, e As EventArgs) Handles txNomProd.TextChanged
-        If (txNomProd.TextLength < 2) Then
-            MessageBox.Show("Debe ingresar como minimo 2 caracteres")
-        End If
+
 
     End Sub
 
@@ -284,9 +282,7 @@ Public Class Productos
     End Sub
 
     Private Sub rtxDescProd_TextChanged(sender As Object, e As EventArgs) Handles rtxDescProd.TextChanged
-        If (rtxDescProd.TextLength < 2) Then
-            MessageBox.Show("Debe ingresar como minimo 2 caracteres")
-        End If
+
     End Sub
 
     Private Sub txtUnidStock_TextChanged(sender As Object, e As EventArgs) Handles txtUnidStock.TextChanged
@@ -492,6 +488,7 @@ Public Class Productos
             End If
         End If
         btnEliminar.Visible = False
+        btnActualizar.Visible = False
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("SELECT [CodProduc] as 'Código producto'
@@ -560,6 +557,7 @@ Public Class Productos
 
         End If
         btnActualizar.Visible = False
+        btnEliminar.Visible = False
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("SELECT [CodProduc] as 'Código producto'
                ,[NombProduc] as 'Nombre producto'
@@ -593,9 +591,18 @@ Public Class Productos
 
 
         Else
-            If RegistradoProducto(txNomProd.Text) = False Then
+            If (txNomProd.TextLength < 2) Then
+                MessageBox.Show("Debe ingresar como minimo 2 caracteres")
 
-                Dim consultaGuardar As String = "INSERT INTO [dbo].[Producto]
+
+            ElseIf (rtxDescProd.TextLength < 2) Then
+                MessageBox.Show("Debe ingresar como minimo 2 caracteres")
+
+            Else
+
+                If RegistradoProducto(txNomProd.Text) = False Then
+
+                    Dim consultaGuardar As String = "INSERT INTO [dbo].[Producto]
            ([NombProduc]
            ,[DescripProduc]
            ,[CodProv]
@@ -623,30 +630,30 @@ Public Class Productos
            ,@Minimo
            ,@Maximo
            ,1)"
-                Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
-                ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
-                ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
-                ejecutar.Parameters.AddWithValue("@CodProv", (txCodProv.Text))
-                ejecutar.Parameters.AddWithValue("@NombProv", (txNombProv.Text))
-                ejecutar.Parameters.AddWithValue("@CodCateg", (txCodCateg.Text))
-                ejecutar.Parameters.AddWithValue("@NombCateg", (txNombCateg.Text))
-                ejecutar.Parameters.AddWithValue("@PrimerPrecio", (txtPriPre.Text))
-                ejecutar.Parameters.AddWithValue("@SegundoPrecio", (txtSegPre.Text))
-                ejecutar.Parameters.AddWithValue("@TercerPrecio", (txtTerPre.Text))
-                ejecutar.Parameters.AddWithValue("@UnidadesStock", (txtUnidStock.Text))
-                ejecutar.Parameters.AddWithValue("@Minimo", (txMin.Text))
-                ejecutar.Parameters.AddWithValue("@Maximo", (txMax.Text))
-                If ejecutar.ExecuteNonQuery() Then
-                    MessageBox.Show("Producto insertado con Exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
+                    ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
+                    ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
+                    ejecutar.Parameters.AddWithValue("@CodProv", (txCodProv.Text))
+                    ejecutar.Parameters.AddWithValue("@NombProv", (txNombProv.Text))
+                    ejecutar.Parameters.AddWithValue("@CodCateg", (txCodCateg.Text))
+                    ejecutar.Parameters.AddWithValue("@NombCateg", (txNombCateg.Text))
+                    ejecutar.Parameters.AddWithValue("@PrimerPrecio", (txtPriPre.Text))
+                    ejecutar.Parameters.AddWithValue("@SegundoPrecio", (txtSegPre.Text))
+                    ejecutar.Parameters.AddWithValue("@TercerPrecio", (txtTerPre.Text))
+                    ejecutar.Parameters.AddWithValue("@UnidadesStock", (txtUnidStock.Text))
+                    ejecutar.Parameters.AddWithValue("@Minimo", (txMin.Text))
+                    ejecutar.Parameters.AddWithValue("@Maximo", (txMax.Text))
+                    If ejecutar.ExecuteNonQuery() Then
+                        MessageBox.Show("Producto insertado con Exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+                    Else
+                        MessageBox.Show("Error al insertar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
                 Else
-                    MessageBox.Show("Error al insertar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("El registro ya existe")
                 End If
-            Else
-                MessageBox.Show("El registro ya existe")
             End If
         End If
-
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("SELECT [CodProduc] as 'Código producto'
@@ -764,20 +771,36 @@ Public Class Productos
     End Sub
     Private Sub buscar()
         Dim dt As New DataTable()
-        Dim producto As String
+        Dim dato As String
 
         Try
-            producto = TxtBusqueda.Text
-            dt = ConexionLogin.buscarProduct(producto)
+            If chkInhabil.Checked = True Then
+                dato = TxtBusqueda.Text
+                dt = ConexionLogin.buscarProductI(dato)
 
-            If dt.Rows.Count <> 0 Then
-                DGVProducto.DataSource = dt
-                ConexionLogin.conexion.Close()
+                If dt.Rows.Count <> 0 Then
+                    DGVProducto.DataSource = dt
+                    ConexionLogin.conexion.Close()
+
+                Else
+                    DGVProducto.DataSource = Nothing
+                    ConexionLogin.conexion.Close()
+                End If
 
             Else
-                DGVProducto.DataSource = Nothing
-                ConexionLogin.conexion.Close()
+                dato = TxtBusqueda.Text
+                dt = ConexionLogin.buscarProductH(dato)
+
+                If dt.Rows.Count <> 0 Then
+                    DGVProducto.DataSource = dt
+                    ConexionLogin.conexion.Close()
+
+                Else
+                    DGVProducto.DataSource = Nothing
+                    ConexionLogin.conexion.Close()
+                End If
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

@@ -36,7 +36,7 @@
 
         Try
             Proveedores = txtBuscarProv.Text
-            dt = ConexionLogin.buscarProveedor(Proveedores)
+            dt = ConexionLogin.buscarProveedorH(Proveedores)
 
             If dt.Rows.Count <> 0 Then
                 dgvprov.DataSource = dt

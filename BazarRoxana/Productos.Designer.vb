@@ -446,7 +446,7 @@ Partial Class Productos
         '
         'btnHabilitar
         '
-        Me.btnHabilitar.Location = New System.Drawing.Point(700, 30)
+        Me.btnHabilitar.Location = New System.Drawing.Point(821, 26)
         Me.btnHabilitar.Name = "btnHabilitar"
         Me.btnHabilitar.Size = New System.Drawing.Size(146, 39)
         Me.btnHabilitar.TabIndex = 81
@@ -471,7 +471,7 @@ Partial Class Productos
         Me.TxtBusqueda.Location = New System.Drawing.Point(241, 40)
         Me.TxtBusqueda.MaxLength = 20
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(189, 20)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(279, 20)
         Me.TxtBusqueda.TabIndex = 72
         '
         'DGVProducto
@@ -500,7 +500,7 @@ Partial Class Productos
         Me.DGVProducto.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGVProducto.EnableHeadersVisualStyles = False
         Me.DGVProducto.GridColor = System.Drawing.SystemColors.ControlLight
-        Me.DGVProducto.Location = New System.Drawing.Point(12, 76)
+        Me.DGVProducto.Location = New System.Drawing.Point(6, 76)
         Me.DGVProducto.Name = "DGVProducto"
         Me.DGVProducto.ReadOnly = True
         Me.DGVProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -519,13 +519,13 @@ Partial Class Productos
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
         Me.DGVProducto.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DGVProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGVProducto.Size = New System.Drawing.Size(969, 180)
+        Me.DGVProducto.Size = New System.Drawing.Size(1005, 180)
         Me.DGVProducto.TabIndex = 71
         '
         'chkInhabil
         '
         Me.chkInhabil.AutoSize = True
-        Me.chkInhabil.Location = New System.Drawing.Point(531, 38)
+        Me.chkInhabil.Location = New System.Drawing.Point(637, 39)
         Me.chkInhabil.Name = "chkInhabil"
         Me.chkInhabil.Size = New System.Drawing.Size(121, 23)
         Me.chkInhabil.TabIndex = 70
