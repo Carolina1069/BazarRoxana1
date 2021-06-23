@@ -923,6 +923,8 @@ Public Class Productos
     Private Sub btnlimpiaf_Click(sender As Object, e As EventArgs) Handles btnlimpiaf.Click
         Limpia()
         txtUnidStock.Enabled = True
+        btnActualizar.Visible = False
+        btnEliminar.Visible = False
     End Sub
 
     Private Sub DGVProducto_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DGVProducto.CellEndEdit
