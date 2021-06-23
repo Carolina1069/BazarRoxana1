@@ -550,11 +550,12 @@ Public Class Productos
 
                 If (ConexionLogin.ActualizarProducto(codprod, NomProd, descripcion, Codprov, NombProv, CodCateg, NombCateg, PrimerPrecio, SegundoPrecio, TercerPrecio, UnidadesStock, Minimo, maximo)) Then
                     MessageBox.Show("Actualizado")
-
+                    btnActualizar.Visible = False
                     'conexion.conexion.Close()
                 Else
                     MessageBox.Show("Error al actualizar")
                     'conexion.conexion.Close()
+                    btnActualizar.Visible = True
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -562,7 +563,7 @@ Public Class Productos
             End Try
 
         End If
-        btnActualizar.Visible = False
+
         btnEliminar.Visible = False
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("SELECT [CodProduc] as 'Código producto'
@@ -597,16 +598,15 @@ Public Class Productos
 
 
         Else
-            If (txNomProd.TextLength < 2) Then
+            If (txNomProd.TextLength < 3) Then
                 MessageBox.Show("Debe ingresar como minimo 2 caracteres")
 
+            ElseIf (rtxDescProd.TextLength < 3) Then
+                    MessageBox.Show("Debe ingresar como minimo 2 caracteres")
 
-            ElseIf (rtxDescProd.TextLength < 2) Then
-                MessageBox.Show("Debe ingresar como minimo 2 caracteres")
+                Else
 
-            Else
-
-                If RegistradoProducto(txNomProd.Text) = False Then
+                    If RegistradoProducto(txNomProd.Text) = False Then
 
                     Dim consultaGuardar As String = "INSERT INTO [dbo].[Producto]
            ([NombProduc]
@@ -938,5 +938,27 @@ Public Class Productos
     Private Sub btnLimpiarCateg_Click(sender As Object, e As EventArgs) Handles btnLimpiarCateg.Click
         txCodCateg.Clear()
         txNombCateg.Clear()
+    End Sub
+
+    Private Sub txNomProd_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txNomProd.KeyPress
+        If (txNomProd.TextLength < 1) Then
+            If Char.IsWhiteSpace(e.KeyChar) Then
+                e.Handled = True
+                MessageBox.Show("No se permiten espacion al principio")
+            End If
+
+
+        End If
+    End Sub
+
+    Private Sub rtxDescProd_KeyPress(sender As Object, e As KeyPressEventArgs) Handles rtxDescProd.KeyPress
+        If (rtxDescProd.TextLength < 1) Then
+            If Char.IsWhiteSpace(e.KeyChar) Then
+                e.Handled = True
+                MessageBox.Show("No se permiten espacion al principio")
+            End If
+
+
+        End If
     End Sub
 End Class
