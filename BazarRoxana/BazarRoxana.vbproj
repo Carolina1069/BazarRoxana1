@@ -267,6 +267,7 @@
     <Compile Include="ReporteVentaParametro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Validaciones.vb" />
     <Compile Include="Ventas.Designer.vb">
       <DependentUpon>Ventas.vb</DependentUpon>
     </Compile>

@@ -27,7 +27,6 @@ Partial Class Clientes
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btActualizar = New System.Windows.Forms.Button()
-        Me.btActualizarTabla = New System.Windows.Forms.Button()
         Me.btEliminar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LbContador9 = New System.Windows.Forms.Label()
@@ -75,15 +74,6 @@ Partial Class Clientes
         Me.btActualizar.Text = "Actualizar"
         Me.btActualizar.UseVisualStyleBackColor = True
         '
-        'btActualizarTabla
-        '
-        Me.btActualizarTabla.Location = New System.Drawing.Point(694, 26)
-        Me.btActualizarTabla.Name = "btActualizarTabla"
-        Me.btActualizarTabla.Size = New System.Drawing.Size(124, 39)
-        Me.btActualizarTabla.TabIndex = 23
-        Me.btActualizarTabla.Text = "Refrescar Tabla"
-        Me.btActualizarTabla.UseVisualStyleBackColor = True
-        '
         'btEliminar
         '
         Me.btEliminar.Location = New System.Drawing.Point(709, 273)
@@ -103,7 +93,6 @@ Partial Class Clientes
         Me.GroupBox1.Controls.Add(Me.DGVCliente)
         Me.GroupBox1.Controls.Add(Me.chkInhabil)
         Me.GroupBox1.Controls.Add(Me.btEliminar)
-        Me.GroupBox1.Controls.Add(Me.btActualizarTabla)
         Me.GroupBox1.Controls.Add(Me.btActualizar)
         Me.GroupBox1.Controls.Add(Me.btGuardar)
         Me.GroupBox1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
@@ -517,7 +506,6 @@ Partial Class Clientes
 
     End Sub
     Friend WithEvents btActualizar As Button
-    Friend WithEvents btActualizarTabla As Button
     Friend WithEvents btEliminar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents chkInhabil As CheckBox

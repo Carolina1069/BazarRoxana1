@@ -5,12 +5,10 @@ Module ConexionLogin
     Public enunciado As SqlCommand
     Public respuesta As SqlDataReader
 
-    'CAROLINA10\CAROLINA
-    'AMAYA
-    'DANIELRUEDA\LOCALHOST
+
     'localhost
-    'DORIS\SQLEXPRESS
-    'DESKTOP-DE4EAJJ
+    '(local)\SQLEXPRESS
+
     Sub abrir()
 
         Try
@@ -510,6 +508,7 @@ Module ConexionLogin
         End Try
 
     End Function
+
 
 
 End Module
