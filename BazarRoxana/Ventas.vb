@@ -1,45 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Public Class Ventas
-    Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles TxtCodCli.TextChanged
-        'abrir()
-        'Dim Recuperar As String = "select * from Clientes where CodCli= '" & TxtCodCli.Text & "'"
-        'Dim Mostrar As SqlDataReader
-        'Dim Ejecutar As SqlCommand
-        'Ejecutar = New SqlCommand(Recuperar, conexion)
-        'Mostrar = Ejecutar.ExecuteReader
-        'Dim Estado As String
-        'Estado = Mostrar.Read
-        'If (Estado = True) Then
-        '    TxtNombreCliente.Text = Mostrar(1)
-        'Else
-        '    TxtNombreCliente.Text = ""
-        'End If
-        'Mostrar.Close()
-        'conexion.Close()
-    End Sub
+
 
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProducto.TextChanged
         abrir()
-
-        'Dim Recuperar As String = "select * from Producto where CodProduc= '" & TxtCodProducto.Text & "'"
-        'Dim Mostrar As SqlDataReader
-        'Dim Ejecutar As SqlCommand
-        'Ejecutar = New SqlCommand(Recuperar, conexion)
-        'Mostrar = Ejecutar.ExecuteReader
-        'Dim Estado As String
-        'Estado = Mostrar.Read
-
-        'If (Estado = True) Then
-        '    TxtNombreProducto.Text = Mostrar(1)
-        '    TxtUnidades.Text = Mostrar(8)
-        '    txMinimo.Text = Mostrar(9)
-        'Else
-        '    TxtNombreProducto.Text = ""
-        '    TxtUnidades.Text = ""
-        '    CbxPrecio.Text = ""
-        '    txMinimo.Text = ""
-        'End If
-        'Mostrar.Close()
 
         Dim produ As Integer
         produ = Val(TxtCodProducto.Text)
@@ -50,7 +14,6 @@ Public Class Ventas
             adaptador.Fill(DATOSusuarios)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-        'DGV.DataSource = DATOSusuarios
         CbxPrecio.DataSource = DATOSusuarios
         CbxPrecio.DisplayMember = "Precios"
 
@@ -58,6 +21,7 @@ Public Class Ventas
     End Sub
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
+
         Dim Total As Double
         Dim Subtotal As Double
         Dim Subtotal2 As Double
@@ -122,14 +86,15 @@ Public Class Ventas
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
         Dim total As Integer
 
-        abrir()
+        abrir() '<-- Llamado de la funcion 
         Dim TP As Integer
         Dim TT As Integer
 
         If TxtCodCli.Text = "" Or cbxTipoPago.Text = "" Or cbxTipoTransac.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios", MessageBoxIcon.Warning, "Advertencia")
+
         Else
-            If cbxTipoPago.SelectedItem = "Crédito" Then
+            If cbxTipoPago.SelectedItem = "Crédito" Then '<-- Especifica los valores del combobox que toman un valor numerico con la variable "TP de tipo Pago y TT de Tipo transferencia".
                 TP = 1
 
             Else
@@ -147,7 +112,7 @@ Public Class Ventas
                 TT = 3
             End If
 
-            If RegistradoVentas(txNumVenta.Text) = False Then
+            If RegistradoVentas(txNumVenta.Text) = False Then  '<-- Verifica si el numero de la venta no esta registrado para asi poder hacer la insercion en la base de datos  
                 Dim ConsultaGuardar As String = "insert into Ventas(CodCli, CodPago, CodTransa, CodEmple, FechayHoraVenta,Total) values(@CodCli, @CodPago, @CodTransa, @CodEmple, GETDATE(), @Total)"
                 Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
 
@@ -162,7 +127,7 @@ Public Class Ventas
                 Dim RegistrarD As New SqlCommand(DatosFacturaD, conexion)
 
                 Dim fila As DataGridViewRow = New DataGridViewRow()
-                For Each fila In DGV.Rows
+                For Each fila In DGV.Rows '<-- Recorre el datagridview para insertar los valores en la base de datos 
                     RegistrarD.Parameters.Clear()
                     RegistrarD.Parameters.AddWithValue("@NumVent", Val(txNumVenta.Text))
                     RegistrarD.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
@@ -182,8 +147,9 @@ Public Class Ventas
                 Next
 
 
-                conexion.Close()
+                conexion.Close() '<-- cierre de la funcion
 
+                'Limpia los textbox luego de generar la venta
                 DGV.Rows.Clear()
                 TxtCantidad.Clear()
                 TxtCodProducto.Clear()
@@ -193,7 +159,7 @@ Public Class Ventas
 
                 total = 0
                 MsgBox("Venta registrada con éxito", MessageBoxIcon.Information, "Compra")
-                FacturaVenta.Show()
+                FacturaVenta.Show() '<-- Llamada al formulario de la factura  
             Else
                 MsgBox("La venta ya esta registrada", MessageBoxIcon.Exclamation, "Compra")
             End If
@@ -214,48 +180,40 @@ Public Class Ventas
     End Sub
 
     Private Sub txNumVenta_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txNumVenta.KeyPress
-        SoloNumeros(e)
+        SoloNumeros(e) '<-- Llamado de la funcion que solo permite el ingreso de caracteres tipo numerico
     End Sub
 
     Private Sub TxtCodCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodCli.KeyPress
-        SoloNumeros(e)
+        SoloNumeros(e) '<-- Llamado de la funcion que solo permite el ingreso de caracteres tipo numerico
     End Sub
 
     Private Sub TxtCodEmple_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodEmple.KeyPress
-        SoloNumeros(e)
+        SoloNumeros(e) '<-- Llamado de la funcion que solo permite el ingreso de caracteres tipo numerico
     End Sub
 
     Private Sub TxtCodPago_KeyPress(sender As Object, e As KeyPressEventArgs)
-        SoloNumeros(e)
+        SoloNumeros(e) '<-- Llamado de la funcion que solo permite el ingreso de caracteres tipo numerico
     End Sub
 
     Private Sub TxtCodTransa_KeyPress(sender As Object, e As KeyPressEventArgs)
-        SoloNumeros(e)
+        SoloNumeros(e) '<-- Llamado de la funcion que solo permite el ingreso de caracteres tipo numerico
     End Sub
 
     Private Sub TxtCodProducto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodProducto.KeyPress
-        SoloNumeros(e)
+        SoloNumeros(e) '<-- Llamado de la funcion que solo permite el ingreso de caracteres tipo numerico
     End Sub
 
     Private Sub TxtCantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCantidad.KeyPress
-        SoloNumeros(e)
+        SoloNumeros(e) '<-- Llamado de la funcion que solo permite el ingreso de caracteres tipo numerico
     End Sub
 
 
     Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtCodEmple.Text = cod
+
         abrir()
 
-        'If DGV.Rows.Count = 0 Then
-        '    Button1.Enabled = False
-
-        'ElseIf DGV.Rows.Count > 0 Then
-        '    Button1.Enabled = True
-
-        'End If
-
-
-        Dim CodUVenta As String = CodUltimaVenta()
+        Dim CodUVenta As String = CodUltimaVenta() '<-- Declaracion de una variable tipo string para igualarla a la funcion CodUltimaVenta
 
         txNumVenta.Text = CodUVenta
         TxtCodEmple.Text = Login.txtNombreEmpleado.Text
@@ -263,8 +221,7 @@ Public Class Ventas
 
         conexion.Close()
 
-        'TxtCodCli.Text = BuscarCliente.codcli.Text
-        'TxtNombreCliente.Text = BuscarCliente.nombcli.Text
+
     End Sub
 
     Private Sub lbUsuario_TextChanged(sender As Object, e As EventArgs) Handles lbUsuario.TextChanged
@@ -291,7 +248,7 @@ Public Class Ventas
     End Sub
 
     Private Sub TxtCantidad_TextChanged(sender As Object, e As EventArgs) Handles TxtCantidad.TextChanged
-        LbContador.Text = TxtCantidad.Text.Length
+        LbContador.Text = TxtCantidad.Text.Length '<-- Muestra la cantidad de caracteres escritas en textbox.
     End Sub
 
     Private Sub btnBusqCliente_Click(sender As Object, e As EventArgs) Handles btnBusqCliente.Click
