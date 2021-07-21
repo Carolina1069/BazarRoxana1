@@ -57,6 +57,7 @@ Partial Class MenuPrincipal
         Me.ProveedoresToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,7 +156,7 @@ Partial Class MenuPrincipal
         Me.MenuStrip1.BackColor = System.Drawing.Color.DarkGray
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuStrip1.Font = New System.Drawing.Font("Candara", 15.75!, System.Drawing.FontStyle.Bold)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.EmpleadoToolStripMenuItem1, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.CategoriaToolStripMenuItem, Me.ProductoToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.VentasToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.EmpleadoToolStripMenuItem1, Me.UsuariosToolStripMenuItem, Me.ProveedoresToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.CategoriaToolStripMenuItem, Me.ProductoToolStripMenuItem, Me.ComprasToolStripMenuItem, Me.VentasToolStripMenuItem, Me.ReportesToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -372,6 +373,17 @@ Partial Class MenuPrincipal
         Me.SalirToolStripMenuItem.Text = "Salir"
         Me.SalirToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'UsuariosToolStripMenuItem
+        '
+        Me.UsuariosToolStripMenuItem.BackColor = System.Drawing.Color.Transparent
+        Me.UsuariosToolStripMenuItem.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.Blur
+        Me.UsuariosToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.UsuariosToolStripMenuItem.Image = Global.BazarRoxana.My.Resources.Resources.ic_assignment_ind_128_28218
+        Me.UsuariosToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(168, 30)
+        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
+        '
         'MenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -434,4 +446,5 @@ Partial Class MenuPrincipal
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
 End Class

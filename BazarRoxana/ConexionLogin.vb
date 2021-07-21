@@ -19,6 +19,41 @@ Module ConexionLogin
             MsgBox("No se pudo conectar" + ex.ToString)
         End Try
     End Sub
+
+    Function contrasena(ByVal nombreUsuario As String) As String
+        Dim resultado As String = ""
+        Try
+            enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp 
+            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "' and E.EstadoEmple=1 ", conexion)
+            respuesta = enunciado.ExecuteReader
+
+            If respuesta.Read Then
+                resultado = respuesta.Item("ContraseñaEmp")
+            End If
+            respuesta.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return resultado
+    End Function
+
+    Function ConsultarTipoUsuario(ByVal nombreUsuario As String) As Integer
+        Dim resultado As Integer
+        Try
+            enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp 
+            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "' and E.EstadoEmple=1 ", conexion)
+            respuesta = enunciado.ExecuteReader
+
+            If respuesta.Read Then
+                resultado = CInt(respuesta.Item("NivelEmple"))
+            End If
+            respuesta.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return resultado
+    End Function
+
     'khaleb metodos
     Public cod As String = 0
     Public codProv As String = "1"
@@ -28,7 +63,8 @@ Module ConexionLogin
         Dim resultado As Boolean = False
         Dim cod As String = 0
         Try
-            enunciado = New SqlCommand("Select CodEmple from Empleados where UsuarioEmple='" & nombreUsuario & "' ", conexion)
+            enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp
+            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "'", conexion)
             respuesta = enunciado.ExecuteReader()
 
             If respuesta.Read() Then
@@ -86,7 +122,8 @@ Module ConexionLogin
     Function usuarioRegistrado(ByVal nombreUsuario As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("Select * from Empleados where UsuarioEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
+            enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp
+            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "' and E.EstadoEmple=1 ", conexion)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then
@@ -99,6 +136,37 @@ Module ConexionLogin
         Return resultado
     End Function
 
+    Function RegistradoUsuario(ByVal id As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            enunciado = New SqlCommand("select*from Usuario where CodEmple='" & id & "'", conexion)
+            respuesta = enunciado.ExecuteReader
+            If respuesta.Read Then
+                resultado = True
+            End If
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox("Error en el procedimiento: " + ex.ToString)
+        End Try
+        Return resultado
+    End Function
+
+    Function RegistradoNombreUsuario(ByVal id As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            enunciado = New SqlCommand("select*from Usuario where UsuarioEmp='" & id & "'", conexion)
+            respuesta = enunciado.ExecuteReader
+            If respuesta.Read Then
+                resultado = True
+            End If
+            respuesta.Close()
+
+        Catch ex As Exception
+            MsgBox("Error en el procedimiento: " + ex.ToString)
+        End Try
+        Return resultado
+    End Function
     Public Function mostrarProveedor() As DataTable
         Try
             conexion.Open()
@@ -303,40 +371,6 @@ Module ConexionLogin
         End Try
     End Function
 
-
-
-
-    Function contrasena(ByVal nombreUsuario As String) As String
-        Dim resultado As String = ""
-        Try
-            enunciado = New SqlCommand("Select Contraseña from Empleados where UsuarioEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
-            respuesta = enunciado.ExecuteReader
-
-            If respuesta.Read Then
-                resultado = respuesta.Item("Contraseña")
-            End If
-            respuesta.Close()
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-        Return resultado
-    End Function
-
-    Function ConsultarTipoUsuario(ByVal nombreUsuario As String) As Integer
-        Dim resultado As Integer
-        Try
-            enunciado = New SqlCommand("Select NivelEmple from Empleados where UsuarioEmple='" & nombreUsuario & "' and EstadoEmple=1 ", conexion)
-            respuesta = enunciado.ExecuteReader
-
-            If respuesta.Read Then
-                resultado = CInt(respuesta.Item("NivelEmple"))
-            End If
-            respuesta.Close()
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-        Return resultado
-    End Function
 
     Function PersonaRegistradaClientes(ByVal id As String) As Boolean
         Dim resultado As Boolean = False

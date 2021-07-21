@@ -108,8 +108,8 @@ Public Class Compras
 
         If (Estado = True) Then
             TxtNombreProducto.Text = Mostrar(1)
-            TxtUnidades.Text = Mostrar(8)
-            txMaximo.Text = Mostrar(10)
+            TxtUnidades.Text = Mostrar(10)
+            txMaximo.Text = Mostrar(12)
         Else
             TxtNombreProducto.Text = ""
             TxtUnidades.Text = ""

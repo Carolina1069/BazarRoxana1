@@ -20,9 +20,14 @@ Public Class Login
                         cod = CodUsuario(txtNombreEmpleado.Text)
                         Timer1.Start()
 
+                    ElseIf ConsultarTipoUsuario(txtNombreEmpleado.Text) = 2 Then
+                        cod = CodUsuario(txtNombreEmpleado.Text)
+                        Timer1.Start()
+                        MenuPrincipal.UsuariosToolStripMenuItem.Enabled = False
                     Else
                         cod = CodUsuario(txtNombreEmpleado.Text)
                         Timer1.Start()
+                        MenuPrincipal.UsuariosToolStripMenuItem.Enabled = False
                         MenuPrincipal.EmpleadoToolStripMenuItem1.Enabled = False
                         MenuPrincipal.ClientesToolStripMenuItem.Enabled = False
                         MenuPrincipal.CategoriaToolStripMenuItem.Enabled = False
