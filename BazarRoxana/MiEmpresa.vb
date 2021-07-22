@@ -30,38 +30,44 @@ Public Class MiEmpresa
     End Sub
 
     Private Sub MiEmpresa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Try
-            AbrirConeccion()
-            Dim SqlActions As String
-            SqlActions = "select * from MiEmpresa where Codigo= 1"
-            Dim cmd As New SqlCommand(SqlActions, ConexionBase)
-            cmd.Parameters.AddWithValue(1, txtcod.Text)
-            ConexionBase.Open()
-            Dim Lectura As SqlDataReader = cmd.ExecuteReader()
-                If Lectura.Read = True Then
-                txtDireccion.Text = CStr(Lectura(1))
-                txtRTN.Text = CStr(Lectura(2))
-                txtCAI.Text = CStr(Lectura(4))
-                TxtEmail.Text = CStr(Lectura(5))
-                txtTelefono.Text = CStr(Lectura(6))
+        'Try
+        AbrirConeccion()
+        'Dim SqlActions As String
+        'SqlActions = "select * from MiEmpresa where Codigo= 1"
+        'Dim cmd As New SqlCommand(SqlActions, ConexionBase)
+        'cmd.Parameters.AddWithValue(1, txtcod.Text)
+        'ConexionBase.Open()
+        'Dim Lectura As SqlDataReader = cmd.ExecuteReader()
+        'If Lectura.Read = True Then
+        '    txtDireccion.Text = CStr(Lectura(1))
+        '    txtRTN.Text = CStr(Lectura(2))
+        '    txtCAI.Text = CStr(Lectura(4))
+        '    TxtEmail.Text = CStr(Lectura(5))
+        '    txtTelefono.Text = CStr(Lectura(6))
 
 
-                Dim ms As New System.IO.MemoryStream()
-                Dim imageBuffer() As Byte = CType(Lectura.Item("Imagen"), Byte())
-                ms = New System.IO.MemoryStream(imageBuffer)
-                    PictureBox1.BackgroundImage = Nothing
-                    PictureBox1.BackgroundImage = (Image.FromStream(ms))
-                    PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
+        '    Dim ms As New System.IO.MemoryStream()
+        '    Dim imageBuffer() As Byte = CType(Lectura.Item("Imagen"), Byte())
+        '    ms = New System.IO.MemoryStream(imageBuffer)
+        '    PictureBox1.BackgroundImage = Nothing
+        '    PictureBox1.BackgroundImage = (Image.FromStream(ms))
+        '    PictureBox1.BackgroundImageLayout = ImageLayout.Stretch
+
+        Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using adaptador As New SqlDataAdapter("select * from MiEmpresa", ConexionBase)
+            adaptador.Fill(DatosEmp)
+        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+        DGV.DataSource = DatosEmp
 
 
+        '  Lectura.Close()
 
-                    Lectura.Close()
-
-                End If
-            ConexionBase.Close()
-        Catch Ex As Exception
-            MessageBox.Show(Ex.Message)
-        End Try
+        'End If
+        ConexionBase.Close()
+        'Catch Ex As Exception
+        'MessageBox.Show(Ex.Message)
+        'End Try
     End Sub
 
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
@@ -85,7 +91,14 @@ Public Class MiEmpresa
                 txtCAI.Clear()
                 TxtEmail.Clear()
                 txtTelefono.Clear()
-                Dispose()
+
+                Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
+                Using adaptador As New SqlDataAdapter("select * from MiEmpresa", ConexionBase)
+                    adaptador.Fill(DatosEmp)
+                End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+                DGV.DataSource = DatosEmp
+
             Else
                 stateIMG = False
                 'cn.Actualizar(txtnombre.Text, txtdesc.Text, cmbcateg.SelectedIndex + 1, txtdif.Text, txtfinalp.Text, fichero, txtcod.Text)
@@ -100,7 +113,14 @@ Public Class MiEmpresa
                 ejecutar.Parameters.AddWithValue("@Imagen", (fichero))
                 ejecutar.ExecuteNonQuery()
                 MsgBox("La informacion se a actualizado", MsgBoxStyle.Information, "Informacion")
-                Dispose()
+
+                Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
+                Using adaptador As New SqlDataAdapter("select * from MiEmpresa", ConexionBase)
+                    adaptador.Fill(DatosEmp)
+                End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+                DGV.DataSource = DatosEmp
+
             End If
 
         End If
@@ -109,7 +129,7 @@ Public Class MiEmpresa
             If fichero IsNot Nothing Then
 
                 'cn.Guardar(txtnombre.Text, txtdesc.Text, cmbcateg.SelectedIndex + 1, txtdif.Text, txtfinalp.Text, fichero)
-                Dim consultaAct As String = "insert into MiEmpresa (Codigo,Direccion,RTN,CAI,Email,Telefono,Imagen) values( 1,@Direccion,@RTN, @CAI, @Email, @Telefono, @Imagen)" '<-Consulta.
+                Dim consultaAct As String = "insert into MiEmpresa (Direccion,RTN,CAI,Email,Telefono,Imagen) values(@Direccion,@RTN, @CAI, @Email, @Telefono, @Imagen)" '<-Consulta.
                 'Toma los valores de los textbox  y los actualiza en la base de datos. 
                 Dim ejecutar As New SqlCommand(consultaAct, ConexionBase)
                 ejecutar.Parameters.AddWithValue("@Direccion", (txtDireccion.Text))
@@ -125,7 +145,14 @@ Public Class MiEmpresa
                 txtCAI.Clear()
                 TxtEmail.Clear()
                 txtTelefono.Clear()
-                Dispose()
+
+                Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
+                Using adaptador As New SqlDataAdapter("select * from MiEmpresa", ConexionBase)
+                    adaptador.Fill(DatosEmp)
+                End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+                DGV.DataSource = DatosEmp
+
             Else
                 MessageBox.Show("Ingrese una imagen")
 
@@ -141,7 +168,17 @@ Public Class MiEmpresa
         'Toma los valores de los textbox  y los actualiza en la base de datos. 
         Dim ejecutar As New SqlCommand(consultaAct, ConexionBase)
         ejecutar.ExecuteNonQuery()
-        MsgBox("La informacion se a guardado", MsgBoxStyle.Information, "Informacion")
+        MsgBox("La informacion se a eliminado", MsgBoxStyle.Information, "Informacion")
+
+        Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using adaptador As New SqlDataAdapter("select * from MiEmpresa", ConexionBase)
+            adaptador.Fill(DatosEmp)
+        End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
+
+        DGV.DataSource = DatosEmp
+
+
         ConexionBase.Close()
+
     End Sub
 End Class
