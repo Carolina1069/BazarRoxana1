@@ -3,21 +3,21 @@
 Public Class Empleado
     Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         chkEstado.Checked = True
-        abrir()
+        AbrirConeccion()
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
-        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", ConexionBase)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosEmp
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim Cat As Integer
-        abrir() '<-- Llamado de la funcion 
+        AbrirConeccion() '<-- Llamado de la funcion 
         If (txtNombreEmpleado.TextLength < 2) Then
             MessageBox.Show("Debe ingresar como minimo 2 caracteres en nombre del empleado")
         Else
@@ -37,7 +37,7 @@ Public Class Empleado
 
                     Dim consultaGuardar As String = "insert into Empleados(NombEmple, NivelEmple,EstadoEmple) values(@NombEmple,@NivelEmple,1)" '<--Consulta
                     'Toma los valores de los textbox y el combobox y los guardas en la base de datos. 
-                    Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
+                    Dim ejecutar As New SqlCommand(consultaGuardar, ConexionBase)
                     ejecutar.Parameters.AddWithValue("@NombEmple", (txtNombreEmpleado.Text))
                     ejecutar.Parameters.AddWithValue("@NivelEmple", (Cat))
 
@@ -51,18 +51,18 @@ Public Class Empleado
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
-        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", ConexionBase)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosEmp
 
-        conexion.Close()
+        ConexionBase.Close()
 
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        abrir()
+        AbrirConeccion()
         If (txtNombreEmpleado.TextLength < 2) Then
             MessageBox.Show("Debe ingresar como minimo 2 caracteres en nombre del empleado")
 
@@ -91,7 +91,7 @@ Public Class Empleado
 
                 Dim consultaAct As String = "update Empleados set NombEmple=@NombEmple, NivelEmple=@NivelEmple, EstadoEmple=@EstadoEmple where CodEmple= @CodEmple" '<-Consulta.
                 'Toma los valores de los textbox y el checkbox y los actualiza en la base de datos. 
-                Dim ejecutar As New SqlCommand(consultaAct, conexion)
+                Dim ejecutar As New SqlCommand(consultaAct, ConexionBase)
                     ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodigoEmpleado.Text))
                     ejecutar.Parameters.AddWithValue("@NombEmple", (txtNombreEmpleado.Text))
                     ejecutar.Parameters.AddWithValue("@NivelEmple", (Cat))
@@ -102,17 +102,17 @@ Public Class Empleado
             End If
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
-        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", ConexionBase)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGV.DataSource = DatosEmp
 
-        conexion.Close()
+        ConexionBase.Close()
 
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        abrir() '<-- Llamado de la funcion 
+        AbrirConeccion() '<-- Llamado de la funcion 
         Dim opcion As DialogResult
         opcion = MessageBox.Show("¿Esta seguro que quiere eliminar este empleado?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If opcion = DialogResult.Yes Then
@@ -122,7 +122,7 @@ Public Class Empleado
             Else
                 Dim consultaElim As String = "Update Empleados set EstadoEmple=0   where CodEmple= @CodEmple" '<-Consulta
                 'Toma el valor del textbox y lo deshabilita en la base de datos.
-                Dim ejecutar As New SqlCommand(consultaElim, conexion)
+                Dim ejecutar As New SqlCommand(consultaElim, ConexionBase)
                 ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodigoEmpleado.Text))
 
                 ejecutar.ExecuteNonQuery()
@@ -132,12 +132,12 @@ Public Class Empleado
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
-        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", ConexionBase)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosEmp
-        conexion.Close()
+        ConexionBase.Close()
         'Limpia los textbox, combobox y los checkbox.
         TxtCodigoEmpleado.Clear()
         txtNombreEmpleado.Clear()
@@ -187,13 +187,13 @@ Public Class Empleado
 
 
     Private Sub chkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles chkInhabil.CheckedChanged
-        abrir()
+        AbrirConeccion()
 
         If chkInhabil.Checked = True Then
 
             Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
             Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
-        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 0", conexion)
+        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 0", ConexionBase)
                 adaptador.Fill(DatosEmp)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -203,14 +203,14 @@ Public Class Empleado
 
             Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
             Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
-        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", ConexionBase)
                 adaptador.Fill(DatosEmp)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
             DGV.DataSource = DatosEmp
 
         End If
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub DGV_DoubleClick_1(sender As Object, e As EventArgs) Handles DGV.DoubleClick '<-- Con doble clic manda campos del DataGridView a los textbox referidos.
@@ -285,13 +285,13 @@ Public Class Empleado
         If filtro.Trim() <> String.Empty Then  'Si no es vacío filtra
             filtrarDatos(filtro)
         Else
-            abrir()
+            AbrirConeccion()
 
             If chkInhabil.Checked = True Then
 
                 Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
                 Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
-                                                       when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 0", conexion)
+                                                       when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 0", ConexionBase)
                     adaptador.Fill(DatosEmp)
                 End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -301,16 +301,14 @@ Public Class Empleado
 
                 Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
                 Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
-                                                       when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+                                                       when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", ConexionBase)
                     adaptador.Fill(DatosEmp)
                 End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
                 DGV.DataSource = DatosEmp
 
             End If
-            conexion.Close()
+            ConexionBase.Close()
         End If
     End Sub
-
-
 End Class

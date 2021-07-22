@@ -50,7 +50,7 @@ Public Class Productos
     End Sub
 
     Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        abrir()
+        AbrirConeccion()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("SELECT [CodProduc] as 'Código producto'
                ,[NombProduc] as 'Nombre producto'
@@ -67,7 +67,7 @@ Public Class Productos
               ,[Maximo] as Máximo,       
 	          case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto' 
               FROM [dbo].[Producto] 
-              where Estado = 1", conexion)
+              where Estado = 1", ConexionBase)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -77,7 +77,7 @@ Public Class Productos
         txNombCateg.ReadOnly = True
         txNombProv.ReadOnly = True
 
-        conexion.Close()
+        ConexionBase.Close()
         btnHabilitar.Visible = False
         btnEliminar.Visible = False
         btnActualizar.Visible = False
@@ -88,9 +88,9 @@ Public Class Productos
     Private Sub btActualizar_Click(sender As Object, e As EventArgs)
 
 
-        abrir()
+        AbrirConeccion()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conexion)
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", ConexionBase)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -99,7 +99,7 @@ Public Class Productos
             MsgBox("Hay campos vacios")
         Else
             Dim consultaGuardar As String = "Update  Producto set  NombProduc=@NombProduc,DescripProduc=@DescripProduc,CodProv=@CodProv,CodCateg=@CodCateg,PrimerPrecio=@PrimerPrecio,SegundoPrecio=@SegundoPrecio,TercerPrecio=@TercerPrecio,UnidadesStock=@UnidadesStock,Minimo=@Minimo,Maximo=@Maximo Where CodProduc=@CodProduc"
-            Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
+            Dim ejecutar As New SqlCommand(consultaGuardar, ConexionBase)
             ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
             ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
             ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
@@ -116,7 +116,7 @@ Public Class Productos
             ejecutar.ExecuteNonQuery()
 
         End If
-        conexion.Close()
+        ConexionBase.Close()
 
 
 
@@ -124,7 +124,7 @@ Public Class Productos
 
 
     Private Sub btBuscar_Click(sender As Object, e As EventArgs)
-        abrir()
+        AbrirConeccion()
 
         Dim busqueda As Integer
 
@@ -133,7 +133,7 @@ Public Class Productos
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Dim query As String = "select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto where CodProduc=" & busqueda
-        Using adaptador As New SqlDataAdapter(query, conexion)
+        Using adaptador As New SqlDataAdapter(query, ConexionBase)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -148,11 +148,11 @@ Public Class Productos
     End Sub
 
     Private Sub txCodCateg_TextChanged(sender As Object, e As EventArgs) Handles txCodCateg.TextChanged
-        abrir()
+        AbrirConeccion()
         Dim Recuperar As String = "select * from Categoria where CodCateg= '" & txCodCateg.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conexion)
+        Ejecutar = New SqlCommand(Recuperar, ConexionBase)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -162,20 +162,20 @@ Public Class Productos
             txNombCateg.Text = ""
         End If
         Mostrar.Close()
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub btActualizarTabla_Click(sender As Object, e As EventArgs)
 
-        abrir()
+        AbrirConeccion()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conexion)
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", ConexionBase)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGVProducto.DataSource = DatosCat
 
-        conexion.Close()
+        ConexionBase.Close()
         txCodProd.Clear()
         txNomProd.Clear()
         rtxDescProd.Clear()
@@ -472,13 +472,13 @@ Public Class Productos
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        abrir()
+        AbrirConeccion()
 
         If txCodProd.Text = "" Then
             MsgBox("Hay campos vacios")
         Else
             Dim consultaElim As String = "Update Producto set Estado=0   where CodProduc= @CodProduc"
-            Dim ejecutar As New SqlCommand(consultaElim, conexion)
+            Dim ejecutar As New SqlCommand(consultaElim, ConexionBase)
             ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
             Dim opcion As DialogResult
             opcion = MessageBox.Show("¿Esta Seguro que desea eliminar el producto?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
@@ -512,11 +512,11 @@ Public Class Productos
               ,[Maximo] as Máximo,       
 	          case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto' 
               FROM [dbo].[Producto] 
-              where Estado = 1", conexion)
+              where Estado = 1", ConexionBase)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGVProducto.DataSource = DatosEmp
-        conexion.Close()
+        ConexionBase.Close()
         Limpia()
 
 
@@ -559,7 +559,7 @@ Public Class Productos
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
-                ConexionLogin.conexion.Close()
+                ConexionLogin.ConexionBase.Close()
             End Try
 
         End If
@@ -581,18 +581,18 @@ Public Class Productos
               ,[Maximo] as Máximo,       
 	          case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto' 
               FROM [dbo].[Producto] 
-              where Estado = 1", conexion)
+              where Estado = 1", ConexionBase)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGVProducto.DataSource = DatosCat
 
-        conexion.Close()
+        ConexionBase.Close()
 
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
 
-        abrir()
+        AbrirConeccion()
         If txNomProd.Text = "" Or rtxDescProd.Text = "" Or txtUnidStock.Text = "" Or txMax.Text = "" Or txMin.Text = "" Or txCodProv.Text = "" Or txNombProv.Text = "" Or txCodCateg.Text = "" Or txNombCateg.Text = "" Or txtPriPre.Text = "" Or txtSegPre.Text = "" Or txtTerPre.Text = "" Then
             MsgBox("Hay campos vacios")
 
@@ -636,7 +636,7 @@ Public Class Productos
            ,@Minimo
            ,@Maximo
            ,1)"
-                    Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
+                    Dim ejecutar As New SqlCommand(consultaGuardar, ConexionBase)
                     ejecutar.Parameters.AddWithValue("@NombProduc", (txNomProd.Text))
                     ejecutar.Parameters.AddWithValue("@DescripProduc", (rtxDescProd.Text))
                     ejecutar.Parameters.AddWithValue("@CodProv", (txCodProv.Text))
@@ -677,11 +677,11 @@ Public Class Productos
               ,[Maximo] as Máximo,       
 	          case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto' 
               FROM [dbo].[Producto] 
-              where Estado = 1", conexion)
+              where Estado = 1", ConexionBase)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGVProducto.DataSource = DatosCat
-        conexion.Close()
+        ConexionBase.Close()
 
 
 
@@ -690,20 +690,20 @@ Public Class Productos
     End Sub
 
     Private Sub btnActTabla_Click(sender As Object, e As EventArgs)
-        abrir()
+        AbrirConeccion()
         chkInhabil.Checked = False
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        Using adaptador As New SqlDataAdapter("select CodEmple as 'Codigo del empleado', NombEmple as 'Nombre del empleado', Contraseña, case when NivelEmple=1 Then 'Gerente' else 'General' end as 'Nivel del empleado', case when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", ConexionBase)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGVProducto.DataSource = DatosEmp
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub chkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles chkInhabil.CheckedChanged
 
-        abrir()
+        AbrirConeccion()
 
         If chkInhabil.Checked = True Then
 
@@ -723,7 +723,7 @@ Public Class Productos
               ,[Maximo] as Máximo,       
 	          case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto' 
               FROM [dbo].[Producto] 
-              where Estado = 0", conexion)
+              where Estado = 0", ConexionBase)
                 adaptador.Fill(DatosCat)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -750,7 +750,7 @@ Public Class Productos
               ,[Maximo] as Máximo,       
 	          case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto' 
               FROM [dbo].[Producto] 
-              where Estado = 1", conexion)
+              where Estado = 1", ConexionBase)
                 adaptador.Fill(DatosCat)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -761,7 +761,7 @@ Public Class Productos
             btnHabilitar.Visible = False
 
         End If
-        conexion.Close()
+        ConexionBase.Close()
 
     End Sub
 
@@ -786,11 +786,11 @@ Public Class Productos
 
                 If dt.Rows.Count <> 0 Then
                     DGVProducto.DataSource = dt
-                    ConexionLogin.conexion.Close()
+                    ConexionLogin.ConexionBase.Close()
 
                 Else
                     DGVProducto.DataSource = Nothing
-                    ConexionLogin.conexion.Close()
+                    ConexionLogin.ConexionBase.Close()
                 End If
 
             Else
@@ -799,11 +799,11 @@ Public Class Productos
 
                 If dt.Rows.Count <> 0 Then
                     DGVProducto.DataSource = dt
-                    ConexionLogin.conexion.Close()
+                    ConexionLogin.ConexionBase.Close()
 
                 Else
                     DGVProducto.DataSource = Nothing
-                    ConexionLogin.conexion.Close()
+                    ConexionLogin.ConexionBase.Close()
                 End If
             End If
 
@@ -843,11 +843,11 @@ Public Class Productos
     End Sub
 
     Private Sub btnHabilitar_Click(sender As Object, e As EventArgs) Handles btnHabilitar.Click
-        abrir()
+        AbrirConeccion()
 
         Try
             Dim consultaAct As String = "update Producto set Estado=1 where CodProduc= @CodProduc"
-            Dim ejecutar As New SqlCommand(consultaAct, conexion)
+            Dim ejecutar As New SqlCommand(consultaAct, ConexionBase)
             ejecutar.Parameters.AddWithValue("@CodProduc", Val(txCodProd.Text))
 
             If ejecutar.ExecuteNonQuery() Then
@@ -878,14 +878,14 @@ Public Class Productos
               ,[Maximo] as Máximo,       
 	          case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto' 
               FROM [dbo].[Producto] 
-              where Estado = 0", conexion)
+              where Estado = 0", ConexionBase)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DGVProducto.DataSource = DatosCat
 
 
 
-        conexion.Close()
+        ConexionBase.Close()
         Limpia()
     End Sub
 

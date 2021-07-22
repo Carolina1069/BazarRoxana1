@@ -8,11 +8,11 @@ Public Class Compras
     Dim tipoPago As Integer = 0
     Dim tipoTransac As Integer = 0
     Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProv.TextChanged
-        abrir()
+        AbrirConeccion()
         Dim Recuperar As String = "select * from Proveedores where CodProv= '" & TxtCodProv.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conexion)
+        Ejecutar = New SqlCommand(Recuperar, ConexionBase)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -22,15 +22,15 @@ Public Class Compras
             TxtNombreProveedor.Text = ""
         End If
         Mostrar.Close()
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub TxtCodEmple_TextChanged(sender As Object, e As EventArgs) Handles TxtCodEmple.TextChanged
-        abrir()
+        AbrirConeccion()
         Dim Recuperar As String = "select * from Empleados where CodEmple= '" & TxtCodEmple.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conexion)
+        Ejecutar = New SqlCommand(Recuperar, ConexionBase)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -40,7 +40,7 @@ Public Class Compras
             TxtNombreEmpleado.Text = ""
         End If
         Mostrar.Close()
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub TxtCodPago_TextChanged(sender As Object, e As EventArgs)
@@ -73,7 +73,7 @@ Public Class Compras
         Dim tran As Integer
         ' tran = Val(TxtCodTransa.Text)
         'If tran >= 1 And tran <= 3 Or TxtCodTransa.Text = "" Then
-        abrir()
+        AbrirConeccion()
         ' Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & TxtCodTransa.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
@@ -87,7 +87,7 @@ Public Class Compras
             TxtTipoTransaccion.Text = ""
         End If
         Mostrar.Close()
-        conexion.Close()
+        ConexionBase.Close()
         ' Else
         'TxtCodTransa.Clear()
         MsgBox("Solo hay tres tipos de transaccion")
@@ -97,11 +97,11 @@ Public Class Compras
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProducto.TextChanged
         Dim produ As Integer
         produ = Val(TxtCodProducto.Text)
-        abrir()
+        AbrirConeccion()
         Dim Recuperar As String = "select * from Producto where CodProduc= '" & produ & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conexion)
+        Ejecutar = New SqlCommand(Recuperar, ConexionBase)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -119,7 +119,7 @@ Public Class Compras
         Mostrar.Close()
 
         Dim DATOSusuarios As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & produ & "'", conexion)
+        Using adaptador As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & produ & "'", ConexionBase)
             adaptador.Fill(DATOSusuarios)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -127,7 +127,7 @@ Public Class Compras
         CbxPrecio.DataSource = DATOSusuarios
         CbxPrecio.DisplayMember = "Precios"
 
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
@@ -192,7 +192,7 @@ Public Class Compras
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
         Dim total As Integer
-        abrir()
+        AbrirConeccion()
 
 
         If txNumCompra.Text = "" Or TxtCodProv.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
@@ -201,7 +201,7 @@ Public Class Compras
             If RegistradoCompras(txNumCompra.Text) = False Then
                 Try
                     Dim ConsultaGuardar As String = "insert into Compras(CodProv, CodPago, CodTransa, CodEmple, FechayHora, Total) values( @CodProv, @CodPago, @CodTransa, @CodEmple, GETDATE(), @Total)"
-                    Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
+                    Dim ejecutar As New SqlCommand(ConsultaGuardar, ConexionBase)
 
                     ejecutar.Parameters.AddWithValue("@CodProv", Val(TxtCodProv.Text))
                     ejecutar.Parameters.AddWithValue("@CodPago", Val(tipoPago))
@@ -215,7 +215,7 @@ Public Class Compras
                 End Try
 
                 Dim DatosFacturaD As String = "insert into DetalleCompra(NumCompra,CodProduc , NombProduc, Impuesto , CantProduc, PrecioProduc, SubTotal) values(@NumCompra, @CodProduc , @NombProduc, @Impuesto , @CantProduc, @PrecioProduc,  @SubTotal)"
-                Dim RegistrarD As New SqlCommand(DatosFacturaD, conexion)
+                Dim RegistrarD As New SqlCommand(DatosFacturaD, ConexionBase)
 
                 Dim fila As DataGridViewRow = New DataGridViewRow()
                 For Each fila In DGV.Rows
@@ -230,7 +230,7 @@ Public Class Compras
                     RegistrarD.ExecuteNonQuery()
 
                     Dim DatosFacturaA As String = "update Producto set UnidadesStock += @UnidadesStock where CodProduc = @CodProduc"
-                    Dim RegistrarA As New SqlCommand(DatosFacturaA, conexion)
+                    Dim RegistrarA As New SqlCommand(DatosFacturaA, ConexionBase)
 
                     RegistrarA.Parameters.AddWithValue("@UnidadesStock", fila.Cells("CantProduc").Value)
                     RegistrarA.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
@@ -241,7 +241,7 @@ Public Class Compras
                 codUltmaVenta = CodUVenta()
                 txNumCompra.Text = codUltmaVenta
                 MsgBox("Registro de venta Exitoso!")
-                conexion.Close()
+                ConexionBase.Close()
                 DGV.Rows.Clear()
                 TxtCantidad.Clear()
                 TxtNombreProveedor.Clear()
@@ -336,11 +336,11 @@ Public Class Compras
         tipoPago = cmbTipoPago.SelectedIndex + 1
         'pago = Val(TxtCodPago.Text)
         If tipoPago >= 1 And tipoPago <= 2 Then
-            abrir()
+            AbrirConeccion()
             Dim Recuperar As String = "select * from FormasPago where CodPago= '" & tipoPago & "'"
             Dim Mostrar As SqlDataReader
             Dim Ejecutar As SqlCommand
-            Ejecutar = New SqlCommand(Recuperar, conexion)
+            Ejecutar = New SqlCommand(Recuperar, ConexionBase)
             Mostrar = Ejecutar.ExecuteReader
             Dim Estado As String
             Estado = Mostrar.Read
@@ -350,7 +350,7 @@ Public Class Compras
                 TxtTipoPago.Text = ""
             End If
             Mostrar.Close()
-            conexion.Close()
+            ConexionBase.Close()
         Else
             '  TxtCodPago.Clear()
             MsgBox("Solo hay dos tipos de pago")
@@ -363,11 +363,11 @@ Public Class Compras
 
         tipoTransac = cmbTipoTransac.SelectedIndex + 1
         If tipoTransac >= 1 And tipoTransac <= 3 Then
-            abrir()
+            AbrirConeccion()
             Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & tipoTransac & "'"
             Dim Mostrar As SqlDataReader
             Dim Ejecutar As SqlCommand
-            Ejecutar = New SqlCommand(Recuperar, conexion)
+            Ejecutar = New SqlCommand(Recuperar, ConexionBase)
             Mostrar = Ejecutar.ExecuteReader
             Dim Estado As String
             Estado = Mostrar.Read
@@ -377,7 +377,7 @@ Public Class Compras
                 TxtTipoTransaccion.Text = ""
             End If
             Mostrar.Close()
-            conexion.Close()
+            ConexionBase.Close()
         Else
             'TxtCodTransa.Clear()
             MsgBox("Solo hay tres tipos de transaccion")

@@ -1,16 +1,16 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmBusquedaEmpleado
     Private Sub FrmBusquedaEmpleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        abrir()
+        AbrirConeccion()
 
         Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
-        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", ConexionBase)
             adaptador.Fill(DatosEmp)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosEmp
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
     Public Sub filtrarDatos(ByVal buscar As String) '<-Funcion para filtrar datos que se mostraran en el DataGridView.
 
@@ -39,16 +39,16 @@ Public Class FrmBusquedaEmpleado
         If filtro.Trim() <> String.Empty Then  'Si no es vacío filtra
             filtrarDatos(filtro)
         Else
-            abrir()
+            AbrirConeccion()
             Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
             Using adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
-        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", conexion)
+        when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1", ConexionBase)
                 adaptador.Fill(DatosEmp)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
             DGV.DataSource = DatosEmp
 
-            conexion.Close()
+            ConexionBase.Close()
         End If
     End Sub
 

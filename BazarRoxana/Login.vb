@@ -10,7 +10,7 @@ Public Class Login
     End Sub
 
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
-        abrir()
+        AbrirConeccion()
         Try
             If usuarioRegistrado(txtNombreEmpleado.Text) = True Then
                 'Timer1.Start()

@@ -5,11 +5,11 @@ Public Class Inicio
     End Sub
 
     Private Sub Label1_TextChanged(sender As Object, e As EventArgs) Handles Label1.TextChanged
-        abrir()
+        AbrirConeccion()
         Dim Recuperar As String = "select U.UsuarioEmp, E.NombEmple, E.NivelEmple from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & Label1.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conexion)
+        Ejecutar = New SqlCommand(Recuperar, ConexionBase)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -26,7 +26,7 @@ Public Class Inicio
             Label2.Text = ""
         End If
         Mostrar.Close()
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
 End Class

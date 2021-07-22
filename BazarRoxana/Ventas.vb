@@ -3,21 +3,21 @@ Public Class Ventas
 
 
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProducto.TextChanged
-        abrir()
+        AbrirConeccion()
 
         Dim produ As Integer
         produ = Val(TxtCodProducto.Text)
-        abrir()
+        AbrirConeccion()
 
         Dim DATOSusuarios As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & produ & "'", conexion)
+        Using adaptador As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & produ & "'", ConexionBase)
             adaptador.Fill(DATOSusuarios)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         CbxPrecio.DataSource = DATOSusuarios
         CbxPrecio.DisplayMember = "Precios"
 
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
@@ -86,7 +86,7 @@ Public Class Ventas
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
         Dim total As Integer
 
-        abrir() '<-- Llamado de la funcion 
+        AbrirConeccion() '<-- Llamado de la funcion 
         Dim TP As Integer
         Dim TT As Integer
 
@@ -114,7 +114,7 @@ Public Class Ventas
 
             If RegistradoVentas(txNumVenta.Text) = False Then  '<-- Verifica si el numero de la venta no esta registrado para asi poder hacer la insercion en la base de datos  
                 Dim ConsultaGuardar As String = "insert into Ventas(CodCli, CodPago, CodTransa, CodEmple, FechayHoraVenta,Total) values(@CodCli, @CodPago, @CodTransa, @CodEmple, GETDATE(), @Total)"
-                Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
+                Dim ejecutar As New SqlCommand(ConsultaGuardar, ConexionBase)
 
                 ejecutar.Parameters.AddWithValue("@CodCli", Val(TxtCodCli.Text))
                 ejecutar.Parameters.AddWithValue("@CodPago", TP)
@@ -124,7 +124,7 @@ Public Class Ventas
                 ejecutar.ExecuteNonQuery()
 
                 Dim DatosFacturaD As String = "insert into DetalleVentas(NumVent, CodProduc , NombProduc, Impuesto , CantVenta, PrecioVenta, SubTotal) values(@NumVent, @CodProduc , @NombProduc, @Impuesto , @CantVenta, @PrecioVenta,  @SubTotal)"
-                Dim RegistrarD As New SqlCommand(DatosFacturaD, conexion)
+                Dim RegistrarD As New SqlCommand(DatosFacturaD, ConexionBase)
 
                 Dim fila As DataGridViewRow = New DataGridViewRow()
                 For Each fila In DGV.Rows '<-- Recorre el datagridview para insertar los valores en la base de datos 
@@ -139,7 +139,7 @@ Public Class Ventas
                     RegistrarD.ExecuteNonQuery()
 
                     Dim DatosFacturaA As String = "update Producto set UnidadesStock -= @UnidadesStock where CodProduc = @CodProduc"
-                    Dim RegistrarA As New SqlCommand(DatosFacturaA, conexion)
+                    Dim RegistrarA As New SqlCommand(DatosFacturaA, ConexionBase)
 
                     RegistrarA.Parameters.AddWithValue("@UnidadesStock", fila.Cells("CantVenta").Value)
                     RegistrarA.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
@@ -147,7 +147,7 @@ Public Class Ventas
                 Next
 
 
-                conexion.Close() '<-- cierre de la funcion
+                ConexionBase.Close() '<-- cierre de la funcion
 
                 'Limpia los textbox luego de generar la venta
                 DGV.Rows.Clear()
@@ -211,7 +211,7 @@ Public Class Ventas
     Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtCodEmple.Text = cod
 
-        abrir()
+        AbrirConeccion()
 
         Dim CodUVenta As String = CodUltimaVenta() '<-- Declaracion de una variable tipo string para igualarla a la funcion CodUltimaVenta
 
@@ -219,17 +219,17 @@ Public Class Ventas
         TxtCodEmple.Text = Login.txtNombreEmpleado.Text
         lbUsuario.Text = Login.txtNombreEmpleado.Text
 
-        conexion.Close()
+        ConexionBase.Close()
 
 
     End Sub
 
     Private Sub lbUsuario_TextChanged(sender As Object, e As EventArgs) Handles lbUsuario.TextChanged
-        abrir()
+        AbrirConeccion()
         Dim Recuperar As String = "select E.CodEmple, E.NombEmple from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & lbUsuario.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, conexion)
+        Ejecutar = New SqlCommand(Recuperar, ConexionBase)
         Mostrar = Ejecutar.ExecuteReader
         Dim Estado As String
         Estado = Mostrar.Read
@@ -244,7 +244,7 @@ Public Class Ventas
             TxtNombreEmpleado.Text = ""
         End If
         Mostrar.Close()
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub TxtCantidad_TextChanged(sender As Object, e As EventArgs) Handles TxtCantidad.TextChanged

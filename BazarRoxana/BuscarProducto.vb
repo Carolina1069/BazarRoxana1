@@ -1,16 +1,16 @@
 ﻿Imports System.Data.SqlClient
 Public Class BuscarProducto
     Private Sub BuscarProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        abrir()
+        AbrirConeccion()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", conexion)
+        Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto", ConexionBase)
             adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosCat
 
 
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub DGV_DoubleClick(sender As Object, e As EventArgs) Handles DGV.DoubleClick
@@ -64,15 +64,15 @@ Public Class BuscarProducto
 
         If TxtBusqueda.Text = "" Then
 
-            abrir()
+            AbrirConeccion()
 
             Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto ", conexion)
+            Using adaptador As New SqlDataAdapter("select CodProduc as 'Codigo del Producto', NombProduc as 'Nombre del Producto', DescripProduc as 'Descripcion del Producto', CodProv as 'Codigo del Proveedor', CodCateg as 'Codigo de la Categoria', PrimerPrecio as 'Precio #1', SegundoPrecio as 'Precio #2', TercerPrecio as 'Precio #3', UnidadesStock as 'Unidades en Stock',Minimo as 'Unidades Minimas', Maximo as 'Unidades Maximas' from Producto ", ConexionBase)
                 adaptador.Fill(DatosCliente)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
             DGV.DataSource = DatosCliente
-            conexion.Close()
+            ConexionBase.Close()
 
         Else
             LbContador8.Text = TxtBusqueda.Text.Length

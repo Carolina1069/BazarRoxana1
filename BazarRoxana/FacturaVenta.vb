@@ -1,7 +1,7 @@
 ﻿Public Class FacturaVenta
 
     Private Sub FacturaVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        abrir()
+        AbrirConeccion()
 
         Dim CodUVenta As String = CodUltimaVenta()
         Dim Uventa As String
@@ -16,6 +16,6 @@
 
         Me.ReportViewer1.RefreshReport()
 
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 End Class

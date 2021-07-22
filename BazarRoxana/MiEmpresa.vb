@@ -31,12 +31,12 @@ Public Class MiEmpresa
 
     Private Sub MiEmpresa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
-            abrir()
+            AbrirConeccion()
             Dim SqlActions As String
             SqlActions = "select * from MiEmpresa where Codigo= 1"
-            Dim cmd As New SqlCommand(SqlActions, conexion)
+            Dim cmd As New SqlCommand(SqlActions, ConexionBase)
             cmd.Parameters.AddWithValue(1, txtcod.Text)
-            conexion.Open()
+            ConexionBase.Open()
             Dim Lectura As SqlDataReader = cmd.ExecuteReader()
                 If Lectura.Read = True Then
                 txtDireccion.Text = CStr(Lectura(1))
@@ -58,20 +58,20 @@ Public Class MiEmpresa
                     Lectura.Close()
 
                 End If
-            conexion.Close()
+            ConexionBase.Close()
         Catch Ex As Exception
             MessageBox.Show(Ex.Message)
         End Try
     End Sub
 
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
-        abrir()
+        AbrirConeccion()
         If statePlato = "UPD" Then
             If fichero IsNot Nothing Then
                 stateIMG = True
                 Dim consultaAct As String = "update MiEmpresa set Direccion=@Direccion, RTN=@RTN, CAI=@CAI, Email=@Email,Telefono=@Telefono,Imagen=@Imagen where Codigo= 1" '<-Consulta.
                 'Toma los valores de los textbox  y los actualiza en la base de datos. 
-                Dim ejecutar As New SqlCommand(consultaAct, conexion)
+                Dim ejecutar As New SqlCommand(consultaAct, ConexionBase)
                 ejecutar.Parameters.AddWithValue("@Direccion", (txtDireccion.Text))
                 ejecutar.Parameters.AddWithValue("@RTN", (txtRTN.Text))
                 ejecutar.Parameters.AddWithValue("@CAI", (txtCAI.Text))
@@ -91,7 +91,7 @@ Public Class MiEmpresa
                 'cn.Actualizar(txtnombre.Text, txtdesc.Text, cmbcateg.SelectedIndex + 1, txtdif.Text, txtfinalp.Text, fichero, txtcod.Text)
                 Dim consultaAct As String = "update MiEmpresa set Direccion=@Direccion, RTN=@RTN, CAI=@CAI, Email=@Email,Telefono=@Telefono,Imagen=@Imagen where Codigo= 1" '<-Consulta.
                 'Toma los valores de los textbox  y los actualiza en la base de datos. 
-                Dim ejecutar As New SqlCommand(consultaAct, conexion)
+                Dim ejecutar As New SqlCommand(consultaAct, ConexionBase)
                 ejecutar.Parameters.AddWithValue("@Direccion", (txtDireccion.Text))
                 ejecutar.Parameters.AddWithValue("@RTN", (txtRTN.Text))
                 ejecutar.Parameters.AddWithValue("@CAI", (txtCAI.Text))
@@ -111,7 +111,7 @@ Public Class MiEmpresa
                 'cn.Guardar(txtnombre.Text, txtdesc.Text, cmbcateg.SelectedIndex + 1, txtdif.Text, txtfinalp.Text, fichero)
                 Dim consultaAct As String = "insert into MiEmpresa (Codigo,Direccion,RTN,CAI,Email,Telefono,Imagen) values( 1,@Direccion,@RTN, @CAI, @Email, @Telefono, @Imagen)" '<-Consulta.
                 'Toma los valores de los textbox  y los actualiza en la base de datos. 
-                Dim ejecutar As New SqlCommand(consultaAct, conexion)
+                Dim ejecutar As New SqlCommand(consultaAct, ConexionBase)
                 ejecutar.Parameters.AddWithValue("@Direccion", (txtDireccion.Text))
                 ejecutar.Parameters.AddWithValue("@RTN", (txtRTN.Text))
                 ejecutar.Parameters.AddWithValue("@CAI", (txtCAI.Text))
@@ -132,16 +132,16 @@ Public Class MiEmpresa
             End If
 
         End If
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub btndel_Click(sender As Object, e As EventArgs) Handles btndel.Click
-        abrir()
+        AbrirConeccion()
         Dim consultaAct As String = "delete from MiEmpresa where Codigo=1" '<-Consulta.
         'Toma los valores de los textbox  y los actualiza en la base de datos. 
-        Dim ejecutar As New SqlCommand(consultaAct, conexion)
+        Dim ejecutar As New SqlCommand(consultaAct, ConexionBase)
         ejecutar.ExecuteNonQuery()
         MsgBox("La informacion se a guardado", MsgBoxStyle.Information, "Informacion")
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 End Class

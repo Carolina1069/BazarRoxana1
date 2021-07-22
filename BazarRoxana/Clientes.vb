@@ -3,15 +3,15 @@
 Public Class Clientes
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         chkEstado.Checked = True
-        abrir() '<-- Llamado de la funcion 
+        AbrirConeccion() '<-- Llamado de la funcion 
 
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
+        Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", ConexionBase)
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGVCliente.DataSource = DatosCliente
-        conexion.Close()
+        ConexionBase.Close()
 
     End Sub
 
@@ -19,7 +19,7 @@ Public Class Clientes
         Try
 
             Dim mail As New System.Net.Mail.MailAddress(txCorreoCli.Text) '<-Validar el correro
-            abrir() '<-- Llamado de la funcion 
+            AbrirConeccion() '<-- Llamado de la funcion 
             If txNomCli.TextLength < 2 Then
                 MsgBox("Debe ingresar como minimo 2 caracteres en nombre del cliente", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf txCorreoCli.TextLength < 6 Then
@@ -35,7 +35,7 @@ Public Class Clientes
                 If PersonaRegistradaClientes(txCodCli.Text) = False Then '<-- Llamado de funcion que verifica si el codigo ya esta repetido en la base de datos.
                     Dim ConsultaGuardar As String = "insert into Clientes(NombCli, DirecCli, TelCli, CorreoCli, EstadoCli) values(@NombCli, @DirecCli,@TelCli, @CorreoCli,1)" '<-- Consulta.
                     'Toma los valores de los textbox y el richtextbox y los guardas en la base de datos. 
-                    Dim ejecutar As New SqlCommand(ConsultaGuardar, conexion)
+                    Dim ejecutar As New SqlCommand(ConsultaGuardar, ConexionBase)
                     ejecutar.Parameters.AddWithValue("@NombCli", (txNomCli.Text))
                     ejecutar.Parameters.AddWithValue("@DirecCli", (rtxDirCli.Text))
                     ejecutar.Parameters.AddWithValue("@TelCli", Val(txTelCli.Text))
@@ -47,13 +47,13 @@ Public Class Clientes
                 End If
 
                 Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-                Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
+                Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", ConexionBase)
                     adaptador.Fill(DatosCliente)
                 End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
                 DGVCliente.DataSource = DatosCliente
                 MsgBox("El cliente se a guardado")
-                conexion.Close()
+                ConexionBase.Close()
             End If
 
         Catch ex As Exception
@@ -67,7 +67,7 @@ Public Class Clientes
 
             Dim mail As New System.Net.Mail.MailAddress(txCorreoCli.Text) '<-Validar el correro
 
-            abrir() '<-- Llamado de la funcion 
+            AbrirConeccion() '<-- Llamado de la funcion 
             Dim estado As Integer
 
             If chkEstado.Checked = True Then
@@ -91,7 +91,7 @@ Public Class Clientes
             Else
                 Dim ConsultaActualizar As String = "update Clientes set NombCli=@NombCli, DirecCli=@DirecCli,TelCli=@TelCli, CorreoCli=@CorreoCli, EstadoCli=@EstadoCli where CodCli=@CodCli" '<--Consulta
                 'Toma los valores de los textbox y el richtextbox y los actualiza en la base de datos. 
-                Dim ejecutar As New SqlCommand(ConsultaActualizar, conexion)
+                Dim ejecutar As New SqlCommand(ConsultaActualizar, ConexionBase)
                 ejecutar.Parameters.AddWithValue("@CodCli", (txCodCli.Text))
                 ejecutar.Parameters.AddWithValue("@NombCli", (txNomCli.Text))
                 ejecutar.Parameters.AddWithValue("@DirecCli", (rtxDirCli.Text))
@@ -101,13 +101,13 @@ Public Class Clientes
                 ejecutar.ExecuteNonQuery()
 
                 Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-                Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
+                Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", ConexionBase)
                     adaptador.Fill(DatosCliente)
                 End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
                 DGVCliente.DataSource = DatosCliente
                 MsgBox("El cliente se a actualizo")
-                conexion.Close()
+                ConexionBase.Close()
 
             End If
         Catch ex As Exception
@@ -119,7 +119,7 @@ Public Class Clientes
     End Sub
 
     Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles btEliminar.Click
-        abrir() '<-- Llamado de la funcion 
+        AbrirConeccion() '<-- Llamado de la funcion 
         Dim opcion As DialogResult
         opcion = MessageBox.Show("¿Esta Seguro que quiere eliminar este cliente?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If opcion = DialogResult.Yes Then
@@ -129,18 +129,18 @@ Public Class Clientes
             Else
                 Dim ConsultaEliminar As String = "Update Clientes set EstadoCli=0 where CodCli=@CodCli" '<-- Consulta
                 'Toma el valor del textbox y lo deshabilita en la base de datos. 
-                Dim ejecutar As New SqlCommand(ConsultaEliminar, conexion)
+                Dim ejecutar As New SqlCommand(ConsultaEliminar, ConexionBase)
                 ejecutar.Parameters.AddWithValue("@CodCli", Val(txCodCli.Text))
                 ejecutar.ExecuteNonQuery()
             End If
         End If
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
+        Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", ConexionBase)
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGVCliente.DataSource = DatosCliente
-        conexion.Close()
+        ConexionBase.Close()
         'Limpia los textbox, el rich y el checkbox
         txCodCli.Clear()
         txNomCli.Clear()
@@ -194,12 +194,12 @@ Public Class Clientes
 
     Private Sub chkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles chkInhabil.CheckedChanged
 
-        abrir()
+        AbrirConeccion()
 
         If chkInhabil.Checked = True Then
 
             Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=0", conexion)
+            Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=0", ConexionBase)
                 adaptador.Fill(DatosCliente)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -207,14 +207,14 @@ Public Class Clientes
 
         Else
             Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
+            Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", ConexionBase)
                 adaptador.Fill(DatosCliente)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
             DGVCliente.DataSource = DatosCliente
 
         End If
-        conexion.Close()
+        ConexionBase.Close()
     End Sub
 
     Private Sub txTelCli_KeyPress_1(sender As Object, e As KeyPressEventArgs) Handles txTelCli.KeyPress '<--Valida solo numeros, la entrada del primer número que sea valido.
@@ -277,12 +277,12 @@ Public Class Clientes
         If filtro.Trim() <> String.Empty Then  'Si no es vacío filtra
             filtrarDatos(filtro)
         Else
-            abrir()
+            AbrirConeccion()
 
             If chkInhabil.Checked = True Then
 
                 Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-                Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=0", conexion)
+                Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=0", ConexionBase)
                     adaptador.Fill(DatosCliente)
                 End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -290,14 +290,14 @@ Public Class Clientes
 
             Else
                 Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-                Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
+                Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", ConexionBase)
                     adaptador.Fill(DatosCliente)
                 End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
                 DGVCliente.DataSource = DatosCliente
 
             End If
-            conexion.Close()
+            ConexionBase.Close()
         End If
     End Sub
 

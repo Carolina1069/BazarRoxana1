@@ -13,7 +13,7 @@
 
     Public Sub mostrar()
         Try
-            dt = ConexionLogin.mostrarCategoria
+            dt = ConexionLogin.MostrarCategoria
 
             If dt.Rows.Count <> 0 Then
                 dgvcategoria.DataSource = dt
@@ -42,11 +42,11 @@
 
             If dt.Rows.Count <> 0 Then
                 dgvcategoria.DataSource = dt
-                ConexionLogin.conexion.Close()
+                ConexionLogin.ConexionBase.Close()
 
             Else
                 dgvcategoria.DataSource = Nothing
-                ConexionLogin.conexion.Close()
+                ConexionLogin.ConexionBase.Close()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

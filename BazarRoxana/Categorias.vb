@@ -1,99 +1,48 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Text.RegularExpressions
 
 Public Class Categorias
     Dim dt As New DataTable()
+
     Private Sub Categorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        abrir()
+        AbrirConeccion()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
-            adaptador.Fill(DatosCat)
+        Using DtAdaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", ConexionBase)
+            DtAdaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-        DGV.DataSource = DatosCat
-        conexion.Close()
-        btnHabilitar.Visible = False
+        DgvCategorias.DataSource = DatosCat
+        ConexionBase.Close()
+        BtnHabilitar.Visible = False
 
     End Sub
 
-    'Private Sub insertarCategoria()
-    '    Dim nombre As String
-    '    Dim descripcion As String
-    '    Dim estado As Integer
-
-    '    txtNombCat.Text = nombre
-    '    txtDescripcion.Text = descripcion
-    '    If chkEstado.Checked = True Then
-    '        estado = 1
-    '    Else
-    '        estado = 0
-    '    End If
-    '    Try
-    '        If ConexionLogin.insertarCategoria(nombre, estado, descripcion) Then
-    '            MessageBox.Show("Categoria ingresada con Exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
-    '        Else
-    '            MessageBox.Show("Error al guardar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
-    '        End If
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    End Try
-    'End Sub
-
-    'Public Sub mostrar_categoria()
-    '    Try
-
-    '        dt = ConexionLogin.mostrarCategoria()
-
-    '        If dt.Rows.Count <> 0 Then
-    '            DGV.DataSource = dt
-    '            TxtBusqueda.Enabled = True
-    '            DGV.ColumnHeadersVisible = True
-
-    '        Else
-    '            DGV.DataSource = Nothing
-    '            TxtBusqueda.Enabled = False
-    '            DGV.ColumnHeadersVisible = False
-
-    '        End If
-    '    Catch ex As Exception
-    '        MsgBox(ex.Message)
-    '    End Try
-
-    '    buscar()
-    'End Sub
-    Public Sub Limpia()
+    'Funcion que limpia las cajas de texto
+    Public Sub FuncLimpia()
         Try
-
-            txCodCat.Clear()
-            txtNombCat.Clear()
-            txtDescripcion.Clear()
+            TxCodCat.Clear()
+            TxtNombCat.Clear()
+            TxtDescripcion.Clear()
 
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
 
-
     End Sub
 
-
-
-
-
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        abrir()
-        If txtNombCat.Text = "" Or txtDescripcion.Text = "" Then
+    'Guarda un nuevo registro en la base de datos
+    Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
+        AbrirConeccion()
+        If TxtNombCat.Text = "" Or TxtDescripcion.Text = "" Then
             MsgBox("Hay campos vacios")
 
-
         Else
-            If PersonaRegistradaCategoria(txtNombCat.Text) = False Then
+            If PersonaRegistradaCategoria(TxtNombCat.Text) = False Then
 
-                Dim consultaGuardar As String = "insert into Categoria( NombCateg, EstadoCateg, DescripCateg) values( @NombCateg, 1,@DescripCateg)"
-                Dim ejecutar As New SqlCommand(consultaGuardar, conexion)
-                ejecutar.Parameters.AddWithValue("@NombCateg", (txtNombCat.Text))
-                ejecutar.Parameters.AddWithValue("@DescripCateg", (txtDescripcion.Text))
-                If ejecutar.ExecuteNonQuery() Then
+                Dim ConsultaGuardar As String = "insert into Categoria( NombCateg, EstadoCateg, DescripCateg) values( @NombCateg, 1,@DescripCateg)"
+                Dim EjecutarSql As New SqlCommand(ConsultaGuardar, ConexionBase)
+                EjecutarSql.Parameters.AddWithValue("@NombCateg", (TxtNombCat.Text))
+                EjecutarSql.Parameters.AddWithValue("@DescripCateg", (TxtDescripcion.Text))
+                If EjecutarSql.ExecuteNonQuery() Then
                     MessageBox.Show("Categoria insertada con Exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Else
@@ -106,64 +55,60 @@ Public Class Categorias
 
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
-            adaptador.Fill(DatosCat)
+        Using DtAdaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", ConexionBase)
+            DtAdaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-        DGV.DataSource = DatosCat
-        conexion.Close()
-
+        DgvCategorias.DataSource = DatosCat
+        ConexionBase.Close()
 
     End Sub
 
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+    'Actualiza los datos que se hayan modificado del DataGridView
+    Private Sub BtnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
 
-        Dim codigo As Integer, nombre As String, descripcion As String
+        Dim CodigoCateg As Integer, NombreCateg As String, DescripcionCateg As String
 
-        If txtNombCat.Text = "" Or txtDescripcion.Text = "" Then
+        If TxtNombCat.Text = "" Or TxtDescripcion.Text = "" Then
             MsgBox("Hay campos vacios")
         Else
             Try
-                codigo = Val(txCodCat.Text)
-                nombre = txtNombCat.Text
-                descripcion = txtDescripcion.Text
+                CodigoCateg = Val(TxCodCat.Text)
+                NombreCateg = TxtNombCat.Text
+                DescripcionCateg = TxtDescripcion.Text
 
-                If (ConexionLogin.ActualizarCategoria(codigo, nombre, descripcion)) Then
+                If (ConexionLogin.ActualizarCategoria(CodigoCateg, NombreCateg, DescripcionCateg)) Then
                     MessageBox.Show("Actualizado")
 
-                    'conexion.conexion.Close() 
                 Else
                     MessageBox.Show("Error al actualizar")
-                    'conexion.conexion.Close() 
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
-                ConexionLogin.conexion.Close()
+                ConexionLogin.ConexionBase.Close()
             End Try
 
         End If
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta 
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
-            adaptador.Fill(DatosCat)
+        Using DtAdaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", ConexionBase)
+            DtAdaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable 
-        DGV.DataSource = DatosCat
-        conexion.Close()
+        DgvCategorias.DataSource = DatosCat
+        ConexionBase.Close()
     End Sub
 
+    'Elimina un registro cambiando su estado en 0
+    Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
+        AbrirConeccion()
 
-
-
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        abrir()
-
-        If txCodCat.Text = "" Then
+        If TxCodCat.Text = "" Then
             MsgBox("Hay campos vacios")
         Else
 
-            Dim consultaElim As String = "Update Categoria set EstadoCateg=0   where CodCateg= @CodCateg"
-            Dim ejecutar As New SqlCommand(consultaElim, conexion)
-            ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCat.Text))
-            If ejecutar.ExecuteNonQuery() Then
+            Dim ConsultaElim As String = "Update Categoria set EstadoCateg=0   where CodCateg= @CodCateg"
+            Dim EjecutarSql As New SqlCommand(ConsultaElim, ConexionBase)
+            EjecutarSql.Parameters.AddWithValue("@CodCateg", Val(TxCodCat.Text))
+            If EjecutarSql.ExecuteNonQuery() Then
                 MessageBox.Show("Categoria eliminada con Exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Else
@@ -172,43 +117,44 @@ Public Class Categorias
         End If
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
-            adaptador.Fill(DatosCat)
+        Using DtAdaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", ConexionBase)
+            DtAdaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-        DGV.DataSource = DatosCat
-        conexion.Close()
-        Limpia()
+        DgvCategorias.DataSource = DatosCat
+        ConexionBase.Close()
+        FuncLimpia()
     End Sub
 
-    Private Sub buscar()
-        Dim dt As New DataTable()
-        Dim dato As String
+    'Funcion que busca en el DataGridView los datos ingresados en la caja de texto 
+    Private Sub FuncBuscar()
+        Dim InstDt As New DataTable()
+        Dim DatoBusqueda As String
 
         Try
-            If chkInhabil.Checked = True Then
-                dato = TxtBusqueda.Text
-                dt = ConexionLogin.buscarCategoriaI(dato)
+            If ChkInhabil.Checked = True Then
+                DatoBusqueda = TxtBusqueda.Text
+                InstDt = ConexionLogin.BuscarCategoriaI(DatoBusqueda)
 
-                If dt.Rows.Count <> 0 Then
-                    DGV.DataSource = dt
-                    ConexionLogin.conexion.Close()
+                If InstDt.Rows.Count <> 0 Then
+                    DgvCategorias.DataSource = InstDt
+                    ConexionLogin.ConexionBase.Close()
 
                 Else
-                    DGV.DataSource = Nothing
-                    ConexionLogin.conexion.Close()
+                    DgvCategorias.DataSource = Nothing
+                    ConexionLogin.ConexionBase.Close()
                 End If
 
             Else
-                dato = TxtBusqueda.Text
-                dt = ConexionLogin.buscarCategoriaH(dato)
+                DatoBusqueda = TxtBusqueda.Text
+                InstDt = ConexionLogin.buscarCategoriaH(DatoBusqueda)
 
-                If dt.Rows.Count <> 0 Then
-                    DGV.DataSource = dt
-                    ConexionLogin.conexion.Close()
+                If InstDt.Rows.Count <> 0 Then
+                    DgvCategorias.DataSource = InstDt
+                    ConexionLogin.ConexionBase.Close()
 
                 Else
-                    DGV.DataSource = Nothing
-                    ConexionLogin.conexion.Close()
+                    DgvCategorias.DataSource = Nothing
+                    ConexionLogin.ConexionBase.Close()
                 End If
             End If
 
@@ -216,24 +162,19 @@ Public Class Categorias
             MsgBox(ex.Message)
         End Try
 
-
-
-
     End Sub
 
-
-
-    Private Sub btnActTabla_Click(sender As Object, e As EventArgs) Handles btnHabilitar.Click
-        abrir()
+    'Boton que habilita una categoria que se haya eliminado
+    Private Sub BtnHabilitar_Click(sender As Object, e As EventArgs) Handles BtnHabilitar.Click
+        AbrirConeccion()
 
         Try
-            Dim consultaAct As String = "update Categoria set EstadoCateg=1 where CodCateg= @CodCateg"
-            Dim ejecutar As New SqlCommand(consultaAct, conexion)
-            ejecutar.Parameters.AddWithValue("@CodCateg", Val(txCodCat.Text))
+            Dim ConsultaAct As String = "update Categoria set EstadoCateg=1 where CodCateg= @CodCateg"
+            Dim EjecutarSql As New SqlCommand(ConsultaAct, ConexionBase)
+            EjecutarSql.Parameters.AddWithValue("@CodCateg", Val(TxCodCat.Text))
 
-            If ejecutar.ExecuteNonQuery() Then
+            If EjecutarSql.ExecuteNonQuery() Then
                 MessageBox.Show("Categoria habilitada con Exito", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
             Else
                 MessageBox.Show("Error al habilitar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
@@ -242,29 +183,22 @@ Public Class Categorias
             MsgBox(ex.Message)
         End Try
 
-
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=0", conexion)
-            adaptador.Fill(DatosCat)
+        Using AdaptadorDt As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=0", ConexionBase)
+            AdaptadorDt.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-        DGV.DataSource = DatosCat
-
-
-
-        conexion.Close()
-        Limpia()
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellContentClick
+        DgvCategorias.DataSource = DatosCat
+        ConexionBase.Close()
+        FuncLimpia()
 
     End Sub
 
-    Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles DGV.DoubleClick
+    'Al dar doble click se muestran los campos del DataGridView en los TextBox 
+    Private Sub DataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles DgvCategorias.DoubleClick
 
-        txCodCat.Text = DGV.CurrentRow.Cells(0).Value
-        txtNombCat.Text = DGV.CurrentRow.Cells(1).Value
-        'chkEstado.Checked = DGV.CurrentRow.Cells(2).Value
-        txtDescripcion.Text = DGV.CurrentRow.Cells(2).Value
+        TxCodCat.Text = DgvCategorias.CurrentRow.Cells(0).Value
+        TxtNombCat.Text = DgvCategorias.CurrentRow.Cells(1).Value
+        TxtDescripcion.Text = DgvCategorias.CurrentRow.Cells(2).Value
 
     End Sub
 
@@ -279,23 +213,6 @@ Public Class Categorias
         Else
             e.Handled = True
         End If
-
-
-
-        'If Char.IsDigit(e.KeyChar) Then
-        '    e.Handled = True
-        '    MsgBox("Solo se puede ingresar valores de tipo texto", MsgBoxStyle.Exclamation, "Ingreso de Texto")
-        'ElseIf Char.IsControl(e.KeyChar) Then
-        '    e.Handled = False
-        'Else
-        '    e.Handled = False
-        'End If
-        'If Char.IsSeparator(e.KeyChar) Then
-        '    e.Handled = False
-        'Else
-        '    e.Handled = False
-
-        'End If
     End Sub
 
     'Funcion para que solo permite el ingreso de caracteres tipo numerico
@@ -310,92 +227,71 @@ Public Class Categorias
         End If
     End Sub
 
-    Private Sub txCodCat_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txCodCat.KeyPress
+    Private Sub TxCodCat_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxCodCat.KeyPress
         SoloNumeros(e)
     End Sub
 
-    Private Sub txtNombCat_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombCat.KeyPress
+    Private Sub TxtNombCat_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNombCat.KeyPress
         SoloLetras(e)
-        'If Char.IsWhiteSpace(e.KeyChar) Then
-        '    e.Handled = True
-        '    MessageBox.Show(" ")
-        'End If
     End Sub
 
-    Private Sub chkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles chkInhabil.CheckedChanged
+    'Al esta seleccionado muestra los registros Inhabilitados
+    Private Sub ChkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles ChkInhabil.CheckedChanged
 
-        abrir()
+        AbrirConeccion()
 
-        If chkInhabil.Checked = True Then
+        If ChkInhabil.Checked = True Then
 
             Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion',CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=0", conexion)
-                adaptador.Fill(DatosCat)
+            Using AdaptadorDt As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion',CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=0", ConexionBase)
+                AdaptadorDt.Fill(DatosCat)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-            DGV.DataSource = DatosCat
-            btnGuardar.Visible = False
-            btnActualizar.Visible = False
-            btnEliminar.Visible = False
-            btnHabilitar.Visible = True
+            DgvCategorias.DataSource = DatosCat
+            BtnGuardar.Visible = False
+            BtnActualizar.Visible = False
+            BtnEliminar.Visible = False
+            BtnHabilitar.Visible = True
         Else
 
             Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion',CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", conexion)
-                adaptador.Fill(DatosCat)
+            Using AdaptadorDt As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion',CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", ConexionBase)
+                AdaptadorDt.Fill(DatosCat)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-            DGV.DataSource = DatosCat
-            btnGuardar.Visible = True
-            btnActualizar.Visible = True
-            btnEliminar.Visible = True
-            btnHabilitar.Visible = False
+            DgvCategorias.DataSource = DatosCat
+            BtnGuardar.Visible = True
+            BtnActualizar.Visible = True
+            BtnEliminar.Visible = True
+            BtnHabilitar.Visible = False
 
         End If
-        conexion.Close()
-        Limpia()
-
+        ConexionBase.Close()
+        FuncLimpia()
 
     End Sub
-
 
     Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
-        buscar()
-
+        FuncBuscar()
+        LbContBuscar.Text = TxtBusqueda.Text.Length 'Contador de caracteres
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnLimpia.Click
-        Limpia()
+    Private Sub BtnLimpia_Click(sender As Object, e As EventArgs) Handles BtnLimpia.Click
+        FuncLimpia()
     End Sub
 
-    Private Sub DGV_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellClick
-        'Dim FilaActual As Integer
-        'FilaActual = DGV.CurrentRow.Index
-        'txCodCat.Text = Convert.ToString(DGV.Rows(FilaActual).Cells(0).Value)
-        'txtNombCat.Text = Convert.ToString(DGV.Rows(FilaActual).Cells(1).Value)
-        'txtDescripcion.Text = Convert.ToString(DGV.Rows(FilaActual).Cells(3).Value)
-
-
-    End Sub
-
-    Private Sub chkEstado_CheckedChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Public Sub mostrar()
+    Public Sub MostrarCateg()
         Try
-            dt = ConexionLogin.mostrarCategoria
+            dt = ConexionLogin.MostrarCategoria
 
             If dt.Rows.Count <> 0 Then
-                DGV.DataSource = dt
-
-                DGV.ColumnHeadersVisible = True
-
+                DgvCategorias.DataSource = dt
+                DgvCategorias.ColumnHeadersVisible = True
 
             Else
-                DGV.DataSource = Nothing
+                DgvCategorias.DataSource = Nothing
 
-                DGV.ColumnHeadersVisible = False
+                DgvCategorias.ColumnHeadersVisible = False
 
             End If
         Catch ex As Exception
@@ -403,19 +299,11 @@ Public Class Categorias
         End Try
     End Sub
 
-    Private Function validarCorreo(ByVal isCorreo As String) As Boolean
-        Return Regex.IsMatch(isCorreo, "^[_a-z 0-9-]$")
-    End Function
-
-    Private Sub txtNombCat_TextChanged(sender As Object, e As EventArgs) Handles txtNombCat.TextChanged
-
+    Private Sub TxtNombCat_TextChanged(sender As Object, e As EventArgs) Handles TxtNombCat.TextChanged
+        LbContNombre.Text = TxtNombCat.Text.Length 'Contador de caracteres
     End Sub
 
-    Private Sub txtNombCat_TabStopChanged(sender As Object, e As EventArgs) Handles txtNombCat.TabStopChanged
-
-    End Sub
-
-    Private Sub MaskedTextBox1_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs)
-
+    Private Sub TxtDescripcion_TextChanged(sender As Object, e As EventArgs) Handles TxtDescripcion.TextChanged
+        LbContDescripcion.Text = TxtDescripcion.Text.Length 'Contador de caracteres
     End Sub
 End Class

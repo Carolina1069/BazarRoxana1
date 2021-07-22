@@ -1,19 +1,18 @@
 ﻿Imports System.Data.Sql
 Imports System.Data.SqlClient
 Module ConexionLogin
-    Public conexion As SqlConnection
+    Public ConexionBase As SqlConnection
     Public enunciado As SqlCommand
     Public respuesta As SqlDataReader
-
 
     'localhost
     '(local)\SQLEXPRESS
 
-    Sub abrir()
+    Sub AbrirConeccion()
 
         Try
-            conexion = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
-            conexion.Open()
+            ConexionBase = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+            ConexionBase.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception
             MsgBox("No se pudo conectar" + ex.ToString)
@@ -24,7 +23,7 @@ Module ConexionLogin
         Dim resultado As String = ""
         Try
             enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp 
-            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "' and E.EstadoEmple=1 ", conexion)
+            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "' and E.EstadoEmple=1 ", ConexionBase)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then
@@ -41,7 +40,7 @@ Module ConexionLogin
         Dim resultado As Integer
         Try
             enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp 
-            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "' and E.EstadoEmple=1 ", conexion)
+            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "' and E.EstadoEmple=1 ", ConexionBase)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then
@@ -64,7 +63,7 @@ Module ConexionLogin
         Dim cod As String = 0
         Try
             enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp
-            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "'", conexion)
+            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "'", ConexionBase)
             respuesta = enunciado.ExecuteReader()
 
             If respuesta.Read() Then
@@ -77,12 +76,12 @@ Module ConexionLogin
         Return cod
     End Function
     Function CodUVenta() As String
-        abrir()
+        AbrirConeccion()
         Dim resultado As Boolean = False
         Dim cod As String = 0
         Try
 
-            enunciado = New SqlCommand("Select top(1) NumCompra from Compras order by NumCompra DESC ", conexion)
+            enunciado = New SqlCommand("Select top(1) NumCompra from Compras order by NumCompra DESC ", ConexionBase)
             respuesta = enunciado.ExecuteReader()
 
             If respuesta.Read() Then
@@ -103,7 +102,7 @@ Module ConexionLogin
         Dim cod As String = 0
         Try
 
-            enunciado = New SqlCommand("Select top(1) NumVent from Ventas order by NumVent DESC ", conexion)
+            enunciado = New SqlCommand("Select top(1) NumVent from Ventas order by NumVent DESC ", ConexionBase)
             respuesta = enunciado.ExecuteReader()
 
             If respuesta.Read() Then
@@ -123,7 +122,7 @@ Module ConexionLogin
         Dim resultado As Boolean = False
         Try
             enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp
-            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "' and E.EstadoEmple=1 ", conexion)
+            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "' and E.EstadoEmple=1 ", ConexionBase)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then
@@ -139,7 +138,7 @@ Module ConexionLogin
     Function RegistradoUsuario(ByVal id As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Usuario where CodEmple='" & id & "'", conexion)
+            enunciado = New SqlCommand("select*from Usuario where CodEmple='" & id & "'", ConexionBase)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True
@@ -155,7 +154,7 @@ Module ConexionLogin
     Function RegistradoNombreUsuario(ByVal id As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Usuario where UsuarioEmp='" & id & "'", conexion)
+            enunciado = New SqlCommand("select*from Usuario where UsuarioEmp='" & id & "'", ConexionBase)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True
@@ -169,11 +168,11 @@ Module ConexionLogin
     End Function
     Public Function mostrarProveedor() As DataTable
         Try
-            conexion.Open()
-            enunciado = New SqlCommand("mostrar_proveedor", conexion)
+            ConexionBase.Open()
+            enunciado = New SqlCommand("mostrar_proveedor", ConexionBase)
             enunciado.CommandType = CommandType.StoredProcedure
 
-            enunciado.Connection = conexion
+            enunciado.Connection = ConexionBase
 
             If enunciado.ExecuteNonQuery Then
                 Dim dt As New DataTable
@@ -187,17 +186,17 @@ Module ConexionLogin
             MsgBox(ex.Message)
             Return Nothing
         Finally
-            conexion.Close()
+            ConexionBase.Close()
         End Try
     End Function
 
-    Public Function mostrarCategoria() As DataTable
+    Public Function MostrarCategoria() As DataTable
         Try
-            conexion.Open()
-            enunciado = New SqlCommand("mostrar_categoría", conexion)
+            ConexionBase.Open()
+            enunciado = New SqlCommand("mostrar_categoría", ConexionBase)
             enunciado.CommandType = CommandType.StoredProcedure
 
-            enunciado.Connection = conexion
+            enunciado.Connection = ConexionBase
 
             If enunciado.ExecuteNonQuery Then
                 Dim dt As New DataTable
@@ -211,14 +210,14 @@ Module ConexionLogin
             MsgBox(ex.Message)
             Return Nothing
         Finally
-            conexion.Close()
+            ConexionBase.Close()
         End Try
     End Function
 
     Public Function ActualizarCategoria(codigo As Integer, nombre As String, estado As Integer, descripcion As String)
         Try
-            conexion.Open()
-            enunciado = New SqlCommand("ActualizarCategoria", conexion)
+            ConexionBase.Open()
+            enunciado = New SqlCommand("ActualizarCategoria", ConexionBase)
             enunciado.CommandType = CommandType.StoredProcedure
             enunciado.Parameters.AddWithValue("@codigo", codigo)
             enunciado.Parameters.AddWithValue("@nombre", nombre)
@@ -233,15 +232,15 @@ Module ConexionLogin
             MsgBox(ex.Message)
             Return False
         Finally
-            conexion.Close()
+            ConexionBase.Close()
         End Try
 
     End Function
 
-    Public Function buscarCategoriaI(Nombre As String) As DataTable
+    Public Function BuscarCategoriaI(Nombre As String) As DataTable
         Try
-            conexion.Open()
-            Dim cmb As New SqlCommand("buscarCategoriaI", conexion)
+            ConexionBase.Open()
+            Dim cmb As New SqlCommand("buscarCategoriaI", ConexionBase)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@nombre", Nombre)
             If cmb.ExecuteNonQuery <> 0 Then
@@ -256,14 +255,14 @@ Module ConexionLogin
             MsgBox(ex.Message)
             Return Nothing
         Finally
-            conexion.Close()
+            ConexionBase.Close()
         End Try
     End Function
 
     Public Function buscarCategoriaH(Nombre As String) As DataTable
         Try
-            conexion.Open()
-            Dim cmb As New SqlCommand("buscarCategoriaH", conexion)
+            ConexionBase.Open()
+            Dim cmb As New SqlCommand("buscarCategoriaH", ConexionBase)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@nombre", Nombre)
             If cmb.ExecuteNonQuery <> 0 Then
@@ -278,14 +277,14 @@ Module ConexionLogin
             MsgBox(ex.Message)
             Return Nothing
         Finally
-            conexion.Close()
+            ConexionBase.Close()
         End Try
     End Function
 
     Public Function buscarProductH(Nombre As String) As DataTable
         Try
-            conexion.Open()
-            Dim cmb As New SqlCommand("buscarProductH", conexion)
+            ConexionBase.Open()
+            Dim cmb As New SqlCommand("buscarProductH", ConexionBase)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@nombre", Nombre)
             If cmb.ExecuteNonQuery <> 0 Then
@@ -300,14 +299,14 @@ Module ConexionLogin
             MsgBox(ex.Message)
             Return Nothing
         Finally
-            conexion.Close()
+            ConexionBase.Close()
         End Try
     End Function
 
     Public Function buscarProductI(Nombre As String) As DataTable
         Try
-            conexion.Open()
-            Dim cmb As New SqlCommand("buscarProductI", conexion)
+            ConexionBase.Open()
+            Dim cmb As New SqlCommand("buscarProductI", ConexionBase)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@nombre", Nombre)
             If cmb.ExecuteNonQuery <> 0 Then
@@ -322,15 +321,15 @@ Module ConexionLogin
             MsgBox(ex.Message)
             Return Nothing
         Finally
-            conexion.Close()
+            ConexionBase.Close()
         End Try
     End Function
 
 
-    Public Function buscarCategoria(Nombre As String) As DataTable
+    Public Function BuscarCategoria(Nombre As String) As DataTable
         Try
-            conexion.Open()
-            Dim cmb As New SqlCommand("buscarCategoria", conexion)
+            ConexionBase.Open()
+            Dim cmb As New SqlCommand("buscarCategoria", ConexionBase)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@nombre", Nombre)
             If cmb.ExecuteNonQuery <> 0 Then
@@ -345,14 +344,14 @@ Module ConexionLogin
             MsgBox(ex.Message)
             Return Nothing
         Finally
-            conexion.Close()
+            ConexionBase.Close()
         End Try
     End Function
 
     Public Function buscarProveedorH(Nombre As String) As DataTable
         Try
-            conexion.Open()
-            Dim cmb As New SqlCommand("buscarProveedorH", conexion)
+            ConexionBase.Open()
+            Dim cmb As New SqlCommand("buscarProveedorH", ConexionBase)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@nombre", Nombre)
             If cmb.ExecuteNonQuery <> 0 Then
@@ -367,7 +366,7 @@ Module ConexionLogin
             MsgBox(ex.Message)
             Return Nothing
         Finally
-            conexion.Close()
+            ConexionBase.Close()
         End Try
     End Function
 
@@ -375,7 +374,7 @@ Module ConexionLogin
     Function PersonaRegistradaClientes(ByVal id As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Clientes where CodCli='" & id & "'", conexion)
+            enunciado = New SqlCommand("select*from Clientes where CodCli='" & id & "'", ConexionBase)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True
@@ -391,7 +390,7 @@ Module ConexionLogin
     Function PersonaRegistradaCategoria(ByVal id As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Categoria where NombCateg='" & id & "'", conexion)
+            enunciado = New SqlCommand("select*from Categoria where NombCateg='" & id & "'", ConexionBase)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True
@@ -407,7 +406,7 @@ Module ConexionLogin
     Function RegistradoCompras(ByVal id As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Compras where NumCompra='" & id & "'", conexion)
+            enunciado = New SqlCommand("select*from Compras where NumCompra='" & id & "'", ConexionBase)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True
@@ -423,7 +422,7 @@ Module ConexionLogin
     Function RegistradoVentas(ByVal id As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Ventas where NumVent='" & id & "'", conexion)
+            enunciado = New SqlCommand("select*from Ventas where NumVent='" & id & "'", ConexionBase)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True
@@ -439,7 +438,7 @@ Module ConexionLogin
     Function RegistradoEmpleados(ByVal id As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Empleados where CodEmple='" & id & "'", conexion)
+            enunciado = New SqlCommand("select*from Empleados where CodEmple='" & id & "'", ConexionBase)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True
@@ -455,7 +454,7 @@ Module ConexionLogin
     Function RegistradoProducto(ByVal id As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Producto where NombProduc='" & id & "'", conexion)
+            enunciado = New SqlCommand("select*from Producto where NombProduc='" & id & "'", ConexionBase)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True
@@ -471,7 +470,7 @@ Module ConexionLogin
     Function RegistradoProveedores(ByVal id As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Proveedores where CodProv='" & id & "'", conexion)
+            enunciado = New SqlCommand("select*from Proveedores where CodProv='" & id & "'", ConexionBase)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True
@@ -488,8 +487,8 @@ Module ConexionLogin
                              CodCateg As Integer, NombCateg As String, PrimerPrecio As Integer, SegundoPrecio As Integer,
                              TercerPrecio As Integer, UnidadesStock As Integer, Minimo As Integer, maximo As Integer)
         Try
-            conexion.Open()
-            enunciado = New SqlCommand("Actualizar", conexion)
+            ConexionBase.Open()
+            enunciado = New SqlCommand("Actualizar", ConexionBase)
             enunciado.CommandType = CommandType.StoredProcedure
 
             enunciado.Parameters.AddWithValue("@CodProd", codprod)
@@ -515,15 +514,15 @@ Module ConexionLogin
             MsgBox(ex.Message)
             Return False
         Finally
-            conexion.Close()
+            ConexionBase.Close()
         End Try
     End Function
 
 
     Public Function ActualizarCategoria(codigo As Integer, nombre As String, descripcion As String)
         Try
-            conexion.Open()
-            enunciado = New SqlCommand("ActualizarCategoria", conexion)
+            ConexionBase.Open()
+            enunciado = New SqlCommand("ActualizarCategoria", ConexionBase)
             enunciado.CommandType = CommandType.StoredProcedure
             enunciado.Parameters.AddWithValue("@codigo", codigo)
             enunciado.Parameters.AddWithValue("@nombre", nombre)
@@ -538,7 +537,7 @@ Module ConexionLogin
             MsgBox(ex.Message)
             Return False
         Finally
-            conexion.Close()
+            ConexionBase.Close()
         End Try
 
     End Function

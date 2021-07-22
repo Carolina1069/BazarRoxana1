@@ -40,11 +40,11 @@
 
             If dt.Rows.Count <> 0 Then
                 dgvprov.DataSource = dt
-                ConexionLogin.conexion.Close()
+                ConexionLogin.ConexionBase.Close()
 
             Else
                 dgvprov.DataSource = Nothing
-                ConexionLogin.conexion.Close()
+                ConexionLogin.ConexionBase.Close()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

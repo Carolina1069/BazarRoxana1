@@ -1,15 +1,15 @@
 ﻿Imports System.Data.SqlClient
 Public Class BuscarCliente
     Private Sub BuscarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        abrir()
+        AbrirConeccion()
 
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
+        Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", ConexionBase)
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         DGV.DataSource = DatosCliente
-        conexion.Close()
+        ConexionBase.Close()
 
     End Sub
 
@@ -47,15 +47,15 @@ Public Class BuscarCliente
 
         If TxtBusqueda.Text = "" Then
 
-            abrir()
+            AbrirConeccion()
 
             Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", conexion)
+            Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", ConexionBase)
                 adaptador.Fill(DatosCliente)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
             DGV.DataSource = DatosCliente
-            conexion.Close()
+            ConexionBase.Close()
 
         Else
             LbContador8.Text = TxtBusqueda.Text.Length
