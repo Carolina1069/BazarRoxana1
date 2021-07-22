@@ -241,9 +241,9 @@ Partial Class MiEmpresa
         Me.Label8.Location = New System.Drawing.Point(16, 11)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(168, 39)
+        Me.Label8.Size = New System.Drawing.Size(279, 39)
         Me.Label8.TabIndex = 70
-        Me.Label8.Text = "Empleados"
+        Me.Label8.Text = "Información basica"
         '
         'PictureBox2
         '
