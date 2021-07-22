@@ -7,7 +7,7 @@ Public Class MenuPrincipal
 
     Private Sub Menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
-        Label1.Text = Login.txtNombreEmpleado.Text
+        Label1.Text = Login.TxtNombreEmpleado.Text
     End Sub
 
     Private Sub EmpleadoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadoToolStripMenuItem1.Click

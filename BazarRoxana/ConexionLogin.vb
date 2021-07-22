@@ -19,11 +19,11 @@ Module ConexionLogin
         End Try
     End Sub
 
-    Function contrasena(ByVal nombreUsuario As String) As String
+    Function ContrasenaUsuario(ByVal NombreUsuario As String) As String
         Dim resultado As String = ""
         Try
             enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp 
-            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & nombreUsuario & "' and E.EstadoEmple=1 ", ConexionBase)
+            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & NombreUsuario & "' and E.EstadoEmple=1 ", ConexionBase)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then
@@ -54,7 +54,7 @@ Module ConexionLogin
     End Function
 
     'khaleb metodos
-    Public cod As String = 0
+    Public CodUser As String = 0
     Public codProv As String = "1"
     Public ProductosValidar As Integer = 0
     Public codUltmaVenta As String = 0
@@ -118,7 +118,7 @@ Module ConexionLogin
 
     End Function
 
-    Function usuarioRegistrado(ByVal nombreUsuario As String) As Boolean
+    Function UsuarioRegistrado(ByVal nombreUsuario As String) As Boolean
         Dim resultado As Boolean = False
         Try
             enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp

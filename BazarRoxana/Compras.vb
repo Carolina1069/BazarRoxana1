@@ -304,7 +304,7 @@ Public Class Compras
     Public Sub Compras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cmbTipoPago.SelectedIndex = 0
         cmbTipoTransac.SelectedIndex = 0
-        TxtCodEmple.Text = cod
+        TxtCodEmple.Text = CodUser
         TxtCodProv.Text = codProv
         'TxtCodTransa.Visible = False
         'TxtCodPago.Visible = False

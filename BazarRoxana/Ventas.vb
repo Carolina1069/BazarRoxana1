@@ -209,15 +209,15 @@ Public Class Ventas
 
 
     Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TxtCodEmple.Text = cod
+        TxtCodEmple.Text = CodUser
 
         AbrirConeccion()
 
         Dim CodUVenta As String = CodUltimaVenta() '<-- Declaracion de una variable tipo string para igualarla a la funcion CodUltimaVenta
 
         txNumVenta.Text = CodUVenta
-        TxtCodEmple.Text = Login.txtNombreEmpleado.Text
-        lbUsuario.Text = Login.txtNombreEmpleado.Text
+        TxtCodEmple.Text = Login.TxtNombreEmpleado.Text
+        lbUsuario.Text = Login.TxtNombreEmpleado.Text
 
         ConexionBase.Close()
 

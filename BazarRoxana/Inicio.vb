@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class Inicio
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label1.Text = Login.txtNombreEmpleado.Text
+        Label1.Text = Login.TxtNombreEmpleado.Text
     End Sub
 
     Private Sub Label1_TextChanged(sender As Object, e As EventArgs) Handles Label1.TextChanged

@@ -5,28 +5,27 @@ Public Class Login
         ProgressBar1.Visible = False
         LbPorcentaje.Visible = False
 
-
-
     End Sub
 
-    Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
+    'Boton de ingresar, evalua si el usuario y contraseña son correctos y comienza ejecucion del cargador
+    Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
         AbrirConeccion()
         Try
-            If usuarioRegistrado(txtNombreEmpleado.Text) = True Then
-                'Timer1.Start()
-                Dim contra As String = contrasena(txtNombreEmpleado.Text)
-                If contra.Equals(txtContrasena.Text) = True Then
-                    If ConsultarTipoUsuario(txtNombreEmpleado.Text) = 1 Then
-                        cod = CodUsuario(txtNombreEmpleado.Text)
-                        Timer1.Start()
+            If UsuarioRegistrado(TxtNombreEmpleado.Text) = True Then
 
-                    ElseIf ConsultarTipoUsuario(txtNombreEmpleado.Text) = 2 Then
-                        cod = CodUsuario(txtNombreEmpleado.Text)
-                        Timer1.Start()
+                Dim ContraUsuario As String = ContrasenaUsuario(TxtNombreEmpleado.Text)
+                If ContraUsuario.Equals(TxtContrasena.Text) = True Then
+                    If ConsultarTipoUsuario(TxtNombreEmpleado.Text) = 1 Then
+                        CodUser = CodUsuario(TxtNombreEmpleado.Text)
+                        TimerLogin.Start()
+
+                    ElseIf ConsultarTipoUsuario(TxtNombreEmpleado.Text) = 2 Then
+                        CodUser = CodUsuario(TxtNombreEmpleado.Text)
+                        TimerLogin.Start()
                         MenuPrincipal.UsuariosToolStripMenuItem.Enabled = False
                     Else
-                        cod = CodUsuario(txtNombreEmpleado.Text)
-                        Timer1.Start()
+                        CodUser = CodUsuario(TxtNombreEmpleado.Text)
+                        TimerLogin.Start()
                         MenuPrincipal.UsuariosToolStripMenuItem.Enabled = False
                         MenuPrincipal.EmpleadoToolStripMenuItem1.Enabled = False
                         MenuPrincipal.ClientesToolStripMenuItem.Enabled = False
@@ -38,42 +37,44 @@ Public Class Login
                 Else
                     MsgBox("Contraseña Invalida", MsgBoxStyle.Critical)
 
-                    txtContrasena.Text = ""
+                    TxtContrasena.Text = ""
                 End If
 
-                txtContrasena.Text = ""
-                cbxMostrarContra.Checked = False
+                TxtContrasena.Text = ""
+                ChkMostrarContra.Checked = False
             Else
-                MsgBox("El Empleado: " + txtNombreEmpleado.Text + " no se encuentra registrado")
+                MsgBox("El Empleado: " + TxtNombreEmpleado.Text + " no se encuentra registrado")
 
-                txtContrasena.Text = ""
-                cbxMostrarContra.Checked = False
+                TxtContrasena.Text = ""
+                ChkMostrarContra.Checked = False
             End If
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
 
-
     End Sub
 
-    Private Sub cbxMostrarContra_CheckedChanged(sender As Object, e As EventArgs) Handles cbxMostrarContra.CheckedChanged
-        Dim Text As String
-        Text = txtContrasena.Text
-        If cbxMostrarContra.Checked = True Then
+    Private Sub CbxMostrarContra_CheckedChanged(sender As Object, e As EventArgs) Handles ChkMostrarContra.CheckedChanged
+        'Muestra la contraseña si el CheckBox esta seleccionado 
+        Dim ContraseñaUsuario As String
+        ContraseñaUsuario = TxtContrasena.Text
+        If ChkMostrarContra.Checked = True Then
 
-            txtContrasena.UseSystemPasswordChar = True
-            txtContrasena.Text = Text
+            TxtContrasena.UseSystemPasswordChar = True
+            TxtContrasena.Text = ContraseñaUsuario
         Else
-            txtContrasena.UseSystemPasswordChar = False
-            txtContrasena.Text = Text
+            TxtContrasena.UseSystemPasswordChar = False
+            TxtContrasena.Text = ContraseñaUsuario
         End If
-        'txtContrasena.UseSystemPasswordChar = Not cbxMostrarContra.Checked
+
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    'Muestra el porcentaje de carga del ProgressBar
+    Private Sub TimerLogin_Tick(sender As Object, e As EventArgs) Handles TimerLogin.Tick
+
         ProgressBar1.Visible = True
         LbPorcentaje.Visible = True
-        btnIngresar.Enabled = False
+        BtnIngresar.Enabled = False
         ProgressBar1.Increment(5)
         LbPorcentaje.Text = ProgressBar1.Value & ("%")
         If ProgressBar1.Value = 100 Then
@@ -81,31 +82,28 @@ Public Class Login
             MenuPrincipal.Show()
             Me.Hide()
 
-            Timer1.Stop()
+            TimerLogin.Stop()
             ProgressBar1.Value = 0
             LbPorcentaje.Text = "0%"
             LbPorcentaje.Visible = False
             ProgressBar1.Visible = False
-            btnIngresar.Enabled = True
+            BtnIngresar.Enabled = True
         End If
 
     End Sub
 
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Dim opcion As DialogResult
-        opcion = MessageBox.Show("¿Esta Seguro que quiere salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If opcion = DialogResult.Yes Then
+    'Boton salir del sistema
+    Private Sub BtnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Dim OpcionSalir As DialogResult
+        OpcionSalir = MessageBox.Show("¿Esta Seguro que quiere salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If OpcionSalir = DialogResult.Yes Then
             End
         End If
     End Sub
 
-    Private Sub txtNombreEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtNombreEmpleado.TextChanged
-
-    End Sub
-
-    Private Sub txtNombreEmpleado_Validating(sender As Object, e As CancelEventArgs) Handles txtNombreEmpleado.Validating
+    Private Sub TxtNombreEmpleado_Validating(sender As Object, e As CancelEventArgs) Handles TxtNombreEmpleado.Validating
         Try
-            If DirectCast(sender, TextBox).Text.Length > 0 And DirectCast(sender, TextBox).Text.Length <= 50 Then   'Si se deja vacio
+            If DirectCast(sender, TextBox).Text.Length > 0 And DirectCast(sender, TextBox).Text.Length <= 50 Then  'Valida si el caja de texto esta vacia 
                 Me.ErrorValidacion.SetError(sender, "")
             Else
                 Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
@@ -115,13 +113,9 @@ Public Class Login
         End Try
     End Sub
 
-    Private Sub txtContrasena_TextChanged(sender As Object, e As EventArgs) Handles txtContrasena.TextChanged
-
-    End Sub
-
-    Private Sub txtContrasena_Validating(sender As Object, e As CancelEventArgs) Handles txtContrasena.Validating
+    Private Sub TxtContrasena_Validating(sender As Object, e As CancelEventArgs) Handles TxtContrasena.Validating
         Try
-            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Si se deja vacio
+            If DirectCast(sender, TextBox).Text.Length > 0 Then   'Valida si el caja de texto esta vacia 
                 Me.ErrorValidacion.SetError(sender, "")
             Else
                 Me.ErrorValidacion.SetError(sender, "Es un campo obligatorio")
@@ -131,28 +125,4 @@ Public Class Login
         End Try
     End Sub
 
-    Private Sub txtNombreEmpleado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombreEmpleado.KeyPress
-        'If Not Char.IsLetter(e.KeyChar) _
-        '            AndAlso Not Char.IsControl(e.KeyChar) _
-        '            AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
-        '    e.Handled = True
-        'End If
-    End Sub
-
-
-    'Private Function validar_campos(T As Control) As Boolean
-
-    '    For Each T In Me.Controls
-    '        If TypeOf T Is TextBox Then
-    '            If Trim(T.Text) = "" Then
-    '                MsgBox("Campo por validar", vbInformation)
-    '                'Else   
-    '                '    MessageBox.Show("Dot Net Perls is awesome.")
-    '            End If
-    '        Else
-    '            ' mesagebox aqui hay otro control diferente de textbox
-
-    '        End If
-    '    Next
-    'End Function
 End Class
