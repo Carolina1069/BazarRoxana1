@@ -191,6 +191,12 @@
     <Compile Include="MenuPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MiEmpresa.Designer.vb">
+      <DependentUpon>MiEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MiEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Minimo.Designer.vb">
       <DependentUpon>Minimo.vb</DependentUpon>
     </Compile>
@@ -336,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MiEmpresa.resx">
+      <DependentUpon>MiEmpresa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Minimo.resx">
       <DependentUpon>Minimo.vb</DependentUpon>
