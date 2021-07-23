@@ -542,6 +542,20 @@ Module ConexionLogin
 
     End Function
 
+    Function RegistradoMiEmpresa() As Boolean
+        Dim resultado As Boolean = False
+        Try
+            enunciado = New SqlCommand("select*from MiEmpresa where Codigo=1", ConexionBase)
+            respuesta = enunciado.ExecuteReader
+            If respuesta.Read Then
+                resultado = True
+            End If
+            respuesta.Close()
 
+        Catch ex As Exception
+            MsgBox("Error en el procedimiento: " + ex.ToString)
+        End Try
+        Return resultado
+    End Function
 
 End Module

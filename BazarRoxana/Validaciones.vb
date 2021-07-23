@@ -3,7 +3,10 @@
         Minusculas = LCase(Texto) ' LCase se encarga de transformar el texto en minuscula UCase a mayuscula
         TXT.SelectionStart = Len(Texto) ' Dejamos el cursor al final del texto
     End Function
-
+    Public Function Mayuscula(ByVal Texto As String, ByVal TXT As TextBox) As String
+        Mayuscula = UCase(Texto) ' LCase se encarga de transformar el texto en minuscula UCase a mayuscula
+        TXT.SelectionStart = Len(Texto) ' Dejamos el cursor al final del texto
+    End Function
     'Funcion para que solo permite el ingreso de caracteres tipo numerico
     Sub SoloNumeros(ByRef e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) Then
