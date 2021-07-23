@@ -151,7 +151,7 @@ Public Class MenuPrincipal
             Label2.Text = Mostrar(1)
             If Mostrar(2) = 1 Then
                 Label3.Text = "Administrador"
-            ElseIf Mostrar(2) = 1 Then
+            ElseIf Mostrar(2) = 2 Then
                 Label3.Text = "Gerente"
             Else
                 Label3.Text = "Vendedor"
@@ -170,5 +170,13 @@ Public Class MenuPrincipal
         FormUsuarios.MdiParent = Me
         Me.ToolStripContainer1.ContentPanel.Controls.Add(FormUsuarios)
         FormUsuarios.Show()
+    End Sub
+
+    Private Sub MiEmpresaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MiEmpresaToolStripMenuItem.Click
+        Me.ToolStripContainer1.ContentPanel.Controls.Clear()
+        Dim FormME As New MiEmpresa
+        FormME.MdiParent = Me
+        Me.ToolStripContainer1.ContentPanel.Controls.Add(FormME)
+        FormME.Show()
     End Sub
 End Class

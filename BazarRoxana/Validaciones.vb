@@ -48,4 +48,8 @@
         End If
     End Sub
 
+    Public Function Cuantas(ByVal Letra As String, ByVal Cad As String) As Long '<-- Esta funcion es para poder contar cualquier caracter que usted especifique. 
+        Cuantas = Len(Cad) - Len(Replace(Cad, Letra, vbNullString))
+    End Function
+
 End Module

@@ -344,9 +344,7 @@ Public Class Clientes
         txCorreoCli.Text = DGVCliente.CurrentRow.Cells(4).Value
     End Sub
 
-    Public Function Cuantas(ByVal Letra As String, ByVal Cad As String) As Long '<-- Esta funcion es para poder contar cualquier caracter que usted especifique. 
-        Cuantas = Len(Cad) - Len(Replace(Cad, Letra, vbNullString))
-    End Function
+
 
     Private Sub rtxDirCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles rtxDirCli.KeyPress '<--Funcion para validar que caracteres son permitidos y evitar que se introduscan espacio al principio. 
         Dim caracteresPermitidos As String = "áéíóúÁÉÍÓÚqwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNM1234567890-,. " & Convert.ToChar(8)

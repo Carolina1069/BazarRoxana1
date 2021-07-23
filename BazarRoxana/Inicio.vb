@@ -17,7 +17,7 @@ Public Class Inicio
             Label2.Text = Mostrar(1)
             If Mostrar(2) = 1 Then
                 Label3.Text = "Administrador"
-            ElseIf Mostrar(2) = 1 Then
+            ElseIf Mostrar(2) = 2 Then
                 Label3.Text = "Gerente"
             Else
                 Label3.Text = "Vendedor"

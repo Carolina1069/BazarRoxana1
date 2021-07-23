@@ -22,17 +22,19 @@ Public Class Login
                     ElseIf ConsultarTipoUsuario(TxtNombreEmpleado.Text) = 2 Then
                         CodUser = CodUsuario(TxtNombreEmpleado.Text)
                         TimerLogin.Start()
-                        MenuPrincipal.UsuariosToolStripMenuItem.Enabled = False
+                        MenuPrincipal.UsuariosToolStripMenuItem.Visible = False
+                        MenuPrincipal.MiEmpresaToolStripMenuItem.Visible = False
                     Else
                         CodUser = CodUsuario(TxtNombreEmpleado.Text)
                         TimerLogin.Start()
-                        MenuPrincipal.UsuariosToolStripMenuItem.Enabled = False
-                        MenuPrincipal.EmpleadoToolStripMenuItem1.Enabled = False
-                        MenuPrincipal.ClientesToolStripMenuItem.Enabled = False
-                        MenuPrincipal.CategoriaToolStripMenuItem.Enabled = False
-                        MenuPrincipal.ProveedoresToolStripMenuItem.Enabled = False
-                        MenuPrincipal.ProductoToolStripMenuItem.Enabled = False
-                        MenuPrincipal.ReportesToolStripMenuItem.Enabled = False
+                        MenuPrincipal.UsuariosToolStripMenuItem.Visible = False
+                        MenuPrincipal.EmpleadoToolStripMenuItem1.Visible = False
+                        MenuPrincipal.ClientesToolStripMenuItem.Visible = False
+                        MenuPrincipal.CategoriaToolStripMenuItem.Visible = False
+                        MenuPrincipal.ProveedoresToolStripMenuItem.Visible = False
+                        MenuPrincipal.ProductoToolStripMenuItem.Visible = False
+                        MenuPrincipal.ReportesToolStripMenuItem.Visible = False
+                        MenuPrincipal.MiEmpresaToolStripMenuItem.Visible = False
                     End If
                 Else
                     MsgBox("Contraseña Invalida", MsgBoxStyle.Critical)
