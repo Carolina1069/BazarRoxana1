@@ -451,10 +451,10 @@ Module ConexionLogin
         Return resultado
     End Function
 
-    Function RegistradoProducto(ByVal id As String) As Boolean
+    Function RegistradoProducto(ByVal Nombre As String) As Boolean
         Dim resultado As Boolean = False
         Try
-            enunciado = New SqlCommand("select*from Producto where NombProduc='" & id & "'", ConexionBase)
+            enunciado = New SqlCommand("select*from Producto where NombProduc='" & Nombre & "'", ConexionBase)
             respuesta = enunciado.ExecuteReader
             If respuesta.Read Then
                 resultado = True
@@ -483,7 +483,7 @@ Module ConexionLogin
         Return resultado
     End Function
 
-    Public Function ActualizarProducto(codprod As Integer, NomProd As String, descripcion As String, Codprov As Integer, NombProv As String,
+    Public Function ActualizarProducto(codprod As Integer, NomProd As String, descripcion As String, descripcion2 As String, Codprov As Integer, NombProv As String,
                              CodCateg As Integer, NombCateg As String, PrimerPrecio As Integer, SegundoPrecio As Integer,
                              TercerPrecio As Integer, UnidadesStock As Integer, Minimo As Integer, maximo As Integer)
         Try
@@ -494,6 +494,7 @@ Module ConexionLogin
             enunciado.Parameters.AddWithValue("@CodProd", codprod)
             enunciado.Parameters.AddWithValue("@NombProduc", NomProd)
             enunciado.Parameters.AddWithValue("@DescripProduc", descripcion)
+            enunciado.Parameters.AddWithValue("@Descripcion", descripcion2)
             enunciado.Parameters.AddWithValue("@CodProv", Codprov)
             enunciado.Parameters.AddWithValue("@NombProv", NombProv)
             enunciado.Parameters.AddWithValue("@CodCateg", CodCateg)
@@ -518,6 +519,40 @@ Module ConexionLogin
         End Try
     End Function
 
+    Public Function GuardarProducto(NomProd As String, descripcion As String, descripcion2 As String, Codprov As Integer, NombProv As String,
+                             CodCateg As Integer, NombCateg As String, PrimerPrecio As Integer, SegundoPrecio As Integer,
+                             TercerPrecio As Integer, Minimo As Integer, maximo As Integer)
+        Try
+            ConexionBase.Open()
+            enunciado = New SqlCommand("GuardarProducto", ConexionBase)
+            enunciado.CommandType = CommandType.StoredProcedure
+
+
+            enunciado.Parameters.AddWithValue("@NombProduc", NomProd)
+            enunciado.Parameters.AddWithValue("@DescripProduc", descripcion)
+            enunciado.Parameters.AddWithValue("@Descripcion", descripcion2)
+            enunciado.Parameters.AddWithValue("@CodProv", Codprov)
+            enunciado.Parameters.AddWithValue("@NombProv", NombProv)
+            enunciado.Parameters.AddWithValue("@CodCateg", CodCateg)
+            enunciado.Parameters.AddWithValue("@NombCateg", NombCateg)
+            enunciado.Parameters.AddWithValue("@PrimerPrecio", PrimerPrecio)
+            enunciado.Parameters.AddWithValue("@SegundoPrecio", SegundoPrecio)
+            enunciado.Parameters.AddWithValue("@TercerPrecio", TercerPrecio)
+            enunciado.Parameters.AddWithValue("@Minimo", Minimo)
+            enunciado.Parameters.AddWithValue("@Maximo", maximo)
+
+            If enunciado.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            ConexionBase.Close()
+        End Try
+    End Function
 
     Public Function ActualizarCategoria(codigo As Integer, nombre As String, descripcion As String)
         Try

@@ -63,8 +63,8 @@
 
     Private Sub dgvprov_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvprov.CellDoubleClick
         Dim frm As Productos = CType(Owner, Productos)
-        frm.txCodProv.Text = dgvprov.CurrentRow.Cells(0).Value
-        frm.txNombProv.Text = dgvprov.CurrentRow.Cells(1).Value
+        frm.TxtCodigoProveedor.Text = dgvprov.CurrentRow.Cells(0).Value
+        frm.TxtNombreProveedor.Text = dgvprov.CurrentRow.Cells(1).Value
 
 
         Me.Close()

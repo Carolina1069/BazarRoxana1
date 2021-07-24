@@ -63,8 +63,8 @@
 
     Private Sub dgvcategoria_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvcategoria.CellDoubleClick
         Dim frm As Productos = CType(Owner, Productos)
-        frm.txNombCateg.Text = dgvcategoria.CurrentRow.Cells(1).Value
-        frm.txCodCateg.Text = dgvcategoria.CurrentRow.Cells(0).Value
+        frm.TxtNombreCategoria.Text = dgvcategoria.CurrentRow.Cells(1).Value
+        frm.TxtCodigoCategoria.Text = dgvcategoria.CurrentRow.Cells(0).Value
         Me.Close()
     End Sub
 End Class
