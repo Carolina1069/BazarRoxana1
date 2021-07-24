@@ -676,7 +676,7 @@ Public Class Productos
         LimpiarCajasTexto()
     End Sub
 
-    Private Sub DgvProductos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvProductos.CellDoubleClick
+    Private Sub DgvProductos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
         TxtCodigoProducto.Text = DgvProductos.CurrentRow.Cells(0).Value
         TxtNombreProducto.Text = DgvProductos.CurrentRow.Cells(1).Value
         RtxDescripcionProducto.Text = DgvProductos.CurrentRow.Cells(1).Value
@@ -754,7 +754,7 @@ Public Class Productos
         TxtNombreCategoria.Clear()
     End Sub
 
-    Private Sub DgvProductos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvProductos.CellContentClick
+    Private Sub DgvProductos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
 
     End Sub
 End Class

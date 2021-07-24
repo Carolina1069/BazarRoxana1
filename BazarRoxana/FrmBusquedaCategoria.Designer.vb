@@ -63,7 +63,7 @@ Partial Class FrmBusquedaCategoria
         Me.dgvcategoria.Location = New System.Drawing.Point(9, 80)
         Me.dgvcategoria.Name = "dgvcategoria"
         Me.dgvcategoria.ReadOnly = True
-        Me.dgvcategoria.Size = New System.Drawing.Size(640, 150)
+        Me.dgvcategoria.Size = New System.Drawing.Size(628, 150)
         Me.dgvcategoria.TabIndex = 2
         '
         'Label1
@@ -91,6 +91,7 @@ Partial Class FrmBusquedaCategoria
         Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmBusquedaCategoria"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmBusquedaCategoria"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()

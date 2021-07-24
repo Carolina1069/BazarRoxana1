@@ -91,6 +91,7 @@ Partial Class FrmBusquedaProveedor
         Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmBusquedaProveedor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmBusquedaProductos"
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
