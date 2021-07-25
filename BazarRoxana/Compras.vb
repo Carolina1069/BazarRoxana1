@@ -108,8 +108,8 @@ Public Class Compras
 
         If (Estado = True) Then
             TxtNombreProducto.Text = Mostrar(1)
-            TxtUnidades.Text = Mostrar(10)
-            txMaximo.Text = Mostrar(12)
+            TxtUnidades.Text = Mostrar(11)
+            txMaximo.Text = Mostrar(13)
         Else
             TxtNombreProducto.Text = ""
             TxtUnidades.Text = ""
@@ -155,7 +155,7 @@ Public Class Compras
 
         ElseIf Max >= suma Then
 
-            Impuesto = 0.25
+            Impuesto = 0.15
             SubTotal1 = (Val(CbxPrecio.Text) * Val(TxtCantidad.Text))
             Subtotal2 = SubTotal1 * Impuesto
             Subtotal = SubTotal1 + Subtotal2

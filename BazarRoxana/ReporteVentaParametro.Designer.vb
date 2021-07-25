@@ -25,29 +25,18 @@ Partial Class ReporteVentaParametro
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReporteVentaParametro))
-        Me.SelectVentaFechaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BazarRoxana = New BazarRoxana()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.SelectVentaFechaTableAdapter = New BazarRoxanaTableAdapters.SelectVentaFechaTableAdapter()
         Me.DtpPrimerFecha = New System.Windows.Forms.DateTimePicker()
         Me.DtpSegundaFecha = New System.Windows.Forms.DateTimePicker()
-        CType(Me.SelectVentaFechaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BazarRoxana = New BazarRoxana()
+        Me.SelectVentaFechaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SelectVentaFechaTableAdapter = New BazarRoxanaTableAdapters.SelectVentaFechaTableAdapter()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SelectVentaFechaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'SelectVentaFechaBindingSource
-        '
-        Me.SelectVentaFechaBindingSource.DataMember = "SelectVentaFecha"
-        Me.SelectVentaFechaBindingSource.DataSource = Me.BazarRoxana
-        '
-        'BazarRoxana
-        '
-        Me.BazarRoxana.DataSetName = "BazarRoxana"
-        Me.BazarRoxana.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -55,26 +44,18 @@ Partial Class ReporteVentaParametro
         ReportDataSource1.Value = Me.SelectVentaFechaBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "BazarRoxana.RpVentaParametro.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(12, 76)
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 76)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(776, 661)
+        Me.ReportViewer1.Size = New System.Drawing.Size(801, 674)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(96, 60)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 13)
-        Me.Label3.TabIndex = 12
-        Me.Label3.Text = "Año/(mm)/(dd)"
         '
         'BtnBuscar
         '
-        Me.BtnBuscar.Location = New System.Drawing.Point(318, 23)
+        Me.BtnBuscar.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnBuscar.Location = New System.Drawing.Point(393, 18)
         Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(75, 21)
+        Me.BtnBuscar.Size = New System.Drawing.Size(83, 36)
         Me.BtnBuscar.TabIndex = 11
         Me.BtnBuscar.Text = "Buscar"
         Me.BtnBuscar.UseVisualStyleBackColor = True
@@ -82,38 +63,52 @@ Partial Class ReporteVentaParametro
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.Location = New System.Drawing.Point(7, 40)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(86, 13)
+        Me.Label2.Size = New System.Drawing.Size(116, 19)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Segunda Fecha:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.Location = New System.Drawing.Point(21, 10)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(72, 13)
+        Me.Label1.Size = New System.Drawing.Size(102, 19)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Primer Fecha:"
         '
-        'SelectVentaFechaTableAdapter
-        '
-        Me.SelectVentaFechaTableAdapter.ClearBeforeFill = True
-        '
         'DtpPrimerFecha
         '
-        Me.DtpPrimerFecha.Location = New System.Drawing.Point(99, 10)
+        Me.DtpPrimerFecha.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.DtpPrimerFecha.Location = New System.Drawing.Point(126, 10)
         Me.DtpPrimerFecha.Name = "DtpPrimerFecha"
-        Me.DtpPrimerFecha.Size = New System.Drawing.Size(200, 20)
+        Me.DtpPrimerFecha.Size = New System.Drawing.Size(261, 27)
         Me.DtpPrimerFecha.TabIndex = 13
         '
         'DtpSegundaFecha
         '
-        Me.DtpSegundaFecha.Location = New System.Drawing.Point(99, 36)
+        Me.DtpSegundaFecha.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.DtpSegundaFecha.Location = New System.Drawing.Point(126, 36)
         Me.DtpSegundaFecha.Name = "DtpSegundaFecha"
-        Me.DtpSegundaFecha.Size = New System.Drawing.Size(200, 20)
+        Me.DtpSegundaFecha.Size = New System.Drawing.Size(261, 27)
         Me.DtpSegundaFecha.TabIndex = 14
+        '
+        'BazarRoxana
+        '
+        Me.BazarRoxana.DataSetName = "BazarRoxana"
+        Me.BazarRoxana.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SelectVentaFechaBindingSource
+        '
+        Me.SelectVentaFechaBindingSource.DataMember = "SelectVentaFecha"
+        Me.SelectVentaFechaBindingSource.DataSource = Me.BazarRoxana
+        '
+        'SelectVentaFechaTableAdapter
+        '
+        Me.SelectVentaFechaTableAdapter.ClearBeforeFill = True
         '
         'ReporteVentaParametro
         '
@@ -122,7 +117,6 @@ Partial Class ReporteVentaParametro
         Me.ClientSize = New System.Drawing.Size(800, 749)
         Me.Controls.Add(Me.DtpSegundaFecha)
         Me.Controls.Add(Me.DtpPrimerFecha)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BtnBuscar)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -131,21 +125,20 @@ Partial Class ReporteVentaParametro
         Me.MaximizeBox = False
         Me.Name = "ReporteVentaParametro"
         Me.Text = "Reporte de las Ventas con Intervalo de Fecha"
-        CType(Me.SelectVentaFechaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SelectVentaFechaBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents SelectVentaFechaBindingSource As BindingSource
-    Friend WithEvents BazarRoxana As BazarRoxana
-    Friend WithEvents Label3 As Label
     Friend WithEvents BtnBuscar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents SelectVentaFechaTableAdapter As BazarRoxanaTableAdapters.SelectVentaFechaTableAdapter
     Friend WithEvents DtpPrimerFecha As DateTimePicker
     Friend WithEvents DtpSegundaFecha As DateTimePicker
+    Friend WithEvents SelectVentaFechaBindingSource As BindingSource
+    Friend WithEvents BazarRoxana As BazarRoxana
+    Friend WithEvents SelectVentaFechaTableAdapter As BazarRoxanaTableAdapters.SelectVentaFechaTableAdapter
 End Class

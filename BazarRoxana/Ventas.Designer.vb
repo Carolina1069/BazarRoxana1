@@ -22,10 +22,10 @@ Partial Class Ventas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnBusqCliente = New System.Windows.Forms.Button()
         Me.cbxTipoTransac = New System.Windows.Forms.ComboBox()
@@ -41,6 +41,10 @@ Partial Class Ventas
         Me.TxtCodEmple = New System.Windows.Forms.TextBox()
         Me.lbCodEmple = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtDesc = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtArticulo = New System.Windows.Forms.TextBox()
         Me.LlContador1 = New System.Windows.Forms.Label()
         Me.LbContador = New System.Windows.Forms.Label()
         Me.btnBuscProd = New System.Windows.Forms.Button()
@@ -56,12 +60,6 @@ Partial Class Ventas
         Me.btGuardar = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DGV = New System.Windows.Forms.DataGridView()
-        Me.CodProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Impuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtCodProducto = New System.Windows.Forms.TextBox()
         Me.BtnAgregar = New System.Windows.Forms.Button()
@@ -73,6 +71,14 @@ Partial Class Ventas
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lbUsuario = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.CodProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Artículo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripción = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Impuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -221,6 +227,10 @@ Partial Class Ventas
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.DarkGray
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.TxtDesc)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.TxtArticulo)
         Me.GroupBox1.Controls.Add(Me.LlContador1)
         Me.GroupBox1.Controls.Add(Me.LbContador)
         Me.GroupBox1.Controls.Add(Me.btnBuscProd)
@@ -243,12 +253,46 @@ Partial Class Ventas
         Me.GroupBox1.Controls.Add(Me.TxtCantidad)
         Me.GroupBox1.Controls.Add(Me.TxtUnidades)
         Me.GroupBox1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(75, 288)
+        Me.GroupBox1.Location = New System.Drawing.Point(18, 288)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(947, 381)
+        Me.GroupBox1.Size = New System.Drawing.Size(1023, 381)
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle de la Venta"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(400, 58)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(89, 19)
+        Me.Label2.TabIndex = 79
+        Me.Label2.Text = "Descripción"
+        '
+        'TxtDesc
+        '
+        Me.TxtDesc.Enabled = False
+        Me.TxtDesc.Location = New System.Drawing.Point(402, 77)
+        Me.TxtDesc.Name = "TxtDesc"
+        Me.TxtDesc.Size = New System.Drawing.Size(122, 27)
+        Me.TxtDesc.TabIndex = 80
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(273, 58)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(64, 19)
+        Me.Label1.TabIndex = 77
+        Me.Label1.Text = "Artículo"
+        '
+        'TxtArticulo
+        '
+        Me.TxtArticulo.Enabled = False
+        Me.TxtArticulo.Location = New System.Drawing.Point(272, 77)
+        Me.TxtArticulo.Name = "TxtArticulo"
+        Me.TxtArticulo.Size = New System.Drawing.Size(122, 27)
+        Me.TxtArticulo.TabIndex = 78
         '
         'LlContador1
         '
@@ -256,7 +300,7 @@ Partial Class Ventas
         Me.LlContador1.BackColor = System.Drawing.Color.Transparent
         Me.LlContador1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LlContador1.ForeColor = System.Drawing.Color.Black
-        Me.LlContador1.Location = New System.Drawing.Point(871, 81)
+        Me.LlContador1.Location = New System.Drawing.Point(957, 81)
         Me.LlContador1.Name = "LlContador1"
         Me.LlContador1.Size = New System.Drawing.Size(24, 19)
         Me.LlContador1.TabIndex = 76
@@ -268,7 +312,7 @@ Partial Class Ventas
         Me.LbContador.BackColor = System.Drawing.Color.Transparent
         Me.LbContador.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LbContador.ForeColor = System.Drawing.Color.Black
-        Me.LbContador.Location = New System.Drawing.Point(853, 80)
+        Me.LbContador.Location = New System.Drawing.Point(939, 80)
         Me.LbContador.Name = "LbContador"
         Me.LbContador.Size = New System.Drawing.Size(18, 19)
         Me.LbContador.TabIndex = 75
@@ -277,7 +321,7 @@ Partial Class Ventas
         'btnBuscProd
         '
         Me.btnBuscProd.Font = New System.Drawing.Font("Candara", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.btnBuscProd.Location = New System.Drawing.Point(36, 23)
+        Me.btnBuscProd.Location = New System.Drawing.Point(5, 23)
         Me.btnBuscProd.Name = "btnBuscProd"
         Me.btnBuscProd.Size = New System.Drawing.Size(116, 35)
         Me.btnBuscProd.TabIndex = 66
@@ -287,7 +331,7 @@ Partial Class Ventas
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(600, 59)
+        Me.Label13.Location = New System.Drawing.Point(733, 58)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(135, 19)
         Me.Label13.TabIndex = 61
@@ -296,7 +340,7 @@ Partial Class Ventas
         'txMinimo
         '
         Me.txMinimo.Enabled = False
-        Me.txMinimo.Location = New System.Drawing.Point(602, 78)
+        Me.txMinimo.Location = New System.Drawing.Point(735, 77)
         Me.txMinimo.Name = "txMinimo"
         Me.txMinimo.Size = New System.Drawing.Size(134, 27)
         Me.txMinimo.TabIndex = 60
@@ -323,14 +367,14 @@ Partial Class Ventas
         '
         Me.CbxPrecio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CbxPrecio.FormattingEnabled = True
-        Me.CbxPrecio.Location = New System.Drawing.Point(333, 77)
+        Me.CbxPrecio.Location = New System.Drawing.Point(534, 77)
         Me.CbxPrecio.Name = "CbxPrecio"
-        Me.CbxPrecio.Size = New System.Drawing.Size(100, 27)
+        Me.CbxPrecio.Size = New System.Drawing.Size(65, 27)
         Me.CbxPrecio.TabIndex = 42
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(903, 85)
+        Me.Button1.Location = New System.Drawing.Point(989, 85)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(31, 28)
         Me.Button1.TabIndex = 57
@@ -340,7 +384,7 @@ Partial Class Ventas
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(748, 58)
+        Me.Label12.Location = New System.Drawing.Point(871, 58)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(71, 19)
         Me.Label12.TabIndex = 56
@@ -349,7 +393,7 @@ Partial Class Ventas
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(453, 59)
+        Me.Label11.Location = New System.Drawing.Point(601, 59)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(134, 19)
         Me.Label11.TabIndex = 55
@@ -358,7 +402,7 @@ Partial Class Ventas
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(333, 58)
+        Me.Label10.Location = New System.Drawing.Point(530, 58)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(52, 19)
         Me.Label10.TabIndex = 54
@@ -376,7 +420,7 @@ Partial Class Ventas
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(35, 58)
+        Me.Label3.Location = New System.Drawing.Point(4, 58)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(125, 19)
         Me.Label3.TabIndex = 46
@@ -389,94 +433,52 @@ Partial Class Ventas
         Me.DGV.BackgroundColor = System.Drawing.SystemColors.ScrollBar
         Me.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodProduc, Me.NombProduc, Me.Impuesto, Me.CantVenta, Me.PrecioVenta, Me.SubTotal})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodProduc, Me.NombProduc, Me.Artículo, Me.Descripción, Me.Impuesto, Me.CantVenta, Me.PrecioVenta, Me.SubTotal})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGV.EnableHeadersVisualStyles = False
         Me.DGV.GridColor = System.Drawing.SystemColors.ControlLight
-        Me.DGV.Location = New System.Drawing.Point(20, 120)
+        Me.DGV.Location = New System.Drawing.Point(20, 119)
         Me.DGV.Name = "DGV"
         Me.DGV.ReadOnly = True
         Me.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGV.RowHeadersWidth = 51
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ScrollBar
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        Me.DGV.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        Me.DGV.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV.Size = New System.Drawing.Size(900, 194)
+        Me.DGV.Size = New System.Drawing.Size(984, 195)
         Me.DGV.TabIndex = 21
-        '
-        'CodProduc
-        '
-        Me.CodProduc.HeaderText = "Código del producto"
-        Me.CodProduc.MinimumWidth = 6
-        Me.CodProduc.Name = "CodProduc"
-        Me.CodProduc.ReadOnly = True
-        '
-        'NombProduc
-        '
-        Me.NombProduc.HeaderText = "Nombre del producto"
-        Me.NombProduc.MinimumWidth = 6
-        Me.NombProduc.Name = "NombProduc"
-        Me.NombProduc.ReadOnly = True
-        '
-        'Impuesto
-        '
-        Me.Impuesto.HeaderText = "Impuesto"
-        Me.Impuesto.MinimumWidth = 6
-        Me.Impuesto.Name = "Impuesto"
-        Me.Impuesto.ReadOnly = True
-        '
-        'CantVenta
-        '
-        Me.CantVenta.HeaderText = "Cantidad del producto"
-        Me.CantVenta.MinimumWidth = 6
-        Me.CantVenta.Name = "CantVenta"
-        Me.CantVenta.ReadOnly = True
-        '
-        'PrecioVenta
-        '
-        Me.PrecioVenta.HeaderText = "Precio del producto"
-        Me.PrecioVenta.MinimumWidth = 6
-        Me.PrecioVenta.Name = "PrecioVenta"
-        Me.PrecioVenta.ReadOnly = True
-        '
-        'SubTotal
-        '
-        Me.SubTotal.HeaderText = "Sub total"
-        Me.SubTotal.MinimumWidth = 6
-        Me.SubTotal.Name = "SubTotal"
-        Me.SubTotal.ReadOnly = True
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(181, 58)
+        Me.Label9.Location = New System.Drawing.Point(133, 59)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(132, 19)
         Me.Label9.TabIndex = 47
@@ -485,14 +487,14 @@ Partial Class Ventas
         'TxtCodProducto
         '
         Me.TxtCodProducto.Enabled = False
-        Me.TxtCodProducto.Location = New System.Drawing.Point(38, 78)
+        Me.TxtCodProducto.Location = New System.Drawing.Point(8, 78)
         Me.TxtCodProducto.Name = "TxtCodProducto"
         Me.TxtCodProducto.Size = New System.Drawing.Size(122, 27)
         Me.TxtCodProducto.TabIndex = 48
         '
         'BtnAgregar
         '
-        Me.BtnAgregar.Location = New System.Drawing.Point(903, 53)
+        Me.BtnAgregar.Location = New System.Drawing.Point(989, 53)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(31, 30)
         Me.BtnAgregar.TabIndex = 53
@@ -502,23 +504,23 @@ Partial Class Ventas
         'TxtNombreProducto
         '
         Me.TxtNombreProducto.Enabled = False
-        Me.TxtNombreProducto.Location = New System.Drawing.Point(184, 77)
+        Me.TxtNombreProducto.Location = New System.Drawing.Point(137, 78)
         Me.TxtNombreProducto.Name = "TxtNombreProducto"
         Me.TxtNombreProducto.Size = New System.Drawing.Size(129, 27)
         Me.TxtNombreProducto.TabIndex = 49
         '
         'TxtCantidad
         '
-        Me.TxtCantidad.Location = New System.Drawing.Point(750, 77)
+        Me.TxtCantidad.Location = New System.Drawing.Point(875, 77)
         Me.TxtCantidad.MaxLength = 3
         Me.TxtCantidad.Name = "TxtCantidad"
-        Me.TxtCantidad.Size = New System.Drawing.Size(100, 27)
+        Me.TxtCantidad.Size = New System.Drawing.Size(61, 27)
         Me.TxtCantidad.TabIndex = 52
         '
         'TxtUnidades
         '
         Me.TxtUnidades.Enabled = False
-        Me.TxtUnidades.Location = New System.Drawing.Point(461, 78)
+        Me.TxtUnidades.Location = New System.Drawing.Point(605, 77)
         Me.TxtUnidades.Name = "TxtUnidades"
         Me.TxtUnidades.Size = New System.Drawing.Size(124, 27)
         Me.TxtUnidades.TabIndex = 51
@@ -573,6 +575,62 @@ Partial Class Ventas
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 45
         Me.PictureBox1.TabStop = False
+        '
+        'CodProduc
+        '
+        Me.CodProduc.HeaderText = "Código del producto"
+        Me.CodProduc.MinimumWidth = 6
+        Me.CodProduc.Name = "CodProduc"
+        Me.CodProduc.ReadOnly = True
+        Me.CodProduc.Visible = False
+        '
+        'NombProduc
+        '
+        Me.NombProduc.HeaderText = "Nombre del producto"
+        Me.NombProduc.MinimumWidth = 6
+        Me.NombProduc.Name = "NombProduc"
+        Me.NombProduc.ReadOnly = True
+        '
+        'Artículo
+        '
+        Me.Artículo.HeaderText = "Artículo"
+        Me.Artículo.Name = "Artículo"
+        Me.Artículo.ReadOnly = True
+        '
+        'Descripción
+        '
+        Me.Descripción.HeaderText = "Descripción"
+        Me.Descripción.Name = "Descripción"
+        Me.Descripción.ReadOnly = True
+        '
+        'Impuesto
+        '
+        Me.Impuesto.HeaderText = "Impuesto"
+        Me.Impuesto.MinimumWidth = 6
+        Me.Impuesto.Name = "Impuesto"
+        Me.Impuesto.ReadOnly = True
+        Me.Impuesto.Visible = False
+        '
+        'CantVenta
+        '
+        Me.CantVenta.HeaderText = "Cantidad del producto"
+        Me.CantVenta.MinimumWidth = 6
+        Me.CantVenta.Name = "CantVenta"
+        Me.CantVenta.ReadOnly = True
+        '
+        'PrecioVenta
+        '
+        Me.PrecioVenta.HeaderText = "Precio del producto"
+        Me.PrecioVenta.MinimumWidth = 6
+        Me.PrecioVenta.Name = "PrecioVenta"
+        Me.PrecioVenta.ReadOnly = True
+        '
+        'SubTotal
+        '
+        Me.SubTotal.HeaderText = "Sub total"
+        Me.SubTotal.MinimumWidth = 6
+        Me.SubTotal.Name = "SubTotal"
+        Me.SubTotal.ReadOnly = True
         '
         'Ventas
         '
@@ -642,8 +700,14 @@ Partial Class Ventas
     Friend WithEvents btnBuscProd As Button
     Friend WithEvents LlContador1 As Label
     Friend WithEvents LbContador As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents TxtDesc As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TxtArticulo As TextBox
     Friend WithEvents CodProduc As DataGridViewTextBoxColumn
     Friend WithEvents NombProduc As DataGridViewTextBoxColumn
+    Friend WithEvents Artículo As DataGridViewTextBoxColumn
+    Friend WithEvents Descripción As DataGridViewTextBoxColumn
     Friend WithEvents Impuesto As DataGridViewTextBoxColumn
     Friend WithEvents CantVenta As DataGridViewTextBoxColumn
     Friend WithEvents PrecioVenta As DataGridViewTextBoxColumn

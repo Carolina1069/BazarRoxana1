@@ -2,54 +2,209 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix2">
+      <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.45022cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.45022cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.45022cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.45022cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.45022cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.45022cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.27469cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox12">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cod Cli</Value>
-                              <Style />
+                              <Value>Código del cliente</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox12</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox4">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Nombre del cliente</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox6">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Dirección del cliente</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox8">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Teléfono del cliente</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox10">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Correo del cliente</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -67,11 +222,17 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nomb Cli</Value>
-                              <Style />
+                              <Value>Estado del cliente</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox14</rd:DefaultName>
@@ -80,126 +241,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox16">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Direc Cli</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox16</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox18">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Tel Cli</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox18</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox20">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Correo Cli</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox20</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox23">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Estado Cliente</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox23</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -211,7 +253,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>1.27469cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -223,10 +265,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CodCli.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>CodCli</rd:DefaultName>
@@ -253,10 +300,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!NombCli.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>NombCli</rd:DefaultName>
@@ -283,10 +335,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!DirecCli.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>DirecCli</rd:DefaultName>
@@ -313,10 +370,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!TelCli.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>TelCli</rd:DefaultName>
@@ -343,10 +405,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!CorreoCli.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>CorreoCli</rd:DefaultName>
@@ -365,21 +432,26 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="EstadoCliente">
+                    <Textbox Name="Column1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!EstadoCliente.Value</Value>
-                              <Style />
+                              <Value>=Fields!Column1.Value</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                                <FontSize>11pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>EstadoCliente</rd:DefaultName>
+                      <rd:DefaultName>Column1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -417,11 +489,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>Cliente</DataSetName>
-        <Top>2.06058cm</Top>
-        <Left>2.55292cm</Left>
-        <Height>1.2cm</Height>
-        <Width>15cm</Width>
+        <DataSetName>Clientes</DataSetName>
+        <Top>1.50495cm</Top>
+        <Left>0.51727cm</Left>
+        <Height>2.54938cm</Height>
+        <Width>20.70133cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -429,13 +501,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>11in</Height>
+    <Height>2.3125in</Height>
     <Style />
   </Body>
   <Width>8.5in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>3.42828cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -460,10 +532,12 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de Clientes</Value>
+                  <Value>Reporte de clientes</Value>
                   <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <TextDecoration>Underline</TextDecoration>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -474,7 +548,7 @@
           <Top>1.38995cm</Top>
           <Left>8.33375cm</Left>
           <Height>0.81526cm</Height>
-          <Width>5.4898cm</Width>
+          <Width>5.98441cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -491,6 +565,7 @@
         <Border>
           <Style>None</Style>
         </Border>
+        <BackgroundColor>LightGrey</BackgroundColor>
       </Style>
     </PageHeader>
     <PageFooter>
@@ -505,16 +580,18 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Pagina:</Value>
-                  <Style />
+                  <Value>Página:</Value>
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>0.5818cm</Top>
-          <Left>7.39997cm</Left>
+          <Top>0.66118cm</Top>
+          <Left>8.33375cm</Left>
           <Height>0.6cm</Height>
           <Width>1.36292cm</Width>
           <Style>
@@ -535,17 +612,19 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Globals!PageNumber</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.5818cm</Top>
-          <Left>8.76289cm</Left>
+          <Top>0.66118cm</Top>
+          <Left>9.69667cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>0.72729cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -565,15 +644,17 @@
               <TextRuns>
                 <TextRun>
                   <Value>De:</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox24</rd:DefaultName>
-          <Top>0.5818cm</Top>
-          <Left>11.26289cm</Left>
+          <Top>0.66118cm</Top>
+          <Left>10.42396cm</Left>
           <Height>0.6cm</Height>
           <Width>0.75375cm</Width>
           <ZIndex>2</ZIndex>
@@ -595,15 +676,19 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Globals!TotalPages</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>0.5818cm</Top>
-          <Left>12.01794cm</Left>
+          <Top>0.66118cm</Top>
+          <Left>11.17771cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>3</ZIndex>
@@ -625,15 +710,17 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Globals!ExecutionTime</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>1.3582cm</Top>
-          <Left>18.06336cm</Left>
+          <Top>1.43757cm</Top>
+          <Left>17.76838cm</Left>
           <Height>0.6cm</Height>
           <Width>3.1375cm</Width>
           <ZIndex>4</ZIndex>
@@ -654,18 +741,20 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Copyrigh</Value>
-                  <Style />
+                  <Value>Copyrigh Bazar Roxana</Value>
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Top>1.3582cm</Top>
-          <Left>9.51794cm</Left>
+          <Top>1.43757cm</Top>
+          <Left>9.06167cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>3.98104cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -682,6 +771,7 @@
         <Border>
           <Style>None</Style>
         </Border>
+        <BackgroundColor>LightGrey</BackgroundColor>
       </Style>
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
@@ -704,7 +794,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="Cliente">
+    <DataSet Name="Clientes">
       <Query>
         <DataSourceName>BazarRoxana</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -734,10 +824,14 @@
           <DataField>EstadoCliente</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="Column1">
+          <DataField>Column1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>BazarRoxana</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\carlo\OneDrive\Documentos\GitHub\BazarRoxana1\BazarRoxana\BazarRoxana.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\carlo\source\repos\BazarRoxana1\BazarRoxana\BazarRoxana.xsd</rd:SchemaPath>
         <rd:TableName>SelectCliente</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

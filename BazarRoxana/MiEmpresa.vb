@@ -581,20 +581,20 @@ Public Class MiEmpresa
                         If NumerosEnteros(folio, 1, 999999) Then
                             resultado = True
                         Else
-                            MessageBox.Show("el folio debe estar en un rango del 00001-99999", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                            MessageBox.Show("El folio debe estar en un rango del 00001-99999", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                         txtRTN.Focus()
 
 
                     End If
                     Else
-                    MessageBox.Show("el año debe estar en un rango del 1900-2100", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    MessageBox.Show("El año debe estar en un rango del 1900-2100", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     txtRTN.Focus()
                     End If
                 Else
                     Return False
                 End If
             Else
-            MessageBox.Show("1. Los primeros dos numeros del RTN. " & vbLf & "2.Deben estar en un rango de 1-18.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("1. Los primeros dos numeros del RTN. " & vbLf & "2. Deben estar en un rango de 1-18.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             txtRTN.Focus()
                 Return False
             End If
@@ -612,8 +612,8 @@ Public Class MiEmpresa
 
         Private Function NumerosEnteros2(ByVal valor As Integer, ByVal li As Integer, ByVal ls As Integer) As Boolean
             If valor < li OrElse valor > ls Then
-                MessageBox.Show(String.Concat("Los siguientes dos digitos: ", valor, " del municipio.", vbLf & "Solo se permiten numero del rango: ", li, " y ", ls, "."), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Return False
+            MessageBox.Show(String.Concat("Los siguientes dos dígitos: ", valor, " del municipio.", vbLf & "Solo se permiten número del rango: ", li, " y ", ls, "."), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return False
             Else
                 Return True
             End If

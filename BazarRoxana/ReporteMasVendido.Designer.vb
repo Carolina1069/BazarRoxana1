@@ -25,23 +25,13 @@ Partial Class ReporteMasVendido
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReporteMasVendido))
-        Me.SelectMasVendidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BazarRoxana = New BazarRoxana()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.BazarRoxana = New BazarRoxana()
+        Me.SelectMasVendidoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SelectMasVendidoTableAdapter = New BazarRoxanaTableAdapters.SelectMasVendidoTableAdapter()
-        CType(Me.SelectMasVendidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SelectMasVendidoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'SelectMasVendidoBindingSource
-        '
-        Me.SelectMasVendidoBindingSource.DataMember = "SelectMasVendido"
-        Me.SelectMasVendidoBindingSource.DataSource = Me.BazarRoxana
-        '
-        'BazarRoxana
-        '
-        Me.BazarRoxana.DataSetName = "BazarRoxana"
-        Me.BazarRoxana.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -56,6 +46,16 @@ Partial Class ReporteMasVendido
         Me.ReportViewer1.Size = New System.Drawing.Size(800, 749)
         Me.ReportViewer1.TabIndex = 0
         '
+        'BazarRoxana
+        '
+        Me.BazarRoxana.DataSetName = "BazarRoxana"
+        Me.BazarRoxana.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SelectMasVendidoBindingSource
+        '
+        Me.SelectMasVendidoBindingSource.DataMember = "SelectMasVendido"
+        Me.SelectMasVendidoBindingSource.DataSource = Me.BazarRoxana
+        '
         'SelectMasVendidoTableAdapter
         '
         Me.SelectMasVendidoTableAdapter.ClearBeforeFill = True
@@ -67,11 +67,10 @@ Partial Class ReporteMasVendido
         Me.ClientSize = New System.Drawing.Size(800, 749)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
         Me.Name = "ReporteMasVendido"
-        Me.Text = "Reporte de los Productos Mas Vendido"
-        CType(Me.SelectMasVendidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "Reporte de los productos más vendidos"
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SelectMasVendidoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -97,7 +97,7 @@ Module ConexionLogin
     ' fin
 
     Function CodUltimaVenta() As String
-
+        AbrirConeccion()
         Dim resultado As Boolean = False
         Dim cod As String = 0
         Try
@@ -115,7 +115,7 @@ Module ConexionLogin
         End Try
 
         Return cod
-
+        ConexionBase.Close()
     End Function
 
     Function UsuarioRegistrado(ByVal nombreUsuario As String) As Boolean

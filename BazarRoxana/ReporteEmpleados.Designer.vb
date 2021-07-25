@@ -25,13 +25,26 @@ Partial Class ReporteEmpleados
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReporteEmpleados))
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SelectEmpleadoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BazarRoxana = New BazarRoxana()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.SelectEmpleadoTableAdapter = New BazarRoxanaTableAdapters.SelectEmpleadoTableAdapter()
         CType(Me.SelectEmpleadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ReportViewer1
+        '
+        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
+        ReportDataSource1.Name = "Empleados"
+        ReportDataSource1.Value = Me.SelectEmpleadoBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "BazarRoxana.RpEmpleados.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.ServerReport.BearerToken = Nothing
+        Me.ReportViewer1.Size = New System.Drawing.Size(819, 486)
+        Me.ReportViewer1.TabIndex = 0
         '
         'SelectEmpleadoBindingSource
         '
@@ -43,19 +56,6 @@ Partial Class ReporteEmpleados
         Me.BazarRoxana.DataSetName = "BazarRoxana"
         Me.BazarRoxana.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'ReportViewer1
-        '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource1.Name = "Empleado"
-        ReportDataSource1.Value = Me.SelectEmpleadoBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "BazarRoxana.RpEmpleados.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(800, 749)
-        Me.ReportViewer1.TabIndex = 0
-        '
         'SelectEmpleadoTableAdapter
         '
         Me.SelectEmpleadoTableAdapter.ClearBeforeFill = True
@@ -64,12 +64,12 @@ Partial Class ReporteEmpleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 749)
+        Me.ClientSize = New System.Drawing.Size(819, 486)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
         Me.Name = "ReporteEmpleados"
-        Me.Text = "Reporte de los Empleados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Reporte de los empleados"
         CType(Me.SelectEmpleadoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

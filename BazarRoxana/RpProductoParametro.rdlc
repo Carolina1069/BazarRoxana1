@@ -2,69 +2,87 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix1">
+      <Tablix Name="Tablix2">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.96016cm</Width>
+              <Width>1.9587cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96016cm</Width>
+              <Width>1.9587cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96016cm</Width>
+              <Width>2.00295cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96016cm</Width>
+              <Width>2.37947cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96016cm</Width>
+              <Width>1.9587cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96016cm</Width>
+              <Width>1.9587cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96016cm</Width>
+              <Width>1.9587cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96016cm</Width>
+              <Width>1.9587cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96016cm</Width>
+              <Width>1.9587cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96016cm</Width>
+              <Width>1.9587cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.96016cm</Width>
+              <Width>1.9587cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.5525cm</Height>
+              <Height>1.39375cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox8">
+                    <Textbox Name="Textbox2">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Codigo del Producto</Value>
-                              <Style />
+                              <Value>Código </Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>del producto</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox8</rd:DefaultName>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -75,26 +93,31 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox10">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nombre  del Producto</Value>
-                              <Style />
+                              <Value>Nombre  del producto</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox10</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -105,26 +128,31 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox12">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Descripcion</Value>
-                              <Style />
+                              <Value>Artículo</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox12</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -135,26 +163,31 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox14">
+                    <Textbox Name="Textbox9">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Codigo Proveedor</Value>
-                              <Style />
+                              <Value>Descripción</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox14</rd:DefaultName>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -165,26 +198,31 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox16">
+                    <Textbox Name="Textbox13">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Precio#1</Value>
-                              <Style />
+                              <Value>Nombre del  proveedor</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox16</rd:DefaultName>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -195,26 +233,31 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox18">
+                    <Textbox Name="Textbox17">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Precio#2</Value>
-                              <Style />
+                              <Value>Primer precio</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox18</rd:DefaultName>
+                      <rd:DefaultName>Textbox17</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -225,26 +268,31 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox20">
+                    <Textbox Name="Textbox21">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Precio#3</Value>
-                              <Style />
+                              <Value>Segundo precio</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox20</rd:DefaultName>
+                      <rd:DefaultName>Textbox21</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -255,26 +303,31 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox23">
+                    <Textbox Name="Textbox28">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Unidades En Stock</Value>
-                              <Style />
+                              <Value>Tercer precio</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox23</rd:DefaultName>
+                      <rd:DefaultName>Textbox28</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -285,26 +338,31 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox26">
+                    <Textbox Name="Textbox32">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Unidades En Stock</Value>
-                              <Style />
+                              <Value>Unidades en stock</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox26</rd:DefaultName>
+                      <rd:DefaultName>Textbox32</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -315,7 +373,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox29">
+                    <Textbox Name="Textbox34">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -323,18 +381,23 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Unidades Minimas</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox29</rd:DefaultName>
+                      <rd:DefaultName>Textbox34</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -345,7 +408,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox31">
+                    <Textbox Name="Textbox36">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -353,18 +416,23 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Unidades Maximas</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox31</rd:DefaultName>
+                      <rd:DefaultName>Textbox36</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -376,25 +444,27 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>1.5525cm</Height>
+              <Height>0.6cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CodigoProducto">
+                    <Textbox Name="CodProduc">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CodigoProducto.Value</Value>
-                              <Style />
+                              <Value>=Fields!CodProduc.Value</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CodigoProducto</rd:DefaultName>
+                      <rd:DefaultName>CodProduc</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -410,21 +480,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="NombreProducto">
+                    <Textbox Name="NombProduc">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!NombreProducto.Value</Value>
-                              <Style />
+                              <Value>=Fields!NombProduc.Value</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>NombreProducto</rd:DefaultName>
+                      <rd:DefaultName>NombProduc</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -440,7 +512,39 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Descripcion">
+                    <Textbox Name="DescripProduc">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!DescripProduc.Value</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>DescripProduc</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Descripcion1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -448,13 +552,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Descripcion.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Descripcion</rd:DefaultName>
+                      <rd:DefaultName>Descripcion1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -470,21 +576,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CodigoProveedor">
+                    <Textbox Name="NombProv">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CodigoProveedor.Value</Value>
-                              <Style />
+                              <Value>=Fields!NombProv.Value</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CodigoProveedor</rd:DefaultName>
+                      <rd:DefaultName>NombProv</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -500,7 +608,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="PrimerPrecio">
+                    <Textbox Name="PrimerPrecio1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -508,13 +616,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!PrimerPrecio.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>PrimerPrecio</rd:DefaultName>
+                      <rd:DefaultName>PrimerPrecio1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -530,7 +640,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="SegundoPrecio">
+                    <Textbox Name="SegundoPrecio1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -538,13 +648,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!SegundoPrecio.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>SegundoPrecio</rd:DefaultName>
+                      <rd:DefaultName>SegundoPrecio1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -560,7 +672,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="TercerPrecio">
+                    <Textbox Name="TercerPrecio1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -568,13 +680,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!TercerPrecio.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>TercerPrecio</rd:DefaultName>
+                      <rd:DefaultName>TercerPrecio1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -590,21 +704,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="UnidadesEnStock">
+                    <Textbox Name="UnidadesStock">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!UnidadesEnStock.Value</Value>
-                              <Style />
+                              <Value>=Fields!UnidadesStock.Value</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>UnidadesEnStock</rd:DefaultName>
+                      <rd:DefaultName>UnidadesStock</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -620,21 +736,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="UnidadesEnStock1">
+                    <Textbox Name="Minimo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!UnidadesEnStock.Value</Value>
-                              <Style />
+                              <Value>=Fields!Minimo.Value</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>UnidadesEnStock1</rd:DefaultName>
+                      <rd:DefaultName>Minimo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -650,51 +768,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="UnidadesMinimas">
+                    <Textbox Name="Maximo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!UnidadesMinimas.Value</Value>
-                              <Style />
+                              <Value>=Fields!Maximo.Value</Value>
+                              <Style>
+                                <FontFamily>Century Schoolbook</FontFamily>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>UnidadesMinimas</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="UnidadesMaximas">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!UnidadesMaximas.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>UnidadesMaximas</rd:DefaultName>
+                      <rd:DefaultName>Maximo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -733,14 +823,14 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="Detalles" />
+              <Group Name="Detalles1" />
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>ProductoParametro</DataSetName>
-        <Top>1.18745cm</Top>
-        <Height>3.105cm</Height>
-        <Width>21.56176cm</Width>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>2.21933cm</Top>
+        <Height>1.99375cm</Height>
+        <Width>22.01077cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -748,13 +838,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>11in</Height>
+    <Height>2.65869in</Height>
     <Style />
   </Body>
-  <Width>8.54929in</Width>
+  <Width>8.66566in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>3.42828cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -779,10 +869,12 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de Producto por Categoria</Value>
+                  <Value>Reporte de producto por categoría</Value>
                   <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
                     <FontSize>16pt</FontSize>
                     <FontWeight>Bold</FontWeight>
+                    <TextDecoration>Underline</TextDecoration>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -791,9 +883,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>1.05516cm</Top>
-          <Left>5.69338cm</Left>
+          <Left>5.89212cm</Left>
           <Height>0.81526cm</Height>
-          <Width>9.868cm</Width>
+          <Width>10.34425cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -810,6 +902,7 @@
         <Border>
           <Style>None</Style>
         </Border>
+        <BackgroundColor>LightGrey</BackgroundColor>
       </Style>
     </PageHeader>
     <PageFooter>
@@ -824,16 +917,18 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Pagina:</Value>
-                  <Style />
+                  <Value>Página:</Value>
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox22</rd:DefaultName>
-          <Top>0.5818cm</Top>
-          <Left>7.89804cm</Left>
+          <Top>0.60826cm</Top>
+          <Left>8.16833cm</Left>
           <Height>0.6cm</Height>
           <Width>1.36292cm</Width>
           <Style>
@@ -854,17 +949,19 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Globals!PageNumber</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.5818cm</Top>
-          <Left>9.26096cm</Left>
+          <Top>0.60826cm</Top>
+          <Left>9.53125cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>0.72729cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -884,15 +981,17 @@
               <TextRuns>
                 <TextRun>
                   <Value>De:</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox24</rd:DefaultName>
-          <Top>0.5818cm</Top>
-          <Left>11.76096cm</Left>
+          <Top>0.60826cm</Top>
+          <Left>10.25854cm</Left>
           <Height>0.6cm</Height>
           <Width>0.75375cm</Width>
           <ZIndex>2</ZIndex>
@@ -914,15 +1013,19 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Globals!TotalPages</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
-              <Style />
+              <Style>
+                <TextAlign>Left</TextAlign>
+              </Style>
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>TotalPages</rd:DefaultName>
-          <Top>0.5818cm</Top>
-          <Left>12.51601cm</Left>
+          <Top>0.60826cm</Top>
+          <Left>11.01229cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>3</ZIndex>
@@ -944,15 +1047,17 @@
               <TextRuns>
                 <TextRun>
                   <Value>=Globals!ExecutionTime</Value>
-                  <Style />
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>1.3582cm</Top>
-          <Left>18.18356cm</Left>
+          <Top>1.38466cm</Top>
+          <Left>17.60296cm</Left>
           <Height>0.6cm</Height>
           <Width>3.1375cm</Width>
           <ZIndex>4</ZIndex>
@@ -973,18 +1078,20 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Copyrigh</Value>
-                  <Style />
+                  <Value>Copyrigh Bazar Roxana</Value>
+                  <Style>
+                    <FontFamily>Century Schoolbook</FontFamily>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox27</rd:DefaultName>
-          <Top>1.3582cm</Top>
-          <Left>10.01601cm</Left>
+          <Top>1.38466cm</Top>
+          <Left>8.89625cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>3.98104cm</Width>
           <ZIndex>5</ZIndex>
           <Style>
             <Border>
@@ -1001,6 +1108,7 @@
         <Border>
           <Style>None</Style>
         </Border>
+        <BackgroundColor>LightGrey</BackgroundColor>
       </Style>
     </PageFooter>
     <PageHeight>29.7cm</PageHeight>
@@ -1023,39 +1131,31 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="ProductoParametro">
+    <DataSet Name="DataSet1">
       <Query>
         <DataSourceName>BazarRoxana</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="CodigoProducto">
-          <DataField>CodigoProducto</DataField>
+        <Field Name="CodProduc">
+          <DataField>CodProduc</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="NombreProducto">
-          <DataField>NombreProducto</DataField>
+        <Field Name="NombProduc">
+          <DataField>NombProduc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DescripProduc">
+          <DataField>DescripProduc</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Descripcion">
           <DataField>Descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="CodigoProveedor">
-          <DataField>CodigoProveedor</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="UnidadesEnStock">
-          <DataField>UnidadesEnStock</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="UnidadesMinimas">
-          <DataField>UnidadesMinimas</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="UnidadesMaximas">
-          <DataField>UnidadesMaximas</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="NombProv">
+          <DataField>NombProv</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="PrimerPrecio">
           <DataField>PrimerPrecio</DataField>
@@ -1069,10 +1169,22 @@
           <DataField>TercerPrecio</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="UnidadesStock">
+          <DataField>UnidadesStock</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Minimo">
+          <DataField>Minimo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Maximo">
+          <DataField>Maximo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>BazarRoxana</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\carlo\OneDrive\Documentos\GitHub\BazarRoxana1\BazarRoxana\BazarRoxana.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\carlo\source\repos\BazarRoxana1\BazarRoxana\BazarRoxana.xsd</rd:SchemaPath>
         <rd:TableName>SelectProductoParametro</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

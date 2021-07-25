@@ -4,9 +4,33 @@ Public Class Ventas
 
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProducto.TextChanged
         AbrirConeccion()
-
         Dim produ As Integer
         produ = Val(TxtCodProducto.Text)
+
+        Dim Recuperar As String = "select * from Producto where CodProduc= '" & produ & "'"
+        Dim Mostrar As SqlDataReader
+        Dim Ejecutar As SqlCommand
+        Ejecutar = New SqlCommand(Recuperar, ConexionBase)
+        Mostrar = Ejecutar.ExecuteReader
+        Dim Estado As String
+        Estado = Mostrar.Read
+
+        If (Estado = True) Then
+            TxtNombreProducto.Text = Mostrar(1)
+            TxtArticulo.Text = Mostrar(2)
+            TxtDesc.Text = Mostrar(3)
+            TxtUnidades.Text = Mostrar(11)
+            txMinimo.Text = Mostrar(12)
+        Else
+            TxtNombreProducto.Text = ""
+            TxtArticulo.Text = ""
+            TxtDesc.Text = ""
+            TxtUnidades.Text = ""
+            CbxPrecio.Text = ""
+            txMinimo.Text = ""
+        End If
+        Mostrar.Close()
+
         AbrirConeccion()
 
         Dim DATOSusuarios As New DataTable 'tabla temporal que recoge los datos de la consulta
@@ -27,7 +51,7 @@ Public Class Ventas
         Dim Subtotal2 As Double
         Dim SubTotal1 As Integer
         Dim Impuesto As Double
-        Impuesto = 0.25
+        Impuesto = 0.15
 
         Dim Cantidad As Integer
         Dim UnidadStock As Integer
@@ -48,13 +72,15 @@ Public Class Ventas
             SubTotal1 = (Val(CbxPrecio.Text) * Val(TxtCantidad.Text))
             Subtotal2 = SubTotal1 * Impuesto
             Subtotal = SubTotal1 + Subtotal2
-            DGV.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, Impuesto, TxtCantidad.Text, CbxPrecio.Text, Subtotal)
+            DGV.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtArticulo.Text, TxtDesc.Text, Impuesto, TxtCantidad.Text, CbxPrecio.Text, Subtotal)
             For Each row As DataGridViewRow In DGV.Rows
-                Total += Val(row.Cells(5).Value)
+                Total += Val(row.Cells(7).Value)
             Next
             TxtTotal.Text = Total.ToString
             TxtCodProducto.Clear()
             TxtNombreProducto.Clear()
+            TxtArticulo.Clear()
+            TxtCantidad.Clear()
             CbxPrecio.Text = ""
             TxtCantidad.Clear()
             TxtUnidades.Clear()
@@ -76,7 +102,7 @@ Public Class Ventas
             DGV.Rows.Remove(DGV.CurrentRow)
             Dim Total As Single
             For Each row As DataGridViewRow In DGV.Rows
-                Total -= Val(row.Cells(5).Value)
+                Total -= Val(row.Cells(7).Value)
             Next
             TxtTotal.Text = -Total
         End If
@@ -123,7 +149,7 @@ Public Class Ventas
                 ejecutar.Parameters.AddWithValue("@Total", Val(TxtTotal.Text))
                 ejecutar.ExecuteNonQuery()
 
-                Dim DatosFacturaD As String = "insert into DetalleVentas(NumVent, CodProduc , NombProduc, Impuesto , CantVenta, PrecioVenta, SubTotal) values(@NumVent, @CodProduc , @NombProduc, @Impuesto , @CantVenta, @PrecioVenta,  @SubTotal)"
+                Dim DatosFacturaD As String = "insert into DetalleVentas(NumVent, CodProduc , NombProduc,Articulo ,Descripcion,Impuesto , CantVenta, PrecioVenta, SubTotal) values(@NumVent, @CodProduc , @NombProduc,@Articulo ,@Descripcion, @Impuesto , @CantVenta, @PrecioVenta,  @SubTotal)"
                 Dim RegistrarD As New SqlCommand(DatosFacturaD, ConexionBase)
 
                 Dim fila As DataGridViewRow = New DataGridViewRow()
@@ -132,6 +158,8 @@ Public Class Ventas
                     RegistrarD.Parameters.AddWithValue("@NumVent", Val(txNumVenta.Text))
                     RegistrarD.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
                     RegistrarD.Parameters.AddWithValue("@NombProduc", fila.Cells("NombProduc").Value)
+                    RegistrarD.Parameters.AddWithValue("@Articulo", fila.Cells("Artículo").Value)
+                    RegistrarD.Parameters.AddWithValue("@Descripcion", fila.Cells("Descripción").Value)
                     RegistrarD.Parameters.AddWithValue("@Impuesto", fila.Cells("Impuesto").Value)
                     RegistrarD.Parameters.AddWithValue("@CantVenta", fila.Cells("CantVenta").Value)
                     RegistrarD.Parameters.AddWithValue("@PrecioVenta", fila.Cells("PrecioVenta").Value)
@@ -158,6 +186,8 @@ Public Class Ventas
                 TxtNombreProducto.Clear()
 
                 total = 0
+                codUltmaVenta = CodUltimaVenta()
+                txNumVenta.Text = codUltmaVenta
                 MsgBox("Venta registrada con éxito", MessageBoxIcon.Information, "Compra")
                 FacturaVenta.Show() '<-- Llamada al formulario de la factura  
             Else
@@ -213,9 +243,15 @@ Public Class Ventas
 
         AbrirConeccion()
 
-        Dim CodUVenta As String = CodUltimaVenta() '<-- Declaracion de una variable tipo string para igualarla a la funcion CodUltimaVenta
+        codUltmaVenta = CodUltimaVenta()
 
-        txNumVenta.Text = CodUVenta
+        If codUltmaVenta = "0" Then
+            txNumVenta.Text = "1"
+        Else
+            txNumVenta.Text = codUltmaVenta
+        End If
+
+
         TxtCodEmple.Text = Login.TxtNombreEmpleado.Text
         lbUsuario.Text = Login.TxtNombreEmpleado.Text
 

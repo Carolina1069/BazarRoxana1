@@ -53,7 +53,7 @@ Partial Class ReporteProveedores
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
-        Me.ReportViewer1.Size = New System.Drawing.Size(800, 749)
+        Me.ReportViewer1.Size = New System.Drawing.Size(839, 586)
         Me.ReportViewer1.TabIndex = 0
         '
         'SelectProveedorTableAdapter
@@ -64,12 +64,12 @@ Partial Class ReporteProveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 749)
+        Me.ClientSize = New System.Drawing.Size(839, 586)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "ReporteProveedores"
-        Me.Text = "Reporte de los Proveedores"
+        Me.Text = "Reporte de los proveedores"
         CType(Me.SelectProveedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
