@@ -754,7 +754,4 @@ Public Class Productos
         TxtNombreCategoria.Clear()
     End Sub
 
-    Private Sub DgvProductos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-
-    End Sub
 End Class
