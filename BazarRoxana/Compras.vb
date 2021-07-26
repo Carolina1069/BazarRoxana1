@@ -5,8 +5,8 @@ Public Class Compras
     Private Sub TxtCodProv_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCodProv.KeyPress
         SoloNumeros(e)
     End Sub
-    Dim tipoPago As Integer = 0
-    Dim tipoTransac As Integer = 0
+    Dim TipoPago As Integer = 0
+    Dim TipoTransac As Integer = 0
     Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProv.TextChanged
         AbrirConeccion()
         Dim Recuperar As String = "select * from Proveedores where CodProv= '" & TxtCodProv.Text & "'"
@@ -44,7 +44,7 @@ Public Class Compras
     End Sub
 
     Private Sub TxtCodPago_TextChanged(sender As Object, e As EventArgs)
-        Dim pago As Integer
+        Dim Pago As Integer
         'pago = Val(TxtCodPago.Text)
         'If pago >= 1 And pago <= 2 Or TxtCodPago.Text = "" Then
         'abrir()
@@ -70,7 +70,7 @@ Public Class Compras
     End Sub
 
     Private Sub TxtCodTransa_TextChanged(sender As Object, e As EventArgs)
-        Dim tran As Integer
+        Dim Tran As Integer
         ' tran = Val(TxtCodTransa.Text)
         'If tran >= 1 And tran <= 3 Or TxtCodTransa.Text = "" Then
         AbrirConeccion()
@@ -95,10 +95,10 @@ Public Class Compras
     End Sub
 
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProducto.TextChanged
-        Dim produ As Integer
-        produ = Val(TxtCodProducto.Text)
+        Dim Produ As Integer
+        Produ = Val(TxtCodProducto.Text)
         AbrirConeccion()
-        Dim Recuperar As String = "select * from Producto where CodProduc= '" & produ & "'"
+        Dim Recuperar As String = "select * from Producto where CodProduc= '" & Produ & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
         Ejecutar = New SqlCommand(Recuperar, ConexionBase)
@@ -108,23 +108,27 @@ Public Class Compras
 
         If (Estado = True) Then
             TxtNombreProducto.Text = Mostrar(1)
+            TxtArticulo.Text = Mostrar(2)
+            TxtDesc.Text = Mostrar(3)
             TxtUnidades.Text = Mostrar(11)
-            txMaximo.Text = Mostrar(13)
+            TxtMaximo.Text = Mostrar(13)
         Else
             TxtNombreProducto.Text = ""
             TxtUnidades.Text = ""
+            TxtArticulo.Text = ""
+            TxtDesc.Text = ""
             CbxPrecio.Text = ""
-            txMaximo.Text = ""
+            TxtMaximo.Text = ""
         End If
         Mostrar.Close()
 
-        Dim DATOSusuarios As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & produ & "'", ConexionBase)
-            adaptador.Fill(DATOSusuarios)
+        Dim DatosUsuarios As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using adaptador As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & Produ & "'", ConexionBase)
+            adaptador.Fill(DatosUsuarios)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
         'DGV.DataSource = DATOSusuarios
-        CbxPrecio.DataSource = DATOSusuarios
+        CbxPrecio.DataSource = DatosUsuarios
         CbxPrecio.DisplayMember = "Precios"
 
         ConexionBase.Close()
@@ -138,14 +142,14 @@ Public Class Compras
         Dim Impuesto As Double
 
         Dim Max As Integer
-        Dim suma As Integer
+        Dim Suma As Integer
 
-        Max = Val(txMaximo.Text)
+        Max = Val(TxtMaximo.Text)
 
         suma = (Val(TxtUnidades.Text) + Val(TxtCantidad.Text))
 
 
-        If TxtCodProducto.Text = "" Or TxtNombreProducto.Text = "" Or CbxPrecio.Text = "" Or TxtUnidades.Text = "" Or txMaximo.Text = "" Then
+        If TxtCodProducto.Text = "" Or TxtNombreProducto.Text = "" Or CbxPrecio.Text = "" Or TxtUnidades.Text = "" Or TxtMaximo.Text = "" Then
 
             MsgBox("Porfavor realice la búsqueda del producto", MessageBoxIcon.Exclamation, "Venta")
 
@@ -191,21 +195,21 @@ Public Class Compras
     End Sub
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
-        Dim total As Integer
+        Dim Total As Integer
         AbrirConeccion()
 
 
-        If txNumCompra.Text = "" Or TxtCodProv.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
+        If TxtNumCompra.Text = "" Or TxtCodProv.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
-            If RegistradoCompras(txNumCompra.Text) = False Then
+            If RegistradoCompras(TxtNumCompra.Text) = False Then
                 Try
                     Dim ConsultaGuardar As String = "insert into Compras(CodProv, CodPago, CodTransa, CodEmple, FechayHora, Total) values( @CodProv, @CodPago, @CodTransa, @CodEmple, GETDATE(), @Total)"
                     Dim ejecutar As New SqlCommand(ConsultaGuardar, ConexionBase)
 
                     ejecutar.Parameters.AddWithValue("@CodProv", Val(TxtCodProv.Text))
-                    ejecutar.Parameters.AddWithValue("@CodPago", Val(tipoPago))
-                    ejecutar.Parameters.AddWithValue("@CodTransa", Val(tipoTransac))
+                    ejecutar.Parameters.AddWithValue("@CodPago", Val(TipoPago))
+                    ejecutar.Parameters.AddWithValue("@CodTransa", Val(TipoTransac))
                     ejecutar.Parameters.AddWithValue("@CodEmple", Val(TxtCodEmple.Text))
                     ejecutar.Parameters.AddWithValue("@Total", Val(TxtTotal.Text))
 
@@ -220,7 +224,7 @@ Public Class Compras
                 Dim fila As DataGridViewRow = New DataGridViewRow()
                 For Each fila In DGV.Rows
                     RegistrarD.Parameters.Clear()
-                    RegistrarD.Parameters.AddWithValue("@NumCompra", Val(txNumCompra.Text))
+                    RegistrarD.Parameters.AddWithValue("@NumCompra", Val(TxtNumCompra.Text))
                     RegistrarD.Parameters.AddWithValue("@CodProduc", fila.Cells("CodProduc").Value)
                     RegistrarD.Parameters.AddWithValue("@NombProduc", fila.Cells("NombProduc").Value)
                     RegistrarD.Parameters.AddWithValue("@Impuesto", fila.Cells("Impuesto").Value)
@@ -238,8 +242,8 @@ Public Class Compras
 
 
                 Next
-                codUltmaVenta = CodUVenta()
-                txNumCompra.Text = codUltmaVenta
+                CodUltmaVenta = CodUVenta()
+                TxtNumCompra.Text = codUltmaVenta
                 MsgBox("Registro de venta Exitoso!")
                 ConexionBase.Close()
                 DGV.Rows.Clear()
@@ -257,7 +261,7 @@ Public Class Compras
                 'TxtTipoTransaccion.Clear()
                 'TxtCodTransa.Clear()
                 'TxtCodPago.Clear()
-                total = 0
+                Total = 0
             Else
                 MsgBox("La compra ya esta registrada")
             End If
@@ -277,7 +281,7 @@ Public Class Compras
         End If
     End Sub
 
-    Private Sub txNumCompra_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txNumCompra.KeyPress
+    Private Sub txNumCompra_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNumCompra.KeyPress
         SoloNumeros(e)
     End Sub
 
@@ -302,10 +306,10 @@ Public Class Compras
     End Sub
 
     Public Sub Compras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cmbTipoPago.SelectedIndex = 0
-        cmbTipoTransac.SelectedIndex = 0
+        CmbTipoPago.SelectedIndex = 0
+        CmbTipoTransac.SelectedIndex = 0
         TxtCodEmple.Text = CodUser
-        TxtCodProv.Text = codProv
+        TxtCodProv.Text = CodProv
         'TxtCodTransa.Visible = False
         'TxtCodPago.Visible = False
         Label5.Visible = False
@@ -313,31 +317,31 @@ Public Class Compras
         TxtTipoPago.Visible = False
         TxtTipoTransaccion.Visible = False
 
-        codUltmaVenta = CodUVenta()
+        CodUltmaVenta = CodUVenta()
 
-        If codUltmaVenta = "0" Then
-            txNumCompra.Text = "1"
+        If CodUltmaVenta = "0" Then
+            TxtNumCompra.Text = "1"
         Else
-            txNumCompra.Text = codUltmaVenta
+            TxtNumCompra.Text = CodUltmaVenta
         End If
 
 
     End Sub
     Public Sub setCodProv()
-        TxtCodProv.Text = codProv
+        TxtCodProv.Text = CodProv
 
     End Sub
-    Private Sub cmbTipoPago_TabIndexChanged(sender As Object, e As EventArgs) Handles cmbTipoPago.TabIndexChanged
+    Private Sub cmbTipoPago_TabIndexChanged(sender As Object, e As EventArgs) Handles CmbTipoPago.TabIndexChanged
 
     End Sub
 
-    Private Sub cmbTipoPago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTipoPago.SelectedIndexChanged
-        Dim pago As Integer
-        tipoPago = cmbTipoPago.SelectedIndex + 1
+    Private Sub cmbTipoPago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbTipoPago.SelectedIndexChanged
+        Dim Pago As Integer
+        TipoPago = CmbTipoPago.SelectedIndex + 1
         'pago = Val(TxtCodPago.Text)
-        If tipoPago >= 1 And tipoPago <= 2 Then
+        If TipoPago >= 1 And TipoPago <= 2 Then
             AbrirConeccion()
-            Dim Recuperar As String = "select * from FormasPago where CodPago= '" & tipoPago & "'"
+            Dim Recuperar As String = "select * from FormasPago where CodPago= '" & TipoPago & "'"
             Dim Mostrar As SqlDataReader
             Dim Ejecutar As SqlCommand
             Ejecutar = New SqlCommand(Recuperar, ConexionBase)
@@ -357,11 +361,11 @@ Public Class Compras
         End If
     End Sub
 
-    Private Sub cmbTipoTransac_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbTipoTransac.SelectedIndexChanged
-        Dim tran As Integer
+    Private Sub cmbTipoTransac_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbTipoTransac.SelectedIndexChanged
+        Dim Tran As Integer
         'tran = Val(TxtCodTransa.Text)
 
-        tipoTransac = cmbTipoTransac.SelectedIndex + 1
+        TipoTransac = CmbTipoTransac.SelectedIndex + 1
         If tipoTransac >= 1 And tipoTransac <= 3 Then
             AbrirConeccion()
             Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & tipoTransac & "'"

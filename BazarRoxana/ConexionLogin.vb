@@ -11,7 +11,7 @@ Module ConexionLogin
     Sub AbrirConeccion()
 
         Try
-            ConexionBase = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+            ConexionBase = New SqlConnection("Data Source=(Local)\SQLEXPRESS;Initial Catalog=BazarRoxana;Integrated Security=True")
             ConexionBase.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception
@@ -55,9 +55,9 @@ Module ConexionLogin
 
     'khaleb metodos
     Public CodUser As String = 0
-    Public codProv As String = "1"
+    Public CodProv As String = "1"
     Public ProductosValidar As Integer = 0
-    Public codUltmaVenta As String = 0
+    Public CodUltmaVenta As String = 0
     Function CodUsuario(ByVal nombreUsuario As String) As String
         Dim resultado As Boolean = False
         Dim cod As String = 0
