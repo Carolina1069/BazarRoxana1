@@ -22,10 +22,10 @@ Partial Class Compras
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TxtDesc = New System.Windows.Forms.TextBox()
@@ -33,12 +33,6 @@ Partial Class Compras
         Me.TxtArticulo = New System.Windows.Forms.TextBox()
         Me.CbxPrecio = New System.Windows.Forms.ComboBox()
         Me.DGV = New System.Windows.Forms.DataGridView()
-        Me.CodProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NombProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Impuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnBuscProd = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TxtTotal = New System.Windows.Forms.TextBox()
@@ -78,6 +72,14 @@ Partial Class Compras
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.CodProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Articulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Impuesto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CantProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioProduc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SubTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -168,89 +170,47 @@ Partial Class Compras
         Me.DGV.BackgroundColor = System.Drawing.SystemColors.ScrollBar
         Me.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodProduc, Me.NombProduc, Me.Impuesto, Me.CantProduc, Me.PrecioProduc, Me.SubTotal})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodProduc, Me.NombProduc, Me.Articulo, Me.Descripcion, Me.Impuesto, Me.CantProduc, Me.PrecioProduc, Me.SubTotal})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGV.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGV.EnableHeadersVisualStyles = False
         Me.DGV.GridColor = System.Drawing.SystemColors.ControlLight
         Me.DGV.Location = New System.Drawing.Point(20, 120)
         Me.DGV.Name = "DGV"
         Me.DGV.ReadOnly = True
         Me.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGV.RowHeadersWidth = 51
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ScrollBar
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        Me.DGV.RowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        Me.DGV.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DGV.Size = New System.Drawing.Size(900, 194)
         Me.DGV.TabIndex = 68
-        '
-        'CodProduc
-        '
-        Me.CodProduc.HeaderText = "Código del producto"
-        Me.CodProduc.MinimumWidth = 6
-        Me.CodProduc.Name = "CodProduc"
-        Me.CodProduc.ReadOnly = True
-        '
-        'NombProduc
-        '
-        Me.NombProduc.HeaderText = "Nombre del producto"
-        Me.NombProduc.MinimumWidth = 6
-        Me.NombProduc.Name = "NombProduc"
-        Me.NombProduc.ReadOnly = True
-        '
-        'Impuesto
-        '
-        Me.Impuesto.HeaderText = "Impuesto"
-        Me.Impuesto.MinimumWidth = 6
-        Me.Impuesto.Name = "Impuesto"
-        Me.Impuesto.ReadOnly = True
-        '
-        'CantProduc
-        '
-        Me.CantProduc.HeaderText = "Cantidad del producto"
-        Me.CantProduc.MinimumWidth = 6
-        Me.CantProduc.Name = "CantProduc"
-        Me.CantProduc.ReadOnly = True
-        '
-        'PrecioProduc
-        '
-        Me.PrecioProduc.HeaderText = "Precio del producto"
-        Me.PrecioProduc.MinimumWidth = 6
-        Me.PrecioProduc.Name = "PrecioProduc"
-        Me.PrecioProduc.ReadOnly = True
-        '
-        'SubTotal
-        '
-        Me.SubTotal.HeaderText = "Sub total"
-        Me.SubTotal.MinimumWidth = 6
-        Me.SubTotal.Name = "SubTotal"
-        Me.SubTotal.ReadOnly = True
         '
         'btnBuscProd
         '
@@ -620,6 +580,60 @@ Partial Class Compras
         Me.Label14.TabIndex = 69
         Me.Label14.Text = "Compras"
         '
+        'CodProduc
+        '
+        Me.CodProduc.HeaderText = "Código del producto"
+        Me.CodProduc.MinimumWidth = 6
+        Me.CodProduc.Name = "CodProduc"
+        Me.CodProduc.ReadOnly = True
+        '
+        'NombProduc
+        '
+        Me.NombProduc.HeaderText = "Nombre del producto"
+        Me.NombProduc.MinimumWidth = 6
+        Me.NombProduc.Name = "NombProduc"
+        Me.NombProduc.ReadOnly = True
+        '
+        'Articulo
+        '
+        Me.Articulo.HeaderText = "Articulo"
+        Me.Articulo.Name = "Articulo"
+        Me.Articulo.ReadOnly = True
+        '
+        'Descripcion
+        '
+        Me.Descripcion.HeaderText = "Descripcion"
+        Me.Descripcion.Name = "Descripcion"
+        Me.Descripcion.ReadOnly = True
+        '
+        'Impuesto
+        '
+        Me.Impuesto.HeaderText = "Impuesto"
+        Me.Impuesto.MinimumWidth = 6
+        Me.Impuesto.Name = "Impuesto"
+        Me.Impuesto.ReadOnly = True
+        '
+        'CantProduc
+        '
+        Me.CantProduc.HeaderText = "Cantidad del producto"
+        Me.CantProduc.MinimumWidth = 6
+        Me.CantProduc.Name = "CantProduc"
+        Me.CantProduc.ReadOnly = True
+        '
+        'PrecioProduc
+        '
+        Me.PrecioProduc.HeaderText = "Precio del producto"
+        Me.PrecioProduc.MinimumWidth = 6
+        Me.PrecioProduc.Name = "PrecioProduc"
+        Me.PrecioProduc.ReadOnly = True
+        '
+        'SubTotal
+        '
+        Me.SubTotal.HeaderText = "Sub total"
+        Me.SubTotal.MinimumWidth = 6
+        Me.SubTotal.Name = "SubTotal"
+        Me.SubTotal.ReadOnly = True
+        '
         'Compras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -688,14 +702,16 @@ Partial Class Compras
     Friend WithEvents btnBuscProd As Button
     Friend WithEvents DGV As DataGridView
     Friend WithEvents CbxPrecio As ComboBox
-    Friend WithEvents CodProduc As DataGridViewTextBoxColumn
-    Friend WithEvents NombProduc As DataGridViewTextBoxColumn
-    Friend WithEvents Impuesto As DataGridViewTextBoxColumn
-    Friend WithEvents CantProduc As DataGridViewTextBoxColumn
-    Friend WithEvents PrecioProduc As DataGridViewTextBoxColumn
-    Friend WithEvents SubTotal As DataGridViewTextBoxColumn
     Friend WithEvents Label15 As Label
     Friend WithEvents TxtDesc As TextBox
     Friend WithEvents Label16 As Label
     Friend WithEvents TxtArticulo As TextBox
+    Friend WithEvents CodProduc As DataGridViewTextBoxColumn
+    Friend WithEvents NombProduc As DataGridViewTextBoxColumn
+    Friend WithEvents Articulo As DataGridViewTextBoxColumn
+    Friend WithEvents Descripcion As DataGridViewTextBoxColumn
+    Friend WithEvents Impuesto As DataGridViewTextBoxColumn
+    Friend WithEvents CantProduc As DataGridViewTextBoxColumn
+    Friend WithEvents PrecioProduc As DataGridViewTextBoxColumn
+    Friend WithEvents SubTotal As DataGridViewTextBoxColumn
 End Class

@@ -163,9 +163,9 @@ Public Class Compras
             SubTotal1 = (Val(CbxPrecio.Text) * Val(TxtCantidad.Text))
             Subtotal2 = SubTotal1 * Impuesto
             Subtotal = SubTotal1 + Subtotal2
-            DGV.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, Impuesto, TxtCantidad.Text, CbxPrecio.Text, Subtotal)
+            DGV.Rows.Add(TxtCodProducto.Text, TxtNombreProducto.Text, TxtArticulo.Text, TxtDesc.Text, Impuesto, TxtCantidad.Text, CbxPrecio.Text, Subtotal)
             For Each row As DataGridViewRow In DGV.Rows
-                Total += Val(row.Cells(4).Value)
+                Total += Val(row.Cells(7).Value)
             Next
             TxtTotal.Text = Total.ToString
             TxtCodProducto.Clear()
