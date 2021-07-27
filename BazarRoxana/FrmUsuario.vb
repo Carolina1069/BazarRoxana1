@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class FrmUsuario
-    Private Sub chkMostrarContra_CheckedChanged(sender As Object, e As EventArgs) Handles chkMostrarContra.CheckedChanged
-        TxtContraseña.UseSystemPasswordChar = Not chkMostrarContra.Checked '<-Oculta contraseña
+    Private Sub chkMostrarContra_CheckedChanged(sender As Object, e As EventArgs) Handles ChkMostrarcontra.CheckedChanged
+        TxtContraseña.UseSystemPasswordChar = Not ChkMostrarcontra.Checked '<-Oculta contraseña
     End Sub
 
     Private Sub TxtUsuario_TextChanged(sender As Object, e As EventArgs) Handles TxtUsuario.TextChanged
@@ -28,18 +28,18 @@ Public Class FrmUsuario
     Private Sub FrmUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AbrirConeccion()
 
-        Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
-            adaptador.Fill(DatosEmp)
+        Dim DatosUsu As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using AdaptadorUsu As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
+            AdaptadorUsu.Fill(DatosUsu)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-        DGV.DataSource = DatosEmp
+        DgvUsuarios.DataSource = DatosUsu
         ConexionBase.Close()
     End Sub
 
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
         AbrirConeccion() '<-- Llamado de la funcion 
-        If (txtNombreEmpleado.TextLength < 2) Then
+        If (txtNombreempleado.TextLength < 2) Then
             MessageBox.Show("Debe ingresar como minimo 2 caracteres en nombre del empleado")
         ElseIf (TxtUsuario.TextLength < 2) Then
             MessageBox.Show("Debe ingresar como minimo 2 caracteres en el usuario")
@@ -47,19 +47,19 @@ Public Class FrmUsuario
             MessageBox.Show("Debe ingresar como minimo 8 caracteres en la contraseña")
         Else
 
-            If txtNombreEmpleado.Text = "" Or TxtCodigoEmpleado.Text = "" Or TxtUsuario.Text = "" Or TxtContraseña.Text = "" Then
+            If txtNombreempleado.Text = "" Or TxtCodigoempleado.Text = "" Or TxtUsuario.Text = "" Or TxtContraseña.Text = "" Then
                 MsgBox("Hay campos vacios", MsgBoxStyle.Exclamation, "Advertencia")
             Else
-                If RegistradoUsuario(TxtCodigoEmpleado.Text) = False Then '<-- Llamado de funcion que verifica si el codigo ya esta repetido en la base de datos.
+                If RegistradoUsuario(TxtCodigoempleado.Text) = False Then '<-- Llamado de funcion que verifica si el codigo ya esta repetido en la base de datos.
 
                     If RegistradoNombreUsuario(TxtUsuario.Text) = False Then
-                        Dim consultaGuardar As String = "insert into Usuario(CodEmple, UsuarioEmp, ContraseñaEmp) values(@CodEmple, @UsuarioEmp, @ContraseñaEmp)" '<--Consulta
+                        Dim ConsultaGuardar As String = "insert into Usuario(CodEmple, UsuarioEmp, ContraseñaEmp) values(@CodEmple, @UsuarioEmp, @ContraseñaEmp)" '<--Consulta
                         'Toma los valores de los textbox y los guardas en la base de datos. 
-                        Dim ejecutar As New SqlCommand(consultaGuardar, ConexionBase)
-                        ejecutar.Parameters.AddWithValue("@CodEmple", (TxtCodigoEmpleado.Text))
-                        ejecutar.Parameters.AddWithValue("@UsuarioEmp", (TxtUsuario.Text))
-                        ejecutar.Parameters.AddWithValue("@ContraseñaEmp", (TxtContraseña.Text))
-                        ejecutar.ExecuteNonQuery()
+                        Dim EjecutarCon As New SqlCommand(ConsultaGuardar, ConexionBase)
+                        EjecutarCon.Parameters.AddWithValue("@CodEmple", (TxtCodigoempleado.Text))
+                        EjecutarCon.Parameters.AddWithValue("@UsuarioEmp", (TxtUsuario.Text))
+                        EjecutarCon.Parameters.AddWithValue("@ContraseñaEmp", (TxtContraseña.Text))
+                        EjecutarCon.ExecuteNonQuery()
                         MsgBox("El usuario se a guardado", MsgBoxStyle.Information, "Informacion")
                     Else
                         MsgBox("El nombre de usuario ya esta registrado", MsgBoxStyle.Exclamation, "Advertencia")
@@ -70,19 +70,19 @@ Public Class FrmUsuario
             End If
         End If
 
-        Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
-            adaptador.Fill(DatosEmp)
+        Dim DatosUsu As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using AdaptadorUsu As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
+            AdaptadorUsu.Fill(DatosUsu)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-        DGV.DataSource = DatosEmp
+        DgvUsuarios.DataSource = DatosUsu
 
         ConexionBase.Close()
     End Sub
 
-    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
+    Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
         AbrirConeccion() '<-- Llamado de la funcion 
-        If (txtNombreEmpleado.TextLength < 2) Then
+        If (txtNombreempleado.TextLength < 2) Then
             MessageBox.Show("Debe ingresar como minimo 2 caracteres en nombre del empleado")
         ElseIf (TxtUsuario.TextLength < 2) Then
             MessageBox.Show("Debe ingresar como minimo 2 caracteres en el usuario")
@@ -90,19 +90,19 @@ Public Class FrmUsuario
             MessageBox.Show("Debe ingresar como minimo 8 caracteres en la contraseña")
         Else
 
-            If txtNombreEmpleado.Text = "" Or TxtCodigoEmpleado.Text = "" Or TxtUsuario.Text = "" Or TxtContraseña.Text = "" Then
+            If txtNombreempleado.Text = "" Or TxtCodigoempleado.Text = "" Or TxtUsuario.Text = "" Or TxtContraseña.Text = "" Then
                 MsgBox("Hay campos vacios", MsgBoxStyle.Exclamation, "Advertencia")
             Else
-                If RegistradoUsuario(TxtCodigoEmpleado.Text) = True Then '<-- Llamado de funcion que verifica si el codigo ya esta repetido en la base de datos.
+                If RegistradoUsuario(TxtCodigoempleado.Text) = True Then '<-- Llamado de funcion que verifica si el codigo ya esta repetido en la base de datos.
 
-                    Dim consultaActualizar As String = "update Usuario set CodEmple=@CodEmple, UsuarioEmp=@UsuarioEmp, ContraseñaEmp=@ContraseñaEmp where CodUsuario=@CodUsuario" '<--Consulta
+                    Dim ConsultaActualizar As String = "update Usuario set CodEmple=@CodEmple, UsuarioEmp=@UsuarioEmp, ContraseñaEmp=@ContraseñaEmp where CodUsuario=@CodUsuario" '<--Consulta
                     'Toma los valores de los textbox y los actualiza en la base de datos. 
-                    Dim ejecutar As New SqlCommand(consultaActualizar, ConexionBase)
-                    ejecutar.Parameters.AddWithValue("@CodUsuario", (TxtCodigoUsuario.Text))
-                    ejecutar.Parameters.AddWithValue("@CodEmple", (TxtCodigoEmpleado.Text))
-                    ejecutar.Parameters.AddWithValue("@UsuarioEmp", (TxtUsuario.Text))
-                    ejecutar.Parameters.AddWithValue("@ContraseñaEmp", (TxtContraseña.Text))
-                    ejecutar.ExecuteNonQuery()
+                    Dim EjecutarCon As New SqlCommand(ConsultaActualizar, ConexionBase)
+                    EjecutarCon.Parameters.AddWithValue("@CodUsuario", (TxtCodigousuario.Text))
+                    EjecutarCon.Parameters.AddWithValue("@CodEmple", (TxtCodigoempleado.Text))
+                    EjecutarCon.Parameters.AddWithValue("@UsuarioEmp", (TxtUsuario.Text))
+                    EjecutarCon.Parameters.AddWithValue("@ContraseñaEmp", (TxtContraseña.Text))
+                    EjecutarCon.ExecuteNonQuery()
                     MsgBox("El usuario se a actualizado", MsgBoxStyle.Information, "Informacion")
                 Else
                     MsgBox("El usuario ya esta registrado", MsgBoxStyle.Exclamation, "Advertencia")
@@ -110,79 +110,79 @@ Public Class FrmUsuario
             End If
         End If
 
-        Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
-            adaptador.Fill(DatosEmp)
+        Dim DatosUsu As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using AdaptadorUsu As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
+            AdaptadorUsu.Fill(DatosUsu)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-        DGV.DataSource = DatosEmp
+        DgvUsuarios.DataSource = DatosUsu
 
         ConexionBase.Close()
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
         AbrirConeccion() '<-- Llamado de la funcion 
-        Dim opcion As DialogResult
-        opcion = MessageBox.Show("¿Esta seguro que quiere eliminar este usuario?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If opcion = DialogResult.Yes Then
+        Dim OpcionDia As DialogResult
+        OpcionDia = MessageBox.Show("¿Esta seguro que quiere eliminar este usuario?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If OpcionDia = DialogResult.Yes Then
 
-            If TxtCodigoEmpleado.Text = "" Then
+            If TxtCodigoempleado.Text = "" Then
                 MsgBox("Hay campos vacios", MsgBoxStyle.Exclamation, "Advertencia")
             Else
-                Dim consultaElim As String = "delete from Usuario where CodUsuario= @CodUsuario" '<-Consulta
+                Dim ConsultaElim As String = "delete from Usuario where CodUsuario= @CodUsuario" '<-Consulta
                 'Toma el valor del textbox y lo deshabilita en la base de datos.
-                Dim ejecutar As New SqlCommand(consultaElim, ConexionBase)
-                ejecutar.Parameters.AddWithValue("@CodUsuario", Val(TxtCodigoUsuario.Text))
+                Dim EjecutarCon As New SqlCommand(ConsultaElim, ConexionBase)
+                EjecutarCon.Parameters.AddWithValue("@CodUsuario", Val(TxtCodigousuario.Text))
 
-                ejecutar.ExecuteNonQuery()
+                EjecutarCon.ExecuteNonQuery()
                 MsgBox("El usuario se a eliminado", MsgBoxStyle.Information, "Informacion")
             End If
         End If
 
-        Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using adaptador As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
-            adaptador.Fill(DatosEmp)
+        Dim DatosUsu As New DataTable 'tabla temporal que recoge los datos de la consulta
+        Using AdaptadorUsu As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
+            AdaptadorUsu.Fill(DatosUsu)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-        DGV.DataSource = DatosEmp
+        DgvUsuarios.DataSource = DatosUsu
         ConexionBase.Close()
         'Limpia los textbox y los checkbox.
-        TxtCodigoUsuario.Clear()
+        TxtCodigousuario.Clear()
         TxtUsuario.Clear()
         TxtContraseña.Clear()
-        TxtCodigoEmpleado.Clear()
-        txtNombreEmpleado.Clear()
-        chkMostrarContra.Checked = False
+        TxtCodigoempleado.Clear()
+        txtNombreempleado.Clear()
+        ChkMostrarcontra.Checked = False
     End Sub
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click '<-Limpia
-        TxtCodigoUsuario.Clear()
+        TxtCodigousuario.Clear()
         TxtUsuario.Clear()
         TxtContraseña.Clear()
-        TxtCodigoEmpleado.Clear()
-        txtNombreEmpleado.Clear()
-        chkMostrarContra.Checked = False
+        TxtCodigoempleado.Clear()
+        txtNombreempleado.Clear()
+        ChkMostrarcontra.Checked = False
     End Sub
 
-    Private Sub DGV_DoubleClick(sender As Object, e As EventArgs) Handles DGV.DoubleClick '<-manda la informacion a los textbox
-        TxtCodigoUsuario.Text = DGV.CurrentRow.Cells(0).Value
-        TxtCodigoEmpleado.Text = DGV.CurrentRow.Cells(1).Value
-        TxtUsuario.Text = DGV.CurrentRow.Cells(2).Value
-        TxtContraseña.Text = DGV.CurrentRow.Cells(3).Value
+    Private Sub DGV_DoubleClick(sender As Object, e As EventArgs) Handles DgvUsuarios.DoubleClick '<-manda la informacion a los textbox
+        TxtCodigousuario.Text = DgvUsuarios.CurrentRow.Cells(0).Value
+        TxtCodigoempleado.Text = DgvUsuarios.CurrentRow.Cells(1).Value
+        TxtUsuario.Text = DgvUsuarios.CurrentRow.Cells(2).Value
+        TxtContraseña.Text = DgvUsuarios.CurrentRow.Cells(3).Value
     End Sub
-    Public Sub filtrarDatos(ByVal buscar As String) '<-Funcion para filtrar datos que se mostraran en el DataGridView.
+    Public Sub filtrarDatos(ByVal BuscarUsu As String) '<-Funcion para filtrar datos que se mostraran en el DataGridView.
 
         Try
-            Using con As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
-                Dim query = "select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario where UsuarioEmp LIKE @filtro"
+            Using ConUsu As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+                Dim QueryUsu = "select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario where UsuarioEmp LIKE @filtro"
 
-                Dim adapter As New SqlDataAdapter(query, con)
-                adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", buscar))
+                Dim AdapterUsu As New SqlDataAdapter(QueryUsu, ConUsu)
+                AdapterUsu.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", BuscarUsu))
 
-                Dim table As New DataTable
-                adapter.Fill(table)
+                Dim TableUsu As New DataTable
+                AdapterUsu.Fill(TableUsu)
 
-                DGV.DataSource = table
+                DgvUsuarios.DataSource = TableUsu
             End Using
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -192,50 +192,50 @@ Public Class FrmUsuario
 
     Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
         LbContador6.Text = TxtBusqueda.Text.Length '<-- Muestra la cantidad de caracteres escritas en textbox.
-        Dim filtro As String = CType(sender, TextBox).Text
-        If filtro.Trim() <> String.Empty Then  'Si no es vacío filtra
-            filtrarDatos(filtro)
+        Dim FiltroUsu As String = CType(sender, TextBox).Text
+        If FiltroUsu.Trim() <> String.Empty Then  'Si no es vacío filtra
+            filtrarDatos(FiltroUsu)
         Else
             AbrirConeccion()
 
-            Dim DatosEmp As New DataTable 'tabla temporal que recoge los datos de la consultadim
-            Using adaptador As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
-                adaptador.Fill(DatosEmp)
+            Dim DatosUsu As New DataTable 'tabla temporal que recoge los datos de la consultadim
+            Using AdaptadorUsu As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
+                AdaptadorUsu.Fill(DatosUsu)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-            DGV.DataSource = DatosEmp
+            DgvUsuarios.DataSource = DatosUsu
 
             ConexionBase.Close()
         End If
     End Sub
 
     Private Sub btnAgg_E_Click(sender As Object, e As EventArgs) Handles btnAgg_E.Click '<-Llama la ventana de buscar empleado
-        Dim frm As New FrmBusquedaEmpleado
-        AddOwnedForm(frm)
-        frm.ShowDialog()
+        Dim FrmEmple As New FrmBusquedaEmpleado
+        AddOwnedForm(FrmEmple)
+        FrmEmple.ShowDialog()
     End Sub
 
-    Private Sub TxtCodigoEmpleado_TextChanged(sender As Object, e As EventArgs) Handles TxtCodigoEmpleado.TextChanged '<-Llama al nombre del empleado con el codigo empleado
+    Private Sub TxtCodigoEmpleado_TextChanged(sender As Object, e As EventArgs) Handles TxtCodigoempleado.TextChanged '<-Llama al nombre del empleado con el codigo empleado
         AbrirConeccion()
-        Dim Recuperar As String = "select * from Empleados where CodEmple= '" & TxtCodigoEmpleado.Text & "'"
-        Dim Mostrar As SqlDataReader
-        Dim Ejecutar As SqlCommand
-        Ejecutar = New SqlCommand(Recuperar, ConexionBase)
-        Mostrar = Ejecutar.ExecuteReader
-        Dim Estado As String
-        Estado = Mostrar.Read
-        If (Estado = True) Then
-            txtNombreEmpleado.Text = Mostrar(1)
+        Dim RecuperarCon As String = "select * from Empleados where CodEmple= '" & TxtCodigoempleado.Text & "'"
+        Dim MostrarUsu As SqlDataReader
+        Dim EjecutarCom As SqlCommand
+        EjecutarCom = New SqlCommand(RecuperarCon, ConexionBase)
+        MostrarUsu = EjecutarCom.ExecuteReader
+        Dim EstadoUsu As String
+        EstadoUsu = MostrarUsu.Read
+        If (EstadoUsu = True) Then
+            txtNombreempleado.Text = MostrarUsu(1)
         Else
-            txtNombreEmpleado.Text = ""
+            txtNombreempleado.Text = ""
         End If
-        Mostrar.Close()
+        MostrarUsu.Close()
         ConexionBase.Close()
     End Sub
 
     Private Sub btnLimpiarEmple_Click(sender As Object, e As EventArgs) Handles btnLimpiarEmple.Click '<-Limpia
-        TxtCodigoEmpleado.Clear()
-        txtNombreEmpleado.Clear()
+        TxtCodigoempleado.Clear()
+        txtNombreempleado.Clear()
     End Sub
 
     Private Sub TxtContraseña_TextChanged(sender As Object, e As EventArgs) Handles TxtContraseña.TextChanged

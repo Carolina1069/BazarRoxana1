@@ -58,8 +58,8 @@ Public Class FrmBusquedaEmpleado
 
     Private Sub DGV_DoubleClick(sender As Object, e As EventArgs) Handles DGV.DoubleClick
         Dim frm As FrmUsuario = CType(Owner, FrmUsuario)
-        frm.TxtCodigoEmpleado.Text = DGV.CurrentRow.Cells(0).Value
-        frm.txtNombreEmpleado.Text = DGV.CurrentRow.Cells(1).Value
+        frm.TxtCodigoempleado.Text = DGV.CurrentRow.Cells(0).Value
+        frm.txtNombreempleado.Text = DGV.CurrentRow.Cells(1).Value
 
         Me.Close()
     End Sub
