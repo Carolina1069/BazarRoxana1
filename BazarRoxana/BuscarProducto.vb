@@ -18,10 +18,10 @@ Public Class BuscarProducto
 
         If ProductosValidar = 1 Then
             Dim frm As Ventas = CType(Owner, Ventas)
-            frm.TxtCodProducto.Text = DGV.CurrentRow.Cells(0).Value
+            frm.TxtCodigoProducto.Text = DGV.CurrentRow.Cells(0).Value
             frm.TxtNombreProducto.Text = DGV.CurrentRow.Cells(1).Value
             frm.TxtUnidades.Text = DGV.CurrentRow.Cells(8).Value
-            frm.txMinimo.Text = DGV.CurrentRow.Cells(9).Value
+            frm.TxtUnidadesMinimas.Text = DGV.CurrentRow.Cells(9).Value
         ElseIf ProductosValidar = 2 Then
             Dim frm As Compras = CType(Owner, Compras)
             frm.TxtCodProducto.Text = DGV.CurrentRow.Cells(0).Value
