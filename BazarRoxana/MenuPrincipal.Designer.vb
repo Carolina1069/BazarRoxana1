@@ -29,10 +29,10 @@ Partial Class MenuPrincipal
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MiEmpresaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpleadoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -59,10 +59,12 @@ Partial Class MenuPrincipal
         Me.ProveedoresToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.BtnHelp = New System.Windows.Forms.Button()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'LblHora
@@ -95,7 +97,9 @@ Partial Class MenuPrincipal
         'ToolStripContainer1.ContentPanel
         '
         Me.ToolStripContainer1.ContentPanel.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.Label4)
         Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.Label3)
+        Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.BtnHelp)
         Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.PictureBox1)
         Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.Label2)
         Me.ToolStripContainer1.ContentPanel.Controls.Add(Me.Label1)
@@ -119,6 +123,18 @@ Partial Class MenuPrincipal
         Me.Label3.Size = New System.Drawing.Size(54, 19)
         Me.Label3.TabIndex = 76
         Me.Label3.Text = "Label3"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
+        Me.PictureBox1.Location = New System.Drawing.Point(265, 234)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(586, 222)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 71
+        Me.PictureBox1.TabStop = False
         '
         'Label2
         '
@@ -152,18 +168,6 @@ Partial Class MenuPrincipal
         Me.MenuStrip1.Size = New System.Drawing.Size(181, 681)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "a"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
-        Me.PictureBox1.Location = New System.Drawing.Point(265, 234)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(586, 222)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 71
-        Me.PictureBox1.TabStop = False
         '
         'InicioToolStripMenuItem
         '
@@ -396,6 +400,26 @@ Partial Class MenuPrincipal
         Me.SalirToolStripMenuItem.Text = "Salir"
         Me.SalirToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Location = New System.Drawing.Point(928, 188)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 19)
+        Me.Label4.TabIndex = 77
+        Me.Label4.Text = "Ayuda"
+        '
+        'BtnHelp
+        '
+        Me.BtnHelp.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.icons8_question_mark_32
+        Me.BtnHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnHelp.Location = New System.Drawing.Point(932, 147)
+        Me.BtnHelp.Name = "BtnHelp"
+        Me.BtnHelp.Size = New System.Drawing.Size(44, 38)
+        Me.BtnHelp.TabIndex = 76
+        Me.BtnHelp.UseVisualStyleBackColor = True
+        '
         'MenuPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -417,9 +441,9 @@ Partial Class MenuPrincipal
         Me.ToolStripContainer1.ContentPanel.PerformLayout()
         Me.ToolStripContainer1.ResumeLayout(False)
         Me.ToolStripContainer1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -460,4 +484,6 @@ Partial Class MenuPrincipal
     Friend WithEvents Label1 As Label
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MiEmpresaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label4 As Label
+    Friend WithEvents BtnHelp As Button
 End Class

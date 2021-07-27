@@ -483,6 +483,7 @@
     <None Include="Resources\document_icon-icons.com_66534.ico" />
     <Content Include="BR.ico" />
     <None Include="Resources\icons8_information_32.png" />
+    <None Include="Resources\icons8_question_mark_32.png" />
     <Content Include="SqlServerTypes\Loader.cs" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
