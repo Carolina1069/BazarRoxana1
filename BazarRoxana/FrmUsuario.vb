@@ -35,6 +35,8 @@ Public Class FrmUsuario
 
         DgvUsuarios.DataSource = DatosUsu
         ConexionBase.Close()
+        BtnActualizar.Visible = False
+        BtnEliminar.Visible = False
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
@@ -61,15 +63,17 @@ Public Class FrmUsuario
                         EjecutarCon.Parameters.AddWithValue("@ContraseñaEmp", (TxtContraseña.Text))
                         EjecutarCon.ExecuteNonQuery()
                         MsgBox("El usuario se a guardado", MsgBoxStyle.Information, "Informacion")
+                        BtnActualizar.Visible = False
                     Else
                         MsgBox("El nombre de usuario ya esta registrado", MsgBoxStyle.Exclamation, "Advertencia")
+                        BtnActualizar.Visible = True
                     End If
                 Else
                     MsgBox("El usuario ya esta registrado", MsgBoxStyle.Exclamation, "Advertencia")
                 End If
             End If
         End If
-
+        BtnEliminar.Visible = False
         Dim DatosUsu As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using AdaptadorUsu As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
             AdaptadorUsu.Fill(DatosUsu)
@@ -104,12 +108,14 @@ Public Class FrmUsuario
                     EjecutarCon.Parameters.AddWithValue("@ContraseñaEmp", (TxtContraseña.Text))
                     EjecutarCon.ExecuteNonQuery()
                     MsgBox("El usuario se a actualizado", MsgBoxStyle.Information, "Informacion")
+                    BtnGuardar.Visible = False
                 Else
                     MsgBox("El usuario ya esta registrado", MsgBoxStyle.Exclamation, "Advertencia")
+                    BtnActualizar.Visible = False
                 End If
             End If
         End If
-
+        BtnEliminar.Visible = True
         Dim DatosUsu As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using AdaptadorUsu As New SqlDataAdapter("select CodUsuario as 'Código del usuario', CodEmple as 'Código del empleado', UsuarioEmp as 'Usuario',ContraseñaEmp as 'Contraseña' from Usuario", ConexionBase)
             AdaptadorUsu.Fill(DatosUsu)
@@ -136,6 +142,14 @@ Public Class FrmUsuario
 
                 EjecutarCon.ExecuteNonQuery()
                 MsgBox("El usuario se a eliminado", MsgBoxStyle.Information, "Informacion")
+                'Limpia los textbox y los checkbox.
+                TxtCodigousuario.Clear()
+                TxtUsuario.Clear()
+                TxtContraseña.Clear()
+                TxtCodigoempleado.Clear()
+                txtNombreempleado.Clear()
+                ChkMostrarcontra.Checked = False
+                BtnGuardar.Visible = True
             End If
         End If
 
@@ -146,13 +160,8 @@ Public Class FrmUsuario
 
         DgvUsuarios.DataSource = DatosUsu
         ConexionBase.Close()
-        'Limpia los textbox y los checkbox.
-        TxtCodigousuario.Clear()
-        TxtUsuario.Clear()
-        TxtContraseña.Clear()
-        TxtCodigoempleado.Clear()
-        txtNombreempleado.Clear()
-        ChkMostrarcontra.Checked = False
+        BtnActualizar.Visible = False
+        BtnEliminar.Visible = False
     End Sub
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click '<-Limpia
@@ -169,6 +178,9 @@ Public Class FrmUsuario
         TxtCodigoempleado.Text = DgvUsuarios.CurrentRow.Cells(1).Value
         TxtUsuario.Text = DgvUsuarios.CurrentRow.Cells(2).Value
         TxtContraseña.Text = DgvUsuarios.CurrentRow.Cells(3).Value
+        BtnGuardar.Visible = False
+        BtnActualizar.Visible = True
+        BtnEliminar.Visible = True
     End Sub
     Public Sub filtrarDatos(ByVal BuscarUsu As String) '<-Funcion para filtrar datos que se mostraran en el DataGridView.
 

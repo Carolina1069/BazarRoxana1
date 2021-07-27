@@ -138,6 +138,12 @@ Public Class Empleado
 
                     ejecutar.ExecuteNonQuery()
                     MsgBox("El empleado se a eliminado", MsgBoxStyle.Information, "Informacion")
+                    'Limpia los textbox, combobox y los checkbox.
+                    CbxNivel.SelectedIndex = -1
+                    TxtCodigoempleado.Clear()
+                    txtNombreempleado.Clear()
+
+                    btnGuardar.Visible = True
 
                 End If
             End If
@@ -152,10 +158,6 @@ Public Class Empleado
 
         DgvEmpleados.DataSource = DatosEmpleados
         ConexionBase.Close()
-        'Limpia los textbox, combobox y los checkbox.
-        CbxNivel.SelectedIndex = -1
-        TxtCodigoempleado.Clear()
-        txtNombreempleado.Clear()
 
 
     End Sub
