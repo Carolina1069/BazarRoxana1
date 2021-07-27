@@ -9,7 +9,7 @@ Public Class Proveedores
             adaptador.Fill(DatosCliente)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-        DGVProveedores.DataSource = DatosCliente
+        DgvProveedores.DataSource = DatosCliente
         ConexionBase.Close()
         BtnHabilitar.Visible = False
         BtnActualizar.Visible = False
@@ -72,7 +72,7 @@ Public Class Proveedores
             adaptador.Fill(DatosProveedor)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-        DGVProveedores.DataSource = DatosProveedor
+        DgvProveedores.DataSource = DatosProveedor
 
         ConexionBase.Close()
     End Sub
@@ -135,7 +135,7 @@ Public Class Proveedores
             adaptador.Fill(DatosProveedor)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-        DGVProveedores.DataSource = DatosProveedor
+        DgvProveedores.DataSource = DatosProveedor
         ConexionBase.Close()
     End Sub
 
@@ -165,6 +165,7 @@ Public Class Proveedores
                     TxtTelprov.Clear()
                     RtbDirec.Clear()
                     ChkInhabil.Checked = False
+                    BtnGuardar.Visible = True
                 End If
             End If
             BtnEliminar.Visible = False
@@ -175,7 +176,7 @@ Public Class Proveedores
         Using adaptador As New SqlDataAdapter("select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=1", ConexionBase)
             adaptador.Fill(DatosProveedor)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-        DGVProveedores.DataSource = DatosProveedor
+        DgvProveedores.DataSource = DatosProveedor
         ConexionBase.Close()
     End Sub
 
@@ -189,7 +190,7 @@ Public Class Proveedores
                 adaptador.Fill(DatosProveedor)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-            DGVProveedores.DataSource = DatosProveedor
+            DgvProveedores.DataSource = DatosProveedor
             BtnGuardar.Visible = False
             BtnActualizar.Visible = False
             BtnEliminar.Visible = False
@@ -201,7 +202,7 @@ Public Class Proveedores
                 adaptador.Fill(DatosProveedor)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
-            DGVProveedores.DataSource = DatosProveedor
+            DgvProveedores.DataSource = DatosProveedor
             BtnGuardar.Visible = True
             BtnActualizar.Visible = False
             BtnEliminar.Visible = False
@@ -244,7 +245,7 @@ Public Class Proveedores
                     Dim table As New DataTable
                     Adapter.Fill(table)
 
-                    DGVProveedores.DataSource = table
+                    DgvProveedores.DataSource = table
                 End Using
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -258,7 +259,7 @@ Public Class Proveedores
                     Dim table As New DataTable
                     Adapter.Fill(table)
 
-                    DGVProveedores.DataSource = table
+                    DgvProveedores.DataSource = table
                 End Using
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
@@ -278,13 +279,13 @@ Public Class Proveedores
                 Using adaptador As New SqlDataAdapter("select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=0", ConexionBase)
                     adaptador.Fill(DatosProveedor)
                 End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-                DGVProveedores.DataSource = DatosProveedor
+                DgvProveedores.DataSource = DatosProveedor
             Else
                 Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
                 Using adaptador As New SqlDataAdapter("select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=1", ConexionBase)
                     adaptador.Fill(DatosProveedor)
                 End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
-                DGVProveedores.DataSource = DatosProveedor
+                DgvProveedores.DataSource = DatosProveedor
             End If
         End If
         ConexionBase.Close()
@@ -425,15 +426,15 @@ Public Class Proveedores
         BtnGuardar.Visible = True
     End Sub
 
-    Private Sub DGVProveedores_DoubleClick_1(sender As Object, e As EventArgs) Handles DGVProveedores.DoubleClick '<-- Con doble click en el DataGridView manda campos del DataGridView a los textbox referidos.
-        TxtCodprov.Text = DGVProveedores.CurrentRow.Cells(0).Value
-        TxtNomprov.Text = DGVProveedores.CurrentRow.Cells(1).Value
-        TxtTelfonoempresa.Text = DGVProveedores.CurrentRow.Cells(2).Value
-        TxtNombreproem.Text = DGVProveedores.CurrentRow.Cells(3).Value
-        TxtCorreoempresa.Text = DGVProveedores.CurrentRow.Cells(4).Value
-        TxtCorreoprov.Text = DGVProveedores.CurrentRow.Cells(5).Value
-        TxtTelprov.Text = DGVProveedores.CurrentRow.Cells(6).Value
-        RtbDirec.Text = DGVProveedores.CurrentRow.Cells(7).Value
+    Private Sub DGVProveedores_DoubleClick_1(sender As Object, e As EventArgs) Handles DgvProveedores.DoubleClick '<-- Con doble click en el DataGridView manda campos del DataGridView a los textbox referidos.
+        TxtCodprov.Text = DgvProveedores.CurrentRow.Cells(0).Value
+        TxtNomprov.Text = DgvProveedores.CurrentRow.Cells(1).Value
+        TxtTelfonoempresa.Text = DgvProveedores.CurrentRow.Cells(2).Value
+        TxtNombreproem.Text = DgvProveedores.CurrentRow.Cells(3).Value
+        TxtCorreoempresa.Text = DgvProveedores.CurrentRow.Cells(4).Value
+        TxtCorreoprov.Text = DgvProveedores.CurrentRow.Cells(5).Value
+        TxtTelprov.Text = DgvProveedores.CurrentRow.Cells(6).Value
+        RtbDirec.Text = DgvProveedores.CurrentRow.Cells(7).Value
         If ChkInhabil.Checked = True Then
             BtnEliminar.Visible = False
             BtnActualizar.Visible = False
