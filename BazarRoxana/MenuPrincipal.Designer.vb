@@ -28,7 +28,9 @@ Partial Class MenuPrincipal
         Me.LblFecha = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ToolStripContainer1 = New System.Windows.Forms.ToolStripContainer()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.BtnHelp = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -59,8 +61,6 @@ Partial Class MenuPrincipal
         Me.ProveedoresToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.BtnHelp = New System.Windows.Forms.Button()
         Me.ToolStripContainer1.ContentPanel.SuspendLayout()
         Me.ToolStripContainer1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,6 +114,16 @@ Partial Class MenuPrincipal
         Me.ToolStripContainer1.Text = "ToolStripContainer1"
         Me.ToolStripContainer1.TopToolStripPanelVisible = False
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Location = New System.Drawing.Point(928, 188)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(53, 19)
+        Me.Label4.TabIndex = 77
+        Me.Label4.Text = "Ayuda"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -123,6 +133,16 @@ Partial Class MenuPrincipal
         Me.Label3.Size = New System.Drawing.Size(54, 19)
         Me.Label3.TabIndex = 76
         Me.Label3.Text = "Label3"
+        '
+        'BtnHelp
+        '
+        Me.BtnHelp.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.icons8_question_mark_32
+        Me.BtnHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnHelp.Location = New System.Drawing.Point(932, 147)
+        Me.BtnHelp.Name = "BtnHelp"
+        Me.BtnHelp.Size = New System.Drawing.Size(44, 38)
+        Me.BtnHelp.TabIndex = 76
+        Me.BtnHelp.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '
@@ -399,26 +419,6 @@ Partial Class MenuPrincipal
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(168, 30)
         Me.SalirToolStripMenuItem.Text = "Salir"
         Me.SalirToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(928, 188)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(53, 19)
-        Me.Label4.TabIndex = 77
-        Me.Label4.Text = "Ayuda"
-        '
-        'BtnHelp
-        '
-        Me.BtnHelp.BackgroundImage = Global.BazarRoxana.My.Resources.Resources.icons8_question_mark_32
-        Me.BtnHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnHelp.Location = New System.Drawing.Point(932, 147)
-        Me.BtnHelp.Name = "BtnHelp"
-        Me.BtnHelp.Size = New System.Drawing.Size(44, 38)
-        Me.BtnHelp.TabIndex = 76
-        Me.BtnHelp.UseVisualStyleBackColor = True
         '
         'MenuPrincipal
         '

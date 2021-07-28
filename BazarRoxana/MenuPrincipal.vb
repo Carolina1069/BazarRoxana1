@@ -179,4 +179,8 @@ Public Class MenuPrincipal
         Me.ToolStripContainer1.ContentPanel.Controls.Add(FormME)
         FormME.Show()
     End Sub
+
+    Private Sub BtnHelp_Click(sender As Object, e As EventArgs) Handles BtnHelp.Click
+        Shell("cmd /cstart C:\Users\carlo\source\repos\BazarRoxana1\help.chm")
+    End Sub
 End Class

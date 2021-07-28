@@ -29,4 +29,9 @@ Public Class Inicio
         ConexionBase.Close()
     End Sub
 
+    Private Sub BtnHelp_Click(sender As Object, e As EventArgs) Handles BtnHelp.Click
+
+        Shell("cmd /cstart C:\Users\carlo\source\repos\BazarRoxana1\help.chm")
+
+    End Sub
 End Class
