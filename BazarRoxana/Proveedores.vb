@@ -3,7 +3,7 @@ Imports System.Net.Mail
 Public Class Proveedores
     Private Sub Proveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        AbrirConeccion() '<-- Llamado de la funcion 
+        AbrirConexion() '<-- Llamado de la funcion 
         Dim DatosProv As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=1", ConexionBase)
             adaptador.Fill(DatosProv)
@@ -20,7 +20,7 @@ Public Class Proveedores
         Try
             Dim mail As New System.Net.Mail.MailAddress(TxtCorreoempresa.Text) '<-Validar el correro de la empresa
             Dim mail2 As New System.Net.Mail.MailAddress(TxtCorreoprov.Text) '<-Validar el correro del empleado del proveedor
-            AbrirConeccion()
+            AbrirConexion()
             If (TxtNomprov.TextLength < 3) Then
                 MsgBox("Debe ingresar como mínimo 3 letras en nombre de la empreaa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf (TxtTelfonoempresa.TextLength < 8) Then
@@ -78,14 +78,14 @@ Public Class Proveedores
     End Sub
 
     Private Sub btActualizar_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
-        AbrirConeccion() '<-- Llamado de la funcion 
+        AbrirConexion() '<-- Llamado de la funcion 
         If TxtCodprov.Text = String.Empty Then
             MsgBox("Por favor haga doble click a una fila de la tabla antes de modificar algún dato deseado.", MsgBoxStyle.Exclamation, "Advertencia")
         Else
             Try
                 Dim MailEmpresa As New System.Net.Mail.MailAddress(TxtCorreoempresa.Text) '<-Validar el correro de la empresa
                 Dim MailEmple As New System.Net.Mail.MailAddress(TxtCorreoprov.Text) '<-Validar el correro del empleado del proveedor
-                AbrirConeccion()
+                AbrirConexion()
                 If (TxtNomprov.TextLength < 3) Then
                     MsgBox("Debe ingresar como mínimo 3 letras en nombre de la empreaa proveedora.", MsgBoxStyle.Exclamation, "Advertencia")
                 ElseIf (TxtTelfonoempresa.TextLength < 8) Then
@@ -140,7 +140,7 @@ Public Class Proveedores
     End Sub
 
     Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        AbrirConeccion() '<-- Llamado de la funcion 
+        AbrirConexion() '<-- Llamado de la funcion 
         If TxtCodprov.Text = String.Empty Then
             MsgBox("Por favor haga doble click a una fila de la tabla antes de eliminar algún dato deseado.", MsgBoxStyle.Exclamation, "Advertencia")
         Else
@@ -181,7 +181,7 @@ Public Class Proveedores
     End Sub
 
     Private Sub chkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles ChkInhabil.CheckedChanged 'Funcion que permite mostrar las habilitados o deshabilitados de la base de datos.
-        AbrirConeccion()
+        AbrirConexion()
 
         If ChkInhabil.Checked = True Then
 
@@ -236,31 +236,32 @@ Public Class Proveedores
     End Sub
 
     Public Sub filtrarDatos(ByVal BuscarProv As String) '<-Funcion para filtrar datos que se mostraran en el DataGridView.
+
         If ChkInhabil.Checked = False Then
             Try
-                Using ConProv As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
-                    Dim QueryCon = "select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=1 and NombProv LIKE @filtro"
-                    Dim AdapterProv As New SqlDataAdapter(QueryCon, ConProv)
-                    AdapterProv.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", BuscarProv))
-                    Dim TableProv As New DataTable
-                    AdapterProv.Fill(TableProv)
+                AbrirConexion()
+                Dim QueryCon = "select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=1 and NombProv LIKE @filtro"
+                Dim AdapterProv As New SqlDataAdapter(QueryCon, ConexionBase)
+                AdapterProv.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", BuscarProv))
+                Dim TableProv As New DataTable
+                AdapterProv.Fill(TableProv)
 
-                    DgvProveedores.DataSource = TableProv
-                End Using
+                DgvProveedores.DataSource = TableProv
+
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
         Else
             Try
-                Using ConProv As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
-                    Dim QueryCon = "select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=0 and NombProv LIKE @filtro"
-                    Dim AdapterProv As New SqlDataAdapter(QueryCon, ConProv)
-                    AdapterProv.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", BuscarProv))
-                    Dim TableProv As New DataTable
-                    AdapterProv.Fill(TableProv)
+                AbrirConexion()
+                Dim QueryCon = "select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=0 and NombProv LIKE @filtro"
+                Dim AdapterProv As New SqlDataAdapter(QueryCon, ConexionBase)
+                AdapterProv.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", BuscarProv))
+                Dim TableProv As New DataTable
+                AdapterProv.Fill(TableProv)
 
-                    DgvProveedores.DataSource = TableProv
-                End Using
+                DgvProveedores.DataSource = TableProv
+
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
@@ -269,11 +270,12 @@ Public Class Proveedores
 
     Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged '<--Busqueda.
         LabelContador7.Text = TxtBusqueda.Text.Length '<-- Muestra la cantidad de caracteres escritas en textbox.
+        AbrirConexion() '<-- Llamado de la funcion 
         Dim FiltroBusqueda As String = CType(sender, TextBox).Text
         If FiltroBusqueda.Trim() <> String.Empty Then  'Si no es vacío filtra
             filtrarDatos(FiltroBusqueda)
         Else
-            AbrirConeccion() '<-- Llamado de la funcion 
+
             If ChkInhabil.Checked = True Then
                 Dim DatosProveedor As New DataTable 'tabla temporal que recoge los datos de la consulta
                 Using AdapterProv As New SqlDataAdapter("select CodProv as 'Codigo del Proveedor', NombProv as 'Nombre de Empresa Proveedora', TelProv as 'Telefono de Empresa Proveedora', NombContProv as 'Nombre del Empleado del Proveedor', CorreoProv as 'Correo de la Empresa Proveedora',CorreoContProv as 'Correo del Empleado del Proveedor', TelContProv as 'Telefono del Empleado del Proveedor', DirecProv as 'Direccion de la Empresa Proveedora', case when EstadoProv=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Proveedor' from Proveedores where EstadoProv=0", ConexionBase)
@@ -470,7 +472,7 @@ Public Class Proveedores
     End Sub
 
     Private Sub btnHabilitar_Click(sender As Object, e As EventArgs) Handles BtnHabilitar.Click '<-- Permite habilitar datos deshabilitados en la base de datos 
-        AbrirConeccion()
+        AbrirConexion()
         Dim OpcionDia As DialogResult
         OpcionDia = MessageBox.Show("¿Está seguro que quiere habilitar este proveedor?", "Habilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If OpcionDia = DialogResult.Yes Then

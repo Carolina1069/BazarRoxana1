@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Public Class BuscarCliente
     Private Sub BuscarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AbrirConeccion()
+        AbrirConexion()
 
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", ConexionBase)
@@ -47,7 +47,7 @@ Public Class BuscarCliente
 
         If TxtBusqueda.Text = "" Then
 
-            AbrirConeccion()
+            AbrirConexion()
 
             Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
             Using adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", ConexionBase)

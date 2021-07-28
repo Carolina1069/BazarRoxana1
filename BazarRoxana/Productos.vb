@@ -42,7 +42,7 @@ Public Class Productos
     End Sub
 
     Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AbrirConeccion()
+        AbrirConexion()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("SELECT Producto.CodProduc as 'Codigo Producto',
                         CONCAT(Producto.DescripProduc, ' ' , Producto.NombProduc) as 'Nombre Producto',
@@ -78,7 +78,7 @@ Public Class Productos
 
 
     Private Sub TxtCodigoCategoria_TextChanged(sender As Object, e As EventArgs) Handles TxtCodigoCategoria.TextChanged
-        AbrirConeccion()
+        AbrirConexion()
         Dim Recuperar As String = "select * from Categoria where CodCateg= '" & TxtCodigoCategoria.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
@@ -304,7 +304,7 @@ Public Class Productos
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        AbrirConeccion()
+        AbrirConexion()
 
         If TxtCodigoProducto.Text = "" Then
             MsgBox("Hay campos vacios")
@@ -524,7 +524,7 @@ Public Class Productos
 
     Private Sub ChkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles ChkInhabil.CheckedChanged
 
-        AbrirConeccion()
+        AbrirConexion()
 
         If ChkInhabil.Checked = True Then
 
@@ -629,7 +629,7 @@ Public Class Productos
     End Sub
 
     Private Sub BtnHabilitar_Click(sender As Object, e As EventArgs) Handles BtnHabilitar.Click
-        AbrirConeccion()
+        AbrirConexion()
 
         Try
             Dim consultaAct As String = "update Producto set Estado=1 where CodProduc= @CodProduc"
@@ -674,32 +674,6 @@ Public Class Productos
 
         ConexionBase.Close()
         LimpiarCajasTexto()
-    End Sub
-
-    Private Sub DgvProductos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
-        TxtCodigoProducto.Text = DgvProductos.CurrentRow.Cells(0).Value
-        TxtNombreProducto.Text = DgvProductos.CurrentRow.Cells(1).Value
-        RtxDescripcionProducto.Text = DgvProductos.CurrentRow.Cells(1).Value
-        RtxDescripcionProducto2.Text = DgvProductos.CurrentRow.Cells(2).Value
-        TxtCodigoProveedor.Text = DgvProductos.CurrentRow.Cells(3).Value
-        TxtNombreProveedor.Text = DgvProductos.CurrentRow.Cells(4).Value
-        TxtCodigoCategoria.Text = DgvProductos.CurrentRow.Cells(5).Value
-        TxtNombreCategoria.Text = DgvProductos.CurrentRow.Cells(6).Value
-        TxtProductosMaximos.Text = DgvProductos.CurrentRow.Cells(12).Value
-        TxtProductosMinimos.Text = DgvProductos.CurrentRow.Cells(11).Value
-        TxtPrimerPrecio.Text = DgvProductos.CurrentRow.Cells(7).Value
-        TxtSegundoPrecio.Text = DgvProductos.CurrentRow.Cells(8).Value
-        TxtTercerPrecio.Text = DgvProductos.CurrentRow.Cells(9).Value
-        If ChkInhabil.Checked = True Then
-            BtnEliminar.Visible = False
-            BtnActualizar.Visible = False
-        Else
-            BtnEliminar.Visible = True
-            BtnActualizar.Visible = True
-        End If
-
-
-
     End Sub
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
@@ -754,4 +728,29 @@ Public Class Productos
         TxtNombreCategoria.Clear()
     End Sub
 
+
+    Private Sub DgvProductos_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvProductos.CellDoubleClick
+        TxtCodigoProducto.Text = DgvProductos.CurrentRow.Cells(0).Value
+        TxtNombreProducto.Text = DgvProductos.CurrentRow.Cells(1).Value
+        RtxDescripcionProducto.Text = DgvProductos.CurrentRow.Cells(1).Value
+        RtxDescripcionProducto2.Text = DgvProductos.CurrentRow.Cells(2).Value
+        TxtCodigoProveedor.Text = DgvProductos.CurrentRow.Cells(3).Value
+        TxtNombreProveedor.Text = DgvProductos.CurrentRow.Cells(4).Value
+        TxtCodigoCategoria.Text = DgvProductos.CurrentRow.Cells(5).Value
+        TxtNombreCategoria.Text = DgvProductos.CurrentRow.Cells(6).Value
+        TxtProductosMaximos.Text = DgvProductos.CurrentRow.Cells(12).Value
+        TxtProductosMinimos.Text = DgvProductos.CurrentRow.Cells(11).Value
+        TxtPrimerPrecio.Text = DgvProductos.CurrentRow.Cells(7).Value
+        TxtSegundoPrecio.Text = DgvProductos.CurrentRow.Cells(8).Value
+        TxtTercerPrecio.Text = DgvProductos.CurrentRow.Cells(9).Value
+        If ChkInhabil.Checked = True Then
+            BtnEliminar.Visible = False
+            BtnActualizar.Visible = False
+        Else
+            BtnEliminar.Visible = True
+            BtnActualizar.Visible = True
+        End If
+
+
+    End Sub
 End Class

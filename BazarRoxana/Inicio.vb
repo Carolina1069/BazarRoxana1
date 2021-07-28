@@ -5,7 +5,7 @@ Public Class Inicio
     End Sub
 
     Private Sub Label1_TextChanged(sender As Object, e As EventArgs) Handles Label1.TextChanged
-        AbrirConeccion()
+        AbrirConexion()
         Dim Recuperar As String = "select U.UsuarioEmp, E.NombEmple, E.NivelEmple from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & Label1.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand

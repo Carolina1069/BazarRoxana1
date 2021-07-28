@@ -3,7 +3,7 @@ Public Class Ventas
 
 
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodigoProducto.TextChanged
-        AbrirConeccion()
+        AbrirConexion()
         Dim ProductoVenta As Integer
         ProductoVenta = Val(TxtCodigoProducto.Text)
 
@@ -31,7 +31,7 @@ Public Class Ventas
         End If
         MostrarProducto.Close()
 
-        AbrirConeccion()
+        AbrirConexion()
 
         Dim DatosUsuarios As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using AdaptadorProducto As New SqlDataAdapter("select CodProduc, Precios from Producto unpivot ( Precios for Valor in(PrimerPrecio,SegundoPrecio, TercerPrecio) ) as P where CodProduc ='" & ProductoVenta & "'", ConexionBase)
@@ -112,7 +112,7 @@ Public Class Ventas
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
         Dim TotalVenta As Integer
 
-        AbrirConeccion() '<-- Llamado de la funcion 
+        AbrirConexion() '<-- Llamado de la funcion 
         Dim TipoPago As Integer
         Dim TipoTransaccion As Integer
 
@@ -241,7 +241,7 @@ Public Class Ventas
     Private Sub Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TxtCodEmple.Text = CodUser
 
-        AbrirConeccion()
+        AbrirConexion()
 
         CodUltmaVenta = CodUltimaVenta()
 
@@ -261,7 +261,7 @@ Public Class Ventas
     End Sub
 
     Private Sub lbUsuario_TextChanged(sender As Object, e As EventArgs) Handles lbUsuario.TextChanged
-        AbrirConeccion()
+        AbrirConexion()
         Dim RecuperarEmpleado As String = "select E.CodEmple, E.NombEmple from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & lbUsuario.Text & "'"
         Dim MostrarEmpleado As SqlDataReader
         Dim EjecutarEmpleado As SqlCommand

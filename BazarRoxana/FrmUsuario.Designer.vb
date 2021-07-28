@@ -67,10 +67,9 @@ Partial Class FrmUsuario
         Me.LbContador5.BackColor = System.Drawing.Color.Transparent
         Me.LbContador5.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LbContador5.ForeColor = System.Drawing.Color.Black
-        Me.LbContador5.Location = New System.Drawing.Point(629, 265)
-        Me.LbContador5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LbContador5.Location = New System.Drawing.Point(472, 215)
         Me.LbContador5.Name = "LbContador5"
-        Me.LbContador5.Size = New System.Drawing.Size(34, 24)
+        Me.LbContador5.Size = New System.Drawing.Size(29, 19)
         Me.LbContador5.TabIndex = 87
         Me.LbContador5.Text = "/25"
         '
@@ -80,10 +79,9 @@ Partial Class FrmUsuario
         Me.LbContador4.BackColor = System.Drawing.Color.Transparent
         Me.LbContador4.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LbContador4.ForeColor = System.Drawing.Color.Black
-        Me.LbContador4.Location = New System.Drawing.Point(600, 263)
-        Me.LbContador4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LbContador4.Location = New System.Drawing.Point(450, 214)
         Me.LbContador4.Name = "LbContador4"
-        Me.LbContador4.Size = New System.Drawing.Size(21, 24)
+        Me.LbContador4.Size = New System.Drawing.Size(18, 19)
         Me.LbContador4.TabIndex = 86
         Me.LbContador4.Text = "0"
         '
@@ -93,10 +91,9 @@ Partial Class FrmUsuario
         Me.LbContador3.BackColor = System.Drawing.Color.Transparent
         Me.LbContador3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LbContador3.ForeColor = System.Drawing.Color.Black
-        Me.LbContador3.Location = New System.Drawing.Point(629, 234)
-        Me.LbContador3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LbContador3.Location = New System.Drawing.Point(472, 190)
         Me.LbContador3.Name = "LbContador3"
-        Me.LbContador3.Size = New System.Drawing.Size(36, 24)
+        Me.LbContador3.Size = New System.Drawing.Size(30, 19)
         Me.LbContador3.TabIndex = 85
         Me.LbContador3.Text = "/20"
         '
@@ -106,10 +103,9 @@ Partial Class FrmUsuario
         Me.LbContador2.BackColor = System.Drawing.Color.Transparent
         Me.LbContador2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LbContador2.ForeColor = System.Drawing.Color.Black
-        Me.LbContador2.Location = New System.Drawing.Point(600, 233)
-        Me.LbContador2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LbContador2.Location = New System.Drawing.Point(450, 189)
         Me.LbContador2.Name = "LbContador2"
-        Me.LbContador2.Size = New System.Drawing.Size(21, 24)
+        Me.LbContador2.Size = New System.Drawing.Size(18, 19)
         Me.LbContador2.TabIndex = 84
         Me.LbContador2.Text = "0"
         '
@@ -118,10 +114,9 @@ Partial Class FrmUsuario
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(89, 234)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(67, 190)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(195, 24)
+        Me.Label3.Size = New System.Drawing.Size(158, 19)
         Me.Label3.TabIndex = 83
         Me.Label3.Text = "Usuario del empleado"
         '
@@ -129,11 +124,10 @@ Partial Class FrmUsuario
         '
         Me.TxtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtUsuario.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.TxtUsuario.Location = New System.Drawing.Point(337, 233)
-        Me.TxtUsuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtUsuario.Location = New System.Drawing.Point(253, 189)
         Me.TxtUsuario.MaxLength = 20
         Me.TxtUsuario.Name = "TxtUsuario"
-        Me.TxtUsuario.Size = New System.Drawing.Size(252, 25)
+        Me.TxtUsuario.Size = New System.Drawing.Size(189, 20)
         Me.TxtUsuario.TabIndex = 82
         '
         'ChkMostrarcontra
@@ -141,10 +135,10 @@ Partial Class FrmUsuario
         Me.ChkMostrarcontra.AutoSize = True
         Me.ChkMostrarcontra.BackColor = System.Drawing.Color.Transparent
         Me.ChkMostrarcontra.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.ChkMostrarcontra.Location = New System.Drawing.Point(337, 295)
-        Me.ChkMostrarcontra.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ChkMostrarcontra.Location = New System.Drawing.Point(253, 240)
+        Me.ChkMostrarcontra.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ChkMostrarcontra.Name = "ChkMostrarcontra"
-        Me.ChkMostrarcontra.Size = New System.Drawing.Size(192, 28)
+        Me.ChkMostrarcontra.Size = New System.Drawing.Size(158, 23)
         Me.ChkMostrarcontra.TabIndex = 81
         Me.ChkMostrarcontra.Text = "Mostrar contaseña"
         Me.ChkMostrarcontra.UseVisualStyleBackColor = False
@@ -154,10 +148,9 @@ Partial Class FrmUsuario
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(84, 270)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(63, 219)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(226, 24)
+        Me.Label1.Size = New System.Drawing.Size(183, 19)
         Me.Label1.TabIndex = 80
         Me.Label1.Text = "Contraseña del empleado"
         '
@@ -165,11 +158,10 @@ Partial Class FrmUsuario
         '
         Me.TxtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtContraseña.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.TxtContraseña.Location = New System.Drawing.Point(337, 265)
-        Me.TxtContraseña.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtContraseña.Location = New System.Drawing.Point(253, 215)
         Me.TxtContraseña.MaxLength = 25
         Me.TxtContraseña.Name = "TxtContraseña"
-        Me.TxtContraseña.Size = New System.Drawing.Size(252, 25)
+        Me.TxtContraseña.Size = New System.Drawing.Size(189, 20)
         Me.TxtContraseña.TabIndex = 79
         Me.TxtContraseña.UseSystemPasswordChar = True
         '
@@ -178,10 +170,9 @@ Partial Class FrmUsuario
         Me.TxtCodigousuario.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtCodigousuario.Enabled = False
         Me.TxtCodigousuario.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.TxtCodigousuario.Location = New System.Drawing.Point(337, 201)
-        Me.TxtCodigousuario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtCodigousuario.Location = New System.Drawing.Point(253, 163)
         Me.TxtCodigousuario.Name = "TxtCodigousuario"
-        Me.TxtCodigousuario.Size = New System.Drawing.Size(161, 25)
+        Me.TxtCodigousuario.Size = New System.Drawing.Size(121, 20)
         Me.TxtCodigousuario.TabIndex = 89
         '
         'lbCodigoUsuario
@@ -189,10 +180,9 @@ Partial Class FrmUsuario
         Me.lbCodigoUsuario.AutoSize = True
         Me.lbCodigoUsuario.BackColor = System.Drawing.Color.Transparent
         Me.lbCodigoUsuario.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lbCodigoUsuario.Location = New System.Drawing.Point(120, 201)
-        Me.lbCodigoUsuario.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbCodigoUsuario.Location = New System.Drawing.Point(90, 163)
         Me.lbCodigoUsuario.Name = "lbCodigoUsuario"
-        Me.lbCodigoUsuario.Size = New System.Drawing.Size(168, 24)
+        Me.lbCodigoUsuario.Size = New System.Drawing.Size(137, 19)
         Me.lbCodigoUsuario.TabIndex = 88
         Me.lbCodigoUsuario.Text = "Código del usuario"
         '
@@ -201,10 +191,9 @@ Partial Class FrmUsuario
         Me.TxtCodigoempleado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtCodigoempleado.Enabled = False
         Me.TxtCodigoempleado.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.TxtCodigoempleado.Location = New System.Drawing.Point(955, 199)
-        Me.TxtCodigoempleado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtCodigoempleado.Location = New System.Drawing.Point(716, 162)
         Me.TxtCodigoempleado.Name = "TxtCodigoempleado"
-        Me.TxtCodigoempleado.Size = New System.Drawing.Size(161, 25)
+        Me.TxtCodigoempleado.Size = New System.Drawing.Size(121, 20)
         Me.TxtCodigoempleado.TabIndex = 91
         '
         'Label2
@@ -212,10 +201,9 @@ Partial Class FrmUsuario
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label2.Location = New System.Drawing.Point(737, 199)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(553, 162)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(189, 24)
+        Me.Label2.Size = New System.Drawing.Size(153, 19)
         Me.Label2.TabIndex = 90
         Me.Label2.Text = "Código del empleado"
         '
@@ -224,10 +212,9 @@ Partial Class FrmUsuario
         Me.lbNombreEmpleado.AutoSize = True
         Me.lbNombreEmpleado.BackColor = System.Drawing.Color.Transparent
         Me.lbNombreEmpleado.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lbNombreEmpleado.Location = New System.Drawing.Point(705, 231)
-        Me.lbNombreEmpleado.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lbNombreEmpleado.Location = New System.Drawing.Point(529, 188)
         Me.lbNombreEmpleado.Name = "lbNombreEmpleado"
-        Me.lbNombreEmpleado.Size = New System.Drawing.Size(199, 24)
+        Me.lbNombreEmpleado.Size = New System.Drawing.Size(160, 19)
         Me.lbNombreEmpleado.TabIndex = 93
         Me.lbNombreEmpleado.Text = "Nombre del empleado"
         '
@@ -236,11 +223,10 @@ Partial Class FrmUsuario
         Me.txtNombreempleado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtNombreempleado.Enabled = False
         Me.txtNombreempleado.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtNombreempleado.Location = New System.Drawing.Point(955, 231)
-        Me.txtNombreempleado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtNombreempleado.Location = New System.Drawing.Point(716, 188)
         Me.txtNombreempleado.MaxLength = 20
         Me.txtNombreempleado.Name = "txtNombreempleado"
-        Me.txtNombreempleado.Size = New System.Drawing.Size(252, 25)
+        Me.txtNombreempleado.Size = New System.Drawing.Size(189, 20)
         Me.txtNombreempleado.TabIndex = 92
         '
         'Label4
@@ -248,20 +234,18 @@ Partial Class FrmUsuario
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Candara", 19.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.Location = New System.Drawing.Point(16, 11)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(12, 9)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(135, 39)
+        Me.Label4.Size = New System.Drawing.Size(112, 32)
         Me.Label4.TabIndex = 97
         Me.Label4.Text = "Usuarios"
         '
         'BtnLimpiar
         '
         Me.BtnLimpiar.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnLimpiar.Location = New System.Drawing.Point(1021, 306)
-        Me.BtnLimpiar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnLimpiar.Location = New System.Drawing.Point(766, 249)
         Me.BtnLimpiar.Name = "BtnLimpiar"
-        Me.BtnLimpiar.Size = New System.Drawing.Size(165, 48)
+        Me.BtnLimpiar.Size = New System.Drawing.Size(124, 39)
         Me.BtnLimpiar.TabIndex = 101
         Me.BtnLimpiar.Text = "Limpiar datos"
         Me.BtnLimpiar.UseVisualStyleBackColor = True
@@ -278,11 +262,9 @@ Partial Class FrmUsuario
         Me.GroupBox1.Controls.Add(Me.BtnActualizar)
         Me.GroupBox1.Controls.Add(Me.BtnGuardar)
         Me.GroupBox1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(144, 362)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(108, 294)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(1101, 410)
+        Me.GroupBox1.Size = New System.Drawing.Size(826, 333)
         Me.GroupBox1.TabIndex = 100
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Búsqueda del usuario"
@@ -293,10 +275,9 @@ Partial Class FrmUsuario
         Me.LbContador7.BackColor = System.Drawing.Color.Transparent
         Me.LbContador7.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LbContador7.ForeColor = System.Drawing.Color.Black
-        Me.LbContador7.Location = New System.Drawing.Point(612, 52)
-        Me.LbContador7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LbContador7.Location = New System.Drawing.Point(459, 42)
         Me.LbContador7.Name = "LbContador7"
-        Me.LbContador7.Size = New System.Drawing.Size(36, 24)
+        Me.LbContador7.Size = New System.Drawing.Size(30, 19)
         Me.LbContador7.TabIndex = 81
         Me.LbContador7.Text = "/20"
         '
@@ -306,10 +287,9 @@ Partial Class FrmUsuario
         Me.LbContador6.BackColor = System.Drawing.Color.Transparent
         Me.LbContador6.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LbContador6.ForeColor = System.Drawing.Color.Black
-        Me.LbContador6.Location = New System.Drawing.Point(583, 50)
-        Me.LbContador6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LbContador6.Location = New System.Drawing.Point(437, 41)
         Me.LbContador6.Name = "LbContador6"
-        Me.LbContador6.Size = New System.Drawing.Size(21, 24)
+        Me.LbContador6.Size = New System.Drawing.Size(18, 19)
         Me.LbContador6.TabIndex = 80
         Me.LbContador6.Text = "0"
         '
@@ -318,10 +298,9 @@ Partial Class FrmUsuario
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(9, 47)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(7, 38)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(287, 24)
+        Me.Label5.Size = New System.Drawing.Size(229, 19)
         Me.Label5.TabIndex = 79
         Me.Label5.Text = "Escriba el nombre del empleado:"
         '
@@ -329,11 +308,10 @@ Partial Class FrmUsuario
         '
         Me.TxtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtBusqueda.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.TxtBusqueda.Location = New System.Drawing.Point(321, 49)
-        Me.TxtBusqueda.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtBusqueda.Location = New System.Drawing.Point(241, 40)
         Me.TxtBusqueda.MaxLength = 20
         Me.TxtBusqueda.Name = "TxtBusqueda"
-        Me.TxtBusqueda.Size = New System.Drawing.Size(252, 25)
+        Me.TxtBusqueda.Size = New System.Drawing.Size(189, 20)
         Me.TxtBusqueda.TabIndex = 72
         '
         'DgvUsuarios
@@ -362,8 +340,7 @@ Partial Class FrmUsuario
         Me.DgvUsuarios.DefaultCellStyle = DataGridViewCellStyle2
         Me.DgvUsuarios.EnableHeadersVisualStyles = False
         Me.DgvUsuarios.GridColor = System.Drawing.SystemColors.ControlLight
-        Me.DgvUsuarios.Location = New System.Drawing.Point(16, 94)
-        Me.DgvUsuarios.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DgvUsuarios.Location = New System.Drawing.Point(12, 76)
         Me.DgvUsuarios.Name = "DgvUsuarios"
         Me.DgvUsuarios.ReadOnly = True
         Me.DgvUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -382,35 +359,32 @@ Partial Class FrmUsuario
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
         Me.DgvUsuarios.RowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvUsuarios.Size = New System.Drawing.Size(1069, 222)
+        Me.DgvUsuarios.Size = New System.Drawing.Size(802, 180)
         Me.DgvUsuarios.TabIndex = 71
         '
         'BtnEliminar
         '
-        Me.BtnEliminar.Location = New System.Drawing.Point(893, 346)
-        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEliminar.Location = New System.Drawing.Point(670, 281)
         Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(116, 48)
+        Me.BtnEliminar.Size = New System.Drawing.Size(87, 39)
         Me.BtnEliminar.TabIndex = 24
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
         'BtnActualizar
         '
-        Me.BtnActualizar.Location = New System.Drawing.Point(480, 346)
-        Me.BtnActualizar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnActualizar.Location = New System.Drawing.Point(360, 281)
         Me.BtnActualizar.Name = "BtnActualizar"
-        Me.BtnActualizar.Size = New System.Drawing.Size(116, 48)
+        Me.BtnActualizar.Size = New System.Drawing.Size(87, 39)
         Me.BtnActualizar.TabIndex = 23
         Me.BtnActualizar.Text = "Actualizar"
         Me.BtnActualizar.UseVisualStyleBackColor = True
         '
         'BtnGuardar
         '
-        Me.BtnGuardar.Location = New System.Drawing.Point(37, 346)
-        Me.BtnGuardar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnGuardar.Location = New System.Drawing.Point(28, 281)
         Me.BtnGuardar.Name = "BtnGuardar"
-        Me.BtnGuardar.Size = New System.Drawing.Size(116, 48)
+        Me.BtnGuardar.Size = New System.Drawing.Size(87, 39)
         Me.BtnGuardar.TabIndex = 22
         Me.BtnGuardar.Text = "Guardar"
         Me.BtnGuardar.UseVisualStyleBackColor = True
@@ -420,10 +394,9 @@ Partial Class FrmUsuario
         Me.btnLimpiarEmple.BackgroundImage = CType(resources.GetObject("btnLimpiarEmple.BackgroundImage"), System.Drawing.Image)
         Me.btnLimpiarEmple.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnLimpiarEmple.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnLimpiarEmple.Location = New System.Drawing.Point(1216, 180)
-        Me.btnLimpiarEmple.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnLimpiarEmple.Location = New System.Drawing.Point(912, 146)
         Me.btnLimpiarEmple.Name = "btnLimpiarEmple"
-        Me.btnLimpiarEmple.Size = New System.Drawing.Size(43, 38)
+        Me.btnLimpiarEmple.Size = New System.Drawing.Size(32, 31)
         Me.btnLimpiarEmple.TabIndex = 99
         Me.btnLimpiarEmple.UseVisualStyleBackColor = True
         '
@@ -432,10 +405,9 @@ Partial Class FrmUsuario
         Me.btnAgg_E.BackColor = System.Drawing.Color.Silver
         Me.btnAgg_E.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgg_E.Image = CType(resources.GetObject("btnAgg_E.Image"), System.Drawing.Image)
-        Me.btnAgg_E.Location = New System.Drawing.Point(1216, 225)
-        Me.btnAgg_E.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnAgg_E.Location = New System.Drawing.Point(912, 183)
         Me.btnAgg_E.Name = "btnAgg_E"
-        Me.btnAgg_E.Size = New System.Drawing.Size(43, 34)
+        Me.btnAgg_E.Size = New System.Drawing.Size(32, 28)
         Me.btnAgg_E.TabIndex = 98
         Me.btnAgg_E.UseVisualStyleBackColor = False
         '
@@ -443,20 +415,19 @@ Partial Class FrmUsuario
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.BazarRoxana.My.Resources.Resources.Logo
-        Me.PictureBox1.Location = New System.Drawing.Point(932, 26)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(699, 21)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(327, 119)
+        Me.PictureBox1.Size = New System.Drawing.Size(245, 97)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 94
         Me.PictureBox1.TabStop = False
         '
         'FrmUsuario
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.ClientSize = New System.Drawing.Size(1404, 838)
+        Me.ClientSize = New System.Drawing.Size(1034, 634)
         Me.Controls.Add(Me.BtnLimpiar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnLimpiarEmple)
@@ -479,7 +450,6 @@ Partial Class FrmUsuario
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TxtContraseña)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FrmUsuario"
         Me.Text = "FrmUsuario"
         Me.GroupBox1.ResumeLayout(False)

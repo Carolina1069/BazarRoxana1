@@ -8,7 +8,7 @@ Public Class ReporteProductoParametro
     End Sub
 
     Private Sub ReporteProductoParametro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AbrirConeccion()
+        AbrirConexion()
 
         Dim DATOSusuarios As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select NombCateg from Categoria ", ConexionBase)

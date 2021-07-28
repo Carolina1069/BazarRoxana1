@@ -4,7 +4,7 @@ Public Class Categorias
     Dim dt As New DataTable()
 
     Private Sub Categorias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AbrirConeccion()
+        AbrirConexion()
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using DtAdaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", ConexionBase)
             DtAdaptador.Fill(DatosCat)
@@ -31,7 +31,7 @@ Public Class Categorias
 
     'Guarda un nuevo registro en la base de datos
     Private Sub BtnGuardar_Click(sender As Object, e As EventArgs) Handles BtnGuardar.Click
-        AbrirConeccion()
+        AbrirConexion()
         If TxtNombCat.Text = "" Or TxtDescripcion.Text = "" Then
             MsgBox("Hay campos vacios")
 
@@ -98,7 +98,7 @@ Public Class Categorias
 
     'Elimina un registro cambiando su estado en 0
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        AbrirConeccion()
+        AbrirConexion()
 
         If TxCodCat.Text = "" Then
             MsgBox("Hay campos vacios")
@@ -165,7 +165,7 @@ Public Class Categorias
 
     'Boton que habilita una categoria que se haya eliminado
     Private Sub BtnHabilitar_Click(sender As Object, e As EventArgs) Handles BtnHabilitar.Click
-        AbrirConeccion()
+        AbrirConexion()
 
         Try
             Dim ConsultaAct As String = "update Categoria set EstadoCateg=1 where CodCateg= @CodCateg"
@@ -237,7 +237,7 @@ Public Class Categorias
     'Al esta seleccionado muestra los registros Inhabilitados
     Private Sub ChkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles ChkInhabil.CheckedChanged
 
-        AbrirConeccion()
+        AbrirConexion()
 
         If ChkInhabil.Checked = True Then
 

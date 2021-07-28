@@ -266,7 +266,7 @@ Partial Class Login
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Login"
-        Me.Opacity = 0.8R
+        Me.Opacity = 0.95R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         Me.Panel1.ResumeLayout(False)

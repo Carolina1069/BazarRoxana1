@@ -8,7 +8,7 @@ Module ConexionLogin
     'localhost
     '(local)\SQLEXPRESS
 
-    Sub AbrirConeccion()
+    Sub AbrirConexion()
 
         Try
             ConexionBase = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
@@ -22,8 +22,9 @@ Module ConexionLogin
     Function ContrasenaUsuario(ByVal NombreUsuario As String) As String
         Dim resultado As String = ""
         Try
-            enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp 
-            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & NombreUsuario & "' and E.EstadoEmple=1 ", ConexionBase)
+            enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, CONVERT(varchar(max), DECRYPTBYPASSPHRASE(U.Llave,U.ContraseñaEmp)) as ContraseñaEmp
+            from Empleados as E inner join Usuario as U 
+			on E.CodEmple=U.CodEmple where U.UsuarioEmp= '" & NombreUsuario & "' and E.EstadoEmple=1", ConexionBase)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then
@@ -76,7 +77,7 @@ Module ConexionLogin
         Return cod
     End Function
     Function CodUVenta() As String
-        AbrirConeccion()
+        AbrirConexion()
         Dim resultado As Boolean = False
         Dim cod As String = 0
         Try
@@ -97,7 +98,7 @@ Module ConexionLogin
     ' fin
 
     Function CodUltimaVenta() As String
-        AbrirConeccion()
+        AbrirConexion()
         Dim resultado As Boolean = False
         Dim cod As String = 0
         Try

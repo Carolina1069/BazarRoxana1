@@ -45,7 +45,7 @@ Public Class MiEmpresa
         TxtCai4.Enabled = False
         TxtCai5.Enabled = False
         TxtCai6.Enabled = False
-        AbrirConeccion()
+        AbrirConexion()
 
         Dim DatosEmpleado As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select * from MiEmpresa", ConexionBase)
@@ -65,7 +65,7 @@ Public Class MiEmpresa
             MsgBox("Verifique los datos del email", MsgBoxStyle.Exclamation, "Advertencia")
         End Try
 
-        AbrirConeccion()
+        AbrirConexion()
         If RegistradoMiEmpresa() = False Then
             If StatePlato = "INS" Then
                 If FicheroEmpresa IsNot Nothing Or TxtDireccion.Text = "" Or TxtRtn.Text = "" Or TxtEmail.Text = "" Or TxtCai1.Text = "" Or TxtCai2.Text = "" Or TxtCai3.Text = "" Or TxtCai4.Text = "" Or TxtCai5.Text = "" Or TxtCai6.Text = "" Then
@@ -134,7 +134,7 @@ Public Class MiEmpresa
     End Sub
 
     Private Sub btndel_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        AbrirConeccion()
+        AbrirConexion()
         Dim ConsultaAct As String = "delete from MiEmpresa where Codigo=1" '<-Consulta.
         'Toma los valores de los textbox  y los actualiza en la base de datos. 
         Dim EjecutarConsulta As New SqlCommand(ConsultaAct, ConexionBase)
@@ -155,7 +155,7 @@ Public Class MiEmpresa
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles BtnActualizar.Click
         Dim MailEmpresa As New System.Net.Mail.MailAddress(TxtEmail.Text) '<-Validar el correro
-        AbrirConeccion()
+        AbrirConexion()
         Try
             If TxtEmail.TextLength < 6 Then
                 MsgBox("Debe ingresar como minimo 6 caracteres en el correro.", MsgBoxStyle.Exclamation, "Advertencia")
