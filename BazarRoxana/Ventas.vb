@@ -72,7 +72,7 @@ Public Class Ventas
             SubTotal1Venta = (Val(CbxPrecio.Text) * Val(TxtCantidad.Text))
             Subtotal2Venta = SubTotal1Venta * ImpuestoVenta
             SubtotalVenta = SubTotal1Venta + Subtotal2Venta
-            DGV.Rows.Add(TxtCodigoProducto.Text, TxtNombreProducto.Text, TxtArticulo.Text, TxtDescripcion.Text, Impuesto, TxtCantidad.Text, CbxPrecio.Text, SubTotal)
+            DGV.Rows.Add(TxtCodigoProducto.Text, TxtNombreProducto.Text, TxtArticulo.Text, TxtDescripcion.Text, ImpuestoVenta, TxtCantidad.Text, CbxPrecio.Text, SubtotalVenta)
             For Each row As DataGridViewRow In DGV.Rows
                 TotalVenta += Val(row.Cells(7).Value)
             Next

@@ -28,24 +28,24 @@ Partial Class MiEmpresa
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btndel = New System.Windows.Forms.Button()
-        Me.btnsave = New System.Windows.Forms.Button()
-        Me.txtTelefono = New System.Windows.Forms.TextBox()
+        Me.PtbImagen = New System.Windows.Forms.PictureBox()
+        Me.BtnEliminar = New System.Windows.Forms.Button()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
+        Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtCAI1 = New System.Windows.Forms.TextBox()
+        Me.TxtCai1 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtRTN = New System.Windows.Forms.TextBox()
+        Me.TxtRtn = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.BtnUpdate = New System.Windows.Forms.Button()
-        Me.txtDireccion = New System.Windows.Forms.TextBox()
+        Me.BtnActualizar = New System.Windows.Forms.Button()
+        Me.TxtDireccion = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtEmail = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DGV = New System.Windows.Forms.DataGridView()
+        Me.DgvInformacion = New System.Windows.Forms.DataGridView()
         Me.BtnBorrar = New System.Windows.Forms.Button()
         Me.LlContador1 = New System.Windows.Forms.Label()
         Me.LbContador = New System.Windows.Forms.Label()
@@ -57,23 +57,23 @@ Partial Class MiEmpresa
         Me.LbContador7 = New System.Windows.Forms.Label()
         Me.LbContador10 = New System.Windows.Forms.Label()
         Me.LbContador9 = New System.Windows.Forms.Label()
-        Me.txtCAI2 = New System.Windows.Forms.TextBox()
-        Me.txtCAI3 = New System.Windows.Forms.TextBox()
+        Me.TxtCai2 = New System.Windows.Forms.TextBox()
+        Me.TxtCai3 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.txtCAI4 = New System.Windows.Forms.TextBox()
+        Me.TxtCai4 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtCAI6 = New System.Windows.Forms.TextBox()
-        Me.txtCAI5 = New System.Windows.Forms.TextBox()
+        Me.TxtCai6 = New System.Windows.Forms.TextBox()
+        Me.TxtCai5 = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtCai = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PtbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvInformacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label7
@@ -89,50 +89,50 @@ Partial Class MiEmpresa
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.PtbImagen)
         Me.Panel1.Location = New System.Drawing.Point(675, 124)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(308, 179)
         Me.Panel1.TabIndex = 33
         '
-        'PictureBox1
+        'PtbImagen
         '
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 14)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(280, 150)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.PtbImagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PtbImagen.Location = New System.Drawing.Point(14, 14)
+        Me.PtbImagen.Name = "PtbImagen"
+        Me.PtbImagen.Size = New System.Drawing.Size(280, 150)
+        Me.PtbImagen.TabIndex = 0
+        Me.PtbImagen.TabStop = False
         '
-        'btndel
+        'BtnEliminar
         '
-        Me.btndel.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btndel.Location = New System.Drawing.Point(897, 165)
-        Me.btndel.Name = "btndel"
-        Me.btndel.Size = New System.Drawing.Size(85, 35)
-        Me.btndel.TabIndex = 14
-        Me.btndel.Text = "Eliminar"
-        Me.btndel.UseVisualStyleBackColor = True
+        Me.BtnEliminar.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnEliminar.Location = New System.Drawing.Point(897, 165)
+        Me.BtnEliminar.Name = "BtnEliminar"
+        Me.BtnEliminar.Size = New System.Drawing.Size(85, 35)
+        Me.BtnEliminar.TabIndex = 14
+        Me.BtnEliminar.Text = "Eliminar"
+        Me.BtnEliminar.UseVisualStyleBackColor = True
         '
-        'btnsave
+        'BtnGuardar
         '
-        Me.btnsave.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnsave.Location = New System.Drawing.Point(19, 165)
-        Me.btnsave.Name = "btnsave"
-        Me.btnsave.Size = New System.Drawing.Size(85, 35)
-        Me.btnsave.TabIndex = 12
-        Me.btnsave.Text = "Guardar"
-        Me.btnsave.UseVisualStyleBackColor = True
+        Me.BtnGuardar.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnGuardar.Location = New System.Drawing.Point(19, 165)
+        Me.BtnGuardar.Name = "BtnGuardar"
+        Me.BtnGuardar.Size = New System.Drawing.Size(85, 35)
+        Me.BtnGuardar.TabIndex = 12
+        Me.BtnGuardar.Text = "Guardar"
+        Me.BtnGuardar.UseVisualStyleBackColor = True
         '
-        'txtTelefono
+        'TxtTelefono
         '
-        Me.txtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtTelefono.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtTelefono.Location = New System.Drawing.Point(423, 212)
-        Me.txtTelefono.MaxLength = 8
-        Me.txtTelefono.Name = "txtTelefono"
-        Me.txtTelefono.Size = New System.Drawing.Size(181, 20)
-        Me.txtTelefono.TabIndex = 4
+        Me.TxtTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtTelefono.Font = New System.Drawing.Font("Candara", 12.0!)
+        Me.TxtTelefono.Location = New System.Drawing.Point(423, 212)
+        Me.TxtTelefono.MaxLength = 8
+        Me.TxtTelefono.Name = "TxtTelefono"
+        Me.TxtTelefono.Size = New System.Drawing.Size(181, 20)
+        Me.TxtTelefono.TabIndex = 4
         '
         'Label5
         '
@@ -154,15 +154,15 @@ Partial Class MiEmpresa
         Me.Label4.TabIndex = 26
         Me.Label4.Text = "Email"
         '
-        'txtCAI1
+        'TxtCai1
         '
-        Me.txtCAI1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCAI1.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtCAI1.Location = New System.Drawing.Point(95, 258)
-        Me.txtCAI1.MaxLength = 6
-        Me.txtCAI1.Name = "txtCAI1"
-        Me.txtCAI1.Size = New System.Drawing.Size(67, 20)
-        Me.txtCAI1.TabIndex = 5
+        Me.TxtCai1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtCai1.Font = New System.Drawing.Font("Candara", 12.0!)
+        Me.TxtCai1.Location = New System.Drawing.Point(95, 258)
+        Me.TxtCai1.MaxLength = 6
+        Me.TxtCai1.Name = "TxtCai1"
+        Me.TxtCai1.Size = New System.Drawing.Size(67, 20)
+        Me.TxtCai1.TabIndex = 5
         '
         'Label3
         '
@@ -174,15 +174,15 @@ Partial Class MiEmpresa
         Me.Label3.TabIndex = 24
         Me.Label3.Text = "CAI"
         '
-        'txtRTN
+        'TxtRtn
         '
-        Me.txtRTN.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtRTN.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtRTN.Location = New System.Drawing.Point(423, 166)
-        Me.txtRTN.MaxLength = 14
-        Me.txtRTN.Name = "txtRTN"
-        Me.txtRTN.Size = New System.Drawing.Size(181, 20)
-        Me.txtRTN.TabIndex = 2
+        Me.TxtRtn.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtRtn.Font = New System.Drawing.Font("Candara", 12.0!)
+        Me.TxtRtn.Location = New System.Drawing.Point(423, 166)
+        Me.TxtRtn.MaxLength = 14
+        Me.TxtRtn.Name = "TxtRtn"
+        Me.TxtRtn.Size = New System.Drawing.Size(181, 20)
+        Me.TxtRtn.TabIndex = 2
         '
         'Label2
         '
@@ -194,25 +194,25 @@ Partial Class MiEmpresa
         Me.Label2.TabIndex = 22
         Me.Label2.Text = "RTN"
         '
-        'BtnUpdate
+        'BtnActualizar
         '
-        Me.BtnUpdate.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnUpdate.Location = New System.Drawing.Point(462, 165)
-        Me.BtnUpdate.Name = "BtnUpdate"
-        Me.BtnUpdate.Size = New System.Drawing.Size(90, 35)
-        Me.BtnUpdate.TabIndex = 13
-        Me.BtnUpdate.Text = "Actualizar"
-        Me.BtnUpdate.UseVisualStyleBackColor = True
+        Me.BtnActualizar.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnActualizar.Location = New System.Drawing.Point(462, 165)
+        Me.BtnActualizar.Name = "BtnActualizar"
+        Me.BtnActualizar.Size = New System.Drawing.Size(90, 35)
+        Me.BtnActualizar.TabIndex = 13
+        Me.BtnActualizar.Text = "Actualizar"
+        Me.BtnActualizar.UseVisualStyleBackColor = True
         '
-        'txtDireccion
+        'TxtDireccion
         '
-        Me.txtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtDireccion.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtDireccion.Location = New System.Drawing.Point(96, 167)
-        Me.txtDireccion.MaxLength = 50
-        Me.txtDireccion.Name = "txtDireccion"
-        Me.txtDireccion.Size = New System.Drawing.Size(187, 20)
-        Me.txtDireccion.TabIndex = 1
+        Me.TxtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtDireccion.Font = New System.Drawing.Font("Candara", 12.0!)
+        Me.TxtDireccion.Location = New System.Drawing.Point(96, 167)
+        Me.TxtDireccion.MaxLength = 50
+        Me.TxtDireccion.Name = "TxtDireccion"
+        Me.TxtDireccion.Size = New System.Drawing.Size(187, 20)
+        Me.TxtDireccion.TabIndex = 1
         '
         'Label1
         '
@@ -259,10 +259,10 @@ Partial Class MiEmpresa
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.DarkGray
-        Me.GroupBox1.Controls.Add(Me.DGV)
-        Me.GroupBox1.Controls.Add(Me.BtnUpdate)
-        Me.GroupBox1.Controls.Add(Me.btnsave)
-        Me.GroupBox1.Controls.Add(Me.btndel)
+        Me.GroupBox1.Controls.Add(Me.DgvInformacion)
+        Me.GroupBox1.Controls.Add(Me.BtnActualizar)
+        Me.GroupBox1.Controls.Add(Me.BtnGuardar)
+        Me.GroupBox1.Controls.Add(Me.BtnEliminar)
         Me.GroupBox1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
         Me.GroupBox1.Location = New System.Drawing.Point(18, 409)
         Me.GroupBox1.Name = "GroupBox1"
@@ -271,13 +271,13 @@ Partial Class MiEmpresa
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información"
         '
-        'DGV
+        'DgvInformacion
         '
-        Me.DGV.AllowUserToAddRows = False
-        Me.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DGV.BackgroundColor = System.Drawing.SystemColors.ScrollBar
-        Me.DGV.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.DGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgvInformacion.AllowUserToAddRows = False
+        Me.DgvInformacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvInformacion.BackgroundColor = System.Drawing.SystemColors.ScrollBar
+        Me.DgvInformacion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DgvInformacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
@@ -285,8 +285,8 @@ Partial Class MiEmpresa
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvInformacion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgvInformacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
@@ -294,13 +294,13 @@ Partial Class MiEmpresa
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGV.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DGV.EnableHeadersVisualStyles = False
-        Me.DGV.GridColor = System.Drawing.SystemColors.ControlLight
-        Me.DGV.Location = New System.Drawing.Point(15, 26)
-        Me.DGV.Name = "DGV"
-        Me.DGV.ReadOnly = True
-        Me.DGV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.DgvInformacion.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DgvInformacion.EnableHeadersVisualStyles = False
+        Me.DgvInformacion.GridColor = System.Drawing.SystemColors.ControlLight
+        Me.DgvInformacion.Location = New System.Drawing.Point(15, 26)
+        Me.DgvInformacion.Name = "DgvInformacion"
+        Me.DgvInformacion.ReadOnly = True
+        Me.DgvInformacion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
@@ -308,16 +308,16 @@ Partial Class MiEmpresa
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.DGV.RowHeadersWidth = 51
+        Me.DgvInformacion.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.DgvInformacion.RowHeadersWidth = 51
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.DGV.RowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGV.Size = New System.Drawing.Size(967, 120)
-        Me.DGV.TabIndex = 71
+        Me.DgvInformacion.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DgvInformacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvInformacion.Size = New System.Drawing.Size(967, 120)
+        Me.DgvInformacion.TabIndex = 71
         '
         'BtnBorrar
         '
@@ -449,25 +449,25 @@ Partial Class MiEmpresa
         Me.LbContador9.TabIndex = 89
         Me.LbContador9.Text = "0"
         '
-        'txtCAI2
+        'TxtCai2
         '
-        Me.txtCAI2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCAI2.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtCAI2.Location = New System.Drawing.Point(181, 258)
-        Me.txtCAI2.MaxLength = 6
-        Me.txtCAI2.Name = "txtCAI2"
-        Me.txtCAI2.Size = New System.Drawing.Size(67, 20)
-        Me.txtCAI2.TabIndex = 6
+        Me.TxtCai2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtCai2.Font = New System.Drawing.Font("Candara", 12.0!)
+        Me.TxtCai2.Location = New System.Drawing.Point(181, 258)
+        Me.TxtCai2.MaxLength = 6
+        Me.TxtCai2.Name = "TxtCai2"
+        Me.TxtCai2.Size = New System.Drawing.Size(67, 20)
+        Me.TxtCai2.TabIndex = 6
         '
-        'txtCAI3
+        'TxtCai3
         '
-        Me.txtCAI3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCAI3.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtCAI3.Location = New System.Drawing.Point(265, 259)
-        Me.txtCAI3.MaxLength = 6
-        Me.txtCAI3.Name = "txtCAI3"
-        Me.txtCAI3.Size = New System.Drawing.Size(67, 20)
-        Me.txtCAI3.TabIndex = 7
+        Me.TxtCai3.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtCai3.Font = New System.Drawing.Font("Candara", 12.0!)
+        Me.TxtCai3.Location = New System.Drawing.Point(265, 259)
+        Me.TxtCai3.MaxLength = 6
+        Me.TxtCai3.Name = "TxtCai3"
+        Me.TxtCai3.Size = New System.Drawing.Size(67, 20)
+        Me.TxtCai3.TabIndex = 7
         '
         'Label6
         '
@@ -505,15 +505,15 @@ Partial Class MiEmpresa
         Me.Label10.TabIndex = 96
         Me.Label10.Text = "-"
         '
-        'txtCAI4
+        'TxtCai4
         '
-        Me.txtCAI4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCAI4.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtCAI4.Location = New System.Drawing.Point(352, 259)
-        Me.txtCAI4.MaxLength = 6
-        Me.txtCAI4.Name = "txtCAI4"
-        Me.txtCAI4.Size = New System.Drawing.Size(67, 20)
-        Me.txtCAI4.TabIndex = 8
+        Me.TxtCai4.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtCai4.Font = New System.Drawing.Font("Candara", 12.0!)
+        Me.TxtCai4.Location = New System.Drawing.Point(352, 259)
+        Me.TxtCai4.MaxLength = 6
+        Me.TxtCai4.Name = "TxtCai4"
+        Me.TxtCai4.Size = New System.Drawing.Size(67, 20)
+        Me.TxtCai4.TabIndex = 8
         '
         'Label11
         '
@@ -527,25 +527,25 @@ Partial Class MiEmpresa
         Me.Label11.TabIndex = 98
         Me.Label11.Text = "-"
         '
-        'txtCAI6
+        'TxtCai6
         '
-        Me.txtCAI6.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCAI6.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtCAI6.Location = New System.Drawing.Point(526, 259)
-        Me.txtCAI6.MaxLength = 2
-        Me.txtCAI6.Name = "txtCAI6"
-        Me.txtCAI6.Size = New System.Drawing.Size(23, 20)
-        Me.txtCAI6.TabIndex = 10
+        Me.TxtCai6.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtCai6.Font = New System.Drawing.Font("Candara", 12.0!)
+        Me.TxtCai6.Location = New System.Drawing.Point(526, 259)
+        Me.TxtCai6.MaxLength = 2
+        Me.TxtCai6.Name = "TxtCai6"
+        Me.TxtCai6.Size = New System.Drawing.Size(23, 20)
+        Me.TxtCai6.TabIndex = 10
         '
-        'txtCAI5
+        'TxtCai5
         '
-        Me.txtCAI5.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtCAI5.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.txtCAI5.Location = New System.Drawing.Point(439, 259)
-        Me.txtCAI5.MaxLength = 6
-        Me.txtCAI5.Name = "txtCAI5"
-        Me.txtCAI5.Size = New System.Drawing.Size(67, 20)
-        Me.txtCAI5.TabIndex = 9
+        Me.TxtCai5.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtCai5.Font = New System.Drawing.Font("Candara", 12.0!)
+        Me.TxtCai5.Location = New System.Drawing.Point(439, 259)
+        Me.TxtCai5.MaxLength = 6
+        Me.TxtCai5.Name = "TxtCai5"
+        Me.TxtCai5.Size = New System.Drawing.Size(67, 20)
+        Me.TxtCai5.TabIndex = 9
         '
         'Label12
         '
@@ -559,16 +559,16 @@ Partial Class MiEmpresa
         Me.Label12.TabIndex = 100
         Me.Label12.Text = "-"
         '
-        'TextBox1
+        'TxtCai
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Font = New System.Drawing.Font("Candara", 12.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(95, 285)
-        Me.TextBox1.MaxLength = 6
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(454, 20)
-        Me.TextBox1.TabIndex = 101
-        Me.TextBox1.Visible = False
+        Me.TxtCai.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtCai.Font = New System.Drawing.Font("Candara", 12.0!)
+        Me.TxtCai.Location = New System.Drawing.Point(95, 285)
+        Me.TxtCai.MaxLength = 6
+        Me.TxtCai.Name = "TxtCai"
+        Me.TxtCai.Size = New System.Drawing.Size(454, 20)
+        Me.TxtCai.TabIndex = 101
+        Me.TxtCai.Visible = False
         '
         'Label13
         '
@@ -588,17 +588,17 @@ Partial Class MiEmpresa
         Me.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.ClientSize = New System.Drawing.Size(1040, 640)
         Me.Controls.Add(Me.Label13)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TxtCai)
         Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.txtCAI5)
+        Me.Controls.Add(Me.TxtCai5)
         Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.txtCAI6)
+        Me.Controls.Add(Me.TxtCai6)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.txtCAI4)
+        Me.Controls.Add(Me.TxtCai4)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txtCAI3)
-        Me.Controls.Add(Me.txtCAI2)
+        Me.Controls.Add(Me.TxtCai3)
+        Me.Controls.Add(Me.TxtCai2)
         Me.Controls.Add(Me.LbContador10)
         Me.Controls.Add(Me.LbContador9)
         Me.Controls.Add(Me.LbContador8)
@@ -616,23 +616,23 @@ Partial Class MiEmpresa
         Me.Controls.Add(Me.TxtEmail)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.txtTelefono)
+        Me.Controls.Add(Me.TxtTelefono)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtCAI1)
+        Me.Controls.Add(Me.TxtCai1)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.txtRTN)
+        Me.Controls.Add(Me.TxtRtn)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtDireccion)
+        Me.Controls.Add(Me.TxtDireccion)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MiEmpresa"
         Me.Text = "MiEmpresa"
         Me.Panel1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PtbImagen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
-        CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvInformacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -640,24 +640,24 @@ Partial Class MiEmpresa
 
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents btndel As Button
-    Friend WithEvents btnsave As Button
-    Friend WithEvents txtTelefono As TextBox
+    Friend WithEvents PtbImagen As PictureBox
+    Friend WithEvents BtnEliminar As Button
+    Friend WithEvents BtnGuardar As Button
+    Friend WithEvents TxtTelefono As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents txtCAI1 As TextBox
+    Friend WithEvents TxtCai1 As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents txtRTN As TextBox
+    Friend WithEvents TxtRtn As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents BtnUpdate As Button
-    Friend WithEvents txtDireccion As TextBox
+    Friend WithEvents BtnActualizar As Button
+    Friend WithEvents TxtDireccion As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents TxtEmail As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DGV As DataGridView
+    Friend WithEvents DgvInformacion As DataGridView
     Friend WithEvents BtnBorrar As Button
     Friend WithEvents LlContador1 As Label
     Friend WithEvents LbContador As Label
@@ -669,16 +669,16 @@ Partial Class MiEmpresa
     Friend WithEvents LbContador7 As Label
     Friend WithEvents LbContador10 As Label
     Friend WithEvents LbContador9 As Label
-    Friend WithEvents txtCAI2 As TextBox
-    Friend WithEvents txtCAI3 As TextBox
+    Friend WithEvents TxtCai2 As TextBox
+    Friend WithEvents TxtCai3 As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
-    Friend WithEvents txtCAI4 As TextBox
+    Friend WithEvents TxtCai4 As TextBox
     Friend WithEvents Label11 As Label
-    Friend WithEvents txtCAI6 As TextBox
-    Friend WithEvents txtCAI5 As TextBox
+    Friend WithEvents TxtCai6 As TextBox
+    Friend WithEvents TxtCai5 As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtCai As TextBox
     Friend WithEvents Label13 As Label
 End Class
