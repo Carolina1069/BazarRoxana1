@@ -1768,17 +1768,17 @@ Partial Public Class BazarRoxana
         
         Private columnNumCompra As Global.System.Data.DataColumn
         
-        Private columnCodProv As Global.System.Data.DataColumn
-        
-        Private columnCodPago As Global.System.Data.DataColumn
-        
-        Private columnCodTransa As Global.System.Data.DataColumn
-        
-        Private columnCodEmple As Global.System.Data.DataColumn
-        
         Private columnFechayHora As Global.System.Data.DataColumn
         
         Private columnTotal As Global.System.Data.DataColumn
+        
+        Private columnNombProv As Global.System.Data.DataColumn
+        
+        Private columnDescPago As Global.System.Data.DataColumn
+        
+        Private columnDescTransa As Global.System.Data.DataColumn
+        
+        Private columnNombEmple As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -1825,38 +1825,6 @@ Partial Public Class BazarRoxana
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property CodProvColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCodProv
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property CodPagoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCodPago
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property CodTransaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCodTransa
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property CodEmpleColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCodEmple
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property FechayHoraColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnFechayHora
@@ -1868,6 +1836,38 @@ Partial Public Class BazarRoxana
         Public ReadOnly Property TotalColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnTotal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property NombProvColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNombProv
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property DescPagoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDescPago
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property DescTransaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDescTransa
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property NombEmpleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNombEmple
             End Get
         End Property
         
@@ -1908,9 +1908,9 @@ Partial Public Class BazarRoxana
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddSelectComprasRow(ByVal NumCompra As Integer, ByVal CodProv As Integer, ByVal CodPago As Integer, ByVal CodTransa As Integer, ByVal CodEmple As Integer, ByVal FechayHora As Date, ByVal Total As Double) As SelectComprasRow
+        Public Overloads Function AddSelectComprasRow(ByVal NumCompra As Integer, ByVal FechayHora As Date, ByVal Total As Double, ByVal NombProv As String, ByVal DescPago As String, ByVal DescTransa As String, ByVal NombEmple As String) As SelectComprasRow
             Dim rowSelectComprasRow As SelectComprasRow = CType(Me.NewRow,SelectComprasRow)
-            Dim columnValuesArray() As Object = New Object() {NumCompra, CodProv, CodPago, CodTransa, CodEmple, FechayHora, Total}
+            Dim columnValuesArray() As Object = New Object() {NumCompra, FechayHora, Total, NombProv, DescPago, DescTransa, NombEmple}
             rowSelectComprasRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSelectComprasRow)
             Return rowSelectComprasRow
@@ -1940,12 +1940,12 @@ Partial Public Class BazarRoxana
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnNumCompra = MyBase.Columns("NumCompra")
-            Me.columnCodProv = MyBase.Columns("CodProv")
-            Me.columnCodPago = MyBase.Columns("CodPago")
-            Me.columnCodTransa = MyBase.Columns("CodTransa")
-            Me.columnCodEmple = MyBase.Columns("CodEmple")
             Me.columnFechayHora = MyBase.Columns("FechayHora")
             Me.columnTotal = MyBase.Columns("Total")
+            Me.columnNombProv = MyBase.Columns("NombProv")
+            Me.columnDescPago = MyBase.Columns("DescPago")
+            Me.columnDescTransa = MyBase.Columns("DescTransa")
+            Me.columnNombEmple = MyBase.Columns("NombEmple")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1953,27 +1953,31 @@ Partial Public Class BazarRoxana
         Private Sub InitClass()
             Me.columnNumCompra = New Global.System.Data.DataColumn("NumCompra", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNumCompra)
-            Me.columnCodProv = New Global.System.Data.DataColumn("CodProv", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCodProv)
-            Me.columnCodPago = New Global.System.Data.DataColumn("CodPago", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCodPago)
-            Me.columnCodTransa = New Global.System.Data.DataColumn("CodTransa", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCodTransa)
-            Me.columnCodEmple = New Global.System.Data.DataColumn("CodEmple", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCodEmple)
             Me.columnFechayHora = New Global.System.Data.DataColumn("FechayHora", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFechayHora)
             Me.columnTotal = New Global.System.Data.DataColumn("Total", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTotal)
+            Me.columnNombProv = New Global.System.Data.DataColumn("NombProv", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombProv)
+            Me.columnDescPago = New Global.System.Data.DataColumn("DescPago", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDescPago)
+            Me.columnDescTransa = New Global.System.Data.DataColumn("DescTransa", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDescTransa)
+            Me.columnNombEmple = New Global.System.Data.DataColumn("NombEmple", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombEmple)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnNumCompra}, true))
             Me.columnNumCompra.AllowDBNull = false
             Me.columnNumCompra.Unique = true
-            Me.columnCodProv.AllowDBNull = false
-            Me.columnCodPago.AllowDBNull = false
-            Me.columnCodTransa.AllowDBNull = false
-            Me.columnCodEmple.AllowDBNull = false
             Me.columnFechayHora.AllowDBNull = false
             Me.columnTotal.AllowDBNull = false
+            Me.columnNombProv.AllowDBNull = false
+            Me.columnNombProv.MaxLength = 35
+            Me.columnDescPago.AllowDBNull = false
+            Me.columnDescPago.MaxLength = 50
+            Me.columnDescTransa.AllowDBNull = false
+            Me.columnDescTransa.MaxLength = 50
+            Me.columnNombEmple.AllowDBNull = false
+            Me.columnNombEmple.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2849,17 +2853,17 @@ Partial Public Class BazarRoxana
         
         Private columnNumCompra As Global.System.Data.DataColumn
         
-        Private columnCodProv As Global.System.Data.DataColumn
-        
-        Private columnCodPago As Global.System.Data.DataColumn
-        
-        Private columnCodTransa As Global.System.Data.DataColumn
-        
-        Private columnCodEmple As Global.System.Data.DataColumn
-        
         Private columnFechayHora As Global.System.Data.DataColumn
         
         Private columnTotal As Global.System.Data.DataColumn
+        
+        Private columnNombProv As Global.System.Data.DataColumn
+        
+        Private columnDescPago As Global.System.Data.DataColumn
+        
+        Private columnDescTransa As Global.System.Data.DataColumn
+        
+        Private columnNombEmple As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -2906,38 +2910,6 @@ Partial Public Class BazarRoxana
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property CodProvColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCodProv
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property CodPagoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCodPago
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property CodTransaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCodTransa
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public ReadOnly Property CodEmpleColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnCodEmple
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public ReadOnly Property FechayHoraColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnFechayHora
@@ -2949,6 +2921,38 @@ Partial Public Class BazarRoxana
         Public ReadOnly Property TotalColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnTotal
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property NombProvColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNombProv
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property DescPagoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDescPago
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property DescTransaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDescTransa
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property NombEmpleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNombEmple
             End Get
         End Property
         
@@ -2989,9 +2993,9 @@ Partial Public Class BazarRoxana
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Overloads Function AddSelectCompraFechaRow(ByVal NumCompra As Integer, ByVal CodProv As Integer, ByVal CodPago As Integer, ByVal CodTransa As Integer, ByVal CodEmple As Integer, ByVal FechayHora As Date, ByVal Total As Double) As SelectCompraFechaRow
+        Public Overloads Function AddSelectCompraFechaRow(ByVal NumCompra As Integer, ByVal FechayHora As Date, ByVal Total As Double, ByVal NombProv As String, ByVal DescPago As String, ByVal DescTransa As String, ByVal NombEmple As String) As SelectCompraFechaRow
             Dim rowSelectCompraFechaRow As SelectCompraFechaRow = CType(Me.NewRow,SelectCompraFechaRow)
-            Dim columnValuesArray() As Object = New Object() {NumCompra, CodProv, CodPago, CodTransa, CodEmple, FechayHora, Total}
+            Dim columnValuesArray() As Object = New Object() {NumCompra, FechayHora, Total, NombProv, DescPago, DescTransa, NombEmple}
             rowSelectCompraFechaRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowSelectCompraFechaRow)
             Return rowSelectCompraFechaRow
@@ -3021,12 +3025,12 @@ Partial Public Class BazarRoxana
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnNumCompra = MyBase.Columns("NumCompra")
-            Me.columnCodProv = MyBase.Columns("CodProv")
-            Me.columnCodPago = MyBase.Columns("CodPago")
-            Me.columnCodTransa = MyBase.Columns("CodTransa")
-            Me.columnCodEmple = MyBase.Columns("CodEmple")
             Me.columnFechayHora = MyBase.Columns("FechayHora")
             Me.columnTotal = MyBase.Columns("Total")
+            Me.columnNombProv = MyBase.Columns("NombProv")
+            Me.columnDescPago = MyBase.Columns("DescPago")
+            Me.columnDescTransa = MyBase.Columns("DescTransa")
+            Me.columnNombEmple = MyBase.Columns("NombEmple")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3034,27 +3038,31 @@ Partial Public Class BazarRoxana
         Private Sub InitClass()
             Me.columnNumCompra = New Global.System.Data.DataColumn("NumCompra", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNumCompra)
-            Me.columnCodProv = New Global.System.Data.DataColumn("CodProv", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCodProv)
-            Me.columnCodPago = New Global.System.Data.DataColumn("CodPago", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCodPago)
-            Me.columnCodTransa = New Global.System.Data.DataColumn("CodTransa", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCodTransa)
-            Me.columnCodEmple = New Global.System.Data.DataColumn("CodEmple", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnCodEmple)
             Me.columnFechayHora = New Global.System.Data.DataColumn("FechayHora", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnFechayHora)
             Me.columnTotal = New Global.System.Data.DataColumn("Total", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTotal)
+            Me.columnNombProv = New Global.System.Data.DataColumn("NombProv", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombProv)
+            Me.columnDescPago = New Global.System.Data.DataColumn("DescPago", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDescPago)
+            Me.columnDescTransa = New Global.System.Data.DataColumn("DescTransa", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDescTransa)
+            Me.columnNombEmple = New Global.System.Data.DataColumn("NombEmple", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombEmple)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnNumCompra}, true))
             Me.columnNumCompra.AllowDBNull = false
             Me.columnNumCompra.Unique = true
-            Me.columnCodProv.AllowDBNull = false
-            Me.columnCodPago.AllowDBNull = false
-            Me.columnCodTransa.AllowDBNull = false
-            Me.columnCodEmple.AllowDBNull = false
             Me.columnFechayHora.AllowDBNull = false
             Me.columnTotal.AllowDBNull = false
+            Me.columnNombProv.AllowDBNull = false
+            Me.columnNombProv.MaxLength = 35
+            Me.columnDescPago.AllowDBNull = false
+            Me.columnDescPago.MaxLength = 50
+            Me.columnDescTransa.AllowDBNull = false
+            Me.columnDescTransa.MaxLength = 50
+            Me.columnNombEmple.AllowDBNull = false
+            Me.columnNombEmple.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6013,50 +6021,6 @@ Partial Public Class BazarRoxana
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property CodProv() As Integer
-            Get
-                Return CType(Me(Me.tableSelectCompras.CodProvColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSelectCompras.CodProvColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property CodPago() As Integer
-            Get
-                Return CType(Me(Me.tableSelectCompras.CodPagoColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSelectCompras.CodPagoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property CodTransa() As Integer
-            Get
-                Return CType(Me(Me.tableSelectCompras.CodTransaColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSelectCompras.CodTransaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property CodEmple() As Integer
-            Get
-                Return CType(Me(Me.tableSelectCompras.CodEmpleColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSelectCompras.CodEmpleColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property FechayHora() As Date
             Get
                 Return CType(Me(Me.tableSelectCompras.FechayHoraColumn),Date)
@@ -6074,6 +6038,50 @@ Partial Public Class BazarRoxana
             End Get
             Set
                 Me(Me.tableSelectCompras.TotalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property NombProv() As String
+            Get
+                Return CType(Me(Me.tableSelectCompras.NombProvColumn),String)
+            End Get
+            Set
+                Me(Me.tableSelectCompras.NombProvColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property DescPago() As String
+            Get
+                Return CType(Me(Me.tableSelectCompras.DescPagoColumn),String)
+            End Get
+            Set
+                Me(Me.tableSelectCompras.DescPagoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property DescTransa() As String
+            Get
+                Return CType(Me(Me.tableSelectCompras.DescTransaColumn),String)
+            End Get
+            Set
+                Me(Me.tableSelectCompras.DescTransaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property NombEmple() As String
+            Get
+                Return CType(Me(Me.tableSelectCompras.NombEmpleColumn),String)
+            End Get
+            Set
+                Me(Me.tableSelectCompras.NombEmpleColumn) = value
             End Set
         End Property
     End Class
@@ -6341,50 +6349,6 @@ Partial Public Class BazarRoxana
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property CodProv() As Integer
-            Get
-                Return CType(Me(Me.tableSelectCompraFecha.CodProvColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSelectCompraFecha.CodProvColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property CodPago() As Integer
-            Get
-                Return CType(Me(Me.tableSelectCompraFecha.CodPagoColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSelectCompraFecha.CodPagoColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property CodTransa() As Integer
-            Get
-                Return CType(Me(Me.tableSelectCompraFecha.CodTransaColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSelectCompraFecha.CodTransaColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
-        Public Property CodEmple() As Integer
-            Get
-                Return CType(Me(Me.tableSelectCompraFecha.CodEmpleColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableSelectCompraFecha.CodEmpleColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Property FechayHora() As Date
             Get
                 Return CType(Me(Me.tableSelectCompraFecha.FechayHoraColumn),Date)
@@ -6402,6 +6366,50 @@ Partial Public Class BazarRoxana
             End Get
             Set
                 Me(Me.tableSelectCompraFecha.TotalColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property NombProv() As String
+            Get
+                Return CType(Me(Me.tableSelectCompraFecha.NombProvColumn),String)
+            End Get
+            Set
+                Me(Me.tableSelectCompraFecha.NombProvColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property DescPago() As String
+            Get
+                Return CType(Me(Me.tableSelectCompraFecha.DescPagoColumn),String)
+            End Get
+            Set
+                Me(Me.tableSelectCompraFecha.DescPagoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property DescTransa() As String
+            Get
+                Return CType(Me(Me.tableSelectCompraFecha.DescTransaColumn),String)
+            End Get
+            Set
+                Me(Me.tableSelectCompraFecha.DescTransaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property NombEmple() As String
+            Get
+                Return CType(Me(Me.tableSelectCompraFecha.NombEmpleColumn),String)
+            End Get
+            Set
+                Me(Me.tableSelectCompraFecha.NombEmpleColumn) = value
             End Set
         End Property
     End Class
@@ -8315,12 +8323,12 @@ Namespace BazarRoxanaTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "SelectCompras"
             tableMapping.ColumnMappings.Add("NumCompra", "NumCompra")
-            tableMapping.ColumnMappings.Add("CodProv", "CodProv")
-            tableMapping.ColumnMappings.Add("CodPago", "CodPago")
-            tableMapping.ColumnMappings.Add("CodTransa", "CodTransa")
-            tableMapping.ColumnMappings.Add("CodEmple", "CodEmple")
             tableMapping.ColumnMappings.Add("FechayHora", "FechayHora")
             tableMapping.ColumnMappings.Add("Total", "Total")
+            tableMapping.ColumnMappings.Add("NombProv", "NombProv")
+            tableMapping.ColumnMappings.Add("DescPago", "DescPago")
+            tableMapping.ColumnMappings.Add("DescTransa", "DescTransa")
+            tableMapping.ColumnMappings.Add("NombEmple", "NombEmple")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -8328,7 +8336,7 @@ Namespace BazarRoxanaTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.BazarRoxana.My.MySettings.Default.BazarRoxanaConnectionString1
+            Me._connection.ConnectionString = Global.BazarRoxana.My.MySettings.Default.BazarRoxanaConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8339,7 +8347,7 @@ Namespace BazarRoxanaTableAdapters
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "dbo.SelectCompras"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.StoredProcedure
-            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.[Variant], 0, Global.System.Data.ParameterDirection.ReturnValue, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@RETURN_VALUE", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.ReturnValue, 10, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8869,12 +8877,12 @@ Namespace BazarRoxanaTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "SelectCompraFecha"
             tableMapping.ColumnMappings.Add("NumCompra", "NumCompra")
-            tableMapping.ColumnMappings.Add("CodProv", "CodProv")
-            tableMapping.ColumnMappings.Add("CodPago", "CodPago")
-            tableMapping.ColumnMappings.Add("CodTransa", "CodTransa")
-            tableMapping.ColumnMappings.Add("CodEmple", "CodEmple")
             tableMapping.ColumnMappings.Add("FechayHora", "FechayHora")
             tableMapping.ColumnMappings.Add("Total", "Total")
+            tableMapping.ColumnMappings.Add("NombProv", "NombProv")
+            tableMapping.ColumnMappings.Add("DescPago", "DescPago")
+            tableMapping.ColumnMappings.Add("DescTransa", "DescTransa")
+            tableMapping.ColumnMappings.Add("NombEmple", "NombEmple")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         

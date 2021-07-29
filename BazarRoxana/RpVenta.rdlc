@@ -569,7 +569,7 @@
         <Top>1.6637cm</Top>
         <Left>0.46042cm</Left>
         <Height>1.88792cm</Height>
-        <Width>20.54812cm</Width>
+        <Width>20.54815cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -608,7 +608,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de Venta</Value>
+                  <Value>Reporte de venta</Value>
                   <Style>
                     <FontFamily>Century Schoolbook</FontFamily>
                     <FontSize>16pt</FontSize>

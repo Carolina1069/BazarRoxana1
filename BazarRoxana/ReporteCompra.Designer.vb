@@ -25,28 +25,18 @@ Partial Class ReporteCompra
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ReporteCompra))
-        Me.SelectComprasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BazarRoxana = New BazarRoxana()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.BazarRoxana = New BazarRoxana()
+        Me.SelectComprasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SelectComprasTableAdapter = New BazarRoxanaTableAdapters.SelectComprasTableAdapter()
-        CType(Me.SelectComprasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SelectComprasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'SelectComprasBindingSource
-        '
-        Me.SelectComprasBindingSource.DataMember = "SelectCompras"
-        Me.SelectComprasBindingSource.DataSource = Me.BazarRoxana
-        '
-        'BazarRoxana
-        '
-        Me.BazarRoxana.DataSetName = "BazarRoxana"
-        Me.BazarRoxana.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource1.Name = "Compra"
+        ReportDataSource1.Name = "SelectCompras"
         ReportDataSource1.Value = Me.SelectComprasBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "BazarRoxana.RpCompra.rdlc"
@@ -55,6 +45,16 @@ Partial Class ReporteCompra
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
         Me.ReportViewer1.Size = New System.Drawing.Size(800, 749)
         Me.ReportViewer1.TabIndex = 0
+        '
+        'BazarRoxana
+        '
+        Me.BazarRoxana.DataSetName = "BazarRoxana"
+        Me.BazarRoxana.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SelectComprasBindingSource
+        '
+        Me.SelectComprasBindingSource.DataMember = "SelectCompras"
+        Me.SelectComprasBindingSource.DataSource = Me.BazarRoxana
         '
         'SelectComprasTableAdapter
         '
@@ -70,8 +70,8 @@ Partial Class ReporteCompra
         Me.MaximizeBox = False
         Me.Name = "ReporteCompra"
         Me.Text = "Reporte de las Compra"
-        CType(Me.SelectComprasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BazarRoxana, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SelectComprasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
