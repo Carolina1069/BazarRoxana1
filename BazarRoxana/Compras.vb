@@ -48,14 +48,11 @@ Public Class Compras
     End Sub
     Private Sub TxtCodTransa_TextChanged(sender As Object, e As EventArgs)
         Dim Tran As Integer
-<<<<<<< HEAD
-        AbrirConeccion()
-=======
         ' tran = Val(TxtCodTransa.Text)
         'If tran >= 1 And tran <= 3 Or TxtCodTransa.Text = "" Then
         AbrirConexion()
         ' Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & TxtCodTransa.Text & "'"
->>>>>>> 20e7b975978a6d8fbe341263994b314b72b8d5ab
+
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
         Mostrar = Ejecutar.ExecuteReader
@@ -154,13 +151,7 @@ Public Class Compras
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
         Dim Total As Integer
-<<<<<<< HEAD
-        AbrirConeccion()
-=======
-        AbrirConexion()
 
-
->>>>>>> 20e7b975978a6d8fbe341263994b314b72b8d5ab
         If TxtNumCompra.Text = "" Or TxtCodProv.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
