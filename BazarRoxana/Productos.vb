@@ -350,8 +350,8 @@ Public Class Productos
                                                      PrimerPrecio,
                                                      SegundoPrecio,
                                                      TercerPrecio,
-                                                     maximo,
-                                                     Minimo
+                                                     Minimo,
+                                                     maximo
                                                      )) Then
                     MessageBox.Show("Actualizado")
                     BtnActualizar.Visible = False
@@ -635,5 +635,31 @@ Public Class Productos
         LblMarca.Text = TxtNombreProducto.Text.Length
     End Sub
 
+    Private Sub RtxDescripcionProducto_TextChanged(sender As Object, e As EventArgs) Handles RtxDescripcionProducto.TextChanged
+        LblArticulo.Text = RtxDescripcionProducto.Text.Length
+    End Sub
 
+    Private Sub RtxDescripcionProducto2_TextChanged(sender As Object, e As EventArgs) Handles RtxDescripcionProducto2.TextChanged
+        LblDescripcion.Text = RtxDescripcionProducto2.Text.Length
+    End Sub
+
+    Private Sub TxtProductosMaximos_TextChanged(sender As Object, e As EventArgs) Handles TxtProductosMaximos.TextChanged
+        LblProductosMax.Text = TxtProductosMaximos.Text.Length
+    End Sub
+
+    Private Sub TxtProductosMinimos_TextChanged(sender As Object, e As EventArgs) Handles TxtProductosMinimos.TextChanged
+        LblProductosMin.Text = TxtProductosMinimos.Text.Length
+    End Sub
+
+    Private Sub TxtPrimerPrecio_TextChanged(sender As Object, e As EventArgs) Handles TxtPrimerPrecio.TextChanged
+        LblPrimerP.Text = TxtPrimerPrecio.Text.Length
+    End Sub
+
+    Private Sub TxtSegundoPrecio_TextChanged(sender As Object, e As EventArgs) Handles TxtSegundoPrecio.TextChanged
+        LblSegundoP.Text = TxtSegundoPrecio.Text.Length
+    End Sub
+
+    Private Sub TxtTercerPrecio_TextChanged(sender As Object, e As EventArgs) Handles TxtTercerPrecio.TextChanged
+        LblTercerP.Text = TxtTercerPrecio.Text.Length
+    End Sub
 End Class

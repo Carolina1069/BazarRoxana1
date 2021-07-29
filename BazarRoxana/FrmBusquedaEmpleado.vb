@@ -34,7 +34,7 @@ Public Class FrmBusquedaEmpleado
     End Sub
 
     Private Sub TxtBusqueda_TextChanged(sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
-        LbContador8.Text = TxtBusqueda.Text.Length '<-- Muestra la cantidad de caracteres escritas en textbox.
+
         Dim filtro As String = CType(sender, TextBox).Text
         If filtro.Trim() <> String.Empty Then  'Si no es vacío filtra
             filtrarDatos(filtro)
@@ -56,7 +56,7 @@ Public Class FrmBusquedaEmpleado
         Me.Close()
     End Sub
 
-    Private Sub DGV_DoubleClick(sender As Object, e As EventArgs) Handles DGV.DoubleClick
+    Private Sub DGV_DoubleClick(sender As Object, e As EventArgs) 
         Dim frm As FrmUsuario = CType(Owner, FrmUsuario)
         frm.TxtCodigoempleado.Text = DGV.CurrentRow.Cells(0).Value
         frm.txtNombreempleado.Text = DGV.CurrentRow.Cells(1).Value

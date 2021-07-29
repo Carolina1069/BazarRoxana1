@@ -75,7 +75,6 @@ Public Class BuscarProducto
             ConexionBase.Close()
 
         Else
-            LbContador8.Text = TxtBusqueda.Text.Length
             Dim filtro As String = CType(sender, TextBox).Text
             If filtro.Trim() <> String.Empty Then  'Si no es vacío filtra
                 filtrarDatos(filtro)

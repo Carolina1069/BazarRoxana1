@@ -24,25 +24,25 @@ Partial Class Productos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
+        Me.LblTercerP = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.LblSegundoP = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.LblPrimerP = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
+        Me.LblProductosMin = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.LblProductosMax = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.LblDescripcion = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.LblArticulo = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.LblMarca = New System.Windows.Forms.Label()
         Me.RtxDescripcionProducto2 = New System.Windows.Forms.RichTextBox()
@@ -100,19 +100,19 @@ Partial Class Productos
         Me.GroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox2.Controls.Add(Me.Label19)
-        Me.GroupBox2.Controls.Add(Me.Label20)
+        Me.GroupBox2.Controls.Add(Me.LblTercerP)
         Me.GroupBox2.Controls.Add(Me.Label17)
-        Me.GroupBox2.Controls.Add(Me.Label18)
+        Me.GroupBox2.Controls.Add(Me.LblSegundoP)
         Me.GroupBox2.Controls.Add(Me.Label15)
-        Me.GroupBox2.Controls.Add(Me.Label16)
+        Me.GroupBox2.Controls.Add(Me.LblPrimerP)
         Me.GroupBox2.Controls.Add(Me.Label13)
-        Me.GroupBox2.Controls.Add(Me.Label14)
+        Me.GroupBox2.Controls.Add(Me.LblProductosMin)
         Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.Label12)
+        Me.GroupBox2.Controls.Add(Me.LblProductosMax)
         Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.LblDescripcion)
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.LblArticulo)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.LblMarca)
         Me.GroupBox2.Controls.Add(Me.RtxDescripcionProducto2)
@@ -163,13 +163,13 @@ Partial Class Productos
         Me.Label19.TabIndex = 97
         Me.Label19.Text = "/6"
         '
-        'Label20
+        'LblTercerP
         '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(957, 176)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(0, 19)
-        Me.Label20.TabIndex = 96
+        Me.LblTercerP.AutoSize = True
+        Me.LblTercerP.Location = New System.Drawing.Point(957, 176)
+        Me.LblTercerP.Name = "LblTercerP"
+        Me.LblTercerP.Size = New System.Drawing.Size(0, 19)
+        Me.LblTercerP.TabIndex = 96
         '
         'Label17
         '
@@ -180,13 +180,13 @@ Partial Class Productos
         Me.Label17.TabIndex = 95
         Me.Label17.Text = "/6"
         '
-        'Label18
+        'LblSegundoP
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(957, 143)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(0, 19)
-        Me.Label18.TabIndex = 94
+        Me.LblSegundoP.AutoSize = True
+        Me.LblSegundoP.Location = New System.Drawing.Point(957, 143)
+        Me.LblSegundoP.Name = "LblSegundoP"
+        Me.LblSegundoP.Size = New System.Drawing.Size(0, 19)
+        Me.LblSegundoP.TabIndex = 94
         '
         'Label15
         '
@@ -197,30 +197,30 @@ Partial Class Productos
         Me.Label15.TabIndex = 93
         Me.Label15.Text = "/6"
         '
-        'Label16
+        'LblPrimerP
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(957, 112)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(0, 19)
-        Me.Label16.TabIndex = 92
+        Me.LblPrimerP.AutoSize = True
+        Me.LblPrimerP.Location = New System.Drawing.Point(957, 112)
+        Me.LblPrimerP.Name = "LblPrimerP"
+        Me.LblPrimerP.Size = New System.Drawing.Size(0, 19)
+        Me.LblPrimerP.TabIndex = 92
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(657, 155)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(18, 19)
+        Me.Label13.Size = New System.Drawing.Size(21, 19)
         Me.Label13.TabIndex = 91
-        Me.Label13.Text = "/1"
+        Me.Label13.Text = "/2"
         '
-        'Label14
+        'LblProductosMin
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(637, 154)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(0, 19)
-        Me.Label14.TabIndex = 90
+        Me.LblProductosMin.AutoSize = True
+        Me.LblProductosMin.Location = New System.Drawing.Point(637, 154)
+        Me.LblProductosMin.Name = "LblProductosMin"
+        Me.LblProductosMin.Size = New System.Drawing.Size(0, 19)
+        Me.LblProductosMin.TabIndex = 90
         '
         'Label11
         '
@@ -231,30 +231,30 @@ Partial Class Productos
         Me.Label11.TabIndex = 89
         Me.Label11.Text = "/3"
         '
-        'Label12
+        'LblProductosMax
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(637, 124)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(0, 19)
-        Me.Label12.TabIndex = 88
+        Me.LblProductosMax.AutoSize = True
+        Me.LblProductosMax.Location = New System.Drawing.Point(637, 124)
+        Me.LblProductosMax.Name = "LblProductosMax"
+        Me.LblProductosMax.Size = New System.Drawing.Size(0, 19)
+        Me.LblProductosMax.TabIndex = 88
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(309, 170)
+        Me.Label9.Location = New System.Drawing.Point(319, 169)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(36, 19)
         Me.Label9.TabIndex = 87
         Me.Label9.Text = "/100"
         '
-        'Label10
+        'LblDescripcion
         '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(289, 169)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(0, 19)
-        Me.Label10.TabIndex = 86
+        Me.LblDescripcion.AutoSize = True
+        Me.LblDescripcion.Location = New System.Drawing.Point(289, 169)
+        Me.LblDescripcion.Name = "LblDescripcion"
+        Me.LblDescripcion.Size = New System.Drawing.Size(0, 19)
+        Me.LblDescripcion.TabIndex = 86
         '
         'Label7
         '
@@ -265,13 +265,13 @@ Partial Class Productos
         Me.Label7.TabIndex = 85
         Me.Label7.Text = "/30"
         '
-        'Label8
+        'LblArticulo
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(289, 122)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(0, 19)
-        Me.Label8.TabIndex = 84
+        Me.LblArticulo.AutoSize = True
+        Me.LblArticulo.Location = New System.Drawing.Point(289, 122)
+        Me.LblArticulo.Name = "LblArticulo"
+        Me.LblArticulo.Size = New System.Drawing.Size(0, 19)
+        Me.LblArticulo.TabIndex = 84
         '
         'Label6
         '
@@ -419,7 +419,7 @@ Partial Class Productos
         'TxtProductosMinimos
         '
         Me.TxtProductosMinimos.Location = New System.Drawing.Point(531, 149)
-        Me.TxtProductosMinimos.MaxLength = 1
+        Me.TxtProductosMinimos.MaxLength = 2
         Me.TxtProductosMinimos.Name = "TxtProductosMinimos"
         Me.TxtProductosMinimos.Size = New System.Drawing.Size(100, 27)
         Me.TxtProductosMinimos.TabIndex = 66
@@ -616,47 +616,46 @@ Partial Class Productos
         'DgvProductos
         '
         Me.DgvProductos.AllowUserToAddRows = False
-        Me.DgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvProductos.BackgroundColor = System.Drawing.SystemColors.ScrollBar
         Me.DgvProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgvProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle33.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle33.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle33
         Me.DgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvProductos.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle34.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.ControlDark
+        DataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvProductos.DefaultCellStyle = DataGridViewCellStyle34
         Me.DgvProductos.EnableHeadersVisualStyles = False
         Me.DgvProductos.GridColor = System.Drawing.SystemColors.ScrollBar
         Me.DgvProductos.Location = New System.Drawing.Point(6, 71)
         Me.DgvProductos.Name = "DgvProductos"
         Me.DgvProductos.ReadOnly = True
         Me.DgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Gray
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle35.BackColor = System.Drawing.Color.Gray
+        DataGridViewCellStyle35.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle35
         Me.DgvProductos.RowHeadersWidth = 51
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ScrollBar
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle36.BackColor = System.Drawing.SystemColors.ScrollBar
+        DataGridViewCellStyle36.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.DarkGray
+        DataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle36
         Me.DgvProductos.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
         Me.DgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgvProductos.Size = New System.Drawing.Size(993, 208)
@@ -813,17 +812,17 @@ Partial Class Productos
     Friend WithEvents LblMarca As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents Label20 As Label
+    Friend WithEvents LblTercerP As Label
     Friend WithEvents Label17 As Label
-    Friend WithEvents Label18 As Label
+    Friend WithEvents LblSegundoP As Label
     Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
+    Friend WithEvents LblPrimerP As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
+    Friend WithEvents LblProductosMin As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
+    Friend WithEvents LblProductosMax As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
+    Friend WithEvents LblDescripcion As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents LblArticulo As Label
 End Class

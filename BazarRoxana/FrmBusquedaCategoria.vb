@@ -4,7 +4,7 @@
 
     End Sub
 
-    Private Sub txtBuscarCateg_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarCateg.TextChanged
+    Private Sub txtBuscarCateg_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscarCateg.TextChanged
         buscar()
     End Sub
     Private Sub FrmBusquedaCategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -16,15 +16,15 @@
             dt = ConexionLogin.MostrarCategoria
 
             If dt.Rows.Count <> 0 Then
-                dgvcategoria.DataSource = dt
+                DgvCategoria.DataSource = dt
 
-                dgvcategoria.ColumnHeadersVisible = True
+                DgvCategoria.ColumnHeadersVisible = True
 
 
             Else
-                dgvcategoria.DataSource = Nothing
+                DgvCategoria.DataSource = Nothing
 
-                dgvcategoria.ColumnHeadersVisible = False
+                DgvCategoria.ColumnHeadersVisible = False
 
             End If
         Catch ex As Exception
@@ -37,15 +37,15 @@
         Dim Catg As String
 
         Try
-            Catg = txtBuscarCateg.Text
+            Catg = TxtBuscarCateg.Text
             dt = ConexionLogin.buscarCategoriaH(Catg)
 
             If dt.Rows.Count <> 0 Then
-                dgvcategoria.DataSource = dt
+                DgvCategoria.DataSource = dt
                 ConexionLogin.ConexionBase.Close()
 
             Else
-                dgvcategoria.DataSource = Nothing
+                DgvCategoria.DataSource = Nothing
                 ConexionLogin.ConexionBase.Close()
             End If
         Catch ex As Exception
@@ -53,7 +53,7 @@
         End Try
     End Sub
 
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
         Me.Close()
     End Sub
 
@@ -61,10 +61,10 @@
 
     End Sub
 
-    Private Sub dgvcategoria_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvcategoria.CellDoubleClick
+    Private Sub dgvcategoria_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim frm As Productos = CType(Owner, Productos)
-        frm.TxtNombreCategoria.Text = dgvcategoria.CurrentRow.Cells(1).Value
-        frm.TxtCodigoCategoria.Text = dgvcategoria.CurrentRow.Cells(0).Value
+        frm.TxtNombreCategoria.Text = DgvCategoria.CurrentRow.Cells(1).Value
+        frm.TxtCodigoCategoria.Text = DgvCategoria.CurrentRow.Cells(0).Value
         Me.Close()
     End Sub
 End Class

@@ -10,7 +10,8 @@ Module ConexionLogin
 
     Sub AbrirConexion()
         Try
-            ConexionBase = New SqlConnection("Data Source=localhost ;Initial Catalog=BazarRoxana; user id = sa; password =123456 ")
+            ConexionBase = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+            'ConexionBase = New SqlConnection("Data Source=localhost ;Initial Catalog=BazarRoxana; user id = sa; password =123456 ")
             ConexionBase.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception

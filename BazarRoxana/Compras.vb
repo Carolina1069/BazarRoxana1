@@ -315,8 +315,12 @@ Public Class Compras
     End Sub
 
     Private Sub btnsearchProv_Click(sender As Object, e As EventArgs) Handles btnsearchProv.Click
-        AddOwnedForm(viewProveedor) '<-- Ejecuta una llamada de la pantalla cliente con el metodo padre hijo  
-        viewProveedor.Show()
+        'AddOwnedForm(viewProveedor) '<-- Ejecuta una llamada de la pantalla cliente con el metodo padre hijo  
+        'viewProveedor.Show()
+
+        Dim frm As New FrmBusquedaProveedor
+        AddOwnedForm(frm)
+        frm.ShowDialog()
     End Sub
 
     Private Sub btnBuscProd_Click(sender As Object, e As EventArgs) Handles btnBuscProd.Click

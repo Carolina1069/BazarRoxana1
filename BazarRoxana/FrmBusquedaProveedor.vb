@@ -4,29 +4,27 @@
         mostrar()
 
     End Sub
-
-    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
-
-    End Sub
-
     Public Sub mostrar()
         Try
+            ConexionBase.Close()
             dt = ConexionLogin.mostrarProveedor
 
             If dt.Rows.Count <> 0 Then
-                dgvprov.DataSource = dt
+                DgvProv.DataSource = dt
 
-                dgvprov.ColumnHeadersVisible = True
+                DgvProv.ColumnHeadersVisible = True
 
 
             Else
-                dgvprov.DataSource = Nothing
+                DgvProv.DataSource = Nothing
 
-                dgvprov.ColumnHeadersVisible = False
+                DgvProv.ColumnHeadersVisible = False
 
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
+
         End Try
     End Sub
 
@@ -35,15 +33,15 @@
         Dim Proveedores As String
 
         Try
-            Proveedores = txtBuscarProv.Text
+            Proveedores = TxtBuscarProv.Text
             dt = ConexionLogin.buscarProveedorH(Proveedores)
 
             If dt.Rows.Count <> 0 Then
-                dgvprov.DataSource = dt
+                DgvProv.DataSource = dt
                 ConexionLogin.ConexionBase.Close()
 
             Else
-                dgvprov.DataSource = Nothing
+                DgvProv.DataSource = Nothing
                 ConexionLogin.ConexionBase.Close()
             End If
         Catch ex As Exception
@@ -53,25 +51,23 @@
 
 
 
-    Private Sub txtBuscarProv_TextChanged(sender As Object, e As EventArgs) Handles txtBuscarProv.TextChanged
+    Private Sub txtBuscarProv_TextChanged(sender As Object, e As EventArgs) Handles TxtBuscarProv.TextChanged
         buscar()
     End Sub
 
-    Private Sub dgvprov_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvprov.CellContentClick
 
-    End Sub
 
-    Private Sub dgvprov_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvprov.CellDoubleClick
+    Private Sub dgvprov_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
         Dim frm As Productos = CType(Owner, Productos)
-        frm.TxtCodigoProveedor.Text = dgvprov.CurrentRow.Cells(0).Value
-        frm.TxtNombreProveedor.Text = dgvprov.CurrentRow.Cells(1).Value
+        frm.TxtCodigoProveedor.Text = DgvProv.CurrentRow.Cells(0).Value
+        frm.TxtNombreProveedor.Text = DgvProv.CurrentRow.Cells(1).Value
 
 
         Me.Close()
 
     End Sub
 
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles BtnSalir.Click
         Me.Close()
     End Sub
 End Class
