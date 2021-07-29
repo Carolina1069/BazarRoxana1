@@ -11,7 +11,8 @@ Module ConexionLogin
     Sub AbrirConexion()
 
         Try
-            ConexionBase = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+            'ConexionBase = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+            ConexionBase = New SqlConnection("Data Source=localhost ;Initial Catalog=BazarRoxana; user id = sa; password =123456 ")
             ConexionBase.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception
@@ -486,7 +487,7 @@ Module ConexionLogin
 
     Public Function ActualizarProducto(codprod As Integer, NomProd As String, descripcion As String, descripcion2 As String, Codprov As Integer, NombProv As String,
                              CodCateg As Integer, NombCateg As String, PrimerPrecio As Integer, SegundoPrecio As Integer,
-                             TercerPrecio As Integer, UnidadesStock As Integer, Minimo As Integer, maximo As Integer)
+                             TercerPrecio As Integer, Minimo As Integer, maximo As Integer)
         Try
             ConexionBase.Open()
             enunciado = New SqlCommand("Actualizar", ConexionBase)
@@ -503,7 +504,6 @@ Module ConexionLogin
             enunciado.Parameters.AddWithValue("@PrimerPrecio", PrimerPrecio)
             enunciado.Parameters.AddWithValue("@SegundoPrecio", SegundoPrecio)
             enunciado.Parameters.AddWithValue("@TercerPrecio", TercerPrecio)
-            enunciado.Parameters.AddWithValue("@UnidadesStock", UnidadesStock)
             enunciado.Parameters.AddWithValue("@Minimo", Minimo)
             enunciado.Parameters.AddWithValue("@Maximo", maximo)
 

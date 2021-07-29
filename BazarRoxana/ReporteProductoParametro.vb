@@ -2,6 +2,8 @@
 Public Class ReporteProductoParametro
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+
+        AbrirConexion()
         Me.SelectProductoParametroTableAdapter.Fill(Me.BazarRoxana.SelectProductoParametro, CbxBusqueda.Text)
 
         Me.ReportViewer1.RefreshReport()

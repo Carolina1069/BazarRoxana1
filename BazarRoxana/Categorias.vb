@@ -13,7 +13,8 @@ Public Class Categorias
         DgvCategorias.DataSource = DatosCat
         ConexionBase.Close()
         BtnHabilitar.Visible = False
-
+        BtnActualizar.Visible = False
+        BtnEliminar.Visible = False
     End Sub
 
     'Funcion que limpia las cajas de texto
@@ -77,9 +78,11 @@ Public Class Categorias
 
                 If (ConexionLogin.ActualizarCategoria(CodigoCateg, NombreCateg, DescripcionCateg)) Then
                     MessageBox.Show("Actualizado")
+                    BtnActualizar.Visible = False
 
                 Else
                     MessageBox.Show("Error al actualizar")
+                    BtnActualizar.Visible = True
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -87,7 +90,7 @@ Public Class Categorias
             End Try
 
         End If
-
+        BtnEliminar.Visible = False
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta 
         Using DtAdaptador As New SqlDataAdapter("Select CodCateg as 'Codigo de la Categoria', NombCateg as 'Nombre de la Categoria', DescripCateg as 'Descripcion', CASE When EstadoCateg=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado de la Categoria' from Categoria  where EstadoCateg=1", ConexionBase)
             DtAdaptador.Fill(DatosCat)
@@ -198,6 +201,13 @@ Public Class Categorias
         TxCodCat.Text = DgvCategorias.CurrentRow.Cells(0).Value
         TxtNombCat.Text = DgvCategorias.CurrentRow.Cells(1).Value
         TxtDescripcion.Text = DgvCategorias.CurrentRow.Cells(2).Value
+        If ChkInhabil.Checked = True Then
+            BtnEliminar.Visible = False
+            BtnActualizar.Visible = False
+        Else
+            BtnEliminar.Visible = True
+            BtnActualizar.Visible = True
+        End If
 
     End Sub
 
@@ -260,8 +270,8 @@ Public Class Categorias
 
             DgvCategorias.DataSource = DatosCat
             BtnGuardar.Visible = True
-            BtnActualizar.Visible = True
-            BtnEliminar.Visible = True
+            BtnActualizar.Visible = False
+            BtnEliminar.Visible = False
             BtnHabilitar.Visible = False
 
         End If
@@ -277,6 +287,8 @@ Public Class Categorias
 
     Private Sub BtnLimpia_Click(sender As Object, e As EventArgs) Handles BtnLimpia.Click
         FuncLimpia()
+        BtnActualizar.Visible = False
+        BtnEliminar.Visible = False
     End Sub
 
     Public Sub MostrarCateg()

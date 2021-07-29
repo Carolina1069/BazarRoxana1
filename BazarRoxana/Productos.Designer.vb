@@ -438,9 +438,9 @@ Partial Class Productos
         Me.GroupBox1.Controls.Add(Me.BtnActualizar)
         Me.GroupBox1.Controls.Add(Me.BtnGuardar)
         Me.GroupBox1.Font = New System.Drawing.Font("Candara", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.GroupBox1.Location = New System.Drawing.Point(23, 348)
+        Me.GroupBox1.Location = New System.Drawing.Point(23, 347)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1017, 333)
+        Me.GroupBox1.Size = New System.Drawing.Size(1006, 338)
         Me.GroupBox1.TabIndex = 70
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Búsqueda de productos"
@@ -470,8 +470,8 @@ Partial Class Productos
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgvProductos.DefaultCellStyle = DataGridViewCellStyle2
         Me.DgvProductos.EnableHeadersVisualStyles = False
-        Me.DgvProductos.GridColor = System.Drawing.SystemColors.ControlLight
-        Me.DgvProductos.Location = New System.Drawing.Point(9, 90)
+        Me.DgvProductos.GridColor = System.Drawing.SystemColors.ScrollBar
+        Me.DgvProductos.Location = New System.Drawing.Point(6, 71)
         Me.DgvProductos.Name = "DgvProductos"
         Me.DgvProductos.ReadOnly = True
         Me.DgvProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -489,8 +489,9 @@ Partial Class Productos
         DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGray
         DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
         Me.DgvProductos.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DgvProductos.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
         Me.DgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvProductos.Size = New System.Drawing.Size(996, 173)
+        Me.DgvProductos.Size = New System.Drawing.Size(993, 208)
         Me.DgvProductos.TabIndex = 83
         '
         'BtnHabilitar
@@ -576,13 +577,13 @@ Partial Class Productos
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.ClientSize = New System.Drawing.Size(1034, 634)
+        Me.ClientSize = New System.Drawing.Size(1034, 684)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Productos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Productos"

@@ -175,6 +175,8 @@ Public Class FrmUsuario
         ChkMostrarcontra.Checked = False
         DgvUsuarios.Columns(4).Visible = False
         BtnGuardar.Visible = True
+        BtnActualizar.Visible = False
+        BtnEliminar.Visible = False
     End Sub
 
     Private Sub DGV_DoubleClick(sender As Object, e As EventArgs) Handles DgvUsuarios.DoubleClick '<-manda la informacion a los textbox
