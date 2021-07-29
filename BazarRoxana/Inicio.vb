@@ -1,7 +1,9 @@
 ﻿Imports System.Data.SqlClient
 Public Class Inicio
+    Dim StrHelpPath As String = System.IO.Path.Combine(Application.StartupPath, "help.chm")
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label1.Text = Login.TxtNombreEmpleado.Text
+        HelpProvider1.HelpNamespace = StrHelpPath
     End Sub
 
     Private Sub Label1_TextChanged(sender As Object, e As EventArgs) Handles Label1.TextChanged
@@ -31,7 +33,7 @@ Public Class Inicio
 
     Private Sub BtnHelp_Click(sender As Object, e As EventArgs) Handles BtnHelp.Click
 
-        Shell("cmd /cstart C:\Users\carlo\source\repos\BazarRoxana1\help.chm")
+        Help.ShowHelp(Me, HelpProvider1.HelpNamespace, HelpNavigator.TableOfContents)
 
     End Sub
 End Class
