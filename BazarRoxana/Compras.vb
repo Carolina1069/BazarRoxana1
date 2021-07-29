@@ -7,7 +7,7 @@ Public Class Compras
     End Sub
     Dim TipoPago As Integer = 0
     Dim TipoTransac As Integer = 0
-    Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProv.TextChanged
+    Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProv.TextChanged '<-- funcion que retorda los valores del producto seleccionado
         AbrirConexion()
         Dim Recuperar As String = "select * from Proveedores where CodProv= '" & TxtCodProv.Text & "'"
         Dim Mostrar As SqlDataReader
@@ -25,7 +25,7 @@ Public Class Compras
         ConexionBase.Close()
     End Sub
 
-    Private Sub TxtCodEmple_TextChanged(sender As Object, e As EventArgs) Handles TxtCodEmple.TextChanged
+    Private Sub TxtCodEmple_TextChanged(sender As Object, e As EventArgs) Handles TxtCodEmple.TextChanged '<-- funcion que retorna el nombre del empleado 
         AbrirConexion()
         Dim Recuperar As String = "select * from Empleados where CodEmple= '" & TxtCodEmple.Text & "'"
         Dim Mostrar As SqlDataReader
@@ -46,13 +46,9 @@ Public Class Compras
         Dim Pago As Integer
 
     End Sub
-    Private Sub TxtCodTransa_TextChanged(sender As Object, e As EventArgs)
+    Private Sub TxtCodTransa_TextChanged(sender As Object, e As EventArgs) '
         Dim Tran As Integer
-        ' tran = Val(TxtCodTransa.Text)
-        'If tran >= 1 And tran <= 3 Or TxtCodTransa.Text = "" Then
         AbrirConexion()
-        ' Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & TxtCodTransa.Text & "'"
-
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
         Mostrar = Ejecutar.ExecuteReader
