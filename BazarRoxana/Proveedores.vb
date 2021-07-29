@@ -501,4 +501,5 @@ Public Class Proveedores
         BtnActualizar.Visible = False
         ConexionBase.Close()
     End Sub
+
 End Class

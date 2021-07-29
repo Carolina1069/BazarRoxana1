@@ -5,6 +5,7 @@ Public Class Login
         ProgressBar1.Visible = False
         LbPorcentaje.Visible = False
 
+
     End Sub
 
     'Boton de ingresar, evalua si el usuario y contraseña son correctos y comienza ejecucion del cargador
@@ -129,6 +130,14 @@ Public Class Login
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub TxtNombreEmpleado_TextChanged(sender As Object, e As EventArgs) Handles TxtNombreEmpleado.TextChanged
+
+    End Sub
+
+    Private Sub TxtNombreEmpleado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNombreEmpleado.KeyPress
 
     End Sub
 End Class

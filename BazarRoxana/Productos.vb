@@ -53,7 +53,7 @@ Public Class Productos
         TxtCodigoProveedor.ReadOnly = True
         TxtNombreCategoria.ReadOnly = True
         TxtNombreProveedor.ReadOnly = True
-        'Ocultar()
+        Ocultar()
         ConexionBase.Close()
         BtnHabilitar.Visible = False
         BtnEliminar.Visible = False
@@ -451,23 +451,7 @@ Public Class Productos
         If ChkInhabil.Checked = True Then
 
             Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("SELECT Producto.CodProduc as 'Codigo Producto',
-                        CONCAT(Producto.DescripProduc, ' ' , Producto.NombProduc) as 'Nombre Producto',
-                        Producto.Descripcion as Descripción,
-                        Producto.CodProv as 'Código Proveedor',
-                        Producto.NombProv as 'Nombre Proveedor',
-                        Producto.CodCateg as 'Código Categoría',
-                        CONCAT(Producto.NombCateg, ' ' , Categoria.DescripCateg) as 'Nombre Categoría',
-                        Producto.PrimerPrecio as 'Primer Precio',
-                        Producto.SegundoPrecio as 'Segundo Precio',
-                        Producto.TercerPrecio as 'Tercer Precio',
-                        Producto.UnidadesStock as 'Unidades Stock',
-                        Producto.Minimo as Minimo,
-                        Producto.Maximo as Maximo,
-                        case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto'
-                        FROM Categoria INNER JOIN
-                        Producto ON Categoria.CodCateg = Producto.CodCateg
-                        where Estado = 0", ConexionBase)
+            Using adaptador As New SqlDataAdapter("EXECUTE MostrarProductosI", ConexionBase)
                 adaptador.Fill(DatosCat)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -476,26 +460,12 @@ Public Class Productos
             BtnActualizar.Visible = False
             BtnEliminar.Visible = False
             BtnHabilitar.Visible = True
+            Ocultar()
+
         Else
 
             Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-            Using adaptador As New SqlDataAdapter("SELECT Producto.CodProduc as 'Codigo Producto',
-                        CONCAT(Producto.DescripProduc, ' ' , Producto.NombProduc) as 'Nombre Producto',
-                        Producto.Descripcion as Descripción,
-                        Producto.CodProv as 'Código Proveedor',
-                        Producto.NombProv as 'Nombre Proveedor',
-                        Producto.CodCateg as 'Código Categoría',
-                        CONCAT(Producto.NombCateg, ' ' , Categoria.DescripCateg) as 'Nombre Categoría',
-                        Producto.PrimerPrecio as 'Primer Precio',
-                        Producto.SegundoPrecio as 'Segundo Precio',
-                        Producto.TercerPrecio as 'Tercer Precio',
-                        Producto.UnidadesStock as 'Unidades Stock',
-                        Producto.Minimo as Minimo,
-                        Producto.Maximo as Maximo,
-                        case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto'
-                        FROM Categoria INNER JOIN
-                        Producto ON Categoria.CodCateg = Producto.CodCateg
-                        where Estado = 1", ConexionBase)
+            Using adaptador As New SqlDataAdapter("EXECUTE MostrarProductos", ConexionBase)
                 adaptador.Fill(DatosCat)
             End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
 
@@ -504,6 +474,7 @@ Public Class Productos
             BtnActualizar.Visible = False
             BtnEliminar.Visible = False
             BtnHabilitar.Visible = False
+            Ocultar()
 
         End If
         ConexionBase.Close()
@@ -571,23 +542,7 @@ Public Class Productos
 
 
         Dim DatosCat As New DataTable 'tabla temporal que recoge los datos de la consulta
-        Using Adaptador As New SqlDataAdapter("SELECT Producto.CodProduc,
-                        CONCAT(Producto.DescripProduc, ' ' , Producto.NombProduc) as 'Nombre Producto',
-                        Producto.Descripcion as Descripción,
-                        Producto.CodProv as 'Código Proveedor',
-                        Producto.NombProv as 'Nombre Proveedor',
-                        Producto.CodCateg as 'Código Categoría',
-                        CONCAT(Producto.NombCateg, ' ' , Categoria.DescripCateg) as 'Nombre Categoría',
-                        Producto.PrimerPrecio as 'Primer Precio',
-                        Producto.SegundoPrecio as 'Segundo Precio',
-                        Producto.TercerPrecio as 'Tercer Precio',
-                        Producto.UnidadesStock as 'Unidades Stock',
-                        Producto.Minimo as Minimo,
-                        Producto.Maximo as Maximo,
-                        case when Estado=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del producto'
-                        FROM Categoria INNER JOIN
-                        Producto ON Categoria.CodCateg = Producto.CodCateg
-                        where Estado = 0", ConexionBase)
+        Using Adaptador As New SqlDataAdapter("EXECUTE MostrarProductosI", ConexionBase)
             Adaptador.Fill(DatosCat)
         End Using 'intermediario entre la base de datos y DATOSusuario para poder ingresar a datatable
         DgvProductos.DataSource = DatosCat
@@ -655,16 +610,16 @@ Public Class Productos
         TxtCodigoProducto.Text = DgvProductos.CurrentRow.Cells(0).Value
         TxtNombreProducto.Text = DgvProductos.CurrentRow.Cells(2).Value
         RtxDescripcionProducto.Text = DgvProductos.CurrentRow.Cells(3).Value
-        RtxDescripcionProducto2.Text = DgvProductos.CurrentRow.Cells(2).Value
-        TxtCodigoProveedor.Text = DgvProductos.CurrentRow.Cells(3).Value
-        TxtNombreProveedor.Text = DgvProductos.CurrentRow.Cells(4).Value
-        TxtCodigoCategoria.Text = DgvProductos.CurrentRow.Cells(5).Value
+        RtxDescripcionProducto2.Text = DgvProductos.CurrentRow.Cells(4).Value
+        TxtCodigoProveedor.Text = DgvProductos.CurrentRow.Cells(5).Value
+        TxtNombreProveedor.Text = DgvProductos.CurrentRow.Cells(6).Value
+        TxtCodigoCategoria.Text = DgvProductos.CurrentRow.Cells(7).Value
         TxtNombreCategoria.Text = DgvProductos.CurrentRow.Cells(9).Value
-        TxtProductosMaximos.Text = DgvProductos.CurrentRow.Cells(12).Value
-        TxtProductosMinimos.Text = DgvProductos.CurrentRow.Cells(11).Value
-        TxtPrimerPrecio.Text = DgvProductos.CurrentRow.Cells(7).Value
-        TxtSegundoPrecio.Text = DgvProductos.CurrentRow.Cells(8).Value
-        TxtTercerPrecio.Text = DgvProductos.CurrentRow.Cells(9).Value
+        TxtProductosMaximos.Text = DgvProductos.CurrentRow.Cells(15).Value
+        TxtProductosMinimos.Text = DgvProductos.CurrentRow.Cells(14).Value
+        TxtPrimerPrecio.Text = DgvProductos.CurrentRow.Cells(10).Value
+        TxtSegundoPrecio.Text = DgvProductos.CurrentRow.Cells(11).Value
+        TxtTercerPrecio.Text = DgvProductos.CurrentRow.Cells(12).Value
         If ChkInhabil.Checked = True Then
             BtnEliminar.Visible = False
             BtnActualizar.Visible = False
@@ -675,4 +630,10 @@ Public Class Productos
 
 
     End Sub
+
+    Private Sub TxtNombreProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtNombreProducto.TextChanged
+        LblMarca.Text = TxtNombreProducto.Text.Length
+    End Sub
+
+
 End Class

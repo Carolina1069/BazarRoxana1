@@ -474,7 +474,7 @@ Partial Class Proveedores
         '
         Me.RtbDirec.Font = New System.Drawing.Font("Candara", 12.0!)
         Me.RtbDirec.Location = New System.Drawing.Point(275, 123)
-        Me.RtbDirec.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RtbDirec.Margin = New System.Windows.Forms.Padding(2)
         Me.RtbDirec.MaxLength = 500
         Me.RtbDirec.Name = "RtbDirec"
         Me.RtbDirec.Size = New System.Drawing.Size(246, 91)
@@ -654,7 +654,7 @@ Partial Class Proveedores
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GroupBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Proveedores"
         Me.Text = "Proveedores"
         Me.GroupBox1.ResumeLayout(False)
