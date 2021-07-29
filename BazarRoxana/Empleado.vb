@@ -3,7 +3,7 @@
 Public Class Empleado
     Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        AbrirConeccion()
+        AbrirConexion()
 
         Dim DatosEmpleados As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using Adaptador As New SqlDataAdapter("select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
@@ -20,7 +20,7 @@ Public Class Empleado
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Dim Categoria As Integer
-        AbrirConeccion() '<-- Llamado de la funcion 
+        AbrirConexion() '<-- Llamado de la funcion 
         If (txtNombreempleado.TextLength < 2) Then
             MessageBox.Show("Debe ingresar como minimo 2 caracteres en nombre del empleado")
         Else
@@ -65,7 +65,7 @@ Public Class Empleado
     End Sub
 
     Private Sub btnActualizar_Click(sender As Object, e As EventArgs) Handles btnActualizar.Click
-        AbrirConeccion()
+        AbrirConexion()
         Try
             If (txtNombreempleado.TextLength < 2) Then
                 MessageBox.Show("Debe ingresar como minimo 2 caracteres en nombre del empleado")
@@ -119,7 +119,7 @@ Public Class Empleado
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        AbrirConeccion() '<-- Llamado de la funcion 
+        AbrirConexion() '<-- Llamado de la funcion 
         If TxtCodigoempleado.Text = String.Empty Then
             MsgBox("Por favor haga doble click a una fila de la tabla antes de eliminar algún dato deseado.", MsgBoxStyle.Exclamation, "Advertencia")
         Else
@@ -204,7 +204,7 @@ Public Class Empleado
 
 
     Private Sub chkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles chkInhabil.CheckedChanged
-        AbrirConeccion()
+        AbrirConexion()
 
         If chkInhabil.Checked = True Then
 
@@ -273,37 +273,38 @@ Public Class Empleado
     End Sub
 
     Public Sub FiltrarDatos(ByVal Buscar As String) '<-Funcion para filtrar datos que se mostraran en el DataGridView.
+
         If chkInhabil.Checked = False Then
             Try
-                Using Con As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
-                    Dim Query = "select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
+                AbrirConexion()
+                Dim Query = "select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
         when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 1 and NombEmple LIKE @filtro"
 
-                    Dim Adapter As New SqlDataAdapter(Query, Con)
-                    Adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", Buscar))
+                Dim Adapter As New SqlDataAdapter(Query, ConexionBase)
+                Adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", Buscar))
 
-                    Dim Table As New DataTable
-                    Adapter.Fill(Table)
+                Dim Table As New DataTable
+                Adapter.Fill(Table)
 
-                    DgvEmpleados.DataSource = Table
-                End Using
+                DgvEmpleados.DataSource = Table
+
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
         Else
             Try
-                Using Con As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
-                    Dim Query = "select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
+                AbrirConexion()
+                Dim Query = "select CodEmple as 'Código del empleado', NombEmple as 'Nombre del empleado', case when NivelEmple=1 Then 'Administrador' when NivelEmple=2 Then 'Gerente' else 'Vendedor' end as 'Nivel del empleado', case 
         when EstadoEmple=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del empleado' from Empleados where EstadoEmple = 0 and NombEmple LIKE @filtro"
 
-                    Dim Adapter As New SqlDataAdapter(Query, Con)
-                    Adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", Buscar))
+                Dim Adapter As New SqlDataAdapter(Query, ConexionBase)
+                Adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", Buscar))
 
-                    Dim Table As New DataTable
-                    Adapter.Fill(Table)
+                Dim Table As New DataTable
+                Adapter.Fill(Table)
 
-                    DgvEmpleados.DataSource = Table
-                End Using
+                DgvEmpleados.DataSource = Table
+
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
@@ -314,11 +315,12 @@ Public Class Empleado
 
     Private Sub TxtBusqueda_TextChanged(Sender As Object, e As EventArgs) Handles TxtBusqueda.TextChanged
         LbContador6.Text = TxtBusqueda.Text.Length '<-- Muestra la cantidad de caracteres escritas en textbox.
+        AbrirConexion()
         Dim Filtro As String = CType(Sender, TextBox).Text
         If Filtro.Trim() <> String.Empty Then  'Si no es vacío filtra
             FiltrarDatos(Filtro)
         Else
-            AbrirConeccion()
+
 
             If chkInhabil.Checked = True Then
 
@@ -346,7 +348,7 @@ Public Class Empleado
     End Sub
 
     Private Sub BtnHabilitar_Click(sender As Object, e As EventArgs) Handles BtnHabilitar.Click
-        AbrirConeccion()
+        AbrirConexion()
         Dim OpcionDia As DialogResult
         OpcionDia = MessageBox.Show("¿Está seguro que quiere habilitar este empleado?", "Habilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If OpcionDia = DialogResult.Yes Then

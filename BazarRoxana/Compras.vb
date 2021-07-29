@@ -8,7 +8,7 @@ Public Class Compras
     Dim TipoPago As Integer = 0
     Dim TipoTransac As Integer = 0
     Private Sub txCodProv_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProv.TextChanged
-        AbrirConeccion()
+        AbrirConexion()
         Dim Recuperar As String = "select * from Proveedores where CodProv= '" & TxtCodProv.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
@@ -26,7 +26,7 @@ Public Class Compras
     End Sub
 
     Private Sub TxtCodEmple_TextChanged(sender As Object, e As EventArgs) Handles TxtCodEmple.TextChanged
-        AbrirConeccion()
+        AbrirConexion()
         Dim Recuperar As String = "select * from Empleados where CodEmple= '" & TxtCodEmple.Text & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
@@ -48,7 +48,14 @@ Public Class Compras
     End Sub
     Private Sub TxtCodTransa_TextChanged(sender As Object, e As EventArgs)
         Dim Tran As Integer
+<<<<<<< HEAD
         AbrirConeccion()
+=======
+        ' tran = Val(TxtCodTransa.Text)
+        'If tran >= 1 And tran <= 3 Or TxtCodTransa.Text = "" Then
+        AbrirConexion()
+        ' Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & TxtCodTransa.Text & "'"
+>>>>>>> 20e7b975978a6d8fbe341263994b314b72b8d5ab
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
         Mostrar = Ejecutar.ExecuteReader
@@ -67,7 +74,7 @@ Public Class Compras
     Private Sub TxtCodProducto_TextChanged(sender As Object, e As EventArgs) Handles TxtCodProducto.TextChanged '<--- funcion que carga el producto seleccionado
         Dim Produ As Integer
         Produ = Val(TxtCodProducto.Text)
-        AbrirConeccion()
+        AbrirConexion()
         Dim Recuperar As String = "select * from Producto where CodProduc= '" & Produ & "'"
         Dim Mostrar As SqlDataReader
         Dim Ejecutar As SqlCommand
@@ -147,7 +154,13 @@ Public Class Compras
 
     Private Sub btGuardar_Click(sender As Object, e As EventArgs) Handles btGuardar.Click
         Dim Total As Integer
+<<<<<<< HEAD
         AbrirConeccion()
+=======
+        AbrirConexion()
+
+
+>>>>>>> 20e7b975978a6d8fbe341263994b314b72b8d5ab
         If TxtNumCompra.Text = "" Or TxtCodProv.Text = "" Or TxtCodEmple.Text = "" Or DGV.Rows.Count = 0 Then
             MsgBox("Hay campos vacios")
         Else
@@ -269,7 +282,7 @@ Public Class Compras
         Dim Pago As Integer
         TipoPago = CmbTipoPago.SelectedIndex + 1
         If TipoPago >= 1 And TipoPago <= 2 Then
-            AbrirConeccion()
+            AbrirConexion()
             Dim Recuperar As String = "select * from FormasPago where CodPago= '" & TipoPago & "'"
             Dim Mostrar As SqlDataReader
             Dim Ejecutar As SqlCommand
@@ -294,7 +307,7 @@ Public Class Compras
 
         TipoTransac = CmbTipoTransac.SelectedIndex + 1
         If tipoTransac >= 1 And tipoTransac <= 3 Then
-            AbrirConeccion()
+            AbrirConexion()
             Dim Recuperar As String = "select * from Transacciones where CodTransa= '" & tipoTransac & "'"
             Dim Mostrar As SqlDataReader
             Dim Ejecutar As SqlCommand

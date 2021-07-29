@@ -3,7 +3,7 @@
 Public Class Clientes
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        AbrirConeccion() '<-- Llamado de la funcion 
+        AbrirConexion() '<-- Llamado de la funcion 
 
         Dim DatosCliente As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using Adaptador As New SqlDataAdapter("select CodCli as 'Código del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Dirección del Cliente', TelCli 'Teléfono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1", ConexionBase)
@@ -21,7 +21,7 @@ Public Class Clientes
         Try
 
             Dim Mail As New System.Net.Mail.MailAddress(TxtCorreocli.Text) '<-Validar el correro
-            AbrirConeccion() '<-- Llamado de la funcion 
+            AbrirConexion() '<-- Llamado de la funcion 
             If TxtNomcli.TextLength < 2 Then
                 MsgBox("Debe ingresar como minimo 2 caracteres en nombre del cliente", MsgBoxStyle.Exclamation, "Advertencia")
             ElseIf TxtCorreocli.TextLength < 6 Then
@@ -69,7 +69,7 @@ Public Class Clientes
 
             Dim Mail As New System.Net.Mail.MailAddress(TxtCorreocli.Text) '<-Validar el correro
 
-            AbrirConeccion() '<-- Llamado de la funcion 
+            AbrirConexion() '<-- Llamado de la funcion 
 
             If TxtNomcli.TextLength < 2 Then
                 MsgBox("Debe ingresar como minimo 2 caracteres en nombre del cliente", MsgBoxStyle.Exclamation, "Advertencia")
@@ -115,7 +115,7 @@ Public Class Clientes
     End Sub
 
     Private Sub btEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-        AbrirConeccion() '<-- Llamado de la funcion 
+        AbrirConexion() '<-- Llamado de la funcion 
         If TxtCodcli.Text = String.Empty Then
             MsgBox("Por favor haga doble click a una fila de la tabla antes de eliminar algún dato deseado.", MsgBoxStyle.Exclamation, "Advertencia")
         Else
@@ -198,7 +198,7 @@ Public Class Clientes
 
     Private Sub chkInhabil_CheckedChanged(sender As Object, e As EventArgs) Handles ChkInhabil.CheckedChanged
 
-        AbrirConeccion()
+        AbrirConexion()
 
         If ChkInhabil.Checked = True Then
 
@@ -247,33 +247,31 @@ Public Class Clientes
     Public Sub filtrarDatos(ByVal Buscar As String) '<-Funcion para filtrar datos que se mostraran en el DataGridView.
         If ChkInhabil.Checked = False Then
             Try
-                Using Con As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
-                    Dim Query = "select CodCli as 'Codigo del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Direccion del Cliente', TelCli 'Telefono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1 and NombCli LIKE @filtro"
+                AbrirConexion()
+                Dim Query = "select CodCli as 'Codigo del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Direccion del Cliente', TelCli 'Telefono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=1 and NombCli LIKE @filtro"
 
-                    Dim Adapter As New SqlDataAdapter(Query, Con)
-                    Adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", Buscar))
+                Dim Adapter As New SqlDataAdapter(Query, ConexionBase)
+                Adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", Buscar))
 
-                    Dim Table As New DataTable
-                    Adapter.Fill(Table)
+                Dim Table As New DataTable
+                Adapter.Fill(Table)
 
-                    DgvCliente.DataSource = Table
-                End Using
+                DgvCliente.DataSource = Table
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
         Else
             Try
-                Using Con As New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
-                    Dim Query = "select CodCli as 'Codigo del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Direccion del Cliente', TelCli 'Telefono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=0 and NombCli LIKE @filtro"
+                AbrirConexion()
+                Dim Query = "select CodCli as 'Codigo del Cliente', NombCli as 'Nombre del Cliente', DirecCli 'Direccion del Cliente', TelCli 'Telefono del Cliente', CorreoCli 'Correo del Cliente', case when EstadoCli=1 then 'Habilitado' else 'Inhabilitado' end as 'Estado del Cliente' from Clientes where EstadoCli=0 and NombCli LIKE @filtro"
 
-                    Dim Adapter As New SqlDataAdapter(Query, Con)
-                    Adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", Buscar))
+                Dim Adapter As New SqlDataAdapter(Query, ConexionBase)
+                Adapter.SelectCommand.Parameters.AddWithValue("@filtro", String.Format("%{0}%", Buscar))
 
-                    Dim Table As New DataTable
-                    Adapter.Fill(table)
+                Dim Table As New DataTable
+                Adapter.Fill(Table)
 
-                    DgvCliente.DataSource = Table
-                End Using
+                DgvCliente.DataSource = Table
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
             End Try
@@ -283,11 +281,13 @@ Public Class Clientes
     End Sub
     Private Sub TxtBusqueda_TextChanged(Sender As Object, E As EventArgs) Handles TxtBusqueda.TextChanged '<--Busqueda.
         LbContador8.Text = TxtBusqueda.Text.Length '<-- Muestra la cantidad de caracteres escritas en textbox.
+        AbrirConexion()
+
         Dim Filtro As String = CType(Sender, TextBox).Text
         If Filtro.Trim() <> String.Empty Then  'Si no es vacío filtra
             filtrarDatos(Filtro)
         Else
-            AbrirConeccion()
+
 
             If ChkInhabil.Checked = True Then
 
@@ -387,7 +387,7 @@ Public Class Clientes
     End Sub
 
     Private Sub BtnHabilitar_Click(sender As Object, e As EventArgs) Handles BtnHabilitar.Click
-        AbrirConeccion()
+        AbrirConexion()
         Dim OpcionDia As DialogResult
         OpcionDia = MessageBox.Show("¿Está seguro que quiere habilitar este cliente?", "Habilitar", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If OpcionDia = DialogResult.Yes Then

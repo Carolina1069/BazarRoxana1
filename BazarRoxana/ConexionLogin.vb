@@ -8,10 +8,15 @@ Module ConexionLogin
     'localhost
     '(local)\SQLEXPRESS
 
-    Sub AbrirConeccion()
+    Sub AbrirConexion()
 
         Try
+<<<<<<< HEAD
             ConexionBase = New SqlConnection("Data Source=(local)\SQLEXPRESS;Initial Catalog=BazarRoxana;Integrated Security=True")
+=======
+            'ConexionBase = New SqlConnection("Data Source=localhost;Initial Catalog=BazarRoxana;Integrated Security=True")
+            ConexionBase = New SqlConnection("Data Source=localhost ;Initial Catalog=BazarRoxana; user id = sa; password =123456 ")
+>>>>>>> 20e7b975978a6d8fbe341263994b314b72b8d5ab
             ConexionBase.Open()
             ' MsgBox("Conectado")
         Catch ex As Exception
@@ -22,8 +27,9 @@ Module ConexionLogin
     Function ContrasenaUsuario(ByVal NombreUsuario As String) As String
         Dim resultado As String = ""
         Try
-            enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, U.ContraseñaEmp 
-            from Empleados as E inner join Usuario as U on E.CodEmple=U.CodEmple where U.UsuarioEmp='" & NombreUsuario & "' and E.EstadoEmple=1 ", ConexionBase)
+            enunciado = New SqlCommand("select U.CodEmple, E.NombEmple,E.NivelEmple, E.EstadoEmple, U.CodUsuario, U.UsuarioEmp, CONVERT(varchar(max), DECRYPTBYPASSPHRASE(U.Llave,U.ContraseñaEmp)) as ContraseñaEmp
+            from Empleados as E inner join Usuario as U 
+			on E.CodEmple=U.CodEmple where U.UsuarioEmp= '" & NombreUsuario & "' and E.EstadoEmple=1", ConexionBase)
             respuesta = enunciado.ExecuteReader
 
             If respuesta.Read Then
@@ -76,7 +82,7 @@ Module ConexionLogin
         Return cod
     End Function
     Function CodUVenta() As String
-        AbrirConeccion()
+        AbrirConexion()
         Dim resultado As Boolean = False
         Dim cod As String = 0
         Try
@@ -97,7 +103,7 @@ Module ConexionLogin
     ' fin
 
     Function CodUltimaVenta() As String
-        AbrirConeccion()
+        AbrirConexion()
         Dim resultado As Boolean = False
         Dim cod As String = 0
         Try
@@ -485,7 +491,7 @@ Module ConexionLogin
 
     Public Function ActualizarProducto(codprod As Integer, NomProd As String, descripcion As String, descripcion2 As String, Codprov As Integer, NombProv As String,
                              CodCateg As Integer, NombCateg As String, PrimerPrecio As Integer, SegundoPrecio As Integer,
-                             TercerPrecio As Integer, UnidadesStock As Integer, Minimo As Integer, maximo As Integer)
+                             TercerPrecio As Integer, Minimo As Integer, maximo As Integer)
         Try
             ConexionBase.Open()
             enunciado = New SqlCommand("Actualizar", ConexionBase)
@@ -502,7 +508,6 @@ Module ConexionLogin
             enunciado.Parameters.AddWithValue("@PrimerPrecio", PrimerPrecio)
             enunciado.Parameters.AddWithValue("@SegundoPrecio", SegundoPrecio)
             enunciado.Parameters.AddWithValue("@TercerPrecio", TercerPrecio)
-            enunciado.Parameters.AddWithValue("@UnidadesStock", UnidadesStock)
             enunciado.Parameters.AddWithValue("@Minimo", Minimo)
             enunciado.Parameters.AddWithValue("@Maximo", maximo)
 

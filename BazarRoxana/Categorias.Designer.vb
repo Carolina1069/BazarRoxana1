@@ -198,7 +198,7 @@ Partial Class Categorias
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgvCategorias.DefaultCellStyle = DataGridViewCellStyle2
         Me.DgvCategorias.EnableHeadersVisualStyles = False
-        Me.DgvCategorias.GridColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.DgvCategorias.GridColor = System.Drawing.SystemColors.ScrollBar
         Me.DgvCategorias.Location = New System.Drawing.Point(19, 74)
         Me.DgvCategorias.Name = "DgvCategorias"
         Me.DgvCategorias.ReadOnly = True

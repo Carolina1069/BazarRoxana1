@@ -5,11 +5,12 @@ Public Class Login
         ProgressBar1.Visible = False
         LbPorcentaje.Visible = False
 
+
     End Sub
 
     'Boton de ingresar, evalua si el usuario y contraseña son correctos y comienza ejecucion del cargador
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
-        AbrirConeccion()
+        AbrirConexion()
         Try
             If UsuarioRegistrado(TxtNombreEmpleado.Text) = True Then
 
@@ -24,7 +25,8 @@ Public Class Login
                         TimerLogin.Start()
                         MenuPrincipal.UsuariosToolStripMenuItem.Visible = False
                         MenuPrincipal.MiEmpresaToolStripMenuItem.Visible = False
-                    Else
+
+                    ElseIf ConsultarTipoUsuario(TxtNombreEmpleado.Text) = 3 Then
                         CodUser = CodUsuario(TxtNombreEmpleado.Text)
                         TimerLogin.Start()
                         MenuPrincipal.UsuariosToolStripMenuItem.Visible = False
@@ -99,7 +101,7 @@ Public Class Login
         Dim OpcionSalir As DialogResult
         OpcionSalir = MessageBox.Show("¿Esta Seguro que quiere salir del sistema?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
         If OpcionSalir = DialogResult.Yes Then
-            End
+            Application.Exit()
         End If
     End Sub
 
@@ -127,4 +129,15 @@ Public Class Login
         End Try
     End Sub
 
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub TxtNombreEmpleado_TextChanged(sender As Object, e As EventArgs) Handles TxtNombreEmpleado.TextChanged
+
+    End Sub
+
+    Private Sub TxtNombreEmpleado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNombreEmpleado.KeyPress
+
+    End Sub
 End Class

@@ -2,13 +2,15 @@
 Public Class ReporteProductoParametro
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+
+        AbrirConexion()
         Me.SelectProductoParametroTableAdapter.Fill(Me.BazarRoxana.SelectProductoParametro, CbxBusqueda.Text)
 
         Me.ReportViewer1.RefreshReport()
     End Sub
 
     Private Sub ReporteProductoParametro_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AbrirConeccion()
+        AbrirConexion()
 
         Dim DATOSusuarios As New DataTable 'tabla temporal que recoge los datos de la consulta
         Using adaptador As New SqlDataAdapter("select NombCateg from Categoria ", ConexionBase)

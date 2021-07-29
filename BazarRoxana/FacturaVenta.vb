@@ -1,7 +1,7 @@
 ﻿Public Class FacturaVenta
 
     Private Sub FacturaVenta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        AbrirConeccion()
+        AbrirConexion()
 
         Dim CodUVenta As String = CodUltimaVenta()
         Dim Uventa As String
